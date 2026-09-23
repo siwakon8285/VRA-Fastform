@@ -1,0 +1,32 @@
+meta {
+  name: reserve-success
+  type: http
+  seq: 2
+}
+post {
+  url: {{baseUrl}}/poc/reservations
+  body: json
+  auth: none
+}
+headers {
+  Content-Type: application/json
+}
+body:json {
+  {
+    "skuId": "00000000-0000-0000-0000-000000000001",
+    "quantity": 2
+  }
+}
+assert {
+  res.status: eq 200
+  res.body.quantity: eq 2
+  res.body.onHand: eq 1000000
+}
+tests {
+  test("Returned balance preserves invariant", function () {
+    const body = res.getBody();
+    expect(body.available).to.equal(body.onHand - body.reserved);
+    expect(body.available).to.be.at.least(0);
+    expect(res.getHeader("x-request-id")).to.be.a("string");
+  });
+}

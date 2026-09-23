@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "VRA POC-00",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

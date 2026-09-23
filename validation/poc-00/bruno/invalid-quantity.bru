@@ -1,0 +1,23 @@
+meta {
+  name: invalid-quantity
+  type: http
+  seq: 3
+}
+post {
+  url: {{baseUrl}}/poc/reservations
+  body: json
+  auth: none
+}
+headers {
+  Content-Type: application/json
+}
+body:json {
+  {
+    "skuId": "00000000-0000-0000-0000-000000000001",
+    "quantity": 0
+  }
+}
+assert {
+  res.status: eq 400
+  res.body.code: eq request.invalid
+}
