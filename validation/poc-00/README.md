@@ -1,8 +1,9 @@
-# POC-00 — Candidate A: Java
+# POC-00 — JVM Language Validation: Candidates A and B
 
 This is the first controlled JVM/core technology experiment for VRA (วีล่า), not the
 production application. Read [SHARED_SPEC.md](SHARED_SPEC.md) before changing behavior.
-There is no Kotlin candidate or frontend. [Evidence](evidence/java.md) records actual execution limits.
+Candidate A is Java; Candidate B is Kotlin. Both use the same PostgreSQL engine/version, shared migrations, HTTP contract, and equivalent verification scenarios. Manual backend/Bruno smoke uses the dedicated local Compose database; automated PostgreSQL tests use isolated disposable PostgreSQL 17.11 Testcontainers.
+There is no frontend. Read [Java evidence](evidence/java.md) and [Kotlin evidence](evidence/kotlin.md).
 
 Baseline: JDK 21 LTS, Spring Boot 3.5.16, Gradle Wrapper 8.14.3, PostgreSQL 17.11.
 JDK 25 was unavailable, so the Java 21 fallback is frozen. A JDK must be supplied by the user;
@@ -52,20 +53,23 @@ Use only this dedicated local POC database. Do not connect these commands to ano
    Missing/blank VRA_DB_PASSWORD fails clearly. URL and username are restricted to the dedicated local POC.
    Do not use environment dumps, shell tracing, or verbose credential logging.
 
-4. Run the separate migration process:
+4. Run the chosen candidate's separate migration process:
 
    ```sh
    cd validation/poc-00
    ./gradlew :java-candidate:migrateLocal
+   # or: ./gradlew :kotlin-candidate:migrateLocal
    ```
 
-5. Run the backend manually in this terminal:
+5. Run one candidate backend manually in this terminal:
 
    ```sh
    ./gradlew :java-candidate:bootRun
+   # or: ./gradlew :kotlin-candidate:bootRun
    ```
 
-   It listens at http://127.0.0.1:8080. Another terminal can run tests/Bruno.
+   It listens at http://127.0.0.1:8080. This manual candidate backend and Bruno smoke use the
+   persistent local Docker Compose PostgreSQL POC database. Another terminal can run tests/Bruno.
    Stop the backend with Ctrl-C. Compose never runs the backend.
 
 6. Load `validation/poc-00/shared/dev/seed.sql` in pgAdmin Query Tool, connected as below.
@@ -78,20 +82,20 @@ Use only this dedicated local POC database. Do not connect these commands to ano
    The seed is synthetic and idempotent: it never resets existing reservations. Success requests consume
    two units each; the low-stock SKU always rejects quantity 2. This endpoint has no retry idempotency.
 
-7. Verify from `validation/poc-00`:
+7. Verify from `validation/poc-00` (target either or both candidates):
 
    ```sh
    ./gradlew clean build
-   ./gradlew :java-candidate:test
-   ./gradlew :java-candidate:integrationTest
+   ./gradlew :java-candidate:test :java-candidate:integrationTest
+   ./gradlew :kotlin-candidate:test :kotlin-candidate:integrationTest
    ```
 
-   `test` contains domain, architecture, configuration, and isolated MVC tests.
-   `integrationTest` contains migration, database and full HTTP tests using disposable PostgreSQL
-   Testcontainers; requires a running Docker daemon, independently of Compose.
-   `clean build` includes both suites through `check`. No Docker-unavailable auto-skip is configured.
-   Reports: `java-candidate/build/reports/tests/{test,integrationTest}/index.html`.
-   No production/local database is cleaned by these tests.
+   `clean build` compiles and tests both candidates. Each candidate has domain, architecture,
+   configuration, isolated MVC, migration, database and full HTTP tests. PostgreSQL integration
+   suites use disposable PostgreSQL Testcontainers and require a running Docker daemon, independently
+   of Compose. They use isolated disposable PostgreSQL 17.11 Testcontainers; automated tests do not
+   clean or reuse the persistent local Compose database. No Docker-unavailable auto-skip is configured.
+   Reports: `<candidate>/build/reports/tests/{test,integrationTest}/index.html`.
 
 8. Once the backend and seed are ready, run Bruno:
 
@@ -148,8 +152,9 @@ Flyway startup is disabled; SQL auto-init is disabled. Both migration paths load
 The local PostgreSQL image login is an initialization/superuser convenience: **production requires
 migration identity != runtime identity**, with least-privilege runtime grants. No production role design is claimed.
 
-Money is non-negative exact commerce value, not finance ledger money. Optional domain fields use Optional,
-adapted at JDBC boundaries. Order items and copied item lists preserve snapshots in ordinary domain use;
+Money is non-negative exact commerce value, not finance ledger money. Java uses `Optional` for
+representative optional domain fields; Kotlin uses native nullable types for the equivalent fields.
+This difference is intentionally part of the POC-00 language comparison. Order items and copied item lists preserve snapshots in ordinary domain use;
 the local superuser could still modify rows directly. Database state checks do not enforce all transition history.
 An insufficient-stock classification uses an existence query after a failed UPDATE; SKU deletion races are
 outside this slice (there is no deletion API). Successful updates and inventory constraints remain atomic.

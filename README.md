@@ -5,9 +5,10 @@ This repository is an experiment, not a production application. See [brand direc
 
 ## POC-00 — JVM Language + Core Technology Validation
 
-Candidate A is Java 21 / Spring Boot 3.5.16 / Gradle 8.14.3 / PostgreSQL 17.11.
-There is no Kotlin candidate or frontend yet. Read the [frozen shared specification](validation/poc-00/SHARED_SPEC.md)
-and [actual Java evidence](validation/poc-00/evidence/java.md).
+POC-00 compares runtime-verified Candidate A (Java) with Candidate B (Kotlin) under the same
+Java 21 / Spring Boot 3.5.16 / Gradle 8.14.3 / PostgreSQL 17.11 baseline. Neither is selected
+as VRA's language. There is no frontend. Read the [frozen shared specification](validation/poc-00/SHARED_SPEC.md),
+[Java evidence](validation/poc-00/evidence/java.md), and [Kotlin evidence](validation/poc-00/evidence/kotlin.md).
 
 Follow the [complete local commands and pgAdmin connection guide](validation/poc-00/README.md):
 
@@ -15,8 +16,8 @@ Follow the [complete local commands and pgAdmin connection guide](validation/poc
 2. Start PostgreSQL only: `docker compose up -d postgres`.
 3. Check health: `docker compose ps`.
 4. Export `VRA_DB_URL`, `VRA_DB_USERNAME`, and `VRA_DB_PASSWORD` locally; never commit or print the password.
-5. From `validation/poc-00`, migrate explicitly: `./gradlew :java-candidate:migrateLocal`.
-6. Run the backend manually: `./gradlew :java-candidate:bootRun`.
+5. From `validation/poc-00`, migrate explicitly with the candidate task, for example `./gradlew :kotlin-candidate:migrateLocal`.
+6. Run one candidate backend manually, for example `./gradlew :kotlin-candidate:bootRun`.
 7. Load `shared/dev/seed.sql` through pgAdmin or the documented container `psql` command.
 8. Run `./gradlew clean build` (unit, HTTP, architecture and PostgreSQL integration tests).
 9. With the backend running, optionally run `bru run --env local` from `validation/poc-00/bruno`.
