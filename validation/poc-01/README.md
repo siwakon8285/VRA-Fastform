@@ -107,3 +107,37 @@ docker compose -f validation/poc-01/compose.yaml down
 ```
 
 Do not use `down -v` unless the dedicated POC-01 database is intentionally being destroyed.
+
+## Gate 6A Manual Runtime Smoke
+
+After the migration, HTTP, transaction and health gates are green, run the
+real runtime artifact against the dedicated local PostgreSQL environment:
+
+```bash
+bash validation/poc-01/scripts/manual-runtime-smoke.sh
+```
+
+The smoke verifies the operator-visible path:
+
+```text
+start dedicated PostgreSQL
+→ bootstrap owner / migrator / runtime identities
+→ build migration + runtime artifacts
+→ run explicit migration step
+→ start runtime with vra_runtime credentials
+→ readiness UP
+→ liveness UP
+→ seed inventory as owner
+→ real HTTP reservation returns 201
+→ inventory/reservation state is persisted in PostgreSQL
+→ client X-Request-Id is not trusted
+→ insufficient stock returns stable 409 without mutation
+→ runtime DDL remains denied
+→ clean runtime and Compose shutdown
+```
+
+The runtime smoke uses local port `18080` and preserves the dedicated
+PostgreSQL volume. Local request/response/log files are written only under
+`.local/poc-01/` and must not be committed.
+
+The script does not delete the PostgreSQL volume.
