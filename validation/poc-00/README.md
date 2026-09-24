@@ -1,5 +1,17 @@
 # POC-00 — JVM Language Validation: Candidates A and B
 
+
+**Status:** CLOSED
+
+**Decision:** Java is the primary JVM language for VRA.
+
+**Decision record:** [ADR-001 — Primary JVM Language](../../docs/adr/ADR-001-primary-jvm-language.md)
+
+POC-00 is retained as historical validation evidence. The Java candidate, Kotlin candidate,
+controlled-evolution experiment, shared migrations, tests, and evidence files are not
+production application source.
+
+
 This is the first controlled JVM/core technology experiment for VRA (วีล่า), not the
 production application. Read [SHARED_SPEC.md](SHARED_SPEC.md) before changing behavior.
 Candidate A is Java; Candidate B is Kotlin. Both use the same PostgreSQL engine/version, shared migrations, HTTP contract, and equivalent verification scenarios. Manual backend/Bruno smoke uses the dedicated local Compose database; automated PostgreSQL tests use isolated disposable PostgreSQL 17.11 Testcontainers.
