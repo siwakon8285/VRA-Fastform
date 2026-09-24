@@ -1,0 +1,188 @@
+# POC-00 — JVM Language Validation: Candidates A and B
+
+
+**Status:** CLOSED
+
+**Decision:** Java is the primary JVM language for VRA.
+
+**Decision record:** [ADR-001 — Primary JVM Language](../../docs/adr/ADR-001-primary-jvm-language.md)
+
+POC-00 is retained as historical validation evidence. The Java candidate, Kotlin candidate,
+controlled-evolution experiment, shared migrations, tests, and evidence files are not
+production application source.
+
+
+This is the first controlled JVM/core technology experiment for VRA (วีล่า), not the
+production application. Read [SHARED_SPEC.md](SHARED_SPEC.md) before changing behavior.
+Candidate A is Java; Candidate B is Kotlin. Both use the same PostgreSQL engine/version, shared migrations, HTTP contract, and equivalent verification scenarios. Manual backend/Bruno smoke uses the dedicated local Compose database; automated PostgreSQL tests use isolated disposable PostgreSQL 17.11 Testcontainers.
+There is no frontend. Read [Java evidence](evidence/java.md) and [Kotlin evidence](evidence/kotlin.md).
+
+Baseline: JDK 21 LTS, Spring Boot 3.5.16, Gradle Wrapper 8.14.3, PostgreSQL 17.11.
+JDK 25 was unavailable, so the Java 21 fallback is frozen. A JDK must be supplied by the user;
+the wrapper does not install Java. Do not use preview/incubator features.
+First wrapper use downloads the pinned Gradle distribution; Maven dependencies also need network access.
+
+## Local workflow
+
+Run these from the **repository root**, using a shell without command tracing (`set -x`).
+Use only this dedicated local POC database. Do not connect these commands to another project database.
+
+1. Create a local secret once; do not overwrite it on subsequent runs:
+
+   ```sh
+   mkdir -p .local/secrets
+   chmod 700 .local .local/secrets
+   if [ ! -e .local/secrets/db_password ]; then
+     (umask 077; openssl rand -base64 32 > .local/secrets/db_password)
+   fi
+   chmod 600 .local/secrets/db_password
+   ```
+
+   The whole `.local/` directory is ignored. No password is supplied in committed configuration.
+   Changing this file does not change a password in an already initialized PostgreSQL volume.
+
+2. Choose an unused port and start PostgreSQL only:
+
+   ```sh
+   export VRA_PG_PORT=55432
+   docker compose up -d postgres
+   docker compose ps
+   ```
+
+   If the port is occupied, choose another `VRA_PG_PORT` and use the same value below and in pgAdmin.
+   Do not stop/kill an existing database. Compose binds only 127.0.0.1.
+   Wait for healthy status before migration.
+
+3. Export local runtime settings without printing the password:
+
+   ```sh
+   export VRA_DB_URL="jdbc:postgresql://127.0.0.1:${VRA_PG_PORT:-55432}/vra_poc00"
+   export VRA_DB_USERNAME=vra_poc00
+   export VRA_DB_PASSWORD="$(< .local/secrets/db_password)"
+   ```
+
+   This environment-variable use is a development POC convenience, not the production secret architecture.
+   Missing/blank VRA_DB_PASSWORD fails clearly. URL and username are restricted to the dedicated local POC.
+   Do not use environment dumps, shell tracing, or verbose credential logging.
+
+4. Run the chosen candidate's separate migration process:
+
+   ```sh
+   cd validation/poc-00
+   ./gradlew :java-candidate:migrateLocal
+   # or: ./gradlew :kotlin-candidate:migrateLocal
+   ```
+
+5. Run one candidate backend manually in this terminal:
+
+   ```sh
+   ./gradlew :java-candidate:bootRun
+   # or: ./gradlew :kotlin-candidate:bootRun
+   ```
+
+   It listens at http://127.0.0.1:8080. This manual candidate backend and Bruno smoke use the
+   persistent local Docker Compose PostgreSQL POC database. Another terminal can run tests/Bruno.
+   Stop the backend with Ctrl-C. Compose never runs the backend.
+
+6. Load `validation/poc-00/shared/dev/seed.sql` in pgAdmin Query Tool, connected as below.
+   Alternative, from the **repository root**:
+
+   ```sh
+   docker compose exec -T postgres psql -U vra_poc00 -d vra_poc00 -v ON_ERROR_STOP=1 < validation/poc-00/shared/dev/seed.sql
+   ```
+
+   The seed is synthetic and idempotent: it never resets existing reservations. Success requests consume
+   two units each; the low-stock SKU always rejects quantity 2. This endpoint has no retry idempotency.
+
+7. Verify from `validation/poc-00` (target either or both candidates):
+
+   ```sh
+   ./gradlew clean build
+   ./gradlew :java-candidate:compileJava :java-candidate:compileTestJava
+   ./gradlew :kotlin-candidate:compileKotlin :kotlin-candidate:compileTestKotlin
+   ./gradlew :java-candidate:test :java-candidate:integrationTest
+   ./gradlew :kotlin-candidate:test :kotlin-candidate:integrationTest
+   ```
+
+   `clean build` compiles and tests both candidates. Each candidate has domain, architecture,
+   configuration, isolated MVC, migration, database and full HTTP tests. PostgreSQL integration
+   suites use disposable PostgreSQL Testcontainers and require a running Docker daemon, independently
+   of Compose. They use isolated disposable PostgreSQL 17.11 Testcontainers; automated tests do not
+   clean or reuse the persistent local Compose database. No Docker-unavailable auto-skip is configured.
+   Reports: `<candidate>/build/reports/tests/{test,integrationTest}/index.html`.
+
+8. Once the backend and seed are ready, run Bruno:
+
+   ```sh
+   cd bruno
+   bru run --env local
+   ```
+
+   Bruno CLI is optional; absence means **NOT EXECUTED — bru CLI not installed**, never passed.
+   The original four requests remain unchanged; POC-00-C adds `invalid-sku-id.bru` as the fifth request.
+   The collection contains no credentials and uses localhost only.
+
+9. Stop infrastructure from the repository root:
+
+   ```sh
+   docker compose down
+   ```
+
+   This preserves the database volume.
+   **DESTRUCTIVE — `docker compose down -v` deletes the POC Docker database volume.**
+   Use that command only for intentionally discarding this POC database, never a non-POC environment.
+   Clear the runtime password with `unset VRA_DB_PASSWORD` after use.
+
+## pgAdmin
+
+Use your existing pgAdmin desktop/client; it is not a Compose service.
+
+| Connection field | Value |
+| --- | --- |
+| Host | localhost |
+| Port | 55432, or your VRA_PG_PORT |
+| Database / maintenance database | vra_poc00 |
+| Username | vra_poc00 |
+| Password | The local value you created in .local/secrets/db_password |
+
+The PostgreSQL container is local infrastructure. Inspect inventory_balance, orders, order_items and
+flyway_schema_history. Execute the synthetic seed through Query Tool. Never paste the password into
+tracked files or evidence. Desktop pgAdmin resolves localhost to the host; a separately containerized
+pgAdmin would need a separately approved topology.
+
+## Architecture and dependencies
+
+`interfaces` validates requests and maps errors; `application` owns the transaction and repository port;
+`domain` contains immutable values/invariants; `infrastructure` contains explicit JDBC SQL and migration setup.
+The conditional UPDATE returns post-update counters; CHECK constraints provide independent integrity defense.
+No external service is called within the transaction. No order HTTP API, checkout, payments or auth.
+
+Spring Web/JDBC/Validation supply the representative slice. Flyway core/PostgreSQL module perform explicit
+migrations. PostgreSQL JDBC is the sole driver. Actuator supplies safe health and Micrometer HTTP observations;
+only health is exposed. This supports future instrumentation but no OTel exporter or trace pipeline is validated.
+Boot Test, PostgreSQL Testcontainers and ArchUnit implement the required tests. No speculative dependencies.
+
+Flyway startup is disabled; SQL auto-init is disabled. Both migration paths load the same shared SQL resources.
+`migrateLocal` disables clean. Test cleanup enables clean only against disposable Testcontainers.
+The local PostgreSQL image login is an initialization/superuser convenience: **production requires
+migration identity != runtime identity**, with least-privilege runtime grants. No production role design is claimed.
+
+Money is non-negative exact commerce value, not finance ledger money. Java uses `Optional` for
+representative optional domain fields; Kotlin uses native nullable types for the equivalent fields.
+This difference is intentionally part of the POC-00 language comparison. Order items and copied item lists preserve snapshots in ordinary domain use;
+the local superuser could still modify rows directly. Database state checks do not enforce all transition history.
+An insufficient-stock classification uses an existence query after a failed UPDATE; SKU deletion races are
+outside this slice (there is no deletion API). Successful updates and inventory constraints remain atomic.
+
+## POC-00-C controlled evolution
+
+Read [EVOLUTION_SPEC.md](EVOLUTION_SPEC.md) for the frozen EXPIRED state, typed order reason code,
+invalid nil-SKU rule, and shared additive V3 migration. Both candidates use the same V3 and equivalent
+PostgreSQL/Testcontainers scenarios. Run the candidate-targeted compile, test, and integration-test
+commands above; all automated database verification stays in disposable PostgreSQL 17.11 containers.
+
+## Interpretation
+
+This does not select final inventory concurrency or persistence technology, validate authentication,
+prove production performance, or select Java/Kotlin. POC-02 owns contention evaluation. POC-00-C
+collects controlled change evidence only and does not rank either candidate.

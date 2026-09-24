@@ -1,0 +1,29 @@
+meta {
+  name: invalid-sku-id
+  type: http
+  seq: 5
+}
+post {
+  url: {{baseUrl}}/poc/reservations
+  body: json
+  auth: none
+}
+headers {
+  Content-Type: application/json
+}
+body:json {
+  {
+    "skuId": "00000000-0000-0000-0000-000000000000",
+    "quantity": 2
+  }
+}
+assert {
+  res.status: eq 400
+  res.body.code: eq request.invalid_sku_id
+  res.body.message: eq "Invalid SKU identifier."
+}
+tests {
+  test("Invalid SKU error correlates with response header", function () {
+    expect(res.getBody().requestId).to.equal(res.getHeader("x-request-id"));
+  });
+}

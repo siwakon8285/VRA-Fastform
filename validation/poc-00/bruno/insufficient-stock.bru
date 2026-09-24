@@ -1,0 +1,28 @@
+meta {
+  name: insufficient-stock
+  type: http
+  seq: 4
+}
+post {
+  url: {{baseUrl}}/poc/reservations
+  body: json
+  auth: none
+}
+headers {
+  Content-Type: application/json
+}
+body:json {
+  {
+    "skuId": "00000000-0000-0000-0000-000000000002",
+    "quantity": 2
+  }
+}
+assert {
+  res.status: eq 409
+  res.body.code: eq inventory.insufficient_stock
+}
+tests {
+  test("Error correlates with response header", function () {
+    expect(res.getBody().requestId).to.equal(res.getHeader("x-request-id"));
+  });
+}
