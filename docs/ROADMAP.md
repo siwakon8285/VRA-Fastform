@@ -261,6 +261,8 @@ STOP
 
 ## 7. Phase 2 — POC-01 Transactional Core / Production Foundation
 
+**Status:** CLOSED — exit review passed; ADR-002 accepted
+
 เป้าหมาย:
 
 > พิสูจน์ production-oriented Java/Spring/PostgreSQL foundation ที่จะใช้สร้าง VRA จริง

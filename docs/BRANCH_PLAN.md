@@ -153,7 +153,7 @@ milestone/NN-name
 
 | ID | Branch | Status | Scope | Depends on | Exit gate |
 |---:|---|---|---|---|---|
-| 01 | `poc/01-transactional-core` | **REVIEW** | Java/Spring/PostgreSQL production-candidate foundation, Gradle/module boundary, Flyway, runtime/migrator roles, transaction/persistence, health/readiness, error contract, Testcontainers/architecture tests | Canonical docs baseline + ADR-001 | POC-01 evidence + independent review ผ่าน |
+| 01 | `poc/01-transactional-core` | **CLOSED** | Java/Spring/PostgreSQL production-candidate foundation, Gradle/module boundary, Flyway, runtime/migrator roles, transaction/persistence, health/readiness, error contract, Testcontainers/architecture tests | Canonical docs baseline + ADR-001 | POC-01 evidence + independent review ผ่าน |
 | 02 | `poc/02-concurrency-idempotency` | PLANNED | inventory concurrency, idempotency semantics, duplicate/concurrent commands, optimistic concurrency; stock=1/500 proof | 01 | correctness under concurrency proven |
 | 03 | `poc/03-outbox-recovery` | PLANNED | transactional outbox, worker claiming, inbox/dedupe, retry/backoff, dead-letter/reconciliation, crash recovery | 02 | async work/recovery semantics proven |
 | 04 | `poc/04-security-auth` | PLANNED | OIDC/OAuth boundary, account identity mapping, browser session/BFF, CSRF, privileged MFA/step-up, authorization, workload identity, DB least-privilege hardening, secrets, webhook security, audit | 03 | trust boundaries/security gate proven |
@@ -401,32 +401,33 @@ roadmap รุ่นถัดไปควรเป็นอะไร
 
 ## 17. Current Execution Pointer
 
-Current:
+Current closure:
 
 ```text
 01 — poc/01-transactional-core
-Status: REVIEW
+Status: CLOSED
+Final review checkpoint: fd6e97a
+Decision record: docs/adr/ADR-002-backend-production-foundation.md
 ```
 
-Current branch-specific authority:
+Next planned:
 
 ```text
-validation/poc-01/SHARED_SPEC.md
+02 — poc/02-concurrency-idempotency
+Status: PLANNED
+Branch-specific authority: NOT YET FROZEN
 ```
 
-Immediate sequence:
+Before POC-02 implementation:
 
 ```text
-review POC-01 spec
-→ freeze POC-01 spec
-→ read-only repository audit
-→ exact implementation plan
-→ user approval
-→ implementation
-→ verification/evidence
-→ independent review
-→ close branch 01
-→ branch 02
+confirm POC-01 closure checkpoint
+→ review POC-02 scope against canonical docs + ADR-002
+→ create/review branch-specific POC-02 specification
+→ freeze POC-02 specification
+→ perform read-only repository audit
+→ approve exact implementation/verification plan
+→ only then begin POC-02 implementation
 ```
 
 ---

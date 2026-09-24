@@ -1,6 +1,6 @@
 # POC-01 Evidence Results
 
-Status: FINAL EXIT REVIEW PASS — pending closure checkpoint
+Status: CLOSED — final exit review passed
 Date: 2026-09-24
 Branch: `poc/01-transactional-core`
 Evidence HEAD: `d39e532`
@@ -808,3 +808,47 @@ The branch remains in `REVIEW`, not `CLOSED`, until the reviewed evidence and
 ADR decision are committed as the required Git checkpoint. GitHub-hosted CI and
 branch-protection configuration remain `NOT EXECUTED` and are not claimed as
 completed production operations.
+
+## 26. Closure record
+
+POC-01 is closed after the final review/ADR checkpoint:
+
+```text
+fd6e97a docs: record POC-01 final review and backend foundation
+```
+
+The executable/CI evidence remains anchored to:
+
+```text
+d39e532 ci: add backend verification workflow
+```
+
+This distinction is intentional: `d39e532` is the implementation commit against
+which the final 43-test closure run and dependency/artifact evidence were
+collected, while `fd6e97a` records the reviewed evidence and accepted ADR.
+
+Closure state:
+
+```text
+POC-01 technical exit gate                 PASS
+independent post-remediation review        PASS
+ADR governance                             PASS (ADR-002)
+unresolved critical contradiction          0
+GitHub-hosted backend CI                   NOT EXECUTED
+branch-protection required check           NOT EXECUTED
+```
+
+GitHub-hosted CI and branch-protection configuration are operational follow-up
+items, not claims made by POC-01. If later remote execution exposes a defect,
+that defect must be recorded and corrected in a new checkpoint rather than by
+rewriting this historical evidence.
+
+The next planned validation branch is:
+
+```text
+02 — poc/02-concurrency-idempotency
+Status: PLANNED
+```
+
+POC-02 implementation must not begin until its branch-specific scope/spec is
+reviewed and frozen according to `docs/BRANCH_PLAN.md`.

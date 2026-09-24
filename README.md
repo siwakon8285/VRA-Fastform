@@ -76,7 +76,12 @@ Modular Transactional Core
 ### Accepted / Direction Locked
 
 - Java เป็น primary JVM language
+- Spring Boot เป็น primary backend framework; POC-01 accepted baseline = 4.1.1
 - PostgreSQL เป็น authoritative OLTP datastore
+- backend build ใช้ `runtime` + `migration` two-module baseline ตาม ADR-002
+- persistence baseline ใช้ JPA สำหรับ aggregate-shaped persistence และ explicit SQL/JdbcClient สำหรับ correctness-critical state transitions
+- Flyway migration รันเป็น explicit migration process แยกจาก runtime
+- PostgreSQL ownership baseline แยก `vra_owner` / `vra_migrator` / `vra_runtime`
 - Next.js + TypeScript เป็น web direction
 - REST-style HTTP/JSON + OpenAPI เป็น external/client API direction
 - transactional outbox เป็น asynchronous integration baseline
@@ -88,18 +93,17 @@ Modular Transactional Core
 
 ### Validate Next
 
-POC-01 ต้อง validate/finalize:
+POC-01 ปิดแล้วและ material foundation decisions ถูกบันทึกใน
+[`ADR-002`](docs/adr/ADR-002-backend-production-foundation.md)
 
-- Spring Boot เป็น primary backend framework และ exact production baseline
-- production project/module structure
-- persistence split ระหว่าง JPA และ explicit SQL/JDBC/jOOQ
-- Flyway production lifecycle
-- runtime vs migrator PostgreSQL privileges
-- transaction boundaries
-- health/readiness
-- standardized error contract
-- Testcontainers/architecture-test baseline
-- CI-compatible artifact build
+POC-02 ต้อง validate/finalize:
+
+- correctness ภายใต้ inventory contention
+- idempotency semantics สำหรับ duplicate/concurrent commands
+- optimistic-concurrency behavior ภายใต้ competing writers
+- deterministic stock=1 / 500 concurrent reservation proof
+- retry/timeout behavior ที่ไม่ทำให้ invariant เสีย
+- evidence ของ lock wait, connection usage, deadlock/retry behavior ตาม scope POC-02
 
 ### Deferred Until Evidence
 
@@ -119,15 +123,17 @@ POC-01 ต้อง validate/finalize:
 
 ## ขั้นต่อไป
 
-Current phase:
+Current validation state:
 
 ```text
-Canonical Documentation Baseline
-→ final review / freeze
-→ POC-01 Transactional Core / Production Foundation
+POC-01 Transactional Core / Production Foundation
+→ CLOSED
+→ ADR-002 accepted
+→ next: POC-02 Concurrency / Idempotency planning
 ```
 
-หลัง documentation baseline ถูก commit แล้ว จะสร้าง POC-01 spec ก่อน implementation และเริ่ม production-candidate Java foundation ตาม gates ใน [ROADMAP.md](docs/ROADMAP.md)
+ก่อนเริ่ม POC-02 implementation ต้อง review/freeze branch-specific specification
+และ verification plan ตาม [BRANCH_PLAN.md](docs/BRANCH_PLAN.md)
 
 ## Repository Governance
 
