@@ -41,3 +41,8 @@ management:
 
         readiness:
           include: "readinessState,db"
+
+logging:
+  structured:
+    format:
+      console: "ecs"

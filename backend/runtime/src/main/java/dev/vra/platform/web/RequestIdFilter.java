@@ -7,6 +7,9 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -14,6 +17,10 @@ import org.springframework.web.filter.OncePerRequestFilter;
 public class RequestIdFilter extends OncePerRequestFilter {
 
     public static final String HEADER_NAME = "X-Request-Id";
+    public static final String MDC_KEY = "request_id";
+
+    private static final Logger LOGGER =
+            LoggerFactory.getLogger(RequestIdFilter.class);
 
     private static final String ATTRIBUTE_NAME =
             RequestIdFilter.class.getName() + ".requestId";
@@ -28,8 +35,19 @@ public class RequestIdFilter extends OncePerRequestFilter {
 
         request.setAttribute(ATTRIBUTE_NAME, requestId);
         response.setHeader(HEADER_NAME, requestId);
+        MDC.put(MDC_KEY, requestId);
 
-        filterChain.doFilter(request, response);
+        try {
+            filterChain.doFilter(request, response);
+        } finally {
+            LOGGER.atInfo()
+                    .addKeyValue("http_method", request.getMethod())
+                    .addKeyValue("http_path", request.getRequestURI())
+                    .addKeyValue("http_status", response.getStatus())
+                    .log("http_request_completed");
+
+            MDC.remove(MDC_KEY);
+        }
     }
 
     public static String requestId(HttpServletRequest request) {
