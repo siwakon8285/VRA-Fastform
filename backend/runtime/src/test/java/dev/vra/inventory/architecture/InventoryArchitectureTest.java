@@ -1,6 +1,7 @@
 package dev.vra.inventory.architecture;
 
 import jakarta.persistence.Entity;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
@@ -51,4 +52,21 @@ class InventoryArchitectureTest {
                     .resideInAPackage(
                             "dev.vra.inventory.adapter.out.persistence.."
                     );
+    @ArchTest
+    static final ArchRule web_adapters_do_not_depend_on_persistence_adapters =
+            noClasses()
+                    .that()
+                    .resideInAPackage("..adapter.in.web..")
+                    .should()
+                    .dependOnClassesThat()
+                    .resideInAPackage("..adapter.out.persistence..");
+
+    @ArchTest
+    static final ArchRule rest_controllers_stay_in_web_adapters =
+            classes()
+                    .that()
+                    .areAnnotatedWith(RestController.class)
+                    .should()
+                    .resideInAPackage("..adapter.in.web..");
+
 }
