@@ -249,6 +249,43 @@ class ReservationTransactionIntegrationTest {
     }
 
     @Test
+    void databaseRejectsNegativeOnHand() {
+        assertBalanceCheckViolation(-1, 0, 0, "AVAILABLE");
+    }
+
+    @Test
+    void databaseRejectsNegativeReserved() {
+        assertBalanceCheckViolation(10, -1, 0, "AVAILABLE");
+    }
+
+    @Test
+    void databaseRejectsReservedGreaterThanOnHand() {
+        assertBalanceCheckViolation(10, 11, 0, "AVAILABLE");
+    }
+
+    @Test
+    void databaseRejectsInvalidStockStatus() {
+        assertBalanceCheckViolation(10, 0, 0, "DAMAGED");
+    }
+
+    @Test
+    void databaseRejectsNonPositiveReservationQuantity() {
+        InventoryKey key = newKey(StockStatus.AVAILABLE);
+        seedBalance(key, 10, 0, 0);
+
+        SQLException error = assertThrows(
+                SQLException.class,
+                () -> insertReservationAsOwner(
+                        UUID.randomUUID(),
+                        key,
+                        0
+                )
+        );
+
+        assertEquals("23514", error.getSQLState());
+    }
+
+    @Test
     void reservationInsertFailureRollsBackPriorJdbcInventoryUpdate() {
         InventoryKey key = newKey(StockStatus.AVAILABLE);
         UUID duplicateReservationId = UUID.randomUUID();
@@ -337,6 +374,103 @@ class ReservationTransactionIntegrationTest {
             statement.execute(
                     "GRANT USAGE ON SCHEMA vra TO vra_runtime"
             );
+        }
+    }
+
+    private static void assertBalanceCheckViolation(
+            long onHand,
+            long reserved,
+            long version,
+            String stockStatus
+    ) {
+        SQLException error = assertThrows(
+                SQLException.class,
+                () -> insertBalanceAsOwner(
+                        UUID.randomUUID(),
+                        UUID.randomUUID(),
+                        UUID.randomUUID(),
+                        stockStatus,
+                        onHand,
+                        reserved,
+                        version
+                )
+        );
+
+        assertEquals("23514", error.getSQLState());
+    }
+
+    private static void insertBalanceAsOwner(
+            UUID skuId,
+            UUID ownerId,
+            UUID locationId,
+            String stockStatus,
+            long onHand,
+            long reserved,
+            long version
+    ) throws SQLException {
+        try (Connection connection = adminConnection()) {
+            try (Statement role = connection.createStatement()) {
+                role.execute("SET ROLE vra_owner");
+            }
+
+            try (PreparedStatement statement = connection.prepareStatement("""
+                    INSERT INTO vra.inventory_balance (
+                        sku_id,
+                        owner_id,
+                        location_id,
+                        stock_status,
+                        on_hand,
+                        reserved,
+                        version
+                    )
+                    VALUES (?, ?, ?, ?, ?, ?, ?)
+                    """)) {
+
+                statement.setObject(1, skuId);
+                statement.setObject(2, ownerId);
+                statement.setObject(3, locationId);
+                statement.setString(4, stockStatus);
+                statement.setLong(5, onHand);
+                statement.setLong(6, reserved);
+                statement.setLong(7, version);
+
+                statement.executeUpdate();
+            }
+        }
+    }
+
+    private static void insertReservationAsOwner(
+            UUID reservationId,
+            InventoryKey key,
+            long quantity
+    ) throws SQLException {
+        try (Connection connection = adminConnection()) {
+            try (Statement role = connection.createStatement()) {
+                role.execute("SET ROLE vra_owner");
+            }
+
+            try (PreparedStatement statement = connection.prepareStatement("""
+                    INSERT INTO vra.inventory_reservation (
+                        reservation_id,
+                        sku_id,
+                        owner_id,
+                        location_id,
+                        stock_status,
+                        quantity,
+                        created_at
+                    )
+                    VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+                    """)) {
+
+                statement.setObject(1, reservationId);
+                statement.setObject(2, key.skuId());
+                statement.setObject(3, key.ownerId());
+                statement.setObject(4, key.locationId());
+                statement.setString(5, key.stockStatus().name());
+                statement.setLong(6, quantity);
+
+                statement.executeUpdate();
+            }
         }
     }
 
