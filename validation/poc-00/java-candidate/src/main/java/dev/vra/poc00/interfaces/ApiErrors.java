@@ -25,6 +25,7 @@ public class ApiErrors extends ResponseEntityExceptionHandler {
             case DomainFailure.InvalidTransition ignored -> error(409, "order.invalid_transition", "Order transition is not allowed.", request);
             case DomainFailure.InvalidIdempotencyKey ignored -> error(400, "request.invalid_idempotency_key", "Invalid idempotency key.", request);
             case DomainFailure.CurrencyMismatch ignored -> error(422, "money.currency_mismatch", "Currencies must match.", request);
+            case DomainFailure.InvalidSkuId ignored -> error(400, "request.invalid_sku_id", "Invalid SKU identifier.", request);
         };
     }
 

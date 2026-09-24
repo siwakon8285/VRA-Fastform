@@ -92,6 +92,22 @@ class HttpContractTest {
     }
 
     @Test
+    fun nilSkuIdIsSafe400AndCorrelatedWithoutCallingApplication() {
+        val result = mvc.perform(
+            post("/poc/reservations").contentType(MediaType.APPLICATION_JSON)
+                .content("""{"skuId":"00000000-0000-0000-0000-000000000000","quantity":2}""")
+        )
+            .andExpect(status().isBadRequest)
+            .andExpect(jsonPath("$.code").value("request.invalid_sku_id"))
+            .andExpect(jsonPath("$.message").value("Invalid SKU identifier."))
+            .andReturn()
+        val requestId = result.response.getHeader("X-Request-Id")
+        assertThat(result.response.contentAsString).contains(requestId)
+            .doesNotContain("stackTrace", "SQLException", "password", "/")
+        verifyNoInteractions(service)
+    }
+
+    @Test
     fun internalFailureDoesNotLeakDetailsAndCorrelatesRequest() {
         Mockito.`when`(service.reserve(sku, 2)).thenThrow(
             IllegalStateException("SELECT secret FROM /private/database password=example")

@@ -123,6 +123,25 @@ class ReservationIntegrationTest {
     }
 
     @Test
+    fun nilSkuIdIsSafe400CorrelatedAndDoesNotMutateInventory() {
+        val response = http.postForEntity(
+            "/poc/reservations", mapOf("skuId" to UUID(0L, 0L), "quantity" to 2), Map::class.java
+        )
+        assertThat(response.statusCode.value()).isEqualTo(400)
+        assertThat(response.body!!["code"]).isEqualTo("request.invalid_sku_id")
+        assertThat(response.body!!["message"]).isEqualTo("Invalid SKU identifier.")
+        assertThat(response.body!!["requestId"]).isEqualTo(response.headers.getFirst("X-Request-Id"))
+        assertThat(response.body!!.keys).doesNotContain("exception", "trace", "path")
+        assertThat(response.body!!.toString()).doesNotContain("SQL", "stack", "path", "secret", "/")
+        assertThat(jdbc.queryForObject(
+            "SELECT reserved FROM inventory_balance WHERE sku_id=?", Long::class.javaObjectType, sku.value
+        )!!).isZero()
+        assertThat(jdbc.queryForObject(
+            "SELECT count(*) FROM inventory_balance WHERE sku_id=?", Int::class.javaObjectType, UUID(0L, 0L)
+        )!!).isZero()
+    }
+
+    @Test
     fun servletErrorFallbackIsSafeAndCorrelated() {
         val response = http.getForEntity("/error", Map::class.java)
         assertThat(response.statusCode.value()).isEqualTo(500)

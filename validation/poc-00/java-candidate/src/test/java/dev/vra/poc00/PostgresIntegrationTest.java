@@ -38,6 +38,15 @@ class PostgresIntegrationTest {
                 id, state.name(), OffsetDateTime.ofInstant(created, java.time.ZoneOffset.UTC),
                 confirmed == null ? null : OffsetDateTime.ofInstant(confirmed, java.time.ZoneOffset.UTC));
     }
+    private void insertOrderWithReason(UUID id, OrderState state, Instant created, Instant confirmed,
+                                       String cancellationReason, String reasonCode) {
+        jdbc.update("""
+                INSERT INTO orders(id,state,created_at,confirmed_at,cancellation_reason,reason_code)
+                VALUES (?,?,?,?,?,?)
+                """, id, state.name(), OffsetDateTime.ofInstant(created, java.time.ZoneOffset.UTC),
+                confirmed == null ? null : OffsetDateTime.ofInstant(confirmed, java.time.ZoneOffset.UTC),
+                cancellationReason, reasonCode);
+    }
     private void insertItem(UUID order, UUID sku, int quantity, BigDecimal price) {
         jdbc.update("""
                 INSERT INTO order_items(order_id,line_number,sku_id,product_name_snapshot,quantity,unit_price,currency)
@@ -46,7 +55,7 @@ class PostgresIntegrationTest {
     }
 
     @Test void latestMigrationAndInventoryRoundTrip() {
-        assertThat(flyway(null).migrate().migrationsExecuted).isEqualTo(2);
+        assertThat(flyway(null).migrate().migrationsExecuted).isEqualTo(3);
         flyway(null).validate();
         var sku = UUID.randomUUID();
         jdbc.update("INSERT INTO inventory_balance(sku_id,on_hand,reserved) VALUES (?,10,3)", sku);
@@ -69,8 +78,8 @@ class PostgresIntegrationTest {
                 SELECT count(*) FROM information_schema.columns
                 WHERE table_schema='public' AND table_name='orders' AND column_name='cancellation_reason'
                 """, Integer.class)).isZero();
-        assertThat(flyway(null).migrate().migrationsExecuted).isEqualTo(1);
-        flyway(null).validate();
+        assertThat(flyway("2").migrate().migrationsExecuted).isEqualTo(1);
+        flyway("2").validate();
         assertThat(flyway(null).info().current().getVersion().getVersion()).isEqualTo("2");
         assertThat(jdbc.queryForObject("SELECT state FROM orders WHERE id=?", String.class, order)).isEqualTo("PENDING_PAYMENT");
         assertThat(jdbc.queryForObject("SELECT created_at FROM orders WHERE id=?", OffsetDateTime.class, order).toInstant()).isEqualTo(created);
@@ -99,7 +108,9 @@ class PostgresIntegrationTest {
                 new Order(new OrderId(rs.getObject("id", UUID.class)), OrderState.valueOf(rs.getString("state")),
                         rs.getObject("created_at", OffsetDateTime.class).toInstant(),
                         Optional.ofNullable(rs.getObject("confirmed_at", OffsetDateTime.class)).map(OffsetDateTime::toInstant),
-                        Optional.ofNullable(rs.getString("cancellation_reason")), List.of(item), rs.getLong("version")), id);
+                        Optional.ofNullable(rs.getString("cancellation_reason")),
+                        Optional.ofNullable(rs.getString("reason_code")).map(OrderReasonCode::valueOf),
+                        List.of(item), rs.getLong("version")), id);
         assertThat(loaded.state()).isEqualTo(OrderState.CONFIRMED);
         assertThat(loaded.createdAt()).isEqualTo(created);
         assertThat(loaded.confirmedAt()).contains(confirmed);
@@ -119,5 +130,62 @@ class PostgresIntegrationTest {
         for (int quantity : new int[] {0, -1})
             assertThatThrownBy(() -> insertItem(order, UUID.randomUUID(), quantity, BigDecimal.ONE))
                     .isInstanceOf(DataIntegrityViolationException.class);
+    }
+
+    @Test void populatedV1V2ToV3PreservesLegacyOrdersAndEnforcesReasonConstraints() {
+        assertThat(flyway("2").migrate().migrationsExecuted).isEqualTo(2);
+        var created = UUID.randomUUID();
+        var pending = UUID.randomUUID();
+        var confirmed = UUID.randomUUID();
+        var cancelledNull = UUID.randomUUID();
+        var cancelledText = UUID.randomUUID();
+        var now = Instant.parse("2026-05-01T10:00:00Z");
+        insertOrder(created, OrderState.CREATED, now, null);
+        insertOrder(pending, OrderState.PENDING_PAYMENT, now, null);
+        insertOrder(confirmed, OrderState.CONFIRMED, now, now.plusSeconds(30));
+        insertOrder(cancelledNull, OrderState.CANCELLED, now, null);
+        insertOrder(cancelledText, OrderState.CANCELLED, now, null);
+        jdbc.update("UPDATE orders SET cancellation_reason='Legacy buyer request' WHERE id=?", cancelledText);
+        var sku = UUID.randomUUID();
+        jdbc.update("INSERT INTO inventory_balance(sku_id,on_hand,reserved) VALUES (?,8,3)", sku);
+
+        assertThat(flyway(null).migrate().migrationsExecuted).isEqualTo(1);
+        flyway("2").validate();
+        assertThat(flyway(null).info().current().getVersion().getVersion()).isEqualTo("3");
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM orders", Integer.class)).isEqualTo(5);
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM information_schema.columns WHERE table_name='orders' AND column_name='reason_code'",
+                Integer.class)).isEqualTo(1);
+        for (var id : List.of(created, pending, confirmed, cancelledNull, cancelledText))
+            assertThat(jdbc.queryForObject("SELECT reason_code FROM orders WHERE id=?", String.class, id)).isNull();
+        assertThat(jdbc.queryForObject("SELECT cancellation_reason FROM orders WHERE id=?", String.class, cancelledText))
+                .isEqualTo("Legacy buyer request");
+        assertThat(jdbc.queryForObject("SELECT reserved FROM inventory_balance WHERE sku_id=?", Long.class, sku)).isEqualTo(3);
+
+        var expiredId = UUID.randomUUID();
+        insertOrderWithReason(expiredId, OrderState.EXPIRED, now, null, null, "PAYMENT_TIMEOUT");
+        var customerCancelledId = UUID.randomUUID();
+        insertOrderWithReason(customerCancelledId, OrderState.CANCELLED, now, null, null, "CUSTOMER_CANCELLED");
+        var paymentFailedId = UUID.randomUUID();
+        insertOrderWithReason(paymentFailedId, OrderState.CANCELLED, now, null, null, "PAYMENT_FAILED");
+        assertThat(jdbc.queryForObject("SELECT reason_code FROM orders WHERE id=?", String.class, expiredId))
+                .isEqualTo("PAYMENT_TIMEOUT");
+
+        assertThatThrownBy(() -> insertOrderWithReason(UUID.randomUUID(), OrderState.EXPIRED, now, null, null, null))
+                .isInstanceOf(DataIntegrityViolationException.class);
+        assertThatThrownBy(() -> insertOrderWithReason(UUID.randomUUID(), OrderState.EXPIRED, now, null, null, "CUSTOMER_CANCELLED"))
+                .isInstanceOf(DataIntegrityViolationException.class);
+        assertThatThrownBy(() -> insertOrderWithReason(UUID.randomUUID(), OrderState.CANCELLED, now, null, null, "PAYMENT_TIMEOUT"))
+                .isInstanceOf(DataIntegrityViolationException.class);
+        assertThatThrownBy(() -> insertOrderWithReason(UUID.randomUUID(), OrderState.CREATED, now, null, null, "PAYMENT_FAILED"))
+                .isInstanceOf(DataIntegrityViolationException.class);
+        assertThatThrownBy(() -> insertOrderWithReason(UUID.randomUUID(), OrderState.PENDING_PAYMENT, now, null, null, "CUSTOMER_CANCELLED"))
+                .isInstanceOf(DataIntegrityViolationException.class);
+        assertThatThrownBy(() -> insertOrderWithReason(UUID.randomUUID(), OrderState.CONFIRMED, now, now.plusSeconds(1), null, "PAYMENT_FAILED"))
+                .isInstanceOf(DataIntegrityViolationException.class);
+        assertThatThrownBy(() -> insertOrderWithReason(UUID.randomUUID(), OrderState.EXPIRED, now, now.plusSeconds(1), null, "PAYMENT_TIMEOUT"))
+                .isInstanceOf(DataIntegrityViolationException.class);
+        assertThatThrownBy(() -> insertOrderWithReason(UUID.randomUUID(), OrderState.EXPIRED, now, null, "not a cancellation", "PAYMENT_TIMEOUT"))
+                .isInstanceOf(DataIntegrityViolationException.class);
+        flyway(null).validate();
     }
 }

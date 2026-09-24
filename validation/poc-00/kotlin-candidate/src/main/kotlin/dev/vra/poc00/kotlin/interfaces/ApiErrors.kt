@@ -31,6 +31,8 @@ class ApiErrors : ResponseEntityExceptionHandler() {
                 error(400, "request.invalid_idempotency_key", "Invalid idempotency key.", request)
             is DomainFailure.CurrencyMismatch ->
                 error(422, "money.currency_mismatch", "Currencies must match.", request)
+            is DomainFailure.InvalidSkuId ->
+                error(400, "request.invalid_sku_id", "Invalid SKU identifier.", request)
         }
 
     override fun handleExceptionInternal(

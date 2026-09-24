@@ -61,6 +61,18 @@ class HttpContractTest {
         mvc.perform(post("/poc/reservations").contentType(MediaType.APPLICATION_JSON).content(body(2)))
                 .andExpect(status().isConflict()).andExpect(jsonPath("$.code").value("inventory.insufficient_stock"));
     }
+    @Test void nilSkuIdIsSafe400AndCorrelatedWithoutCallingApplication() throws Exception {
+        var result = mvc.perform(post("/poc/reservations").contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"skuId\":\"00000000-0000-0000-0000-000000000000\",\"quantity\":2}"))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.code").value("request.invalid_sku_id"))
+                .andExpect(jsonPath("$.message").value("Invalid SKU identifier."))
+                .andReturn();
+        var requestId = result.getResponse().getHeader("X-Request-Id");
+        assertThat(result.getResponse().getContentAsString()).contains(requestId)
+                .doesNotContain("stackTrace", "SQLException", "password", "/");
+        verifyNoInteractions(service);
+    }
     @Test void internalErrorDoesNotLeakAndCorrelates() throws Exception {
         when(service.reserve(sku, 2)).thenThrow(new IllegalStateException("SELECT secret FROM /private/database password=example"));
         var result = mvc.perform(post("/poc/reservations").contentType(MediaType.APPLICATION_JSON).content(body(2)))

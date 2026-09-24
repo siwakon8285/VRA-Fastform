@@ -8,4 +8,5 @@ sealed class DomainFailure(message: String) : RuntimeException(message) {
     class InvalidIdempotencyKey : DomainFailure("Idempotency key must contain 1 to 128 characters.")
     class CurrencyMismatch : DomainFailure("Currencies must match.")
     class UnknownSku : DomainFailure("SKU was not found.")
+    class InvalidSkuId : DomainFailure("Invalid SKU identifier.")
 }

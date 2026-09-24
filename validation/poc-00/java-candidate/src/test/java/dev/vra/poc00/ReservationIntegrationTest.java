@@ -83,6 +83,20 @@ class ReservationIntegrationTest {
         assertThat(jdbc.queryForObject("SELECT version FROM inventory_balance WHERE sku_id=?", Long.class, sku.value())).isZero();
     }
 
+    @Test void nilSkuIdIsSafe400CorrelatedAndDoesNotMutateInventory() {
+        var response = http.postForEntity("/poc/reservations",
+                Map.of("skuId", new UUID(0L, 0L), "quantity", 2), Map.class);
+        assertThat(response.getStatusCode().value()).isEqualTo(400);
+        assertThat(response.getBody()).containsEntry("code", "request.invalid_sku_id")
+                .containsEntry("message", "Invalid SKU identifier.")
+                .containsEntry("requestId", response.getHeaders().getFirst("X-Request-Id"))
+                .doesNotContainKeys("exception", "trace", "path");
+        assertThat(response.getBody().toString()).doesNotContain("SQL", "stack", "path", "secret", "/");
+        assertThat(jdbc.queryForObject("SELECT reserved FROM inventory_balance WHERE sku_id=?", Long.class, sku.value())).isZero();
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM inventory_balance WHERE sku_id=?", Integer.class,
+                new UUID(0L, 0L))).isZero();
+    }
+
     @Test void configuredJsonValidationRejectsFractionalNullAndUnknownFields() {
         var headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);

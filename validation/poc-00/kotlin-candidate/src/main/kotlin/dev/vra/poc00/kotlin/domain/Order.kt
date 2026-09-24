@@ -14,6 +14,7 @@ class Order(
     val createdAt: Instant,
     val confirmedAt: Instant?,
     val cancellationReason: String?,
+    val reasonCode: OrderReasonCode?,
     items: List<OrderItem>,
     val version: Long
 ) {
@@ -31,25 +32,43 @@ class Order(
             (state == OrderState.CANCELLED && cancellationReason.isNotBlank() && cancellationReason.length <= 500)) {
             "Invalid cancellation reason."
         }
+        when (state) {
+            OrderState.CREATED, OrderState.PENDING_PAYMENT, OrderState.CONFIRMED ->
+                require(reasonCode == null) { "Reason code is invalid for order state." }
+            OrderState.CANCELLED ->
+                require(reasonCode != OrderReasonCode.PAYMENT_TIMEOUT) {
+                    "Reason code is invalid for cancelled order."
+                }
+            OrderState.EXPIRED ->
+                require(reasonCode == OrderReasonCode.PAYMENT_TIMEOUT) {
+                    "Expired orders require PAYMENT_TIMEOUT."
+                }
+        }
     }
 
     fun pendingPayment(): Order {
         state.requireTransitionTo(OrderState.PENDING_PAYMENT)
-        return Order(id, OrderState.PENDING_PAYMENT, createdAt, null, null, items, Math.incrementExact(version))
+        return Order(id, OrderState.PENDING_PAYMENT, createdAt, null, null, null, items, Math.incrementExact(version))
     }
 
     fun confirm(now: Instant): Order {
         state.requireTransitionTo(OrderState.CONFIRMED)
-        return Order(id, OrderState.CONFIRMED, createdAt, now, null, items, Math.incrementExact(version))
+        return Order(id, OrderState.CONFIRMED, createdAt, now, null, null, items, Math.incrementExact(version))
     }
 
-    fun cancel(reason: String): Order {
+    fun cancel(reason: String, reasonCode: OrderReasonCode): Order {
         state.requireTransitionTo(OrderState.CANCELLED)
-        return Order(id, OrderState.CANCELLED, createdAt, null, reason, items, Math.incrementExact(version))
+        return Order(id, OrderState.CANCELLED, createdAt, null, reason, reasonCode, items, Math.incrementExact(version))
+    }
+
+    fun expire(): Order {
+        state.requireTransitionTo(OrderState.EXPIRED)
+        return Order(id, OrderState.EXPIRED, createdAt, null, null, OrderReasonCode.PAYMENT_TIMEOUT,
+            items, Math.incrementExact(version))
     }
 
     companion object {
         fun create(id: OrderId, now: Instant, items: List<OrderItem>) =
-            Order(id, OrderState.CREATED, now, null, null, items, 0)
+            Order(id, OrderState.CREATED, now, null, null, null, items, 0)
     }
 }

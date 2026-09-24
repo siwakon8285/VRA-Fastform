@@ -22,4 +22,7 @@ public abstract sealed class DomainFailure extends RuntimeException {
     public static final class UnknownSku extends DomainFailure {
         public UnknownSku() { super("SKU was not found."); }
     }
+    public static final class InvalidSkuId extends DomainFailure {
+        public InvalidSkuId() { super("Invalid SKU identifier."); }
+    }
 }

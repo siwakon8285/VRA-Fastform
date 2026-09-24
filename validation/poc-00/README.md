@@ -86,6 +86,8 @@ Use only this dedicated local POC database. Do not connect these commands to ano
 
    ```sh
    ./gradlew clean build
+   ./gradlew :java-candidate:compileJava :java-candidate:compileTestJava
+   ./gradlew :kotlin-candidate:compileKotlin :kotlin-candidate:compileTestKotlin
    ./gradlew :java-candidate:test :java-candidate:integrationTest
    ./gradlew :kotlin-candidate:test :kotlin-candidate:integrationTest
    ```
@@ -105,6 +107,7 @@ Use only this dedicated local POC database. Do not connect these commands to ano
    ```
 
    Bruno CLI is optional; absence means **NOT EXECUTED — bru CLI not installed**, never passed.
+   The original four requests remain unchanged; POC-00-C adds `invalid-sku-id.bru` as the fifth request.
    The collection contains no credentials and uses localhost only.
 
 9. Stop infrastructure from the repository root:
@@ -159,8 +162,15 @@ the local superuser could still modify rows directly. Database state checks do n
 An insufficient-stock classification uses an existence query after a failed UPDATE; SKU deletion races are
 outside this slice (there is no deletion API). Successful updates and inventory constraints remain atomic.
 
+## POC-00-C controlled evolution
+
+Read [EVOLUTION_SPEC.md](EVOLUTION_SPEC.md) for the frozen EXPIRED state, typed order reason code,
+invalid nil-SKU rule, and shared additive V3 migration. Both candidates use the same V3 and equivalent
+PostgreSQL/Testcontainers scenarios. Run the candidate-targeted compile, test, and integration-test
+commands above; all automated database verification stays in disposable PostgreSQL 17.11 containers.
+
 ## Interpretation
 
 This does not select final inventory concurrency or persistence technology, validate authentication,
-prove production performance, or select Java. POC-02 owns contention evaluation. Future comparison must keep
-the same controls and scenarios; do not add the deferred evolution changes to Candidate A now.
+prove production performance, or select Java/Kotlin. POC-02 owns contention evaluation. POC-00-C
+collects controlled change evidence only and does not rank either candidate.

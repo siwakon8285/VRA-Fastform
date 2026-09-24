@@ -6,7 +6,11 @@ import java.util.UUID
 value class OrderId(val value: UUID)
 
 @JvmInline
-value class SkuId(val value: UUID)
+value class SkuId(val value: UUID) {
+    init {
+        if (value == UUID(0L, 0L)) throw DomainFailure.InvalidSkuId()
+    }
+}
 
 @JvmInline
 value class IdempotencyKey(val value: String) {

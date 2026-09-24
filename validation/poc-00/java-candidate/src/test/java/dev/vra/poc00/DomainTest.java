@@ -74,19 +74,22 @@ class DomainTest {
         assertThatThrownBy(() -> order().confirm(Instant.now())).isInstanceOf(DomainFailure.InvalidTransition.class);
     }
     @Test void cancelledCannotBeConfirmedAndHasOptionalReason() {
-        var cancelled = order().pendingPayment().cancel("Buyer requested cancellation");
+        var cancelled = order().pendingPayment().cancel("Buyer requested cancellation", OrderReasonCode.CUSTOMER_CANCELLED);
         assertThat(cancelled.confirmedAt()).isEmpty();
         assertThat(cancelled.cancellationReason()).contains("Buyer requested cancellation");
+        assertThat(cancelled.reasonCode()).contains(OrderReasonCode.CUSTOMER_CANCELLED);
         assertThatThrownBy(() -> cancelled.confirm(Instant.now())).isInstanceOf(DomainFailure.InvalidTransition.class);
         // V1 legacy cancelled orders legitimately have no cancellation reason.
         var legacy = new Order(cancelled.id(), cancelled.state(), cancelled.createdAt(),
-                Optional.empty(), Optional.empty(), cancelled.items(), cancelled.version());
+                Optional.empty(), Optional.empty(), Optional.empty(), cancelled.items(), cancelled.version());
         assertThat(legacy.cancellationReason()).isEmpty();
+        assertThat(legacy.reasonCode()).isEmpty();
     }
     @Test void everyStateTransitionMatchesFrozenGraph() {
         for (var from : OrderState.values()) for (var to : OrderState.values()) {
             boolean valid = from == OrderState.CREATED && to == OrderState.PENDING_PAYMENT
-                    || from == OrderState.PENDING_PAYMENT && (to == OrderState.CONFIRMED || to == OrderState.CANCELLED);
+                    || from == OrderState.PENDING_PAYMENT && (to == OrderState.CONFIRMED
+                    || to == OrderState.CANCELLED || to == OrderState.EXPIRED);
             if (valid) assertThatCode(() -> from.requireTransitionTo(to)).doesNotThrowAnyException();
             else assertThatThrownBy(() -> from.requireTransitionTo(to)).isInstanceOf(DomainFailure.InvalidTransition.class);
         }
@@ -103,5 +106,58 @@ class DomainTest {
         assertThat(order.items().getFirst()).isEqualTo(item());
         assertThatThrownBy(() -> order.items().clear()).isInstanceOf(UnsupportedOperationException.class);
         assertThat(order.items().getFirst().unitPrice()).isEqualTo(money("12.50"));
+    }
+
+    @Test void expirationRequiresPendingPaymentAndSetsOnlyPaymentTimeoutReason() {
+        var expired = order().pendingPayment().expire();
+        assertThat(expired.state()).isEqualTo(OrderState.EXPIRED);
+        assertThat(expired.reasonCode()).contains(OrderReasonCode.PAYMENT_TIMEOUT);
+        assertThat(expired.confirmedAt()).isEmpty();
+        assertThat(expired.cancellationReason()).isEmpty();
+        for (var next : List.of(OrderState.CONFIRMED, OrderState.CANCELLED, OrderState.PENDING_PAYMENT))
+            assertThatThrownBy(() -> expired.state().requireTransitionTo(next))
+                    .isInstanceOf(DomainFailure.InvalidTransition.class);
+    }
+
+    @Test void cancellationReasonCodeRulesPreserveLegacyRows() {
+        var pending = order().pendingPayment();
+        var customerCancelled = pending.cancel("Requested", OrderReasonCode.CUSTOMER_CANCELLED);
+        var paymentFailed = pending.cancel("Payment failed", OrderReasonCode.PAYMENT_FAILED);
+        assertThat(customerCancelled.reasonCode()).contains(OrderReasonCode.CUSTOMER_CANCELLED);
+        assertThat(paymentFailed.reasonCode()).contains(OrderReasonCode.PAYMENT_FAILED);
+        assertThatThrownBy(() -> pending.cancel("Timed out", OrderReasonCode.PAYMENT_TIMEOUT))
+                .isInstanceOf(IllegalArgumentException.class);
+
+        var legacy = new Order(customerCancelled.id(), OrderState.CANCELLED, customerCancelled.createdAt(),
+                Optional.empty(), Optional.empty(), Optional.empty(), customerCancelled.items(), customerCancelled.version());
+        assertThat(legacy.reasonCode()).isEmpty();
+    }
+
+    @Test void reasonCodeMustMatchStateAndExpiredRequiresPaymentTimeout() {
+        var created = order();
+        var customerCancelled = Optional.of(OrderReasonCode.CUSTOMER_CANCELLED);
+        assertThatThrownBy(() -> new Order(created.id(), OrderState.CREATED, created.createdAt(),
+                Optional.empty(), Optional.empty(), customerCancelled, created.items(), 0))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new Order(created.id(), OrderState.PENDING_PAYMENT, created.createdAt(),
+                Optional.empty(), Optional.empty(), customerCancelled, created.items(), 0))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new Order(created.id(), OrderState.CONFIRMED, created.createdAt(),
+                Optional.of(created.createdAt()), Optional.empty(), customerCancelled, created.items(), 0))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new Order(created.id(), OrderState.EXPIRED, created.createdAt(),
+                Optional.empty(), Optional.empty(), Optional.empty(), created.items(), 0))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new Order(created.id(), OrderState.EXPIRED, created.createdAt(),
+                Optional.empty(), Optional.empty(), customerCancelled, created.items(), 0))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test void nilSkuIdIsTypedFailureAndNormalUuidRemainsValid() {
+        var nil = new UUID(0L, 0L);
+        assertThatThrownBy(() -> new SkuId(nil))
+                .isInstanceOf(DomainFailure.InvalidSkuId.class)
+                .hasMessage("Invalid SKU identifier.");
+        assertThat(new SkuId(UUID.randomUUID()).value()).isNotEqualTo(nil);
     }
 }
