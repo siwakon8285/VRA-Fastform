@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: vra-backend
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        default_schema: vra
+        jdbc:
+          time_zone: UTC
+
+  sql:
+    init:
+      mode: never
+
+vra:
+  database:
+    url: ${VRA_RUNTIME_DB_URL}
+    username: ${VRA_RUNTIME_DB_USERNAME}
+    password: ${VRA_RUNTIME_DB_PASSWORD}
