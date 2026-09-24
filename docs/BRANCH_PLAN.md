@@ -415,7 +415,8 @@ Next planned:
 ```text
 02 — poc/02-concurrency-idempotency
 Status: PLANNED
-Branch-specific authority: NOT YET FROZEN
+Branch-specific authority: validation/poc-02/SHARED_SPEC.md (FROZEN)
+Implementation plan: NOT YET APPROVED
 ```
 
 Before POC-02 implementation:
