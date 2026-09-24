@@ -42,7 +42,8 @@ Historical validation evidence:
 - [TESTING.md](docs/TESTING.md) — วิธีพิสูจน์ correctness, concurrency, security, recovery และ performance
 - [OPERATIONS.md](docs/OPERATIONS.md) — deployment, migration, observability, backup, restore, recovery และ runbooks
 - [BRAND.md](docs/BRAND.md) — brand identity, UI principles, accessibility และ motion direction
-- [ROADMAP.md](docs/ROADMAP.md) — ลำดับ validation และ implementation ของ VRA
+- [ROADMAP.md](docs/ROADMAP.md) — ลำดับ phase และทิศทางการพัฒนาระดับระบบ
+- [BRANCH_PLAN.md](docs/BRANCH_PLAN.md) — execution map ระดับ Git branch, scope, dependency และ exit gate
 - [Architecture Decision Records](docs/adr/README.md) — ประวัติและเหตุผลของ architectural decisions
 
 เมื่อ code และ canonical documentation ขัดกัน ต้อง review ความขัดแย้งอย่าง explicit ห้ามแก้ documentation ให้ตาม implementation โดยอัตโนมัติ

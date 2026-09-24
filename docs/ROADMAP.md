@@ -1603,6 +1603,10 @@ Git Checkpoint
 
 ## 63. Branch Strategy
 
+`docs/BRANCH_PLAN.md` เป็น execution map ระดับ branch สำหรับ scope, dependency, status และ exit gate
+
+`ROADMAP.md` ยังคงเป็น authority สำหรับ strategic phase/order; ห้าม copy รายละเอียด branch ทั้งหมดกลับมาไว้ที่นี่จนเกิด duplicated authority
+
 Validation work ใช้ branch ที่สื่อความหมาย เช่น:
 
 ```text
