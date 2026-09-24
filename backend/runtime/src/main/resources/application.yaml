@@ -21,3 +21,23 @@ vra:
     url: ${VRA_RUNTIME_DB_URL}
     username: ${VRA_RUNTIME_DB_USERNAME}
     password: ${VRA_RUNTIME_DB_PASSWORD}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health"
+
+  endpoint:
+    health:
+      show-details: "never"
+
+      probes:
+        enabled: true
+
+      group:
+        liveness:
+          include: "livenessState"
+
+        readiness:
+          include: "readinessState,db"
