@@ -153,7 +153,7 @@ milestone/NN-name
 
 | ID | Branch | Status | Scope | Depends on | Exit gate |
 |---:|---|---|---|---|---|
-| 01 | `poc/01-transactional-core` | **IN PROGRESS** | Java/Spring/PostgreSQL production-candidate foundation, Gradle/module boundary, Flyway, runtime/migrator roles, transaction/persistence, health/readiness, error contract, Testcontainers/architecture tests | Canonical docs baseline + ADR-001 | POC-01 evidence + independent review ผ่าน |
+| 01 | `poc/01-transactional-core` | **REVIEW** | Java/Spring/PostgreSQL production-candidate foundation, Gradle/module boundary, Flyway, runtime/migrator roles, transaction/persistence, health/readiness, error contract, Testcontainers/architecture tests | Canonical docs baseline + ADR-001 | POC-01 evidence + independent review ผ่าน |
 | 02 | `poc/02-concurrency-idempotency` | PLANNED | inventory concurrency, idempotency semantics, duplicate/concurrent commands, optimistic concurrency; stock=1/500 proof | 01 | correctness under concurrency proven |
 | 03 | `poc/03-outbox-recovery` | PLANNED | transactional outbox, worker claiming, inbox/dedupe, retry/backoff, dead-letter/reconciliation, crash recovery | 02 | async work/recovery semantics proven |
 | 04 | `poc/04-security-auth` | PLANNED | OIDC/OAuth boundary, account identity mapping, browser session/BFF, CSRF, privileged MFA/step-up, authorization, workload identity, DB least-privilege hardening, secrets, webhook security, audit | 03 | trust boundaries/security gate proven |
@@ -405,7 +405,7 @@ Current:
 
 ```text
 01 — poc/01-transactional-core
-Status: IN PROGRESS
+Status: REVIEW
 ```
 
 Current branch-specific authority:
