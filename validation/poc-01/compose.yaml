@@ -1,0 +1,38 @@
+name: vra-poc01
+
+services:
+  postgres:
+    image: postgres:17.11
+    restart: "no"
+
+    environment:
+      POSTGRES_DB: vra_poc01
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_admin_password
+
+    secrets:
+      - postgres_admin_password
+
+    ports:
+      - "127.0.0.1:55433:5432"
+
+    volumes:
+      - vra_poc01_postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U postgres -d vra_poc01
+      interval: 2s
+      timeout: 3s
+      retries: 30
+      start_period: 2s
+
+    stop_grace_period: 30s
+
+secrets:
+  postgres_admin_password:
+    file: ../../.local/poc-01/postgres_admin_password
+
+volumes:
+  vra_poc01_postgres_data:
