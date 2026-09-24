@@ -420,18 +420,41 @@ POC-01 ผ่านเมื่อ:
 
 ---
 
-### 8.1 POC-02 Core Scenarios
+### 8.1 POC-02 Scope Interpretation
 
-### Inventory
+POC-02 ใช้ **Inventory Reservation** เป็น executable representative slice
+สำหรับพิสูจน์ concurrency correctness และ idempotency ตาม branch 02
+
+เหตุผล:
+
+- Inventory มี authoritative state และ transaction path ที่สร้างจาก POC-01 แล้ว
+- มี invariant ที่วัดได้ตรงไปตรงมา คือ `available >= 0`
+- สามารถพิสูจน์ stock contention, duplicate command, retry และ optimistic
+  concurrency กับ PostgreSQL จริงได้
+- ไม่ต้องสร้าง Dispatch, Refund หรือ Settlement/Payout domain แบบ placeholder
+  เพียงเพื่อให้ POC ดูครอบคลุมหลาย domain
+
+### 8.1.1 Executable Representative Proof — Inventory
 
 ```text
 stock = 1
 500 concurrent reservation attempts
-exactly 1 success
+exactly 1 successful business reservation
 available >= 0
+no duplicate committed reservation for the same idempotent operation
 ```
 
-### Dispatch
+POC-02 ต้องแยก proof ของ stock contention ออกจาก proof ของ optimistic-version
+conflict ให้ชัดเจน เพื่อไม่ให้ผล `exactly 1 success` เกิดจาก version predicate
+เพียงอย่างเดียวแล้วถูกตีความว่าเป็น stock-contention evidence
+
+### 8.1.2 Downstream Applicability — Not POC-02 Implementation Scope
+
+รูปแบบ concurrency ต่อไปนี้ยังเป็น strategic requirements ที่ต้องพิสูจน์เมื่อ
+authoritative domain ของแต่ละเรื่องถูก implement จริง แต่ **ไม่ใช่คำสั่งให้
+POC-02 สร้าง domain implementation เหล่านี้ล่วงหน้า**
+
+#### Dispatch
 
 ```text
 1 exclusive delivery responsibility
@@ -439,7 +462,7 @@ available >= 0
 exactly 1 active assignment
 ```
 
-### Refund
+#### Refund
 
 ```text
 captured amount = X
@@ -447,11 +470,15 @@ parallel refund requests
 sum(committed refund obligations) <= X
 ```
 
-### Settlement / Payout
+#### Settlement / Payout
 
 - duplicate command safe
 - one payout operation per business identity
-- UNKNOWN does not cause blind duplicate transfer
+- `UNKNOWN` does not cause blind duplicate transfer
+
+เมื่อ domain เหล่านี้ถูกพัฒนา ต้อง reuse/revalidate concurrency และ idempotency
+principles จาก POC-02 กับ invariant และ authoritative state ของ domain นั้นเอง
+ห้ามถือว่า Inventory proof เป็นหลักฐานแทน Dispatch/Refund/Settlement โดยตรง
 
 ---
 
