@@ -27,5 +27,6 @@ public class JpaReservationRepository implements ReservationRepository {
                         reservation.createdAt()
                 )
         );
+        entityManager.flush();
     }
 }
