@@ -501,14 +501,16 @@ CREATE TABLE vra.inventory_reservation_idempotency (
           AND completed_at IS NULL
         )
         OR (
-          outcome_status = 'SUCCEEDED'
+          outcome_status IS NOT NULL
+          AND outcome_status = 'SUCCEEDED'
           AND reservation_id IS NOT NULL
           AND inventory_version IS NOT NULL
           AND rejection_code IS NULL
           AND completed_at IS NOT NULL
         )
         OR (
-          outcome_status = 'REJECTED'
+          outcome_status IS NOT NULL
+          AND outcome_status = 'REJECTED'
           AND reservation_id IS NULL
           AND inventory_version IS NULL
           AND rejection_code IS NOT NULL
@@ -525,8 +527,22 @@ CREATE TABLE vra.inventory_reservation_idempotency (
 `outcome_status IS NULL` อนุญาตเฉพาะ transaction-local claim ระหว่าง transaction
 และ DB constraint บังคับให้ transient claim ไม่มี terminal payload ปะปน
 
+`inventory_reservation_idempotency_shape_ck` ต้องใช้ null-safe terminal branches
+(`outcome_status IS NOT NULL` ก่อนเทียบ `SUCCEEDED` / `REJECTED`) เพราะ PostgreSQL
+`CHECK` ถือ expression ที่ประเมินเป็น `NULL`/`UNKNOWN` ว่าไม่เป็น constraint
+violation การเขียน terminal branch เป็นเพียง `outcome_status = '...'` จึงอาจทำให้
+transient `NULL` outcome ที่มี terminal payload หลุดผ่าน SQL three-valued logic ได้
+
 POC-02 V2 รองรับ fingerprint schema version `1` เท่านั้น
 future version ต้องใช้ explicit migration
+
+required defensive migration tests ต้องพิสูจน์อย่างน้อย:
+
+- `outcome_status IS NULL` + success-shaped payload ถูก reject
+- `outcome_status IS NULL` + rejection-shaped payload ถูก reject
+- valid transient `NULL` outcome ที่ terminal payload ทั้งหมดเป็น `NULL` ถูก accept
+- valid terminal `SUCCEEDED` shape ถูก accept
+- valid terminal `REJECTED` shape ถูก accept
 
 exit tests ต้องพิสูจน์ว่าไม่มี committed row ที่ `outcome_status IS NULL`
 
