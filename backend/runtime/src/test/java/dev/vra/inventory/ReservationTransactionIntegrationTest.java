@@ -58,9 +58,9 @@ class ReservationTransactionIntegrationTest {
                     MIGRATOR_PASSWORD
             );
 
-            if (migrated != 1) {
+            if (migrated != 2) {
                 throw new IllegalStateException(
-                        "Expected exactly one migration, got " + migrated
+                        "Expected exactly two migrations, got " + migrated
                 );
             }
         } catch (Exception error) {
