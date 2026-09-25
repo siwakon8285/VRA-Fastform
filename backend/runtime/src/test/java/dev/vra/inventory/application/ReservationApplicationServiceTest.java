@@ -15,6 +15,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ReservationApplicationServiceTest {
 
@@ -29,7 +30,7 @@ class ReservationApplicationServiceTest {
         AtomicBoolean reservationCalled = new AtomicBoolean();
 
         InventoryBalanceRepository balanceRepository =
-                (key, quantity, expectedVersion) -> {
+                (key, quantity) -> {
                     balanceCalled.set(true);
                     return InventoryBalanceRepository.ReserveAttempt.reserved(1);
                 };
@@ -37,19 +38,15 @@ class ReservationApplicationServiceTest {
         ReservationRepository reservationRepository =
                 reservation -> reservationCalled.set(true);
 
-        var service = new ReservationApplicationService(
-                balanceRepository,
-                reservationRepository,
-                CLOCK
-        );
+        var service = new ReservationApplicationService(new ReservationExecution(
+                balanceRepository, reservationRepository, CLOCK
+        ));
 
         var error = assertThrows(
                 ReservationFailureException.class,
                 () -> service.reserve(
                         new ReserveInventoryCommand(
-                                UUID.randomUUID(),
                                 key(StockStatus.AVAILABLE),
-                                0,
                                 0
                         )
                 )
@@ -64,33 +61,31 @@ class ReservationApplicationServiceTest {
     }
 
     @Test
-    void quarantinedInventoryIsRejectedBeforePersistence() {
+    void quarantinedInventoryIsRejectedByAuthoritativeExecution() {
         AtomicBoolean balanceCalled = new AtomicBoolean();
         AtomicBoolean reservationCalled = new AtomicBoolean();
 
         InventoryBalanceRepository balanceRepository =
-                (key, quantity, expectedVersion) -> {
+                (key, quantity) -> {
                     balanceCalled.set(true);
-                    return InventoryBalanceRepository.ReserveAttempt.reserved(1);
+                    return InventoryBalanceRepository.ReserveAttempt.rejected(
+                            InventoryBalanceRepository.ReserveStatus.NOT_RESERVABLE
+                    );
                 };
 
         ReservationRepository reservationRepository =
                 reservation -> reservationCalled.set(true);
 
-        var service = new ReservationApplicationService(
-                balanceRepository,
-                reservationRepository,
-                CLOCK
-        );
+        var service = new ReservationApplicationService(new ReservationExecution(
+                balanceRepository, reservationRepository, CLOCK
+        ));
 
         var error = assertThrows(
                 ReservationFailureException.class,
                 () -> service.reserve(
                         new ReserveInventoryCommand(
-                                UUID.randomUUID(),
                                 key(StockStatus.QUARANTINED),
-                                1,
-                                0
+                                1
                         )
                 )
         );
@@ -99,7 +94,7 @@ class ReservationApplicationServiceTest {
                 ReservationFailureCode.INVENTORY_NOT_RESERVABLE,
                 error.code()
         );
-        assertFalse(balanceCalled.get());
+        assertTrue(balanceCalled.get());
         assertFalse(reservationCalled.get());
     }
 

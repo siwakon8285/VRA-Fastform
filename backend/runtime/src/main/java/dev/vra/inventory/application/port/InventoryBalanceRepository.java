@@ -6,16 +6,14 @@ public interface InventoryBalanceRepository {
 
     ReserveAttempt reserve(
             InventoryKey inventoryKey,
-            long quantity,
-            long expectedVersion
+            long quantity
     );
 
     enum ReserveStatus {
         RESERVED,
         NOT_FOUND,
         NOT_RESERVABLE,
-        INSUFFICIENT_STOCK,
-        VERSION_CONFLICT
+        INSUFFICIENT_STOCK
     }
 
     record ReserveAttempt(

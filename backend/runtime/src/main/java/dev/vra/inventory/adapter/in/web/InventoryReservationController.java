@@ -1,7 +1,5 @@
 package dev.vra.inventory.adapter.in.web;
 
-import java.util.UUID;
-
 import dev.vra.inventory.application.ReservationApplicationService;
 import dev.vra.inventory.application.ReserveInventoryCommand;
 import dev.vra.inventory.domain.InventoryKey;
@@ -35,15 +33,13 @@ public class InventoryReservationController {
     ) {
         var result = reservationApplicationService.reserve(
                 new ReserveInventoryCommand(
-                        UUID.randomUUID(),
                         new InventoryKey(
                                 request.skuId(),
                                 request.ownerId(),
                                 request.locationId(),
                                 request.stockStatus()
                         ),
-                        request.quantity(),
-                        request.expectedVersion()
+                        request.quantity()
                 )
         );
 

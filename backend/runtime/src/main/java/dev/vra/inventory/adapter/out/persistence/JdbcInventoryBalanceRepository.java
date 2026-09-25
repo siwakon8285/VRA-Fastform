@@ -21,8 +21,7 @@ public class JdbcInventoryBalanceRepository
     @Override
     public ReserveAttempt reserve(
             InventoryKey inventoryKey,
-            long quantity,
-            long expectedVersion
+            long quantity
     ) {
         Optional<Long> updatedVersion = jdbcClient.sql("""
                 UPDATE vra.inventory_balance
@@ -33,7 +32,6 @@ public class JdbcInventoryBalanceRepository
                   AND location_id = :locationId
                   AND stock_status = :stockStatus
                   AND stock_status = 'AVAILABLE'
-                  AND version = :expectedVersion
                   AND on_hand - reserved >= :quantity
                 RETURNING version
                 """)
@@ -42,7 +40,6 @@ public class JdbcInventoryBalanceRepository
                 .param("ownerId", inventoryKey.ownerId())
                 .param("locationId", inventoryKey.locationId())
                 .param("stockStatus", inventoryKey.stockStatus().name())
-                .param("expectedVersion", expectedVersion)
                 .query(Long.class)
                 .optional();
 
@@ -50,22 +47,16 @@ public class JdbcInventoryBalanceRepository
             return ReserveAttempt.reserved(updatedVersion.orElseThrow());
         }
 
-        return classifyRejection(
-                inventoryKey,
-                quantity,
-                expectedVersion
-        );
+        return classifyRejection(inventoryKey, quantity);
     }
 
     private ReserveAttempt classifyRejection(
             InventoryKey inventoryKey,
-            long quantity,
-            long expectedVersion
+            long quantity
     ) {
         Optional<BalanceSnapshot> snapshot = jdbcClient.sql("""
                 SELECT on_hand,
                        reserved,
-                       version,
                        stock_status
                 FROM vra.inventory_balance
                 WHERE sku_id = :skuId
@@ -80,7 +71,6 @@ public class JdbcInventoryBalanceRepository
                 .query((resultSet, rowNumber) -> new BalanceSnapshot(
                         resultSet.getLong("on_hand"),
                         resultSet.getLong("reserved"),
-                        resultSet.getLong("version"),
                         StockStatus.valueOf(resultSet.getString("stock_status"))
                 ))
                 .optional();
@@ -95,24 +85,18 @@ public class JdbcInventoryBalanceRepository
             return ReserveAttempt.rejected(ReserveStatus.NOT_RESERVABLE);
         }
 
-        if (balance.version() != expectedVersion) {
-            return ReserveAttempt.rejected(ReserveStatus.VERSION_CONFLICT);
-        }
-
         if (balance.onHand() - balance.reserved() < quantity) {
             return ReserveAttempt.rejected(ReserveStatus.INSUFFICIENT_STOCK);
         }
 
-        // A concurrent change can make the write miss even if the follow-up
-        // snapshot no longer explains the original failure. POC-02 owns
-        // contention semantics; surface this conservatively as a version conflict.
-        return ReserveAttempt.rejected(ReserveStatus.VERSION_CONFLICT);
+        throw new IllegalStateException(
+                "Missed reservation write could not be classified from authoritative inventory state"
+        );
     }
 
     private record BalanceSnapshot(
             long onHand,
             long reserved,
-            long version,
             StockStatus stockStatus
     ) {
     }

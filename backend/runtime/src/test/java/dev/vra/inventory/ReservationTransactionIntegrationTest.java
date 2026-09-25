@@ -97,41 +97,32 @@ class ReservationTransactionIntegrationTest {
     @Test
     void reservesInventoryAndPersistsReservationInOneTransaction() {
         InventoryKey key = newKey(StockStatus.AVAILABLE);
-        UUID reservationId = UUID.randomUUID();
-
         seedBalance(key, 10, 0, 0);
 
         var result = reservationApplicationService.reserve(
                 new ReserveInventoryCommand(
-                        reservationId,
                         key,
-                        3,
-                        0
+                        3
                 )
         );
 
-        assertEquals(reservationId, result.reservationId());
         assertEquals(1, result.inventoryVersion());
 
         assertBalance(key, 10, 3, 1);
-        assertReservation(reservationId, 3);
+        assertReservation(result.reservationId(), 3);
     }
 
     @Test
     void insufficientStockDoesNotCreateReservationOrChangeBalance() {
         InventoryKey key = newKey(StockStatus.AVAILABLE);
-        UUID reservationId = UUID.randomUUID();
-
         seedBalance(key, 2, 0, 0);
 
         var error = assertThrows(
                 ReservationFailureException.class,
                 () -> reservationApplicationService.reserve(
                         new ReserveInventoryCommand(
-                                reservationId,
                                 key,
-                                3,
-                                0
+                                3
                         )
                 )
         );
@@ -142,24 +133,20 @@ class ReservationTransactionIntegrationTest {
         );
 
         assertBalance(key, 2, 0, 0);
-        assertReservationAbsent(reservationId);
+        assertReservationCount(key, 0);
     }
 
     @Test
     void quarantinedInventoryIsNotReservable() {
         InventoryKey key = newKey(StockStatus.QUARANTINED);
-        UUID reservationId = UUID.randomUUID();
-
         seedBalance(key, 10, 0, 0);
 
         var error = assertThrows(
                 ReservationFailureException.class,
                 () -> reservationApplicationService.reserve(
                         new ReserveInventoryCommand(
-                                reservationId,
                                 key,
-                                1,
-                                0
+                                1
                         )
                 )
         );
@@ -170,7 +157,7 @@ class ReservationTransactionIntegrationTest {
         );
 
         assertBalance(key, 10, 0, 0);
-        assertReservationAbsent(reservationId);
+        assertReservationCount(key, 0);
     }
 
     @Test
@@ -208,10 +195,8 @@ class ReservationTransactionIntegrationTest {
 
         reservationApplicationService.reserve(
                 new ReserveInventoryCommand(
-                        UUID.randomUUID(),
                         target,
-                        4,
-                        0
+                        4
                 )
         );
 
@@ -221,31 +206,15 @@ class ReservationTransactionIntegrationTest {
     }
 
     @Test
-    void optimisticVersionConflictDoesNotMutateState() {
+    void staleOptimisticCompareAndSwapDoesNotMutateState() {
         InventoryKey key = newKey(StockStatus.AVAILABLE);
-        UUID reservationId = UUID.randomUUID();
+        seedBalance(key, 10, 2, 10);
 
-        seedBalance(key, 10, 2, 5);
+        assertEquals(1, conditionalVersionUpdate(key, 10));
+        assertEquals(0, conditionalVersionUpdate(key, 10));
 
-        var error = assertThrows(
-                ReservationFailureException.class,
-                () -> reservationApplicationService.reserve(
-                        new ReserveInventoryCommand(
-                                reservationId,
-                                key,
-                                1,
-                                4
-                        )
-                )
-        );
-
-        assertEquals(
-                ReservationFailureCode.VERSION_CONFLICT,
-                error.code()
-        );
-
-        assertBalance(key, 10, 2, 5);
-        assertReservationAbsent(reservationId);
+        assertBalance(key, 10, 2, 11);
+        assertReservationCount(key, 0);
     }
 
     @Test
@@ -288,29 +257,69 @@ class ReservationTransactionIntegrationTest {
     @Test
     void reservationInsertFailureRollsBackPriorJdbcInventoryUpdate() {
         InventoryKey key = newKey(StockStatus.AVAILABLE);
-        UUID duplicateReservationId = UUID.randomUUID();
-
         seedBalance(key, 10, 0, 0);
-        seedReservationAsOwner(
-                duplicateReservationId,
-                key,
-                1
-        );
+        addReservationInsertFailureConstraint(key);
+        try {
+            assertThrows(
+                    DataIntegrityViolationException.class,
+                    () -> reservationApplicationService.reserve(
+                            new ReserveInventoryCommand(key, 2)
+                    )
+            );
 
-        assertThrows(
-                DataIntegrityViolationException.class,
-                () -> reservationApplicationService.reserve(
-                        new ReserveInventoryCommand(
-                                duplicateReservationId,
-                                key,
-                                2,
-                                0
-                        )
-                )
-        );
+            assertBalance(key, 10, 0, 0);
+            assertReservationCount(key, 0);
+        } finally {
+            dropReservationInsertFailureConstraint();
+        }
+    }
 
-        assertBalance(key, 10, 0, 0);
-        assertReservation(duplicateReservationId, 1);
+    private static int conditionalVersionUpdate(
+            InventoryKey key,
+            long expectedVersion
+    ) {
+        try (Connection connection = adminConnection();
+             PreparedStatement statement = connection.prepareStatement("""
+                     UPDATE vra.inventory_balance
+                     SET version = version + 1
+                     WHERE sku_id = ?
+                       AND owner_id = ?
+                       AND location_id = ?
+                       AND stock_status = ?
+                       AND version = ?
+                     """)) {
+            statement.setObject(1, key.skuId());
+            statement.setObject(2, key.ownerId());
+            statement.setObject(3, key.locationId());
+            statement.setString(4, key.stockStatus().name());
+            statement.setLong(5, expectedVersion);
+            return statement.executeUpdate();
+        } catch (SQLException error) {
+            throw new AssertionError(error);
+        }
+    }
+
+    private static void addReservationInsertFailureConstraint(InventoryKey key) {
+        asOwner(connection -> {
+            try (Statement statement = connection.createStatement()) {
+                statement.execute("""
+                        ALTER TABLE vra.inventory_reservation
+                        ADD CONSTRAINT reservation_insert_failure_test
+                        CHECK (sku_id <> '%s'::uuid)
+                        """.formatted(key.skuId()));
+            }
+        });
+    }
+
+    private static void dropReservationInsertFailureConstraint() {
+        asOwner(connection -> {
+            try (Statement statement = connection.createStatement()) {
+                statement.execute("""
+                        ALTER TABLE vra.inventory_reservation
+                        DROP CONSTRAINT reservation_insert_failure_test
+                        """);
+            }
+        });
     }
 
     private static void bootstrapRolesAndSchema() throws SQLException {
@@ -507,37 +516,6 @@ class ReservationTransactionIntegrationTest {
         });
     }
 
-    private static void seedReservationAsOwner(
-            UUID reservationId,
-            InventoryKey key,
-            long quantity
-    ) {
-        asOwner(connection -> {
-            try (PreparedStatement statement = connection.prepareStatement("""
-                    INSERT INTO vra.inventory_reservation (
-                        reservation_id,
-                        sku_id,
-                        owner_id,
-                        location_id,
-                        stock_status,
-                        quantity,
-                        created_at
-                    )
-                    VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
-                    """)) {
-
-                statement.setObject(1, reservationId);
-                statement.setObject(2, key.skuId());
-                statement.setObject(3, key.ownerId());
-                statement.setObject(4, key.locationId());
-                statement.setString(5, key.stockStatus().name());
-                statement.setLong(6, quantity);
-
-                assertEquals(1, statement.executeUpdate());
-            }
-        });
-    }
-
     private static void assertBalance(
             InventoryKey key,
             long expectedOnHand,
@@ -595,19 +573,25 @@ class ReservationTransactionIntegrationTest {
         }
     }
 
-    private static void assertReservationAbsent(UUID reservationId) {
+    private static void assertReservationCount(InventoryKey key, long expectedCount) {
         try (Connection connection = adminConnection();
              PreparedStatement statement = connection.prepareStatement("""
                      SELECT COUNT(*)
                      FROM vra.inventory_reservation
-                     WHERE reservation_id = ?
+                     WHERE sku_id = ?
+                       AND owner_id = ?
+                       AND location_id = ?
+                       AND stock_status = ?
                      """)) {
 
-            statement.setObject(1, reservationId);
+            statement.setObject(1, key.skuId());
+            statement.setObject(2, key.ownerId());
+            statement.setObject(3, key.locationId());
+            statement.setString(4, key.stockStatus().name());
 
             try (ResultSet result = statement.executeQuery()) {
                 assertTrue(result.next());
-                assertEquals(0L, result.getLong(1));
+                assertEquals(expectedCount, result.getLong(1));
             }
         } catch (SQLException error) {
             throw new AssertionError(error);

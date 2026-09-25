@@ -94,7 +94,6 @@ class ReservationHttpPostgresIntegrationTest {
                 ids,
                 "AVAILABLE",
                 3,
-                0,
                 clientRequestId.toString()
         );
 
@@ -145,7 +144,6 @@ class ReservationHttpPostgresIntegrationTest {
                 ids,
                 "AVAILABLE",
                 3,
-                0,
                 null
         );
 
@@ -184,7 +182,6 @@ class ReservationHttpPostgresIntegrationTest {
                 ids,
                 "AVAILABLE",
                 1,
-                0,
                 null
         );
 
@@ -196,11 +193,40 @@ class ReservationHttpPostgresIntegrationTest {
         );
     }
 
+    @Test
+    void realHttpRejectsLegacyExpectedVersionWithoutMutation() throws Exception {
+        InventoryIds ids = InventoryIds.random();
+        seedBalance(ids, "AVAILABLE", 10, 2, 7);
+        assertBalance(ids, "AVAILABLE", 10, 2, 7);
+        assertReservationCount(ids, 0);
+
+        String body = """
+                {
+                  "skuId": "%s",
+                  "ownerId": "%s",
+                  "locationId": "%s",
+                  "stockStatus": "AVAILABLE",
+                  "quantity": 3,
+                  "expectedVersion": 7
+                }
+                """.formatted(ids.skuId(), ids.ownerId(), ids.locationId());
+        HttpResponse<String> response = postJson(body, "client-controlled-value");
+
+        assertEquals(400, response.statusCode(), response.body());
+        assertEquals("REQUEST_INVALID", JsonPath.read(response.body(), "$.code"));
+        assertEquals("Invalid request", JsonPath.read(response.body(), "$.message"));
+        String requestId = response.headers().firstValue("X-Request-Id").orElseThrow();
+        UUID.fromString(requestId);
+        assertNotEquals("client-controlled-value", requestId);
+        assertEquals(requestId, JsonPath.read(response.body(), "$.request_id"));
+        assertBalance(ids, "AVAILABLE", 10, 2, 7);
+        assertReservationCount(ids, 0);
+    }
+
     private HttpResponse<String> postReservation(
             InventoryIds ids,
             String stockStatus,
             long quantity,
-            long expectedVersion,
             String suppliedRequestId
     ) throws Exception {
         String body = """
@@ -209,18 +235,21 @@ class ReservationHttpPostgresIntegrationTest {
                   "ownerId": "%s",
                   "locationId": "%s",
                   "stockStatus": "%s",
-                  "quantity": %d,
-                  "expectedVersion": %d
+                  "quantity": %d
                 }
                 """.formatted(
                 ids.skuId(),
                 ids.ownerId(),
                 ids.locationId(),
                 stockStatus,
-                quantity,
-                expectedVersion
+                quantity
         );
 
+        return postJson(body, suppliedRequestId);
+    }
+
+    private HttpResponse<String> postJson(String body, String suppliedRequestId)
+            throws Exception {
         HttpRequest.Builder request = HttpRequest.newBuilder()
                 .uri(URI.create(
                         "http://127.0.0.1:"

@@ -134,11 +134,6 @@ public class GlobalApiExceptionHandler {
                     "INVENTORY_INSUFFICIENT_STOCK",
                     "Insufficient stock"
             );
-            case VERSION_CONFLICT -> new ErrorMapping(
-                    HttpStatus.CONFLICT,
-                    "INVENTORY_VERSION_CONFLICT",
-                    "Inventory version conflict"
-            );
         };
     }
 

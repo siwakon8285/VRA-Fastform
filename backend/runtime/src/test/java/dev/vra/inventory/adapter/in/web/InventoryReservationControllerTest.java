@@ -29,6 +29,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -46,6 +47,8 @@ class InventoryReservationControllerTest {
             UUID.fromString("00000000-0000-0000-0000-000000000201");
     private static final UUID LOCATION_ID =
             UUID.fromString("00000000-0000-0000-0000-000000000301");
+    private static final UUID RESERVATION_ID =
+            UUID.fromString("00000000-0000-0000-0000-000000000401");
 
     @Autowired
     private MockMvc mockMvc;
@@ -58,15 +61,7 @@ class InventoryReservationControllerTest {
             CapturedOutput output
     ) throws Exception {
         when(reservationApplicationService.reserve(any()))
-                .thenAnswer(invocation -> {
-                    ReserveInventoryCommand command =
-                            invocation.getArgument(0);
-
-                    return new ReservationResult(
-                            command.reservationId(),
-                            1
-                    );
-                });
+                .thenReturn(new ReservationResult(RESERVATION_ID, 1));
 
         var result = mockMvc.perform(
                         post("/api/v1/inventory/reservations")
@@ -106,7 +101,6 @@ class InventoryReservationControllerTest {
 
         ReserveInventoryCommand command = commandCaptor.getValue();
 
-        assertNotNull(command.reservationId());
         assertEquals(SKU_ID, command.inventoryKey().skuId());
         assertEquals(OWNER_ID, command.inventoryKey().ownerId());
         assertEquals(LOCATION_ID, command.inventoryKey().locationId());
@@ -115,7 +109,6 @@ class InventoryReservationControllerTest {
                 command.inventoryKey().stockStatus()
         );
         assertEquals(3, command.quantity());
-        assertEquals(7, command.expectedVersion());
 
         String completionLog = findStructuredLog(
                 output,
@@ -156,8 +149,7 @@ class InventoryReservationControllerTest {
                                           "ownerId": "%s",
                                           "locationId": "%s",
                                           "stockStatus": "AVAILABLE",
-                                          "quantity": 0,
-                                          "expectedVersion": 0
+                                          "quantity": 0
                                         }
                                         """.formatted(
                                         SKU_ID,
@@ -169,6 +161,36 @@ class InventoryReservationControllerTest {
                 .andExpect(jsonPath("$.code").value("REQUEST_INVALID"))
                 .andExpect(jsonPath("$.message").value("Invalid request"))
                 .andExpect(jsonPath("$.request_id").isString());
+    }
+
+    @Test
+    void rejectsLegacyExpectedVersionBeforeApplicationService() throws Exception {
+        var result = mockMvc.perform(
+                        post("/api/v1/inventory/reservations")
+                                .header(RequestIdFilter.HEADER_NAME, "client-controlled-value")
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .content(validRequest().replace(
+                                        "\"quantity\": 3",
+                                        "\"quantity\": 3, \"expectedVersion\": 7"
+                                ))
+                )
+                .andExpect(status().isBadRequest())
+                .andExpect(header().exists(RequestIdFilter.HEADER_NAME))
+                .andExpect(jsonPath("$.code").value("REQUEST_INVALID"))
+                .andExpect(jsonPath("$.message").value("Invalid request"))
+                .andExpect(jsonPath("$.request_id").isString())
+                .andReturn();
+
+        String requestId = result.getResponse().getHeader(RequestIdFilter.HEADER_NAME);
+        assertNotNull(requestId);
+        assertFalse(requestId.isBlank());
+        UUID.fromString(requestId);
+        assertNotEquals("client-controlled-value", requestId);
+        assertEquals(requestId, JsonPath.read(
+                result.getResponse().getContentAsString(), "$.request_id"
+        ));
+
+        verifyNoInteractions(reservationApplicationService);
     }
 
     @Test
@@ -229,16 +251,6 @@ class InventoryReservationControllerTest {
                 409,
                 "INVENTORY_NOT_RESERVABLE",
                 "Inventory is not reservable"
-        );
-    }
-
-    @Test
-    void mapsVersionConflictToStableConflictError() throws Exception {
-        assertDomainFailure(
-                ReservationFailureCode.VERSION_CONFLICT,
-                409,
-                "INVENTORY_VERSION_CONFLICT",
-                "Inventory version conflict"
         );
     }
 
@@ -400,8 +412,7 @@ class InventoryReservationControllerTest {
                   "ownerId": "%s",
                   "locationId": "%s",
                   "stockStatus": "AVAILABLE",
-                  "quantity": 3,
-                  "expectedVersion": 7
+                  "quantity": 3
                 }
                 """.formatted(
                 SKU_ID,
