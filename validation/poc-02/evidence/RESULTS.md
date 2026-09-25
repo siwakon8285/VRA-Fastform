@@ -1,6 +1,6 @@
 # POC-02 Evidence Results
 
-Status: GATE 7 FINAL REVIEW PASS — pending Gate 8 closure / ADR decision
+Status: CLOSED — Gate 8 closure / ADR decision complete
 Date: 2026-09-25
 Branch: `poc/02-concurrency-idempotency`
 Evidence HEAD: `48988256b2e5c0be20868b8a32e225206ea97245`
@@ -12,8 +12,8 @@ prove PostgreSQL stock arbitration, transactional idempotency, replay, rollback,
 and concurrent behavior. The approved authorities are
 `validation/poc-02/SHARED_SPEC.md` and
 `validation/poc-02/IMPLEMENTATION_PLAN.md`. This document records the fresh
-local Gate 6 run against the HEAD above. It is evidence for Gate 7 review, not
-a closure decision.
+local Gate 6 run against the HEAD above. The later Gate 7 review and Gate 8
+closure decisions are recorded separately below.
 
 ## Validated local environment and selected dependencies
 
@@ -227,6 +227,7 @@ POC-01 database was used or modified.
 | GitHub-hosted backend CI | NOT EXECUTED |
 | Branch-protection required-check observation | NOT EXECUTED |
 | Authenticated public idempotency | NOT EXECUTED — deferred to POC-04 |
+| POC-02 live built-artifact HTTP smoke | NOT EXECUTED |
 | Persistent production database setup | NOT APPLICABLE |
 | Production capacity proof | NOT APPLICABLE |
 
@@ -256,8 +257,8 @@ idempotency binding, POC-05 observability/performance baseline, HA,
 backup/restore, or multi-region behavior. Idempotency retention/expiry remains
 deferred.
 
-The Gate 7 independent final review result is recorded below. Gate 8 determines
-closure and any canonical ADR change; neither is recorded as executed here.
+The Gate 7 independent final review and Gate 8 closure decisions are recorded
+below.
 
 ## Gate 7 independent final review
 
@@ -320,7 +321,88 @@ or more of column-level `UPDATE` privileges, stronger database transition
 enforcement, a narrower write surface, or another mechanism. POC-02 does not
 select a mechanism.
 
-Gate 7 does **not** close POC-02. Gate 8 must record closure decisions, decide
-whether POC-02 materially requires a new or revised ADR, reconcile canonical
-branch and project status, and mark POC-02 closed only after that closure
-review. No ADR is created or revised here.
+Gate 7 did **not** close POC-02. It left closure, ADR materiality, and canonical
+branch and project status for Gate 8. No ADR was created or revised at Gate 7.
+
+## Gate 8 closure / ADR decision
+
+Closure review HEAD: `a7a908cb932b141f00e98f9c50e7a287f0000a3f`
+
+Closure result: **CLOSED**
+
+Exit gate: **SATISFIED**
+
+Blocking findings: **0**
+
+Unresolved critical contradictions: **0**
+
+ADR decision: **NO NEW OR REVISED ADR REQUIRED**
+
+POC-02 validated and specialized VRA's accepted PostgreSQL, Spring transaction,
+and explicit SQL/JdbcClient foundation. It did not materially replace the
+framework boundary, transaction model, persistence strategy, migration
+responsibility, runtime/migration module topology, accepted database identity
+model, or operational architecture. PostgreSQL remains authoritative OLTP and
+the concurrency authority; correctness-critical transitions use explicit SQL
+within the accepted Spring transaction model. The database identity split
+among `vra_owner`, `vra_migrator`, and `vra_runtime` remains intact. No Redis,
+distributed lock, broker,
+service extraction, or new production public HTTP idempotency contract was
+introduced. ADR-002 explicitly left high-contention reservation correctness
+and retry/idempotency policy to later POC evidence. POC-02 provides that
+evidence without revising ADR-002's accepted foundation. No ADR-003 is created,
+and ADR-001 and ADR-002 remain unchanged.
+
+Final POC-02 decisions:
+
+1. Inventory Reservation stock arbitration uses the authoritative conditional
+   PostgreSQL stock predicate.
+2. Normal `ReserveInventory` accepts no caller `expectedVersion`.
+3. Normal `ReserveInventory` accepts no caller or controller reservation ID.
+4. Authoritative first execution generates the reservation identity; replay
+   preserves it.
+5. Optimistic concurrency remains a separate CAS and stale-write pattern,
+   outside normal stock reservation semantics.
+6. Idempotency identity is trusted actor scope plus reservation operation
+   ownership plus the opaque idempotency key; request ID is not identity.
+7. Fingerprint v1 uses deterministic SHA-256 over canonical business fields.
+8. The PostgreSQL unique `(actor_scope, idempotency_key)` claim is synchronous
+   serialization authority.
+9. Terminal `SUCCEEDED` or `REJECTED` outcome is completed in the same business
+   transaction as the first execution.
+10. A persisted terminal outcome is replayed, not re-executed.
+11. Concurrent same-key/same-payload calls have one authoritative business
+    execution and at most one business effect.
+12. Same-key conflicting payload returns `IDEMPOTENCY_KEY_REUSED`; concurrent
+    conflict binds exactly one fingerprint.
+13. Pre-validation failures do not consume an idempotency key.
+14. Infrastructure rollback leaves no partial committed claim or business
+    state. A result-loss retry resolves persisted authoritative state. Durable
+    nonterminal state fails safely instead of triggering blind execution.
+15. `actorScope` remains trusted synthetic application context in POC-02;
+    production identity binding belongs to POC-04.
+16. The idempotent transaction uses `READ COMMITTED` with PostgreSQL uniqueness
+    and atomic DML as authority, without JVM, Redis, or distributed locks.
+17. The validated POC-02 runtime grant for the idempotency table remains
+    `SELECT, INSERT, UPDATE`.
+18. Public authenticated HTTP `Idempotency-Key` binding remains deferred to
+    POC-04.
+19. Normal HTTP reservation rejects legacy `expectedVersion` and preserves
+    server-controlled `request_id` behavior.
+20. `actorScope` and `idempotencyKey` are nonblank and at most 128 Unicode code
+    points at the application boundary. POC-02 defines no public HTTP key
+    encoding contract.
+21. Idempotency retention and expiry remain deferred.
+22. Downstream Dispatch, Refund, and Payout must reuse and revalidate these
+    principles against their own authoritative invariants; Inventory evidence
+    is not direct proof for those domains.
+
+**POC-04 follow-up:** The non-blocking table-level `UPDATE` finding recorded
+in Gate 7 remains open for security and database least-privilege hardening.
+POC-04 must re-evaluate the `vra_runtime` write surface. This closure does not
+select a hardening mechanism or revise the current privilege model.
+
+Closure does not convert GitHub-hosted backend CI, branch-protection
+required-check observation, authenticated public idempotency, or a POC-02 live
+built-artifact HTTP smoke to **PASS**; each remains **NOT EXECUTED** above.
+Production capacity remains **NOT APPLICABLE**.

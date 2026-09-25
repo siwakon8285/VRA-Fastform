@@ -96,14 +96,12 @@ Modular Transactional Core
 POC-01 ปิดแล้วและ material foundation decisions ถูกบันทึกใน
 [`ADR-002`](docs/adr/ADR-002-backend-production-foundation.md)
 
-POC-02 ต้อง validate/finalize:
+POC-02 **CLOSED**: พิสูจน์ PostgreSQL concurrency และ idempotency correctness
+สำหรับ Inventory Reservation ซึ่งเป็น representative slice
+([evidence](validation/poc-02/evidence/RESULTS.md)) ผลลัพธ์ยืนยัน foundation
+ที่ยอมรับไว้ จึงไม่ต้องสร้างหรือแก้ ADR
 
-- correctness ภายใต้ inventory contention
-- idempotency semantics สำหรับ duplicate/concurrent commands
-- optimistic-concurrency behavior ภายใต้ competing writers
-- deterministic stock=1 / 500 concurrent reservation proof
-- retry/timeout behavior ที่ไม่ทำให้ invariant เสีย
-- evidence ของ lock wait, connection usage, deadlock/retry behavior ตาม scope POC-02
+Next validation target: **POC-03 — Outbox / Workers / Recovery** (PLANNED)
 
 ### Deferred Until Evidence
 
@@ -129,10 +127,15 @@ Current validation state:
 POC-01 Transactional Core / Production Foundation
 → CLOSED
 → ADR-002 accepted
-→ next: POC-02 Concurrency / Idempotency planning
+POC-02 Concurrency / Idempotency
+→ CLOSED
+→ evidence: validation/poc-02/evidence/RESULTS.md
+→ no new/revised ADR required
+Next: POC-03 Outbox / Workers / Recovery
+→ PLANNED
 ```
 
-ก่อนเริ่ม POC-02 implementation ต้อง review/freeze branch-specific specification
+ก่อนเริ่ม POC-03 implementation ต้อง review/freeze branch-specific specification
 และ verification plan ตาม [BRANCH_PLAN.md](docs/BRANCH_PLAN.md)
 
 ## Repository Governance

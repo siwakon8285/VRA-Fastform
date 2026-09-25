@@ -2,7 +2,7 @@
 
 **สถานะ:** ACTIVE — planning baseline v1
 **Authority:** `docs/ROADMAP.md` กำหนดทิศทางและ phase; เอกสารนี้กำหนด execution branch-by-branch
-**Current branch:** `poc/01-transactional-core`
+**Current branch:** `poc/02-concurrency-idempotency`
 
 ---
 
@@ -63,10 +63,10 @@ Branch ที่ยังเป็น `PROPOSED` หรือ `CONDITIONAL` ห�
 การมี slot อยู่ในไฟล์นี้ไม่ได้แปลว่า branch นั้นได้รับอนุมัติให้สร้างแล้ว
 
 ```text
-01
-= current branch
+01–02
+= CLOSED validation branches
 
-02–05
+03–05
 = planned validation sequence ตาม ROADMAP
 
 06
@@ -154,7 +154,7 @@ milestone/NN-name
 | ID | Branch | Status | Scope | Depends on | Exit gate |
 |---:|---|---|---|---|---|
 | 01 | `poc/01-transactional-core` | **CLOSED** | Java/Spring/PostgreSQL production-candidate foundation, Gradle/module boundary, Flyway, runtime/migrator roles, transaction/persistence, health/readiness, error contract, Testcontainers/architecture tests | Canonical docs baseline + ADR-001 | POC-01 evidence + independent review ผ่าน |
-| 02 | `poc/02-concurrency-idempotency` | **IN PROGRESS** | inventory concurrency, idempotency semantics, duplicate/concurrent commands, optimistic concurrency; stock=1/500 proof | 01 | correctness under concurrency proven |
+| 02 | `poc/02-concurrency-idempotency` | **CLOSED** | inventory concurrency, idempotency semantics, duplicate/concurrent commands, optimistic concurrency; stock=1/500 proof | 01 | correctness under concurrency proven |
 | 03 | `poc/03-outbox-recovery` | PLANNED | transactional outbox, worker claiming, inbox/dedupe, retry/backoff, dead-letter/reconciliation, crash recovery | 02 | async work/recovery semantics proven |
 | 04 | `poc/04-security-auth` | PLANNED | OIDC/OAuth boundary, account identity mapping, browser session/BFF, CSRF, privileged MFA/step-up, authorization, workload identity, DB least-privilege hardening, secrets, webhook security, audit | 03 | trust boundaries/security gate proven |
 | 05 | `poc/05-observability-performance` | PLANNED | logs/metrics/traces, RED/USE, correctness/freshness signals, fault tests, k6 baseline, resource/latency evidence | 04 | observability/performance/fault baseline proven |
@@ -404,32 +404,38 @@ roadmap รุ่นถัดไปควรเป็นอะไร
 Current closure:
 
 ```text
-01 — poc/01-transactional-core
+02 — poc/02-concurrency-idempotency
 Status: CLOSED
-Final review checkpoint: fd6e97a
-Decision record: docs/adr/ADR-002-backend-production-foundation.md
+Final review checkpoint: a7a908c
+Evidence: validation/poc-02/evidence/RESULTS.md
+ADR decision: no new/revised ADR required
 ```
+
+Prior closure: `01 — poc/01-transactional-core` remains CLOSED; its final
+review checkpoint was `fd6e97a`, and its material foundation decision is
+recorded in `docs/adr/ADR-002-backend-production-foundation.md`.
 
 Next planned:
 
 ```text
-02 — poc/02-concurrency-idempotency
-Status: IN PROGRESS
-Branch-specific authority: validation/poc-02/SHARED_SPEC.md (FROZEN)
-Implementation plan: validation/poc-02/IMPLEMENTATION_PLAN.md (APPROVED)
-Activation: COMPLETE — created from approved checkpoint 117dabf
+03 — poc/03-outbox-recovery
+Status: PLANNED
+Depends on: POC-02 CLOSED
 ```
 
-Before POC-02 implementation:
+POC-03 has not started. Before its implementation, follow the normal
+governance sequence:
 
 ```text
-confirm POC-01 closure checkpoint
-→ review POC-02 scope against canonical docs + ADR-002
-→ create/review branch-specific POC-02 specification
-→ freeze POC-02 specification
-→ perform read-only repository audit
-→ approve exact implementation/verification plan
-→ only then begin POC-02 implementation
+read-only repository / canonical-scope audit
+→ branch-specific spec draft
+→ independent spec review
+→ freeze
+→ exact implementation plan
+→ independent plan review
+→ approval checkpoint
+→ user branch activation
+→ implementation
 ```
 
 ---
