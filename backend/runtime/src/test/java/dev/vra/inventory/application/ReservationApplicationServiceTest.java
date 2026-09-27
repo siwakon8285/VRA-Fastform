@@ -39,7 +39,7 @@ class ReservationApplicationServiceTest {
                 reservation -> reservationCalled.set(true);
 
         var service = new ReservationApplicationService(new ReservationExecution(
-                balanceRepository, reservationRepository, CLOCK
+                balanceRepository, reservationRepository, reservation -> {}, CLOCK
         ));
 
         var error = assertThrows(
@@ -77,7 +77,7 @@ class ReservationApplicationServiceTest {
                 reservation -> reservationCalled.set(true);
 
         var service = new ReservationApplicationService(new ReservationExecution(
-                balanceRepository, reservationRepository, CLOCK
+                balanceRepository, reservationRepository, reservation -> {}, CLOCK
         ));
 
         var error = assertThrows(

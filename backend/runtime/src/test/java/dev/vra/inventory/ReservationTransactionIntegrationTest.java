@@ -1,5 +1,7 @@
 package dev.vra.inventory;
 
+import dev.vra.async.AsyncRoleBootstrap;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -52,15 +54,16 @@ class ReservationTransactionIntegrationTest {
 
         try {
             bootstrapRolesAndSchema();
+            AsyncRoleBootstrap.run(POSTGRES);
             int migrated = new MigrationRunner().migrate(
                     POSTGRES.getJdbcUrl(),
                     MIGRATOR_USER,
                     MIGRATOR_PASSWORD
             );
 
-            if (migrated != 2) {
+            if (migrated != 3) {
                 throw new IllegalStateException(
-                        "Expected exactly two migrations, got " + migrated
+                        "Expected exactly three migrations, got " + migrated
                 );
             }
         } catch (Exception error) {

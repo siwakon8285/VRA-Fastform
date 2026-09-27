@@ -5,6 +5,7 @@ import java.time.Instant;
 import java.util.UUID;
 
 import dev.vra.inventory.application.port.InventoryBalanceRepository;
+import dev.vra.inventory.application.port.ReservationOutboxPort;
 import dev.vra.inventory.application.port.ReservationRepository;
 import dev.vra.inventory.domain.InventoryKey;
 import dev.vra.inventory.domain.InventoryReservation;
@@ -15,15 +16,18 @@ public class ReservationExecution {
 
     private final InventoryBalanceRepository inventoryBalanceRepository;
     private final ReservationRepository reservationRepository;
+    private final ReservationOutboxPort reservationOutboxPort;
     private final Clock clock;
 
     public ReservationExecution(
             InventoryBalanceRepository inventoryBalanceRepository,
             ReservationRepository reservationRepository,
+            ReservationOutboxPort reservationOutboxPort,
             Clock clock
     ) {
         this.inventoryBalanceRepository = inventoryBalanceRepository;
         this.reservationRepository = reservationRepository;
+        this.reservationOutboxPort = reservationOutboxPort;
         this.clock = clock;
     }
 
@@ -43,12 +47,16 @@ public class ReservationExecution {
         }
 
         UUID reservationId = UUID.randomUUID();
-        reservationRepository.save(new InventoryReservation(
+        Instant createdAt = Instant.now(clock);
+        InventoryReservation reservation = new InventoryReservation(
                 reservationId,
                 inventoryKey,
                 quantity,
-                Instant.now(clock)
-        ));
+                createdAt
+        );
+        // The repository flushes the authoritative row before the DB function reads it.
+        reservationRepository.save(reservation);
+        reservationOutboxPort.publish(reservation);
 
         return new ReservationDecision.Succeeded(
                 reservationId,
