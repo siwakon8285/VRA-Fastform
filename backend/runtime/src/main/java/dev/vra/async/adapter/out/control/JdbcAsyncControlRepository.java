@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
-/** Operator-only guarded replay; no table DML or batch control surface. */
+/** Operator-only guarded controls; no table DML or batch control surface. */
 @Repository
 public class JdbcAsyncControlRepository implements AsyncControlPort {
     private final JdbcClient jdbc;
@@ -26,6 +26,30 @@ public class JdbcAsyncControlRepository implements AsyncControlPort {
             throw new IllegalArgumentException("Action reference must be 1..128 nonblank characters");
         }
         return jdbc.sql("SELECT vra.async_control_replay(:event,'CONTROLLED_REPLAY',:ref)")
+                .param("event", eventId).param("ref", actionRef)
+                .query(Boolean.class).single();
+    }
+
+    @Override
+    @Transactional(isolation = Isolation.READ_COMMITTED)
+    public boolean resume(UUID caseId, String actionRef) {
+        Objects.requireNonNull(caseId, "caseId");
+        if (actionRef == null || actionRef.isBlank() || actionRef.length() > 128) {
+            throw new IllegalArgumentException("Action reference must be 1..128 nonblank characters");
+        }
+        return jdbc.sql("SELECT vra.async_control_resume(:caseId,'CONTROLLED_RESUME',:ref)")
+                .param("caseId", caseId).param("ref", actionRef)
+                .query(Boolean.class).single();
+    }
+
+    @Override
+    @Transactional(isolation = Isolation.READ_COMMITTED)
+    public boolean close(UUID eventId, String actionRef) {
+        Objects.requireNonNull(eventId, "eventId");
+        if (actionRef == null || actionRef.isBlank() || actionRef.length() > 128) {
+            throw new IllegalArgumentException("Action reference must be 1..128 nonblank characters");
+        }
+        return jdbc.sql("SELECT vra.async_control_close(:event,'CONTROLLED_CLOSE',:ref)")
                 .param("event", eventId).param("ref", actionRef)
                 .query(Boolean.class).single();
     }
