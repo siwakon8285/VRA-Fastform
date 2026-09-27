@@ -695,6 +695,7 @@ class ReconciliationIntegrationTest {
         Map<String, String> settings = Map.of("VRA_ASYNC_DB_URL", VRA.getJdbcUrl(),
                 "VRA_ASYNC_DB_USERNAME", "vra_reconciliation_worker",
                 "VRA_ASYNC_DB_PASSWORD", ASYNC_PASSWORD,
+                "VRA_ASYNC_VALIDATION_MODE", "true",
                 "VRA_SIMULATOR_URL", simulatorUri.toString());
         try (AnnotationConfigApplicationContext mode = ReconciliationWorkerMode.start(settings)) {
             assertEquals("vra_reconciliation_worker", mode.getBean(JdbcClient.class)

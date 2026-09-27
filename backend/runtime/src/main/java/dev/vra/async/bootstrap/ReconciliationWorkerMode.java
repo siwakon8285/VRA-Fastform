@@ -6,9 +6,12 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.Duration;
 import java.util.Map;
+import java.util.List;
 import java.util.Objects;
+import java.util.Properties;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Consumer;
+import java.util.UUID;
 
 import javax.sql.DataSource;
 
@@ -43,6 +46,9 @@ public final class ReconciliationWorkerMode {
             throw new IllegalStateException("RECONCILER requires the reconciliation worker identity");
         }
         String simulatorUrl = environment.get("VRA_SIMULATOR_URL");
+        if (!"true".equals(environment.get("VRA_ASYNC_VALIDATION_MODE"))) {
+            throw new IllegalArgumentException("RECONCILER simulator requires explicit validation mode");
+        }
         URI simulator = simulatorUrl == null ? null : URI.create(simulatorUrl);
         if (simulator == null || !"http".equals(simulator.getScheme()) || simulator.getHost() == null) {
             throw new IllegalArgumentException("RECONCILER requires a simulator HTTP URL");
@@ -64,7 +70,12 @@ public final class ReconciliationWorkerMode {
         number(environment, "VRA_ASYNC_BATCH_SIZE", value -> tuning.setBatchSize(Integer.parseInt(value)));
         number(environment, "VRA_ASYNC_MAX_IN_FLIGHT", value -> tuning.setMaxInFlight(Integer.parseInt(value)));
         AsyncStartupValidator.validate(tuning);
-        DataSource source = new DriverManagerDataSource(database.url(), database.username(), database.password());
+        DriverManagerDataSource source = new DriverManagerDataSource(
+                database.url(), database.username(), database.password());
+        Properties driverOptions = new Properties();
+        driverOptions.setProperty("options", "-c statement_timeout="
+                + tuning.getReconciliationTimeout().toMillis());
+        source.setConnectionProperties(driverOptions);
         try (Connection connection = source.getConnection(); Statement statement = connection.createStatement();
              ResultSet row = statement.executeQuery("SELECT current_user")) {
             if (!row.next() || !"vra_reconciliation_worker".equals(row.getString(1))) {
@@ -107,8 +118,13 @@ public final class ReconciliationWorkerMode {
         context.registerBean(DataSource.class, () -> source);
         context.registerBean(JdbcClient.class, () -> JdbcClient.create(source));
         context.registerBean(PlatformTransactionManager.class, () -> new JdbcTransactionManager(source));
-        context.registerBean(ReconciliationPort.class,
+        AsyncDrainCoordinator admission = new AsyncDrainCoordinator(tuning.getMaxInFlight(),
+                "reconciliation-attempt");
+        context.registerBean("reconciliationJdbcPort", ReconciliationPort.class,
                 () -> new JdbcReconciliationRepository(context.getBean(JdbcClient.class)));
+        context.registerBean("reconciliationPort", ReconciliationPort.class,
+                () -> new DrainGatedReconciliationPort(
+                        context.getBean("reconciliationJdbcPort", ReconciliationPort.class), admission));
         context.registerBean(ExternalEffectPort.class,
                 () -> new ValidationSimulatorHttpAdapter(simulator, tuning.getReconciliationTimeout()));
         context.registerBean(ReconciliationPolicy.class, () -> new ReconciliationPolicy(
@@ -116,11 +132,13 @@ public final class ReconciliationWorkerMode {
                 tuning.getRetryBaseDelay(), tuning.getRetryMaxDelay(), tuning.getRetryJitterFraction(),
                 () -> ThreadLocalRandom.current().nextDouble(-1.0, 1.0)));
         context.registerBean(ReconciliationService.class, () -> new ReconciliationService(
-                context.getBean(ReconciliationPort.class), context.getBean(ExternalEffectPort.class),
+                context.getBean("reconciliationPort", ReconciliationPort.class),
+                context.getBean(ExternalEffectPort.class),
                 context.getBean(ReconciliationPolicy.class)));
         context.registerBean(ReconciliationLoop.class, () -> new ReconciliationLoop(
                 context.getBean(ReconciliationService.class), tuning.getReconciliationLeaseDuration(),
-                tuning.getPollInterval(), tuning.getBatchSize(), "reconciler-" + ProcessHandle.current().pid()));
+                tuning.getPollInterval(), tuning.getBatchSize(),
+                "reconciler-" + ProcessHandle.current().pid(), admission));
         try {
             context.refresh();
             return context;
@@ -132,7 +150,15 @@ public final class ReconciliationWorkerMode {
 
     public static void run(Map<String, String> environment) {
         try (AnnotationConfigApplicationContext context = start(environment)) {
-            context.getBean(ReconciliationLoop.class).run();
+            ReconciliationLoop loop = context.getBean(ReconciliationLoop.class);
+            Thread hook = new Thread(loop::drain, "reconciliation-drain");
+            Runtime.getRuntime().addShutdownHook(hook);
+            try { loop.run(); }
+            finally {
+                loop.drain();
+                try { Runtime.getRuntime().removeShutdownHook(hook); }
+                catch (IllegalStateException shuttingDown) { /* The hook owns drain during JVM exit. */ }
+            }
         }
     }
 
@@ -143,5 +169,29 @@ public final class ReconciliationWorkerMode {
     private static void number(Map<String, String> environment, String key, Consumer<String> setter) {
         String value = environment.get(key);
         if (value != null) setter.accept(value);
+    }
+
+    /** Mechanical admission gate; all Stage-G policy stays in ReconciliationService. */
+    private record DrainGatedReconciliationPort(ReconciliationPort delegate,
+            AsyncDrainCoordinator admission) implements ReconciliationPort {
+        @Override public List<Claim> claim(String workerRef, int batchSize, Duration lease) {
+            return admission.claimIfAccepting(() -> delegate.claim(workerRef, batchSize, lease), List::of);
+        }
+        @Override public DeliveryCycle readDeliveryCycle(UUID eventId) {
+            return delegate.readDeliveryCycle(eventId);
+        }
+        @Override public String waitIndeterminate(UUID caseId, UUID claimToken, Duration delay) {
+            return delegate.waitIndeterminate(caseId, claimToken, delay);
+        }
+        @Override public boolean confirmSuccess(UUID caseId, UUID claimToken) {
+            return delegate.confirmSuccess(caseId, claimToken);
+        }
+        @Override public String confirmNoEffect(UUID caseId, UUID claimToken,
+                boolean retrySafe, Duration retryDelay) {
+            return delegate.confirmNoEffect(caseId, claimToken, retrySafe, retryDelay);
+        }
+        @Override public boolean exhaust(UUID caseId, UUID claimToken) {
+            return delegate.exhaust(caseId, claimToken);
+        }
     }
 }

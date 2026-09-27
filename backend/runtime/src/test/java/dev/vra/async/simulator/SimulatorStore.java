@@ -36,6 +36,20 @@ public final class SimulatorStore {
                     + "result_code VARCHAR(32), effect_count INTEGER NOT NULL DEFAULT 0, "
                     + "CHECK ((state='PENDING' AND result_code IS NULL AND effect_count=0) OR "
                     + "(state='SUCCEEDED' AND result_code='SUCCEEDED' AND effect_count=1)))");
+            statement.execute("CREATE TABLE IF NOT EXISTS public.sim_request_history ("
+                    + "request_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,"
+                    + "operation_id UUID NOT NULL,kind VARCHAR(8) NOT NULL "
+                    + "CHECK (kind IN ('EXECUTE','OBSERVE')))");
+        }
+    }
+
+    /** Test-only durable ordering evidence; never used for effect or absence decisions. */
+    public void recordRequest(UUID operationId, String kind) throws SQLException {
+        try (Connection db = connect(); PreparedStatement insert = db.prepareStatement(
+                "INSERT INTO public.sim_request_history(operation_id,kind) VALUES (?,?)")) {
+            insert.setObject(1, operationId);
+            insert.setString(2, kind);
+            insert.executeUpdate();
         }
     }
 

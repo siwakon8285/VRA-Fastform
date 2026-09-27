@@ -75,6 +75,8 @@ public final class SimulatorHttpServer implements AutoCloseable {
                         uuid(fields.get("ownerId")), uuid(fields.get("locationId")),
                         StockStatus.valueOf(text(fields.get("stockStatus"))), quantity.longValue());
                 registration = store.register(operationId, payload);
+                try { store.recordRequest(operationId, "EXECUTE"); }
+                catch (SQLException diagnosticsUnavailable) { /* Observation semantics do not depend on test evidence. */ }
             }
             switch (registration) {
                 case CONFLICT -> send(exchange, 409, "{\"result\":\"CONFLICT\"}");
@@ -110,6 +112,8 @@ public final class SimulatorHttpServer implements AutoCloseable {
             SimulatorStore.Snapshot row;
             synchronized (admission) {
                 row = store.read(id);
+                try { store.recordRequest(id, "OBSERVE"); }
+                catch (SQLException diagnosticsUnavailable) { /* Test evidence is separate from authority. */ }
             }
             String result = row == null ? "CONFIRMED_NO_EFFECT"
                     : row.state().equals("SUCCEEDED") ? "CONFIRMED_SUCCEEDED" : "INDETERMINATE";
@@ -158,6 +162,11 @@ public final class SimulatorHttpServer implements AutoCloseable {
                 CountDownLatch latch = activeBlock.get();
                 if (latch == null) { send(exchange, 409, "{}"); return; }
                 latch.countDown();
+            }
+            case "clear" -> {
+                nextGate.set(null);
+                CountDownLatch latch = activeBlock.getAndSet(null);
+                if (latch != null) latch.countDown();
             }
             default -> { send(exchange, 404, "{}"); return; }
         }

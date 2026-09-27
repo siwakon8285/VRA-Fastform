@@ -42,6 +42,7 @@ val integrationTest = tasks.register<Test>("integrationTest") {
 
     testClassesDirs = sourceSets.test.get().output.classesDirs
     classpath = sourceSets.test.get().runtimeClasspath
+    systemProperty("vra.integrationTest.runtimeClasspath", sourceSets.test.get().runtimeClasspath.asPath)
 
     useJUnitPlatform {
         includeTags("postgres")
