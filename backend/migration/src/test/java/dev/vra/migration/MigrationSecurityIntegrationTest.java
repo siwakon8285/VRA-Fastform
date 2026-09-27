@@ -45,6 +45,7 @@ class MigrationSecurityIntegrationTest {
 
         try {
             bootstrapRolesAndSchema(postgres);
+            OutboxMigrationSecurityIntegrationTest.bootstrapAsync(postgres);
             verifyRoleAttributes(postgres);
             verifyMigratorMembership(postgres);
 
@@ -60,7 +61,7 @@ class MigrationSecurityIntegrationTest {
             MigrationRunner migrationRunner = new MigrationRunner();
 
             assertEquals(
-                    2,
+                    3,
                     migrationRunner.migrate(
                             postgres.getJdbcUrl(),
                             MIGRATOR_USER,
@@ -117,13 +118,14 @@ class MigrationSecurityIntegrationTest {
     }
 
     @Test
-    void upgradesActualVersionOneDatabaseToVersionTwo() throws Exception {
+    void upgradesActualVersionOneDatabaseThroughVersionThree() throws Exception {
         try (PostgreSQLContainer postgres = new PostgreSQLContainer("postgres:17.11")
                 .withDatabaseName(DATABASE)
                 .withUsername(ADMIN_USER)
                 .withPassword(ADMIN_PASSWORD)) {
             postgres.start();
             bootstrapRolesAndSchema(postgres);
+            OutboxMigrationSecurityIntegrationTest.bootstrapAsync(postgres);
             Flyway versionOne = Flyway.configure()
                     .dataSource(new OwnerRoleDataSource(
                             postgres.getJdbcUrl(), MIGRATOR_USER, MIGRATOR_PASSWORD))
@@ -146,7 +148,7 @@ class MigrationSecurityIntegrationTest {
             }
 
             MigrationRunner runner = new MigrationRunner();
-            assertEquals(1, runner.migrate(
+            assertEquals(2, runner.migrate(
                     postgres.getJdbcUrl(), MIGRATOR_USER, MIGRATOR_PASSWORD));
             runner.validate(postgres.getJdbcUrl(), MIGRATOR_USER, MIGRATOR_PASSWORD);
             verifyTableOwner(postgres, "inventory_reservation_idempotency", "vra_owner");
