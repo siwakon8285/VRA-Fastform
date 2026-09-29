@@ -1,6 +1,6 @@
 # POC-03 bounded verification evidence
 
-**POC-03 verification:** **VERIFIED — bounded G0–G12 independent closure review passed.** **Independent final review:** **PASS WITH NON-BLOCKING FINDINGS.** **Git closure:** **PENDING USER-CONTROLLED STAGING / COMMIT.** This file records the uncommitted Stage-J candidate based on accepted Stage-I commit `0ae2b394c8f336a7aace27d1632d8de056a15525`. It does not certify deployment or hosted CI.
+**POC-03 technical verification:** **VERIFIED — bounded G0–G12 independent closure review passed.** **Independent final review:** **PASS WITH NON-BLOCKING FINDINGS.** **POC-03 Git closure:** **CLOSED.** Stage-J verification commit: `073f63e378bb7b2ef1547b8bae9d700543c0eb40`; parent: `0ae2b394c8f336a7aace27d1632d8de056a15525`. Remote synchronization: **NOT EXECUTED / NOT YET PUSHED**. Hosted CI: **NOT EXECUTED**. This evidence does not certify deployment.
 
 ## Provenance and environment
 
@@ -10,6 +10,13 @@
 - PostgreSQL Testcontainers image `postgres:17.11`; Testcontainers 2.0.5; PostgreSQL JDBC 42.7.13; Spring Boot 4.1.1; Flyway 12.4.0; ArchUnit 1.4.1.
 - Frozen spec SHA-256: `bc08efd024ea80a783ebd028f6ec8a0e7e0af64d391a3eb0684c251c43418fbb`; approved plan SHA-256: `39abaaa6394e54529f72084879c2fa89bedaadfcbc48150dec6f12e9fb6da8f7`. No repository-recorded expected hashes were found.
 - No V1/V2/V3, role bootstrap, grants, frozen specification, approved plan, ADR, engineering guide, or CI workflow was edited.
+
+## Post-commit Git closure
+
+- **Stage-J verification commit:** `073f63e378bb7b2ef1547b8bae9d700543c0eb40`; **verified parent:** `0ae2b394c8f336a7aace27d1632d8de056a15525`.
+- **Commit integrity:** **PASS**. The verified committed change set has exactly **8 paths**. Committed SHA-256 values match the reviewed, tested, and staged SHA-256 values for all 8 files. The commit diff check was clean.
+- **Working tree after the commit-integrity check:** **CLEAN**. **POC-03 Git closure:** **CLOSED**. This later documentation reconciliation is separate from the verified Stage-J commit.
+- **Remote synchronization:** **NOT EXECUTED / NOT YET PUSHED**. **Hosted CI:** **NOT EXECUTED**. No remote backup, merge to `main`, hosted CI pass, or production readiness is claimed.
 
 ## Configuration and authority
 
@@ -161,7 +168,7 @@ This structural check does not certify production deployment. No new Gradle modu
 
 - **Verdict:** PASS WITH NON-BLOCKING FINDINGS. **Blocking findings:** 0. **Unresolved critical contradictions:** 0.
 - **Final evidence archive:** `poc03-final-bound-evidence.tar.gz`; SHA-256 `a3069b9ca475bf8e52cd3d0f93ec6c6132f2d1f1d8d261fb158f8d39bcf8b3db`. Independent archive verification found safe paths/types, 72/72 internal SHA manifest entries verified, 0 missing, 0 mismatches, and 0 unmanifested evidence files.
-- **Source binding:** All seven executable/test Stage-J files and the pre-update `RESULTS.md` (SHA-256 `8b44545f2a34de4a98a3762b5e45b43e9fc6adf03a68ec2310dbfb089c2e63dc`) matched their reviewed expected SHA-256 values before and after the clean build. Branch, HEAD, dirty set, and staged state were identical before and after execution. **Reviewed Stage-J bytes == pre-build bytes == post-build bytes == tested bytes.** This documentation update necessarily changes only the `RESULTS.md` SHA after that binding.
+- **Source binding:** All seven executable/test Stage-J files and the pre-update `RESULTS.md` (SHA-256 `8b44545f2a34de4a98a3762b5e45b43e9fc6adf03a68ec2310dbfb089c2e63dc`) matched their reviewed expected SHA-256 values before and after the clean build. Branch, HEAD, dirty set, and staged state were identical before and after execution. **Reviewed Stage-J bytes == pre-build bytes == post-build bytes == tested bytes.** The subsequent pre-commit documentation update changed the `RESULTS.md` SHA after that binding; the committed eight-file integrity check is recorded above.
 - **Review basis:** exact Stage-I HEAD archive at `0ae2b394c8f336a7aace27d1632d8de056a15525`, exact Stage-J delta, V1/V2/V3, async-role bootstrap, Inventory/Async ArchUnit source, G0–G12 implementation and tests, fresh XML, real-process crash and independent simulator evidence, authoritative PostgreSQL state, migration/SQLSTATE and ACL evidence, visibility, bootJar contents, and final source-byte binding.
 
 The final bound execution ran:
@@ -185,7 +192,7 @@ Independent parsing of the Gradle problems report found **4 WARNING**, **0 ERROR
 
 ## Gate accounting and limits
 
-The table records bounded POC-03 technical verification after the final bound execution and independent review. Git closure remains pending user-controlled staging and commit.
+The table records bounded POC-03 technical verification after the final bound execution and independent review. The separate Stage-J Git closure passed the post-commit integrity check recorded above.
 
 | Gate | Final state | Basis |
 | --- | --- | --- |
@@ -208,4 +215,4 @@ The table records bounded POC-03 technical verification after the final bound ex
 
 Decision 15 governance: ADR-003 was independently reviewed and **ACCEPTED before implementation**. Stage J follows its already-approved one-artifact/process-mode composition and narrow observer visibility; it introduces no new material architecture decision. **ADR decision: NO NEW / REVISED ADR REQUIRED.** No Stage-J business/state-machine semantic, privilege, migration, simulator effect, or external uncertainty behavior changed.
 
-Non-blocking finding and nonclaims: the four compiler deprecation warnings do not block bounded verification. Hosted CI is **NOT EXECUTED** and branch-protection hosted observation was not performed. POC-04 owns deferred runtime `UPDATE` hardening for the POC-02 idempotency table. This evidence does not certify production deployment, production credential management, HA, capacity/SLO, a provider, multi-region behavior, production retention, or production secrets/KMS selection; it does not add a public visibility endpoint. **Technical independent POC-03 verification: PASS. Stage-J candidate: READY FOR USER-CONTROLLED STAGING CHECKPOINT. Git staged: NO. Git committed: NO. POC-03 Git closure: PENDING.**
+Non-blocking finding and nonclaims: the four compiler deprecation warnings do not block bounded verification. Hosted CI is **NOT EXECUTED** and branch-protection hosted observation was not performed. Remote synchronization is **NOT EXECUTED / NOT YET PUSHED**. POC-04 owns deferred runtime `UPDATE` hardening for the POC-02 idempotency table. This evidence does not certify production deployment, production credential management, HA, capacity/SLO, a provider, multi-region behavior, production retention, or production secrets/KMS selection; it does not add a public visibility endpoint. **Technical independent POC-03 verification: PASS. Stage-J verification commit integrity: PASS. POC-03 Git closure: CLOSED.**

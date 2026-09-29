@@ -2,7 +2,7 @@
 
 **สถานะ:** ACTIVE — planning baseline v1
 **Authority:** `docs/ROADMAP.md` กำหนดทิศทางและ phase; เอกสารนี้กำหนด execution branch-by-branch
-**Current branch:** `poc/02-concurrency-idempotency`
+**Current branch:** `poc/03-outbox-recovery`
 
 ---
 
@@ -63,10 +63,10 @@ Branch ที่ยังเป็น `PROPOSED` หรือ `CONDITIONAL` ห�
 การมี slot อยู่ในไฟล์นี้ไม่ได้แปลว่า branch นั้นได้รับอนุมัติให้สร้างแล้ว
 
 ```text
-01–02
+01–03
 = CLOSED validation branches
 
-03–05
+04–05
 = planned validation sequence ตาม ROADMAP
 
 06
@@ -155,7 +155,7 @@ milestone/NN-name
 |---:|---|---|---|---|---|
 | 01 | `poc/01-transactional-core` | **CLOSED** | Java/Spring/PostgreSQL production-candidate foundation, Gradle/module boundary, Flyway, runtime/migrator roles, transaction/persistence, health/readiness, error contract, Testcontainers/architecture tests | Canonical docs baseline + ADR-001 | POC-01 evidence + independent review ผ่าน |
 | 02 | `poc/02-concurrency-idempotency` | **CLOSED** | inventory concurrency, idempotency semantics, duplicate/concurrent commands, optimistic concurrency; stock=1/500 proof | 01 | correctness under concurrency proven |
-| 03 | `poc/03-outbox-recovery` | PLANNED | transactional outbox, worker claiming, inbox/dedupe, retry/backoff, dead-letter/reconciliation, crash recovery | 02 | async work/recovery semantics proven |
+| 03 | `poc/03-outbox-recovery` | CLOSED | transactional outbox, worker claiming, inbox/dedupe, retry/backoff, dead-letter/reconciliation, crash recovery | 02 | async work/recovery semantics proven |
 | 04 | `poc/04-security-auth` | PLANNED | OIDC/OAuth boundary, account identity mapping, browser session/BFF, CSRF, privileged MFA/step-up, authorization, workload identity, DB least-privilege hardening, secrets, webhook security, audit | 03 | trust boundaries/security gate proven |
 | 05 | `poc/05-observability-performance` | PLANNED | logs/metrics/traces, RED/USE, correctness/freshness signals, fault tests, k6 baseline, resource/latency evidence | 04 | observability/performance/fault baseline proven |
 | 06 | `foundation/06-production-foundation-freeze` | PROPOSED | review POC-01..05 together, resolve contradictions, finalize production foundation decisions/ADRs | 01–05 | Production Foundation Baseline accepted |
@@ -404,26 +404,31 @@ roadmap รุ่นถัดไปควรเป็นอะไร
 Current closure:
 
 ```text
-02 — poc/02-concurrency-idempotency
+03 — poc/03-outbox-recovery
 Status: CLOSED
-Final review checkpoint: a7a908c
-Evidence: validation/poc-02/evidence/RESULTS.md
+Final review checkpoint / closure commit: 073f63e378bb7b2ef1547b8bae9d700543c0eb40
+Evidence: validation/poc-03/evidence/RESULTS.md
 ADR decision: no new/revised ADR required
+Remote synchronization: NOT EXECUTED
+Hosted CI: NOT EXECUTED
 ```
 
-Prior closure: `01 — poc/01-transactional-core` remains CLOSED; its final
-review checkpoint was `fd6e97a`, and its material foundation decision is
-recorded in `docs/adr/ADR-002-backend-production-foundation.md`.
+Prior closures: `02 — poc/02-concurrency-idempotency` remains CLOSED; its final
+review checkpoint was `a7a908c`, with evidence in
+`validation/poc-02/evidence/RESULTS.md` and no new/revised ADR required.
+`01 — poc/01-transactional-core` also remains CLOSED; its final review checkpoint
+was `fd6e97a`, and its material foundation decision is recorded in
+`docs/adr/ADR-002-backend-production-foundation.md`.
 
 Next planned:
 
 ```text
-03 — poc/03-outbox-recovery
+04 — poc/04-security-auth
 Status: PLANNED
-Depends on: POC-02 CLOSED
+Depends on: POC-03 CLOSED
 ```
 
-POC-03 has not started. Before its implementation, follow the normal
+POC-04 has not started. Before its implementation, follow the normal
 governance sequence:
 
 ```text
