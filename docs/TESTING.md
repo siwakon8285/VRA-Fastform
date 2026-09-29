@@ -1098,15 +1098,31 @@ POC-01 ต้องพิสูจน์:
 
 ## 70. POC-02 Testing Scope
 
-POC-02:
+POC-02 executable representative tests ใช้ **Inventory Reservation**
 
-- stock=1 / 500 buyers
-- idempotency
+ต้องพิสูจน์อย่างน้อย:
+
+- `stock=1 / 500` concurrent reservation attempts
+- exactly one committed business reservation สำหรับ final available unit
+- authoritative final state รักษา `available >= 0`
+- idempotency: same key + same payload
+- idempotency: same key + conflicting payload
+- concurrent same idempotency key
+- retry after timeout/response loss โดยไม่สร้าง duplicate business effect
+- key scope by actor/operation semantics
+- expected-version conflict เป็น proof แยกจาก stock-contention proof
+- rollback/failure path ไม่ทิ้ง partial inventory/idempotency state
+- final-state assertions ตรวจ authoritative PostgreSQL state ไม่ดู response count
+  อย่างเดียว
+
+Cross-domain concurrency requirements ที่ต้อง revalidate เมื่อ domain จริงถูก
+implement แต่ **ไม่ใช่ implementation/test fixture ที่ POC-02 ต้องสร้างล่วงหน้า**:
+
 - one active dispatch
 - refund limit under concurrency
-- settlement/payout uniqueness
-- expected-version conflict
-- retry/duplicate behavior
+- settlement/payout uniqueness และ duplicate-operation safety
+
+Inventory proof ไม่ใช่หลักฐานแทน domain เหล่านี้โดยอัตโนมัติ
 
 ---
 

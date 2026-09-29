@@ -46,3 +46,4 @@ validation material.
 | ADR | Decision | Status | Date |
 | --- | --- | --- | --- |
 | [ADR-001](ADR-001-primary-jvm-language.md) | Primary JVM language | ACCEPTED | 2026-09-24 |
+| [ADR-002](ADR-002-backend-production-foundation.md) | Backend production foundation | ACCEPTED | 2026-09-24 |

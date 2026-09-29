@@ -219,7 +219,7 @@ Decision record:
 docs/adr/ADR-001-primary-jvm-language.md
 ```
 
-Backend framework candidate direction (ต้อง validate ใน POC-01):
+Backend framework baseline (ADR-002):
 
 ```text
 Java
@@ -2205,7 +2205,12 @@ Code ที่ merge ไปแล้วไม่ได้แปลว่า arch
 ### LOCKED / ACCEPTED DIRECTION
 
 - Java เป็น primary JVM language
+- Spring Boot เป็น primary backend framework; POC-01 accepted baseline = 4.1.1
 - PostgreSQL authoritative OLTP
+- Gradle backend baseline = `runtime` + `migration` modules
+- persistence baseline = JPA for suitable aggregate persistence + explicit SQL/JdbcClient for correctness-critical transitions
+- Flyway lifecycle = explicit migration process, separate from runtime startup
+- DB identity baseline = `vra_owner` / `vra_migrator` / `vra_runtime` least-privilege separation
 - modular transactional core
 - explicit domain ownership
 - transactional outbox
@@ -2224,15 +2229,10 @@ Code ที่ merge ไปแล้วไม่ได้แปลว่า arch
 
 ### VALIDATE / FINALIZE IN UPCOMING POCs
 
-- Spring Boot เป็น primary backend framework และ exact production baseline/version
-- persistence split: JPA vs JDBC/jOOQ
-- Flyway production lifecycle
 - PostgreSQL worker implementation
 - BFF/session authority
 - external IdP
 - SOPS / secret workflow
-- module/build layout
-- migration/runtime DB grants
 
 ### DEFERRED UNTIL EVIDENCE
 
@@ -2268,11 +2268,13 @@ Java selected
 
 POC-01
 Transactional Core
-Spring + PostgreSQL
+✅ CLOSED
+Spring Boot 4.1.1 + PostgreSQL
 module boundaries
 transactions
 migrations
 persistence baseline
+ADR-002 accepted
 
         ↓
 
