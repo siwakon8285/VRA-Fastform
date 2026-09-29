@@ -2,11 +2,14 @@ package dev.vra;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Import;
 
+import dev.vra.async.bootstrap.ApiMode;
 import dev.vra.async.bootstrap.ReconciliationWorkerMode;
 import dev.vra.async.bootstrap.OutboxWorkerMode;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"dev.vra.inventory", "dev.vra.platform"})
+@Import(ApiMode.class)
 public class VraApplication {
 
     public static void main(String[] args) {
