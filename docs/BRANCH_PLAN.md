@@ -2,7 +2,7 @@
 
 **สถานะ:** ACTIVE — planning baseline v1
 **Authority:** `docs/ROADMAP.md` กำหนดทิศทางและ phase; เอกสารนี้กำหนด execution branch-by-branch
-**Current branch:** `poc/03-outbox-recovery`
+**Current branch:** `main`
 
 ---
 
@@ -409,8 +409,10 @@ Status: CLOSED
 Final review checkpoint / closure commit: 073f63e378bb7b2ef1547b8bae9d700543c0eb40
 Evidence: validation/poc-03/evidence/RESULTS.md
 ADR decision: no new/revised ADR required
-Remote synchronization: NOT EXECUTED
-Hosted CI: NOT EXECUTED
+PR #1: merged; POC-03 branch head 5a88d4d9a562652fc856a32d266ddc055e8e6c37 reachable from main — VERIFIED
+Merge commit: fb8d0034be9d57aebcf07c5bb8702d3654ee5733
+Remote synchronization: VERIFIED / CLOSED
+Hosted CI: PASS — PR Backend CI 36586572864 and post-merge main Backend CI 36588526956
 ```
 
 Prior closures: `02 — poc/02-concurrency-idempotency` remains CLOSED; its final

@@ -1,6 +1,6 @@
 # POC-03 bounded verification evidence
 
-**POC-03 technical verification:** **VERIFIED — bounded G0–G12 independent closure review passed.** **Independent final review:** **PASS WITH NON-BLOCKING FINDINGS.** **POC-03 Git closure:** **CLOSED.** Stage-J verification commit: `073f63e378bb7b2ef1547b8bae9d700543c0eb40`; parent: `0ae2b394c8f336a7aace27d1632d8de056a15525`. Remote synchronization: **NOT EXECUTED / NOT YET PUSHED**. Hosted CI: **NOT EXECUTED**. This evidence does not certify deployment.
+**POC-03 technical verification:** **VERIFIED — bounded G0–G12 independent closure review passed.** **Independent final review:** **PASS WITH NON-BLOCKING FINDINGS.** **POC-03 Git closure:** **CLOSED.** Stage-J verification commit: `073f63e378bb7b2ef1547b8bae9d700543c0eb40`; parent: `0ae2b394c8f336a7aace27d1632d8de056a15525`. Remote synchronization: **VERIFIED / CLOSED** through merged PR #1. Hosted CI: **PASS** on the PR head and merged `main`. This evidence does not certify deployment.
 
 ## Provenance and environment
 
@@ -16,7 +16,13 @@
 - **Stage-J verification commit:** `073f63e378bb7b2ef1547b8bae9d700543c0eb40`; **verified parent:** `0ae2b394c8f336a7aace27d1632d8de056a15525`.
 - **Commit integrity:** **PASS**. The verified committed change set has exactly **8 paths**. Committed SHA-256 values match the reviewed, tested, and staged SHA-256 values for all 8 files. The commit diff check was clean.
 - **Working tree after the commit-integrity check:** **CLEAN**. **POC-03 Git closure:** **CLOSED**. This later documentation reconciliation is separate from the verified Stage-J commit.
-- **Remote synchronization:** **NOT EXECUTED / NOT YET PUSHED**. **Hosted CI:** **NOT EXECUTED**. No remote backup, merge to `main`, hosted CI pass, or production readiness is claimed.
+- **At the local post-commit checkpoint:** remote synchronization and hosted CI were **NOT EXECUTED**. The later merge and hosted runs are recorded below; no production readiness is claimed.
+
+## Post-merge synchronization and hosted CI
+
+- [PR #1](https://github.com/siwakon8285/VRA-Fastform/pull/1) was **merged** from POC-03 branch head `5a88d4d9a562652fc856a32d266ddc055e8e6c37` into `main` at merge commit `fb8d0034be9d57aebcf07c5bb8702d3654ee5733`. The branch head is reachable from `main`: **VERIFIED** by local Git ancestry. **Remote synchronization: VERIFIED / CLOSED.**
+- [PR Backend CI run 36586572864](https://github.com/siwakon8285/VRA-Fastform/actions/runs/36586572864): `pull_request` at head `5a88d4d9a562652fc856a32d266ddc055e8e6c37`; `Backend CI`, Java 21 / PostgreSQL; **COMPLETED / SUCCESS (PASS)**.
+- [Post-merge main Backend CI run 36588526956](https://github.com/siwakon8285/VRA-Fastform/actions/runs/36588526956): `push` at head `fb8d0034be9d57aebcf07c5bb8702d3654ee5733`; `Backend CI`, Java 21 / PostgreSQL; **COMPLETED / SUCCESS (PASS)**. The job steps `Run backend verification and build artifacts`, `Prove PostgreSQL integration suites executed`, and `Verify deployable JVM artifacts exist` all completed successfully.
 
 ## Configuration and authority
 
@@ -69,7 +75,7 @@ That Stage-J local clean build completed `BUILD SUCCESSFUL`, 17 executed tasks, 
 | `:migration:integrationTest` total | 15 | 0 | 0 | 0 | 24.007 s | not separately captured |
 | OutboxMigrationSecurityIntegrationTest | 13 | 0 | 0 | 0 | 21.126 s | 22.01 s (earlier Stage-J focused run) |
 
-The Stage-J local clean run retained POC-01/02/03 runtime unit, PostgreSQL integration, migration, and Inventory architecture tests. Earlier exploratory runs found an invalid ArchUnit rule/API use and an `ApiMode` direct import that activated a producer in `@WebMvcTest`; both were corrected within Stage-J test/bootstrap scope. The first attempted full build failed on that MVC slice, then a successful full build ran. The Stage-J narrow-remediation run above passed. An initial sandboxed focused invocation on 2026-09-29 stopped before tests because `~/.gradle` was not writable; the same command succeeded with approved access. These were explained remediation reruns, not unexplained flaky passes. No unexpected timeout, deadlock, process leak, or cleanup failure was observed; post-run process listing found no VraApplication/simulator child. Hosted CI: **NOT EXECUTED**.
+The Stage-J local clean run retained POC-01/02/03 runtime unit, PostgreSQL integration, migration, and Inventory architecture tests. Earlier exploratory runs found an invalid ArchUnit rule/API use and an `ApiMode` direct import that activated a producer in `@WebMvcTest`; both were corrected within Stage-J test/bootstrap scope. The first attempted full build failed on that MVC slice, then a successful full build ran. The Stage-J narrow-remediation run above passed. An initial sandboxed focused invocation on 2026-09-29 stopped before tests because `~/.gradle` was not writable; the same command succeeded with approved access. These were explained remediation reruns, not unexplained flaky passes. No unexpected timeout, deadlock, process leak, or cleanup failure was observed; post-run process listing found no VraApplication/simulator child. At the time of this local run, hosted CI was **NOT EXECUTED**.
 
 ## G11 visibility and SQL authority
 
@@ -188,7 +194,7 @@ It completed `BUILD SUCCESSFUL` in **100.11 s**, with **17 actionable tasks / 17
 
 The fresh runtime bootJar SHA-256 is `35174e46636270ff31f7a92a700a230dfe52876cda2e92e7ae716111f08d13ec` (`Start-Class: dev.vra.VraApplication`). The fresh migration bootJar SHA-256 is `d8dd04de3c8e9e65ae4dd4c9da63934daa693dc9caad590e04fca6e966c3805f` (`Start-Class: dev.vra.migration.MigrationMain`). The migration JAR contains V1, V2, and V3; the runtime JAR has no Flyway library. Test implementations and the independent simulator-process implementation did not leak into either bootJar. `ValidationSimulatorHttpAdapter` is intentional main-source POC validation adapter code, not the independent test simulator implementation.
 
-Independent parsing of the Gradle problems report found **4 WARNING**, **0 ERROR** (`totalProblemCount=4`): compiler deprecation warnings, **NON-BLOCKING**. Hosted CI remains **NOT EXECUTED**; branch-protection hosted observation was not performed.
+Independent parsing of the Gradle problems report found **4 WARNING**, **0 ERROR** (`totalProblemCount=4`): compiler deprecation warnings, **NON-BLOCKING**. At the time of final-bound execution, hosted CI was **NOT EXECUTED**; branch-protection policy proof was not performed.
 
 ## Gate accounting and limits
 
@@ -211,8 +217,8 @@ The table records bounded POC-03 technical verification after the final bound ex
 | G12 local execution | PASS | Final bound clean build, 184/184 fresh XML tests passing with zero skipped/failures/errors, bootJar inspection, and exact source binding. |
 | G12 independent architecture/security review | PASS | Independent final verdict: PASS WITH NON-BLOCKING FINDINGS; zero blockers and unresolved critical contradictions. |
 | G12 full bounded verification | PASS | G0–G11, G12 local execution, and independent final review passed. |
-| Hosted CI | NOT EXECUTED | No hosted run was observed. |
+| Hosted CI | PASS | PR head run `36586572864` and post-merge `main` push run `36588526956` completed successfully. |
 
 Decision 15 governance: ADR-003 was independently reviewed and **ACCEPTED before implementation**. Stage J follows its already-approved one-artifact/process-mode composition and narrow observer visibility; it introduces no new material architecture decision. **ADR decision: NO NEW / REVISED ADR REQUIRED.** No Stage-J business/state-machine semantic, privilege, migration, simulator effect, or external uncertainty behavior changed.
 
-Non-blocking finding and nonclaims: the four compiler deprecation warnings do not block bounded verification. Hosted CI is **NOT EXECUTED** and branch-protection hosted observation was not performed. Remote synchronization is **NOT EXECUTED / NOT YET PUSHED**. POC-04 owns deferred runtime `UPDATE` hardening for the POC-02 idempotency table. This evidence does not certify production deployment, production credential management, HA, capacity/SLO, a provider, multi-region behavior, production retention, or production secrets/KMS selection; it does not add a public visibility endpoint. **Technical independent POC-03 verification: PASS. Stage-J verification commit integrity: PASS. POC-03 Git closure: CLOSED.**
+Non-blocking finding and nonclaims: the four compiler deprecation warnings do not block bounded verification. PR-head and post-merge `main` hosted CI both **PASS**; branch-protection policy proof was not performed. Remote synchronization is **VERIFIED / CLOSED** through PR #1's merge. POC-04 owns deferred runtime `UPDATE` hardening for the POC-02 idempotency table. This evidence does not certify production deployment, production credential management, HA, capacity/SLO, a provider, multi-region behavior, production retention, or production secrets/KMS selection; it does not add a public visibility endpoint. **Technical independent POC-03 verification: PASS. Stage-J verification commit integrity: PASS. POC-03 Git closure: CLOSED.**
