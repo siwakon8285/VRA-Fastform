@@ -1,0 +1,295 @@
+{
+  "gate_status": "S0-S15 NOT VERIFIED",
+  "github_governance_observation": {
+    "effective_public_main_rules": [],
+    "limitations": "Public unauthenticated view only; no private/org enforcement attestation; no settings changed; S13 NOT VERIFIED",
+    "main_head": "8243d62f50aed2dc9a8605d7f12f0e2b7aa86854",
+    "old_alias_resolves_same_repository": true,
+    "old_origin_alias": "https://github.com/siwakon8285/VRA-Fastform.git",
+    "protected": false,
+    "public_rulesets": [],
+    "repository": "siwakon8285/VRA-Platform",
+    "repository_id": 1383749291,
+    "required_status_checks": {
+      "checks": [],
+      "contexts": [],
+      "enforcement_level": "off"
+    },
+    "sources": [
+      "https://api.github.com/repos/siwakon8285/VRA-Platform/branches/main",
+      "https://api.github.com/repos/siwakon8285/VRA-Platform/rulesets",
+      "https://api.github.com/repos/siwakon8285/VRA-Platform/rules/branches/main"
+    ]
+  },
+  "phase": "0",
+  "records": [
+    {
+      "artifact": "https://services.gradle.org/distributions/gradle-9.7.1-bin.zip",
+      "execution_location": "Local/CI backend wrapper; never system Gradle",
+      "id": "gradle-distribution",
+      "license": "Apache-2.0",
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://gradle.org/release-checksums/",
+        "https://docs.gradle.org/current/userguide/gradle_wrapper.html#sec:verification"
+      ],
+      "publisher_checksum": {
+        "final_url": "https://downloads.gradle.org/distributions/gradle-9.7.1-bin.zip.sha256",
+        "response_sha256": "e421f98689f75d99cbb9ea26d133a25786bb5e1ab6d346e936cacfaa6990c58f",
+        "url": "https://services.gradle.org/distributions/gradle-9.7.1-bin.zip.sha256",
+        "value": "acd53f1edaf02f1a8ff99879f8a34b302661a057d9b063ae9e35b552f804d20a"
+      },
+      "purpose": "Existing build bootstrap provenance; distribution and wrapper are independently checked",
+      "sha256": "acd53f1edaf02f1a8ff99879f8a34b302661a057d9b063ae9e35b552f804d20a",
+      "source_project": "gradle/gradle",
+      "status": "VERIFIED PIN",
+      "stop_behavior": "Reject checksum mismatch before executing wrapper or distribution; never regenerate here",
+      "verification_method": "Local wrapper JAR SHA-256 or configured distribution SHA compared separately with trusted Gradle release checksum endpoints and release-checksums page; distribution ZIP not downloaded",
+      "version": "9.7.1"
+    },
+    {
+      "artifact": "https://services.gradle.org/distributions/gradle-9.7.1-wrapper.jar",
+      "execution_location": "Local/CI backend wrapper; never system Gradle",
+      "id": "gradle-wrapper-jar",
+      "license": "Apache-2.0",
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://gradle.org/release-checksums/",
+        "https://docs.gradle.org/current/userguide/gradle_wrapper.html#sec:verification"
+      ],
+      "publisher_checksum": {
+        "final_url": "https://downloads.gradle.org/distributions/gradle-9.7.1-wrapper.jar.sha256",
+        "response_sha256": "50b6b9374ce371c538c1b7b7b49b65086929ce3818ab5ea6702fe1cdec6b3596",
+        "url": "https://services.gradle.org/distributions/gradle-9.7.1-wrapper.jar.sha256",
+        "value": "7a9ce74cff467ca1bf60a4fcd9f05185acceda4d0f382434d393e17864262c5d"
+      },
+      "purpose": "Existing build bootstrap provenance; distribution and wrapper are independently checked",
+      "sha256": "7a9ce74cff467ca1bf60a4fcd9f05185acceda4d0f382434d393e17864262c5d",
+      "source_project": "gradle/gradle",
+      "status": "VERIFIED PIN",
+      "stop_behavior": "Reject checksum mismatch before executing wrapper or distribution; never regenerate here",
+      "verification_method": "Local wrapper JAR SHA-256 or configured distribution SHA compared separately with trusted Gradle release checksum endpoints and release-checksums page; distribution ZIP not downloaded",
+      "version": "9.7.1"
+    },
+    {
+      "action_yml_sha256": "d59219cb79590abdb877deaa14e3b65a00c05318bf5a6f3b989b9162b5d08c35",
+      "artifact": "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "current_ref_is_mutable": true,
+      "current_ref_kind": "mutable release tag",
+      "current_workflow_ref": "v7.0.1",
+      "execution_location": "GitHub hosted CI only",
+      "github_commit_signature_verified": true,
+      "github_release_immutable": false,
+      "id": "actions-checkout",
+      "immutable_commit": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "license": "MIT",
+      "phase10_remediation": "Replace current tag ref with this reviewed same-version full commit SHA; do not upgrade in Phase0",
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://api.github.com/repos/actions/checkout/git/ref/tags/v7.0.1",
+        "https://github.com/actions/checkout/releases/tag/v7.0.1",
+        "https://raw.githubusercontent.com/actions/checkout/3d3c42e5aac5ba805825da76410c181273ba90b1/action.yml",
+        "https://api.github.com/repos/actions/checkout/releases/tags/v7.0.1"
+      ],
+      "purpose": "Current hosted CI action code",
+      "ref_response_sha256": "2d93602db4d23c52722ac2e83e9553fa46d84b00dd83ed8557f32b39278fe62e",
+      "source_project": "actions/checkout",
+      "status": "VERIFIED PIN",
+      "stop_behavior": "Reject missing/mismatched immutable commit before later use; current workflow not yet pinned",
+      "verification_method": "GitHub primary tag API dereferenced to full commit; immutable action.yml fetched and hashed; release page cross-checked; no action executed; GitHub release API independently reports immutable=false. Full commit remains the selected machine pin.",
+      "version": "v7.0.1",
+      "workflow_path": ".github/workflows/backend-ci.yml"
+    },
+    {
+      "action_yml_sha256": "0fea4e9d329b3503a7bc1a64c2221d47252e7c520403e674a7d8c5a13a88d3b9",
+      "artifact": "actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6",
+      "current_ref_is_mutable": false,
+      "current_ref_kind": "release-locked tag (GitHub immutable release)",
+      "current_workflow_ref": "v6.0.1",
+      "execution_location": "GitHub hosted CI only",
+      "github_commit_signature_verified": true,
+      "github_release_immutable": true,
+      "id": "actions-setup-java",
+      "immutable_commit": "de7274f081f381c8f8158605e0321c36c376e2e6",
+      "license": "MIT",
+      "phase10_remediation": "Replace current tag ref with this reviewed same-version full commit SHA; do not upgrade in Phase0",
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://api.github.com/repos/actions/setup-java/git/ref/tags/v6.0.1",
+        "https://github.com/actions/setup-java/releases/tag/v6.0.1",
+        "https://raw.githubusercontent.com/actions/setup-java/de7274f081f381c8f8158605e0321c36c376e2e6/action.yml",
+        "https://api.github.com/repos/actions/setup-java/releases/tags/v6.0.1"
+      ],
+      "purpose": "Current hosted CI action code",
+      "ref_response_sha256": "827200010cdd759b29ac511cb8855a04d7eda5249a5a2781bfefbe39007854d0",
+      "source_project": "actions/setup-java",
+      "status": "VERIFIED PIN",
+      "stop_behavior": "Reject missing/mismatched immutable commit before later use; current workflow not yet pinned",
+      "verification_method": "GitHub primary tag API dereferenced to full commit; immutable action.yml fetched and hashed; release page cross-checked; no action executed; GitHub release API independently reports immutable=true. Full commit remains the selected machine pin.",
+      "version": "v6.0.1",
+      "workflow_path": ".github/workflows/backend-ci.yml"
+    },
+    {
+      "artifact": "Eclipse Temurin HotSpot JDK jdk-21.0.12.1+1",
+      "artifacts": [
+        {
+          "discovery_url": "https://api.adoptium.net/v3/assets/latest/21/hotspot?architecture=x64&heap_size=normal&image_type=jdk&jvm_impl=hotspot&os=linux&vendor=eclipse",
+          "download_sha256_verified": true,
+          "platform": "linux/x64",
+          "publisher_checksum": {
+            "response_sha256": "c49c22f6dbaf89956247e8785a168fb504d844bd65154d00d502fa4b146cc368",
+            "url": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jdk_x64_linux_hotspot_21.0.12.1_1.tar.gz.sha256.txt",
+            "value": "ce79869e1307ed8ee1e2baa86a412b1eb5b75d10a01006d788a6f968bcfaee94"
+          },
+          "release_url": "https://github.com/adoptium/temurin21-binaries/releases/tag/jdk-21.0.12.1%2B1",
+          "sha256": "ce79869e1307ed8ee1e2baa86a412b1eb5b75d10a01006d788a6f968bcfaee94",
+          "size": 207473347,
+          "source_ref": "jdk-21.0.12.1+1_adopt",
+          "url": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jdk_x64_linux_hotspot_21.0.12.1_1.tar.gz"
+        },
+        {
+          "discovery_url": "https://api.adoptium.net/v3/assets/latest/21/hotspot?architecture=aarch64&heap_size=normal&image_type=jdk&jvm_impl=hotspot&os=mac&vendor=eclipse",
+          "download_sha256_verified": true,
+          "platform": "mac/aarch64",
+          "publisher_checksum": {
+            "response_sha256": "5e65dc46036c7403363c9ed48acbdf20507b04a3db3037a7235ec316f0939e1d",
+            "url": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jdk_aarch64_mac_hotspot_21.0.12.1_1.tar.gz.sha256.txt",
+            "value": "3623232f33a9c3baadf304480b2535f9a3cba8a58d42ecbb438ba267315d9998"
+          },
+          "release_url": "https://github.com/adoptium/temurin21-binaries/releases/tag/jdk-21.0.12.1%2B1",
+          "sha256": "3623232f33a9c3baadf304480b2535f9a3cba8a58d42ecbb438ba267315d9998",
+          "size": 200073404,
+          "source_ref": "jdk-21.0.12.1+1_adopt",
+          "url": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jdk_aarch64_mac_hotspot_21.0.12.1_1.tar.gz"
+        }
+      ],
+      "current_workflow_distribution": "temurin",
+      "current_workflow_java_version": "21",
+      "execution_location": "Future CI Linuxamd64/localAppleSilicon; existing Homebrew21.0.12.1 is only an observation and not this verified binary",
+      "id": "java21-temurin",
+      "license": "GPL-2.0-with-classpath-exception",
+      "phase10_remediation": "Current major-only selection is floating; use exact release/artifact verification and capture actual java -version/JAVA_HOME safe metadata in CI. No workflow edited",
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://adoptium.net/",
+        "https://github.com/adoptium/temurin21-binaries/releases/tag/jdk-21.0.12.1%2B1"
+      ],
+      "purpose": "Exact Java21 JDK for future CI/local verification",
+      "source_project": "adoptium/temurin21-binaries; OpenJDK",
+      "status": "VERIFIED PIN",
+      "stop_behavior": "Do not run later build on an unverified different JDK; signatures/reproducible build not claimed",
+      "verification_method": "Primary Adoptium metadata plus same fixed-release published SHA256 and complete archive downloads hashed in memory for Linux x64 and macOS aarch64; nothing installed",
+      "version": "21.0.12.1+1"
+    },
+    {
+      "artifact": "Observed GitHub run 36684984462 job 109788657016; runner-images ubuntu24/20260920.314",
+      "baseline_observation": {
+        "head_branch": "main",
+        "image": "ubuntu-24.04",
+        "image_provisioner": "20260828.587",
+        "image_version": "20260920.314.1",
+        "java": {
+          "gradle_launcher_jvm": "21.0.12.1",
+          "setup_java_resolved": "21.0.12+1",
+          "vendor_runtime": "Eclipse Adoptium 21.0.12.1+1-LTS"
+        },
+        "job_completed_at": "2026-09-30T07:43:58Z",
+        "job_conclusion": "success",
+        "job_id": 109788657016,
+        "job_name": "Java 21 / PostgreSQL",
+        "job_started_at": "2026-09-30T07:39:46Z",
+        "repository": "siwakon8285/VRA-Platform",
+        "run_attempt": 1,
+        "run_conclusion": "success",
+        "run_event": "push",
+        "run_id": 36684984462,
+        "runner_images_release": "ubuntu24/20260920.314",
+        "runner_images_release_immutable": false,
+        "runner_images_source_commit": "e75633902841aa5479c759492b73409e6d317f12",
+        "runner_version": "2.337.0",
+        "source_head": "8243d62f50aed2dc9a8605d7f12f0e2b7aa86854",
+        "workflow_path": ".github/workflows/backend-ci.yml"
+      },
+      "critical_for_phase0_pin_closure": true,
+      "current_workflow_alias": "ubuntu-latest",
+      "current_workflow_alias_is_mutable": true,
+      "execution_location": "Existing source-bound GitHub hosted CI baseline only; no new hosted run triggered",
+      "future_execution_required_observations": [
+        "runner_version",
+        "image/OS",
+        "image_version",
+        "runner_images_release",
+        "actual_java_runtime"
+      ],
+      "id": "hosted-runner",
+      "license": "Repository-specific runner image components",
+      "observation_authority": "Current user-supplied independent Phase-0 review, B0-2, supplies the exact runner/provisioner and setup-java/Gradle/vendor log observations; run/job identity and release/readme metadata were independently re-fetched during remediation",
+      "phase10_remediation": "Capture and bind the required actual runner/Java observations for every later/final hosted execution; review any changed image or unsupported provenance. Prefer controlled execution where appropriate; baseline observation does not waive S13 governance or the mutable alias.",
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://api.github.com/repos/siwakon8285/VRA-Platform/actions/runs/36684984462",
+        "https://api.github.com/repos/siwakon8285/VRA-Platform/actions/jobs/109788657016",
+        "https://github.com/siwakon8285/VRA-Platform/actions/runs/36684984462/job/109788657016",
+        "https://github.com/actions/runner-images/releases/tag/ubuntu24/20260920.314",
+        "https://raw.githubusercontent.com/actions/runner-images/e75633902841aa5479c759492b73409e6d317f12/images/ubuntu/Ubuntu2404-Readme.md",
+        "https://api.github.com/repos/actions/runner-images/git/ref/tags/ubuntu24%2F20260920.314"
+      ],
+      "purpose": "Exact source-bound hosted baseline observation, not a pin of the mutable runner alias",
+      "response_evidence": [
+        {
+          "response_sha256": "e337d827901c40b865a11ae204a6b5541d43b6098e8fd2d69774268281196c1d",
+          "url": "https://api.github.com/repos/siwakon8285/VRA-Platform/actions/runs/36684984462",
+          "verified_fields": [
+            "repository",
+            "run_id",
+            "head_sha",
+            "job association"
+          ]
+        },
+        {
+          "response_sha256": "ae29de01b29c23a65b923a8e05d5b8c49b5d7bdc1ee92d59b298a33c3afd5ef9",
+          "url": "https://api.github.com/repos/siwakon8285/VRA-Platform/actions/jobs/109788657016",
+          "verified_fields": [
+            "job_id",
+            "run_id",
+            "head_sha"
+          ]
+        },
+        {
+          "response_sha256": "af3d5134c613e5d0ae812e909ffb09d47de77017ea40407d475cc14b85124351",
+          "url": "https://api.github.com/repos/actions/runner-images/releases/tags/ubuntu24%2F20260920.314",
+          "verified_fields": [
+            "release tag",
+            "image version",
+            "immutable=false"
+          ]
+        },
+        {
+          "response_sha256": "a37278942f07a81dc00eac64cfb123130a36f52432a5e687d91a626488718735",
+          "url": "https://raw.githubusercontent.com/actions/runner-images/e75633902841aa5479c759492b73409e6d317f12/images/ubuntu/Ubuntu2404-Readme.md",
+          "verified_fields": [
+            "Ubuntu 24.04.5 LTS",
+            "image version 20260920.314.1",
+            "Java 21.0.12+1"
+          ]
+        },
+        {
+          "response_sha256": "b6c9c18a2d5072599fa67a8365ecd30e50aaefde24ff8cb89d1a4fcf48c3587d",
+          "url": "https://api.github.com/repos/actions/runner-images/git/ref/tags/ubuntu24%2F20260920.314",
+          "verified_fields": [
+            "tag object type commit",
+            "source commit e75633902841aa5479c759492b73409e6d317f12"
+          ]
+        }
+      ],
+      "retained_residual": "ubuntu-latest remains mutable. Every later/final hosted execution must independently capture the exact runner version, image/OS, image version, runner-images release, and actual Java runtime. This baseline observation does not satisfy S13 and does not bind a future runner execution.",
+      "source_project": "actions/runner-images",
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP a later/final hosted claim if any required observation is absent, mismatches its declared execution, or lacks source binding; no fallback from this baseline to a future runner and no S13 PASS from the observation alone",
+      "verification_method": "Primary GitHub run/job API confirms the exact source HEAD and run/job identity; primary release API and commit-addressed software readme confirm the image release/version and included Java. Exact log observations are recorded from the current independent review. Anonymous job-log API returned 403, so raw logs were not independently re-fetched or retained in this remediation; no claim of full log re-verification or immutable hosted-image binaries.",
+      "verification_scope": "VERIFIED BASELINE OBSERVATION; the verified object is this exact observed execution/image/release, not ubuntu-latest",
+      "version": "ubuntu-24.04 / 20260920.314.1 / runner 2.337.0"
+    }
+  ],
+  "schema_version": 1
+}

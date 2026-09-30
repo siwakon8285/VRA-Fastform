@@ -1,0 +1,14 @@
+# Phase 0 provenance-only lock; no packages installed.
+# Future CPython3.13/Linux arm64 or amd64 inside the pinned Python image only.
+# Future command: python -m pip install --require-hashes --only-binary=:all: --no-deps -r requirements.txt
+# No dev/test/pool/c extras, source builds, implicit dependencies or pip upgrades.
+--require-hashes
+--only-binary=:all:
+pglast==7.18 \
+    --hash=sha256:a43295ccef3b7e9a75ab9b1f1c83d8128c3184c548840f26f12dd320d9c924df \
+    --hash=sha256:6c3c4ca0d88e2f5dc9d261a1a718be02426f14758c13b1665c431f756e6e5f1e
+psycopg==3.3.6 \
+    --hash=sha256:a1db9f7148b06a28606767efaca51fa6f9398c5c0a3810519be69d7000bdb631
+psycopg-binary==3.3.6 \
+    --hash=sha256:cec5ea900390897d0b46130f60bc2883bf19c314f9044235217c8be88b0ef269 \
+    --hash=sha256:98c02090d88f2ebc0ec1e8da538f77d225ce0fffecf372aa39262e62a1b054ef

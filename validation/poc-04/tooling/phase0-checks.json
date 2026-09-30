@@ -1,0 +1,206 @@
+{
+  "POC04": "NOT VERIFIED",
+  "S0_S15": "NOT VERIFIED",
+  "authority_and_migrations": [
+    {
+      "path": "validation/poc-04/SHARED_SPEC.md",
+      "sha256": "c035e627c087b41cb4533b00f0bdaf8fa208a5b55881358cf1f85b6809b2ed2d",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "validation/poc-04/IMPLEMENTATION_PLAN.md",
+      "sha256": "c169ad62d947841ec08987d2561f16b75935168d99ea46a34143004d3da3d7c5",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "docs/adr/ADR-004-human-identity-and-browser-session-authority.md",
+      "sha256": "860d14431ed905e18aa67a60eb16fe44660a4fe28f056d47cd57eb13de642899",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "docs/adr/ADR-005-privileged-security-operations-and-protected-audit.md",
+      "sha256": "dd5933ca1adc930a5b8617b6f5b49f748081f7f9770dea87b761b3e937319f49",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "docs/adr/ADR-006-synchronous-guarded-postgresql-capability-boundary.md",
+      "sha256": "3068fa468b1483788a3a59cab3b628b6b8a2cc0beee101a93e0111b55e18f892",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "backend/migration/src/main/resources/db/migration/V1__inventory_reservation_foundation.sql",
+      "sha256": "d804cbe5153b9a904ae0747af55c8295079d4a0c3edb4a38145ab5199b5b59c4",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "backend/migration/src/main/resources/db/migration/V2__inventory_reservation_idempotency.sql",
+      "sha256": "7bef750b59b7b77e8402f4f42c13c21c4e072092504b9f268bace9b72de8d2bb",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "backend/migration/src/main/resources/db/migration/V3__outbox_recovery.sql",
+      "sha256": "9edbd15ffe08ee4edafa3f549856ee38a782485c54db9c73e69d4263e5ca26b4",
+      "status": "VERIFIED"
+    }
+  ],
+  "blockers": [],
+  "branch": "poc/04-security-auth",
+  "closure_findings": {
+    "B0-1": "CLOSED",
+    "B0-2": "CLOSED",
+    "B0-3": "CLOSED",
+    "G0-1": "CLOSED"
+  },
+  "head": "8243d62f50aed2dc9a8605d7f12f0e2b7aa86854",
+  "independent_phase0_review": {
+    "archive_sha256": "ae9b52c9d9683067a3d59fa7cb96b60709244cf27aa0a2c04b1a1980776a5e17",
+    "result": "PASS",
+    "round": 3
+  },
+  "limitations": "Offline validation of source-bound provenance records and recording of user-supplied Round-3 acceptance; not fresh network re-verification, execution proof or independent review of these closure-candidate bytes",
+  "phase0_closed": true,
+  "phase0_status": "CLOSED",
+  "phase1": "NOT AUTHORIZED",
+  "phase1_authorized": false,
+  "phase1_code_or_migration_changes_present": false,
+  "phase1_started": false,
+  "pins": [
+    {
+      "classification": "VERIFIED",
+      "id": "gradle-distribution"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "gradle-wrapper-jar"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "actions-checkout"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "actions-setup-java"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "java21-temurin"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "hosted-runner"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "keycloak_test"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "postgresql_test"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "testcontainers_java"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "testcontainers_ryuk"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "testcontainers_tinyimage"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "OSV-Scanner"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "Gitleaks"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "Syft"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "@usebruno/cli"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "@playwright/test"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "playwright"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "playwright-core"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "Python"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "Node.js"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "Chromium browser bundle"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "pglast"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "OpenSSL TEST CA tool"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "psycopg"
+    },
+    {
+      "classification": "VERIFIED",
+      "id": "psycopg-binary"
+    }
+  ],
+  "reviewed_governance": {
+    "G0-1": "CLOSED",
+    "path": "docs/BRANCH_PLAN.md",
+    "required_markers_verified": true,
+    "scope": "Exact authorized closure-candidate unstaged governance exception only; final byte review pending; no arbitrary tracked change or staged path permitted",
+    "sha256": "24100225282f7ddae8b1d24cb097a9b38cde2842932334b32de6a7ab784df62b",
+    "status": "CLOSED / RECONCILED"
+  },
+  "schema_version": 1,
+  "source_content_sha256": "609138eb48916e58261dfa73afe419960db6286998d4aec3f4701d69dc28e058",
+  "source_manifest_execution": "VERIFIED",
+  "temporary_signed_url_check": {
+    "artifacts_checked": 15,
+    "failure_behavior": "PHASE0_STOP; offending path only, never URL/query values",
+    "nonclaim": "URL-query policy check, not a general secret scan or S13 PASS",
+    "scope": "Existing Phase-0 baseline/tooling/scripts, tracked and untracked; raw text plus decoded JSON strings",
+    "status": "VERIFIED"
+  },
+  "tree": "33d347db596daa23247b1602964be6fb9ada54d6",
+  "worktree_porcelain_v1": [
+    " M docs/BRANCH_PLAN.md",
+    "?? validation/poc-04/PHASE0_BASELINE.md",
+    "?? validation/poc-04/scripts/source-manifest.py",
+    "?? validation/poc-04/scripts/verify-phase0.py",
+    "?? validation/poc-04/tooling/PINS.md",
+    "?? validation/poc-04/tooling/build-ci-pins.json",
+    "?? validation/poc-04/tooling/image-pins.json",
+    "?? validation/poc-04/tooling/node-pin-lock/package-lock.json",
+    "?? validation/poc-04/tooling/node-pin-lock/package.json",
+    "?? validation/poc-04/tooling/phase0-checks.json",
+    "?? validation/poc-04/tooling/python-pin-lock/requirements.txt",
+    "?? validation/poc-04/tooling/run-manifest.json",
+    "?? validation/poc-04/tooling/scanner-pins.json",
+    "?? validation/poc-04/tooling/source-manifest.json",
+    "?? validation/poc-04/tooling/tool-manifest.json",
+    "?? validation/poc-04/tooling/web-python-pins.json"
+  ]
+}

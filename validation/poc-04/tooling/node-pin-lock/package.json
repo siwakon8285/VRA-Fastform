@@ -1,0 +1,14 @@
+{
+  "name": "vra-poc04-phase0-node-provenance",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Provenance-only Phase 0 dependency lock; no functional suite, scripts or production artifact.",
+  "engines": {
+    "node": "24.19.0",
+    "npm": "11.17.0"
+  },
+  "devDependencies": {
+    "@usebruno/cli": "4.2.0",
+    "@playwright/test": "1.63.0"
+  }
+}

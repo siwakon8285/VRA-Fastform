@@ -1,0 +1,66 @@
+{
+  "POC04": "NOT VERIFIED",
+  "S0_S15": "NOT VERIFIED",
+  "activity": "PHASE0_PROVENANCE_ONLY",
+  "blocking_findings": 0,
+  "closure_byte_review": "PENDING",
+  "closure_findings": {
+    "B0-1": "CLOSED",
+    "B0-2": "CLOSED",
+    "B0-3": "CLOSED",
+    "G0-1": "CLOSED"
+  },
+  "critical_unresolved_pins": 0,
+  "database_instances": [],
+  "environment_provisioned": false,
+  "environment_type": "TEST",
+  "execution_started_at_utc": null,
+  "independent_review_result": "PASS",
+  "independent_review_round": 3,
+  "nonclaim": "This provenance activity ID is not authentication authority or attestation that a disposable database exists. A later actual TEST run must record started_at and physical IDs under PHASE0_BASELINE section7.",
+  "phase0_closed": true,
+  "phase0_review_round1_remediation": {
+    "B0-1": "CLOSED; complete signed redirect fields removed and URL-query guard added",
+    "B0-2": "CLOSED; exact existing hosted baseline observation recorded with mutable-alias/future-execution residual",
+    "G0-1": "CLOSED; separately authorized BRANCH_PLAN reconciliation passed independent document-byte review",
+    "hosted_baseline_job_id": 109788657016,
+    "hosted_baseline_run_id": 36684984462,
+    "new_hosted_run_triggered": false
+  },
+  "phase0_round2_integration_remediation": {
+    "B0-3": "CLOSED; generated source/check manifests bind the actual reconciled governance bytes and worktree",
+    "checkpoint": "Round-2 integration completed; Phase-0 closure now recorded after Independent Review Round 3 PASS; Phase 1 remains NOT AUTHORIZED",
+    "phase0_closed": true,
+    "phase1_changes_present": false
+  },
+  "phase0_status": "CLOSED",
+  "phase1_authorized": false,
+  "phase1_started": false,
+  "pins": {
+    "proposed": 0,
+    "unresolved": 0,
+    "verified": 25
+  },
+  "private_material_generated": false,
+  "recorded_at_utc": "2026-09-30T08:20:15.361163+00:00",
+  "review_archive_sha256": "ae9b52c9d9683067a3d59fa7cb96b60709244cf27aa0a2c04b1a1980776a5e17",
+  "reviewed_governance": {
+    "G0-1": "CLOSED",
+    "path": "docs/BRANCH_PLAN.md",
+    "pre_closure_reviewed_sha256": "b0c231dcfe1b36897dd81e9cb6c0040c1e0253132115b0d33f91fb5af96d1ad2",
+    "scope": "Exact authorized closure-candidate unstaged tracked exception; final byte review pending; no staged paths or other tracked changes permitted",
+    "sha256": "24100225282f7ddae8b1d24cb097a9b38cde2842932334b32de6a7ab784df62b",
+    "worktree_state": " M docs/BRANCH_PLAN.md"
+  },
+  "run_id": "e26c79d6-82a8-400b-b91f-2229fd62689d",
+  "schema_version": 1,
+  "source_branch": "poc/04-security-auth",
+  "source_content_sha256": "609138eb48916e58261dfa73afe419960db6286998d4aec3f4701d69dc28e058",
+  "source_file_count": 254,
+  "source_head": "8243d62f50aed2dc9a8605d7f12f0e2b7aa86854",
+  "source_manifest_repeated_generation_byte_identical": true,
+  "source_manifest_sha256": "b1111ee17bad81b617e94e6c61238075b3e337a312be4bad3a375ddce8cf3103",
+  "source_tree": "33d347db596daa23247b1602964be6fb9ada54d6",
+  "tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+  "tool_manifest_version": "poc04-phase0-pins-v2"
+}

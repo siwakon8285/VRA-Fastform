@@ -1,0 +1,574 @@
+{
+  "S0_S15": "NOT VERIFIED",
+  "artifacts_downloaded_to_memory_only": true,
+  "containers_pulled_or_started": false,
+  "observation_date_utc": "2026-09-30",
+  "records": [
+    {
+      "artifact_identifier": "quay.io/keycloak/keycloak:26.7.4",
+      "execution_identifier": "quay.io/keycloak/keycloak@sha256:82a77884f3af238beab1e7afd63b5f530e1b5c0590bd7aa60b40a40463e29b2c",
+      "execution_location": "Isolated TEST containers on local Apple Silicon linux/arm64 and hosted CI linux/amd64; no image was pulled or started in Phase 0",
+      "id": "keycloak_test",
+      "index_digest": "sha256:82a77884f3af238beab1e7afd63b5f530e1b5c0590bd7aa60b40a40463e29b2c",
+      "index_response": {
+        "docker_content_digest": "sha256:82a77884f3af238beab1e7afd63b5f530e1b5c0590bd7aa60b40a40463e29b2c",
+        "media_type": "application/vnd.oci.image.index.v1+json",
+        "response_bytes": 2364,
+        "response_sha256": "82a77884f3af238beab1e7afd63b5f530e1b5c0590bd7aa60b40a40463e29b2c",
+        "url": "https://quay.io/v2/keycloak/keycloak/manifests/26.7.4"
+      },
+      "license_source_project": {
+        "license": "Apache-2.0",
+        "license_response": {
+          "response_bytes": 11358,
+          "response_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "url": "https://raw.githubusercontent.com/keycloak/keycloak/aa9fe3fba0c6cd5770f19a49378c55f4378cf544/LICENSE.txt"
+        },
+        "project": "https://github.com/keycloak/keycloak"
+      },
+      "platform_manifests": [
+        {
+          "config_architecture": "amd64",
+          "config_digest": "sha256:b2f3e1b85071d17a1da8d2cbcc54707853d19c74ae027071789ea1bb12b3ec89",
+          "config_os": "linux",
+          "config_response": {
+            "response_bytes": 9687,
+            "response_sha256": "b2f3e1b85071d17a1da8d2cbcc54707853d19c74ae027071789ea1bb12b3ec89",
+            "url": "https://quay.io/v2/keycloak/keycloak/blobs/sha256:b2f3e1b85071d17a1da8d2cbcc54707853d19c74ae027071789ea1bb12b3ec89"
+          },
+          "digest": "sha256:3d911baa186f352563854039b95f21a7e2c01c76b527fdc64f24a0885b927bdf",
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "response": {
+            "docker_content_digest": "sha256:3d911baa186f352563854039b95f21a7e2c01c76b527fdc64f24a0885b927bdf",
+            "response_bytes": 1056,
+            "response_sha256": "3d911baa186f352563854039b95f21a7e2c01c76b527fdc64f24a0885b927bdf",
+            "url": "https://quay.io/v2/keycloak/keycloak/manifests/sha256:3d911baa186f352563854039b95f21a7e2c01c76b527fdc64f24a0885b927bdf"
+          },
+          "source_labels": {
+            "com.redhat.license_terms": "",
+            "io.buildah.version": "1.44.0",
+            "org.opencontainers.image.licenses": "Apache-2.0",
+            "org.opencontainers.image.revision": "df15afa5a3a8a2b10021f879ffa93b30fb36c73a",
+            "org.opencontainers.image.source": "https://github.com/keycloak-rel/keycloak-rel",
+            "org.opencontainers.image.title": "keycloak-rel",
+            "org.opencontainers.image.version": "26.7.4",
+            "vendor": "https://www.keycloak.org/",
+            "version": "26.7.4"
+          },
+          "version_environment": []
+        },
+        {
+          "config_architecture": "arm64",
+          "config_digest": "sha256:dc0f6a6c61f4170f154b6dd89dfc160c839fd24989d2c798af2a7072498bfbac",
+          "config_os": "linux",
+          "config_response": {
+            "response_bytes": 9690,
+            "response_sha256": "dc0f6a6c61f4170f154b6dd89dfc160c839fd24989d2c798af2a7072498bfbac",
+            "url": "https://quay.io/v2/keycloak/keycloak/blobs/sha256:dc0f6a6c61f4170f154b6dd89dfc160c839fd24989d2c798af2a7072498bfbac"
+          },
+          "digest": "sha256:1f91ac24e8d68b8189d5d53a8381464c1db0fcff479348d5de973a86b63d621c",
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "response": {
+            "docker_content_digest": "sha256:1f91ac24e8d68b8189d5d53a8381464c1db0fcff479348d5de973a86b63d621c",
+            "response_bytes": 1056,
+            "response_sha256": "1f91ac24e8d68b8189d5d53a8381464c1db0fcff479348d5de973a86b63d621c",
+            "url": "https://quay.io/v2/keycloak/keycloak/manifests/sha256:1f91ac24e8d68b8189d5d53a8381464c1db0fcff479348d5de973a86b63d621c"
+          },
+          "source_labels": {
+            "com.redhat.license_terms": "",
+            "io.buildah.version": "1.44.0",
+            "org.opencontainers.image.licenses": "Apache-2.0",
+            "org.opencontainers.image.revision": "df15afa5a3a8a2b10021f879ffa93b30fb36c73a",
+            "org.opencontainers.image.source": "https://github.com/keycloak-rel/keycloak-rel",
+            "org.opencontainers.image.title": "keycloak-rel",
+            "org.opencontainers.image.version": "26.7.4",
+            "vendor": "https://www.keycloak.org/",
+            "version": "26.7.4"
+          },
+          "version_environment": []
+        }
+      ],
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://github.com/keycloak/keycloak",
+        "https://www.keycloak.org/downloads",
+        "https://www.keycloak.org/2026/09/keycloak-2674-released",
+        "https://www.keycloak.org/getting-started/getting-started-docker"
+      ],
+      "purpose": "Independent TEST-only OIDC issuer fixture; not a production IdP selection",
+      "readable_tag_mutable": true,
+      "source_release": {
+        "commit": "aa9fe3fba0c6cd5770f19a49378c55f4378cf544",
+        "ref_response": {
+          "response_bytes": 343,
+          "response_sha256": "0dd015a7cc67bd1ea28a55986037d09688069e05eb3e867898afbd89fe6278a7",
+          "url": "https://api.github.com/repos/keycloak/keycloak/git/ref/tags/26.7.4"
+        },
+        "tag": "26.7.4"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before later execution if index/selected-platform manifest or config hash differs, required platform is absent, the exact digest is unavailable, or executed software version fails its runtime assertion. Do not fall back to a tag/latest/other version.",
+      "trust_limits": "Verified pin proves immutable metadata identification at the named trusted registry over HTTPS. No image layers were fetched, containers executed, publisher signature verified, or reproducible source-to-image build attested; later pull must verify content-addressed layers and execution/version evidence remains required. Not a vulnerability scan, production suitability claim, or S-gate PASS. The OCI source/revision labels refer to the project release-image repository, while the separately recorded source release tag refers to keycloak/keycloak; no equality or reproducible-build linkage between these two commits is asserted.",
+      "verification_method": "Anonymous HTTPS to the project-advertised registry; compute SHA-256 of raw OCI index, each required platform manifest and config blob; compare to registry Docker-Content-Digest/index/config descriptors. Read-only metadata fetches only; independently re-fetch exact digests before future pull/run and assert the running version then.",
+      "version": "26.7.4"
+    },
+    {
+      "artifact_identifier": "docker.io/library/postgres:17.11",
+      "execution_identifier": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+      "execution_location": "Isolated TEST containers on local Apple Silicon linux/arm64 and hosted CI linux/amd64; no image was pulled or started in Phase 0",
+      "id": "postgresql_test",
+      "index_digest": "sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+      "index_response": {
+        "docker_content_digest": "sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+        "media_type": "application/vnd.oci.image.index.v1+json",
+        "response_bytes": 10237,
+        "response_sha256": "d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+        "url": "https://registry-1.docker.io/v2/library/postgres/manifests/17.11"
+      },
+      "license_source_project": {
+        "license": "PostgreSQL server license; docker-library image scripts MIT; constituent licenses apply",
+        "license_response": {
+          "response_bytes": 1084,
+          "response_sha256": "87ffd2c45e3f90cfa3407b5c40ef8333e87c3e875e4895f8b64df758198deafc",
+          "url": "https://raw.githubusercontent.com/docker-library/postgres/2603e26e245e558218728ee14e0a42dcb020dc7f/LICENSE"
+        },
+        "project": "https://github.com/docker-library/postgres"
+      },
+      "platform_manifests": [
+        {
+          "config_architecture": "amd64",
+          "config_digest": "sha256:212aeeeb8faaef6c46498d86cbec6b9344d8d9492996b174664ff82c562ab685",
+          "config_os": "linux",
+          "config_response": {
+            "response_bytes": 10147,
+            "response_sha256": "212aeeeb8faaef6c46498d86cbec6b9344d8d9492996b174664ff82c562ab685",
+            "url": "https://registry-1.docker.io/v2/library/postgres/blobs/sha256:212aeeeb8faaef6c46498d86cbec6b9344d8d9492996b174664ff82c562ab685"
+          },
+          "digest": "sha256:e31e3d5327d1806f6177827c9710643e4f35f7ab3f14d26d05332753d3e95ee0",
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "response": {
+            "docker_content_digest": "sha256:e31e3d5327d1806f6177827c9710643e4f35f7ab3f14d26d05332753d3e95ee0",
+            "response_bytes": 3628,
+            "response_sha256": "e31e3d5327d1806f6177827c9710643e4f35f7ab3f14d26d05332753d3e95ee0",
+            "url": "https://registry-1.docker.io/v2/library/postgres/manifests/sha256:e31e3d5327d1806f6177827c9710643e4f35f7ab3f14d26d05332753d3e95ee0"
+          },
+          "source_labels": {},
+          "version_environment": [
+            "PG_MAJOR=17",
+            "PG_VERSION=17.11-1.pgdg13+2"
+          ]
+        },
+        {
+          "config_architecture": "arm64",
+          "config_digest": "sha256:97432f980da100ebd3e419711efee84e1e97a966d62c035286a07f239ddb4d9c",
+          "config_os": "linux",
+          "config_response": {
+            "response_bytes": 10161,
+            "response_sha256": "97432f980da100ebd3e419711efee84e1e97a966d62c035286a07f239ddb4d9c",
+            "url": "https://registry-1.docker.io/v2/library/postgres/blobs/sha256:97432f980da100ebd3e419711efee84e1e97a966d62c035286a07f239ddb4d9c"
+          },
+          "digest": "sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761",
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux",
+            "variant": "v8"
+          },
+          "response": {
+            "docker_content_digest": "sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761",
+            "response_bytes": 3630,
+            "response_sha256": "86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761",
+            "url": "https://registry-1.docker.io/v2/library/postgres/manifests/sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761"
+          },
+          "source_labels": {},
+          "version_environment": [
+            "PG_MAJOR=17",
+            "PG_VERSION=17.11-1.pgdg13+2"
+          ]
+        }
+      ],
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://github.com/docker-library/postgres",
+        "https://hub.docker.com/_/postgres",
+        "https://www.postgresql.org/docs/release/17.11/",
+        "https://raw.githubusercontent.com/docker-library/official-images/56d7550006f0cbcd5d7ef874c6f43c0ebc8aa43b/library/postgres",
+        "https://raw.githubusercontent.com/docker-library/postgres/2603e26e245e558218728ee14e0a42dcb020dc7f/17/trixie/Dockerfile"
+      ],
+      "purpose": "Disposable PostgreSQL TEST database and native ACL/logging evidence",
+      "readable_tag_mutable": true,
+      "source_build": {
+        "dockerfile_commit": "2603e26e245e558218728ee14e0a42dcb020dc7f",
+        "dockerfile_directory": "17/trixie",
+        "dockerfile_response": {
+          "response_bytes": 9730,
+          "response_sha256": "e20926ed861c597360c45b11b5c06a098fd31db26f9e39c18dbc0feeb46036a5",
+          "url": "https://raw.githubusercontent.com/docker-library/postgres/2603e26e245e558218728ee14e0a42dcb020dc7f/17/trixie/Dockerfile"
+        },
+        "official_images_commit": "56d7550006f0cbcd5d7ef874c6f43c0ebc8aa43b",
+        "official_images_library_response": {
+          "response_bytes": 4959,
+          "response_sha256": "c10b563cfb1f49446de0d95d5767011dd19ad1b6e41342bd3833b957d862736c",
+          "url": "https://raw.githubusercontent.com/docker-library/official-images/56d7550006f0cbcd5d7ef874c6f43c0ebc8aa43b/library/postgres"
+        },
+        "official_images_ref_response": {
+          "response_bytes": 371,
+          "response_sha256": "6f97a233366eea9f6e439b708099e5b180edfaee7b4d53e333c229d0640d5ad5",
+          "url": "https://api.github.com/repos/docker-library/official-images/git/ref/heads/master"
+        },
+        "package_basis": "Debian trixie + PGDG package repositories as defined by the immutable Dockerfile; do not claim the image is a direct rebuild of the upstream tarball",
+        "package_version": "17.11-1.pgdg13+2",
+        "selected_mapping": "Tags: 17.11, 17, 17.11-trixie, 17-trixie\nArchitectures: amd64, arm32v5, arm32v7, arm64v8, i386, ppc64le, riscv64, s390x\nGitCommit: 2603e26e245e558218728ee14e0a42dcb020dc7f\nDirectory: 17/trixie",
+        "upstream_source_checksum_response": {
+          "response_bytes": 91,
+          "response_sha256": "f9208b5775f150824186dd2597fb14e7a44d2323253904e5903c6f1be8e09d8e",
+          "url": "https://ftp.postgresql.org/pub/source/v17.11/postgresql-17.11.tar.bz2.sha256"
+        },
+        "upstream_source_release": "https://www.postgresql.org/docs/release/17.11/",
+        "upstream_source_sha256": "dd27f2b3c59e73ed14aa3324901242bf69a032a6347805f274e6260322d42979",
+        "upstream_source_tarball_downloaded": false
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before later execution if index/selected-platform manifest or config hash differs, required platform is absent, the exact digest is unavailable, or executed software version fails its runtime assertion. Do not fall back to a tag/latest/other version.",
+      "trust_limits": "Verified pin proves immutable metadata identification at the named trusted registry over HTTPS. No image layers were fetched, containers executed, publisher signature verified, or reproducible source-to-image build attested; later pull must verify content-addressed layers and execution/version evidence remains required. Not a vulnerability scan, production suitability claim, or S-gate PASS.",
+      "verification_method": "Anonymous HTTPS to the project-advertised registry; compute SHA-256 of raw OCI index, each required platform manifest and config blob; compare to registry Docker-Content-Digest/index/config descriptors. Read-only metadata fetches only; independently re-fetch exact digests before future pull/run and assert the running version then.",
+      "version": "17.11"
+    },
+    {
+      "artifact_identifier": "org.testcontainers:testcontainers-bom:2.0.5 and the existing core/postgresql/junit-jupiter modules",
+      "artifacts": [
+        {
+          "artifact_response_bytes": 12236,
+          "artifact_url": "https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers-bom/2.0.5/testcontainers-bom-2.0.5.pom",
+          "checksum_matches_downloaded_bytes": true,
+          "checksum_response": {
+            "response_bytes": 64,
+            "response_sha256": "9e4f7592f7397273ac9d239ca6829fb6fef3e7a601cfbca4fe6e78d0ae8abd37",
+            "url": "https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers-bom/2.0.5/testcontainers-bom-2.0.5.pom.sha256"
+          },
+          "coordinate": "org.testcontainers:testcontainers-bom:2.0.5",
+          "extension": "pom",
+          "sha256": "bbba1376021fbf4e14663a61f10cd1aff14a5d74fb55f1a14be6fd6de83d7eef"
+        },
+        {
+          "artifact_response_bytes": 17789146,
+          "artifact_url": "https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers/2.0.5/testcontainers-2.0.5.jar",
+          "checksum_matches_downloaded_bytes": true,
+          "checksum_response": {
+            "response_bytes": 64,
+            "response_sha256": "a2346ca93362e9a418b8f76c4ec8e15863587db39756a9fc42ff106216347d6c",
+            "url": "https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers/2.0.5/testcontainers-2.0.5.jar.sha256"
+          },
+          "coordinate": "org.testcontainers:testcontainers:2.0.5",
+          "extension": "jar",
+          "pom_response": {
+            "response_bytes": 2451,
+            "response_sha256": "78839aaa8e34da1c483deb57e4f383a8045abacda5549bc79840f25794963103",
+            "sha256_sidecar_matches": true,
+            "url": "https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers/2.0.5/testcontainers-2.0.5.pom"
+          },
+          "sha256": "0466f481343d5f350a91274cd7bf984308cbaf90d706247fd1cf4b1a8010c2e1"
+        },
+        {
+          "artifact_response_bytes": 14864,
+          "artifact_url": "https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers-postgresql/2.0.5/testcontainers-postgresql-2.0.5.jar",
+          "checksum_matches_downloaded_bytes": true,
+          "checksum_response": {
+            "response_bytes": 64,
+            "response_sha256": "f02e2d9a9be563f3e236e0e3217d6d1b3b5180454421b8e0c43435cf701733c8",
+            "url": "https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers-postgresql/2.0.5/testcontainers-postgresql-2.0.5.jar.sha256"
+          },
+          "coordinate": "org.testcontainers:testcontainers-postgresql:2.0.5",
+          "extension": "jar",
+          "pom_response": {
+            "response_bytes": 1548,
+            "response_sha256": "8f68c9fbec5a242dffbb01ea6a2d3a99104f1f0af6fd54d10cbdf7e5a47e1a10",
+            "sha256_sidecar_matches": true,
+            "url": "https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers-postgresql/2.0.5/testcontainers-postgresql-2.0.5.pom"
+          },
+          "sha256": "8dbfb2fda977eb813ed1188ce02f098b8b634910eeab220568d54d6bd5b7ce9f"
+        },
+        {
+          "artifact_response_bytes": 14917,
+          "artifact_url": "https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers-junit-jupiter/2.0.5/testcontainers-junit-jupiter-2.0.5.jar",
+          "checksum_matches_downloaded_bytes": true,
+          "checksum_response": {
+            "response_bytes": 64,
+            "response_sha256": "1649e2d0bcc980311cee632c21df0fe20ea7fefb298a5570f9b1c410d37f5a45",
+            "url": "https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers-junit-jupiter/2.0.5/testcontainers-junit-jupiter-2.0.5.jar.sha256"
+          },
+          "coordinate": "org.testcontainers:testcontainers-junit-jupiter:2.0.5",
+          "extension": "jar",
+          "pom_response": {
+            "response_bytes": 1551,
+            "response_sha256": "4968a10f9c34413e936c8fa68d50d074208349fa9effa85ab16ab20224834efc",
+            "sha256_sidecar_matches": true,
+            "url": "https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers-junit-jupiter/2.0.5/testcontainers-junit-jupiter-2.0.5.pom"
+          },
+          "sha256": "d66eb7f257a85833a8cc973e3814d740967d40a7db1a0de0040653c6ed236748"
+        }
+      ],
+      "execution_location": "Gradle TEST compile/runtime only, local and hosted CI",
+      "id": "testcontainers_java",
+      "license_source_project": {
+        "license": "MIT",
+        "license_response": {
+          "response_bytes": 1085,
+          "response_sha256": "2159220a6d068db4dc329a5f9f1f4670abdfbe225942a5e46c7330ffa98f89d4",
+          "url": "https://raw.githubusercontent.com/testcontainers/testcontainers-java/5c448202ac69d073f746433d3e79f6a2bf0ec585/LICENSE"
+        },
+        "project": "https://github.com/testcontainers/testcontainers-java"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://java.testcontainers.org/",
+        "https://github.com/testcontainers/testcontainers-java/releases/tag/2.0.5",
+        "https://repo.maven.apache.org/maven2/org/testcontainers/"
+      ],
+      "purpose": "Existing real PostgreSQL/Testcontainers test harness; Phase-0 source/byte provenance only",
+      "repository_version_basis": {
+        "build_file_sha256": {
+          "backend/build.gradle.kts": "9f3b2ef74d41a7648bb051d5e373ae729bd9b34250e02207b274b7febeb171c7",
+          "backend/migration/build.gradle.kts": "7a3d7f28cff8eedc0fa584e732e7bf83ca7c0ffcdb081d1776a6372ac2a0b488",
+          "backend/runtime/build.gradle.kts": "5e8557b6c689817cbeeed08e39bad02e5bc4f78dc761865d9028cb70c53c5a54"
+        },
+        "build_files": [
+          "backend/build.gradle.kts",
+          "backend/runtime/build.gradle.kts",
+          "backend/migration/build.gradle.kts"
+        ],
+        "spring_boot_bom_response": {
+          "response_bytes": 141475,
+          "response_sha256": "1c929eeccb48f8ee12225e9fec725177170b89575754bd903f184c185db77775",
+          "url": "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-dependencies/4.1.1/spring-boot-dependencies-4.1.1.pom"
+        },
+        "spring_boot_bom_selected_testcontainers_version": "2.0.5"
+      },
+      "source_release": {
+        "commit": "5c448202ac69d073f746433d3e79f6a2bf0ec585",
+        "ref_response": {
+          "response_bytes": 371,
+          "response_sha256": "76eef667c3e4a32cf124bcb94955136c910c1a5af075e35e5a96e297d82e6b31",
+          "url": "https://api.github.com/repos/testcontainers/testcontainers-java/git/ref/tags/2.0.5"
+        },
+        "tag": "2.0.5"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before test execution if BOM/modules resolve to another version or artifact hashes differ; do not silently upgrade or use a mirror with different bytes. Transitive graph and container helper image verification remain later evidence obligations.",
+      "trust_limits": "Maven Central HTTPS plus matching publisher sidecars and official source release establish byte pin provenance; no developer PGP signature/source-reproducible build was verified. Complete Gradle transitive dependency graph and any Testcontainers helper-image pins are not proven by these four artifacts and must be recorded before such helpers execute.",
+      "verification_method": "Download the exact Maven Central BOM/JAR/POM bytes to memory, compute SHA-256, and match each publisher checksum sidecar; verify Spring Boot 4.1.1 BOM selects 2.0.5. Future Gradle resolution must reproduce these version/byte checks and source-bound transitive graph. No Gradle build/dependency installation was performed here.",
+      "version": "2.0.5"
+    },
+    {
+      "artifact_identifier": "docker.io/testcontainers/ryuk:0.14.0",
+      "execution_identifier": "docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0",
+      "execution_location": "Dedicated disposable TEST Docker host only, local linux/arm64 and hosted linux/amd64; no container run/pull occurred",
+      "id": "testcontainers_ryuk",
+      "index_digest": "sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0",
+      "index_response": {
+        "docker_content_digest": "sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0",
+        "media_type": "application/vnd.docker.distribution.manifest.list.v2+json",
+        "response_bytes": 5091,
+        "response_sha256": "7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0",
+        "url": "https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.14.0"
+      },
+      "license_source_project": {
+        "license": "MIT",
+        "license_response": {
+          "response_bytes": 1085,
+          "response_sha256": "c6c6340d7962d2d1239a0bd8c43d48b2a7cfe377de2fad6ad72588903cd68a0d",
+          "url": "https://raw.githubusercontent.com/testcontainers/moby-ryuk/b3726afd6cc2c36628abcc08e9cabac43f587384/LICENSE"
+        },
+        "project": "https://github.com/testcontainers/moby-ryuk"
+      },
+      "platform_manifests": [
+        {
+          "config_architecture": "arm64",
+          "config_digest": "sha256:52785d2485ac7df684b8740e233427b5ed4d0ee39132f1bb54ddc54df767bf38",
+          "config_os": "linux",
+          "config_response": {
+            "response_bytes": 1062,
+            "response_sha256": "52785d2485ac7df684b8740e233427b5ed4d0ee39132f1bb54ddc54df767bf38",
+            "url": "https://registry-1.docker.io/v2/testcontainers/ryuk/blobs/sha256:52785d2485ac7df684b8740e233427b5ed4d0ee39132f1bb54ddc54df767bf38"
+          },
+          "digest": "sha256:79e2fbedad76001e8ac2f64556a729de503531be9dad9e2ff6fc469006b2e93c",
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "response": {
+            "docker_content_digest": "sha256:79e2fbedad76001e8ac2f64556a729de503531be9dad9e2ff6fc469006b2e93c",
+            "response_bytes": 662,
+            "response_sha256": "79e2fbedad76001e8ac2f64556a729de503531be9dad9e2ff6fc469006b2e93c",
+            "url": "https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/sha256:79e2fbedad76001e8ac2f64556a729de503531be9dad9e2ff6fc469006b2e93c"
+          },
+          "source_labels": {}
+        },
+        {
+          "config_architecture": "amd64",
+          "config_digest": "sha256:9a5f93e8f9300530b91866bcf41c0b8a5d72f0e5a7b4365167a48df9816cd36e",
+          "config_os": "linux",
+          "config_response": {
+            "response_bytes": 1062,
+            "response_sha256": "9a5f93e8f9300530b91866bcf41c0b8a5d72f0e5a7b4365167a48df9816cd36e",
+            "url": "https://registry-1.docker.io/v2/testcontainers/ryuk/blobs/sha256:9a5f93e8f9300530b91866bcf41c0b8a5d72f0e5a7b4365167a48df9816cd36e"
+          },
+          "digest": "sha256:f0456560ea5b4acdbed0da0efc33b5f9dd6bc1e59f2337106826dcb5b0b0e981",
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "response": {
+            "docker_content_digest": "sha256:f0456560ea5b4acdbed0da0efc33b5f9dd6bc1e59f2337106826dcb5b0b0e981",
+            "response_bytes": 662,
+            "response_sha256": "f0456560ea5b4acdbed0da0efc33b5f9dd6bc1e59f2337106826dcb5b0b0e981",
+            "url": "https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/sha256:f0456560ea5b4acdbed0da0efc33b5f9dd6bc1e59f2337106826dcb5b0b0e981"
+          },
+          "source_labels": {}
+        }
+      ],
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://raw.githubusercontent.com/testcontainers/testcontainers-java/5c448202ac69d073f746433d3e79f6a2bf0ec585/core/src/main/java/org/testcontainers/utility/RyukContainer.java",
+        "https://java.testcontainers.org/features/configuration/",
+        "https://hub.docker.com/r/testcontainers/ryuk"
+      ],
+      "purpose": "Existing Testcontainers default resource cleanup helper",
+      "readable_tag_mutable": true,
+      "source_release": {
+        "commit": "b3726afd6cc2c36628abcc08e9cabac43f587384",
+        "ref_response": {
+          "response_bytes": 357,
+          "response_sha256": "62c5c5a4026b703e63731ff40e57ee9fcc2997b96e5a9359f63287505c5d4d36",
+          "url": "https://api.github.com/repos/testcontainers/moby-ryuk/git/ref/tags/0.14.0"
+        },
+        "tag": "0.14.0"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before any Testcontainers run if helper digest/platform cannot be verified or actual pull resolves another digest; do not disable required environment checks/resource cleanup merely to bypass the pin. Unselected optional helpers require their own reviewed digest before use.",
+      "testcontainers_default_source": {
+        "response_bytes": 1174,
+        "response_sha256": "20829ffda3bbd195956c1582c43530192e125aa14521522e1aa4d19ae255eb40",
+        "url": "https://raw.githubusercontent.com/testcontainers/testcontainers-java/5c448202ac69d073f746433d3e79f6a2bf0ec585/core/src/main/java/org/testcontainers/utility/RyukContainer.java"
+      },
+      "trust_boundary": "Ryuk has Docker socket access and Testcontainers 2.0.5 defaults privileged=true; this is Docker-host authority, not VRA runtime/business authority. Run only on an explicitly disposable, isolated TEST Docker daemon with run-bound resources/labels and no production/unrelated workloads or secrets; bind cleanup to the run, inspect resolved helper before start. Do not mount a general/shared production Docker socket. This records the inherited boundary without starting or granting it in Phase 0.",
+      "trust_limits": "HTTPS authenticated registry namespace and digest checks identify immutable metadata, not publisher signature verification, reproducible source-image build or a vulnerability gate. Alpine 3.17 is the existing Testcontainers compatibility default, not a recommended/new production version; support/security age needs later scanner assessment.",
+      "verification_method": "Read exact default from immutable Testcontainers 2.0.5 source commit; fetch named project/Official Image OCI index, required platform manifests and configs over HTTPS to memory; SHA-256 each response and compare descriptors/Docker-Content-Digest. Future external execution must apply digest substitution before pull and verify actual pulled content.",
+      "version": "0.14.0"
+    },
+    {
+      "artifact_identifier": "docker.io/library/alpine:3.17",
+      "execution_identifier": "docker.io/library/alpine@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989",
+      "execution_location": "Dedicated disposable TEST Docker host only, local linux/arm64 and hosted linux/amd64; no container run/pull occurred",
+      "id": "testcontainers_tinyimage",
+      "index_digest": "sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989",
+      "index_response": {
+        "docker_content_digest": "sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989",
+        "media_type": "application/vnd.oci.image.index.v1+json",
+        "response_bytes": 8084,
+        "response_sha256": "8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989",
+        "url": "https://registry-1.docker.io/v2/library/alpine/manifests/3.17"
+      },
+      "license_source_project": {
+        "license": "Docker build scripts MIT; Alpine constituent package licenses apply",
+        "license_ref_response": {
+          "response_bytes": 361,
+          "response_sha256": "b7c312dd9aacc644554ea783def9f66824a4a99b35f75c7649de5daa891f4c42",
+          "url": "https://api.github.com/repos/alpinelinux/docker-alpine/git/ref/heads/master"
+        },
+        "license_response": {
+          "response_bytes": 1070,
+          "response_sha256": "cb0eb140cdf42808d7c948e5de07bcf435ee7eb314d9e757ca01bdca97109eb7",
+          "url": "https://raw.githubusercontent.com/alpinelinux/docker-alpine/2c36a79aaaec3582d3b1961c9245b1a8a5a144dc/LICENSE"
+        },
+        "project": "https://github.com/alpinelinux/docker-alpine"
+      },
+      "platform_manifests": [
+        {
+          "config_architecture": "amd64",
+          "config_digest": "sha256:775f483016a7d128be2a6c6978785619990f9ac24abb5ff1868222020118b279",
+          "config_os": "linux",
+          "config_response": {
+            "response_bytes": 601,
+            "response_sha256": "775f483016a7d128be2a6c6978785619990f9ac24abb5ff1868222020118b279",
+            "url": "https://registry-1.docker.io/v2/library/alpine/blobs/sha256:775f483016a7d128be2a6c6978785619990f9ac24abb5ff1868222020118b279"
+          },
+          "digest": "sha256:920690a8d840be3c20bf5205001bc913be3a4d8c39ea191bbdaf8e187ffcb180",
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "response": {
+            "docker_content_digest": "sha256:920690a8d840be3c20bf5205001bc913be3a4d8c39ea191bbdaf8e187ffcb180",
+            "response_bytes": 1023,
+            "response_sha256": "920690a8d840be3c20bf5205001bc913be3a4d8c39ea191bbdaf8e187ffcb180",
+            "url": "https://registry-1.docker.io/v2/library/alpine/manifests/sha256:920690a8d840be3c20bf5205001bc913be3a4d8c39ea191bbdaf8e187ffcb180"
+          },
+          "source_labels": {}
+        },
+        {
+          "config_architecture": "arm64",
+          "config_digest": "sha256:577bd1e3e55597178262f72fc05a2c77882afbfa5502fa06c856bfa53f175103",
+          "config_os": "linux",
+          "config_response": {
+            "response_bytes": 617,
+            "response_sha256": "577bd1e3e55597178262f72fc05a2c77882afbfa5502fa06c856bfa53f175103",
+            "url": "https://registry-1.docker.io/v2/library/alpine/blobs/sha256:577bd1e3e55597178262f72fc05a2c77882afbfa5502fa06c856bfa53f175103"
+          },
+          "digest": "sha256:4555e30014d0ef2214aa1ce5391ff46354519f55f33b4c6e5ed9aef4f3f1fa07",
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux",
+            "variant": "v8"
+          },
+          "response": {
+            "docker_content_digest": "sha256:4555e30014d0ef2214aa1ce5391ff46354519f55f33b4c6e5ed9aef4f3f1fa07",
+            "response_bytes": 1026,
+            "response_sha256": "4555e30014d0ef2214aa1ce5391ff46354519f55f33b4c6e5ed9aef4f3f1fa07",
+            "url": "https://registry-1.docker.io/v2/library/alpine/manifests/sha256:4555e30014d0ef2214aa1ce5391ff46354519f55f33b4c6e5ed9aef4f3f1fa07"
+          },
+          "source_labels": {}
+        }
+      ],
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://raw.githubusercontent.com/testcontainers/testcontainers-java/5c448202ac69d073f746433d3e79f6a2bf0ec585/core/src/main/java/org/testcontainers/DockerClientFactory.java",
+        "https://java.testcontainers.org/features/configuration/",
+        "https://hub.docker.com/_/alpine"
+      ],
+      "purpose": "Existing Testcontainers default Docker environment/startup check helper",
+      "readable_tag_mutable": true,
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before any Testcontainers run if helper digest/platform cannot be verified or actual pull resolves another digest; do not disable required environment checks/resource cleanup merely to bypass the pin. Unselected optional helpers require their own reviewed digest before use.",
+      "testcontainers_default_source": {
+        "response_bytes": 14337,
+        "response_sha256": "f64c79ec1c09dc8ba68aec0f1517ed177051cb2625f25e647dc4274fe8295252",
+        "url": "https://raw.githubusercontent.com/testcontainers/testcontainers-java/5c448202ac69d073f746433d3e79f6a2bf0ec585/core/src/main/java/org/testcontainers/DockerClientFactory.java"
+      },
+      "trust_boundary": "Tiny-image checks run within the explicitly disposable TEST Docker host only. No VRA application/DB credential is passed; mount checks must be confined to run-owned disposable paths. The default tag is recorded and execution must use the immutable digest. No production artifact inclusion.",
+      "trust_limits": "HTTPS authenticated registry namespace and digest checks identify immutable metadata, not publisher signature verification, reproducible source-image build or a vulnerability gate. Alpine 3.17 is the existing Testcontainers compatibility default, not a recommended/new production version; support/security age needs later scanner assessment.",
+      "verification_method": "Read exact default from immutable Testcontainers 2.0.5 source commit; fetch named project/Official Image OCI index, required platform manifests and configs over HTTPS to memory; SHA-256 each response and compare descriptors/Docker-Content-Digest. Future external execution must apply digest substitution before pull and verify actual pulled content.",
+      "version": "3.17"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "POC-04 Phase 0 TEST pin/provenance register contribution; no Phase 1 execution",
+  "secrets_recorded": false,
+  "status_vocabulary": [
+    "VERIFIED PIN",
+    "PROPOSED PIN",
+    "UNRESOLVED"
+  ],
+  "unselected_testcontainers_helpers": {
+    "basis": "Current PostgreSQLContainer use and the approved Phase-0 task require Ryuk and DockerClientFactory tiny-image defaults. Docker Compose, VNC/browser container, exposed-host SSHD, ambassador, socat and other module helpers are not selected by this register; no new such feature is executed in Phase 0. If a future test composition selects a helper, its exact source default/tag, immutable digest/platform/provenance and authority boundary must be registered before execution. Do not treat a bare/latest optional default as a verified pin.",
+    "status": "NOT APPLICABLE"
+  }
+}

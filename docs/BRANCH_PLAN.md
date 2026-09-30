@@ -2,7 +2,7 @@
 
 **สถานะ:** ACTIVE — planning baseline v1
 **Authority:** `docs/ROADMAP.md` กำหนดทิศทางและ phase; เอกสารนี้กำหนด execution branch-by-branch
-**Current branch:** `main`
+**Current branch:** `poc/04-security-auth`
 
 ---
 
@@ -156,7 +156,7 @@ milestone/NN-name
 | 01 | `poc/01-transactional-core` | **CLOSED** | Java/Spring/PostgreSQL production-candidate foundation, Gradle/module boundary, Flyway, runtime/migrator roles, transaction/persistence, health/readiness, error contract, Testcontainers/architecture tests | Canonical docs baseline + ADR-001 | POC-01 evidence + independent review ผ่าน |
 | 02 | `poc/02-concurrency-idempotency` | **CLOSED** | inventory concurrency, idempotency semantics, duplicate/concurrent commands, optimistic concurrency; stock=1/500 proof | 01 | correctness under concurrency proven |
 | 03 | `poc/03-outbox-recovery` | CLOSED | transactional outbox, worker claiming, inbox/dedupe, retry/backoff, dead-letter/reconciliation, crash recovery | 02 | async work/recovery semantics proven |
-| 04 | `poc/04-security-auth` | PLANNED | OIDC/OAuth boundary, account identity mapping, browser session/BFF, CSRF, privileged MFA/step-up, authorization, workload identity, DB least-privilege hardening, secrets, webhook security, audit | 03 | trust boundaries/security gate proven |
+| 04 | `poc/04-security-auth` | **IN PROGRESS** | OIDC/OAuth boundary, account identity mapping, browser session/BFF, CSRF, privileged MFA/step-up, authorization, workload identity, DB least-privilege hardening, secrets, webhook security, audit | 03 | trust boundaries/security gate proven |
 | 05 | `poc/05-observability-performance` | PLANNED | logs/metrics/traces, RED/USE, correctness/freshness signals, fault tests, k6 baseline, resource/latency evidence | 04 | observability/performance/fault baseline proven |
 | 06 | `foundation/06-production-foundation-freeze` | PROPOSED | review POC-01..05 together, resolve contradictions, finalize production foundation decisions/ADRs | 01–05 | Production Foundation Baseline accepted |
 
@@ -422,16 +422,23 @@ review checkpoint was `a7a908c`, with evidence in
 was `fd6e97a`, and its material foundation decision is recorded in
 `docs/adr/ADR-002-backend-production-foundation.md`.
 
-Next planned:
+Current active:
 
 ```text
 04 — poc/04-security-auth
-Status: PLANNED
+Status: IN PROGRESS
 Depends on: POC-03 CLOSED
+Base: main@8243d62f50aed2dc9a8605d7f12f0e2b7aa86854
+Current implementation checkpoint: Phase 0 — CLOSED; Phase 1 authorization pending
 ```
 
-POC-04 has not started. Before its implementation, follow the normal
-governance sequence:
+POC-04 is active. The governance sequence through user branch activation
+and Phase-0 implementation authorization is complete. Phase 0 is CLOSED
+after Independent Phase-0 Review Round 3 PASS. Phase 1 is NOT AUTHORIZED /
+NOT STARTED; POC-04 / S0-S15 remain NOT VERIFIED.
+
+The governance sequence below is retained as historical / required
+process context:
 
 ```text
 read-only repository / canonical-scope audit
