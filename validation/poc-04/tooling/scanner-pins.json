@@ -1,0 +1,193 @@
+{
+  "schema_version": "vra-poc04-scanner-pins-v1",
+  "authority": "Phase 0 tool/provenance metadata only; S0-S15 NOT VERIFIED. No full scan or Phase 1 implementation.",
+  "selection_basis": "Exact official stable releases observed during Phase 0; checksum-pinned platform artifacts selected for later TEST execution, not production dependency upgrades.",
+  "limitations": [
+    "VERIFIED PIN establishes source-hosted artifact provenance and integrity, not a vulnerability scan result, freedom from scanner defects, signed provenance attestation verification, or POC gate PASS.",
+    "OSV vulnerability data is external changing input: later execution must record query time/API or offline snapshot hash and results.",
+    "Current tool releases may change; replacement requires a separately recorded pin/review, never silent latest resolution."
+  ],
+  "tools": [
+    {
+      "name": "OSV-Scanner",
+      "purpose": "Dependency vulnerability lookup of source-bound lockfiles/SBOM, later Phase 10/S13.",
+      "exact_version": "2.6.0",
+      "source_project": "https://github.com/google/osv-scanner",
+      "source_tag": "v2.6.0",
+      "source_commit": "e840a6e8adb14b7777c78e26cfbf6e2abc1d1fc6",
+      "license": "Apache-2.0",
+      "license_provenance": "https://github.com/google/osv-scanner/blob/e840a6e8adb14b7777c78e26cfbf6e2abc1d1fc6/LICENSE",
+      "execution_location": "Separate TEST scanner job; linux/amd64 hosted CI; linux/arm64 containers or darwin/arm64 Apple Silicon local review. No production runtime inclusion.",
+      "production_artifact_inclusion": "NO",
+      "status": "VERIFIED PIN",
+      "release_provenance": {
+        "api_url": "https://api.github.com/repos/google/osv-scanner/releases/tags/v2.6.0",
+        "release_url": "https://github.com/google/osv-scanner/releases/tag/v2.6.0",
+        "release_id": 388118691,
+        "published_at": "2026-09-14T02:55:16Z",
+        "upstream_immutable_release": false,
+        "checksum_manifest_url": "https://github.com/google/osv-scanner/releases/download/v2.6.0/osv-scanner_SHA256SUMS",
+        "checksum_manifest_sha256": "29f6fbc8bdd02d977df4b0987705d046233c36b70469a7021c623e8c155c9ddc",
+        "checksum_manifest_content": "60c5296637e977b28eeda5c7f13573e447659a632922737f94d11fa7e30ad6ca  osv-scanner_darwin_amd64\n98c460dcd37de25819babd757d04542045b6243113e209edcd4d89fedb0256b4  osv-scanner_darwin_arm64\nca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108  osv-scanner_linux_amd64\n2c71403eb443d05891c4f268c3ad771cf4f16e5443463fd7851ef8f454d3c7e4  osv-scanner_linux_arm64\ne0ed7644118b717b028c249ee9d3515024e55e8510747ca08906eb96765354d6  osv-scanner_windows_amd64.exe\nca1379da0e408279ef2c85cde0846a903495738a91c7b065a208048437c1686c  osv-scanner_windows_arm64.exe\n",
+        "trust_boundary": "Official project GitHub release repository, HTTPS transport, published checksum manifest and GitHub release-asset digest. Binary/source correspondence was not independently rebuilt; detached/Sigstore/SLSA attestation verification has not been executed. Asset hash pins remain authoritative if a mutable tag/release changes."
+      },
+      "verification_method": "Full checksum-manifest bytes and all three selected platform artifacts downloaded, hashed with Python hashlib.sha256, cross-checked with upstream manifest and API asset digests. No artifact installed; one local Gitleaks stdin smoke only. Before every later execution, recompute artifact hash and compare to this source-bound pin; mismatch or unavailable provenance is STOP.",
+      "stop_behavior": "STOP dependent tool execution and Phase 0 closure if expected immutable checksum cannot be independently verified, if platform differs, or if download digest differs. Do not fall back to a tag, latest or package-manager upgrade.",
+      "artifacts": [
+        {
+          "platform": "linux/amd64",
+          "identifier": "osv-scanner_linux_amd64",
+          "url": "https://github.com/google/osv-scanner/releases/download/v2.6.0/osv-scanner_linux_amd64",
+          "github_asset_id": 562414718,
+          "size_bytes": 57524384,
+          "expected_sha256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+          "verification": "Downloaded full release artifact over HTTPS; locally computed SHA-256 matched both upstream checksum-manifest entry and GitHub release-asset digest.",
+          "artifact_bytes_checked": true
+        },
+        {
+          "platform": "linux/arm64",
+          "identifier": "osv-scanner_linux_arm64",
+          "url": "https://github.com/google/osv-scanner/releases/download/v2.6.0/osv-scanner_linux_arm64",
+          "github_asset_id": 562414650,
+          "size_bytes": 53608608,
+          "expected_sha256": "2c71403eb443d05891c4f268c3ad771cf4f16e5443463fd7851ef8f454d3c7e4",
+          "verification": "Downloaded full release artifact over HTTPS; locally computed SHA-256 matched both upstream checksum-manifest entry and GitHub release-asset digest.",
+          "artifact_bytes_checked": true
+        },
+        {
+          "platform": "darwin/arm64",
+          "identifier": "osv-scanner_darwin_arm64",
+          "url": "https://github.com/google/osv-scanner/releases/download/v2.6.0/osv-scanner_darwin_arm64",
+          "github_asset_id": 562414648,
+          "size_bytes": 55130242,
+          "expected_sha256": "98c460dcd37de25819babd757d04542045b6243113e209edcd4d89fedb0256b4",
+          "verification": "Downloaded full release artifact over HTTPS; locally computed SHA-256 matched both upstream checksum-manifest entry and GitHub release-asset digest.",
+          "artifact_bytes_checked": true
+        }
+      ]
+    },
+    {
+      "name": "Gitleaks",
+      "purpose": "Redacted secret scanning of tracked source, generated artifacts and evidence, later Phase 10/S13.",
+      "exact_version": "8.30.1",
+      "source_project": "https://github.com/gitleaks/gitleaks",
+      "source_tag": "v8.30.1",
+      "source_commit": "83d9cd684c87d95d656c1458ef04895a7f1cbd8e",
+      "license": "MIT",
+      "license_provenance": "https://github.com/gitleaks/gitleaks/blob/83d9cd684c87d95d656c1458ef04895a7f1cbd8e/LICENSE",
+      "execution_location": "Separate TEST scanner job; linux/amd64 hosted CI; linux/arm64 containers or darwin/arm64 Apple Silicon local review. No production runtime inclusion.",
+      "production_artifact_inclusion": "NO",
+      "status": "VERIFIED PIN",
+      "release_provenance": {
+        "api_url": "https://api.github.com/repos/gitleaks/gitleaks/releases/tags/v8.30.1",
+        "release_url": "https://github.com/gitleaks/gitleaks/releases/tag/v8.30.1",
+        "release_id": 299662760,
+        "published_at": "2026-03-21T02:17:58Z",
+        "upstream_immutable_release": false,
+        "checksum_manifest_url": "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_checksums.txt",
+        "checksum_manifest_sha256": "061476c21adaf5441516f96f185c1a4706a83cd6329b9b38762271b3d4a52fae",
+        "checksum_manifest_content": "b40ab0ae55c505963e365f271a8d3846efbc170aa17f2607f13df610a9aeb6a5  gitleaks_8.30.1_darwin_arm64.tar.gz\ndfe101a4db2255fc85120ac7f3d25e4342c3c20cf749f2c20a18081af1952709  gitleaks_8.30.1_darwin_x64.tar.gz\ne4a487ee7ccd7d3a7f7ec08657610aa3606637dab924210b3aee62570fb4b080  gitleaks_8.30.1_linux_arm64.tar.gz\n5c2a4ee657a27614e10352bed2b8f1018ef9b05fc6c037cf737776bbe1255766  gitleaks_8.30.1_linux_armv6.tar.gz\n8d39f0d94ba0d774b2282187656fb039a2d82893ec1fd6be7d7121aae759a57d  gitleaks_8.30.1_linux_armv7.tar.gz\na87ba11adab22b4d6c6ea28b2da60f09154d5c2fdb44d4b07015d1e0433daecb  gitleaks_8.30.1_linux_x32.tar.gz\n551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb  gitleaks_8.30.1_linux_x64.tar.gz\nb95f5e4f5c425cedca7ee203d9afd29597e692c4924a12ed42f970537c72cc0f  gitleaks_8.30.1_windows_arm64.zip\n190ad53db301eec3e90afe3a1a75270768b8ebf89e731345e19421c32c1ae1a1  gitleaks_8.30.1_windows_x32.zip\nd29144deff3a68aa93ced33dddf84b7fdc26070add4aa0f4513094c8332afc4e  gitleaks_8.30.1_windows_x64.zip\n",
+        "trust_boundary": "Official project GitHub release repository, HTTPS transport, published checksum manifest and GitHub release-asset digest. Binary/source correspondence was not independently rebuilt; detached/Sigstore/SLSA attestation verification has not been executed. Asset hash pins remain authoritative if a mutable tag/release changes."
+      },
+      "verification_method": "Full checksum-manifest bytes and all three selected platform artifacts downloaded, hashed with Python hashlib.sha256, cross-checked with upstream manifest and API asset digests. No artifact installed; one local Gitleaks stdin smoke only. Before every later execution, recompute artifact hash and compare to this source-bound pin; mismatch or unavailable provenance is STOP.",
+      "stop_behavior": "STOP dependent tool execution and Phase 0 closure if expected immutable checksum cannot be independently verified, if platform differs, or if download digest differs. Do not fall back to a tag, latest or package-manager upgrade.",
+      "artifacts": [
+        {
+          "platform": "linux/amd64",
+          "identifier": "gitleaks_8.30.1_linux_x64.tar.gz",
+          "url": "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz",
+          "github_asset_id": 378332058,
+          "size_bytes": 8230402,
+          "expected_sha256": "551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb",
+          "verification": "Downloaded full release artifact over HTTPS; locally computed SHA-256 matched both upstream checksum-manifest entry and GitHub release-asset digest.",
+          "artifact_bytes_checked": true
+        },
+        {
+          "platform": "linux/arm64",
+          "identifier": "gitleaks_8.30.1_linux_arm64.tar.gz",
+          "url": "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_arm64.tar.gz",
+          "github_asset_id": 378332057,
+          "size_bytes": 7601421,
+          "expected_sha256": "e4a487ee7ccd7d3a7f7ec08657610aa3606637dab924210b3aee62570fb4b080",
+          "verification": "Downloaded full release artifact over HTTPS; locally computed SHA-256 matched both upstream checksum-manifest entry and GitHub release-asset digest.",
+          "artifact_bytes_checked": true
+        },
+        {
+          "platform": "darwin/arm64",
+          "identifier": "gitleaks_8.30.1_darwin_arm64.tar.gz",
+          "url": "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_darwin_arm64.tar.gz",
+          "github_asset_id": 378332059,
+          "size_bytes": 7897593,
+          "expected_sha256": "b40ab0ae55c505963e365f271a8d3846efbc170aa17f2607f13df610a9aeb6a5",
+          "verification": "Downloaded full release artifact over HTTPS; locally computed SHA-256 matched both upstream checksum-manifest entry and GitHub release-asset digest.",
+          "artifact_bytes_checked": true,
+          "smoke": {
+            "location": "Temporary directory outside repository, removed after test.",
+            "version_reported": "8.30.1",
+            "synthetic_positive_exit": 1,
+            "negative_exit": 0,
+            "scope": "Single fabricated never-issued token and ordinary safe text through stdin; no repository/artifact security gate scan; outputs omitted; no live credentials."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Syft",
+      "purpose": "Source-bound dependency graph/SBOM inventory, later Phase 10/S13.",
+      "exact_version": "1.52.0",
+      "source_project": "https://github.com/anchore/syft",
+      "source_tag": "v1.52.0",
+      "source_commit": "02ba369d13b4248395b20a504eca94b0cab564d8",
+      "license": "Apache-2.0",
+      "license_provenance": "https://github.com/anchore/syft/blob/02ba369d13b4248395b20a504eca94b0cab564d8/LICENSE",
+      "execution_location": "Separate TEST scanner job; linux/amd64 hosted CI; linux/arm64 containers or darwin/arm64 Apple Silicon local review. No production runtime inclusion.",
+      "production_artifact_inclusion": "NO",
+      "status": "VERIFIED PIN",
+      "release_provenance": {
+        "api_url": "https://api.github.com/repos/anchore/syft/releases/tags/v1.52.0",
+        "release_url": "https://github.com/anchore/syft/releases/tag/v1.52.0",
+        "release_id": 390800128,
+        "published_at": "2026-09-17T14:38:17Z",
+        "upstream_immutable_release": true,
+        "checksum_manifest_url": "https://github.com/anchore/syft/releases/download/v1.52.0/syft_1.52.0_checksums.txt",
+        "checksum_manifest_sha256": "21d9ee36c7c6fb43d6493718a387ecca021321791d1815c716e56c99b9c8d6b9",
+        "checksum_manifest_content": "6afe76a88084f091546075410970de44a1513d11b75bdf27f63c32f1721859bf  syft_1.52.0_darwin_amd64.sbom\n56975f5d7ffa9846a1eaf64330647841b878097bc7e3730cb9325f93add96917  syft_1.52.0_darwin_amd64.tar.gz\n780e37200a5787163b34881f093447328ccf18273aa63380cc8147f02a3d991d  syft_1.52.0_darwin_arm64.sbom\n014d561b6d13059124155f74a6c5a9a99501f5e209313638dd884f39eb418ee6  syft_1.52.0_darwin_arm64.tar.gz\nc8e13cd04f78b5cf90a70b2e45d2a4b7ec9aa0aa129d3001cd5d488103351b7f  syft_1.52.0_linux_amd64.deb\n32964662e330c3e1b73af99ce0e4aed5ab9f560d0e6f20cdc601761e8d7aa803  syft_1.52.0_linux_amd64.rpm\nad9650592aec53f318295b2531120426b9edd83db797037bc10924278d40ae91  syft_1.52.0_linux_amd64.sbom\ncaeedb81fb0491615f1ebd1761e4145d41ee86dd2cc7bf80669f9f5ad9d6133d  syft_1.52.0_linux_amd64.tar.gz\n17185b9c32764cbf301f261235fa9fefcfcb4bbdebcbefce9a5050af56f5281d  syft_1.52.0_linux_arm64.deb\n3f5833d8f7ed2cf290f793b7119b4b1d21fc15a7f89984a906b38dc03cfbd8da  syft_1.52.0_linux_arm64.rpm\n34cb3229322898c73106595848b67a819fcc54a20541e1c89542739986c0a5e0  syft_1.52.0_linux_arm64.sbom\nc46d5e4c28e12aa4c5becfaa343ef1c7f89045b6b895f2c21d471c62db09c706  syft_1.52.0_linux_arm64.tar.gz\n7a1bb80ce01541888f6b5a25f2e44717a49bba7e8b03773864698e91fc79a080  syft_1.52.0_linux_ppc64le.deb\n1fddb776c1743f7d5123f4c92b0a7517b7fdb93aa232f71f80ae4de11d20fe93  syft_1.52.0_linux_ppc64le.rpm\n684fd96b13e202bb8e546c17599470ecfd57728f6a939731b7a019c9e72e4bf3  syft_1.52.0_linux_ppc64le.sbom\n6b35bb39a87582eb4a4c27e3d3c92f26725f21fc6b309cd85a3aa7af5ccb492e  syft_1.52.0_linux_ppc64le.tar.gz\n74c76bfef03b45e7ff962d0268c4583ff744682bd74d3d89eda052b046c3b583  syft_1.52.0_linux_riscv64.deb\nd946a002d027c757e94578dae1e2f6c15b2c89518c91cfe41cb4f9b3ef8c937c  syft_1.52.0_linux_riscv64.rpm\n0af3c3eb13e3c1b67281a09ae74aa3a404ff2332f2d0e22a3f3bb41e586ffe12  syft_1.52.0_linux_riscv64.sbom\n9f7d59384e9359995aacd9ec524c505bee00b63863a8eb72790cca880448e732  syft_1.52.0_linux_riscv64.tar.gz\n1bf69fc3c0e7d75bd258ff68b478cc3ae4106ea1c1e6e86a54ae8f3b283855d5  syft_1.52.0_linux_s390x.deb\n43325535810e914f0a0bff25653ad226a3a633e0e3f2c7f3cd3538f8764a24a1  syft_1.52.0_linux_s390x.rpm\nf60ec0335a1029176538f2290d48c84f6084c71eab52dc71bf8f68e412a083cc  syft_1.52.0_linux_s390x.sbom\n3390332ebcd56c20541a95f5531565cf049022344cef60b945b34680a1955b2f  syft_1.52.0_linux_s390x.tar.gz\nfe703f908604af12175f9e0c7f49361dabbe2481661a666556e90e5e5a572458  syft_1.52.0_windows_amd64.sbom\nde787a374cf961c56fd7b206b2e183295abba32d0af3cb44d9aef2357ca9eda2  syft_1.52.0_windows_amd64.zip\nfbc5887a11319fbc6664ce32d540e0f951a34481923474165288238ac3a8e769  syft_1.52.0_windows_arm64.sbom\nf9c0596d79d0e99eacb3f1e3ffca37ca22e7cdc809b1463cdfec77798939bd09  syft_1.52.0_windows_arm64.zip\n",
+        "trust_boundary": "Official project GitHub release repository, HTTPS transport, published checksum manifest and GitHub release-asset digest. Binary/source correspondence was not independently rebuilt; detached/Sigstore/SLSA attestation verification has not been executed. Asset hash pins remain authoritative if a mutable tag/release changes."
+      },
+      "verification_method": "Full checksum-manifest bytes and all three selected platform artifacts downloaded, hashed with Python hashlib.sha256, cross-checked with upstream manifest and API asset digests. No artifact installed; one local Gitleaks stdin smoke only. Before every later execution, recompute artifact hash and compare to this source-bound pin; mismatch or unavailable provenance is STOP.",
+      "stop_behavior": "STOP dependent tool execution and Phase 0 closure if expected immutable checksum cannot be independently verified, if platform differs, or if download digest differs. Do not fall back to a tag, latest or package-manager upgrade.",
+      "artifacts": [
+        {
+          "platform": "linux/amd64",
+          "identifier": "syft_1.52.0_linux_amd64.tar.gz",
+          "url": "https://github.com/anchore/syft/releases/download/v1.52.0/syft_1.52.0_linux_amd64.tar.gz",
+          "github_asset_id": 570445809,
+          "size_bytes": 29289629,
+          "expected_sha256": "caeedb81fb0491615f1ebd1761e4145d41ee86dd2cc7bf80669f9f5ad9d6133d",
+          "verification": "Downloaded full release artifact over HTTPS; locally computed SHA-256 matched both upstream checksum-manifest entry and GitHub release-asset digest.",
+          "artifact_bytes_checked": true
+        },
+        {
+          "platform": "linux/arm64",
+          "identifier": "syft_1.52.0_linux_arm64.tar.gz",
+          "url": "https://github.com/anchore/syft/releases/download/v1.52.0/syft_1.52.0_linux_arm64.tar.gz",
+          "github_asset_id": 570445811,
+          "size_bytes": 26744986,
+          "expected_sha256": "c46d5e4c28e12aa4c5becfaa343ef1c7f89045b6b895f2c21d471c62db09c706",
+          "verification": "Downloaded full release artifact over HTTPS; locally computed SHA-256 matched both upstream checksum-manifest entry and GitHub release-asset digest.",
+          "artifact_bytes_checked": true
+        },
+        {
+          "platform": "darwin/arm64",
+          "identifier": "syft_1.52.0_darwin_arm64.tar.gz",
+          "url": "https://github.com/anchore/syft/releases/download/v1.52.0/syft_1.52.0_darwin_arm64.tar.gz",
+          "github_asset_id": 570445806,
+          "size_bytes": 28006848,
+          "expected_sha256": "014d561b6d13059124155f74a6c5a9a99501f5e209313638dd884f39eb418ee6",
+          "verification": "Downloaded full release artifact over HTTPS; locally computed SHA-256 matched both upstream checksum-manifest entry and GitHub release-asset digest.",
+          "artifact_bytes_checked": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1013 @@
+{
+  "node_dependency_lock": {
+    "generation_command": "npm install --package-lock-only --ignore-scripts --no-audit --no-fund --registry=https://registry.npmjs.org/",
+    "generation_environment": "Empty task-specific temporary user/global npm config and cache outside repository; removed afterward. No node_modules created; no lifecycle scripts executed.",
+    "generator_observed_node": "v24.19.0",
+    "generator_observed_npm": "11.17.0",
+    "generator_reconciliation": "Pinned Node24.19.0 image config matches local generator major/minor/patch; both pinned image platform npm/package.json versions match generator npm11.17.0. Exact image digest remains future execution authority.",
+    "integrity_audit": "All 510 non-root lock records have exact HTTPS registry.npmjs.org resolved URL and SHA-512 SRI; no git/file/local dependency or missing integrity. Top four package payloads were independently downloaded/hashed; all transitive payloads were not downloaded/executed. Future npm ci must enforce each locked SRI before use; no resolver refresh.",
+    "lockfile_version": 3,
+    "package_json": "validation/poc-04/tooling/node-pin-lock/package.json",
+    "package_json_sha256": "ad7fac61000137b0896b52f2810f6d95f5703f30ec3cdb8a931bc254217f6118",
+    "package_lock_json": "validation/poc-04/tooling/node-pin-lock/package-lock.json",
+    "package_lock_json_sha256": "015ccc2fd87cb435f70ff2554aee167aeddf244cd67f36ab7eec04e9f280068a",
+    "package_record_count_excluding_root": 510,
+    "production_artifact_inclusion": "NO",
+    "purpose": "Provenance-only exact npm dependency graph for future Bruno/Playwright disposable TEST execution; no functional suite/scripts.",
+    "status": "VERIFIED PIN",
+    "stop_behavior": "STOP on lock digest drift, registry provenance gap, any npm ci integrity mismatch, package/node_modules lifecycle side effect beyond authorized TEST execution, or unreviewed lock refresh."
+  },
+  "operational_proofs_still_not_executed": [
+    "Actual browser binary/revision and secure-cookie/real-browser behavior",
+    "Observer parser classifications against actual PostgreSQL17.11 JSON ACL denials",
+    "Actual TEST interpreter/npm/OpenSSL execution",
+    "Full dependency vulnerability/license/secret gates and S13 repository governance",
+    "TEST CA/host resolution/disposable environment creation and destruction proof"
+  ],
+  "phase0_observation": "2026-09-30",
+  "phase1_started": false,
+  "pin_status_meaning": "VERIFIED PIN means exact primary-source artifact identity/checksum/digest has been established. It does not mean installed, executed, vulnerability-free, production-selected or functionally verified.",
+  "python_dependency_lock": {
+    "authority_nonclaim": "Routine TEST DB transport choice adds no DB capability, grant, role membership or human identity authority. Existing observer credential/function trust boundary remains unchanged.",
+    "execution_strategy": "Within immutable Python image, use python -m pip install --require-hashes --only-binary=:all: --no-deps -r requirements.txt. Hash allowlist includes only selected CPython313 Linux wheels and universal psycopg wheel; wrong platform/missing wheel/hash mismatch fails. Set PSYCOPG_IMPL=binary and assert selected implementation/client version before observer work. No installed packages or observer code created in Phase0.",
+    "packages": [
+      "pglast==7.18",
+      "psycopg==3.3.6",
+      "psycopg-binary==3.3.6"
+    ],
+    "path": "validation/poc-04/tooling/python-pin-lock/requirements.txt",
+    "sha256": "d4675c0308290f96e05e414b86b26e3b7122140446b7c1ff0b76c36b6cde43d2",
+    "status": "VERIFIED PIN"
+  },
+  "records": [
+    {
+      "artifact_identifier": "@usebruno/cli@4.2.0",
+      "artifact_url": "https://registry.npmjs.org/@usebruno/cli/-/cli-4.2.0.tgz",
+      "dependencies": {
+        "@aws-sdk/credential-providers": "3.1019.0",
+        "@usebruno/common": "0.26.0",
+        "@usebruno/converters": "0.24.0",
+        "@usebruno/filestore": "0.13.0",
+        "@usebruno/js": "0.52.0",
+        "@usebruno/lang": "0.40.0",
+        "@usebruno/requests": "0.21.0",
+        "aws4-axios": "^3.3.15",
+        "axios": "1.18.0",
+        "axios-ntlm": "^1.4.2",
+        "chai": "^4.3.7",
+        "chalk": "^3.0.0",
+        "cli-table3": "^0.6.5",
+        "csv-parse": "^5.5.6",
+        "debug": "^4.4.3",
+        "decomment": "^0.9.5",
+        "form-data": "4.0.4",
+        "fs-extra": "^10.1.0",
+        "http-proxy-agent": "^7.0.0",
+        "https-proxy-agent": "^7.0.2",
+        "iconv-lite": "^0.6.3",
+        "js-yaml": "4.3.1",
+        "jsesc": "^3.0.2",
+        "lodash": "4.18.1",
+        "qs": "^6.15.2",
+        "socks-proxy-agent": "^8.0.2",
+        "xmlbuilder": "^15.1.1",
+        "yargs": "^17.6.2"
+      },
+      "engine_requirement": {},
+      "execution_location": "Disposable TEST Linux arm64/amd64 container; npm ci consumes tooling/node-pin-lock/package-lock.json, not an unconstrained npm install.",
+      "expected_integrity": "sha512-b3+Bbb6hdqJYNj9VSO07reSsIDNY9TlqXAxBx6Y/nMz51INZpw25WKoguJrVVzvkzefb6RkpQXMHu2qLQcj92A==",
+      "expected_sha256": "fe013bedd2d08a44503ac1488ca4a8d459fdb1a9c58f9bea4fc03222ac63af31",
+      "functional_execution": "NOT EXECUTED",
+      "id": "@usebruno/cli",
+      "license": "MIT",
+      "npm_registry_shasum_sha1": "1351b9fac9269002869b78427bce233636c54d3f",
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://registry.npmjs.org/@usebruno%2fcli/4.2.0",
+        "https://registry.npmjs.org/@usebruno/cli/-/cli-4.2.0.tgz",
+        "https://github.com/usebruno/bruno/releases/tag/v4.2.0"
+      ],
+      "publisher_git_head": "1fbad19c4cc7a7f01e7ae20b22de1e4861d5e265",
+      "purpose": "TEST-only external black-box HTTP runner; no collection exists yet.",
+      "redaction_support": "Published package/src/commands/run.js contains reporter-skip-all-headers and reporter-skip-body; no collection or reporter was executed.",
+      "release_source_notes": "npm publisher gitHead 1fbad19c4cc7a7f01e7ae20b22de1e4861d5e265 differs from v4.2.0 release-tag commit 8efe082a915c8fe68e17e2772c4f6ebe971b7311. No reproducible source-to-tarball build claim. Exact registry tarball and dependency lock are execution authority; release URL is contextual provenance.",
+      "source_project": "git+https://github.com/usebruno/bruno.git",
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact artifact bytes, version, digest/integrity, platform or source binding differs; never fall back to a floating tag or host-installed tool.",
+      "verification_method": "Exact-version npm registry metadata fetched over HTTPS; tarball downloaded into bounded memory; recomputed SHA-256, SHA-512 SRI and SHA-1 all match registry metadata. Registry metadata identity is trusted; package signatures and any SLSA/Sigstore attestations were not cryptographically validated in Phase 0.",
+      "version": "4.2.0"
+    },
+    {
+      "artifact_identifier": "@playwright/test@1.63.0",
+      "artifact_url": "https://registry.npmjs.org/@playwright/test/-/test-1.63.0.tgz",
+      "dependencies": {
+        "playwright": "1.63.0"
+      },
+      "engine_requirement": {
+        "node": ">=20"
+      },
+      "execution_location": "Disposable TEST Linux arm64/amd64 container; npm ci consumes tooling/node-pin-lock/package-lock.json, not an unconstrained npm install.",
+      "expected_integrity": "sha512-oxMK4vllB9RK5NQ2l1pq1IfOf2AvnEuj/vYGDj0H2nMtmtZpKtCwt/l00GEO6xjGfpBNAvjovvYdCm50dRQkpQ==",
+      "expected_sha256": "fc594f36b7b4aafece614ec6852ad728423215a76edd0a2a1821bb0c49539c4e",
+      "functional_execution": "NOT EXECUTED",
+      "id": "@playwright/test",
+      "license": "Apache-2.0",
+      "npm_registry_shasum_sha1": "808020c46e8b6b91f9d628cd0ebcbb32bdfd8b6c",
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://registry.npmjs.org/@playwright%2ftest/1.63.0",
+        "https://registry.npmjs.org/@playwright/test/-/test-1.63.0.tgz",
+        "https://github.com/microsoft/playwright/tree/1b025d7e20a026371cd5f98ba0cdce48892737c8"
+      ],
+      "publisher_git_head": "1b025d7e20a026371cd5f98ba0cdce48892737c8",
+      "purpose": "TEST-only real-browser evidence runner; no E2E suite exists yet.",
+      "source_project": "git+https://github.com/microsoft/playwright.git",
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact artifact bytes, version, digest/integrity, platform or source binding differs; never fall back to a floating tag or host-installed tool.",
+      "verification_method": "Exact-version npm registry metadata fetched over HTTPS; tarball downloaded into bounded memory; recomputed SHA-256, SHA-512 SRI and SHA-1 all match registry metadata. Registry metadata identity is trusted; package signatures and any SLSA/Sigstore attestations were not cryptographically validated in Phase 0.",
+      "version": "1.63.0"
+    },
+    {
+      "artifact_identifier": "playwright@1.63.0",
+      "artifact_url": "https://registry.npmjs.org/playwright/-/playwright-1.63.0.tgz",
+      "dependencies": {
+        "playwright-core": "1.63.0"
+      },
+      "engine_requirement": {
+        "node": ">=20"
+      },
+      "execution_location": "Disposable TEST Linux arm64/amd64 container; npm ci consumes tooling/node-pin-lock/package-lock.json, not an unconstrained npm install.",
+      "expected_integrity": "sha512-+7ziBLidS4NaNCdt57SUDT+wYmmd5fmiQejUic/kb+YsYSCPyOOE9sebzMjNmQrsnNpDJqd4WHvV/8lfKfUDUg==",
+      "expected_sha256": "195a5ee9bfed7c6e9c03965950e32e5e4dbedaa02e740e5a530eb4b87dae050c",
+      "functional_execution": "NOT EXECUTED",
+      "id": "playwright",
+      "license": "Apache-2.0",
+      "npm_registry_shasum_sha1": "99b56f9f69b1b70c44f00bf84b2fe52348ae2511",
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://registry.npmjs.org/playwright/1.63.0",
+        "https://registry.npmjs.org/playwright/-/playwright-1.63.0.tgz",
+        "https://github.com/microsoft/playwright/tree/1b025d7e20a026371cd5f98ba0cdce48892737c8"
+      ],
+      "publisher_git_head": "1b025d7e20a026371cd5f98ba0cdce48892737c8",
+      "purpose": "Exact Playwright Test runner dependency.",
+      "source_project": "git+https://github.com/microsoft/playwright.git",
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact artifact bytes, version, digest/integrity, platform or source binding differs; never fall back to a floating tag or host-installed tool.",
+      "verification_method": "Exact-version npm registry metadata fetched over HTTPS; tarball downloaded into bounded memory; recomputed SHA-256, SHA-512 SRI and SHA-1 all match registry metadata. Registry metadata identity is trusted; package signatures and any SLSA/Sigstore attestations were not cryptographically validated in Phase 0.",
+      "version": "1.63.0"
+    },
+    {
+      "artifact_identifier": "playwright-core@1.63.0",
+      "artifact_url": "https://registry.npmjs.org/playwright-core/-/playwright-core-1.63.0.tgz",
+      "browser_metadata_source": "https://raw.githubusercontent.com/microsoft/playwright/1b025d7e20a026371cd5f98ba0cdce48892737c8/packages/playwright-core/browsers.json",
+      "browsers_json_sha256": "545d52f8382c391e605562c330e9c1c534a16045898203037a49bb8bd769a946",
+      "chromium_metadata": [
+        {
+          "browserVersion": "153.0.8010.12",
+          "installByDefault": true,
+          "name": "chromium",
+          "revision": "1243",
+          "title": "Chrome for Testing"
+        },
+        {
+          "browserVersion": "153.0.8010.12",
+          "installByDefault": true,
+          "name": "chromium-headless-shell",
+          "revision": "1243",
+          "title": "Chrome Headless Shell"
+        }
+      ],
+      "dependencies": {},
+      "engine_requirement": {
+        "node": ">=20"
+      },
+      "execution_location": "Disposable TEST Linux arm64/amd64 container; npm ci consumes tooling/node-pin-lock/package-lock.json, not an unconstrained npm install.",
+      "expected_integrity": "sha512-rYCsBF/M5HjUch52bbtVONEFjv6Xu8sm8h72dNlR5bzIE1fvC/bxgspzkjSfU+MweEMmPM8KJebG6nnyxo5mCg==",
+      "expected_sha256": "208593d4e1bcd8f8fe5f869cad1cc332dc7f1d70dc1d58c102dc3ac36e30f26c",
+      "functional_execution": "NOT EXECUTED",
+      "id": "playwright-core",
+      "license": "Apache-2.0",
+      "npm_registry_shasum_sha1": "e57665bc32846c213ac39a1e4d5bc6228e76b376",
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://registry.npmjs.org/playwright-core/1.63.0",
+        "https://registry.npmjs.org/playwright-core/-/playwright-core-1.63.0.tgz",
+        "https://github.com/microsoft/playwright/tree/1b025d7e20a026371cd5f98ba0cdce48892737c8"
+      ],
+      "publisher_git_head": "1b025d7e20a026371cd5f98ba0cdce48892737c8",
+      "purpose": "Browser installer/driver and authoritative release browser metadata.",
+      "source_project": "git+https://github.com/microsoft/playwright.git",
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact artifact bytes, version, digest/integrity, platform or source binding differs; never fall back to a floating tag or host-installed tool.",
+      "verification_method": "Exact-version npm registry metadata fetched over HTTPS; tarball downloaded into bounded memory; recomputed SHA-256, SHA-512 SRI and SHA-1 all match registry metadata. Registry metadata identity is trusted; package signatures and any SLSA/Sigstore attestations were not cryptographically validated in Phase 0.",
+      "version": "1.63.0"
+    },
+    {
+      "execution_location": "Disposable TEST Linux arm64 container on Apple Silicon; Linux amd64 container on hosted CI. Native macOS browser/interpreter is not selected.",
+      "expected_index_digest": "sha256:2325bb286ec344af3e5898cc224b5844e2707ac6e26b1632516fd3edc84a5e26",
+      "functional_execution": "NOT EXECUTED",
+      "id": "Python",
+      "immutable_execution_identifier": "docker.io/library/python@sha256:2325bb286ec344af3e5898cc224b5844e2707ac6e26b1632516fd3edc84a5e26",
+      "license": "PSF-2.0 and container distribution licenses",
+      "platforms": [
+        {
+          "annotations": {
+            "com.docker.official-images.bashbrew.arch": "amd64",
+            "org.opencontainers.image.base.digest": "sha256:f3034a6ec3c1205360777c4aae76234998866ad18806ae62b63a3f84ccad782b",
+            "org.opencontainers.image.base.name": "debian:bookworm-slim",
+            "org.opencontainers.image.created": "2026-09-19T00:58:18Z",
+            "org.opencontainers.image.revision": "688a0b86bb44289df16a363e9f41d90514c1a5f9",
+            "org.opencontainers.image.source": "https://github.com/docker-library/python.git#688a0b86bb44289df16a363e9f41d90514c1a5f9:3.13/slim-bookworm",
+            "org.opencontainers.image.url": "https://hub.docker.com/_/python",
+            "org.opencontainers.image.version": "3.13.15-slim-bookworm"
+          },
+          "config_digest": "sha256:915835de46a63f9598442159437904042f1c69a9b41c4965fba1db9ceab66578",
+          "image_env": [
+            "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+            "PYTHON_VERSION=3.13.15",
+            "PYTHON_SHA256=1e66a7945a48390ee4c2a4268a0e4185884059a13c4aab6d148aa208deea4a76"
+          ],
+          "image_labels": {},
+          "layer_digests": [
+            "sha256:774043ccc8ccd0d0833a9ee0792142ab7ad93df971e59dd248fbf82db16d0150",
+            "sha256:43dcef5051b0d747db428c3890841803fca6b253a38f1f66774f964ee0dbaa33",
+            "sha256:2e57034c052c6d059f36df62c9e6f4ee3630bb3a653a5f9e4a196159d53abb35",
+            "sha256:5483d2d2a330470f65f1ca5e1c6a9d4167051e32057624e31e13a9ec6392f42b"
+          ],
+          "manifest_digest": "sha256:3e2de9c40ca4e3d73240059f9d48baff27908f10293e985a2f382a0378e6df4a",
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          }
+        },
+        {
+          "annotations": {
+            "com.docker.official-images.bashbrew.arch": "arm64v8",
+            "org.opencontainers.image.base.digest": "sha256:0c8bbb8e987a035fe1d9704eb2e571b7e9a836e1caa46345290674b45b69e417",
+            "org.opencontainers.image.base.name": "debian:bookworm-slim",
+            "org.opencontainers.image.created": "2026-09-19T01:02:21Z",
+            "org.opencontainers.image.revision": "688a0b86bb44289df16a363e9f41d90514c1a5f9",
+            "org.opencontainers.image.source": "https://github.com/docker-library/python.git#688a0b86bb44289df16a363e9f41d90514c1a5f9:3.13/slim-bookworm",
+            "org.opencontainers.image.url": "https://hub.docker.com/_/python",
+            "org.opencontainers.image.version": "3.13.15-slim-bookworm"
+          },
+          "config_digest": "sha256:adc3d531c29fbd69fa9ca49cd8e241c68aaf4e1dd7462be6c2432044b7a39ea8",
+          "image_env": [
+            "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+            "PYTHON_VERSION=3.13.15",
+            "PYTHON_SHA256=1e66a7945a48390ee4c2a4268a0e4185884059a13c4aab6d148aa208deea4a76"
+          ],
+          "image_labels": {},
+          "layer_digests": [
+            "sha256:333125b5cee9fb6718bdcb523fc93b4adc71b7c37ada6146a20c193430e549b9",
+            "sha256:e53a74de92c54e1754a425a4a895a580e649477445cd7b8d0379afe186e52713",
+            "sha256:f70ba721a7905a25c9d2a4240eaeb0b7a90380d27eca79b478e85b24a0af40f9",
+            "sha256:049ec46bd037afd3e43427ee3bea900069a01f1dec28ec4bb1f9db30cf0e119d"
+          ],
+          "manifest_digest": "sha256:ad4c34ff79289506e235b40dce75d629e25f226b597a2455804220f037e07531",
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux",
+            "variant": "v8"
+          }
+        }
+      ],
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://hub.docker.com/_/python",
+        "https://registry-1.docker.io/v2/library/python/manifests/sha256:2325bb286ec344af3e5898cc224b5844e2707ac6e26b1632516fd3edc84a5e26"
+      ],
+      "purpose": "TEST-only audit observer interpreter and TEST CA tool container",
+      "python_source": {
+        "sha256": "1e66a7945a48390ee4c2a4268a0e4185884059a13c4aab6d148aa208deea4a76",
+        "source_dockerfile_commit": "688a0b86bb44289df16a363e9f41d90514c1a5f9",
+        "source_dockerfile_url": "https://raw.githubusercontent.com/docker-library/python/688a0b86bb44289df16a363e9f41d90514c1a5f9/3.13/slim-bookworm/Dockerfile",
+        "url": "https://www.python.org/ftp/python/3.13.15/Python-3.13.15.tar.xz",
+        "verification": "Downloaded official Python source tar.xz into bounded memory; computed SHA-256 matches immutable Dockerfile PYTHON_SHA256 and image config. Upstream GPG/signature was not independently verified here."
+      },
+      "readable_tag": "docker.io/library/python:3.13.15-slim-bookworm",
+      "source_project": "https://github.com/docker-library/python",
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact artifact bytes, version, digest/integrity, platform or source binding differs; never fall back to a floating tag or host-installed tool.",
+      "verification_method": "Fetched registry OCI index, each selected platform manifest and config over primary registry HTTPS and independently recomputed every returned content digest. Docker Hub tags are readable references only; execution uses immutable index plus explicitly selected platform. Image artifact identity is verified; no container was started in Phase 0.",
+      "version": "3.13.15"
+    },
+    {
+      "execution_location": "Disposable TEST Linux arm64 container on Apple Silicon; Linux amd64 container on hosted CI. Native macOS browser/interpreter is not selected.",
+      "expected_index_digest": "sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df",
+      "functional_execution": "NOT EXECUTED",
+      "id": "Node.js",
+      "immutable_execution_identifier": "docker.io/library/node@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df",
+      "license": "MIT and container distribution licenses",
+      "npm_package_json_sha256": "a4f04ad50219f82e0e8f262d3e1acbdbd678040198ea36fca10fe7bbb38da726",
+      "npm_verification": "Downloaded amd64/arm64 Node binary layers in bounded memory, verified compressed layer digest; read usr/local/lib/node_modules/npm/package.json version 11.17.0 and hashed exact bytes. Both platforms agree. Lock generator observed local node v24.19.0/npm 11.17.0, matching pinned image metadata; host binaries themselves are not the future execution authority.",
+      "npm_version": "11.17.0",
+      "platforms": [
+        {
+          "annotations": {
+            "com.docker.official-images.bashbrew.arch": "amd64",
+            "org.opencontainers.image.base.digest": "sha256:5ae3c39ebd15e229dcedd5cee596b2497182493d41ff162e824ba13fc1b2b867",
+            "org.opencontainers.image.base.name": "debian:bookworm-slim",
+            "org.opencontainers.image.created": "2026-08-25T00:55:03Z",
+            "org.opencontainers.image.revision": "fd1bf45c51970427bc899084b5381f6827722246",
+            "org.opencontainers.image.source": "https://github.com/nodejs/docker-node.git#fd1bf45c51970427bc899084b5381f6827722246:24/bookworm-slim",
+            "org.opencontainers.image.url": "https://hub.docker.com/_/node",
+            "org.opencontainers.image.version": "24-bookworm-slim"
+          },
+          "config_digest": "sha256:622f209f6c16ba5af4d9a337cae6577d096f17174b904cfc6a5b0c81a2679c24",
+          "image_env": [
+            "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "NODE_VERSION=24.19.0",
+            "YARN_VERSION=1.22.22"
+          ],
+          "image_labels": {},
+          "layer_digests": [
+            "sha256:a8ac7f6c67abc236e4c745052c404112b8fab6fe8ac3a329d1ef3b867ad67c71",
+            "sha256:990581063f5c8a03a57db7a0d116679ea6e6e335d4ac48ef457f26f82d917eba",
+            "sha256:4996e33358abd29e5daf56cdda6681efb4db3bd55b5ab63a7d3d44f8400195a4",
+            "sha256:f95897c2a1fb7bce26b018dd74b2845f816f7b86d5adff2939c6482b1d5b474c",
+            "sha256:c35748eaa5ecc949b0f7cc349a9f7c4a5417dc008e2d9bebd53678d87238fcbf"
+          ],
+          "manifest_digest": "sha256:e5a8dee7bc1e6a215d224a7ef8206f7e77271bc3cabd5febf2beafac0674f174",
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          }
+        },
+        {
+          "annotations": {
+            "com.docker.official-images.bashbrew.arch": "arm64v8",
+            "org.opencontainers.image.base.digest": "sha256:6bd27d44e6c32a66bbd72d7cb2b76a8ae3497ec2e5274a81abd1b37f6013fa1f",
+            "org.opencontainers.image.base.name": "debian:bookworm-slim",
+            "org.opencontainers.image.created": "2026-08-25T00:57:15Z",
+            "org.opencontainers.image.revision": "fd1bf45c51970427bc899084b5381f6827722246",
+            "org.opencontainers.image.source": "https://github.com/nodejs/docker-node.git#fd1bf45c51970427bc899084b5381f6827722246:24/bookworm-slim",
+            "org.opencontainers.image.url": "https://hub.docker.com/_/node",
+            "org.opencontainers.image.version": "24-bookworm-slim"
+          },
+          "config_digest": "sha256:bc5b93f8c6f6b38d8b3151c584b11ec2ff797d8b73dc9ab8c42511306a5df8a6",
+          "image_env": [
+            "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "NODE_VERSION=24.19.0",
+            "YARN_VERSION=1.22.22"
+          ],
+          "image_labels": {},
+          "layer_digests": [
+            "sha256:75782e20ea1f4a9d9259bc20a5ecbbea8d5943bf5370bf0f5727900728f1cc9a",
+            "sha256:18a8d678ac2908ce11be82449cf079d3b45de8a0b6425f7534dddb98b521e89f",
+            "sha256:707d116f5feee6cfa5e25ac4182074f2f705d6b9f3993bc8de8f505197c32868",
+            "sha256:2c2703a803deed783a7ad4280ddfa7730b37f3366e943e31da0b9a69d47331e5",
+            "sha256:ea1c5d4af1ed637f410554e0375978811f80e3f696d6a4f317ceafae0ef759e6"
+          ],
+          "manifest_digest": "sha256:be8929e08ae137e81b5e1edba02259e6c4cb2f5ad655092bb9f56b97e41c4536",
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux",
+            "variant": "v8"
+          }
+        }
+      ],
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://hub.docker.com/_/node",
+        "https://registry-1.docker.io/v2/library/node/manifests/sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df"
+      ],
+      "purpose": "TEST-only npm/Bruno provenance and locked package execution runtime",
+      "readable_tag": "docker.io/library/node:24.19.0-bookworm-slim",
+      "source_project": "https://github.com/nodejs/docker-node",
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact artifact bytes, version, digest/integrity, platform or source binding differs; never fall back to a floating tag or host-installed tool.",
+      "verification_method": "Fetched registry OCI index, each selected platform manifest and config over primary registry HTTPS and independently recomputed every returned content digest. Docker Hub tags are readable references only; execution uses immutable index plus explicitly selected platform. Image artifact identity is verified; no container was started in Phase 0.",
+      "version": "24.19.0"
+    },
+    {
+      "browser_metadata_sha256": "545d52f8382c391e605562c330e9c1c534a16045898203037a49bb8bd769a946",
+      "browser_pin_scope": "Immutable official image and source-bound package metadata, not a Phase 0 execution/binary-content assertion. The image includes other browsers but POC uses Chromium only. Before first browser execution, assert actual browser.version() 153.0.8010.12 and installed bundle revision 1243; capture executable SHA-256 and immutable image/platform in source-bound run manifest. Stop on mismatch. No standalone mutable CDN archive or native macOS bundle is selected.",
+      "execution_location": "Disposable TEST Linux arm64 container on Apple Silicon; Linux amd64 container on hosted CI. Native macOS browser/interpreter is not selected.",
+      "expected_index_digest": "sha256:eff16c30e6f3f4af0a03fa4b706120d5e9b0891c344a27d64559aff5900a4a27",
+      "functional_execution": "NOT EXECUTED",
+      "future_installation_rule": "Use pinned image containing matching browsers; npm ci installs only source-bound package lock into disposable TEST location. Any reinstall must preserve revision and image/bundle binding; no apt-get/host package refresh may silently change the execution environment. Capture bundled Node/npm versions before use; those bytes are bounded by the exact image even if different from the separate lock-generator image.",
+      "id": "Chromium browser bundle",
+      "immutable_execution_identifier": "mcr.microsoft.com/playwright@sha256:eff16c30e6f3f4af0a03fa4b706120d5e9b0891c344a27d64559aff5900a4a27",
+      "license": "Chromium BSD-style / Playwright Apache-2.0 and container distribution licenses",
+      "platforms": [
+        {
+          "annotations": {},
+          "config_digest": "sha256:2c1f4e0fd6450f43ddb46d60c2a6df30855a8588e165b1f2559fb0eda8d7ff35",
+          "image_env": [
+            "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "LANG=C.UTF-8",
+            "LC_ALL=C.UTF-8",
+            "PLAYWRIGHT_BROWSERS_PATH=/ms-playwright"
+          ],
+          "image_labels": {
+            "org.opencontainers.image.version": "24.04"
+          },
+          "layer_digests": [
+            "sha256:0926a8eb0e608a5c6888d1cd5594184bdf3ed3aa311dba5b42a547caefdc6f2e",
+            "sha256:e2bfec3c80171904b0984d23d5813617b535505d15ca9791ba0df4c6c766123c",
+            "sha256:74c72610aa2da2063dd4db4d29d7e44e1a143c37518751473ae9567773462b97",
+            "sha256:d8cf7dc1ff62ce7aadea24e1cfe97ee6d3e4a4654c22f2fd5e58d85f6ec02226",
+            "sha256:b4dfe9b5d6219474f2da2f3d2771260276bad24c26570654d3836e01ac74c516",
+            "sha256:a2ac83a9a562ddf791c297a62e2fcc2c5d5c655f882a590a5e8bfca87d789379",
+            "sha256:1b189482e65c68c496123723f1afe2a8ba010018cad8549e4dbdb99230111863"
+          ],
+          "manifest_digest": "sha256:bc6ab0d6d44ff4826e4cb8c1e6d801e185bfc42bb0753f8e2a30efc70db054c7",
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          }
+        },
+        {
+          "annotations": {},
+          "config_digest": "sha256:5536bbbd0ffc106a9fdab13fbff6b3abab01418cceff67ff246552b64cf5623d",
+          "image_env": [
+            "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "LANG=C.UTF-8",
+            "LC_ALL=C.UTF-8",
+            "PLAYWRIGHT_BROWSERS_PATH=/ms-playwright"
+          ],
+          "image_labels": {
+            "org.opencontainers.image.version": "24.04"
+          },
+          "layer_digests": [
+            "sha256:0b613318ea879878918380aa3aeb220dfe824e311b83bc955cb8a1d4319650ab",
+            "sha256:4a443c404e85a59e93715571f0b42aa762a1132d7909bb663f2ef00859ed899c",
+            "sha256:378405c73c48169abf60539eff93d8f9b4f3f6622592ce8fd7d3f0bf4fde1c5d",
+            "sha256:95dcd3cccc7b373945892ba8ed0801e8980568f1af8178bf03d7135e0921bd22",
+            "sha256:42d8ea885f2fde0a9d2e67bcf8aac77b7592946440b5f8bcccada45ebef5d6a2",
+            "sha256:01224c0c46db860bed4c9f6709aeaa4a76ba2aae83d1818a23c15db66653074e",
+            "sha256:4e974a32d5a965f1686db112a1ba13d39da979a49144c0ed93373a36c340ccba"
+          ],
+          "manifest_digest": "sha256:a0f4498920a5dbac63196d9140ed738ef00470f27e2e74029abd8850b7bd5717",
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          }
+        }
+      ],
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://playwright.dev/docs/docker",
+        "https://github.com/microsoft/playwright/blob/1b025d7e20a026371cd5f98ba0cdce48892737c8/utils/docker/Dockerfile.noble",
+        "https://mcr.microsoft.com/v2/playwright/manifests/sha256:eff16c30e6f3f4af0a03fa4b706120d5e9b0891c344a27d64559aff5900a4a27"
+      ],
+      "purpose": "TEST-only real browser bundle, installed only in later authorized disposable TEST job",
+      "readable_tag": "mcr.microsoft.com/playwright:v1.63.0-noble",
+      "source_dockerfile_sha256": "da0a5eb89a4c4ee523b584019f71987b1f0180d807ef8f399e6b7bb347ff3115",
+      "source_project": "https://github.com/microsoft/playwright",
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact artifact bytes, version, digest/integrity, platform or source binding differs; never fall back to a floating tag or host-installed tool.",
+      "verification_method": "Fetched registry OCI index, each selected platform manifest and config over primary registry HTTPS and independently recomputed every returned content digest. Docker Hub tags are readable references only; execution uses immutable index plus explicitly selected platform. Image artifact identity is verified; no container was started in Phase 0.",
+      "version": "153.0.8010.12 / revision 1243"
+    },
+    {
+      "artifact_identifier": "pglast==7.18",
+      "artifacts": [
+        {
+          "expected_sha256": "a43295ccef3b7e9a75ab9b1f1c83d8128c3184c548840f26f12dd320d9c924df",
+          "filename": "pglast-7.18-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+          "size_bytes": 5882665,
+          "url": "https://files.pythonhosted.org/packages/5c/85/2da98ebfa5f78a477caef64952e46572437c7d39c8b57bf99d9367125fd0/pglast-7.18-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+          "verification": "Downloaded exact artifact into bounded memory; SHA-256 matches primary PyPI version JSON."
+        },
+        {
+          "expected_sha256": "6c3c4ca0d88e2f5dc9d261a1a718be02426f14758c13b1665c431f756e6e5f1e",
+          "filename": "pglast-7.18-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+          "size_bytes": 5986573,
+          "url": "https://files.pythonhosted.org/packages/8d/70/713ac4030e8a63f32e4f5d43be6161cd7bb3ee1aa69018a330b5ae30a883/pglast-7.18-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+          "verification": "Downloaded exact artifact into bounded memory; SHA-256 matches primary PyPI version JSON."
+        },
+        {
+          "expected_sha256": "18b52362cea47c87025d031015232da555c70e34762a351633ae040db1ec3c01",
+          "filename": "pglast-7.18.tar.gz",
+          "size_bytes": 3414276,
+          "url": "https://files.pythonhosted.org/packages/e6/67/fdd5a7f256704a457039423f16bba3bfc14d52672e607217816738230125/pglast-7.18.tar.gz",
+          "verification": "Downloaded exact artifact into bounded memory; SHA-256 matches primary PyPI version JSON."
+        }
+      ],
+      "execution_location": "Pinned Python 3.13.15 Linux glibc arm64/amd64 TEST observer container; CPython313 non-free-threaded manylinux wheels only.",
+      "functional_execution": "NOT EXECUTED",
+      "id": "pglast",
+      "installation_rule": "Future isolated wheel installation uses --only-binary=:all: --no-deps and SHA-256 verification; do not install dev/test extras or rebuild sdist implicitly. Wheel METADATA has no mandatory runtime dependencies. A missing approved wheel stops execution.",
+      "license": "GPL-3.0-or-later; libpg_query includes PostgreSQL license/source",
+      "parser_compatibility": {
+        "bundled_libpg_query_release": "17-6.2.2",
+        "bundled_parser_version": "17.7",
+        "claim": "PG17 syntax family is verified from primary source. This is not a PG17.11 server binary or executed classifier equivalence proof. Exact INSERT/UPDATE/DELETE/TRUNCATE, schema-qualified/quoted/shadow/adversarial classifications against actual PG17.11 remain mandatory Phase 2/S11 evidence; mismatch stops affected work.",
+        "postgresql_major": "17",
+        "selected_database_version": "17.11"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://pypi.org/pypi/pglast/7.18/json",
+        "https://pypi.org/project/pglast/7.18/",
+        "https://github.com/lelit/pglast/blob/8a2ea399c3d87ae68ad680ea52af02c9257be0af/CHANGES.rst"
+      ],
+      "purpose": "TEST-only independent PostgreSQL audit-tamper observer SQL AST parser; no observer or SQL log parser implemented.",
+      "source_commit": "8a2ea399c3d87ae68ad680ea52af02c9257be0af",
+      "source_project": "https://github.com/lelit/pglast",
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact artifact bytes, version, digest/integrity, platform or source binding differs; never fall back to a floating tag or host-installed tool.",
+      "verification_method": "PyPI version JSON and exact sdist/wheels downloaded into bounded memory; hashes recomputed; inspected sdist CHANGES.rst and libpg_query/pg_query.h; GitHub annotated v7.18 tag resolved to immutable commit.",
+      "version": "7.18"
+    },
+    {
+      "artifact_path": "/usr/bin/openssl",
+      "before_execution_assertions": "Verify exact image/platform and /usr/bin/openssl SHA-256, record openssl version -a; refuse mismatch. CA/leaf creation commands and certificate validation will be source-bound in later authorized fixture implementation.",
+      "execution_location": "Same exact Python TEST image, chosen platform, invoked only in disposable per-run TEST workspace. No host OpenSSL/Homebrew/native build is execution authority.",
+      "functional_execution": "NOT EXECUTED",
+      "id": "OpenSSL TEST CA tool",
+      "immutable_execution_identifier": "docker.io/library/python@sha256:2325bb286ec344af3e5898cc224b5844e2707ac6e26b1632516fd3edc84a5e26",
+      "license": "Apache-2.0 for OpenSSL 3; image distribution/component licenses remain separately inspectable.",
+      "platforms": [
+        {
+          "binary_sha256": "b2eca5aab93387bfd865ba65df16b904458229093a380bf03f391b1e10658304",
+          "compressed_layer_digest": "sha256:43dcef5051b0d747db428c3890841803fca6b253a38f1f66774f964ee0dbaa33",
+          "image_manifest_digest": "sha256:3e2de9c40ca4e3d73240059f9d48baff27908f10293e985a2f382a0378e6df4a",
+          "platform": "linux/amd64"
+        },
+        {
+          "binary_sha256": "bc840e25ecb71ae7e84aed1e61980481b246fddb718159484f5a68ce1e199d09",
+          "compressed_layer_digest": "sha256:e53a74de92c54e1754a425a4a895a580e649477445cd7b8d0379afe186e52713",
+          "image_manifest_digest": "sha256:ad4c34ff79289506e235b40dce75d629e25f226b597a2455804220f037e07531",
+          "platform": "linux/arm64"
+        }
+      ],
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://hub.docker.com/_/python",
+        "https://github.com/docker-library/python/tree/688a0b86bb44289df16a363e9f41d90514c1a5f9/3.13/slim-bookworm",
+        "https://www.openssl.org/"
+      ],
+      "purpose": "Generate disposable TEST CA and SAN host certificates; no keys/certificates generated in Phase 0.",
+      "source_project": "OpenSSL Project; Debian OpenSSL package; Docker Official Python image",
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact artifact bytes, version, digest/integrity, platform or source binding differs; never fall back to a floating tag or host-installed tool.",
+      "tls_topology": {
+        "certificate_authority": "Per-run TEST-only private CA; separate host leaf keys; CA trust injected into browser/Node/Java test trust stores. No production PKI authority.",
+        "https": "MANDATORY",
+        "resolution": "Later TEST network resolves both approved SAN names; local host mapping is separately explicit/reversible, hosted CI uses isolated TEST network or per-run resolver mapping; localhost/hostname alone is insufficient identity.",
+        "san_hosts": [
+          "vra.poc04.test",
+          "issuer.poc04.test"
+        ],
+        "secret_handling": "Private keys generated in restricted disposable per-run workspace, never in repository/evidence/artifacts. Public CA/certificate fingerprints, SANs, validity and issuer metadata may enter evidence. Destroy only manifest-proven run-owned keys/environment; no actual material generated here."
+      },
+      "verification_method": "Downloaded every Python platform layer in bounded memory and recomputed compressed layer SHA-256; inspected final dpkg status records for openssl/libssl3 3.0.20-1~deb12u2; hashed /usr/bin/openssl bytes independently for each platform. Neither image nor binary was executed. Container digest binds library/config dependencies too.",
+      "version": "OpenSSL 3.0.20; Debian package 3.0.20-1~deb12u2"
+    },
+    {
+      "artifact_identifier": "psycopg==3.3.6",
+      "artifacts": [
+        {
+          "filename": "psycopg-3.3.6-py3-none-any.whl",
+          "sha256": "a1db9f7148b06a28606767efaca51fa6f9398c5c0a3810519be69d7000bdb631",
+          "size_bytes": 215490,
+          "url": "https://files.pythonhosted.org/packages/4e/de/748bd7609c71cae5d737f0ba9192f19329f70180ecda8fff3cac02c5abe3/psycopg-3.3.6-py3-none-any.whl",
+          "verification": "Exact primary PyPI file downloaded into bounded memory and SHA-256 recomputed; matches exact-version registry JSON.",
+          "wheel_metadata_sha256": "351960397d6b386beae931f5bfd945e8c1212e9505017d1b15c72d4c33bb00af"
+        },
+        {
+          "filename": "psycopg-3.3.6.tar.gz",
+          "sha256": "c081f2250df751a943036e42db6df4571c66cd0aabe8291a7a506512b12007d2",
+          "size_bytes": 168171,
+          "url": "https://files.pythonhosted.org/packages/76/26/3ea4ca5eaea1c0debcdf7ee7c1613fbe721dc27a03c461c0817ffd8a0601/psycopg-3.3.6.tar.gz",
+          "verification": "Exact primary PyPI file downloaded into bounded memory and SHA-256 recomputed; matches exact-version registry JSON."
+        }
+      ],
+      "execution_location": "Pinned Python3.13.15 Linux glibc arm64/amd64 TEST observer container; production inclusion NO.",
+      "functional_execution": "NOT EXECUTED",
+      "id": "psycopg",
+      "license": "LGPL-3.0-only for Psycopg; vendored libraries have their own licenses represented in wheel SBOM/license files.",
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://pypi.org/pypi/psycopg/3.3.6/json",
+        "https://pypi.org/project/psycopg/3.3.6/",
+        "https://github.com/psycopg/psycopg/tree/a67654d1e7afbf9b3a619557838f62de1c790e7c",
+        "https://www.psycopg.org/psycopg3/docs/basic/install.html"
+      ],
+      "purpose": "TEST-only PostgreSQL transport for independent audit-tamper observer; confers no database privilege or authorization authority.",
+      "requires_dist": [
+        "typing-extensions>=4.6; python_version < \"3.13\"",
+        "tzdata; sys_platform == \"win32\"",
+        "psycopg-c==3.3.6; implementation_name != \"pypy\" and extra == \"c\"",
+        "psycopg-binary==3.3.6; implementation_name != \"pypy\" and extra == \"binary\"",
+        "psycopg-pool; extra == \"pool\"",
+        "anyio>=4.0; extra == \"test\"",
+        "mypy>=2.1.0; implementation_name != \"pypy\" and extra == \"test\"",
+        "pproxy>=2.7; extra == \"test\"",
+        "pytest>=6.2.5; extra == \"test\"",
+        "pytest-cov>=3.0; extra == \"test\"",
+        "pytest-randomly>=3.5; extra == \"test\"",
+        "ast-comments>=1.1.2; extra == \"dev\"",
+        "black>=26.1.0; extra == \"dev\"",
+        "codespell>=2.2; extra == \"dev\"",
+        "cython-lint>=0.21; extra == \"dev\"",
+        "dnspython>=2.1; extra == \"dev\"",
+        "flake8>=4.0; extra == \"dev\"",
+        "isort[colors]>=6.0; extra == \"dev\"",
+        "isort-psycopg>=0.0.3; extra == \"dev\"",
+        "mypy>=2.1.0; extra == \"dev\"",
+        "pre-commit>=4.0.1; extra == \"dev\"",
+        "types-setuptools>=57.4; extra == \"dev\"",
+        "types-shapely>=2.0; extra == \"dev\"",
+        "wheel>=0.37; extra == \"dev\"",
+        "Sphinx>=9.1; extra == \"docs\"",
+        "furo==2025.12.19; extra == \"docs\"",
+        "sphinx-autobuild>=2025.8.25; extra == \"docs\"",
+        "sphinx-autodoc-typehints>=3.10.2; extra == \"docs\""
+      ],
+      "requires_python": ">=3.10",
+      "selected_dependencies": "Only psycopg3.3.6 + psycopg-binary3.3.6. On CPython3.13/Linux, conditional typing-extensions (Python<3.13) and tzdata (Windows) do not apply. No pool/c/dev/test/docs extras; no implicit dependency resolution.",
+      "source_commit": "a67654d1e7afbf9b3a619557838f62de1c790e7c",
+      "source_project": "https://github.com/psycopg/psycopg",
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact wheel SHA-256, package version, selected CPython313 Linux platform or source binding differs; no source build, system libpq fallback or floating package version.",
+      "verification_method": "Exact-version primary PyPI metadata and package payloads independently hashed; inspected wheel METADATA, native library content and embedded auditwheel SBOM; annotated upstream 3.3.6 tag resolved to immutable commit. Package signatures/build attestations not cryptographically verified.",
+      "version": "3.3.6"
+    },
+    {
+      "artifact_identifier": "psycopg-binary==3.3.6",
+      "artifacts": [
+        {
+          "bundled_libraries": [
+            {
+              "sha256": "5426dcb54dd01c9eedda05e2179f0e47114e8b48a534ffe9e94916e79471b257",
+              "size_bytes": 17497,
+              "wheel_path": "psycopg_binary.libs/libcom_err-2abe824b.so.2.1"
+            },
+            {
+              "sha256": "e2a6f6ff300e287a60dfc0c6fdb76ee01e333068df7c60b4e87453d942ccda65",
+              "size_bytes": 221657,
+              "wheel_path": "psycopg_binary.libs/libcrypt-bc2db45e.so.1"
+            },
+            {
+              "sha256": "ac767da23afff24a34a1a86e6464f65ff45c8e3374850c117c1cffbfcd879da0",
+              "size_bytes": 6502249,
+              "wheel_path": "psycopg_binary.libs/libcrypto-2d1629ee.so.3"
+            },
+            {
+              "sha256": "ef73998b86c24e54667a843be6d589442dd082e1b9fc605aa15bcc2293858806",
+              "size_bytes": 357505,
+              "wheel_path": "psycopg_binary.libs/libgssapi_krb5-497db0c6.so.2.2"
+            },
+            {
+              "sha256": "bf04d7ebe3937aba3855c15acbd991482286a484aeea38bb9ced85e772ea2fb0",
+              "size_bytes": 224057,
+              "wheel_path": "psycopg_binary.libs/libk5crypto-b1f99d5c.so.3.1"
+            },
+            {
+              "sha256": "c29e41b03cf4b2dffbfb4960946e2b42f82c0ca5d53d231d3f0fc597ba274488",
+              "size_bytes": 17913,
+              "wheel_path": "psycopg_binary.libs/libkeyutils-dfe70bd6.so.1.5"
+            },
+            {
+              "sha256": "94dc6413050486a6c8de4b6f3bfdd288390892b72bc68580c6c53929721fa07b",
+              "size_bytes": 1039441,
+              "wheel_path": "psycopg_binary.libs/libkrb5-fcafa220.so.3.3"
+            },
+            {
+              "sha256": "0eb5322b05ac46e4db7ddb779ee0269006dd01801aaa67b84f8e7f753bfdddf2",
+              "size_bytes": 80977,
+              "wheel_path": "psycopg_binary.libs/libkrb5support-d0bcff84.so.0.1"
+            },
+            {
+              "sha256": "862a4715f500831283bebf04347491b17a3adb93e56a335d00a6e1b278258929",
+              "size_bytes": 60977,
+              "wheel_path": "psycopg_binary.libs/liblber-a44a5afb.so.2.0.200"
+            },
+            {
+              "sha256": "1408b751ee5e666470af890e13a508b38a57870b6a261697e27f9c6493b645fc",
+              "size_bytes": 447321,
+              "wheel_path": "psycopg_binary.libs/libldap-7c3a4b12.so.2.0.200"
+            },
+            {
+              "sha256": "02eda850e04931656d8af81f5171bff74d8bec1553d3d85c3d32d7fc5efe8864",
+              "size_bytes": 406817,
+              "wheel_path": "psycopg_binary.libs/libpcre-9513aab5.so.1.2.0"
+            },
+            {
+              "PQlibVersion_code_hex": "b826bf0200c3",
+              "PQlibVersion_static_return": 180006,
+              "sha256": "adee4abe45a36e8f147b15e08aceca893c255dfd4133a047884807931ca8046d",
+              "size_bytes": 420153,
+              "static_inspection_claim": "Read ELF exported symbol and return-immediate instructions; neither shared library nor wheel executed. Runtime pq.version() must independently corroborate before actual use.",
+              "wheel_path": "psycopg_binary.libs/libpq-e9b5c9ac.so.5.18"
+            },
+            {
+              "sha256": "e84be55110f16f7ca930af373e9f41fa7f4ec60733c013d933d1443ae5056a98",
+              "size_bytes": 142953,
+              "wheel_path": "psycopg_binary.libs/libsasl2-84219a89.so.3.0.0"
+            },
+            {
+              "sha256": "99e60178aed625f6d2e2af58bccf605b13619b1544058e9f985a2772affb4a88",
+              "size_bytes": 186537,
+              "wheel_path": "psycopg_binary.libs/libselinux-0922c95c.so.1"
+            },
+            {
+              "sha256": "ef566b112dc7532a689c07de999c16efda3b4872df0c9d011bdcf00b94dd8a2e",
+              "size_bytes": 1180057,
+              "wheel_path": "psycopg_binary.libs/libssl-8bd944e8.so.3"
+            }
+          ],
+          "filename": "psycopg_binary-3.3.6-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+          "sha256": "cec5ea900390897d0b46130f60bc2883bf19c314f9044235217c8be88b0ef269",
+          "size_bytes": 5237855,
+          "url": "https://files.pythonhosted.org/packages/de/b0/c6f8a0585a5dacbea74e130bcfc66629390e8f5bbc79d2a8e806e8952150/psycopg_binary-3.3.6-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+          "verification": "Exact primary PyPI file downloaded into bounded memory and SHA-256 recomputed; matches exact-version registry JSON.",
+          "wheel_metadata_sha256": "0a1fb529c1e27ca41655413e669c964bd0d7069e8cc2ab32b192fc98baf37fd5",
+          "wheel_sbom": {
+            "components": [
+              {
+                "bom-ref": "pkg:pypi/psycopg_binary@3.3.6?file_name=psycopg_binary-3.3.6-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+                "name": "psycopg_binary",
+                "purl": "pkg:pypi/psycopg_binary@3.3.6?file_name=psycopg_binary-3.3.6-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+                "type": "library",
+                "version": "3.3.6"
+              },
+              {
+                "bom-ref": "pkg:rpm/centos/krb5-libs@1.15.1-55.el7_9#8cee64e9f2ddb592df8075ecb6489ed5727979b245606ae73dae382890f54ed5",
+                "name": "krb5-libs",
+                "purl": "pkg:rpm/centos/krb5-libs@1.15.1-55.el7_9",
+                "type": "library",
+                "version": "1.15.1-55.el7_9"
+              },
+              {
+                "bom-ref": "pkg:rpm/centos/pcre@8.32-17.el7#13c83851f49804fee35d2a5d04c7c9838574be59111e142a6f19d928b13e7f72",
+                "name": "pcre",
+                "purl": "pkg:rpm/centos/pcre@8.32-17.el7",
+                "type": "library",
+                "version": "8.32-17.el7"
+              },
+              {
+                "bom-ref": "pkg:rpm/centos/keyutils-libs@1.5.8-3.el7#b0804f4bd8708c97010e5324dbe6e1ed8cd5e622524afc3f44b4cf95c9e6cfd9",
+                "name": "keyutils-libs",
+                "purl": "pkg:rpm/centos/keyutils-libs@1.5.8-3.el7",
+                "type": "library",
+                "version": "1.5.8-3.el7"
+              },
+              {
+                "bom-ref": "pkg:rpm/centos/libcom_err@1.42.9-19.el7#acf5d4191003325e79febc61cc2cc17ecbb1c49f03b73edbc4677777f25b75ce",
+                "name": "libcom_err",
+                "purl": "pkg:rpm/centos/libcom_err@1.42.9-19.el7",
+                "type": "library",
+                "version": "1.42.9-19.el7"
+              },
+              {
+                "bom-ref": "pkg:rpm/centos/krb5-libs@1.15.1-55.el7_9#5b1da461e2c57feebadb3f96f47736f4b17ad56a83895f95d60a166ced6472b0",
+                "name": "krb5-libs",
+                "purl": "pkg:rpm/centos/krb5-libs@1.15.1-55.el7_9",
+                "type": "library",
+                "version": "1.15.1-55.el7_9"
+              },
+              {
+                "bom-ref": "pkg:rpm/centos/libselinux@2.5-15.el7#02193ff4a4eff6fcc27e9c3cf39839797d150f578de0826f36a41de8ede637ed",
+                "name": "libselinux",
+                "purl": "pkg:rpm/centos/libselinux@2.5-15.el7",
+                "type": "library",
+                "version": "2.5-15.el7"
+              },
+              {
+                "bom-ref": "pkg:rpm/centos/cyrus-sasl-lib@2.1.26-24.el7_9#31c73dc5f009ba5a48504f874a39167409302b93174b17cecb1e4e2033f1b9b2",
+                "name": "cyrus-sasl-lib",
+                "purl": "pkg:rpm/centos/cyrus-sasl-lib@2.1.26-24.el7_9",
+                "type": "library",
+                "version": "2.1.26-24.el7_9"
+              },
+              {
+                "bom-ref": "pkg:rpm/centos/krb5-libs@1.15.1-55.el7_9#e140566d00db0f579c699b6d9e76106beaf31c2b7fb445a03fa070ecbba23222",
+                "name": "krb5-libs",
+                "purl": "pkg:rpm/centos/krb5-libs@1.15.1-55.el7_9",
+                "type": "library",
+                "version": "1.15.1-55.el7_9"
+              },
+              {
+                "bom-ref": "pkg:rpm/centos/krb5-libs@1.15.1-55.el7_9#f48174b591f1b33596ce2a474abd314f36bca16bec53d13690741df18627f518",
+                "name": "krb5-libs",
+                "purl": "pkg:rpm/centos/krb5-libs@1.15.1-55.el7_9",
+                "type": "library",
+                "version": "1.15.1-55.el7_9"
+              }
+            ],
+            "path": "psycopg_binary-3.3.6.dist-info/sboms/auditwheel.cdx.json",
+            "sha256": "fdab71001012b530854598b80af4356d54d1b98fb3211d26037e3339a2f96ff5"
+          }
+        },
+        {
+          "bundled_libraries": [
+            {
+              "sha256": "b335a27b7304dfd71b7539777c47d5600930ab63f7c5f47cbb5a12257d60aaae",
+              "size_bytes": 132169,
+              "wheel_path": "psycopg_binary.libs/libcom_err-6d8d18aa.so.2.1"
+            },
+            {
+              "sha256": "980d4781ae9ad8d1b2f60be52cfbbf176d32cc62ecf888920f347e9957636ee2",
+              "size_bytes": 198433,
+              "wheel_path": "psycopg_binary.libs/libcrypt-258f54d5.so.1.1.0"
+            },
+            {
+              "sha256": "a3c1fd9181587f115867a67be80fbb2bcd9f2f26d0a65c044389cb8b15bb145a",
+              "size_bytes": 2945609,
+              "wheel_path": "psycopg_binary.libs/libcrypto-02bae65c.so.1.1.1k"
+            },
+            {
+              "sha256": "39e63cfee43792d18220e0a09209fbf4f9dde73ad5276ff8e1120f412b209aed",
+              "size_bytes": 6133529,
+              "wheel_path": "psycopg_binary.libs/libcrypto-cff3d539.so.3"
+            },
+            {
+              "sha256": "7b5ec5b48e4991e4226b95f438b3d9a2a74e53855e7f18335f393394d7d81d13",
+              "size_bytes": 534233,
+              "wheel_path": "psycopg_binary.libs/libgssapi_krb5-42536122.so.2.2"
+            },
+            {
+              "sha256": "77981fcdfe3e323d8bde92aa92560d2b313c2f22c7e23fca806b0e56e5a84ab0",
+              "size_bytes": 331321,
+              "wheel_path": "psycopg_binary.libs/libk5crypto-f5362a5f.so.3.1"
+            },
+            {
+              "sha256": "0d2a628040cf8f759447db3556701af6aa4b5b3e36a7a55d07a944c52ce33d22",
+              "size_bytes": 132697,
+              "wheel_path": "psycopg_binary.libs/libkeyutils-fe6e95a9.so.1.6"
+            },
+            {
+              "sha256": "25a53ce937e2fb13fe4a3d7deb646c97a61eceaa57a4ad8ce3459b2b2eb735c3",
+              "size_bytes": 1199129,
+              "wheel_path": "psycopg_binary.libs/libkrb5-98c41d04.so.3.3"
+            },
+            {
+              "sha256": "081d988cfc5e35db8a8a482f107afda20df19bd699767756982598085b735978",
+              "size_bytes": 265377,
+              "wheel_path": "psycopg_binary.libs/libkrb5support-beb3078f.so.0.1"
+            },
+            {
+              "sha256": "300602a4d7af0bce4694425bbd2a7e47b6311243e57d65f3872e490c85a3c790",
+              "size_bytes": 265745,
+              "wheel_path": "psycopg_binary.libs/liblber-e2ad9298.so.2.0.200"
+            },
+            {
+              "sha256": "fdd07f390aca39e226dcab51577a333e3f6feef5f672fac1ea6c2c6c6acd44f3",
+              "size_bytes": 672553,
+              "wheel_path": "psycopg_binary.libs/libldap-1357b183.so.2.0.200"
+            },
+            {
+              "sha256": "8f1645c7955deb69cc005acb6235b2c44561189aefb1ad2c23376c5876930cf9",
+              "size_bytes": 592849,
+              "wheel_path": "psycopg_binary.libs/libpcre2-8-8701a61e.so.0.7.1"
+            },
+            {
+              "PQlibVersion_code_hex": "c0e497524000a072c0035fd6",
+              "PQlibVersion_static_return": 180006,
+              "sha256": "f6cd05c43aa3be5c4177fd5530249ec3ea6ca9ac3e11548b7925b08b65ed36fa",
+              "size_bytes": 661793,
+              "static_inspection_claim": "Read ELF exported symbol and return-immediate instructions; neither shared library nor wheel executed. Runtime pq.version() must independently corroborate before actual use.",
+              "wheel_path": "psycopg_binary.libs/libpq-53e4e5f8.so.5.18"
+            },
+            {
+              "sha256": "b5e7013b5ab03f9b72020d2c08f81c39e55fd2640474a2ade9122895b6ad53b9",
+              "size_bytes": 331305,
+              "wheel_path": "psycopg_binary.libs/libsasl2-076b3c1f.so.3.0.0"
+            },
+            {
+              "sha256": "c4a7902448603dd0672b9a0569ab19124cf533d17841856608aff4ccf8933e0b",
+              "size_bytes": 399881,
+              "wheel_path": "psycopg_binary.libs/libselinux-be7a4dc7.so.1"
+            },
+            {
+              "sha256": "c2525932279930ef8fecd5098938b8d965f36dd112d0c632f18317ef01e8f490",
+              "size_bytes": 1335673,
+              "wheel_path": "psycopg_binary.libs/libssl-c64c0f6b.so.3"
+            }
+          ],
+          "filename": "psycopg_binary-3.3.6-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+          "sha256": "98c02090d88f2ebc0ec1e8da538f77d225ce0fffecf372aa39262e62a1b054ef",
+          "size_bytes": 6833856,
+          "url": "https://files.pythonhosted.org/packages/e2/fc/c3a7a8bbef7e945ec584ac61d460a612363ea398511cd0e220242b1d69f1/psycopg_binary-3.3.6-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+          "verification": "Exact primary PyPI file downloaded into bounded memory and SHA-256 recomputed; matches exact-version registry JSON.",
+          "wheel_metadata_sha256": "0a1fb529c1e27ca41655413e669c964bd0d7069e8cc2ab32b192fc98baf37fd5",
+          "wheel_sbom": {
+            "components": [
+              {
+                "bom-ref": "pkg:pypi/psycopg_binary@3.3.6?file_name=psycopg_binary-3.3.6-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+                "name": "psycopg_binary",
+                "purl": "pkg:pypi/psycopg_binary@3.3.6?file_name=psycopg_binary-3.3.6-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+                "type": "library",
+                "version": "3.3.6"
+              },
+              {
+                "bom-ref": "pkg:rpm/almalinux/krb5-libs@1.18.2-34.el8_10#5b1da461e2c57feebadb3f96f47736f4b17ad56a83895f95d60a166ced6472b0",
+                "name": "krb5-libs",
+                "purl": "pkg:rpm/almalinux/krb5-libs@1.18.2-34.el8_10",
+                "type": "library",
+                "version": "1.18.2-34.el8_10"
+              },
+              {
+                "bom-ref": "pkg:rpm/almalinux/libxcrypt@4.1.1-6.el8#bb05f9625034eafb6521c829acb86fdb92057ac8118ccd5fcfd454c7129a8be2",
+                "name": "libxcrypt",
+                "purl": "pkg:rpm/almalinux/libxcrypt@4.1.1-6.el8",
+                "type": "library",
+                "version": "4.1.1-6.el8"
+              },
+              {
+                "bom-ref": "pkg:rpm/almalinux/openssl-libs@1.1.1k-17.el8_6#c1f3247366f254cfcb8b22146cc4d47c44d98d5e626dc323e5ec1685430e71eb",
+                "name": "openssl-libs",
+                "purl": "pkg:rpm/almalinux/openssl-libs@1.1.1k-17.el8_6",
+                "type": "library",
+                "version": "1.1.1k-17.el8_6"
+              },
+              {
+                "bom-ref": "pkg:rpm/almalinux/libselinux@2.9-11.el8_10#02193ff4a4eff6fcc27e9c3cf39839797d150f578de0826f36a41de8ede637ed",
+                "name": "libselinux",
+                "purl": "pkg:rpm/almalinux/libselinux@2.9-11.el8_10",
+                "type": "library",
+                "version": "2.9-11.el8_10"
+              },
+              {
+                "bom-ref": "pkg:rpm/almalinux/krb5-libs@1.18.2-34.el8_10#f48174b591f1b33596ce2a474abd314f36bca16bec53d13690741df18627f518",
+                "name": "krb5-libs",
+                "purl": "pkg:rpm/almalinux/krb5-libs@1.18.2-34.el8_10",
+                "type": "library",
+                "version": "1.18.2-34.el8_10"
+              },
+              {
+                "bom-ref": "pkg:rpm/almalinux/keyutils-libs@1.5.10-9.el8#ea188df8272fae42cbb2b7da9b46ae1e80efdfb5358ce8d7e73ba92969438767",
+                "name": "keyutils-libs",
+                "purl": "pkg:rpm/almalinux/keyutils-libs@1.5.10-9.el8",
+                "type": "library",
+                "version": "1.5.10-9.el8"
+              },
+              {
+                "bom-ref": "pkg:rpm/almalinux/krb5-libs@1.18.2-34.el8_10#8cee64e9f2ddb592df8075ecb6489ed5727979b245606ae73dae382890f54ed5",
+                "name": "krb5-libs",
+                "purl": "pkg:rpm/almalinux/krb5-libs@1.18.2-34.el8_10",
+                "type": "library",
+                "version": "1.18.2-34.el8_10"
+              },
+              {
+                "bom-ref": "pkg:rpm/almalinux/libcom_err@1.45.6-7.el8_10#acf5d4191003325e79febc61cc2cc17ecbb1c49f03b73edbc4677777f25b75ce",
+                "name": "libcom_err",
+                "purl": "pkg:rpm/almalinux/libcom_err@1.45.6-7.el8_10",
+                "type": "library",
+                "version": "1.45.6-7.el8_10"
+              },
+              {
+                "bom-ref": "pkg:rpm/almalinux/pcre2@10.32-3.el8_6#a35b63105b4e5063acbb565eac2487e082c8a1198a0a2880d42576898010fff7",
+                "name": "pcre2",
+                "purl": "pkg:rpm/almalinux/pcre2@10.32-3.el8_6",
+                "type": "library",
+                "version": "10.32-3.el8_6"
+              },
+              {
+                "bom-ref": "pkg:rpm/almalinux/krb5-libs@1.18.2-34.el8_10#e140566d00db0f579c699b6d9e76106beaf31c2b7fb445a03fa070ecbba23222",
+                "name": "krb5-libs",
+                "purl": "pkg:rpm/almalinux/krb5-libs@1.18.2-34.el8_10",
+                "type": "library",
+                "version": "1.18.2-34.el8_10"
+              },
+              {
+                "bom-ref": "pkg:rpm/almalinux/cyrus-sasl-lib@2.1.27-6.el8_5#31c73dc5f009ba5a48504f874a39167409302b93174b17cecb1e4e2033f1b9b2",
+                "name": "cyrus-sasl-lib",
+                "purl": "pkg:rpm/almalinux/cyrus-sasl-lib@2.1.27-6.el8_5",
+                "type": "library",
+                "version": "2.1.27-6.el8_5"
+              }
+            ],
+            "path": "psycopg_binary-3.3.6.dist-info/sboms/auditwheel.cdx.json",
+            "sha256": "3a4c7fc79e6c62737626919ca98177c59084898c9e4d2259be7a926a2fdd3585"
+          }
+        }
+      ],
+      "execution_location": "Pinned Python3.13.15 Linux glibc arm64/amd64 TEST observer container; production inclusion NO.",
+      "functional_execution": "NOT EXECUTED",
+      "id": "psycopg-binary",
+      "libpq_basis": "Wheel-bundled libpq is immutable with whole-wheel and per-library hashes; static PQlibVersion routines on both platforms return180006 (client18.6). Client version does not select a server or revise target PostgreSQL17.11; actual connect/TLS/query/classifier functionality remains mandatory executed proof. Before use assert psycopg.pq.__impl__==binary, psycopg.pq.version()==180006 and record build version; refuse pure-python/system-libpq fallback.",
+      "license": "LGPL-3.0-only for Psycopg; vendored libraries have their own licenses represented in wheel SBOM/license files.",
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://pypi.org/pypi/psycopg-binary/3.3.6/json",
+        "https://pypi.org/project/psycopg-binary/3.3.6/",
+        "https://github.com/psycopg/psycopg/tree/a67654d1e7afbf9b3a619557838f62de1c790e7c",
+        "https://www.psycopg.org/psycopg3/docs/basic/install.html"
+      ],
+      "purpose": "TEST-only PostgreSQL transport for independent audit-tamper observer; confers no database privilege or authorization authority.",
+      "requires_dist": null,
+      "requires_python": ">=3.10",
+      "selected_dependencies": "Only psycopg3.3.6 + psycopg-binary3.3.6. On CPython3.13/Linux, conditional typing-extensions (Python<3.13) and tzdata (Windows) do not apply. No pool/c/dev/test/docs extras; no implicit dependency resolution.",
+      "source_commit": "a67654d1e7afbf9b3a619557838f62de1c790e7c",
+      "source_project": "https://github.com/psycopg/psycopg",
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact wheel SHA-256, package version, selected CPython313 Linux platform or source binding differs; no source build, system libpq fallback or floating package version.",
+      "supply_chain_nonclaim": "Bundled SBOM includes legacy dependency records, including openssl-libs1.1.1k-17.el8_6 on arm64. Exact artifact provenance is verified; no safety/absence-of-vulnerability claim. Preserve wheel SBOM and vendor library hashes for Phase10/S13 scan/triage; a material finding blocks affected execution or requires separately reviewed exact replacement pin.",
+      "verification_method": "Exact-version primary PyPI metadata and package payloads independently hashed; inspected wheel METADATA, native library content and embedded auditwheel SBOM; annotated upstream 3.3.6 tag resolved to immutable commit. Package signatures/build attestations not cryptographically verified.",
+      "version": "3.3.6"
+    }
+  ],
+  "s0_s15_status": "NOT VERIFIED",
+  "schema_version": 1,
+  "scope": "POC-04 Phase 0 TEST-only provenance; no security feature implementation or S-gate verification.",
+  "unresolved_critical_pin_items": []
+}

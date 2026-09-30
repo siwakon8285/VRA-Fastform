@@ -1,0 +1,1073 @@
+{
+  "S0_S15": "NOT VERIFIED",
+  "authorized_base": "8243d62f50aed2dc9a8605d7f12f0e2b7aa86854",
+  "authorized_branch": "poc/04-security-auth",
+  "classification_rule": "VERIFIED PIN means primary-source identity/provenance only, never a S-gate PASS; for hosted-runner it means VERIFIED BASELINE OBSERVATION of the exact recorded run/image/release, not an immutable ubuntu-latest alias or future execution. Item classification VERIFIED maps from VERIFIED PIN; no floating fallback.",
+  "manifest_version": "poc04-phase0-pins-v2",
+  "minimum_scope_ids": [
+    "keycloak_test",
+    "@usebruno/cli",
+    "@playwright/test",
+    "Chromium browser bundle",
+    "Python",
+    "pglast",
+    "OSV-Scanner",
+    "Gitleaks",
+    "Syft",
+    "actions-checkout",
+    "actions-setup-java",
+    "gradle-distribution",
+    "gradle-wrapper-jar",
+    "postgresql_test",
+    "testcontainers_java",
+    "java21-temurin",
+    "OpenSSL TEST CA tool"
+  ],
+  "phase1": "NOT AUTHORIZED",
+  "production_vendor_selection": "NONE; TEST/build/verification selections only",
+  "provenance_files": [
+    {
+      "path": "validation/poc-04/tooling/build-ci-pins.json",
+      "sha256": "7dcd6692286ee3078b4b3fb7635195e901b4448833e699943a798e025d65a675"
+    },
+    {
+      "path": "validation/poc-04/tooling/image-pins.json",
+      "sha256": "340b51d2910f023eef2f7b8a0a4c4065c4baa8d95b2a95c5aaa6c76b888d123a"
+    },
+    {
+      "path": "validation/poc-04/tooling/scanner-pins.json",
+      "sha256": "532d17651d702afffc6a3a9b64244ef5ad9cc02515df8465e1bc42c514d15bd3"
+    },
+    {
+      "path": "validation/poc-04/tooling/web-python-pins.json",
+      "sha256": "bab639a206eac0cbf991cf077b60762e2574f67836955b1352995fd4f5afb632"
+    }
+  ],
+  "required_ids": [
+    "@playwright/test",
+    "@usebruno/cli",
+    "Chromium browser bundle",
+    "Gitleaks",
+    "Node.js",
+    "OSV-Scanner",
+    "OpenSSL TEST CA tool",
+    "Python",
+    "Syft",
+    "actions-checkout",
+    "actions-setup-java",
+    "gradle-distribution",
+    "gradle-wrapper-jar",
+    "hosted-runner",
+    "java21-temurin",
+    "keycloak_test",
+    "pglast",
+    "playwright",
+    "playwright-core",
+    "postgresql_test",
+    "psycopg",
+    "psycopg-binary",
+    "testcontainers_java",
+    "testcontainers_ryuk",
+    "testcontainers_tinyimage"
+  ],
+  "schema_version": 1,
+  "status_counts": {
+    "PROPOSED PIN": 0,
+    "UNRESOLVED": 0,
+    "VERIFIED PIN": 25
+  },
+  "tools": [
+    {
+      "artifact_identifier": "https://services.gradle.org/distributions/gradle-9.7.1-bin.zip",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Local/CI backend wrapper; never system Gradle",
+      "id": "gradle-distribution",
+      "immutable_identifiers": {
+        "artifacts": [],
+        "sha256": "acd53f1edaf02f1a8ff99879f8a34b302661a057d9b063ae9e35b552f804d20a"
+      },
+      "license_source_project": {
+        "license": "Apache-2.0",
+        "project": "gradle/gradle"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://gradle.org/release-checksums/",
+        "https://docs.gradle.org/current/userguide/gradle_wrapper.html#sec:verification"
+      ],
+      "purpose": "Existing build bootstrap provenance; distribution and wrapper are independently checked",
+      "source_record": {
+        "file_sha256": "7dcd6692286ee3078b4b3fb7635195e901b4448833e699943a798e025d65a675",
+        "json_pointer": "/records/0",
+        "path": "validation/poc-04/tooling/build-ci-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "Reject checksum mismatch before executing wrapper or distribution; never regenerate here",
+      "verification_method": "Local wrapper JAR SHA-256 or configured distribution SHA compared separately with trusted Gradle release checksum endpoints and release-checksums page; distribution ZIP not downloaded",
+      "version": "9.7.1"
+    },
+    {
+      "artifact_identifier": "https://services.gradle.org/distributions/gradle-9.7.1-wrapper.jar",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Local/CI backend wrapper; never system Gradle",
+      "id": "gradle-wrapper-jar",
+      "immutable_identifiers": {
+        "artifacts": [],
+        "sha256": "7a9ce74cff467ca1bf60a4fcd9f05185acceda4d0f382434d393e17864262c5d"
+      },
+      "license_source_project": {
+        "license": "Apache-2.0",
+        "project": "gradle/gradle"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://gradle.org/release-checksums/",
+        "https://docs.gradle.org/current/userguide/gradle_wrapper.html#sec:verification"
+      ],
+      "purpose": "Existing build bootstrap provenance; distribution and wrapper are independently checked",
+      "source_record": {
+        "file_sha256": "7dcd6692286ee3078b4b3fb7635195e901b4448833e699943a798e025d65a675",
+        "json_pointer": "/records/1",
+        "path": "validation/poc-04/tooling/build-ci-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "Reject checksum mismatch before executing wrapper or distribution; never regenerate here",
+      "verification_method": "Local wrapper JAR SHA-256 or configured distribution SHA compared separately with trusted Gradle release checksum endpoints and release-checksums page; distribution ZIP not downloaded",
+      "version": "9.7.1"
+    },
+    {
+      "artifact_identifier": "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "GitHub hosted CI only",
+      "id": "actions-checkout",
+      "immutable_identifiers": {
+        "artifacts": [],
+        "immutable_commit": "3d3c42e5aac5ba805825da76410c181273ba90b1"
+      },
+      "license_source_project": {
+        "license": "MIT",
+        "project": "actions/checkout"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://api.github.com/repos/actions/checkout/git/ref/tags/v7.0.1",
+        "https://github.com/actions/checkout/releases/tag/v7.0.1",
+        "https://raw.githubusercontent.com/actions/checkout/3d3c42e5aac5ba805825da76410c181273ba90b1/action.yml",
+        "https://api.github.com/repos/actions/checkout/releases/tags/v7.0.1"
+      ],
+      "purpose": "Current hosted CI action code",
+      "source_record": {
+        "file_sha256": "7dcd6692286ee3078b4b3fb7635195e901b4448833e699943a798e025d65a675",
+        "json_pointer": "/records/2",
+        "path": "validation/poc-04/tooling/build-ci-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "Reject missing/mismatched immutable commit before later use; current workflow not yet pinned",
+      "verification_method": "GitHub primary tag API dereferenced to full commit; immutable action.yml fetched and hashed; release page cross-checked; no action executed; GitHub release API independently reports immutable=false. Full commit remains the selected machine pin.",
+      "version": "v7.0.1"
+    },
+    {
+      "artifact_identifier": "actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "GitHub hosted CI only",
+      "id": "actions-setup-java",
+      "immutable_identifiers": {
+        "artifacts": [],
+        "immutable_commit": "de7274f081f381c8f8158605e0321c36c376e2e6"
+      },
+      "license_source_project": {
+        "license": "MIT",
+        "project": "actions/setup-java"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://api.github.com/repos/actions/setup-java/git/ref/tags/v6.0.1",
+        "https://github.com/actions/setup-java/releases/tag/v6.0.1",
+        "https://raw.githubusercontent.com/actions/setup-java/de7274f081f381c8f8158605e0321c36c376e2e6/action.yml",
+        "https://api.github.com/repos/actions/setup-java/releases/tags/v6.0.1"
+      ],
+      "purpose": "Current hosted CI action code",
+      "source_record": {
+        "file_sha256": "7dcd6692286ee3078b4b3fb7635195e901b4448833e699943a798e025d65a675",
+        "json_pointer": "/records/3",
+        "path": "validation/poc-04/tooling/build-ci-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "Reject missing/mismatched immutable commit before later use; current workflow not yet pinned",
+      "verification_method": "GitHub primary tag API dereferenced to full commit; immutable action.yml fetched and hashed; release page cross-checked; no action executed; GitHub release API independently reports immutable=true. Full commit remains the selected machine pin.",
+      "version": "v6.0.1"
+    },
+    {
+      "artifact_identifier": "Eclipse Temurin HotSpot JDK jdk-21.0.12.1+1",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Future CI Linuxamd64/localAppleSilicon; existing Homebrew21.0.12.1 is only an observation and not this verified binary",
+      "id": "java21-temurin",
+      "immutable_identifiers": {
+        "artifacts": [
+          {
+            "platform": "linux/x64",
+            "sha256": "ce79869e1307ed8ee1e2baa86a412b1eb5b75d10a01006d788a6f968bcfaee94",
+            "url": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jdk_x64_linux_hotspot_21.0.12.1_1.tar.gz"
+          },
+          {
+            "platform": "mac/aarch64",
+            "sha256": "3623232f33a9c3baadf304480b2535f9a3cba8a58d42ecbb438ba267315d9998",
+            "url": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jdk_aarch64_mac_hotspot_21.0.12.1_1.tar.gz"
+          }
+        ]
+      },
+      "license_source_project": {
+        "license": "GPL-2.0-with-classpath-exception",
+        "project": "adoptium/temurin21-binaries; OpenJDK"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://adoptium.net/",
+        "https://github.com/adoptium/temurin21-binaries/releases/tag/jdk-21.0.12.1%2B1"
+      ],
+      "purpose": "Exact Java21 JDK for future CI/local verification",
+      "source_record": {
+        "file_sha256": "7dcd6692286ee3078b4b3fb7635195e901b4448833e699943a798e025d65a675",
+        "json_pointer": "/records/4",
+        "path": "validation/poc-04/tooling/build-ci-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "Do not run later build on an unverified different JDK; signatures/reproducible build not claimed",
+      "verification_method": "Primary Adoptium metadata plus same fixed-release published SHA256 and complete archive downloads hashed in memory for Linux x64 and macOS aarch64; nothing installed",
+      "version": "21.0.12.1+1"
+    },
+    {
+      "artifact_identifier": "Observed GitHub run 36684984462 job 109788657016; runner-images ubuntu24/20260920.314",
+      "baseline_observation": {
+        "head_branch": "main",
+        "image": "ubuntu-24.04",
+        "image_provisioner": "20260828.587",
+        "image_version": "20260920.314.1",
+        "java": {
+          "gradle_launcher_jvm": "21.0.12.1",
+          "setup_java_resolved": "21.0.12+1",
+          "vendor_runtime": "Eclipse Adoptium 21.0.12.1+1-LTS"
+        },
+        "job_completed_at": "2026-09-30T07:43:58Z",
+        "job_conclusion": "success",
+        "job_id": 109788657016,
+        "job_name": "Java 21 / PostgreSQL",
+        "job_started_at": "2026-09-30T07:39:46Z",
+        "repository": "siwakon8285/VRA-Platform",
+        "run_attempt": 1,
+        "run_conclusion": "success",
+        "run_event": "push",
+        "run_id": 36684984462,
+        "runner_images_release": "ubuntu24/20260920.314",
+        "runner_images_release_immutable": false,
+        "runner_images_source_commit": "e75633902841aa5479c759492b73409e6d317f12",
+        "runner_version": "2.337.0",
+        "source_head": "8243d62f50aed2dc9a8605d7f12f0e2b7aa86854",
+        "workflow_path": ".github/workflows/backend-ci.yml"
+      },
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Existing source-bound GitHub hosted CI baseline only; no new hosted run triggered",
+      "id": "hosted-runner",
+      "immutable_identifiers": {
+        "nonclaim": "Hashes bind recorded upstream response content; image label/release and ubuntu-latest are not immutable image binary pins.",
+        "response_evidence": [
+          {
+            "response_sha256": "e337d827901c40b865a11ae204a6b5541d43b6098e8fd2d69774268281196c1d",
+            "url": "https://api.github.com/repos/siwakon8285/VRA-Platform/actions/runs/36684984462",
+            "verified_fields": [
+              "repository",
+              "run_id",
+              "head_sha",
+              "job association"
+            ]
+          },
+          {
+            "response_sha256": "ae29de01b29c23a65b923a8e05d5b8c49b5d7bdc1ee92d59b298a33c3afd5ef9",
+            "url": "https://api.github.com/repos/siwakon8285/VRA-Platform/actions/jobs/109788657016",
+            "verified_fields": [
+              "job_id",
+              "run_id",
+              "head_sha"
+            ]
+          },
+          {
+            "response_sha256": "af3d5134c613e5d0ae812e909ffb09d47de77017ea40407d475cc14b85124351",
+            "url": "https://api.github.com/repos/actions/runner-images/releases/tags/ubuntu24%2F20260920.314",
+            "verified_fields": [
+              "release tag",
+              "image version",
+              "immutable=false"
+            ]
+          },
+          {
+            "response_sha256": "a37278942f07a81dc00eac64cfb123130a36f52432a5e687d91a626488718735",
+            "url": "https://raw.githubusercontent.com/actions/runner-images/e75633902841aa5479c759492b73409e6d317f12/images/ubuntu/Ubuntu2404-Readme.md",
+            "verified_fields": [
+              "Ubuntu 24.04.5 LTS",
+              "image version 20260920.314.1",
+              "Java 21.0.12+1"
+            ]
+          },
+          {
+            "response_sha256": "b6c9c18a2d5072599fa67a8365ecd30e50aaefde24ff8cb89d1a4fcf48c3587d",
+            "url": "https://api.github.com/repos/actions/runner-images/git/ref/tags/ubuntu24%2F20260920.314",
+            "verified_fields": [
+              "tag object type commit",
+              "source commit e75633902841aa5479c759492b73409e6d317f12"
+            ]
+          }
+        ],
+        "runner_images_source_commit": "e75633902841aa5479c759492b73409e6d317f12",
+        "source_head": "8243d62f50aed2dc9a8605d7f12f0e2b7aa86854"
+      },
+      "license_source_project": {
+        "license": "Repository-specific runner image components",
+        "project": "actions/runner-images"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://api.github.com/repos/siwakon8285/VRA-Platform/actions/runs/36684984462",
+        "https://api.github.com/repos/siwakon8285/VRA-Platform/actions/jobs/109788657016",
+        "https://github.com/siwakon8285/VRA-Platform/actions/runs/36684984462/job/109788657016",
+        "https://github.com/actions/runner-images/releases/tag/ubuntu24/20260920.314",
+        "https://raw.githubusercontent.com/actions/runner-images/e75633902841aa5479c759492b73409e6d317f12/images/ubuntu/Ubuntu2404-Readme.md",
+        "https://api.github.com/repos/actions/runner-images/git/ref/tags/ubuntu24%2F20260920.314"
+      ],
+      "purpose": "Exact source-bound hosted baseline observation, not a pin of the mutable runner alias",
+      "retained_residual": "ubuntu-latest remains mutable. Every later/final hosted execution must independently capture the exact runner version, image/OS, image version, runner-images release, and actual Java runtime. This baseline observation does not satisfy S13 and does not bind a future runner execution.",
+      "source_record": {
+        "file_sha256": "7dcd6692286ee3078b4b3fb7635195e901b4448833e699943a798e025d65a675",
+        "json_pointer": "/records/5",
+        "path": "validation/poc-04/tooling/build-ci-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP a later/final hosted claim if any required observation is absent, mismatches its declared execution, or lacks source binding; no fallback from this baseline to a future runner and no S13 PASS from the observation alone",
+      "verification_method": "Primary GitHub run/job API confirms the exact source HEAD and run/job identity; primary release API and commit-addressed software readme confirm the image release/version and included Java. Exact log observations are recorded from the current independent review. Anonymous job-log API returned 403, so raw logs were not independently re-fetched or retained in this remediation; no claim of full log re-verification or immutable hosted-image binaries.",
+      "verification_scope": "VERIFIED BASELINE OBSERVATION; the verified object is this exact observed execution/image/release, not ubuntu-latest",
+      "version": "ubuntu-24.04 / 20260920.314.1 / runner 2.337.0"
+    },
+    {
+      "artifact_identifier": "quay.io/keycloak/keycloak:26.7.4",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Isolated TEST containers on local Apple Silicon linux/arm64 and hosted CI linux/amd64; no image was pulled or started in Phase 0",
+      "id": "keycloak_test",
+      "immutable_identifiers": {
+        "artifacts": [],
+        "execution_identifier": "quay.io/keycloak/keycloak@sha256:82a77884f3af238beab1e7afd63b5f530e1b5c0590bd7aa60b40a40463e29b2c",
+        "index_digest": "sha256:82a77884f3af238beab1e7afd63b5f530e1b5c0590bd7aa60b40a40463e29b2c"
+      },
+      "license_source_project": {
+        "license": "Apache-2.0",
+        "license_response": {
+          "response_bytes": 11358,
+          "response_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "url": "https://raw.githubusercontent.com/keycloak/keycloak/aa9fe3fba0c6cd5770f19a49378c55f4378cf544/LICENSE.txt"
+        },
+        "project": "https://github.com/keycloak/keycloak"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://github.com/keycloak/keycloak",
+        "https://www.keycloak.org/downloads",
+        "https://www.keycloak.org/2026/09/keycloak-2674-released",
+        "https://www.keycloak.org/getting-started/getting-started-docker"
+      ],
+      "purpose": "Independent TEST-only OIDC issuer fixture; not a production IdP selection",
+      "source_record": {
+        "file_sha256": "340b51d2910f023eef2f7b8a0a4c4065c4baa8d95b2a95c5aaa6c76b888d123a",
+        "json_pointer": "/records/0",
+        "path": "validation/poc-04/tooling/image-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before later execution if index/selected-platform manifest or config hash differs, required platform is absent, the exact digest is unavailable, or executed software version fails its runtime assertion. Do not fall back to a tag/latest/other version.",
+      "verification_method": "Anonymous HTTPS to the project-advertised registry; compute SHA-256 of raw OCI index, each required platform manifest and config blob; compare to registry Docker-Content-Digest/index/config descriptors. Read-only metadata fetches only; independently re-fetch exact digests before future pull/run and assert the running version then.",
+      "version": "26.7.4"
+    },
+    {
+      "artifact_identifier": "docker.io/library/postgres:17.11",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Isolated TEST containers on local Apple Silicon linux/arm64 and hosted CI linux/amd64; no image was pulled or started in Phase 0",
+      "id": "postgresql_test",
+      "immutable_identifiers": {
+        "artifacts": [],
+        "execution_identifier": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+        "index_digest": "sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f"
+      },
+      "license_source_project": {
+        "license": "PostgreSQL server license; docker-library image scripts MIT; constituent licenses apply",
+        "license_response": {
+          "response_bytes": 1084,
+          "response_sha256": "87ffd2c45e3f90cfa3407b5c40ef8333e87c3e875e4895f8b64df758198deafc",
+          "url": "https://raw.githubusercontent.com/docker-library/postgres/2603e26e245e558218728ee14e0a42dcb020dc7f/LICENSE"
+        },
+        "project": "https://github.com/docker-library/postgres"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://github.com/docker-library/postgres",
+        "https://hub.docker.com/_/postgres",
+        "https://www.postgresql.org/docs/release/17.11/",
+        "https://raw.githubusercontent.com/docker-library/official-images/56d7550006f0cbcd5d7ef874c6f43c0ebc8aa43b/library/postgres",
+        "https://raw.githubusercontent.com/docker-library/postgres/2603e26e245e558218728ee14e0a42dcb020dc7f/17/trixie/Dockerfile"
+      ],
+      "purpose": "Disposable PostgreSQL TEST database and native ACL/logging evidence",
+      "source_record": {
+        "file_sha256": "340b51d2910f023eef2f7b8a0a4c4065c4baa8d95b2a95c5aaa6c76b888d123a",
+        "json_pointer": "/records/1",
+        "path": "validation/poc-04/tooling/image-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before later execution if index/selected-platform manifest or config hash differs, required platform is absent, the exact digest is unavailable, or executed software version fails its runtime assertion. Do not fall back to a tag/latest/other version.",
+      "verification_method": "Anonymous HTTPS to the project-advertised registry; compute SHA-256 of raw OCI index, each required platform manifest and config blob; compare to registry Docker-Content-Digest/index/config descriptors. Read-only metadata fetches only; independently re-fetch exact digests before future pull/run and assert the running version then.",
+      "version": "17.11"
+    },
+    {
+      "artifact_identifier": "org.testcontainers:testcontainers-bom:2.0.5 and the existing core/postgresql/junit-jupiter modules",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Gradle TEST compile/runtime only, local and hosted CI",
+      "id": "testcontainers_java",
+      "immutable_identifiers": {
+        "artifacts": [
+          {
+            "identifier": "org.testcontainers:testcontainers-bom:2.0.5",
+            "sha256": "bbba1376021fbf4e14663a61f10cd1aff14a5d74fb55f1a14be6fd6de83d7eef",
+            "url": "https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers-bom/2.0.5/testcontainers-bom-2.0.5.pom"
+          },
+          {
+            "identifier": "org.testcontainers:testcontainers:2.0.5",
+            "sha256": "0466f481343d5f350a91274cd7bf984308cbaf90d706247fd1cf4b1a8010c2e1",
+            "url": "https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers/2.0.5/testcontainers-2.0.5.jar"
+          },
+          {
+            "identifier": "org.testcontainers:testcontainers-postgresql:2.0.5",
+            "sha256": "8dbfb2fda977eb813ed1188ce02f098b8b634910eeab220568d54d6bd5b7ce9f",
+            "url": "https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers-postgresql/2.0.5/testcontainers-postgresql-2.0.5.jar"
+          },
+          {
+            "identifier": "org.testcontainers:testcontainers-junit-jupiter:2.0.5",
+            "sha256": "d66eb7f257a85833a8cc973e3814d740967d40a7db1a0de0040653c6ed236748",
+            "url": "https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers-junit-jupiter/2.0.5/testcontainers-junit-jupiter-2.0.5.jar"
+          }
+        ]
+      },
+      "license_source_project": {
+        "license": "MIT",
+        "license_response": {
+          "response_bytes": 1085,
+          "response_sha256": "2159220a6d068db4dc329a5f9f1f4670abdfbe225942a5e46c7330ffa98f89d4",
+          "url": "https://raw.githubusercontent.com/testcontainers/testcontainers-java/5c448202ac69d073f746433d3e79f6a2bf0ec585/LICENSE"
+        },
+        "project": "https://github.com/testcontainers/testcontainers-java"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://java.testcontainers.org/",
+        "https://github.com/testcontainers/testcontainers-java/releases/tag/2.0.5",
+        "https://repo.maven.apache.org/maven2/org/testcontainers/"
+      ],
+      "purpose": "Existing real PostgreSQL/Testcontainers test harness; Phase-0 source/byte provenance only",
+      "source_record": {
+        "file_sha256": "340b51d2910f023eef2f7b8a0a4c4065c4baa8d95b2a95c5aaa6c76b888d123a",
+        "json_pointer": "/records/2",
+        "path": "validation/poc-04/tooling/image-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before test execution if BOM/modules resolve to another version or artifact hashes differ; do not silently upgrade or use a mirror with different bytes. Transitive graph and container helper image verification remain later evidence obligations.",
+      "verification_method": "Download the exact Maven Central BOM/JAR/POM bytes to memory, compute SHA-256, and match each publisher checksum sidecar; verify Spring Boot 4.1.1 BOM selects 2.0.5. Future Gradle resolution must reproduce these version/byte checks and source-bound transitive graph. No Gradle build/dependency installation was performed here.",
+      "version": "2.0.5"
+    },
+    {
+      "artifact_identifier": "docker.io/testcontainers/ryuk:0.14.0",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Dedicated disposable TEST Docker host only, local linux/arm64 and hosted linux/amd64; no container run/pull occurred",
+      "id": "testcontainers_ryuk",
+      "immutable_identifiers": {
+        "artifacts": [],
+        "execution_identifier": "docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0",
+        "index_digest": "sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0"
+      },
+      "license_source_project": {
+        "license": "MIT",
+        "license_response": {
+          "response_bytes": 1085,
+          "response_sha256": "c6c6340d7962d2d1239a0bd8c43d48b2a7cfe377de2fad6ad72588903cd68a0d",
+          "url": "https://raw.githubusercontent.com/testcontainers/moby-ryuk/b3726afd6cc2c36628abcc08e9cabac43f587384/LICENSE"
+        },
+        "project": "https://github.com/testcontainers/moby-ryuk"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://raw.githubusercontent.com/testcontainers/testcontainers-java/5c448202ac69d073f746433d3e79f6a2bf0ec585/core/src/main/java/org/testcontainers/utility/RyukContainer.java",
+        "https://java.testcontainers.org/features/configuration/",
+        "https://hub.docker.com/r/testcontainers/ryuk"
+      ],
+      "purpose": "Existing Testcontainers default resource cleanup helper",
+      "source_record": {
+        "file_sha256": "340b51d2910f023eef2f7b8a0a4c4065c4baa8d95b2a95c5aaa6c76b888d123a",
+        "json_pointer": "/records/3",
+        "path": "validation/poc-04/tooling/image-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before any Testcontainers run if helper digest/platform cannot be verified or actual pull resolves another digest; do not disable required environment checks/resource cleanup merely to bypass the pin. Unselected optional helpers require their own reviewed digest before use.",
+      "verification_method": "Read exact default from immutable Testcontainers 2.0.5 source commit; fetch named project/Official Image OCI index, required platform manifests and configs over HTTPS to memory; SHA-256 each response and compare descriptors/Docker-Content-Digest. Future external execution must apply digest substitution before pull and verify actual pulled content.",
+      "version": "0.14.0"
+    },
+    {
+      "artifact_identifier": "docker.io/library/alpine:3.17",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Dedicated disposable TEST Docker host only, local linux/arm64 and hosted linux/amd64; no container run/pull occurred",
+      "id": "testcontainers_tinyimage",
+      "immutable_identifiers": {
+        "artifacts": [],
+        "execution_identifier": "docker.io/library/alpine@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989",
+        "index_digest": "sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989"
+      },
+      "license_source_project": {
+        "license": "Docker build scripts MIT; Alpine constituent package licenses apply",
+        "license_ref_response": {
+          "response_bytes": 361,
+          "response_sha256": "b7c312dd9aacc644554ea783def9f66824a4a99b35f75c7649de5daa891f4c42",
+          "url": "https://api.github.com/repos/alpinelinux/docker-alpine/git/ref/heads/master"
+        },
+        "license_response": {
+          "response_bytes": 1070,
+          "response_sha256": "cb0eb140cdf42808d7c948e5de07bcf435ee7eb314d9e757ca01bdca97109eb7",
+          "url": "https://raw.githubusercontent.com/alpinelinux/docker-alpine/2c36a79aaaec3582d3b1961c9245b1a8a5a144dc/LICENSE"
+        },
+        "project": "https://github.com/alpinelinux/docker-alpine"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://raw.githubusercontent.com/testcontainers/testcontainers-java/5c448202ac69d073f746433d3e79f6a2bf0ec585/core/src/main/java/org/testcontainers/DockerClientFactory.java",
+        "https://java.testcontainers.org/features/configuration/",
+        "https://hub.docker.com/_/alpine"
+      ],
+      "purpose": "Existing Testcontainers default Docker environment/startup check helper",
+      "source_record": {
+        "file_sha256": "340b51d2910f023eef2f7b8a0a4c4065c4baa8d95b2a95c5aaa6c76b888d123a",
+        "json_pointer": "/records/4",
+        "path": "validation/poc-04/tooling/image-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before any Testcontainers run if helper digest/platform cannot be verified or actual pull resolves another digest; do not disable required environment checks/resource cleanup merely to bypass the pin. Unselected optional helpers require their own reviewed digest before use.",
+      "verification_method": "Read exact default from immutable Testcontainers 2.0.5 source commit; fetch named project/Official Image OCI index, required platform manifests and configs over HTTPS to memory; SHA-256 each response and compare descriptors/Docker-Content-Digest. Future external execution must apply digest substitution before pull and verify actual pulled content.",
+      "version": "3.17"
+    },
+    {
+      "artifact_identifier": "OSV-Scanner",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Separate TEST scanner job; linux/amd64 hosted CI; linux/arm64 containers or darwin/arm64 Apple Silicon local review. No production runtime inclusion.",
+      "id": "OSV-Scanner",
+      "immutable_identifiers": {
+        "artifacts": [
+          {
+            "expected_sha256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+            "identifier": "osv-scanner_linux_amd64",
+            "platform": "linux/amd64",
+            "url": "https://github.com/google/osv-scanner/releases/download/v2.6.0/osv-scanner_linux_amd64"
+          },
+          {
+            "expected_sha256": "2c71403eb443d05891c4f268c3ad771cf4f16e5443463fd7851ef8f454d3c7e4",
+            "identifier": "osv-scanner_linux_arm64",
+            "platform": "linux/arm64",
+            "url": "https://github.com/google/osv-scanner/releases/download/v2.6.0/osv-scanner_linux_arm64"
+          },
+          {
+            "expected_sha256": "98c460dcd37de25819babd757d04542045b6243113e209edcd4d89fedb0256b4",
+            "identifier": "osv-scanner_darwin_arm64",
+            "platform": "darwin/arm64",
+            "url": "https://github.com/google/osv-scanner/releases/download/v2.6.0/osv-scanner_darwin_arm64"
+          }
+        ]
+      },
+      "license_source_project": {
+        "license": "Apache-2.0",
+        "project": "https://github.com/google/osv-scanner"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://api.github.com/repos/google/osv-scanner/releases/tags/v2.6.0",
+        "https://github.com/google/osv-scanner/releases/tag/v2.6.0",
+        "https://github.com/google/osv-scanner/blob/e840a6e8adb14b7777c78e26cfbf6e2abc1d1fc6/LICENSE"
+      ],
+      "purpose": "Dependency vulnerability lookup of source-bound lockfiles/SBOM, later Phase 10/S13.",
+      "source_record": {
+        "file_sha256": "532d17651d702afffc6a3a9b64244ef5ad9cc02515df8465e1bc42c514d15bd3",
+        "json_pointer": "/tools/0",
+        "path": "validation/poc-04/tooling/scanner-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP dependent tool execution and Phase 0 closure if expected immutable checksum cannot be independently verified, if platform differs, or if download digest differs. Do not fall back to a tag, latest or package-manager upgrade.",
+      "verification_method": "Full checksum-manifest bytes and all three selected platform artifacts downloaded, hashed with Python hashlib.sha256, cross-checked with upstream manifest and API asset digests. No artifact installed; one local Gitleaks stdin smoke only. Before every later execution, recompute artifact hash and compare to this source-bound pin; mismatch or unavailable provenance is STOP.",
+      "version": "2.6.0"
+    },
+    {
+      "artifact_identifier": "Gitleaks",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Separate TEST scanner job; linux/amd64 hosted CI; linux/arm64 containers or darwin/arm64 Apple Silicon local review. No production runtime inclusion.",
+      "id": "Gitleaks",
+      "immutable_identifiers": {
+        "artifacts": [
+          {
+            "expected_sha256": "551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb",
+            "identifier": "gitleaks_8.30.1_linux_x64.tar.gz",
+            "platform": "linux/amd64",
+            "url": "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz"
+          },
+          {
+            "expected_sha256": "e4a487ee7ccd7d3a7f7ec08657610aa3606637dab924210b3aee62570fb4b080",
+            "identifier": "gitleaks_8.30.1_linux_arm64.tar.gz",
+            "platform": "linux/arm64",
+            "url": "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_arm64.tar.gz"
+          },
+          {
+            "expected_sha256": "b40ab0ae55c505963e365f271a8d3846efbc170aa17f2607f13df610a9aeb6a5",
+            "identifier": "gitleaks_8.30.1_darwin_arm64.tar.gz",
+            "platform": "darwin/arm64",
+            "url": "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_darwin_arm64.tar.gz"
+          }
+        ]
+      },
+      "license_source_project": {
+        "license": "MIT",
+        "project": "https://github.com/gitleaks/gitleaks"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://api.github.com/repos/gitleaks/gitleaks/releases/tags/v8.30.1",
+        "https://github.com/gitleaks/gitleaks/releases/tag/v8.30.1",
+        "https://github.com/gitleaks/gitleaks/blob/83d9cd684c87d95d656c1458ef04895a7f1cbd8e/LICENSE"
+      ],
+      "purpose": "Redacted secret scanning of tracked source, generated artifacts and evidence, later Phase 10/S13.",
+      "source_record": {
+        "file_sha256": "532d17651d702afffc6a3a9b64244ef5ad9cc02515df8465e1bc42c514d15bd3",
+        "json_pointer": "/tools/1",
+        "path": "validation/poc-04/tooling/scanner-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP dependent tool execution and Phase 0 closure if expected immutable checksum cannot be independently verified, if platform differs, or if download digest differs. Do not fall back to a tag, latest or package-manager upgrade.",
+      "verification_method": "Full checksum-manifest bytes and all three selected platform artifacts downloaded, hashed with Python hashlib.sha256, cross-checked with upstream manifest and API asset digests. No artifact installed; one local Gitleaks stdin smoke only. Before every later execution, recompute artifact hash and compare to this source-bound pin; mismatch or unavailable provenance is STOP.",
+      "version": "8.30.1"
+    },
+    {
+      "artifact_identifier": "Syft",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Separate TEST scanner job; linux/amd64 hosted CI; linux/arm64 containers or darwin/arm64 Apple Silicon local review. No production runtime inclusion.",
+      "id": "Syft",
+      "immutable_identifiers": {
+        "artifacts": [
+          {
+            "expected_sha256": "caeedb81fb0491615f1ebd1761e4145d41ee86dd2cc7bf80669f9f5ad9d6133d",
+            "identifier": "syft_1.52.0_linux_amd64.tar.gz",
+            "platform": "linux/amd64",
+            "url": "https://github.com/anchore/syft/releases/download/v1.52.0/syft_1.52.0_linux_amd64.tar.gz"
+          },
+          {
+            "expected_sha256": "c46d5e4c28e12aa4c5becfaa343ef1c7f89045b6b895f2c21d471c62db09c706",
+            "identifier": "syft_1.52.0_linux_arm64.tar.gz",
+            "platform": "linux/arm64",
+            "url": "https://github.com/anchore/syft/releases/download/v1.52.0/syft_1.52.0_linux_arm64.tar.gz"
+          },
+          {
+            "expected_sha256": "014d561b6d13059124155f74a6c5a9a99501f5e209313638dd884f39eb418ee6",
+            "identifier": "syft_1.52.0_darwin_arm64.tar.gz",
+            "platform": "darwin/arm64",
+            "url": "https://github.com/anchore/syft/releases/download/v1.52.0/syft_1.52.0_darwin_arm64.tar.gz"
+          }
+        ]
+      },
+      "license_source_project": {
+        "license": "Apache-2.0",
+        "project": "https://github.com/anchore/syft"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://api.github.com/repos/anchore/syft/releases/tags/v1.52.0",
+        "https://github.com/anchore/syft/releases/tag/v1.52.0",
+        "https://github.com/anchore/syft/blob/02ba369d13b4248395b20a504eca94b0cab564d8/LICENSE"
+      ],
+      "purpose": "Source-bound dependency graph/SBOM inventory, later Phase 10/S13.",
+      "source_record": {
+        "file_sha256": "532d17651d702afffc6a3a9b64244ef5ad9cc02515df8465e1bc42c514d15bd3",
+        "json_pointer": "/tools/2",
+        "path": "validation/poc-04/tooling/scanner-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP dependent tool execution and Phase 0 closure if expected immutable checksum cannot be independently verified, if platform differs, or if download digest differs. Do not fall back to a tag, latest or package-manager upgrade.",
+      "verification_method": "Full checksum-manifest bytes and all three selected platform artifacts downloaded, hashed with Python hashlib.sha256, cross-checked with upstream manifest and API asset digests. No artifact installed; one local Gitleaks stdin smoke only. Before every later execution, recompute artifact hash and compare to this source-bound pin; mismatch or unavailable provenance is STOP.",
+      "version": "1.52.0"
+    },
+    {
+      "artifact_identifier": "@usebruno/cli@4.2.0",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Disposable TEST Linux arm64/amd64 container; npm ci consumes tooling/node-pin-lock/package-lock.json, not an unconstrained npm install.",
+      "id": "@usebruno/cli",
+      "immutable_identifiers": {
+        "artifacts": [],
+        "expected_integrity": "sha512-b3+Bbb6hdqJYNj9VSO07reSsIDNY9TlqXAxBx6Y/nMz51INZpw25WKoguJrVVzvkzefb6RkpQXMHu2qLQcj92A==",
+        "expected_sha256": "fe013bedd2d08a44503ac1488ca4a8d459fdb1a9c58f9bea4fc03222ac63af31"
+      },
+      "license_source_project": {
+        "license": "MIT",
+        "project": "git+https://github.com/usebruno/bruno.git"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://registry.npmjs.org/@usebruno%2fcli/4.2.0",
+        "https://registry.npmjs.org/@usebruno/cli/-/cli-4.2.0.tgz",
+        "https://github.com/usebruno/bruno/releases/tag/v4.2.0"
+      ],
+      "purpose": "TEST-only external black-box HTTP runner; no collection exists yet.",
+      "source_record": {
+        "file_sha256": "bab639a206eac0cbf991cf077b60762e2574f67836955b1352995fd4f5afb632",
+        "json_pointer": "/records/0",
+        "path": "validation/poc-04/tooling/web-python-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact artifact bytes, version, digest/integrity, platform or source binding differs; never fall back to a floating tag or host-installed tool.",
+      "verification_method": "Exact-version npm registry metadata fetched over HTTPS; tarball downloaded into bounded memory; recomputed SHA-256, SHA-512 SRI and SHA-1 all match registry metadata. Registry metadata identity is trusted; package signatures and any SLSA/Sigstore attestations were not cryptographically validated in Phase 0.",
+      "version": "4.2.0"
+    },
+    {
+      "artifact_identifier": "@playwright/test@1.63.0",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Disposable TEST Linux arm64/amd64 container; npm ci consumes tooling/node-pin-lock/package-lock.json, not an unconstrained npm install.",
+      "id": "@playwright/test",
+      "immutable_identifiers": {
+        "artifacts": [],
+        "expected_integrity": "sha512-oxMK4vllB9RK5NQ2l1pq1IfOf2AvnEuj/vYGDj0H2nMtmtZpKtCwt/l00GEO6xjGfpBNAvjovvYdCm50dRQkpQ==",
+        "expected_sha256": "fc594f36b7b4aafece614ec6852ad728423215a76edd0a2a1821bb0c49539c4e"
+      },
+      "license_source_project": {
+        "license": "Apache-2.0",
+        "project": "git+https://github.com/microsoft/playwright.git"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://registry.npmjs.org/@playwright%2ftest/1.63.0",
+        "https://registry.npmjs.org/@playwright/test/-/test-1.63.0.tgz",
+        "https://github.com/microsoft/playwright/tree/1b025d7e20a026371cd5f98ba0cdce48892737c8"
+      ],
+      "purpose": "TEST-only real-browser evidence runner; no E2E suite exists yet.",
+      "source_record": {
+        "file_sha256": "bab639a206eac0cbf991cf077b60762e2574f67836955b1352995fd4f5afb632",
+        "json_pointer": "/records/1",
+        "path": "validation/poc-04/tooling/web-python-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact artifact bytes, version, digest/integrity, platform or source binding differs; never fall back to a floating tag or host-installed tool.",
+      "verification_method": "Exact-version npm registry metadata fetched over HTTPS; tarball downloaded into bounded memory; recomputed SHA-256, SHA-512 SRI and SHA-1 all match registry metadata. Registry metadata identity is trusted; package signatures and any SLSA/Sigstore attestations were not cryptographically validated in Phase 0.",
+      "version": "1.63.0"
+    },
+    {
+      "artifact_identifier": "playwright@1.63.0",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Disposable TEST Linux arm64/amd64 container; npm ci consumes tooling/node-pin-lock/package-lock.json, not an unconstrained npm install.",
+      "id": "playwright",
+      "immutable_identifiers": {
+        "artifacts": [],
+        "expected_integrity": "sha512-+7ziBLidS4NaNCdt57SUDT+wYmmd5fmiQejUic/kb+YsYSCPyOOE9sebzMjNmQrsnNpDJqd4WHvV/8lfKfUDUg==",
+        "expected_sha256": "195a5ee9bfed7c6e9c03965950e32e5e4dbedaa02e740e5a530eb4b87dae050c"
+      },
+      "license_source_project": {
+        "license": "Apache-2.0",
+        "project": "git+https://github.com/microsoft/playwright.git"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://registry.npmjs.org/playwright/1.63.0",
+        "https://registry.npmjs.org/playwright/-/playwright-1.63.0.tgz",
+        "https://github.com/microsoft/playwright/tree/1b025d7e20a026371cd5f98ba0cdce48892737c8"
+      ],
+      "purpose": "Exact Playwright Test runner dependency.",
+      "source_record": {
+        "file_sha256": "bab639a206eac0cbf991cf077b60762e2574f67836955b1352995fd4f5afb632",
+        "json_pointer": "/records/2",
+        "path": "validation/poc-04/tooling/web-python-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact artifact bytes, version, digest/integrity, platform or source binding differs; never fall back to a floating tag or host-installed tool.",
+      "verification_method": "Exact-version npm registry metadata fetched over HTTPS; tarball downloaded into bounded memory; recomputed SHA-256, SHA-512 SRI and SHA-1 all match registry metadata. Registry metadata identity is trusted; package signatures and any SLSA/Sigstore attestations were not cryptographically validated in Phase 0.",
+      "version": "1.63.0"
+    },
+    {
+      "artifact_identifier": "playwright-core@1.63.0",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Disposable TEST Linux arm64/amd64 container; npm ci consumes tooling/node-pin-lock/package-lock.json, not an unconstrained npm install.",
+      "id": "playwright-core",
+      "immutable_identifiers": {
+        "artifacts": [],
+        "expected_integrity": "sha512-rYCsBF/M5HjUch52bbtVONEFjv6Xu8sm8h72dNlR5bzIE1fvC/bxgspzkjSfU+MweEMmPM8KJebG6nnyxo5mCg==",
+        "expected_sha256": "208593d4e1bcd8f8fe5f869cad1cc332dc7f1d70dc1d58c102dc3ac36e30f26c"
+      },
+      "license_source_project": {
+        "license": "Apache-2.0",
+        "project": "git+https://github.com/microsoft/playwright.git"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://registry.npmjs.org/playwright-core/1.63.0",
+        "https://registry.npmjs.org/playwright-core/-/playwright-core-1.63.0.tgz",
+        "https://github.com/microsoft/playwright/tree/1b025d7e20a026371cd5f98ba0cdce48892737c8"
+      ],
+      "purpose": "Browser installer/driver and authoritative release browser metadata.",
+      "source_record": {
+        "file_sha256": "bab639a206eac0cbf991cf077b60762e2574f67836955b1352995fd4f5afb632",
+        "json_pointer": "/records/3",
+        "path": "validation/poc-04/tooling/web-python-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact artifact bytes, version, digest/integrity, platform or source binding differs; never fall back to a floating tag or host-installed tool.",
+      "verification_method": "Exact-version npm registry metadata fetched over HTTPS; tarball downloaded into bounded memory; recomputed SHA-256, SHA-512 SRI and SHA-1 all match registry metadata. Registry metadata identity is trusted; package signatures and any SLSA/Sigstore attestations were not cryptographically validated in Phase 0.",
+      "version": "1.63.0"
+    },
+    {
+      "artifact_identifier": "docker.io/library/python:3.13.15-slim-bookworm",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Disposable TEST Linux arm64 container on Apple Silicon; Linux amd64 container on hosted CI. Native macOS browser/interpreter is not selected.",
+      "id": "Python",
+      "immutable_identifiers": {
+        "artifacts": [],
+        "expected_index_digest": "sha256:2325bb286ec344af3e5898cc224b5844e2707ac6e26b1632516fd3edc84a5e26",
+        "immutable_execution_identifier": "docker.io/library/python@sha256:2325bb286ec344af3e5898cc224b5844e2707ac6e26b1632516fd3edc84a5e26"
+      },
+      "license_source_project": {
+        "license": "PSF-2.0 and container distribution licenses",
+        "project": "https://github.com/docker-library/python"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://hub.docker.com/_/python",
+        "https://registry-1.docker.io/v2/library/python/manifests/sha256:2325bb286ec344af3e5898cc224b5844e2707ac6e26b1632516fd3edc84a5e26"
+      ],
+      "purpose": "TEST-only audit observer interpreter and TEST CA tool container",
+      "source_record": {
+        "file_sha256": "bab639a206eac0cbf991cf077b60762e2574f67836955b1352995fd4f5afb632",
+        "json_pointer": "/records/4",
+        "path": "validation/poc-04/tooling/web-python-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact artifact bytes, version, digest/integrity, platform or source binding differs; never fall back to a floating tag or host-installed tool.",
+      "verification_method": "Fetched registry OCI index, each selected platform manifest and config over primary registry HTTPS and independently recomputed every returned content digest. Docker Hub tags are readable references only; execution uses immutable index plus explicitly selected platform. Image artifact identity is verified; no container was started in Phase 0.",
+      "version": "3.13.15"
+    },
+    {
+      "artifact_identifier": "docker.io/library/node:24.19.0-bookworm-slim",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Disposable TEST Linux arm64 container on Apple Silicon; Linux amd64 container on hosted CI. Native macOS browser/interpreter is not selected.",
+      "id": "Node.js",
+      "immutable_identifiers": {
+        "artifacts": [],
+        "expected_index_digest": "sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df",
+        "immutable_execution_identifier": "docker.io/library/node@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df"
+      },
+      "license_source_project": {
+        "license": "MIT and container distribution licenses",
+        "project": "https://github.com/nodejs/docker-node"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://hub.docker.com/_/node",
+        "https://registry-1.docker.io/v2/library/node/manifests/sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df"
+      ],
+      "purpose": "TEST-only npm/Bruno provenance and locked package execution runtime",
+      "source_record": {
+        "file_sha256": "bab639a206eac0cbf991cf077b60762e2574f67836955b1352995fd4f5afb632",
+        "json_pointer": "/records/5",
+        "path": "validation/poc-04/tooling/web-python-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact artifact bytes, version, digest/integrity, platform or source binding differs; never fall back to a floating tag or host-installed tool.",
+      "verification_method": "Fetched registry OCI index, each selected platform manifest and config over primary registry HTTPS and independently recomputed every returned content digest. Docker Hub tags are readable references only; execution uses immutable index plus explicitly selected platform. Image artifact identity is verified; no container was started in Phase 0.",
+      "version": "24.19.0"
+    },
+    {
+      "artifact_identifier": "mcr.microsoft.com/playwright:v1.63.0-noble",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Disposable TEST Linux arm64 container on Apple Silicon; Linux amd64 container on hosted CI. Native macOS browser/interpreter is not selected.",
+      "id": "Chromium browser bundle",
+      "immutable_identifiers": {
+        "artifacts": [],
+        "expected_index_digest": "sha256:eff16c30e6f3f4af0a03fa4b706120d5e9b0891c344a27d64559aff5900a4a27",
+        "immutable_execution_identifier": "mcr.microsoft.com/playwright@sha256:eff16c30e6f3f4af0a03fa4b706120d5e9b0891c344a27d64559aff5900a4a27"
+      },
+      "license_source_project": {
+        "license": "Chromium BSD-style / Playwright Apache-2.0 and container distribution licenses",
+        "project": "https://github.com/microsoft/playwright"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://playwright.dev/docs/docker",
+        "https://github.com/microsoft/playwright/blob/1b025d7e20a026371cd5f98ba0cdce48892737c8/utils/docker/Dockerfile.noble",
+        "https://mcr.microsoft.com/v2/playwright/manifests/sha256:eff16c30e6f3f4af0a03fa4b706120d5e9b0891c344a27d64559aff5900a4a27"
+      ],
+      "purpose": "TEST-only real browser bundle, installed only in later authorized disposable TEST job",
+      "source_record": {
+        "file_sha256": "bab639a206eac0cbf991cf077b60762e2574f67836955b1352995fd4f5afb632",
+        "json_pointer": "/records/6",
+        "path": "validation/poc-04/tooling/web-python-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact artifact bytes, version, digest/integrity, platform or source binding differs; never fall back to a floating tag or host-installed tool.",
+      "verification_method": "Fetched registry OCI index, each selected platform manifest and config over primary registry HTTPS and independently recomputed every returned content digest. Docker Hub tags are readable references only; execution uses immutable index plus explicitly selected platform. Image artifact identity is verified; no container was started in Phase 0.",
+      "version": "153.0.8010.12 / revision 1243"
+    },
+    {
+      "artifact_identifier": "pglast==7.18",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Pinned Python 3.13.15 Linux glibc arm64/amd64 TEST observer container; CPython313 non-free-threaded manylinux wheels only.",
+      "id": "pglast",
+      "immutable_identifiers": {
+        "artifacts": [
+          {
+            "expected_sha256": "a43295ccef3b7e9a75ab9b1f1c83d8128c3184c548840f26f12dd320d9c924df",
+            "filename": "pglast-7.18-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+            "url": "https://files.pythonhosted.org/packages/5c/85/2da98ebfa5f78a477caef64952e46572437c7d39c8b57bf99d9367125fd0/pglast-7.18-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl"
+          },
+          {
+            "expected_sha256": "6c3c4ca0d88e2f5dc9d261a1a718be02426f14758c13b1665c431f756e6e5f1e",
+            "filename": "pglast-7.18-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+            "url": "https://files.pythonhosted.org/packages/8d/70/713ac4030e8a63f32e4f5d43be6161cd7bb3ee1aa69018a330b5ae30a883/pglast-7.18-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
+          },
+          {
+            "expected_sha256": "18b52362cea47c87025d031015232da555c70e34762a351633ae040db1ec3c01",
+            "filename": "pglast-7.18.tar.gz",
+            "url": "https://files.pythonhosted.org/packages/e6/67/fdd5a7f256704a457039423f16bba3bfc14d52672e607217816738230125/pglast-7.18.tar.gz"
+          }
+        ]
+      },
+      "license_source_project": {
+        "license": "GPL-3.0-or-later; libpg_query includes PostgreSQL license/source",
+        "project": "https://github.com/lelit/pglast"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://pypi.org/pypi/pglast/7.18/json",
+        "https://pypi.org/project/pglast/7.18/",
+        "https://github.com/lelit/pglast/blob/8a2ea399c3d87ae68ad680ea52af02c9257be0af/CHANGES.rst"
+      ],
+      "purpose": "TEST-only independent PostgreSQL audit-tamper observer SQL AST parser; no observer or SQL log parser implemented.",
+      "source_record": {
+        "file_sha256": "bab639a206eac0cbf991cf077b60762e2574f67836955b1352995fd4f5afb632",
+        "json_pointer": "/records/7",
+        "path": "validation/poc-04/tooling/web-python-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact artifact bytes, version, digest/integrity, platform or source binding differs; never fall back to a floating tag or host-installed tool.",
+      "verification_method": "PyPI version JSON and exact sdist/wheels downloaded into bounded memory; hashes recomputed; inspected sdist CHANGES.rst and libpg_query/pg_query.h; GitHub annotated v7.18 tag resolved to immutable commit.",
+      "version": "7.18"
+    },
+    {
+      "artifact_identifier": "OpenSSL TEST CA tool",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Same exact Python TEST image, chosen platform, invoked only in disposable per-run TEST workspace. No host OpenSSL/Homebrew/native build is execution authority.",
+      "id": "OpenSSL TEST CA tool",
+      "immutable_identifiers": {
+        "artifacts": [],
+        "immutable_execution_identifier": "docker.io/library/python@sha256:2325bb286ec344af3e5898cc224b5844e2707ac6e26b1632516fd3edc84a5e26"
+      },
+      "license_source_project": {
+        "license": "Apache-2.0 for OpenSSL 3; image distribution/component licenses remain separately inspectable.",
+        "project": "OpenSSL Project; Debian OpenSSL package; Docker Official Python image"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://hub.docker.com/_/python",
+        "https://github.com/docker-library/python/tree/688a0b86bb44289df16a363e9f41d90514c1a5f9/3.13/slim-bookworm",
+        "https://www.openssl.org/"
+      ],
+      "purpose": "Generate disposable TEST CA and SAN host certificates; no keys/certificates generated in Phase 0.",
+      "source_record": {
+        "file_sha256": "bab639a206eac0cbf991cf077b60762e2574f67836955b1352995fd4f5afb632",
+        "json_pointer": "/records/8",
+        "path": "validation/poc-04/tooling/web-python-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact artifact bytes, version, digest/integrity, platform or source binding differs; never fall back to a floating tag or host-installed tool.",
+      "verification_method": "Downloaded every Python platform layer in bounded memory and recomputed compressed layer SHA-256; inspected final dpkg status records for openssl/libssl3 3.0.20-1~deb12u2; hashed /usr/bin/openssl bytes independently for each platform. Neither image nor binary was executed. Container digest binds library/config dependencies too.",
+      "version": "OpenSSL 3.0.20; Debian package 3.0.20-1~deb12u2"
+    },
+    {
+      "artifact_identifier": "psycopg==3.3.6",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Pinned Python3.13.15 Linux glibc arm64/amd64 TEST observer container; production inclusion NO.",
+      "id": "psycopg",
+      "immutable_identifiers": {
+        "artifacts": [
+          {
+            "filename": "psycopg-3.3.6-py3-none-any.whl",
+            "sha256": "a1db9f7148b06a28606767efaca51fa6f9398c5c0a3810519be69d7000bdb631",
+            "url": "https://files.pythonhosted.org/packages/4e/de/748bd7609c71cae5d737f0ba9192f19329f70180ecda8fff3cac02c5abe3/psycopg-3.3.6-py3-none-any.whl"
+          },
+          {
+            "filename": "psycopg-3.3.6.tar.gz",
+            "sha256": "c081f2250df751a943036e42db6df4571c66cd0aabe8291a7a506512b12007d2",
+            "url": "https://files.pythonhosted.org/packages/76/26/3ea4ca5eaea1c0debcdf7ee7c1613fbe721dc27a03c461c0817ffd8a0601/psycopg-3.3.6.tar.gz"
+          }
+        ]
+      },
+      "license_source_project": {
+        "license": "LGPL-3.0-only for Psycopg; vendored libraries have their own licenses represented in wheel SBOM/license files.",
+        "project": "https://github.com/psycopg/psycopg"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://pypi.org/pypi/psycopg/3.3.6/json",
+        "https://pypi.org/project/psycopg/3.3.6/",
+        "https://github.com/psycopg/psycopg/tree/a67654d1e7afbf9b3a619557838f62de1c790e7c",
+        "https://www.psycopg.org/psycopg3/docs/basic/install.html"
+      ],
+      "purpose": "TEST-only PostgreSQL transport for independent audit-tamper observer; confers no database privilege or authorization authority.",
+      "source_record": {
+        "file_sha256": "bab639a206eac0cbf991cf077b60762e2574f67836955b1352995fd4f5afb632",
+        "json_pointer": "/records/9",
+        "path": "validation/poc-04/tooling/web-python-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact wheel SHA-256, package version, selected CPython313 Linux platform or source binding differs; no source build, system libpq fallback or floating package version.",
+      "verification_method": "Exact-version primary PyPI metadata and package payloads independently hashed; inspected wheel METADATA, native library content and embedded auditwheel SBOM; annotated upstream 3.3.6 tag resolved to immutable commit. Package signatures/build attestations not cryptographically verified.",
+      "version": "3.3.6"
+    },
+    {
+      "artifact_identifier": "psycopg-binary==3.3.6",
+      "critical_for_phase0_pin_closure": true,
+      "execution_location": "Pinned Python3.13.15 Linux glibc arm64/amd64 TEST observer container; production inclusion NO.",
+      "id": "psycopg-binary",
+      "immutable_identifiers": {
+        "artifacts": [
+          {
+            "filename": "psycopg_binary-3.3.6-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+            "sha256": "cec5ea900390897d0b46130f60bc2883bf19c314f9044235217c8be88b0ef269",
+            "url": "https://files.pythonhosted.org/packages/de/b0/c6f8a0585a5dacbea74e130bcfc66629390e8f5bbc79d2a8e806e8952150/psycopg_binary-3.3.6-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+          },
+          {
+            "filename": "psycopg_binary-3.3.6-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+            "sha256": "98c02090d88f2ebc0ec1e8da538f77d225ce0fffecf372aa39262e62a1b054ef",
+            "url": "https://files.pythonhosted.org/packages/e2/fc/c3a7a8bbef7e945ec584ac61d460a612363ea398511cd0e220242b1d69f1/psycopg_binary-3.3.6-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl"
+          }
+        ]
+      },
+      "license_source_project": {
+        "license": "LGPL-3.0-only for Psycopg; vendored libraries have their own licenses represented in wheel SBOM/license files.",
+        "project": "https://github.com/psycopg/psycopg"
+      },
+      "production_artifact_inclusion": "NO",
+      "provenance_sources": [
+        "https://pypi.org/pypi/psycopg-binary/3.3.6/json",
+        "https://pypi.org/project/psycopg-binary/3.3.6/",
+        "https://github.com/psycopg/psycopg/tree/a67654d1e7afbf9b3a619557838f62de1c790e7c",
+        "https://www.psycopg.org/psycopg3/docs/basic/install.html"
+      ],
+      "purpose": "TEST-only PostgreSQL transport for independent audit-tamper observer; confers no database privilege or authorization authority.",
+      "source_record": {
+        "file_sha256": "bab639a206eac0cbf991cf077b60762e2574f67836955b1352995fd4f5afb632",
+        "json_pointer": "/records/10",
+        "path": "validation/poc-04/tooling/web-python-pins.json"
+      },
+      "status": "VERIFIED PIN",
+      "stop_behavior": "STOP before use if exact wheel SHA-256, package version, selected CPython313 Linux platform or source binding differs; no source build, system libpq fallback or floating package version.",
+      "verification_method": "Exact-version primary PyPI metadata and package payloads independently hashed; inspected wheel METADATA, native library content and embedded auditwheel SBOM; annotated upstream 3.3.6 tag resolved to immutable commit. Package signatures/build attestations not cryptographically verified.",
+      "version": "3.3.6"
+    }
+  ]
+}
