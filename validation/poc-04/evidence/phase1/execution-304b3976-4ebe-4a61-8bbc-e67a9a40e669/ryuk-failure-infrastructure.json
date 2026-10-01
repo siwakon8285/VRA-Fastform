@@ -1,0 +1,18 @@
+{
+  "recorded_at_utc": "2026-09-30T16:37:44.100058+00:00",
+  "DOCKER_HOST": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+  "daemon_id": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+  "container_id": "6a1a4a02ccbf76e4eec136c7db3702910c3a92a892df526cbb7520878fd0135c",
+  "inspect_exit_status": 1,
+  "container": "already absent",
+  "read_only_tcp_connect_checks": [
+    {
+      "host": "192.168.106.3",
+      "port": 32768,
+      "started_at_utc": "2026-09-30T16:37:44.100255+00:00",
+      "connect": "FAILED",
+      "error_type": "timeout",
+      "errno": null
+    }
+  ]
+}

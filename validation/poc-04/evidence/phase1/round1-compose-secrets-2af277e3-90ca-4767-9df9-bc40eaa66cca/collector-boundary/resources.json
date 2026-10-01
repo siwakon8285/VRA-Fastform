@@ -1,0 +1,373 @@
+{
+  "containers": {
+    "61ea0fc0f0b46273cfb2cde24cde86e9a738f1988c83b72693c52be3315e1b1a": {
+      "cap_add": null,
+      "cap_drop": [
+        "ALL"
+      ],
+      "created": "2026-10-01T16:50:48.029286625Z",
+      "id": "61ea0fc0f0b46273cfb2cde24cde86e9a738f1988c83b72693c52be3315e1b1a",
+      "image_identity": "sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989",
+      "image_reference": "docker.io/library/alpine@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989",
+      "labels": {
+        "dev.vra.database_instance_id": "0cc21592-40d2-549d-b0ab-fe821e9ef5d7",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "postgres-authority/0",
+        "dev.vra.poc": "04",
+        "dev.vra.purpose": "phase1-collector-mount-proof",
+        "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+        "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "manifest_descriptor": {
+        "annotations": {
+          "com.docker.official-images.bashbrew.arch": "arm64v8",
+          "org.opencontainers.image.base.name": "scratch",
+          "org.opencontainers.image.created": "2024-11-12T00:55:37Z",
+          "org.opencontainers.image.revision": "1d3ddcf4766ef6085fe6005ce3ec8ca4e6b45ddd",
+          "org.opencontainers.image.source": "https://github.com/alpinelinux/docker-alpine.git#1d3ddcf4766ef6085fe6005ce3ec8ca4e6b45ddd:aarch64",
+          "org.opencontainers.image.url": "https://hub.docker.com/_/alpine",
+          "org.opencontainers.image.version": "3.17.10"
+        },
+        "digest": "sha256:4555e30014d0ef2214aa1ce5391ff46354519f55f33b4c6e5ed9aef4f3f1fa07",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "arm64",
+          "os": "linux",
+          "variant": "v8"
+        },
+        "size": 1026
+      },
+      "mount_requests": [
+        {
+          "ReadOnly": true,
+          "Source": "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source",
+          "Target": "/collector",
+          "Type": "volume",
+          "VolumeOptions": {
+            "NoCopy": true
+          }
+        }
+      ],
+      "mounts": [
+        {
+          "Destination": "/collector",
+          "Name": "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source",
+          "RW": false,
+          "Source": "/var/lib/docker/volumes/vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source/_data",
+          "Type": "volume"
+        }
+      ],
+      "name": "/vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0-reserved-reader",
+      "network_mode": "none",
+      "networks": {
+        "none": {
+          "IPAddress": "",
+          "NetworkID": "0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a"
+        }
+      },
+      "port_bindings": {},
+      "privileged": false,
+      "published_ports": {},
+      "read_only_root": true,
+      "security_options": [
+        "no-new-privileges:true"
+      ],
+      "state": {
+        "ExitCode": 0,
+        "Health": {
+          "Status": null
+        },
+        "Running": false,
+        "Status": "exited"
+      },
+      "user": "9404:9404"
+    },
+    "770ea4df933cd2f2570d1b5d0ed8a51eeeea1fefc4702c5b2467e6d1b3ecfe5b": {
+      "cap_add": null,
+      "cap_drop": [
+        "ALL"
+      ],
+      "created": "2026-10-01T16:50:48.286386093Z",
+      "id": "770ea4df933cd2f2570d1b5d0ed8a51eeeea1fefc4702c5b2467e6d1b3ecfe5b",
+      "image_identity": "sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989",
+      "image_reference": "docker.io/library/alpine@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989",
+      "labels": {
+        "dev.vra.database_instance_id": "0cc21592-40d2-549d-b0ab-fe821e9ef5d7",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "postgres-authority/0",
+        "dev.vra.poc": "04",
+        "dev.vra.purpose": "phase1-collector-mount-proof",
+        "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+        "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "manifest_descriptor": {
+        "annotations": {
+          "com.docker.official-images.bashbrew.arch": "arm64v8",
+          "org.opencontainers.image.base.name": "scratch",
+          "org.opencontainers.image.created": "2024-11-12T00:55:37Z",
+          "org.opencontainers.image.revision": "1d3ddcf4766ef6085fe6005ce3ec8ca4e6b45ddd",
+          "org.opencontainers.image.source": "https://github.com/alpinelinux/docker-alpine.git#1d3ddcf4766ef6085fe6005ce3ec8ca4e6b45ddd:aarch64",
+          "org.opencontainers.image.url": "https://hub.docker.com/_/alpine",
+          "org.opencontainers.image.version": "3.17.10"
+        },
+        "digest": "sha256:4555e30014d0ef2214aa1ce5391ff46354519f55f33b4c6e5ed9aef4f3f1fa07",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "arm64",
+          "os": "linux",
+          "variant": "v8"
+        },
+        "size": 1026
+      },
+      "mount_requests": [
+        {
+          "ReadOnly": true,
+          "Source": "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source",
+          "Target": "/collector",
+          "Type": "volume",
+          "VolumeOptions": {
+            "NoCopy": true
+          }
+        }
+      ],
+      "mounts": [
+        {
+          "Destination": "/collector",
+          "Name": "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source",
+          "RW": false,
+          "Source": "/var/lib/docker/volumes/vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source/_data",
+          "Type": "volume"
+        }
+      ],
+      "name": "/vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0-synthetic-nonmember",
+      "network_mode": "none",
+      "networks": {
+        "none": {
+          "IPAddress": "",
+          "NetworkID": "0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a"
+        }
+      },
+      "port_bindings": {},
+      "privileged": false,
+      "published_ports": {},
+      "read_only_root": true,
+      "security_options": [
+        "no-new-privileges:true"
+      ],
+      "state": {
+        "ExitCode": 0,
+        "Health": {
+          "Status": null
+        },
+        "Running": false,
+        "Status": "exited"
+      },
+      "user": "9405:9405"
+    },
+    "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0": {
+      "cap_add": null,
+      "cap_drop": null,
+      "created": "2026-10-01T16:50:39.402933721Z",
+      "id": "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "image_identity": "sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+      "image_reference": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+      "labels": {
+        "dev.vra.database_instance_id": "0cc21592-40d2-549d-b0ab-fe821e9ef5d7",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "postgres-authority/0",
+        "dev.vra.poc": "04",
+        "dev.vra.purpose": "phase1-collector-mount-proof",
+        "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+        "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "manifest_descriptor": {
+        "annotations": {
+          "com.docker.official-images.bashbrew.arch": "arm64v8",
+          "org.opencontainers.image.base.digest": "sha256:da496358bd6934d2bd6a563a33176a2e50eff5490c54b4ac6fb051b69fef4071",
+          "org.opencontainers.image.base.name": "debian:trixie-slim",
+          "org.opencontainers.image.created": "2026-09-19T00:38:22Z",
+          "org.opencontainers.image.revision": "2603e26e245e558218728ee14e0a42dcb020dc7f",
+          "org.opencontainers.image.source": "https://github.com/docker-library/postgres.git#2603e26e245e558218728ee14e0a42dcb020dc7f:17/trixie",
+          "org.opencontainers.image.url": "https://hub.docker.com/_/postgres",
+          "org.opencontainers.image.version": "17.11"
+        },
+        "digest": "sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "arm64",
+          "os": "linux",
+          "variant": "v8"
+        },
+        "size": 3630
+      },
+      "mount_requests": [
+        {
+          "Source": "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_postgres_data",
+          "Target": "/var/lib/postgresql/data",
+          "Type": "volume"
+        },
+        {
+          "Source": "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source",
+          "Target": "/var/log/vra-poc04-collector",
+          "Type": "volume",
+          "VolumeOptions": {
+            "NoCopy": true
+          }
+        },
+        {
+          "ReadOnly": true,
+          "Source": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/db/postgresql-collector-test.conf",
+          "Target": "/etc/poc04/postgresql-collector-test.conf",
+          "Type": "bind"
+        },
+        {
+          "ReadOnly": true,
+          "Source": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/db/collector-test-entrypoint.sh",
+          "Target": "/etc/poc04/collector-test-entrypoint.sh",
+          "Type": "bind"
+        },
+        {
+          "ReadOnly": true,
+          "Source": "/Users/siwakornbundi/.colima/vra-poc04-test/vra-poc04-collector-2af277e3-90ca-4767-9df9-bc40eaa66cca-secrets-ify5iymp/postgres-admin-password",
+          "Target": "/run/secrets/postgres_admin_password",
+          "Type": "bind"
+        }
+      ],
+      "mounts": [
+        {
+          "Destination": "/run/secrets/postgres_admin_password",
+          "Name": null,
+          "RW": false,
+          "Source": "/Users/siwakornbundi/.colima/vra-poc04-test/vra-poc04-collector-2af277e3-90ca-4767-9df9-bc40eaa66cca-secrets-ify5iymp/postgres-admin-password",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/var/lib/postgresql/data",
+          "Name": "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_postgres_data",
+          "RW": true,
+          "Source": "/var/lib/docker/volumes/vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_postgres_data/_data",
+          "Type": "volume"
+        },
+        {
+          "Destination": "/var/log/vra-poc04-collector",
+          "Name": "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source",
+          "RW": true,
+          "Source": "/var/lib/docker/volumes/vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source/_data",
+          "Type": "volume"
+        },
+        {
+          "Destination": "/etc/poc04/postgresql-collector-test.conf",
+          "Name": null,
+          "RW": false,
+          "Source": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/db/postgresql-collector-test.conf",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/etc/poc04/collector-test-entrypoint.sh",
+          "Name": null,
+          "RW": false,
+          "Source": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/db/collector-test-entrypoint.sh",
+          "Type": "bind"
+        }
+      ],
+      "name": "/vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0-postgres",
+      "network_mode": "33d5f3b12201c6b6fad3112380883d56b489b8fdc3f918ce14365f8f428b61fb",
+      "networks": {
+        "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_test": {
+          "IPAddress": "10.241.1.2",
+          "NetworkID": "33d5f3b12201c6b6fad3112380883d56b489b8fdc3f918ce14365f8f428b61fb"
+        }
+      },
+      "port_bindings": {},
+      "privileged": false,
+      "published_ports": {
+        "5432/tcp": null
+      },
+      "read_only_root": false,
+      "security_options": null,
+      "state": {
+        "ExitCode": 0,
+        "Health": {
+          "Status": "healthy"
+        },
+        "Running": true,
+        "Status": "running"
+      },
+      "user": ""
+    }
+  },
+  "networks": {
+    "33d5f3b12201c6b6fad3112380883d56b489b8fdc3f918ce14365f8f428b61fb": {
+      "Created": "2026-10-01T23:50:38.94766868+07:00",
+      "Driver": "bridge",
+      "IPAM": {
+        "Config": [
+          {
+            "Gateway": "10.241.1.1",
+            "Subnet": "10.241.1.0/24"
+          }
+        ],
+        "Driver": "default",
+        "Options": {}
+      },
+      "Id": "33d5f3b12201c6b6fad3112380883d56b489b8fdc3f918ce14365f8f428b61fb",
+      "Labels": {
+        "dev.vra.database_instance_id": "0cc21592-40d2-549d-b0ab-fe821e9ef5d7",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "postgres-authority/0",
+        "dev.vra.poc": "04",
+        "dev.vra.purpose": "phase1-collector-mount-proof",
+        "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+        "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "Name": "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_test",
+      "Scope": "local"
+    }
+  },
+  "volumes": {
+    "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source": {
+      "CreatedAt": "2026-10-01T23:50:39+07:00",
+      "Driver": "local",
+      "Labels": {
+        "dev.vra.database_instance_id": "0cc21592-40d2-549d-b0ab-fe821e9ef5d7",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "postgres-authority/0",
+        "dev.vra.poc": "04",
+        "dev.vra.purpose": "phase1-collector-mount-proof",
+        "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+        "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "Mountpoint": "/var/lib/docker/volumes/vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source/_data",
+      "Name": "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source",
+      "Scope": "local"
+    },
+    "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_postgres_data": {
+      "CreatedAt": "2026-10-01T23:50:39+07:00",
+      "Driver": "local",
+      "Labels": {
+        "dev.vra.database_instance_id": "0cc21592-40d2-549d-b0ab-fe821e9ef5d7",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "postgres-authority/0",
+        "dev.vra.poc": "04",
+        "dev.vra.purpose": "phase1-collector-mount-proof",
+        "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+        "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "Mountpoint": "/var/lib/docker/volumes/vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_postgres_data/_data",
+      "Name": "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_postgres_data",
+      "Scope": "local"
+    }
+  }
+}

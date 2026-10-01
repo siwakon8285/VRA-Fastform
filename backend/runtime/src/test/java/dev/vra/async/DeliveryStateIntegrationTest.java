@@ -27,7 +27,7 @@ class DeliveryStateIntegrationTest {
     private static final String ASYNC_PASSWORD = "async-disposable-test-only";
     private static final String A = "RESERVATION_PROJECTION";
     private static final String B = "VALIDATION_EXTERNAL_EFFECT";
-    private static final PostgreSQLContainer DB = new PostgreSQLContainer("postgres:17.11")
+    private static final PostgreSQLContainer DB = new dev.vra.poc04.external.RunOwnedPostgreSQLContainer("postgres:17.11")
             .withDatabaseName("vra_poc01").withUsername("postgres").withPassword(PASSWORD);
 
     @BeforeAll static void start() throws Exception {
@@ -45,7 +45,7 @@ class DeliveryStateIntegrationTest {
                     "-v", "runtime_password=" + PASSWORD, "-f", "/tmp/stage-j-state-bootstrap.sql");
             assertEquals(0, setup.getExitCode(), setup.getStderr());
             AsyncRoleBootstrap.run(DB);
-            assertEquals(3, new MigrationRunner().migrate(DB.getJdbcUrl(), "vra_migrator", PASSWORD));
+            assertEquals(4, new MigrationRunner().migrate(DB.getJdbcUrl(), "vra_migrator", PASSWORD));
         } catch (Exception error) { DB.stop(); throw error; }
     }
     @AfterAll static void stop() { DB.stop(); }

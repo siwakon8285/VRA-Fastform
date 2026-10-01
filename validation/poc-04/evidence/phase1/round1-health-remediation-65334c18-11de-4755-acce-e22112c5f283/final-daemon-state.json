@@ -1,0 +1,580 @@
+{
+  "status": "PASS",
+  "recorded_at": "2026-10-01T15:58:59.225284+00:00",
+  "endpoint": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+  "daemon": {
+    "ID": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+    "Name": "colima-vra-poc04-test",
+    "ServerVersion": "29.5.2",
+    "OSType": "linux",
+    "Architecture": "aarch64",
+    "DefaultAddressPools": [
+      {
+        "Base": "10.241.0.0/16",
+        "Size": 24
+      }
+    ]
+  },
+  "containers": [],
+  "volumes": [],
+  "networks": [
+    {
+      "CreatedAt": "2026-10-01 14:45:16.427040294 +0700 +07",
+      "Driver": "bridge",
+      "ID": "c0297a5ce0209b66940193c63975087c4355c0e38d6517ac408d4fbf452c9adf",
+      "IPv4": "true",
+      "IPv6": "false",
+      "Internal": "false",
+      "Labels": "",
+      "Name": "bridge",
+      "Scope": "local"
+    },
+    {
+      "CreatedAt": "2026-09-30 23:19:05.623366465 +0700 +07",
+      "Driver": "host",
+      "ID": "71919e79066c633ba4548aa04103de53d1e31552893e0cec59e0ba812b5f4d22",
+      "IPv4": "true",
+      "IPv6": "false",
+      "Internal": "false",
+      "Labels": "",
+      "Name": "host",
+      "Scope": "local"
+    },
+    {
+      "CreatedAt": "2026-09-30 23:19:05.61941459 +0700 +07",
+      "Driver": "null",
+      "ID": "0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a",
+      "IPv4": "true",
+      "IPv6": "false",
+      "Internal": "false",
+      "Labels": "",
+      "Name": "none",
+      "Scope": "local"
+    }
+  ],
+  "recorded_container_absence": [
+    {
+      "id": "065d06bf7c4c13e8da40e8a6c8f806cafac8d92e01176ddcef65bfb0d9143b9a",
+      "command": [
+        "docker",
+        "inspect",
+        "065d06bf7c4c13e8da40e8a6c8f806cafac8d92e01176ddcef65bfb0d9143b9a"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "07dc3a5c5cecdac455c232d7fea2efc115b7066dd3213d327d357ac80ef4abff",
+      "command": [
+        "docker",
+        "inspect",
+        "07dc3a5c5cecdac455c232d7fea2efc115b7066dd3213d327d357ac80ef4abff"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "1a21a71fa899cfcb4f1d9170ff8d9cec58f8b7eb0f3d8039b724f88e35caa69b",
+      "command": [
+        "docker",
+        "inspect",
+        "1a21a71fa899cfcb4f1d9170ff8d9cec58f8b7eb0f3d8039b724f88e35caa69b"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "221eece4320b3ad44403362733949c73efbdf50ae9bc5bfe43b7713501305790",
+      "command": [
+        "docker",
+        "inspect",
+        "221eece4320b3ad44403362733949c73efbdf50ae9bc5bfe43b7713501305790"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "2dfbacf34e56e25ca099b0d0322fad1feff685054922a0501f22137c4ec53979",
+      "command": [
+        "docker",
+        "inspect",
+        "2dfbacf34e56e25ca099b0d0322fad1feff685054922a0501f22137c4ec53979"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "3dcef95e1fc24fd672183664ba4c867c9cc3cb07d342d068b549dddacf7f1b02",
+      "command": [
+        "docker",
+        "inspect",
+        "3dcef95e1fc24fd672183664ba4c867c9cc3cb07d342d068b549dddacf7f1b02"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "400644e1ea1e3b15edcf67d66d0739c13d071cf9d24f99dea9fe250cf903aafe",
+      "command": [
+        "docker",
+        "inspect",
+        "400644e1ea1e3b15edcf67d66d0739c13d071cf9d24f99dea9fe250cf903aafe"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "4253d4825154de40fb42c7b565fab10086d9fdd236ae3fd066a4e0525bf5f732",
+      "command": [
+        "docker",
+        "inspect",
+        "4253d4825154de40fb42c7b565fab10086d9fdd236ae3fd066a4e0525bf5f732"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "4a0ef966928cf3f4d0ac0878ed9555120acbb1a655ba7f1899eb015a1ea2cf96",
+      "command": [
+        "docker",
+        "inspect",
+        "4a0ef966928cf3f4d0ac0878ed9555120acbb1a655ba7f1899eb015a1ea2cf96"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "4a68da0ffd6d948c26578c91b8573c7d7935f688b53293464089c865672b0e47",
+      "command": [
+        "docker",
+        "inspect",
+        "4a68da0ffd6d948c26578c91b8573c7d7935f688b53293464089c865672b0e47"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "4a705fcf41dc42fd27ee2270f2aba5031cd99934c9068f905fe5c12f50bba7f8",
+      "command": [
+        "docker",
+        "inspect",
+        "4a705fcf41dc42fd27ee2270f2aba5031cd99934c9068f905fe5c12f50bba7f8"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "4e6555b83d6ecebf17c65a2ea6cba39f650b5ec1e6e1280442f6bea39bdf346e",
+      "command": [
+        "docker",
+        "inspect",
+        "4e6555b83d6ecebf17c65a2ea6cba39f650b5ec1e6e1280442f6bea39bdf346e"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "55956082b971620c852558e7b52401986e1f084cf992d74722aabd4acfbc9cd3",
+      "command": [
+        "docker",
+        "inspect",
+        "55956082b971620c852558e7b52401986e1f084cf992d74722aabd4acfbc9cd3"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "595b07a49bc5d83c30667f9cab8131cf1818e3a286c6a99481120a62630953f9",
+      "command": [
+        "docker",
+        "inspect",
+        "595b07a49bc5d83c30667f9cab8131cf1818e3a286c6a99481120a62630953f9"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "5a77a37d6bdca4717857fe4f4a92a356e668503aeec7ef0b8e4453494d50170b",
+      "command": [
+        "docker",
+        "inspect",
+        "5a77a37d6bdca4717857fe4f4a92a356e668503aeec7ef0b8e4453494d50170b"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "5ca3dec5283eb8cae0e50c5aa0405d01335f500123872d0dcd323a8daeb080e7",
+      "command": [
+        "docker",
+        "inspect",
+        "5ca3dec5283eb8cae0e50c5aa0405d01335f500123872d0dcd323a8daeb080e7"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "5e3aa3f61783d5295e931816febcc21b2c37ac600df0ec99827e48be313e3bab",
+      "command": [
+        "docker",
+        "inspect",
+        "5e3aa3f61783d5295e931816febcc21b2c37ac600df0ec99827e48be313e3bab"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "5f3a450eb5d70edff59b3e26487351e44e9f833df73b385761f3fb963c8ec8d2",
+      "command": [
+        "docker",
+        "inspect",
+        "5f3a450eb5d70edff59b3e26487351e44e9f833df73b385761f3fb963c8ec8d2"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "628b8f33c429ff78862a7c0f6f228cd15808c303c40b7ed6a9ef1d8190e64639",
+      "command": [
+        "docker",
+        "inspect",
+        "628b8f33c429ff78862a7c0f6f228cd15808c303c40b7ed6a9ef1d8190e64639"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "6367b4b856835b090f60693466be84d69c4d27af699b03eb8b751c9d314a6d5c",
+      "command": [
+        "docker",
+        "inspect",
+        "6367b4b856835b090f60693466be84d69c4d27af699b03eb8b751c9d314a6d5c"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "6f91795f941a56d03bdef6f68a9894d72624d34bd5f1d13a1f1a0d20ee2439a6",
+      "command": [
+        "docker",
+        "inspect",
+        "6f91795f941a56d03bdef6f68a9894d72624d34bd5f1d13a1f1a0d20ee2439a6"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "76a83b3dae4fd614ff48455c420e36a8bb22a83515b0870cc6e42db5de48bfce",
+      "command": [
+        "docker",
+        "inspect",
+        "76a83b3dae4fd614ff48455c420e36a8bb22a83515b0870cc6e42db5de48bfce"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "7a75a18b96e3a0b551ad773b6b043b6f2d15f91c74b0affd7dbb978f24b20750",
+      "command": [
+        "docker",
+        "inspect",
+        "7a75a18b96e3a0b551ad773b6b043b6f2d15f91c74b0affd7dbb978f24b20750"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "8b01e06f421624651c1b56ed678e31e3d0a63456cb436413d4efbae5f0ccbcc9",
+      "command": [
+        "docker",
+        "inspect",
+        "8b01e06f421624651c1b56ed678e31e3d0a63456cb436413d4efbae5f0ccbcc9"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "9323a2ea4ae238da380f7c6c63b50a292ae78f0c5880f920620c8421007c2159",
+      "command": [
+        "docker",
+        "inspect",
+        "9323a2ea4ae238da380f7c6c63b50a292ae78f0c5880f920620c8421007c2159"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "9402051cd3134e9b8bea19119ef5bf537f8a4a5ae1c18c878af24a55232b4e6f",
+      "command": [
+        "docker",
+        "inspect",
+        "9402051cd3134e9b8bea19119ef5bf537f8a4a5ae1c18c878af24a55232b4e6f"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "94092716024aae38611f16142ce1290774a0e43d52613b5d39f22a9540a3feaa",
+      "command": [
+        "docker",
+        "inspect",
+        "94092716024aae38611f16142ce1290774a0e43d52613b5d39f22a9540a3feaa"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "945e1d3326a32683eb25594060d8066a63f45ad23e38165cf825a8e777dc7b4c",
+      "command": [
+        "docker",
+        "inspect",
+        "945e1d3326a32683eb25594060d8066a63f45ad23e38165cf825a8e777dc7b4c"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "986f5f4b474bf7f545ad9f59a8a8a569ae0b59109767565f17358757e31d807f",
+      "command": [
+        "docker",
+        "inspect",
+        "986f5f4b474bf7f545ad9f59a8a8a569ae0b59109767565f17358757e31d807f"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "9db89efd7ff95c67ba4ded2f05f7316fbadba656ef3345c2dd09cd8a1b480521",
+      "command": [
+        "docker",
+        "inspect",
+        "9db89efd7ff95c67ba4ded2f05f7316fbadba656ef3345c2dd09cd8a1b480521"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "a0b7bfcca312e2e67f64ee83df2f819d667bfcc159ca046f2bcb4690302f0bba",
+      "command": [
+        "docker",
+        "inspect",
+        "a0b7bfcca312e2e67f64ee83df2f819d667bfcc159ca046f2bcb4690302f0bba"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "a418eaaa99d63f4e12d272ffcb1952321d76bc46c8aa01a69b1e46d497a2444d",
+      "command": [
+        "docker",
+        "inspect",
+        "a418eaaa99d63f4e12d272ffcb1952321d76bc46c8aa01a69b1e46d497a2444d"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "a4804e9598aac2c31dc2cac96a7164d3430b84266c75bba81c2038fce6f4849a",
+      "command": [
+        "docker",
+        "inspect",
+        "a4804e9598aac2c31dc2cac96a7164d3430b84266c75bba81c2038fce6f4849a"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "a5cf9fae496f8179f42cf511c4f1f45d3f65737f15c7fab27ec7ce2c32238ec8",
+      "command": [
+        "docker",
+        "inspect",
+        "a5cf9fae496f8179f42cf511c4f1f45d3f65737f15c7fab27ec7ce2c32238ec8"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "aabba1efceb56b8ad7b6bafc74629c6e1f7f3f8f94533245f67ea290b5d2eb1f",
+      "command": [
+        "docker",
+        "inspect",
+        "aabba1efceb56b8ad7b6bafc74629c6e1f7f3f8f94533245f67ea290b5d2eb1f"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "b24d34643e450c408c023dbff34ba7189250f02525376e5b39d1c5a364b102a8",
+      "command": [
+        "docker",
+        "inspect",
+        "b24d34643e450c408c023dbff34ba7189250f02525376e5b39d1c5a364b102a8"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "b45fcc2a9946af9ab37dcd62067dcb7d390ffcb9a24419633dd403ae9505d63d",
+      "command": [
+        "docker",
+        "inspect",
+        "b45fcc2a9946af9ab37dcd62067dcb7d390ffcb9a24419633dd403ae9505d63d"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "ba465366721f8df2d92822cf4aa27b969d0befe884cc24d991701d2bd6721f71",
+      "command": [
+        "docker",
+        "inspect",
+        "ba465366721f8df2d92822cf4aa27b969d0befe884cc24d991701d2bd6721f71"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "c2e6f4b34ea7b8ed759ac636ab0ab4834e8c6edb841e8c64c2cc27f2ed3e0e50",
+      "command": [
+        "docker",
+        "inspect",
+        "c2e6f4b34ea7b8ed759ac636ab0ab4834e8c6edb841e8c64c2cc27f2ed3e0e50"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "c5efa3b01dbadc85b710bef5a13cddcb875088c682919c65e5f3e090e3a5f2d8",
+      "command": [
+        "docker",
+        "inspect",
+        "c5efa3b01dbadc85b710bef5a13cddcb875088c682919c65e5f3e090e3a5f2d8"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "c8cd462d99287396d2c1e45f95d13880dfc5b176e49915760f9cda0bed283747",
+      "command": [
+        "docker",
+        "inspect",
+        "c8cd462d99287396d2c1e45f95d13880dfc5b176e49915760f9cda0bed283747"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "cf5aaba2afc6500373109fa761bbfc206fed06982be16371024b31f9f3d620ea",
+      "command": [
+        "docker",
+        "inspect",
+        "cf5aaba2afc6500373109fa761bbfc206fed06982be16371024b31f9f3d620ea"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "d4fdff7c1661b258e311bf36ff6e1f9741907172c94738983b9b987bc9d7c8e2",
+      "command": [
+        "docker",
+        "inspect",
+        "d4fdff7c1661b258e311bf36ff6e1f9741907172c94738983b9b987bc9d7c8e2"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "d86aa3710f4c7c423314a0d27686e523874bc5c41dace945b5086368b51b4818",
+      "command": [
+        "docker",
+        "inspect",
+        "d86aa3710f4c7c423314a0d27686e523874bc5c41dace945b5086368b51b4818"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "db257debc0a03fe86598f8f02de9afdfdaa1ef0792897110dd87602aeca0cdf9",
+      "command": [
+        "docker",
+        "inspect",
+        "db257debc0a03fe86598f8f02de9afdfdaa1ef0792897110dd87602aeca0cdf9"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "e6a8f7ede4b49395eba3c9c54d84ad446142afacfee9ab66bc2d85685828e253",
+      "command": [
+        "docker",
+        "inspect",
+        "e6a8f7ede4b49395eba3c9c54d84ad446142afacfee9ab66bc2d85685828e253"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "f0de20679090c149570a23b91ade5e1f5113c5677b26610ce1853243469070ce",
+      "command": [
+        "docker",
+        "inspect",
+        "f0de20679090c149570a23b91ade5e1f5113c5677b26610ce1853243469070ce"
+      ],
+      "exit_status": 1,
+      "absent": true
+    },
+    {
+      "id": "f2e3932aba47898c268a2f726138e5f8b901fe01d2c1e5d1794fd69470b62aea",
+      "command": [
+        "docker",
+        "inspect",
+        "f2e3932aba47898c268a2f726138e5f8b901fe01d2c1e5d1794fd69470b62aea"
+      ],
+      "exit_status": 1,
+      "absent": true
+    }
+  ],
+  "commands": [
+    {
+      "command": [
+        "docker",
+        "info",
+        "--format",
+        "{{json .}}"
+      ],
+      "exit_status": 0
+    },
+    {
+      "command": [
+        "docker",
+        "ps",
+        "-aq",
+        "--no-trunc"
+      ],
+      "exit_status": 0
+    },
+    {
+      "command": [
+        "docker",
+        "volume",
+        "ls",
+        "-q"
+      ],
+      "exit_status": 0
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "ls",
+        "--no-trunc",
+        "--format",
+        "{{json .}}"
+      ],
+      "exit_status": 0
+    }
+  ],
+  "blanket_prune_used": false,
+  "DockerDesktop_accessed": false,
+  "persistent_vra_poc00_accessed": false
+}

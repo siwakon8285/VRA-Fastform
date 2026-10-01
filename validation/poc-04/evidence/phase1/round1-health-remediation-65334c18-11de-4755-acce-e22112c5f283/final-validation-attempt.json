@@ -1,0 +1,7 @@
+{
+  "exit_status": 1,
+  "operation": "read-only config parse inspection",
+  "failure": "installed Ruby/Psych has safe_load but does not implement safe_load_file",
+  "configuration_changed": false,
+  "correction": "use safe_load(File.read(path), aliases: true) supported by this installed Ruby/Psych"
+}

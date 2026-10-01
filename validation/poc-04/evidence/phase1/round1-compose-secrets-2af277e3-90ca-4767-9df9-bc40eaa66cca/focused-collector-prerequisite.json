@@ -1,0 +1,15 @@
+{
+  "status": "PASS for focused-only authorization",
+  "explicit_user_order": "focused collector before final full build",
+  "previous_runtime_command": "validation/poc-04/evidence/phase1/round1-health-remediation-65334c18-11de-4755-acce-e22112c5f283/full-check-build-command.json",
+  "previous_runtime_counts_reparsed_from_raw_XML": {
+    "tests": 113,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "all_backend_source_bytes_unchanged_from_previous_green_build": true,
+  "same_current_run_runtime_suite_executed_before_focus": false,
+  "guard_scope": "current focused execution authorized by user; previous result is a prerequisite only and never final same-run substitute",
+  "final_obligation": "new full build must precede final collector on these exact source bytes"
+}

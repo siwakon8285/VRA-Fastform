@@ -42,9 +42,9 @@ class WorkerProcessCrashIntegrationTest {
     private static final String PASSWORD = "stage-i-disposable-test-only";
     private static final String ASYNC_PASSWORD = "async-disposable-test-only";
     private static final Duration DEADLINE = Duration.ofSeconds(18);
-    private static final PostgreSQLContainer VRA = new PostgreSQLContainer("postgres:17.11")
+    private static final PostgreSQLContainer VRA = new dev.vra.poc04.external.RunOwnedPostgreSQLContainer("postgres:17.11")
             .withDatabaseName("vra_poc01").withUsername("postgres").withPassword(PASSWORD);
-    private static final PostgreSQLContainer SIMULATOR = new PostgreSQLContainer("postgres:17.11")
+    private static final PostgreSQLContainer SIMULATOR = new dev.vra.poc04.external.RunOwnedPostgreSQLContainer("postgres:17.11")
             .withDatabaseName("simulator_stage_i").withUsername("simulator_test").withPassword(PASSWORD);
     private static SimulatorProcessHarness simulatorProcess;
     private static SimulatorStore simulatorStore;
@@ -58,7 +58,7 @@ class WorkerProcessCrashIntegrationTest {
             SIMULATOR.start();
             bootstrap();
             AsyncRoleBootstrap.run(VRA);
-            assertEquals(3, new MigrationRunner().migrate(VRA.getJdbcUrl(), "vra_migrator", PASSWORD));
+            assertEquals(4, new MigrationRunner().migrate(VRA.getJdbcUrl(), "vra_migrator", PASSWORD));
             simulatorProcess = new SimulatorProcessHarness(SIMULATOR);
             simulatorStore = new SimulatorStore(SIMULATOR.getJdbcUrl(), SIMULATOR.getUsername(),
                     SIMULATOR.getPassword());

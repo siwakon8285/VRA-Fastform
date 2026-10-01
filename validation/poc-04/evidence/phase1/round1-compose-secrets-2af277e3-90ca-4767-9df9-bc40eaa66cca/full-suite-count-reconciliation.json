@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "suites": [
+    {
+      "suite": "migration:test",
+      "tests": 4,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "xml_files": 1
+    },
+    {
+      "suite": "migration:integrationTest",
+      "tests": 20,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "xml_files": 3
+    },
+    {
+      "suite": "runtime:test",
+      "tests": 56,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "xml_files": 11
+    },
+    {
+      "suite": "runtime:integrationTest",
+      "tests": 113,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "xml_files": 17
+    }
+  ],
+  "total": 193,
+  "counts_from": "raw copied JUnit XML; no focused executions included"
+}

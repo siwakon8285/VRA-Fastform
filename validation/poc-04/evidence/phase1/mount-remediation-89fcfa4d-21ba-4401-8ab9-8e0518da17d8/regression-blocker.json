@@ -1,0 +1,25 @@
+{
+  "status": "FAIL",
+  "scope": "Runtime PostgreSQL regression initialization",
+  "docker_error": "HTTP 400: all predefined address pools have been fully subnetted",
+  "root_initialization_failures": 7,
+  "cascading_failed_class_initializers": 31,
+  "failures_by_suite": {
+    "dev.vra.async.WorkerProcessCrashIntegrationTest": 1,
+    "dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest": 9,
+    "dev.vra.inventory.ReservationConcurrencyIntegrationTest": 5,
+    "dev.vra.inventory.ReservationHttpPostgresIntegrationTest": 4,
+    "dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest": 6,
+    "dev.vra.inventory.ReservationTransactionIntegrationTest": 12,
+    "dev.vra.platform.health.HealthProbePostgresIntegrationTest": 1
+  },
+  "failing_support_path": "Temporary external RunResources.modify(RunResources.java:51) -> CreateNetworkCmdExec",
+  "source_schema_SQL_defect_demonstrated": false,
+  "root_chain_SQL_exceptions": 0,
+  "further_execution_stopped": true,
+  "collector_OS_mount_execution": "NOT EXECUTED after regression failure",
+  "normal_check_build": "NOT COMPLETED: command aborted at runtime integrationTest",
+  "regression_harness_modified_after_failure": false,
+  "V1_V4_bootstrap_grants_modified_after_failure": false,
+  "required_next_review": "Bounded lifecycle/cleanup of exact run-owned test networks/volumes or bounded test batches; preserve pins/source/grants and no blanket prune or daemon reconfiguration"
+}

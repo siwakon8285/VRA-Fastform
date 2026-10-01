@@ -1,0 +1,42 @@
+{
+  "run_id": "43eb52ce-5ef3-4393-9c95-36d858025ce2",
+  "original_source_binding": "bacf3084b406f644924aefadfb1fcafeec950f561d6e6a47357f8095712a6660",
+  "original_health_test_sha256": "b73f709a8d913f94da57232253afafc8792b94d5cfff334633a0489e250747ea",
+  "only_post_diagnosis_source_change": {
+    "path": "backend/runtime/src/test/java/dev/vra/platform/health/HealthProbePostgresIntegrationTest.java",
+    "current_sha256": "c4415d925530b1c27602f93e8815a41592d5e03230bd18af9882b0900ebba2cb"
+  },
+  "preserved_previous_report_sha256": "786ec48925a56e67e9f9491c3d2922b876d83742758db4a2071de5c1eed197f4",
+  "root_cause": "CASE A actual Hikari acquisition30000ms versus HTTP5000ms",
+  "test_result": {
+    "tests": 1,
+    "skipped": 0,
+    "failures": 1,
+    "errors": 0
+  },
+  "cleanup": "PASS",
+  "file_sha256": {
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/HealthDiagnosticListener.java.txt": "b57e99c5ca341bbabc8062e72bf407c43390cf85e49401131786fe001b4f15c5",
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/source-binding.json": "55efcb8b35400080bf44f4bf693ba19372945f28ca7fa29813692128be3c7b1a",
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/docker-resource-events.jsonl": "6ac06ecc280b70a8d4d8eeb73a75aab4e5b4cde5ab060ad759d7960edad84e39",
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/HEALTH_DIAGNOSIS_REPORT.md": "ae95807d088dbb74559d478160d9d00a4c6147b5ae4a114da9d2ca6fb6cfea8d",
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/recorder-launch-attempt.json": "84ca867cf7d9886403a98807b5779340cff71b4636da24b6b3a152d289f7884b",
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/resource-identities.jsonl": "6ab3133bca4eee37dcbd8695c0ab792287911425a39091d53c638c781aff5a1b",
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/diagnostic-support-binding.json": "2a23a389a7179197b9ced1979d71a6ed9825d0bb30bf415a990554e060cda150",
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/final-daemon-state.json": "7cf550ce535be70cfac11b692b77e704e24b8e0dac0444b8580c5f8beff8e4ab",
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/focused-health-diagnosis.log": "c497ffdf5bb6dc1c7f03ed612c39c8fc78d17b293b49244fd7d754e4a22c99b5",
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/cleanup.json": "0cf8810e3da8504e410a687c1a69823567c9a69d67f11e37b98e25c3b12e2e6a",
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/focused-health-diagnosis-command.json": "c0bb47709ebe6d58f2ea66791574d109e54aa0c2bb9f68384758905f66bc91a8",
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/health-timing-diagnosis.json": "1456124ab2bba29941c5debfd2a8324a833dc7745f51ccb7c8dd4159128c6542",
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/PLAN.md": "78457ff2baf9361056826eee3cd90509df8ed3f05b4aea404693cd9906dc5dfc",
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/diagnostic-listener-compile.json": "e97005eaca7e309633d041cb7891c1aa123679654919c6e0a12c891e09a0e97c",
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/preflight.json": "d71133f3024dac13cf17830e3fd9e90383f5e3680b2323286023f05fdb5636ec",
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/final-run-ledger.json": "f06f1cb887ecb914808e8829898b6594f030acc4eb00c835701c773c137de26a",
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/daemon-inspect/c93206266e5384a9d730ffef72f0a06d32800ad734bcc16444fd21551a1a4115.safe-inspect.json": "f944db5b9f6dc5aaa1f49613869935ee00ed4a4dbe49dfea9476c0e7f892405c",
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/daemon-inspect/d41df8d766298c7ab94b873eabcf2eb03a4b1699552e5ccbd37a4ddf7df8fa75.safe-inspect.json": "efda3a2e2cb0d49f0521665dfcdf3700bd0376eb2cc834f543b02e93879872bb",
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/focused-health-diagnosis-results/runtime/integrationTest/TEST-dev.vra.platform.health.HealthProbePostgresIntegrationTest.xml": "2805d752db44b3b2cf87fc41582bbaa7a9e3f5c21d00782fc0d350d3fb0b7c0e",
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/focused-health-diagnosis-results/runtime/integrationTest/binary/results-generic.bin": "5381de19db9117098e574b3b0513725e0124437488b96b4de4d0bf32d9b4d3ab",
+    "validation/poc-04/evidence/phase1/round1-health-diagnosis-43eb52ce-5ef3-4393-9c95-36d858025ce2/focused-health-diagnosis-results/runtime/integrationTest/binary/output-events.bin": "644ed6634d37ce946287198d0f393bdfdce36c715b187ae68b3a0b4c3659b906"
+  },
+  "self_exclusion": "DIAGNOSIS_BINDING excludes itself"
+}

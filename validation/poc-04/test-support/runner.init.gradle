@@ -1,0 +1,21 @@
+gradle.projectsEvaluated {
+ allprojects {
+  tasks.withType(org.gradle.api.tasks.compile.JavaCompile).configureEach {
+   if (name == 'compileTestJava') {
+    def externalJar = System.getenv('VRA_POC04_EXTERNAL_TC_JAR')
+    if (!externalJar || !file(externalJar).isFile()) throw new GradleException('Required Phase-1 external TC jar absent')
+    classpath = classpath + files(externalJar)
+   }
+  }
+  tasks.withType(org.gradle.api.tasks.testing.Test).configureEach {
+   def externalJar = System.getenv('VRA_POC04_EXTERNAL_TC_JAR')
+   if (!externalJar || !file(externalJar).isFile()) throw new GradleException('Required Phase-1 external TC jar absent')
+   classpath = classpath + files(externalJar)
+   systemProperty 'java.net.preferIPv4Stack', 'true'
+   systemProperty 'api.version', '1.49'
+   doFirst {
+    if (!classpath.files.contains(file(externalJar))) throw new GradleException('Phase-1 external TC jar missing from final test classpath')
+   }
+  }
+ }
+}

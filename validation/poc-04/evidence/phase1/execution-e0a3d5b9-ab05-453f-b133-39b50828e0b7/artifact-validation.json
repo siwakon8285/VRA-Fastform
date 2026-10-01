@@ -1,0 +1,244 @@
+{
+  "changed_files": 54,
+  "tracked_modified": 20,
+  "untracked": 34,
+  "staged": [],
+  "parses": {
+    "json": 17,
+    "jsonl": 2,
+    "xml": 2
+  },
+  "junit_counts": {
+    "validation/poc-04/evidence/phase1/execution-304b3976-4ebe-4a61-8bbc-e67a9a40e669/TEST-dev.vra.migration.Poc04FoundationMigrationIntegrationTest.xml": {
+      "tests": 1,
+      "skipped": 0,
+      "failures": 1,
+      "errors": 0
+    },
+    "validation/poc-04/evidence/phase1/execution-e0a3d5b9-ab05-453f-b133-39b50828e0b7/TEST-dev.vra.migration.Poc04FoundationMigrationIntegrationTest.xml": {
+      "tests": 1,
+      "skipped": 0,
+      "failures": 1,
+      "errors": 0
+    }
+  },
+  "whitespace_exceptions": [
+    {
+      "path": "validation/poc-04/evidence/phase1/execution-304b3976-4ebe-4a61-8bbc-e67a9a40e669/fresh-gradle-output.txt",
+      "issue": "trailing whitespace",
+      "line": 2
+    },
+    {
+      "path": "validation/poc-04/evidence/phase1/execution-e0a3d5b9-ab05-453f-b133-39b50828e0b7/fresh-gradle-output.txt",
+      "issue": "trailing whitespace",
+      "line": 2
+    }
+  ],
+  "git_diff_check_exit_status": 0,
+  "source_hashes_unchanged": 27,
+  "gitleaks_command": [
+    "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-gitleaks-3bpa0z2g/gitleaks",
+    "dir",
+    "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-final-gitleaks-1fk9jckg/source",
+    "--no-banner",
+    "--redact=100",
+    "--report-format",
+    "json",
+    "--report-path",
+    "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-final-gitleaks-1fk9jckg/findings.json",
+    "--no-color",
+    "--log-level",
+    "error"
+  ],
+  "gitleaks_exit_status": 0,
+  "gitleaks_findings": 0,
+  "scan_temp_directory": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-final-gitleaks-1fk9jckg",
+  "scope": "Artifact/source validation after preserving failed fresh execution; PostgreSQL work stopped",
+  "report_prefix_sha256": "d8731f17ee3c5d55f35df90ae7780071239eca5fbede02300f9bd6a4ec8b667d",
+  "report_prefix_length": 53874,
+  "source_hashes": [
+    {
+      "path": "backend/migration/src/main/resources/db/migration/V4__poc04_identity_security_foundation.sql",
+      "sha256": "45161b8c54f10778a5521cdd23dc0945fadb65364bd8094e3d19d8f79cfdd1e8"
+    },
+    {
+      "path": "backend/migration/src/test/java/dev/vra/migration/MigrationSecurityIntegrationTest.java",
+      "sha256": "feb7a8f223c4e90a70123f67aa001b8a9ac152a9532ec6b3009f37370a92119a"
+    },
+    {
+      "path": "backend/migration/src/test/java/dev/vra/migration/OutboxMigrationSecurityIntegrationTest.java",
+      "sha256": "664156057d8b71b9f8702ddead09344060c9cce43fd1021cf780dd430953253a"
+    },
+    {
+      "path": "backend/migration/src/test/java/dev/vra/migration/Poc04FoundationMigrationIntegrationTest.java",
+      "sha256": "125e9cf33055428f4354fe7c0637ba60e2f3857eb3a266c7fa089db7f6c71005"
+    },
+    {
+      "path": "backend/runtime/src/test/java/dev/vra/async/AsyncPermissionIntegrationTest.java",
+      "sha256": "4ad16fe9dffbf2e2f6b3941bd8645f3094f108e5296807e55ee8ef0c63e380e4"
+    },
+    {
+      "path": "backend/runtime/src/test/java/dev/vra/async/AsyncRoleBootstrap.java",
+      "sha256": "80aaf4d4c7fb02878b55dfdb2ff51ed2c6ff36d631d512d1603d702dc0424a20"
+    },
+    {
+      "path": "backend/runtime/src/test/java/dev/vra/async/AsyncVisibilityIntegrationTest.java",
+      "sha256": "31e172e295b204e2070f984517bcba27b2f9a098174b6e64c3cfaf1c2d84c506"
+    },
+    {
+      "path": "backend/runtime/src/test/java/dev/vra/async/DeliveryClaimIntegrationTest.java",
+      "sha256": "cc11f8469f940c3d1a97bfeab78e6e4f27e36a959b4bf248dca42f24f0e91c99"
+    },
+    {
+      "path": "backend/runtime/src/test/java/dev/vra/async/DeliveryStateIntegrationTest.java",
+      "sha256": "07246761e5be4677125fbb09d1e11d86db546f1c64a37e5a5c2b7f992b211aa8"
+    },
+    {
+      "path": "backend/runtime/src/test/java/dev/vra/async/ProducerOutboxIntegrationTest.java",
+      "sha256": "88f6301a210bb00fdd21ea138f71e438ce08d5c34fab1c0143f3311450c0fcec"
+    },
+    {
+      "path": "backend/runtime/src/test/java/dev/vra/async/ProjectionInboxIntegrationTest.java",
+      "sha256": "d615be8fc0eadfc28b35e7061d42432f8fff6c1ee9b98533b9a8c19a73d2e727"
+    },
+    {
+      "path": "backend/runtime/src/test/java/dev/vra/async/ProjectionRebuildIntegrationTest.java",
+      "sha256": "21038aafd0ebd855e812e9333e1df760d318ff5c9d0bfab6676e685f55d007c0"
+    },
+    {
+      "path": "backend/runtime/src/test/java/dev/vra/async/ReconciliationIntegrationTest.java",
+      "sha256": "6c22d1094f1a976794c7a8b77dfffbfe17551d81eeb2de5b1531b5d0d24a8ea2"
+    },
+    {
+      "path": "backend/runtime/src/test/java/dev/vra/async/RetryReplayIntegrationTest.java",
+      "sha256": "f72f451ef737750bcc9e4777fd1ecb3c898d2acfd548289be90379c621a44682"
+    },
+    {
+      "path": "backend/runtime/src/test/java/dev/vra/async/ValidationSimulatorIntegrationTest.java",
+      "sha256": "b17af32f9b8ffb7cbc225fd57cf0cad65a6707e3794840cc51b66b0e6f7d265a"
+    },
+    {
+      "path": "backend/runtime/src/test/java/dev/vra/async/WorkerProcessCrashIntegrationTest.java",
+      "sha256": "d1f1f77ec890b26dcf39e7958dca274b5a378cf899b99164d8c9ff7449fc664f"
+    },
+    {
+      "path": "backend/runtime/src/test/java/dev/vra/inventory/IdempotentReservationApplicationServiceIntegrationTest.java",
+      "sha256": "52d0e29beb42a4c371bbe1c23aeaeda56f4e7a251c2585d20134ed51f887ee1c"
+    },
+    {
+      "path": "backend/runtime/src/test/java/dev/vra/inventory/ReservationConcurrencyIntegrationTest.java",
+      "sha256": "819a2a3d5537c40c434c1c175928bb83b0d6a05ca51aa306f4e0b05498304ed4"
+    },
+    {
+      "path": "backend/runtime/src/test/java/dev/vra/inventory/ReservationHttpPostgresIntegrationTest.java",
+      "sha256": "cd0b20f07c48162e76c388dd36bb7e429339aa0bb5b2de271e1696adb9d4f5e4"
+    },
+    {
+      "path": "backend/runtime/src/test/java/dev/vra/inventory/ReservationIdempotencyRepositoryIntegrationTest.java",
+      "sha256": "aeb577cc289476554252af3849263b09e246286bfeeea9cfd316745f7b07ef03"
+    },
+    {
+      "path": "backend/runtime/src/test/java/dev/vra/inventory/ReservationTransactionIntegrationTest.java",
+      "sha256": "5b0b4e0dfdb79875eb87edd1969602982c2d92b4558e18c8e43686260bb94b03"
+    },
+    {
+      "path": "backend/runtime/src/test/java/dev/vra/platform/health/HealthProbePostgresIntegrationTest.java",
+      "sha256": "283b9bb7655679ffa029c83837db025cd7b9425b5dbfdf82a37f731d78aeb45c"
+    },
+    {
+      "path": "validation/poc-04/db/COLLECTOR_TEST.md",
+      "sha256": "09117a00f800c91748017234be2829a86828895ff26a119beb618327fddd50c1"
+    },
+    {
+      "path": "validation/poc-04/db/bootstrap-security-roles.sql",
+      "sha256": "976cf704687e5bf005de8943c706fdd996d801172c112d640c993e0b193407b5"
+    },
+    {
+      "path": "validation/poc-04/db/collector-test-entrypoint.sh",
+      "sha256": "90e6d263e9c121cb2b92dd80e45f49fef71452d5c6f52b1695752d1725fe73d0"
+    },
+    {
+      "path": "validation/poc-04/db/collector-test.compose.yaml",
+      "sha256": "db3c7dec5fa8b1f6e04512e30a4d6dc9b58e11316c53d3301b82a0712db62c47"
+    },
+    {
+      "path": "validation/poc-04/db/postgresql-collector-test.conf",
+      "sha256": "ba1f292521a67965fc3b8f03bf8d39cac460852cdb33f2d8e51d6809036440db"
+    }
+  ],
+  "migration_hash_comparison": [
+    {
+      "path": "backend/migration/src/main/resources/db/migration/V1__inventory_reservation_foundation.sql",
+      "current_sha256": "d804cbe5153b9a904ae0747af55c8295079d4a0c3edb4a38145ab5199b5b59c4",
+      "phase0_recorded_sha256": "d804cbe5153b9a904ae0747af55c8295079d4a0c3edb4a38145ab5199b5b59c4",
+      "head_sha256": "d804cbe5153b9a904ae0747af55c8295079d4a0c3edb4a38145ab5199b5b59c4",
+      "result": "EQUAL"
+    },
+    {
+      "path": "backend/migration/src/main/resources/db/migration/V2__inventory_reservation_idempotency.sql",
+      "current_sha256": "7bef750b59b7b77e8402f4f42c13c21c4e072092504b9f268bace9b72de8d2bb",
+      "phase0_recorded_sha256": "7bef750b59b7b77e8402f4f42c13c21c4e072092504b9f268bace9b72de8d2bb",
+      "head_sha256": "7bef750b59b7b77e8402f4f42c13c21c4e072092504b9f268bace9b72de8d2bb",
+      "result": "EQUAL"
+    },
+    {
+      "path": "backend/migration/src/main/resources/db/migration/V3__outbox_recovery.sql",
+      "current_sha256": "9edbd15ffe08ee4edafa3f549856ee38a782485c54db9c73e69d4263e5ca26b4",
+      "phase0_recorded_sha256": "9edbd15ffe08ee4edafa3f549856ee38a782485c54db9c73e69d4263e5ca26b4",
+      "head_sha256": "9edbd15ffe08ee4edafa3f549856ee38a782485c54db9c73e69d4263e5ca26b4",
+      "result": "EQUAL"
+    }
+  ],
+  "phase2_path_check_command": [
+    "rg",
+    "--files",
+    "--hidden",
+    "--glob",
+    "!.git",
+    "backend",
+    "validation/poc-04"
+  ],
+  "phase2_forbidden_paths_found": [],
+  "legacy_jdbc_repository": {
+    "path": "backend/runtime/src/main/java/dev/vra/inventory/adapter/out/persistence/JdbcReservationIdempotencyRepository.java",
+    "present_in_starting_HEAD": true,
+    "unchanged": true,
+    "sha256": "7d93cd8c0825b3b4cf9b6979d173167248ddde80eef45a0e6a18f667b2c388cd"
+  },
+  "git_state": {
+    "branch": "poc/04-security-auth",
+    "HEAD": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+    "origin/main": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+    "origin/poc/04-security-auth": "01256d96d85823740a8d6c3a3f99346afbdbef56"
+  },
+  "yaml_initial_validation": {
+    "command": [
+      "ruby",
+      "-e",
+      "require \"yaml\"; YAML.safe_load(File.read(\"validation/poc-04/db/collector-test.compose.yaml\"), permitted_classes: [], permitted_symbols: [], aliases: false); puts \"YAML parse PASS\""
+    ],
+    "exit_status": 1,
+    "failure": "Psych::BadAlias: Unknown alias: run_labels",
+    "interpretation": "Validator disallowed the valid Compose YAML anchor/alias; no source defect or source edit."
+  },
+  "yaml_corrected_validation": {
+    "command": [
+      "ruby",
+      "-e",
+      "require \"yaml\"; YAML.safe_load(File.read(\"validation/poc-04/db/collector-test.compose.yaml\"), permitted_classes: [], permitted_symbols: [], aliases: true); puts \"YAML parse PASS\""
+    ],
+    "exit_status": 0,
+    "stdout": "YAML parse PASS\n",
+    "stderr": ""
+  },
+  "shell_parse": {
+    "command": [
+      "bash",
+      "-n",
+      "validation/poc-04/db/collector-test-entrypoint.sh"
+    ],
+    "exit_status": 0
+  },
+  "historical_artifact_hash_comparisons": "PASS; all 12 previously archived/failure artifacts unchanged",
+  "all_27_source_hashes_unchanged": "PASS"
+}

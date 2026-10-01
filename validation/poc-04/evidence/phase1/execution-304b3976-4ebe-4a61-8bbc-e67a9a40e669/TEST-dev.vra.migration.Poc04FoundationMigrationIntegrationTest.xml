@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.vra.migration.Poc04FoundationMigrationIntegrationTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2026-09-30T16:35:35.574Z" hostname="MacBook-Air-khxng-SIwakorn.local" time="30.921">
+  <properties/>
+  <testcase name="freshV1ThroughV4ValidatesRerunsAndEnforcesPhaseOneBoundary()" classname="dev.vra.migration.Poc04FoundationMigrationIntegrationTest" time="30.918">
+    <failure message="org.opentest4j.AssertionFailedError: fresh container name absent before creation ==&gt; Unexpected exception type thrown, expected: &lt;com.github.dockerjava.api.exception.NotFoundException&gt; but was: &lt;java.lang.IllegalStateException&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: fresh container name absent before creation ==&gt; Unexpected exception type thrown, expected: &lt;com.github.dockerjava.api.exception.NotFoundException&gt; but was: &lt;java.lang.IllegalStateException&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:68)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:40)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3249)
+	at dev.vra.migration.Poc04FoundationMigrationIntegrationTest$Fixture.&lt;init&gt;(Poc04FoundationMigrationIntegrationTest.java:861)
+	at dev.vra.migration.Poc04FoundationMigrationIntegrationTest.freshV1ThroughV4ValidatesRerunsAndEnforcesPhaseOneBoundary(Poc04FoundationMigrationIntegrationTest.java:149)
+Caused by: java.lang.IllegalStateException: Could not connect to Ryuk at 192.168.106.3:32768
+	at org.testcontainers.utility.RyukResourceReaper.maybeStart(RyukResourceReaper.java:132)
+	at org.testcontainers.utility.RyukResourceReaper.init(RyukResourceReaper.java:42)
+	at org.testcontainers.DockerClientFactory.client(DockerClientFactory.java:245)
+	at org.testcontainers.DockerClientFactory$1.getDockerClient(DockerClientFactory.java:108)
+	at com.github.dockerjava.api.DockerClientDelegate.inspectContainerCmd(DockerClientDelegate.java:226)
+	at dev.vra.migration.Poc04FoundationMigrationIntegrationTest$Fixture.lambda$new$2(Poc04FoundationMigrationIntegrationTest.java:861)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:54)
+	... 4 more
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+]]></system-err>
+</testsuite>

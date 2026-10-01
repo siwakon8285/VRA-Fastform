@@ -1,0 +1,22 @@
+{
+  "status": "FAIL",
+  "test": "twoFreshInstancesHaveDistinctIdsAndRestartRetainsPhysicalIdentity",
+  "source_path": "backend/migration/src/test/java/dev/vra/migration/Poc04FoundationMigrationIntegrationTest.java",
+  "source_line": 162,
+  "exception_type": "org.postgresql.util.PSQLException",
+  "exception_message": "org.postgresql.util.PSQLException: Connection to 127.0.0.1:32853 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.",
+  "sqlstate": "NOT CAPTURED by JUnit XML",
+  "counts": {
+    "tests": 1,
+    "skipped": 0,
+    "failures": 1,
+    "errors": 0
+  },
+  "JUnit_XML": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/focused-identity-results/migration/integrationTest/TEST-dev.vra.migration.Poc04FoundationMigrationIntegrationTest.xml",
+  "JUnit_XML_sha256": "484f55b3432da1009a71948b59309a3f6059e5ce9c0e6a9fe58c6405ede97833",
+  "observed_port_before": "32853",
+  "observed_port_after": "32854",
+  "JDBC_attempted_port": "32853",
+  "later_proofs": "NOT EXECUTED after mandatory STOP",
+  "source_fix_after_failure": false
+}

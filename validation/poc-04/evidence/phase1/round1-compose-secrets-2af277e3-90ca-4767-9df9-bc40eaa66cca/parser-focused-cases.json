@@ -1,0 +1,120 @@
+{
+  "status": "PASS",
+  "python_syntax_AST": "PASS",
+  "accepted": 3,
+  "denied": 24,
+  "results": [
+    {
+      "case": "accepted-exact-form-0",
+      "result": "PASS"
+    },
+    {
+      "case": "accepted-exact-form-1",
+      "result": "PASS"
+    },
+    {
+      "case": "accepted-exact-form-2",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-0",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-1",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-2",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-3",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-4",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-5",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-6",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-7",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-8",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-9",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-10",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-11",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-12",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-13",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-14",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-15",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-16",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-17",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-18",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-19",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-20",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-21",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-22",
+      "result": "PASS"
+    },
+    {
+      "case": "denied-malformed-or-unapproved-23",
+      "result": "PASS"
+    }
+  ],
+  "actual_compose_model": "validation/poc-04/evidence/phase1/compose-secrets-diagnosis-2021b28f-c9cc-4fbe-b527-535a078cdae4/normalized-secrets-model.json",
+  "actual_expected_target": "/run/secrets/postgres_admin_password",
+  "prior_equality_rejects_actual_absolute_target": true,
+  "script_sha256": "dfe90a39be85b0c38b3bfe8c8b41c07c5a7c5aaa85b8321dd87f80f8805f291e"
+}

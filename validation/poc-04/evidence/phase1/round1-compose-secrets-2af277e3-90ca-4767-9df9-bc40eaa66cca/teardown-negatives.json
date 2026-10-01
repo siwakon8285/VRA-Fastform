@@ -1,0 +1,817 @@
+[
+  {
+    "allocations": [
+      {
+        "database_instance_id": "77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf",
+        "labels": {
+          "dev.vra.database_instance_id": "77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf",
+          "dev.vra.environment": "TEST",
+          "dev.vra.logical_name": "teardown-probe/0",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+          "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+        },
+        "logical_name": "teardown-probe/0",
+        "ordinal": 0
+      },
+      {
+        "database_instance_id": "e72cadde-5ea1-5065-b9c7-895826c2885d",
+        "labels": {
+          "dev.vra.database_instance_id": "e72cadde-5ea1-5065-b9c7-895826c2885d",
+          "dev.vra.environment": "TEST",
+          "dev.vra.logical_name": "teardown-probe/3",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+          "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+        },
+        "logical_name": "teardown-probe/3",
+        "ordinal": 3
+      },
+      {
+        "database_instance_id": "4c18499f-9389-5fc0-8ae7-7631fc706b5b",
+        "labels": {
+          "dev.vra.database_instance_id": "4c18499f-9389-5fc0-8ae7-7631fc706b5b",
+          "dev.vra.environment": "TEST",
+          "dev.vra.logical_name": "teardown-probe/1",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+          "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+        },
+        "logical_name": "teardown-probe/1",
+        "ordinal": 1
+      },
+      {
+        "database_instance_id": "e54d86ae-20e5-586d-b55a-97b1c9c0fef6",
+        "labels": {
+          "dev.vra.database_instance_id": "e54d86ae-20e5-586d-b55a-97b1c9c0fef6",
+          "dev.vra.environment": "TEST",
+          "dev.vra.logical_name": "teardown-probe/2",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+          "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+        },
+        "logical_name": "teardown-probe/2",
+        "ordinal": 2
+      },
+      {
+        "database_instance_id": "f0136705-e5d3-5e3a-951f-9289f14837f8",
+        "labels": {
+          "dev.vra.database_instance_id": "f0136705-e5d3-5e3a-951f-9289f14837f8",
+          "dev.vra.environment": "TEST",
+          "dev.vra.logical_name": "teardown-probe/4",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+          "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+        },
+        "logical_name": "teardown-probe/4",
+        "ordinal": 4
+      },
+      {
+        "database_instance_id": "b31d0657-3fd6-5feb-a563-e06e990caa86",
+        "labels": {
+          "dev.vra.database_instance_id": "b31d0657-3fd6-5feb-a563-e06e990caa86",
+          "dev.vra.environment": "TEST",
+          "dev.vra.logical_name": "teardown-probe/5",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+          "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+        },
+        "logical_name": "teardown-probe/5",
+        "ordinal": 5
+      },
+      {
+        "database_instance_id": "005576a0-3894-562a-a1cb-b9604ed01e1b",
+        "labels": {
+          "dev.vra.database_instance_id": "005576a0-3894-562a-a1cb-b9604ed01e1b",
+          "dev.vra.environment": "TEST",
+          "dev.vra.logical_name": "teardown-probe/6",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+          "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+        },
+        "logical_name": "teardown-probe/6",
+        "ordinal": 6
+      },
+      {
+        "database_instance_id": "a05a328c-ce87-5a1d-b096-29333262f6c1",
+        "labels": {
+          "dev.vra.database_instance_id": "a05a328c-ce87-5a1d-b096-29333262f6c1",
+          "dev.vra.environment": "TEST",
+          "dev.vra.logical_name": "teardown-probe/7",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+          "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+        },
+        "logical_name": "teardown-probe/7",
+        "ordinal": 7
+      },
+      {
+        "database_instance_id": "d04c67cb-448f-5290-bdd1-ea90c4c6ef97",
+        "labels": {
+          "dev.vra.database_instance_id": "d04c67cb-448f-5290-bdd1-ea90c4c6ef97",
+          "dev.vra.environment": "TEST",
+          "dev.vra.logical_name": "teardown-probe/8",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+          "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+        },
+        "logical_name": "teardown-probe/8",
+        "ordinal": 8
+      },
+      {
+        "database_instance_id": "e9bf8a6f-5212-5ccc-867b-512569c38c2b",
+        "labels": {
+          "dev.vra.database_instance_id": "e9bf8a6f-5212-5ccc-867b-512569c38c2b",
+          "dev.vra.environment": "TEST",
+          "dev.vra.logical_name": "teardown-probe/9",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+          "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+        },
+        "logical_name": "teardown-probe/9",
+        "ordinal": 9
+      },
+      {
+        "database_instance_id": "0c37b852-cf53-5707-8725-71cd7c36072d",
+        "labels": {
+          "dev.vra.database_instance_id": "0c37b852-cf53-5707-8725-71cd7c36072d",
+          "dev.vra.environment": "TEST",
+          "dev.vra.logical_name": "teardown-probe/10",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+          "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+        },
+        "logical_name": "teardown-probe/10",
+        "ordinal": 10
+      },
+      {
+        "database_instance_id": "802a751e-3220-59a3-be99-fd4fac214d5c",
+        "labels": {
+          "dev.vra.database_instance_id": "802a751e-3220-59a3-be99-fd4fac214d5c",
+          "dev.vra.environment": "TEST",
+          "dev.vra.logical_name": "teardown-probe/11",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+          "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+        },
+        "logical_name": "teardown-probe/11",
+        "ordinal": 11
+      },
+      {
+        "database_instance_id": "f084b084-e492-5cd1-b149-5122ff8e6187",
+        "labels": {
+          "dev.vra.database_instance_id": "f084b084-e492-5cd1-b149-5122ff8e6187",
+          "dev.vra.environment": "TEST",
+          "dev.vra.logical_name": "teardown-probe/12",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+          "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+        },
+        "logical_name": "teardown-probe/12",
+        "ordinal": 12
+      },
+      {
+        "database_instance_id": "55706e8f-89ba-56fd-8733-c284d175ab77",
+        "labels": {
+          "dev.vra.database_instance_id": "55706e8f-89ba-56fd-8733-c284d175ab77",
+          "dev.vra.environment": "TEST",
+          "dev.vra.logical_name": "teardown-probe/13",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+          "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+        },
+        "logical_name": "teardown-probe/13",
+        "ordinal": 13
+      },
+      {
+        "database_instance_id": "f03776b7-6336-5d1e-ba88-de1db23626b7",
+        "labels": {
+          "dev.vra.database_instance_id": "f03776b7-6336-5d1e-ba88-de1db23626b7",
+          "dev.vra.environment": "TEST",
+          "dev.vra.logical_name": "teardown-probe/14",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+          "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+        },
+        "logical_name": "teardown-probe/14",
+        "ordinal": 14
+      },
+      {
+        "database_instance_id": "17af9f51-e2d9-5b43-a28e-cad75910500c",
+        "labels": {
+          "dev.vra.database_instance_id": "17af9f51-e2d9-5b43-a28e-cad75910500c",
+          "dev.vra.environment": "TEST",
+          "dev.vra.logical_name": "teardown-probe/15",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+          "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+        },
+        "logical_name": "teardown-probe/15",
+        "ordinal": 15
+      }
+    ],
+    "exact_uuidv5": true,
+    "exit_statuses": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "operation": "independent_process_allocator_proof",
+    "processes": 16,
+    "status": "PASS",
+    "unique_ordinals": true
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "create",
+      "--label",
+      "dev.vra.database_instance_id=ec5d14fc-9796-52a8-b8ef-c7f43b6a396a",
+      "--label",
+      "dev.vra.environment=TEST",
+      "--label",
+      "dev.vra.logical_name=teardown-probe/other-run-sentinel",
+      "--label",
+      "dev.vra.poc=04",
+      "--label",
+      "dev.vra.run_id=259bf7e8-44b5-4a9f-a5c5-0d283819233a",
+      "--label",
+      "dev.vra.source_content_sha256=9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+      "--label",
+      "dev.vra.source_head=01256d96d85823740a8d6c3a3f99346afbdbef56",
+      "--label",
+      "dev.vra.tool_manifest_sha256=5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+      "vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a"
+    ],
+    "exit_status": 0,
+    "stderr": "",
+    "stdout": "vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a\n"
+  },
+  {
+    "exact_id": "vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a",
+    "operation": "trusted_negative_fixture_created",
+    "snapshot": {
+      "created": "2026-10-02T00:08:59+07:00",
+      "id": "vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a",
+      "kind": "volume",
+      "labels": {
+        "dev.vra.database_instance_id": "ec5d14fc-9796-52a8-b8ef-c7f43b6a396a",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "teardown-probe/other-run-sentinel",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "259bf7e8-44b5-4a9f-a5c5-0d283819233a",
+        "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a/_data",
+      "name": "vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a"
+    }
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "create",
+      "--label",
+      "dev.vra.database_instance_id=77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf",
+      "--label",
+      "dev.vra.environment=TEST",
+      "--label",
+      "dev.vra.logical_name=teardown-probe/0",
+      "--label",
+      "dev.vra.poc=04",
+      "--label",
+      "dev.vra.run_id=2af277e3-90ca-4767-9df9-bc40eaa66cca",
+      "--label",
+      "dev.vra.source_content_sha256=9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+      "--label",
+      "dev.vra.source_head=01256d96d85823740a8d6c3a3f99346afbdbef56",
+      "--label",
+      "dev.vra.tool_manifest_sha256=5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+      "vra-poc04-negative-current-2af277e3-90ca-4767-9df9-bc40eaa66cca-volume"
+    ],
+    "exit_status": 0,
+    "stderr": "",
+    "stdout": "vra-poc04-negative-current-2af277e3-90ca-4767-9df9-bc40eaa66cca-volume\n"
+  },
+  {
+    "exact_id": "vra-poc04-negative-current-2af277e3-90ca-4767-9df9-bc40eaa66cca-volume",
+    "operation": "trusted_negative_fixture_created",
+    "snapshot": {
+      "created": "2026-10-02T00:08:59+07:00",
+      "id": "vra-poc04-negative-current-2af277e3-90ca-4767-9df9-bc40eaa66cca-volume",
+      "kind": "volume",
+      "labels": {
+        "dev.vra.database_instance_id": "77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "teardown-probe/0",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+        "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-negative-current-2af277e3-90ca-4767-9df9-bc40eaa66cca-volume/_data",
+      "name": "vra-poc04-negative-current-2af277e3-90ca-4767-9df9-bc40eaa66cca-volume"
+    }
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "register",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-negative-current-2af277e3-90ca-4767-9df9-bc40eaa66cca-volume",
+      "--instance",
+      "77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf"
+    ],
+    "exit_status": 0,
+    "stderr": "",
+    "stdout": "{\"authorized_run_id\": \"2af277e3-90ca-4767-9df9-bc40eaa66cca\", \"created\": \"2026-10-02T00:08:59+07:00\", \"database_instance_id\": \"77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf\", \"expected_labels\": {\"dev.vra.database_instance_id\": \"77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf\", \"dev.vra.environment\": \"TEST\", \"dev.vra.logical_name\": \"teardown-probe/0\", \"dev.vra.poc\": \"04\", \"dev.vra.run_id\": \"2af277e3-90ca-4767-9df9-bc40eaa66cca\", \"dev.vra.source_content_sha256\": \"9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494\", \"dev.vra.source_head\": \"01256d96d85823740a8d6c3a3f99346afbdbef56\", \"dev.vra.tool_manifest_sha256\": \"5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8\"}, \"id\": \"vra-poc04-negative-current-2af277e3-90ca-4767-9df9-bc40eaa66cca-volume\", \"kind\": \"volume\", \"labels\": {\"dev.vra.database_instance_id\": \"77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf\", \"dev.vra.environment\": \"TEST\", \"dev.vra.logical_name\": \"teardown-probe/0\", \"dev.vra.poc\": \"04\", \"dev.vra.run_id\": \"2af277e3-90ca-4767-9df9-bc40eaa66cca\", \"dev.vra.source_content_sha256\": \"9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494\", \"dev.vra.source_head\": \"01256d96d85823740a8d6c3a3f99346afbdbef56\", \"dev.vra.tool_manifest_sha256\": \"5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8\"}, \"logical_name\": \"teardown-probe/0\", \"mountpoint\": \"/var/lib/docker/volumes/vra-poc04-negative-current-2af277e3-90ca-4767-9df9-bc40eaa66cca-volume/_data\", \"name\": \"vra-poc04-negative-current-2af277e3-90ca-4767-9df9-bc40eaa66cca-volume\"}\n"
+  },
+  {
+    "command": [
+      "docker",
+      "network",
+      "create",
+      "--label",
+      "dev.vra.database_instance_id=77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf",
+      "--label",
+      "dev.vra.environment=TEST",
+      "--label",
+      "dev.vra.logical_name=teardown-probe/0",
+      "--label",
+      "dev.vra.poc=04",
+      "--label",
+      "dev.vra.run_id=2af277e3-90ca-4767-9df9-bc40eaa66cca",
+      "--label",
+      "dev.vra.source_content_sha256=9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+      "--label",
+      "dev.vra.source_head=01256d96d85823740a8d6c3a3f99346afbdbef56",
+      "--label",
+      "dev.vra.tool_manifest_sha256=5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+      "vra-poc04-negative-current-2af277e3-90ca-4767-9df9-bc40eaa66cca-network"
+    ],
+    "exit_status": 0,
+    "stderr": "",
+    "stdout": "319eb6e3f0b9c8fa1964da2acafb39b467124d1a97a32cdd2c1cf41d97c970d8\n"
+  },
+  {
+    "exact_id": "319eb6e3f0b9c8fa1964da2acafb39b467124d1a97a32cdd2c1cf41d97c970d8",
+    "operation": "trusted_negative_fixture_created",
+    "snapshot": {
+      "created": "2026-10-02T00:08:59.546899382+07:00",
+      "id": "319eb6e3f0b9c8fa1964da2acafb39b467124d1a97a32cdd2c1cf41d97c970d8",
+      "kind": "network",
+      "labels": {
+        "dev.vra.database_instance_id": "77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "teardown-probe/0",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+        "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "mountpoint": null,
+      "name": "vra-poc04-negative-current-2af277e3-90ca-4767-9df9-bc40eaa66cca-network"
+    }
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "register",
+      "--kind",
+      "network",
+      "--id",
+      "319eb6e3f0b9c8fa1964da2acafb39b467124d1a97a32cdd2c1cf41d97c970d8",
+      "--instance",
+      "77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf"
+    ],
+    "exit_status": 0,
+    "stderr": "",
+    "stdout": "{\"authorized_run_id\": \"2af277e3-90ca-4767-9df9-bc40eaa66cca\", \"created\": \"2026-10-02T00:08:59.546899382+07:00\", \"database_instance_id\": \"77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf\", \"expected_labels\": {\"dev.vra.database_instance_id\": \"77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf\", \"dev.vra.environment\": \"TEST\", \"dev.vra.logical_name\": \"teardown-probe/0\", \"dev.vra.poc\": \"04\", \"dev.vra.run_id\": \"2af277e3-90ca-4767-9df9-bc40eaa66cca\", \"dev.vra.source_content_sha256\": \"9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494\", \"dev.vra.source_head\": \"01256d96d85823740a8d6c3a3f99346afbdbef56\", \"dev.vra.tool_manifest_sha256\": \"5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8\"}, \"id\": \"319eb6e3f0b9c8fa1964da2acafb39b467124d1a97a32cdd2c1cf41d97c970d8\", \"kind\": \"network\", \"labels\": {\"dev.vra.database_instance_id\": \"77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf\", \"dev.vra.environment\": \"TEST\", \"dev.vra.logical_name\": \"teardown-probe/0\", \"dev.vra.poc\": \"04\", \"dev.vra.run_id\": \"2af277e3-90ca-4767-9df9-bc40eaa66cca\", \"dev.vra.source_content_sha256\": \"9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494\", \"dev.vra.source_head\": \"01256d96d85823740a8d6c3a3f99346afbdbef56\", \"dev.vra.tool_manifest_sha256\": \"5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8\"}, \"logical_name\": \"teardown-probe/0\", \"mountpoint\": null, \"name\": \"vra-poc04-negative-current-2af277e3-90ca-4767-9df9-bc40eaa66cca-network\"}\n"
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-negative-current-2af277e3-90ca-4767-9df9-bc40eaa66cca-volume"
+    ],
+    "exit_status": 0,
+    "stderr": "",
+    "stdout": "{\"absent\": true, \"already_absent\": false, \"authorized_run_id\": \"2af277e3-90ca-4767-9df9-bc40eaa66cca\", \"id\": \"vra-poc04-negative-current-2af277e3-90ca-4767-9df9-bc40eaa66cca-volume\", \"kind\": \"volume\"}\n"
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "319eb6e3f0b9c8fa1964da2acafb39b467124d1a97a32cdd2c1cf41d97c970d8"
+    ],
+    "exit_status": 0,
+    "stderr": "",
+    "stdout": "{\"absent\": true, \"already_absent\": false, \"authorized_run_id\": \"2af277e3-90ca-4767-9df9-bc40eaa66cca\", \"id\": \"319eb6e3f0b9c8fa1964da2acafb39b467124d1a97a32cdd2c1cf41d97c970d8\", \"kind\": \"network\"}\n"
+  },
+  {
+    "after": {
+      "created": "2026-10-02T00:08:59+07:00",
+      "id": "vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a",
+      "kind": "volume",
+      "labels": {
+        "dev.vra.database_instance_id": "ec5d14fc-9796-52a8-b8ef-c7f43b6a396a",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "teardown-probe/other-run-sentinel",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "259bf7e8-44b5-4a9f-a5c5-0d283819233a",
+        "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a/_data",
+      "name": "vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a"
+    },
+    "authorized_exact_resources": [
+      [
+        "volume",
+        "vra-poc04-negative-current-2af277e3-90ca-4767-9df9-bc40eaa66cca-volume"
+      ],
+      [
+        "network",
+        "319eb6e3f0b9c8fa1964da2acafb39b467124d1a97a32cdd2c1cf41d97c970d8"
+      ]
+    ],
+    "before": {
+      "created": "2026-10-02T00:08:59+07:00",
+      "id": "vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a",
+      "kind": "volume",
+      "labels": {
+        "dev.vra.database_instance_id": "ec5d14fc-9796-52a8-b8ef-c7f43b6a396a",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "teardown-probe/other-run-sentinel",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "259bf7e8-44b5-4a9f-a5c5-0d283819233a",
+        "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a/_data",
+      "name": "vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a"
+    },
+    "operation": "current_run_teardown_sentinel_preserved",
+    "sentinel_exact_id": "vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a",
+    "status": "PASS"
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a"
+    ],
+    "exit_status": 3,
+    "stderr": "",
+    "stdout": "{\"denied\": true, \"docker_delete_called\": false, \"id\": \"vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a\", \"kind\": \"volume\", \"reason\": \"RESOURCE_NOT_IN_AUTHORIZED_CURRENT_RUN_LEDGER\"}\n"
+  },
+  {
+    "denial": {
+      "denied": true,
+      "docker_delete_called": false,
+      "id": "vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a",
+      "kind": "volume",
+      "reason": "RESOURCE_NOT_IN_AUTHORIZED_CURRENT_RUN_LEDGER"
+    },
+    "operation": "wrong_id_denied_before_delete",
+    "resource_unchanged": true,
+    "status": "PASS"
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "create",
+      "--label",
+      "dev.vra.database_instance_id=77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf",
+      "--label",
+      "dev.vra.environment=TEST",
+      "--label",
+      "dev.vra.logical_name=teardown-probe/0",
+      "--label",
+      "dev.vra.poc=04",
+      "--label",
+      "dev.vra.run_id=2af277e3-90ca-4767-9df9-bc40eaa66cca",
+      "--label",
+      "dev.vra.source_content_sha256=9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+      "--label",
+      "dev.vra.source_head=01256d96d85823740a8d6c3a3f99346afbdbef56",
+      "--label",
+      "dev.vra.tool_manifest_sha256=5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+      "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca"
+    ],
+    "exit_status": 0,
+    "stderr": "",
+    "stdout": "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca\n"
+  },
+  {
+    "exact_id": "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca",
+    "operation": "trusted_negative_fixture_created",
+    "snapshot": {
+      "created": "2026-10-02T00:09:00+07:00",
+      "id": "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca",
+      "kind": "volume",
+      "labels": {
+        "dev.vra.database_instance_id": "77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "teardown-probe/0",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+        "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca/_data",
+      "name": "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca"
+    }
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "register",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca",
+      "--instance",
+      "77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf"
+    ],
+    "exit_status": 0,
+    "stderr": "",
+    "stdout": "{\"authorized_run_id\": \"2af277e3-90ca-4767-9df9-bc40eaa66cca\", \"created\": \"2026-10-02T00:09:00+07:00\", \"database_instance_id\": \"77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf\", \"expected_labels\": {\"dev.vra.database_instance_id\": \"77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf\", \"dev.vra.environment\": \"TEST\", \"dev.vra.logical_name\": \"teardown-probe/0\", \"dev.vra.poc\": \"04\", \"dev.vra.run_id\": \"2af277e3-90ca-4767-9df9-bc40eaa66cca\", \"dev.vra.source_content_sha256\": \"9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494\", \"dev.vra.source_head\": \"01256d96d85823740a8d6c3a3f99346afbdbef56\", \"dev.vra.tool_manifest_sha256\": \"5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8\"}, \"id\": \"vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca\", \"kind\": \"volume\", \"labels\": {\"dev.vra.database_instance_id\": \"77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf\", \"dev.vra.environment\": \"TEST\", \"dev.vra.logical_name\": \"teardown-probe/0\", \"dev.vra.poc\": \"04\", \"dev.vra.run_id\": \"2af277e3-90ca-4767-9df9-bc40eaa66cca\", \"dev.vra.source_content_sha256\": \"9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494\", \"dev.vra.source_head\": \"01256d96d85823740a8d6c3a3f99346afbdbef56\", \"dev.vra.tool_manifest_sha256\": \"5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8\"}, \"logical_name\": \"teardown-probe/0\", \"mountpoint\": \"/var/lib/docker/volumes/vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca/_data\", \"name\": \"vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca\"}\n"
+  },
+  {
+    "absent_after": true,
+    "command": [
+      "docker",
+      "volume",
+      "rm",
+      "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca"
+    ],
+    "exact_id": "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca",
+    "exit_status": 0,
+    "independent_before": {
+      "created": "2026-10-02T00:09:00+07:00",
+      "id": "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca",
+      "kind": "volume",
+      "labels": {
+        "dev.vra.database_instance_id": "77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "teardown-probe/0",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+        "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca/_data",
+      "name": "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca"
+    },
+    "operation": "explicit_admin_exact_negative_fixture_cleanup",
+    "purpose": "prepare controlled wrong-label substitution"
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "create",
+      "--label",
+      "dev.vra.database_instance_id=77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf",
+      "--label",
+      "dev.vra.environment=TEST",
+      "--label",
+      "dev.vra.logical_name=teardown-probe/0",
+      "--label",
+      "dev.vra.poc=04",
+      "--label",
+      "dev.vra.run_id=2af277e3-90ca-4767-9df9-bc40eaa66cca",
+      "--label",
+      "dev.vra.source_head=01256d96d85823740a8d6c3a3f99346afbdbef56",
+      "--label",
+      "dev.vra.tool_manifest_sha256=5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+      "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca"
+    ],
+    "exit_status": 0,
+    "stderr": "",
+    "stdout": "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca\n"
+  },
+  {
+    "exact_id": "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca",
+    "operation": "trusted_negative_fixture_created",
+    "snapshot": {
+      "created": "2026-10-02T00:09:01+07:00",
+      "id": "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca",
+      "kind": "volume",
+      "labels": {
+        "dev.vra.database_instance_id": "77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "teardown-probe/0",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca/_data",
+      "name": "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca"
+    }
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca"
+    ],
+    "exit_status": 3,
+    "stderr": "",
+    "stdout": "{\"denied\": true, \"docker_delete_called\": false, \"id\": \"vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca\", \"kind\": \"volume\", \"reason\": \"LIVE_OWNERSHIP_LABEL_MISMATCH\"}\n"
+  },
+  {
+    "after": {
+      "created": "2026-10-02T00:09:01+07:00",
+      "id": "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca",
+      "kind": "volume",
+      "labels": {
+        "dev.vra.database_instance_id": "77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "teardown-probe/0",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca/_data",
+      "name": "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca"
+    },
+    "before": {
+      "created": "2026-10-02T00:09:01+07:00",
+      "id": "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca",
+      "kind": "volume",
+      "labels": {
+        "dev.vra.database_instance_id": "77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "teardown-probe/0",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca/_data",
+      "name": "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca"
+    },
+    "denial": {
+      "denied": true,
+      "docker_delete_called": false,
+      "id": "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca",
+      "kind": "volume",
+      "reason": "LIVE_OWNERSHIP_LABEL_MISMATCH"
+    },
+    "operation": "wrong_missing_label_denied_before_delete",
+    "status": "PASS"
+  },
+  {
+    "absent_after": true,
+    "command": [
+      "docker",
+      "volume",
+      "rm",
+      "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca"
+    ],
+    "exact_id": "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca",
+    "exit_status": 0,
+    "independent_before": {
+      "created": "2026-10-02T00:09:01+07:00",
+      "id": "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca",
+      "kind": "volume",
+      "labels": {
+        "dev.vra.database_instance_id": "77e5f27f-ac98-57e3-ac9e-e2f2b0c47cbf",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "teardown-probe/0",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca/_data",
+      "name": "vra-poc04-negative-wrong-label-2af277e3-90ca-4767-9df9-bc40eaa66cca"
+    },
+    "operation": "explicit_admin_exact_negative_fixture_cleanup",
+    "purpose": "remove preserved wrong-label negative candidate"
+  },
+  {
+    "absent_after": true,
+    "command": [
+      "docker",
+      "volume",
+      "rm",
+      "vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a"
+    ],
+    "exact_id": "vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a",
+    "exit_status": 0,
+    "independent_before": {
+      "created": "2026-10-02T00:08:59+07:00",
+      "id": "vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a",
+      "kind": "volume",
+      "labels": {
+        "dev.vra.database_instance_id": "ec5d14fc-9796-52a8-b8ef-c7f43b6a396a",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "teardown-probe/other-run-sentinel",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "259bf7e8-44b5-4a9f-a5c5-0d283819233a",
+        "dev.vra.source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a/_data",
+      "name": "vra-poc04-negative-sentinel-259bf7e8-44b5-4a9f-a5c5-0d283819233a"
+    },
+    "operation": "explicit_admin_exact_negative_fixture_cleanup",
+    "purpose": "remove preserved other-run negative sentinel"
+  },
+  {
+    "all_current_exact_ids_absent": true,
+    "operation": "focused_teardown_negative_proof",
+    "sentinel_absent_after_separate_admin_cleanup": true,
+    "status": "PASS",
+    "wrong_label_candidate_absent_after_separate_admin_cleanup": true
+  }
+]

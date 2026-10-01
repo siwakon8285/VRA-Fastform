@@ -1,0 +1,50 @@
+{
+  "command": [
+    "./gradlew",
+    "--no-daemon",
+    "--init-script",
+    "../validation/poc-04/test-support/runner.init.gradle",
+    ":migration:integrationTest",
+    "--tests",
+    "dev.vra.migration.Poc04FoundationMigrationIntegrationTest.twoFreshInstancesHaveDistinctIdsAndRestartRetainsPhysicalIdentity",
+    "--rerun-tasks"
+  ],
+  "cwd": "/Users/siwakornbundi/Project/VRA-Fastform/backend",
+  "started_at": "2026-10-01T14:27:07.864652+00:00",
+  "environment": {
+    "JAVA_HOME": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-jdk-x0q7h_vo/jdk-21.0.12.1+1/Contents/Home",
+    "DOCKER_HOST": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+    "VRA_POC04_DISPOSABLE_TEST_DOCKER_ENDPOINT": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+    "TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE": "/var/run/docker.sock",
+    "TESTCONTAINERS_HOST_OVERRIDE": "127.0.0.1",
+    "TESTCONTAINERS_RYUK_DISABLED": "false",
+    "TESTCONTAINERS_RYUK_CONTAINER_IMAGE": "docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0",
+    "TESTCONTAINERS_TINYIMAGE_CONTAINER_IMAGE": "docker.io/library/alpine@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989",
+    "VRA_POC04_RUN_ID": "6222c112-8ea7-4b28-8092-abc84f88270f",
+    "VRA_POC04_SOURCE_HEAD": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+    "VRA_POC04_SOURCE_CONTENT_SHA256": "bacf3084b406f644924aefadfb1fcafeec950f561d6e6a47357f8095712a6660",
+    "VRA_POC04_TOOL_MANIFEST_SHA256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+    "VRA_POC04_EXPECTED_DAEMON_ID": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+    "VRA_POC04_RESOURCE_EVIDENCE": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/resource-identities.jsonl",
+    "VRA_POC04_EXTERNAL_TC_JAR": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-round1-restart-uwvdlqp8/external-tc.jar",
+    "VRA_POC04_DAEMON_INSPECT_DIRECTORY": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/daemon-inspect",
+    "VRA_POC04_RUN_STATE": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-round1-restart-uwvdlqp8/run-state.json",
+    "VRA_POC04_RUN_HARNESS": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+    "VRA_POC04_SUPPORT_DIRECTORY": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-round1-restart-uwvdlqp8",
+    "VRA_POC04_EVIDENCE_DIRECTORY": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f"
+  },
+  "source_content_sha256": "bacf3084b406f644924aefadfb1fcafeec950f561d6e6a47357f8095712a6660",
+  "external_jar_sha256": "ca5bc967d7aebf9555231ef9677f9357866499e2e4c9ebef86a30d3de9a23f7d",
+  "exit_status": 0,
+  "completed_at": "2026-10-01T14:27:26.927824+00:00",
+  "suites": [
+    {
+      "suite": "migration:integrationTest",
+      "tests": 1,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "artifact": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/focused-identity-results/migration/integrationTest"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+--- Poc04FoundationMigrationIntegrationTest.before-image-remediation.java
++++ Poc04FoundationMigrationIntegrationTest.java
+@@ -13,6 +13,8 @@
+ import org.testcontainers.postgresql.PostgreSQLContainer;
+ import org.testcontainers.utility.DockerImageName;
+ import org.testcontainers.utility.MountableFile;
++import tools.jackson.databind.JsonNode;
++import tools.jackson.databind.json.JsonMapper;
+ 
+ import java.net.URL;
+ import java.net.URI;
+@@ -34,6 +36,8 @@
+ import java.util.Set;
+ import java.util.TreeSet;
+ import java.util.UUID;
++import java.util.concurrent.CompletableFuture;
++import java.util.concurrent.TimeUnit;
+ import java.util.concurrent.atomic.AtomicInteger;
+ import java.util.stream.Collectors;
+ 
+@@ -855,9 +859,22 @@
+                                 new Volume("/var/lib/postgresql/data"), AccessMode.rw));
+                     });
+             try {
++                // The running container's ImageManifestDescriptor requires Engine API 1.49.
++                System.setProperty("api.version", "1.49");
+                 assertEquals(URI.create(declaredEndpoint), DockerClientFactory.instance().getTransportConfig().getDockerHost(),
+                         "selected Docker transport must match the declared dedicated TEST daemon before client initialization");
+                 var client = database.getDockerClient();
++                var daemon = client.infoCmd().exec();
++                assertEquals(System.getenv("VRA_POC04_EXPECTED_DAEMON_ID"), daemon.getId(),
++                        "actual daemon must match the independently attested disposable TEST daemon");
++                assertEquals("linux", daemon.getOsType());
++                String platform = switch (daemon.getArchitecture()) {
++                    case "arm64", "aarch64" -> "linux/arm64/v8";
++                    case "amd64", "x86_64" -> "linux/amd64";
++                    default -> throw new AssertionError("unrecorded TEST PostgreSQL execution platform");
++                };
++                JsonNode selectedPin = verifyPostgresManifestLinkage(platform);
++                database.withCreateContainerCmdModifier(command -> command.withPlatform(platform));
+                 assertThrows(NotFoundException.class, () -> client.inspectContainerCmd(containerName).exec(), "fresh container name absent before creation");
+                 assertThrows(NotFoundException.class, () -> client.inspectVolumeCmd(volumeName).exec(), "fresh PGDATA volume absent before creation");
+                 assertThrows(NotFoundException.class, () -> client.inspectNetworkCmd().withNetworkId(networkName).exec(), "fresh network absent before creation");
+@@ -888,14 +905,16 @@
+                 for (var label : labels.entrySet()) assertEquals(label.getValue(), inspection.getConfig().getLabels().get(label.getKey()));
+                 assertTrue(inspection.getNetworkSettings().getNetworks().values().stream()
+                         .anyMatch(attached -> network.getId().equals(attached.getNetworkID())), "actual dedicated TEST network");
+-                var actualImage = database.getDockerClient().inspectImageCmd(inspection.getImageId()).exec();
+-                assertEquals("linux", actualImage.getOs());
+-                String expectedConfigDigest = switch (actualImage.getArch()) {
+-                    case "arm64" -> "sha256:97432f980da100ebd3e419711efee84e1e97a966d62c035286a07f239ddb4d9c";
+-                    case "amd64" -> "sha256:212aeeeb8faaef6c46498d86cbec6b9344d8d9492996b174664ff82c562ab685";
+-                    default -> throw new AssertionError("unsupported TEST PostgreSQL image platform");
+-                };
+-                assertEquals(expectedConfigDigest, actualImage.getId(), "selected-platform config digest from Phase-0 pin");
++                Object descriptor = inspection.getRawValues().get("ImageManifestDescriptor");
++                assertNotNull(descriptor, "actual running-container platform manifest descriptor required");
++                JsonNode actualManifest = JsonMapper.builder().build().valueToTree(descriptor);
++                assertEquals("application/vnd.oci.image.manifest.v1+json", actualManifest.path("mediaType").asString());
++                assertEquals(selectedPin.path("digest").asString(), actualManifest.path("digest").asString(),
++                        "actual running-container platform manifest identity");
++                assertEquals(selectedPin.path("response").path("response_bytes").asLong(), actualManifest.path("size").asLong());
++                assertEquals(selectedPin.path("platform"), actualManifest.path("platform"),
++                        "actual execution platform must exactly match the reviewed selected platform");
++                System.out.println("POC04 actual execution platform/manifest PASS: " + platform + " " + actualManifest.path("digest").asString());
+                 assertTrue(inspection.getMounts().stream().noneMatch(mount -> Objects.toString(mount.getSource(), "").contains("docker.sock")),
+                         "TEST PostgreSQL has no Docker socket mount");
+                 assertEquals(1, inspection.getMounts().size(), "only the recorded fresh PGDATA volume is mounted");
+@@ -910,6 +929,7 @@
+                 assertTrue(value("SELECT system_identifier::text FROM pg_control_system()").matches("[0-9]+"),
+                         "actual PostgreSQL cluster identity established before bootstrap");
+                 assertEquals("170011", value("SHOW server_version_num"));
++                System.out.println("POC04 PostgreSQL runtime version PASS: server_version_num=170011 (17.11)");
+                 priorBootstrap("validation/poc-01/db/bootstrap.sql");
+                 priorBootstrap("validation/poc-03/db/bootstrap-async-roles.sql");
+                 securityBootstrap();
+@@ -921,6 +941,80 @@
+             } catch (Throwable failure) {
+                 try { removeOwnedResources(); } catch (Throwable cleanupFailure) { failure.addSuppressed(cleanupFailure); }
+                 throw failure;
++            }
++        }
++
++        private JsonNode verifyPostgresManifestLinkage(String platform) throws Exception {
++            byte[] pins = Files.readAllBytes(repositoryRoot().resolve("validation/poc-04/tooling/image-pins.json"));
++            assertEquals("340b51d2910f023eef2f7b8a0a4c4065c4baa8d95b2a95c5aaa6c76b888d123a",
++                    HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(pins)),
++                    "frozen Phase-0 image pin bytes must remain unchanged");
++            JsonNode postgres = null;
++            for (JsonNode record : JsonMapper.builder().build().readTree(pins).path("records")) {
++                if (record.path("id").asString().equals("postgresql_test")) postgres = record;
++            }
++            assertNotNull(postgres, "reviewed PostgreSQL image record required");
++            assertEquals(POSTGRES_IMAGE, postgres.path("execution_identifier").asString());
++            JsonNode selected = null;
++            for (JsonNode candidate : postgres.path("platform_manifests")) {
++                JsonNode p = candidate.path("platform");
++                String name = p.path("os").asString() + "/" + p.path("architecture").asString()
++                        + (p.has("variant") ? "/" + p.path("variant").asString() : "");
++                if (platform.equals(name)) {
++                    assertTrue(selected == null, "exactly one reviewed record for the selected platform");
++                    selected = candidate;
++                }
++            }
++            assertNotNull(selected, "unknown/unrecorded platforms fail closed");
++            JsonNode index = immutableManifest(postgres.path("index_digest").asString(),
++                    postgres.path("index_response").path("response_bytes").asInt());
++            assertEquals("application/vnd.oci.image.index.v1+json", index.path("mediaType").asString());
++            int matches = 0;
++            for (JsonNode candidate : index.path("manifests")) {
++                if (selected.path("platform").equals(candidate.path("platform"))) {
++                    matches++;
++                    assertEquals(selected.path("digest").asString(), candidate.path("digest").asString());
++                    assertEquals("application/vnd.oci.image.manifest.v1+json", candidate.path("mediaType").asString());
++                    assertEquals(selected.path("response").path("response_bytes").asLong(), candidate.path("size").asLong());
++                }
++            }
++            assertEquals(1, matches, "exact index-to-platform-manifest linkage");
++            JsonNode manifest = immutableManifest(selected.path("digest").asString(),
++                    selected.path("response").path("response_bytes").asInt());
++            assertEquals("application/vnd.oci.image.manifest.v1+json", manifest.path("mediaType").asString());
++            JsonNode config = manifest.path("config");
++            assertEquals("application/vnd.oci.image.config.v1+json", config.path("mediaType").asString());
++            assertEquals(selected.path("config_digest").asString(), config.path("digest").asString(),
++                    "config identity is the digest linked by the exact immutable platform manifest, never Docker image Id");
++            assertEquals(selected.path("config_response").path("response_bytes").asLong(), config.path("size").asLong());
++            System.out.println("POC04 index/platform/manifest/config linkage PASS: " + POSTGRES_IMAGE + " "
++                    + platform + " " + selected.path("digest").asString() + " " + config.path("digest").asString());
++            return selected;
++        }
++
++        private JsonNode immutableManifest(String digest, int expectedBytes) throws Exception {
++            ProcessBuilder inspection = new ProcessBuilder("docker", "buildx", "imagetools", "inspect",
++                    "docker.io/library/postgres@" + digest, "--raw")
++                    .redirectError(ProcessBuilder.Redirect.DISCARD);
++            inspection.environment().put("DOCKER_HOST", declaredEndpoint);
++            Process process = inspection.start();
++            CompletableFuture<byte[]> output = new CompletableFuture<>();
++            Thread.startVirtualThread(() -> {
++                try { output.complete(process.getInputStream().readNBytes(16_385)); }
++                catch (Exception failure) { output.completeExceptionally(failure); }
++            });
++            try {
++                byte[] raw = output.get(45, TimeUnit.SECONDS);
++                assertTrue(process.waitFor(5, TimeUnit.SECONDS), "immutable manifest inspection must terminate");
++                assertEquals(0, process.exitValue(), "immutable manifest inspection must succeed");
++                assertEquals(expectedBytes, raw.length, "exact immutable manifest response length; no normalization");
++                assertEquals(digest, "sha256:" + HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(raw)),
++                        "raw immutable manifest bytes must hash to the reviewed digest");
++                JsonNode manifest = JsonMapper.builder().build().readTree(raw);
++                assertEquals(2, manifest.path("schemaVersion").asInt());
++                return manifest;
++            } finally {
++                if (process.isAlive()) process.destroyForcibly();
+             }
+         }
+ 

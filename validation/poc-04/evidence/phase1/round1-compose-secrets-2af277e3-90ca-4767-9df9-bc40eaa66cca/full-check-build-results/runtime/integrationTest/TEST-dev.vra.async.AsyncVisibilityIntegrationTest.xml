@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.vra.async.AsyncVisibilityIntegrationTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-01T16:53:26.710Z" hostname="MacBook-Air-khxng-SIwakorn.local" time="3.343">
+  <properties/>
+  <testcase name="normalAndRecoveryOnlyExhaustionRemainDistinctInImmutableHistory()" classname="dev.vra.async.AsyncVisibilityIntegrationTest" time="0.552"/>
+  <testcase name="observerCanReadButCannotMutateOrEscalate()" classname="dev.vra.async.AsyncVisibilityIntegrationTest" time="0.161"/>
+  <testcase name="allCurrentStatesActivityAgeAndSafeHistoryMatchPostgresql()" classname="dev.vra.async.AsyncVisibilityIntegrationTest" time="0.603"/>
+  <system-out><![CDATA[23:53:26.711 [Test worker] INFO org.testcontainers.utility.ImageNameSubstitutor -- Using docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f as a substitute image for postgres:17.11 (using image substitutor: POC04 external reviewed digest substitution)
+23:53:26.711 [Test worker] INFO tc.docker.io/library/postgres@sha256:d74eea... -- Creating container for image: docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f
+23:53:27.497 [Test worker] INFO tc.docker.io/library/postgres@sha256:d74eea... -- Container docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f is starting: 5c66df8a080403d26a27c39b7c3a338108823795fbfabddb6ac907e9593c1ccf
+23:53:28.086 [Test worker] INFO tc.docker.io/library/postgres@sha256:d74eea... -- Container docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f started in PT1.375137S
+23:53:28.088 [Test worker] INFO tc.docker.io/library/postgres@sha256:d74eea... -- Container is started (JDBC URL: jdbc:postgresql://127.0.0.1:33016/vra_poc01?loggerLevel=OFF)
+23:53:28.516 [Test worker] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:postgresql://127.0.0.1:33016/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+23:53:28.523 [Test worker] INFO org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Schema history table "vra"."flyway_schema_history" does not exist yet
+23:53:28.524 [Test worker] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.002s)
+23:53:28.528 [Test worker] INFO org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Creating Schema History table "vra"."flyway_schema_history" ...
+23:53:28.543 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "vra": << Empty Schema >>
+23:53:28.546 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "vra" to version "1 - inventory reservation foundation"
+23:53:28.557 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "vra" to version "2 - inventory reservation idempotency"
+23:53:28.575 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "vra" to version "3 - outbox recovery"
+23:53:28.640 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "vra" to version "4 - poc04 identity security foundation"
+23:53:28.675 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Successfully applied 4 migrations to schema "vra", now at version v4 (execution time 00:00.096s)
+23:53:28.684 [Test worker] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:postgresql://127.0.0.1:33016/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+23:53:28.692 [Test worker] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.003s)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

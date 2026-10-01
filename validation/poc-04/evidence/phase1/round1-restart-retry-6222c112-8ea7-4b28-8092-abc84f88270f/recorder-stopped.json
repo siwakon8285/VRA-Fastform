@@ -1,0 +1,6 @@
+{
+  "exact_run_stop_file": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-round1-restart-uwvdlqp8/recorder.stop",
+  "stop_file_exists": true,
+  "resource_recorder_running_pids": [],
+  "process_check_exit_status": 0
+}

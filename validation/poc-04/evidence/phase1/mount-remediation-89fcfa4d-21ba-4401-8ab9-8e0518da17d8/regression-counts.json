@@ -1,0 +1,66 @@
+{
+  ":migration:test": {
+    "tests": 4,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "artifacts": [
+      "regression-results/migration/test/TEST-dev.vra.migration.Poc04FoundationMigrationIntegrationTest.xml"
+    ]
+  },
+  ":migration:integrationTest": {
+    "tests": 18,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "artifacts": [
+      "regression-results/migration/integrationTest/TEST-dev.vra.migration.MigrationSecurityIntegrationTest.xml",
+      "regression-results/migration/integrationTest/TEST-dev.vra.migration.OutboxMigrationSecurityIntegrationTest.xml",
+      "regression-results/migration/integrationTest/TEST-dev.vra.migration.Poc04FoundationMigrationIntegrationTest.xml"
+    ]
+  },
+  ":runtime:test": {
+    "tests": 56,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "artifacts": [
+      "regression-results/runtime/test/TEST-dev.vra.async.AsyncPropertiesTest.xml",
+      "regression-results/runtime/test/TEST-dev.vra.async.DeliveryRetryPolicyTest.xml",
+      "regression-results/runtime/test/TEST-dev.vra.async.ReconciliationPolicyTest.xml",
+      "regression-results/runtime/test/TEST-dev.vra.async.ReservationCreatedEventCodecTest.xml",
+      "regression-results/runtime/test/TEST-dev.vra.async.architecture.AsyncArchitectureTest.xml",
+      "regression-results/runtime/test/TEST-dev.vra.inventory.adapter.in.web.InventoryReservationControllerTest.xml",
+      "regression-results/runtime/test/TEST-dev.vra.inventory.application.ReservationApplicationServiceTest.xml",
+      "regression-results/runtime/test/TEST-dev.vra.inventory.application.ReservationRequestFingerprintTest.xml",
+      "regression-results/runtime/test/TEST-dev.vra.inventory.architecture.InventoryArchitectureTest.xml",
+      "regression-results/runtime/test/TEST-dev.vra.inventory.domain.InventoryReservationTest.xml",
+      "regression-results/runtime/test/TEST-dev.vra.platform.configuration.RuntimeDatabasePropertiesTest.xml"
+    ]
+  },
+  ":runtime:integrationTest": {
+    "tests": 102,
+    "skipped": 0,
+    "failures": 38,
+    "errors": 0,
+    "artifacts": [
+      "regression-results/runtime/integrationTest/TEST-dev.vra.async.AsyncPermissionIntegrationTest.xml",
+      "regression-results/runtime/integrationTest/TEST-dev.vra.async.AsyncVisibilityIntegrationTest.xml",
+      "regression-results/runtime/integrationTest/TEST-dev.vra.async.DeliveryClaimIntegrationTest.xml",
+      "regression-results/runtime/integrationTest/TEST-dev.vra.async.DeliveryStateIntegrationTest.xml",
+      "regression-results/runtime/integrationTest/TEST-dev.vra.async.ProducerOutboxIntegrationTest.xml",
+      "regression-results/runtime/integrationTest/TEST-dev.vra.async.ProjectionInboxIntegrationTest.xml",
+      "regression-results/runtime/integrationTest/TEST-dev.vra.async.ProjectionRebuildIntegrationTest.xml",
+      "regression-results/runtime/integrationTest/TEST-dev.vra.async.ReconciliationIntegrationTest.xml",
+      "regression-results/runtime/integrationTest/TEST-dev.vra.async.RetryReplayIntegrationTest.xml",
+      "regression-results/runtime/integrationTest/TEST-dev.vra.async.ValidationSimulatorIntegrationTest.xml",
+      "regression-results/runtime/integrationTest/TEST-dev.vra.async.WorkerProcessCrashIntegrationTest.xml",
+      "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest.xml",
+      "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationConcurrencyIntegrationTest.xml",
+      "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationHttpPostgresIntegrationTest.xml",
+      "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest.xml",
+      "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationTransactionIntegrationTest.xml",
+      "regression-results/runtime/integrationTest/TEST-dev.vra.platform.health.HealthProbePostgresIntegrationTest.xml"
+    ]
+  }
+}

@@ -36,7 +36,7 @@ class MigrationSecurityIntegrationTest {
     @Test
     void provesMigrationOwnershipAndRuntimeLeastPrivilege() throws Exception {
         PostgreSQLContainer postgres =
-                new PostgreSQLContainer("postgres:17.11")
+                new dev.vra.poc04.external.RunOwnedPostgreSQLContainer("postgres:17.11")
                         .withDatabaseName(DATABASE)
                         .withUsername(ADMIN_USER)
                         .withPassword(ADMIN_PASSWORD);
@@ -61,7 +61,7 @@ class MigrationSecurityIntegrationTest {
             MigrationRunner migrationRunner = new MigrationRunner();
 
             assertEquals(
-                    3,
+                    4,
                     migrationRunner.migrate(
                             postgres.getJdbcUrl(),
                             MIGRATOR_USER,
@@ -118,8 +118,8 @@ class MigrationSecurityIntegrationTest {
     }
 
     @Test
-    void upgradesActualVersionOneDatabaseThroughVersionThree() throws Exception {
-        try (PostgreSQLContainer postgres = new PostgreSQLContainer("postgres:17.11")
+    void upgradesActualVersionOneDatabaseThroughVersionFour() throws Exception {
+        try (PostgreSQLContainer postgres = new dev.vra.poc04.external.RunOwnedPostgreSQLContainer("postgres:17.11")
                 .withDatabaseName(DATABASE)
                 .withUsername(ADMIN_USER)
                 .withPassword(ADMIN_PASSWORD)) {
@@ -148,7 +148,7 @@ class MigrationSecurityIntegrationTest {
             }
 
             MigrationRunner runner = new MigrationRunner();
-            assertEquals(2, runner.migrate(
+            assertEquals(3, runner.migrate(
                     postgres.getJdbcUrl(), MIGRATOR_USER, MIGRATOR_PASSWORD));
             runner.validate(postgres.getJdbcUrl(), MIGRATOR_USER, MIGRATOR_PASSWORD);
             verifyTableOwner(postgres, "inventory_reservation_idempotency", "vra_owner");

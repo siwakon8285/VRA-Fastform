@@ -1,0 +1,176 @@
+{
+  "status": "PASS",
+  "docker": {
+    "version": {
+      "command": [
+        "docker",
+        "version",
+        "--format",
+        "{{json .}}"
+      ],
+      "exit_status": 0,
+      "result": {
+        "Client": {
+          "Version": "29.8.1",
+          "ApiVersion": "1.54",
+          "DefaultAPIVersion": "1.56",
+          "GitCommit": "4a63305",
+          "GoVersion": "go1.26.8",
+          "Os": "darwin",
+          "Arch": "arm64",
+          "BuildTime": "Tue Sep 15 16:24:48 2026",
+          "Context": "default"
+        },
+        "Server": {
+          "Platform": {
+            "Name": "Docker Engine - Community"
+          },
+          "Version": "29.5.2",
+          "ApiVersion": "1.54",
+          "MinAPIVersion": "1.40",
+          "Os": "linux",
+          "Arch": "arm64",
+          "Components": [
+            {
+              "Name": "Engine",
+              "Version": "29.5.2",
+              "Details": {
+                "ApiVersion": "1.54",
+                "Arch": "arm64",
+                "BuildTime": "Wed May 20 14:39:25 2026",
+                "Experimental": "false",
+                "GitCommit": "568f755",
+                "GoVersion": "go1.26.3",
+                "KernelVersion": "6.8.0-117-generic",
+                "MinAPIVersion": "1.40",
+                "Module": "github.com/moby/moby/v2",
+                "ModuleVersion": "v2.0.0+unknown",
+                "Os": "linux"
+              }
+            },
+            {
+              "Name": "containerd",
+              "Version": "v2.2.4",
+              "Details": {
+                "GitCommit": "193637f7ee8ae5f5aa5248f49e7baa3e6164966e"
+              }
+            },
+            {
+              "Name": "runc",
+              "Version": "1.3.5",
+              "Details": {
+                "GitCommit": "v1.3.5-0-g488fc13e"
+              }
+            },
+            {
+              "Name": "docker-init",
+              "Version": "0.19.0",
+              "Details": {
+                "GitCommit": "de40ad0"
+              }
+            }
+          ],
+          "GitCommit": "568f755",
+          "GoVersion": "go1.26.3",
+          "KernelVersion": "6.8.0-117-generic",
+          "BuildTime": "2026-05-20T14:39:25.000000000+00:00"
+        }
+      }
+    },
+    "info": {
+      "command": [
+        "docker",
+        "info",
+        "--format",
+        "{{json .}}"
+      ],
+      "exit_status": 0,
+      "result": {
+        "ID": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+        "Name": "colima-vra-poc04-test",
+        "ServerVersion": "29.5.2",
+        "OSType": "linux",
+        "Architecture": "aarch64",
+        "DefaultAddressPools": [
+          {
+            "Base": "10.241.0.0/16",
+            "Size": 24
+          }
+        ]
+      }
+    },
+    "context": {
+      "command": [
+        "docker",
+        "context",
+        "show"
+      ],
+      "exit_status": 0,
+      "result": "default\n"
+    },
+    "containers": {
+      "command": [
+        "docker",
+        "ps",
+        "-aq",
+        "--no-trunc"
+      ],
+      "exit_status": 0,
+      "result": ""
+    },
+    "volumes": {
+      "command": [
+        "docker",
+        "volume",
+        "ls",
+        "-q"
+      ],
+      "exit_status": 0,
+      "result": ""
+    },
+    "networks": {
+      "command": [
+        "docker",
+        "network",
+        "ls",
+        "--no-trunc",
+        "--format",
+        "{{json .}}"
+      ],
+      "exit_status": 0,
+      "result": "{\"CreatedAt\":\"2026-10-01 14:45:16.427040294 +0700 +07\",\"Driver\":\"bridge\",\"ID\":\"c0297a5ce0209b66940193c63975087c4355c0e38d6517ac408d4fbf452c9adf\",\"IPv4\":\"true\",\"IPv6\":\"false\",\"Internal\":\"false\",\"Labels\":\"\",\"Name\":\"bridge\",\"Scope\":\"local\"}\n{\"CreatedAt\":\"2026-09-30 23:19:05.623366465 +0700 +07\",\"Driver\":\"host\",\"ID\":\"71919e79066c633ba4548aa04103de53d1e31552893e0cec59e0ba812b5f4d22\",\"IPv4\":\"true\",\"IPv6\":\"false\",\"Internal\":\"false\",\"Labels\":\"\",\"Name\":\"host\",\"Scope\":\"local\"}\n{\"CreatedAt\":\"2026-09-30 23:19:05.61941459 +0700 +07\",\"Driver\":\"null\",\"ID\":\"0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a\",\"IPv4\":\"true\",\"IPv6\":\"false\",\"Internal\":\"false\",\"Labels\":\"\",\"Name\":\"none\",\"Scope\":\"local\"}\n"
+    }
+  },
+  "safe_environment": {
+    "JAVA_HOME": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-jdk-x0q7h_vo/jdk-21.0.12.1+1/Contents/Home",
+    "DOCKER_HOST": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+    "VRA_POC04_DISPOSABLE_TEST_DOCKER_ENDPOINT": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+    "TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE": "/var/run/docker.sock",
+    "TESTCONTAINERS_HOST_OVERRIDE": "127.0.0.1",
+    "TESTCONTAINERS_RYUK_DISABLED": "false",
+    "TESTCONTAINERS_RYUK_CONTAINER_IMAGE": "docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0",
+    "TESTCONTAINERS_TINYIMAGE_CONTAINER_IMAGE": "docker.io/library/alpine@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989",
+    "VRA_POC04_RUN_ID": "4a1aae34-4914-4392-986f-cc725e4d1500",
+    "VRA_POC04_SOURCE_HEAD": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+    "VRA_POC04_SOURCE_CONTENT_SHA256": "35f01843bc1a01d9266c8d40c4f43cb916e61ffad5adb70ca1eedbc7632b43c5",
+    "VRA_POC04_TOOL_MANIFEST_SHA256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+    "VRA_POC04_EXPECTED_DAEMON_ID": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+    "VRA_POC04_RESOURCE_EVIDENCE": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/evidence/phase1/round1-collector-path-4a1aae34-4914-4392-986f-cc725e4d1500/resource-identities.jsonl",
+    "VRA_POC04_EXTERNAL_TC_JAR": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-collector-remediation-mz7isvwr/external-tc.jar",
+    "VRA_POC04_DAEMON_INSPECT_DIRECTORY": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/evidence/phase1/round1-collector-path-4a1aae34-4914-4392-986f-cc725e4d1500/daemon-inspect",
+    "VRA_POC04_RUN_STATE": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-collector-remediation-mz7isvwr/run-state.json",
+    "VRA_POC04_RUN_HARNESS": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+    "VRA_POC04_SUPPORT_DIRECTORY": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-collector-remediation-mz7isvwr",
+    "VRA_POC04_EVIDENCE_DIRECTORY": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/evidence/phase1/round1-collector-path-4a1aae34-4914-4392-986f-cc725e4d1500",
+    "VRA_POC04_RUNTIME_REGRESSION_PASSED": "4a1aae34-4914-4392-986f-cc725e4d1500"
+  },
+  "previous_report_sha256": "f307560dcc352c89d8f5a436ad7b6872e0c4eb4883bf3d14bb3f66fbe0bcb2cc",
+  "previous_binding_sha256": "f966107b0e79f832954ea3933990a71ad686aacc6dd77df7926c1c3e7d7e5455",
+  "only_changed_source": [
+    "validation/poc-04/scripts/collector-boundary-proof.py"
+  ],
+  "changed_script_sha256": "ca0139d63b19cc29a2392aeb99e6ca4c9e9998fb486f63c7f58d1f2a5b59f288",
+  "syntax_ast_parse": "PASS",
+  "git_diff_check_exit_status": 0,
+  "staged_paths": []
+}

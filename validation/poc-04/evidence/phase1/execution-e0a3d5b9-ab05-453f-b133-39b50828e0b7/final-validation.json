@@ -1,0 +1,49 @@
+{
+  "scope": "Preserved unfiltered pre-delivery scan and reviewed false-positive evidence",
+  "changed_files_scanned": 55,
+  "gitleaks_version": "8.30.1",
+  "command": [
+    "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-gitleaks-3bpa0z2g/gitleaks",
+    "dir",
+    "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-final-report-scan-pclfq_i2/source",
+    "--no-banner",
+    "--redact=100",
+    "--report-format",
+    "json",
+    "--report-path",
+    "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-final-report-scan-pclfq_i2/findings.json",
+    "--no-color",
+    "--log-level",
+    "error"
+  ],
+  "exit_status": 1,
+  "finding_count": 1,
+  "findings": [
+    {
+      "rule_id": "generic-api-key",
+      "file": "validation/poc-04/evidence/phase1/execution-e0a3d5b9-ab05-453f-b133-39b50828e0b7/artifact-validation.json",
+      "start_line": 212,
+      "end_line": 212,
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "classification": "FALSE_POSITIVE_KNOWN_GIT_COMMIT_IDENTIFIER",
+      "verified_against_actual_git_HEAD": true,
+      "matched_field": "git_state entry for the security branch remote reference",
+      "secret_material_found": false
+    }
+  ],
+  "reviewed_secret_scan_result": "NO_SECRET_MATERIAL_DETECTED",
+  "ignore_rule_added": false,
+  "source_modified": false,
+  "validation": {
+    "source_hashes_unchanged": 27,
+    "previous_report_prefix_preserved": true,
+    "prior_failed_artifacts_unchanged": 12,
+    "json_parsed": 18,
+    "jsonl_parsed": 2,
+    "xml_parsed": 2,
+    "whitespace_exceptions": "Only the two verbatim Gradle outputs retain line 2 trailing whitespace. All final newlines and CR checks pass.",
+    "git_diff_check_exit_status": 0,
+    "staged_paths": []
+  },
+  "note": "A final repeat includes this preserved validation artifact and final report. No tool PASS/zero-finding result is inferred from the raw exit status."
+}

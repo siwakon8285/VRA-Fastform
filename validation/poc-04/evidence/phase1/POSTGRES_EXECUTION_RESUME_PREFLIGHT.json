@@ -1,0 +1,123 @@
+{
+  "DOCKER_HOST_present": false,
+  "attempt": "Resume after Docker Desktop startup",
+  "commands": [
+    {
+      "command": [
+        "docker",
+        "version"
+      ],
+      "exit_status": 0,
+      "recorded_at_utc": "2026-09-30T16:06:43.491504+00:00"
+    },
+    {
+      "command": [
+        "docker",
+        "info",
+        "--format",
+        "{{json .}}"
+      ],
+      "exit_status": 0,
+      "recorded_at_utc": "2026-09-30T16:06:43.585123+00:00"
+    },
+    {
+      "command": [
+        "docker",
+        "context",
+        "show"
+      ],
+      "exit_status": 0,
+      "recorded_at_utc": "2026-09-30T16:06:43.598456+00:00"
+    },
+    {
+      "command": [
+        "docker",
+        "context",
+        "inspect",
+        "desktop-linux",
+        "--format",
+        "{{json .Endpoints.docker}}"
+      ],
+      "exit_status": 0,
+      "recorded_at_utc": "2026-09-30T16:06:43.612098+00:00"
+    },
+    {
+      "command": [
+        "docker",
+        "ps",
+        "-a",
+        "--format",
+        "{{json .}}"
+      ],
+      "exit_status": 0,
+      "recorded_at_utc": "2026-09-30T16:06:43.671615+00:00"
+    }
+  ],
+  "containers_safe_inventory": [
+    {
+      "ID": "64e5f012e12b",
+      "Image": "postgres:17.11",
+      "Names": "vra-poc00-postgres-1",
+      "State": "running",
+      "Status": "Up 7 minutes (healthy)"
+    },
+    {
+      "ID": "edda161ed574",
+      "Image": "postgres:18",
+      "Names": "x_flyanyway-db_test-1",
+      "State": "exited",
+      "Status": "Exited (0) 9 days ago"
+    },
+    {
+      "ID": "420cdfadb9a0",
+      "Image": "postgres:18",
+      "Names": "x_flyanyway-db-1",
+      "State": "exited",
+      "Status": "Exited (0) 7 days ago"
+    },
+    {
+      "ID": "e5cb5ffceb8b",
+      "Image": "postgres:17",
+      "Names": "hotel-db-1",
+      "State": "exited",
+      "Status": "Exited (0) 5 weeks ago"
+    },
+    {
+      "ID": "995c9adfead4",
+      "Image": "pgvector/pgvector:pg16",
+      "Names": "enterprise_ai_db",
+      "State": "exited",
+      "Status": "Exited (0) 7 minutes ago"
+    }
+  ],
+  "database_identity": null,
+  "dedicated_disposable_daemon_attestation": "BLOCKED; existing root-Compose database and unrelated project containers present",
+  "dedicated_endpoint_present": false,
+  "docker_access": "PASS",
+  "docker_context": "desktop-linux",
+  "docker_endpoint": {
+    "Host": "unix:///Users/siwakornbundi/.docker/run/docker.sock",
+    "SkipTLSVerify": false
+  },
+  "docker_info": {
+    "Architecture": "aarch64",
+    "Containers": 5,
+    "ContainersRunning": 1,
+    "ContainersStopped": 4,
+    "ID": "13f77a94-7a9b-48e3-af0b-8f1915e2183e",
+    "Name": "docker-desktop",
+    "OSType": "linux",
+    "OperatingSystem": "Docker Desktop",
+    "ServerVersion": "29.8.1"
+  },
+  "docker_version_output": "Client:\n Version:           29.8.1\n API version:       1.56\n Go version:        go1.26.8\n Git commit:        4a63305\n Built:             Tue Sep 15 16:24:48 2026\n OS/Arch:           darwin/arm64\n Context:           desktop-linux\n\nServer: Docker Desktop 4.93.0 (240920)\n Engine:\n  Version:          29.8.1\n  API version:      1.56 (minimum version 1.40)\n  Go version:       go1.26.8\n  Git commit:       464cd50\n  Built:            Tue Sep 15 16:25:04 2026\n  OS/Arch:          linux/arm64\n  Experimental:     false\n containerd:\n  Version:          v2.3.5\n  GitCommit:        1294c24a7da8e5a793ed378161673abe94118892\n runc:\n  Version:          1.5.1\n  GitCommit:        v1.5.1-0-g8f2685a4\n docker-init:\n  Version:          0.19.0\n  GitCommit:        de40ad0\n",
+  "phase2_started": false,
+  "postgresql_tests_executed": 0,
+  "previous_failed_preflight_sha256": "6eee43e49f81d5bbb1db5eea0f60d25539be7c05dc309bec516b6e2bec98357f",
+  "previous_report_sha256": "f7edcd95bee9bdafc0e6e33f5985b94d632c2a393df6affd3022e63e49a6036f",
+  "recorded_at_utc": "2026-09-30T16:06:43.671708+00:00",
+  "relevant_environment_names": [],
+  "schema_version": 1,
+  "source_changes": false,
+  "testcontainers_selected_endpoint": null
+}

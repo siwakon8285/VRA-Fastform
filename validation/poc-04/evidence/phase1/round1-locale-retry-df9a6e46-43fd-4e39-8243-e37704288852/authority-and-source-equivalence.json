@@ -1,0 +1,12 @@
+{
+  "all_272_source_paths_compared": true,
+  "changed_path": [
+    "backend/migration/src/test/java/dev/vra/migration/Poc04FoundationMigrationIntegrationTest.java"
+  ],
+  "all_other_271_sources_and_authorities_byte_unchanged": true,
+  "spec_plan_expected_hashes": {
+    "validation/poc-04/SHARED_SPEC.md": "c035e627c087b41cb4533b00f0bdaf8fa208a5b55881358cf1f85b6809b2ed2d",
+    "validation/poc-04/IMPLEMENTATION_PLAN.md": "c169ad62d947841ec08987d2561f16b75935168d99ea46a34143004d3da3d7c5"
+  },
+  "result": "PASS"
+}

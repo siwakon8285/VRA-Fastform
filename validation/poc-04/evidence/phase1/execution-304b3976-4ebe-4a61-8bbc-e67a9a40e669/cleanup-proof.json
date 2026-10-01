@@ -1,0 +1,78 @@
+{
+  "recorded_at_utc": "2026-09-30T16:40:11.576645+00:00",
+  "DOCKER_HOST": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+  "expected_daemon_id": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+  "commands": [
+    {
+      "command": [
+        "docker",
+        "info",
+        "--format",
+        "{{.ID}}"
+      ],
+      "exit_status": 0,
+      "stdout": "14c8ff26-86d1-4c0b-88a6-560be91a65ea\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "inspect",
+        "6a1a4a02ccbf76e4eec136c7db3702910c3a92a892df526cbb7520878fd0135c"
+      ],
+      "exit_status": 1,
+      "stdout": "[]\n",
+      "stderr": "error: no such object: 6a1a4a02ccbf76e4eec136c7db3702910c3a92a892df526cbb7520878fd0135c\n"
+    },
+    {
+      "command": [
+        "docker",
+        "ps",
+        "-a",
+        "--no-trunc",
+        "--format",
+        "{{.ID}} {{.Names}}"
+      ],
+      "exit_status": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "volume",
+        "ls",
+        "--format",
+        "{{.Name}}"
+      ],
+      "exit_status": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "ls",
+        "--no-trunc",
+        "--format",
+        "{{.ID}} {{.Name}}"
+      ],
+      "exit_status": 0,
+      "stdout": "d6169038310792000aceb4c7cc43936dc2580869b05ebdee378244932b90279c bridge\n71919e79066c633ba4548aa04103de53d1e31552893e0cec59e0ba812b5f4d22 host\n0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a none\n",
+      "stderr": ""
+    }
+  ],
+  "explicit_cleanup_mutations": [],
+  "cleanup_description": "Testcontainers removed its sole Ryuk helper after the failing test JVM ended. No blanket prune or administrator removal was used.",
+  "postgresql_container_created": false,
+  "postgresql_volume_created": false,
+  "postgresql_network_created": false,
+  "sentinel_wrong_label_teardown_proof": "NOT EXECUTED; stopped on first failing expectation",
+  "docker_desktop_touched": false,
+  "diagnostic_note": "Initial evidence-helper assertion used case-sensitive No such object; Docker emitted lowercase. Raw absence result was preserved and checked case-insensitively; no resource mutation.",
+  "run_container_absent": true,
+  "containers_remaining": 0,
+  "volumes_remaining": 0,
+  "new_networks_remaining": 0
+}

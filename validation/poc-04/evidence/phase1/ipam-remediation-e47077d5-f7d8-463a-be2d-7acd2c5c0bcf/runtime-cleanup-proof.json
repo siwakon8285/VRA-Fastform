@@ -1,0 +1,3268 @@
+{
+  "command": [
+    "python3",
+    "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-ipam-support-cjjo53er/runtime-exact-cleanup.py"
+  ],
+  "timestamp_utc": "2026-10-01T07:58:29.019227+00:00",
+  "daemon_id": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+  "docker_host": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+  "daemon_default_address_pools": [
+    {
+      "Base": "10.241.0.0/16",
+      "Size": 24
+    }
+  ],
+  "baseline_network_ids": [
+    "0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a",
+    "71919e79066c633ba4548aa04103de53d1e31552893e0cec59e0ba812b5f4d22",
+    "c0297a5ce0209b66940193c63975087c4355c0e38d6517ac408d4fbf452c9adf"
+  ],
+  "resource_count_by_kind": {
+    "container": 21,
+    "volume": 20,
+    "network": 20
+  },
+  "resources": [
+    {
+      "kind": "container",
+      "id": "de1998dabec09bff2ed980e23305ed1513fc007f7a003d8e917554e760827914",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "e90cff78-2e5e-57d8-a462-c5f9cd4cb305",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0",
+          "name": "testcontainers-ryuk-d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.ryuk": "true",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "de1998dabec09bff2ed980e23305ed1513fc007f7a003d8e917554e760827914",
+        "kind": "docker_event",
+        "time_nano": 1790841153546943170,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "de1998dabec09bff2ed980e23305ed1513fc007f7a003d8e917554e760827914"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "e90cff78-2e5e-57d8-a462-c5f9cd4cb305",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.ryuk": "true",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "id": "8ec8be383cf53dc9d591c9cd12c9448a1ec54d5036573e54efae86ee5565591e",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "fda30782-9b53-529a-af5e-c2dc92ff29ca",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20001",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "8ec8be383cf53dc9d591c9cd12c9448a1ec54d5036573e54efae86ee5565591e",
+        "kind": "docker_event",
+        "time_nano": 1790841153823869894,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "8ec8be383cf53dc9d591c9cd12c9448a1ec54d5036573e54efae86ee5565591e"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "fda30782-9b53-529a-af5e-c2dc92ff29ca",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "id": "ca1b41d319bc6f130c86bfcd66bd93a885b5a3d4206a0828e567411508313fd5",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "727c8530-de93-5b5e-95cc-1a056f988640",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20002",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "ca1b41d319bc6f130c86bfcd66bd93a885b5a3d4206a0828e567411508313fd5",
+        "kind": "docker_event",
+        "time_nano": 1790841154602773057,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "ca1b41d319bc6f130c86bfcd66bd93a885b5a3d4206a0828e567411508313fd5"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "727c8530-de93-5b5e-95cc-1a056f988640",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "id": "32ca2d3e1229eee53172dbd3759081bea067019f465cc713e304e87a570c3a70",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "0741e01f-4d9f-5b75-afd0-2c01513c23a6",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20003",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "32ca2d3e1229eee53172dbd3759081bea067019f465cc713e304e87a570c3a70",
+        "kind": "docker_event",
+        "time_nano": 1790841193412996354,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "32ca2d3e1229eee53172dbd3759081bea067019f465cc713e304e87a570c3a70"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "0741e01f-4d9f-5b75-afd0-2c01513c23a6",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "id": "f67ee5620388ba5ed9146a3d3c707f6850759ba81e23e525dfeabc930152d766",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "362774a6-04d6-58fb-ba00-6207e8db6d60",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20004",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "f67ee5620388ba5ed9146a3d3c707f6850759ba81e23e525dfeabc930152d766",
+        "kind": "docker_event",
+        "time_nano": 1790841195834690136,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "f67ee5620388ba5ed9146a3d3c707f6850759ba81e23e525dfeabc930152d766"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "362774a6-04d6-58fb-ba00-6207e8db6d60",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "id": "58935a459717372523c64805ccd0241efde0c77e005380863a9e4b0438968ba8",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "7a667562-73c1-5908-b4d3-b84e50f9ac09",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20005",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "58935a459717372523c64805ccd0241efde0c77e005380863a9e4b0438968ba8",
+        "kind": "docker_event",
+        "time_nano": 1790841197390678952,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "58935a459717372523c64805ccd0241efde0c77e005380863a9e4b0438968ba8"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "7a667562-73c1-5908-b4d3-b84e50f9ac09",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "id": "7e02f042158cba0bb18a38fb2b31e9ec19965267bbb42e8a59b77e265664b5ee",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "6983b557-d0a4-53e3-bbd4-ae6f5fc84524",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20006",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "7e02f042158cba0bb18a38fb2b31e9ec19965267bbb42e8a59b77e265664b5ee",
+        "kind": "docker_event",
+        "time_nano": 1790841198982201163,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "7e02f042158cba0bb18a38fb2b31e9ec19965267bbb42e8a59b77e265664b5ee"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "6983b557-d0a4-53e3-bbd4-ae6f5fc84524",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "id": "b1c26efde81df7d7b585ea68609f1b8bd6611dd4901652d6da905afba4cff0e2",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "6c77f440-9198-56b3-964f-79f2f85cc07e",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20007",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "b1c26efde81df7d7b585ea68609f1b8bd6611dd4901652d6da905afba4cff0e2",
+        "kind": "docker_event",
+        "time_nano": 1790841200198833414,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "b1c26efde81df7d7b585ea68609f1b8bd6611dd4901652d6da905afba4cff0e2"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "6c77f440-9198-56b3-964f-79f2f85cc07e",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "id": "8e47c13002bb500835b8c0e554e509c9a21fe7ee07208afa6b29de1ed3717bcb",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "931a7450-2c62-56ad-b090-c9362c57ef5e",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20008",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "8e47c13002bb500835b8c0e554e509c9a21fe7ee07208afa6b29de1ed3717bcb",
+        "kind": "docker_event",
+        "time_nano": 1790841201645638320,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "8e47c13002bb500835b8c0e554e509c9a21fe7ee07208afa6b29de1ed3717bcb"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "931a7450-2c62-56ad-b090-c9362c57ef5e",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "id": "29f62489a611604c7168f9e179758b24e1662b635bb0b588484b92cf8cb8c618",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "406916dd-5bb6-509f-8166-f4b19d8e8bb4",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20009",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "29f62489a611604c7168f9e179758b24e1662b635bb0b588484b92cf8cb8c618",
+        "kind": "docker_event",
+        "time_nano": 1790841203061610900,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "29f62489a611604c7168f9e179758b24e1662b635bb0b588484b92cf8cb8c618"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "406916dd-5bb6-509f-8166-f4b19d8e8bb4",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "id": "67bebe26d72b5d19e4f6bb02b9d01575670d1733a5b9aa46eb35fe9348814f64",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "b5902335-f74a-5e48-bd30-993a4f4e0ba1",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20010",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "67bebe26d72b5d19e4f6bb02b9d01575670d1733a5b9aa46eb35fe9348814f64",
+        "kind": "docker_event",
+        "time_nano": 1790841204817304142,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "67bebe26d72b5d19e4f6bb02b9d01575670d1733a5b9aa46eb35fe9348814f64"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "b5902335-f74a-5e48-bd30-993a4f4e0ba1",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "id": "ff8700d76d8c3dec5f2548b595a17df5d6f2f844163b37c54c0f3ea84ad569cb",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "808adc97-01e7-5e77-b4d7-7746b1fd811e",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20011",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "ff8700d76d8c3dec5f2548b595a17df5d6f2f844163b37c54c0f3ea84ad569cb",
+        "kind": "docker_event",
+        "time_nano": 1790841207490398230,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "ff8700d76d8c3dec5f2548b595a17df5d6f2f844163b37c54c0f3ea84ad569cb"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "808adc97-01e7-5e77-b4d7-7746b1fd811e",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "id": "a5dd5d1d23674fc20b7ab198f440b06e34b68f0d49fe81f344519e458cf4d47d",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "e5a4c7db-ac86-53b3-aa30-5b6bc3b33c70",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20012",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "a5dd5d1d23674fc20b7ab198f440b06e34b68f0d49fe81f344519e458cf4d47d",
+        "kind": "docker_event",
+        "time_nano": 1790841209963374021,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "a5dd5d1d23674fc20b7ab198f440b06e34b68f0d49fe81f344519e458cf4d47d"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "e5a4c7db-ac86-53b3-aa30-5b6bc3b33c70",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "id": "95241701052c2ab5f4c4f9165e97e6efc4a1d7f4ca614f3a65bf9c2692588637",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "acadfa53-721a-5163-b31e-257da650fce6",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20013",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "95241701052c2ab5f4c4f9165e97e6efc4a1d7f4ca614f3a65bf9c2692588637",
+        "kind": "docker_event",
+        "time_nano": 1790841211767308110,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "95241701052c2ab5f4c4f9165e97e6efc4a1d7f4ca614f3a65bf9c2692588637"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "acadfa53-721a-5163-b31e-257da650fce6",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "id": "575d33b15f980363360e1d0a2bd512dfdf1e58a5727eb1310e63e708ff7176fd",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "17f1b396-ec66-56fc-9aad-680cf6d83dcd",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20014",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "575d33b15f980363360e1d0a2bd512dfdf1e58a5727eb1310e63e708ff7176fd",
+        "kind": "docker_event",
+        "time_nano": 1790841214385793215,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "575d33b15f980363360e1d0a2bd512dfdf1e58a5727eb1310e63e708ff7176fd"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "17f1b396-ec66-56fc-9aad-680cf6d83dcd",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "id": "53380657a5952ee5996a57fe8e000363431432f68f0789993fb2469aef3115f7",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "3dc02f86-f625-5d51-9c93-b1478312285f",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20015",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "53380657a5952ee5996a57fe8e000363431432f68f0789993fb2469aef3115f7",
+        "kind": "docker_event",
+        "time_nano": 1790841216760690485,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "53380657a5952ee5996a57fe8e000363431432f68f0789993fb2469aef3115f7"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "3dc02f86-f625-5d51-9c93-b1478312285f",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "id": "170ecb2b8a0d9c4d117b9ba56cffa52b0e1be7ab539b04c261aa40214a0e9fa3",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "030fdbe8-6a12-558a-819d-e4da573def96",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20016",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "170ecb2b8a0d9c4d117b9ba56cffa52b0e1be7ab539b04c261aa40214a0e9fa3",
+        "kind": "docker_event",
+        "time_nano": 1790841218609542509,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "170ecb2b8a0d9c4d117b9ba56cffa52b0e1be7ab539b04c261aa40214a0e9fa3"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "030fdbe8-6a12-558a-819d-e4da573def96",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "id": "13e0083b8faa90c7fab83af6b2913e5161e45c4bd2989a5b7cdfedd16a2b7a97",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "ac96847e-d6fe-5187-b425-0afff9e40675",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20017",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "13e0083b8faa90c7fab83af6b2913e5161e45c4bd2989a5b7cdfedd16a2b7a97",
+        "kind": "docker_event",
+        "time_nano": 1790841219312751109,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "13e0083b8faa90c7fab83af6b2913e5161e45c4bd2989a5b7cdfedd16a2b7a97"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "ac96847e-d6fe-5187-b425-0afff9e40675",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "id": "89dfc2dd745d2070aed7fea142581058e228fbbb9ebd927e062c826f44208730",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "ef70c7c5-bf7e-5c88-aa75-84b32ab6ec6a",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20018",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "89dfc2dd745d2070aed7fea142581058e228fbbb9ebd927e062c826f44208730",
+        "kind": "docker_event",
+        "time_nano": 1790841223345199839,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "89dfc2dd745d2070aed7fea142581058e228fbbb9ebd927e062c826f44208730"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "ef70c7c5-bf7e-5c88-aa75-84b32ab6ec6a",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "id": "409e62f6707c9c658299f2163518f67116d73e26c2c306c82cf4893e4d8f5ee8",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "c5961df3-7fd1-5b03-b65f-23024775d509",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20019",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "409e62f6707c9c658299f2163518f67116d73e26c2c306c82cf4893e4d8f5ee8",
+        "kind": "docker_event",
+        "time_nano": 1790841225399683203,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "409e62f6707c9c658299f2163518f67116d73e26c2c306c82cf4893e4d8f5ee8"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "c5961df3-7fd1-5b03-b65f-23024775d509",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "id": "5f5a31a4a92b837b28b9116e5a1ac42ee05c88043a7e140878d4ec7082fb2640",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "dev.vra.database_instance_id": "ed04a80e-e80d-5dd8-ba87-ac0ec9b8874d",
+          "dev.vra.environment": "TEST",
+          "dev.vra.poc": "04",
+          "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+          "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+          "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+          "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+          "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20020",
+          "org.testcontainers.lang": "java",
+          "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+          "org.testcontainers.version": "2.0.5"
+        },
+        "id": "5f5a31a4a92b837b28b9116e5a1ac42ee05c88043a7e140878d4ec7082fb2640",
+        "kind": "docker_event",
+        "time_nano": 1790841226058343547,
+        "type": "container"
+      },
+      "inspect_command": [
+        "docker",
+        "inspect",
+        "5f5a31a4a92b837b28b9116e5a1ac42ee05c88043a7e140878d4ec7082fb2640"
+      ],
+      "before_cleanup_inspect_exit_status": 1,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "ed04a80e-e80d-5dd8-ba87-ac0ec9b8874d",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.sessionId": "d0bca358-a875-4a75-8fbc-c10ec2a41792",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "already_absent": true,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20001-pgdata",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "driver": "local"
+        },
+        "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20001-pgdata",
+        "kind": "docker_event",
+        "time_nano": 1790841153794138024,
+        "type": "volume"
+      },
+      "inspect_command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20001-pgdata"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "fda30782-9b53-529a-af5e-c2dc92ff29ca",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "fda30782-9b53-529a-af5e-c2dc92ff29ca",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20001-pgdata",
+      "created": "2026-10-01T14:52:33+07:00",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20001-pgdata/_data",
+      "cleanup_command": [
+        "docker",
+        "volume",
+        "rm",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20001-pgdata"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20002-pgdata",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "driver": "local"
+        },
+        "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20002-pgdata",
+        "kind": "docker_event",
+        "time_nano": 1790841154571194755,
+        "type": "volume"
+      },
+      "inspect_command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20002-pgdata"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "727c8530-de93-5b5e-95cc-1a056f988640",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "727c8530-de93-5b5e-95cc-1a056f988640",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20002-pgdata",
+      "created": "2026-10-01T14:52:34+07:00",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20002-pgdata/_data",
+      "cleanup_command": [
+        "docker",
+        "volume",
+        "rm",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20002-pgdata"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20003-pgdata",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "driver": "local"
+        },
+        "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20003-pgdata",
+        "kind": "docker_event",
+        "time_nano": 1790841193390617677,
+        "type": "volume"
+      },
+      "inspect_command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20003-pgdata"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "0741e01f-4d9f-5b75-afd0-2c01513c23a6",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "0741e01f-4d9f-5b75-afd0-2c01513c23a6",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20003-pgdata",
+      "created": "2026-10-01T14:53:13+07:00",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20003-pgdata/_data",
+      "cleanup_command": [
+        "docker",
+        "volume",
+        "rm",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20003-pgdata"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20004-pgdata",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "driver": "local"
+        },
+        "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20004-pgdata",
+        "kind": "docker_event",
+        "time_nano": 1790841195792887634,
+        "type": "volume"
+      },
+      "inspect_command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20004-pgdata"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "362774a6-04d6-58fb-ba00-6207e8db6d60",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "362774a6-04d6-58fb-ba00-6207e8db6d60",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20004-pgdata",
+      "created": "2026-10-01T14:53:15+07:00",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20004-pgdata/_data",
+      "cleanup_command": [
+        "docker",
+        "volume",
+        "rm",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20004-pgdata"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20005-pgdata",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "driver": "local"
+        },
+        "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20005-pgdata",
+        "kind": "docker_event",
+        "time_nano": 1790841197351174711,
+        "type": "volume"
+      },
+      "inspect_command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20005-pgdata"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "7a667562-73c1-5908-b4d3-b84e50f9ac09",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "7a667562-73c1-5908-b4d3-b84e50f9ac09",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20005-pgdata",
+      "created": "2026-10-01T14:53:17+07:00",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20005-pgdata/_data",
+      "cleanup_command": [
+        "docker",
+        "volume",
+        "rm",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20005-pgdata"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20006-pgdata",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "driver": "local"
+        },
+        "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20006-pgdata",
+        "kind": "docker_event",
+        "time_nano": 1790841198940136375,
+        "type": "volume"
+      },
+      "inspect_command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20006-pgdata"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "6983b557-d0a4-53e3-bbd4-ae6f5fc84524",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "6983b557-d0a4-53e3-bbd4-ae6f5fc84524",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20006-pgdata",
+      "created": "2026-10-01T14:53:18+07:00",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20006-pgdata/_data",
+      "cleanup_command": [
+        "docker",
+        "volume",
+        "rm",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20006-pgdata"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20007-pgdata",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "driver": "local"
+        },
+        "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20007-pgdata",
+        "kind": "docker_event",
+        "time_nano": 1790841200154611907,
+        "type": "volume"
+      },
+      "inspect_command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20007-pgdata"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "6c77f440-9198-56b3-964f-79f2f85cc07e",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "6c77f440-9198-56b3-964f-79f2f85cc07e",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20007-pgdata",
+      "created": "2026-10-01T14:53:20+07:00",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20007-pgdata/_data",
+      "cleanup_command": [
+        "docker",
+        "volume",
+        "rm",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20007-pgdata"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20008-pgdata",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "driver": "local"
+        },
+        "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20008-pgdata",
+        "kind": "docker_event",
+        "time_nano": 1790841201605103203,
+        "type": "volume"
+      },
+      "inspect_command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20008-pgdata"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "931a7450-2c62-56ad-b090-c9362c57ef5e",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "931a7450-2c62-56ad-b090-c9362c57ef5e",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20008-pgdata",
+      "created": "2026-10-01T14:53:21+07:00",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20008-pgdata/_data",
+      "cleanup_command": [
+        "docker",
+        "volume",
+        "rm",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20008-pgdata"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20009-pgdata",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "driver": "local"
+        },
+        "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20009-pgdata",
+        "kind": "docker_event",
+        "time_nano": 1790841203012531163,
+        "type": "volume"
+      },
+      "inspect_command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20009-pgdata"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "406916dd-5bb6-509f-8166-f4b19d8e8bb4",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "406916dd-5bb6-509f-8166-f4b19d8e8bb4",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20009-pgdata",
+      "created": "2026-10-01T14:53:23+07:00",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20009-pgdata/_data",
+      "cleanup_command": [
+        "docker",
+        "volume",
+        "rm",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20009-pgdata"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20010-pgdata",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "driver": "local"
+        },
+        "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20010-pgdata",
+        "kind": "docker_event",
+        "time_nano": 1790841204791732040,
+        "type": "volume"
+      },
+      "inspect_command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20010-pgdata"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "b5902335-f74a-5e48-bd30-993a4f4e0ba1",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "b5902335-f74a-5e48-bd30-993a4f4e0ba1",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20010-pgdata",
+      "created": "2026-10-01T14:53:24+07:00",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20010-pgdata/_data",
+      "cleanup_command": [
+        "docker",
+        "volume",
+        "rm",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20010-pgdata"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20011-pgdata",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "driver": "local"
+        },
+        "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20011-pgdata",
+        "kind": "docker_event",
+        "time_nano": 1790841207446411626,
+        "type": "volume"
+      },
+      "inspect_command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20011-pgdata"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "808adc97-01e7-5e77-b4d7-7746b1fd811e",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "808adc97-01e7-5e77-b4d7-7746b1fd811e",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20011-pgdata",
+      "created": "2026-10-01T14:53:27+07:00",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20011-pgdata/_data",
+      "cleanup_command": [
+        "docker",
+        "volume",
+        "rm",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20011-pgdata"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20012-pgdata",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "driver": "local"
+        },
+        "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20012-pgdata",
+        "kind": "docker_event",
+        "time_nano": 1790841209929518623,
+        "type": "volume"
+      },
+      "inspect_command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20012-pgdata"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "e5a4c7db-ac86-53b3-aa30-5b6bc3b33c70",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "e5a4c7db-ac86-53b3-aa30-5b6bc3b33c70",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20012-pgdata",
+      "created": "2026-10-01T14:53:29+07:00",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20012-pgdata/_data",
+      "cleanup_command": [
+        "docker",
+        "volume",
+        "rm",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20012-pgdata"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20013-pgdata",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "driver": "local"
+        },
+        "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20013-pgdata",
+        "kind": "docker_event",
+        "time_nano": 1790841211727163586,
+        "type": "volume"
+      },
+      "inspect_command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20013-pgdata"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "acadfa53-721a-5163-b31e-257da650fce6",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "acadfa53-721a-5163-b31e-257da650fce6",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20013-pgdata",
+      "created": "2026-10-01T14:53:31+07:00",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20013-pgdata/_data",
+      "cleanup_command": [
+        "docker",
+        "volume",
+        "rm",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20013-pgdata"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20014-pgdata",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "driver": "local"
+        },
+        "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20014-pgdata",
+        "kind": "docker_event",
+        "time_nano": 1790841214350521122,
+        "type": "volume"
+      },
+      "inspect_command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20014-pgdata"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "17f1b396-ec66-56fc-9aad-680cf6d83dcd",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "17f1b396-ec66-56fc-9aad-680cf6d83dcd",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20014-pgdata",
+      "created": "2026-10-01T14:53:34+07:00",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20014-pgdata/_data",
+      "cleanup_command": [
+        "docker",
+        "volume",
+        "rm",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20014-pgdata"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20015-pgdata",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "driver": "local"
+        },
+        "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20015-pgdata",
+        "kind": "docker_event",
+        "time_nano": 1790841216731337760,
+        "type": "volume"
+      },
+      "inspect_command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20015-pgdata"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "3dc02f86-f625-5d51-9c93-b1478312285f",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "3dc02f86-f625-5d51-9c93-b1478312285f",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20015-pgdata",
+      "created": "2026-10-01T14:53:36+07:00",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20015-pgdata/_data",
+      "cleanup_command": [
+        "docker",
+        "volume",
+        "rm",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20015-pgdata"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20016-pgdata",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "driver": "local"
+        },
+        "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20016-pgdata",
+        "kind": "docker_event",
+        "time_nano": 1790841218571277694,
+        "type": "volume"
+      },
+      "inspect_command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20016-pgdata"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "030fdbe8-6a12-558a-819d-e4da573def96",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "030fdbe8-6a12-558a-819d-e4da573def96",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20016-pgdata",
+      "created": "2026-10-01T14:53:38+07:00",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20016-pgdata/_data",
+      "cleanup_command": [
+        "docker",
+        "volume",
+        "rm",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20016-pgdata"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20017-pgdata",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "driver": "local"
+        },
+        "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20017-pgdata",
+        "kind": "docker_event",
+        "time_nano": 1790841219275961190,
+        "type": "volume"
+      },
+      "inspect_command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20017-pgdata"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "ac96847e-d6fe-5187-b425-0afff9e40675",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "ac96847e-d6fe-5187-b425-0afff9e40675",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20017-pgdata",
+      "created": "2026-10-01T14:53:39+07:00",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20017-pgdata/_data",
+      "cleanup_command": [
+        "docker",
+        "volume",
+        "rm",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20017-pgdata"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20018-pgdata",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "driver": "local"
+        },
+        "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20018-pgdata",
+        "kind": "docker_event",
+        "time_nano": 1790841223312722016,
+        "type": "volume"
+      },
+      "inspect_command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20018-pgdata"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "ef70c7c5-bf7e-5c88-aa75-84b32ab6ec6a",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "ef70c7c5-bf7e-5c88-aa75-84b32ab6ec6a",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20018-pgdata",
+      "created": "2026-10-01T14:53:43+07:00",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20018-pgdata/_data",
+      "cleanup_command": [
+        "docker",
+        "volume",
+        "rm",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20018-pgdata"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20019-pgdata",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "driver": "local"
+        },
+        "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20019-pgdata",
+        "kind": "docker_event",
+        "time_nano": 1790841225376005554,
+        "type": "volume"
+      },
+      "inspect_command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20019-pgdata"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "c5961df3-7fd1-5b03-b65f-23024775d509",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "c5961df3-7fd1-5b03-b65f-23024775d509",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20019-pgdata",
+      "created": "2026-10-01T14:53:45+07:00",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20019-pgdata/_data",
+      "cleanup_command": [
+        "docker",
+        "volume",
+        "rm",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20019-pgdata"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20020-pgdata",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "driver": "local"
+        },
+        "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20020-pgdata",
+        "kind": "docker_event",
+        "time_nano": 1790841226028976275,
+        "type": "volume"
+      },
+      "inspect_command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20020-pgdata"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "ed04a80e-e80d-5dd8-ba87-ac0ec9b8874d",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "ed04a80e-e80d-5dd8-ba87-ac0ec9b8874d",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20020-pgdata",
+      "created": "2026-10-01T14:53:46+07:00",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20020-pgdata/_data",
+      "cleanup_command": [
+        "docker",
+        "volume",
+        "rm",
+        "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20020-pgdata"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "network",
+      "id": "937965dd76a75caacbeb9398caa34913ce1703d4983e5d1d8951c69f68b05f79",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20001-network",
+          "type": "bridge"
+        },
+        "id": "937965dd76a75caacbeb9398caa34913ce1703d4983e5d1d8951c69f68b05f79",
+        "kind": "docker_event",
+        "time_nano": 1790841153779742336,
+        "type": "network"
+      },
+      "inspect_command": [
+        "docker",
+        "network",
+        "inspect",
+        "937965dd76a75caacbeb9398caa34913ce1703d4983e5d1d8951c69f68b05f79"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "fda30782-9b53-529a-af5e-c2dc92ff29ca",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "fda30782-9b53-529a-af5e-c2dc92ff29ca",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20001-network",
+      "created": "2026-10-01T14:52:33.77097528+07:00",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.241.1.0/24",
+            "Gateway": "10.241.1.1"
+          }
+        ]
+      },
+      "cleanup_command": [
+        "docker",
+        "network",
+        "rm",
+        "937965dd76a75caacbeb9398caa34913ce1703d4983e5d1d8951c69f68b05f79"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "network",
+      "id": "f3890c78ecff51f85e756334629c6dde8a802c764d4134ab5c9d5820bf12900d",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20002-network",
+          "type": "bridge"
+        },
+        "id": "f3890c78ecff51f85e756334629c6dde8a802c764d4134ab5c9d5820bf12900d",
+        "kind": "docker_event",
+        "time_nano": 1790841154564314106,
+        "type": "network"
+      },
+      "inspect_command": [
+        "docker",
+        "network",
+        "inspect",
+        "f3890c78ecff51f85e756334629c6dde8a802c764d4134ab5c9d5820bf12900d"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "727c8530-de93-5b5e-95cc-1a056f988640",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "727c8530-de93-5b5e-95cc-1a056f988640",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20002-network",
+      "created": "2026-10-01T14:52:34.553642647+07:00",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.241.2.0/24",
+            "Gateway": "10.241.2.1"
+          }
+        ]
+      },
+      "cleanup_command": [
+        "docker",
+        "network",
+        "rm",
+        "f3890c78ecff51f85e756334629c6dde8a802c764d4134ab5c9d5820bf12900d"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "network",
+      "id": "a6412ea20b64c6556db8c962d20791b5c4224e5ff62838ec33f3642e3dcce098",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20003-network",
+          "type": "bridge"
+        },
+        "id": "a6412ea20b64c6556db8c962d20791b5c4224e5ff62838ec33f3642e3dcce098",
+        "kind": "docker_event",
+        "time_nano": 1790841193383646472,
+        "type": "network"
+      },
+      "inspect_command": [
+        "docker",
+        "network",
+        "inspect",
+        "a6412ea20b64c6556db8c962d20791b5c4224e5ff62838ec33f3642e3dcce098"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "0741e01f-4d9f-5b75-afd0-2c01513c23a6",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "0741e01f-4d9f-5b75-afd0-2c01513c23a6",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20003-network",
+      "created": "2026-10-01T14:53:13.372673024+07:00",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.241.3.0/24",
+            "Gateway": "10.241.3.1"
+          }
+        ]
+      },
+      "cleanup_command": [
+        "docker",
+        "network",
+        "rm",
+        "a6412ea20b64c6556db8c962d20791b5c4224e5ff62838ec33f3642e3dcce098"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "network",
+      "id": "2954782ed80f16b96fd95f31f7c919e9879570a7e9b9c6226179aa42a3367818",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20004-network",
+          "type": "bridge"
+        },
+        "id": "2954782ed80f16b96fd95f31f7c919e9879570a7e9b9c6226179aa42a3367818",
+        "kind": "docker_event",
+        "time_nano": 1790841195785108208,
+        "type": "network"
+      },
+      "inspect_command": [
+        "docker",
+        "network",
+        "inspect",
+        "2954782ed80f16b96fd95f31f7c919e9879570a7e9b9c6226179aa42a3367818"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "362774a6-04d6-58fb-ba00-6207e8db6d60",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "362774a6-04d6-58fb-ba00-6207e8db6d60",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20004-network",
+      "created": "2026-10-01T14:53:15.775395895+07:00",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.241.4.0/24",
+            "Gateway": "10.241.4.1"
+          }
+        ]
+      },
+      "cleanup_command": [
+        "docker",
+        "network",
+        "rm",
+        "2954782ed80f16b96fd95f31f7c919e9879570a7e9b9c6226179aa42a3367818"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "network",
+      "id": "c7cd31aad2b11ca91b991b5074402162c84f8d4d4496ae7ef181895db1827668",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20005-network",
+          "type": "bridge"
+        },
+        "id": "c7cd31aad2b11ca91b991b5074402162c84f8d4d4496ae7ef181895db1827668",
+        "kind": "docker_event",
+        "time_nano": 1790841197341530782,
+        "type": "network"
+      },
+      "inspect_command": [
+        "docker",
+        "network",
+        "inspect",
+        "c7cd31aad2b11ca91b991b5074402162c84f8d4d4496ae7ef181895db1827668"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "7a667562-73c1-5908-b4d3-b84e50f9ac09",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "7a667562-73c1-5908-b4d3-b84e50f9ac09",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20005-network",
+      "created": "2026-10-01T14:53:17.322419519+07:00",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.241.5.0/24",
+            "Gateway": "10.241.5.1"
+          }
+        ]
+      },
+      "cleanup_command": [
+        "docker",
+        "network",
+        "rm",
+        "c7cd31aad2b11ca91b991b5074402162c84f8d4d4496ae7ef181895db1827668"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "network",
+      "id": "c276dd63b6e5f72d830608f740114dbf715c5a92f73225a1d3d60d0d0bf5ec32",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20006-network",
+          "type": "bridge"
+        },
+        "id": "c276dd63b6e5f72d830608f740114dbf715c5a92f73225a1d3d60d0d0bf5ec32",
+        "kind": "docker_event",
+        "time_nano": 1790841198931426888,
+        "type": "network"
+      },
+      "inspect_command": [
+        "docker",
+        "network",
+        "inspect",
+        "c276dd63b6e5f72d830608f740114dbf715c5a92f73225a1d3d60d0d0bf5ec32"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "6983b557-d0a4-53e3-bbd4-ae6f5fc84524",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "6983b557-d0a4-53e3-bbd4-ae6f5fc84524",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20006-network",
+      "created": "2026-10-01T14:53:18.917638669+07:00",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.241.6.0/24",
+            "Gateway": "10.241.6.1"
+          }
+        ]
+      },
+      "cleanup_command": [
+        "docker",
+        "network",
+        "rm",
+        "c276dd63b6e5f72d830608f740114dbf715c5a92f73225a1d3d60d0d0bf5ec32"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "network",
+      "id": "8e1626044a84a863c6c781c2e57c2cd29ecc8859cc3c8dbeacabe1d908551994",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20007-network",
+          "type": "bridge"
+        },
+        "id": "8e1626044a84a863c6c781c2e57c2cd29ecc8859cc3c8dbeacabe1d908551994",
+        "kind": "docker_event",
+        "time_nano": 1790841200146222780,
+        "type": "network"
+      },
+      "inspect_command": [
+        "docker",
+        "network",
+        "inspect",
+        "8e1626044a84a863c6c781c2e57c2cd29ecc8859cc3c8dbeacabe1d908551994"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "6c77f440-9198-56b3-964f-79f2f85cc07e",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "6c77f440-9198-56b3-964f-79f2f85cc07e",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20007-network",
+      "created": "2026-10-01T14:53:20.13493024+07:00",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.241.7.0/24",
+            "Gateway": "10.241.7.1"
+          }
+        ]
+      },
+      "cleanup_command": [
+        "docker",
+        "network",
+        "rm",
+        "8e1626044a84a863c6c781c2e57c2cd29ecc8859cc3c8dbeacabe1d908551994"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "network",
+      "id": "4c65ff6294c32671c909b6b12a9a752ba9213f726f56a9b5e55079cf3d6fe4be",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20008-network",
+          "type": "bridge"
+        },
+        "id": "4c65ff6294c32671c909b6b12a9a752ba9213f726f56a9b5e55079cf3d6fe4be",
+        "kind": "docker_event",
+        "time_nano": 1790841201597456795,
+        "type": "network"
+      },
+      "inspect_command": [
+        "docker",
+        "network",
+        "inspect",
+        "4c65ff6294c32671c909b6b12a9a752ba9213f726f56a9b5e55079cf3d6fe4be"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "931a7450-2c62-56ad-b090-c9362c57ef5e",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "931a7450-2c62-56ad-b090-c9362c57ef5e",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20008-network",
+      "created": "2026-10-01T14:53:21.584281001+07:00",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.241.8.0/24",
+            "Gateway": "10.241.8.1"
+          }
+        ]
+      },
+      "cleanup_command": [
+        "docker",
+        "network",
+        "rm",
+        "4c65ff6294c32671c909b6b12a9a752ba9213f726f56a9b5e55079cf3d6fe4be"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "network",
+      "id": "3d61004ba77a36c9f84ae714373884673c2fb797db44ad1b209eac9357ed8566",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20009-network",
+          "type": "bridge"
+        },
+        "id": "3d61004ba77a36c9f84ae714373884673c2fb797db44ad1b209eac9357ed8566",
+        "kind": "docker_event",
+        "time_nano": 1790841203003242060,
+        "type": "network"
+      },
+      "inspect_command": [
+        "docker",
+        "network",
+        "inspect",
+        "3d61004ba77a36c9f84ae714373884673c2fb797db44ad1b209eac9357ed8566"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "406916dd-5bb6-509f-8166-f4b19d8e8bb4",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "406916dd-5bb6-509f-8166-f4b19d8e8bb4",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20009-network",
+      "created": "2026-10-01T14:53:22.990964249+07:00",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.241.9.0/24",
+            "Gateway": "10.241.9.1"
+          }
+        ]
+      },
+      "cleanup_command": [
+        "docker",
+        "network",
+        "rm",
+        "3d61004ba77a36c9f84ae714373884673c2fb797db44ad1b209eac9357ed8566"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "network",
+      "id": "18eb8dc95d64876609e9815fdfeabd2c34c9948319ae5e6b786cf0e5e18e215f",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20010-network",
+          "type": "bridge"
+        },
+        "id": "18eb8dc95d64876609e9815fdfeabd2c34c9948319ae5e6b786cf0e5e18e215f",
+        "kind": "docker_event",
+        "time_nano": 1790841204784045841,
+        "type": "network"
+      },
+      "inspect_command": [
+        "docker",
+        "network",
+        "inspect",
+        "18eb8dc95d64876609e9815fdfeabd2c34c9948319ae5e6b786cf0e5e18e215f"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "b5902335-f74a-5e48-bd30-993a4f4e0ba1",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "b5902335-f74a-5e48-bd30-993a4f4e0ba1",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20010-network",
+      "created": "2026-10-01T14:53:24.766796731+07:00",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.241.10.0/24",
+            "Gateway": "10.241.10.1"
+          }
+        ]
+      },
+      "cleanup_command": [
+        "docker",
+        "network",
+        "rm",
+        "18eb8dc95d64876609e9815fdfeabd2c34c9948319ae5e6b786cf0e5e18e215f"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "network",
+      "id": "54e1b51e4f88c0780462b17d9e608e6a97f8f819fb58b6d90556c584c1ab63e5",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20011-network",
+          "type": "bridge"
+        },
+        "id": "54e1b51e4f88c0780462b17d9e608e6a97f8f819fb58b6d90556c584c1ab63e5",
+        "kind": "docker_event",
+        "time_nano": 1790841207439234175,
+        "type": "network"
+      },
+      "inspect_command": [
+        "docker",
+        "network",
+        "inspect",
+        "54e1b51e4f88c0780462b17d9e608e6a97f8f819fb58b6d90556c584c1ab63e5"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "808adc97-01e7-5e77-b4d7-7746b1fd811e",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "808adc97-01e7-5e77-b4d7-7746b1fd811e",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20011-network",
+      "created": "2026-10-01T14:53:27.426795904+07:00",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.241.11.0/24",
+            "Gateway": "10.241.11.1"
+          }
+        ]
+      },
+      "cleanup_command": [
+        "docker",
+        "network",
+        "rm",
+        "54e1b51e4f88c0780462b17d9e608e6a97f8f819fb58b6d90556c584c1ab63e5"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "network",
+      "id": "b8cec3bf5ef66a557b2a28bd8b57daf84b9f724f29276ec2ed9df65c982fcba1",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20012-network",
+          "type": "bridge"
+        },
+        "id": "b8cec3bf5ef66a557b2a28bd8b57daf84b9f724f29276ec2ed9df65c982fcba1",
+        "kind": "docker_event",
+        "time_nano": 1790841209920051059,
+        "type": "network"
+      },
+      "inspect_command": [
+        "docker",
+        "network",
+        "inspect",
+        "b8cec3bf5ef66a557b2a28bd8b57daf84b9f724f29276ec2ed9df65c982fcba1"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "e5a4c7db-ac86-53b3-aa30-5b6bc3b33c70",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "e5a4c7db-ac86-53b3-aa30-5b6bc3b33c70",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20012-network",
+      "created": "2026-10-01T14:53:29.897593566+07:00",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.241.12.0/24",
+            "Gateway": "10.241.12.1"
+          }
+        ]
+      },
+      "cleanup_command": [
+        "docker",
+        "network",
+        "rm",
+        "b8cec3bf5ef66a557b2a28bd8b57daf84b9f724f29276ec2ed9df65c982fcba1"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "network",
+      "id": "01927647f351e57215f5776a3ba01bea63fb34eed67bcd2c592a8a74f7509098",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20013-network",
+          "type": "bridge"
+        },
+        "id": "01927647f351e57215f5776a3ba01bea63fb34eed67bcd2c592a8a74f7509098",
+        "kind": "docker_event",
+        "time_nano": 1790841211717423757,
+        "type": "network"
+      },
+      "inspect_command": [
+        "docker",
+        "network",
+        "inspect",
+        "01927647f351e57215f5776a3ba01bea63fb34eed67bcd2c592a8a74f7509098"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "acadfa53-721a-5163-b31e-257da650fce6",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "acadfa53-721a-5163-b31e-257da650fce6",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20013-network",
+      "created": "2026-10-01T14:53:31.703250209+07:00",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.241.13.0/24",
+            "Gateway": "10.241.13.1"
+          }
+        ]
+      },
+      "cleanup_command": [
+        "docker",
+        "network",
+        "rm",
+        "01927647f351e57215f5776a3ba01bea63fb34eed67bcd2c592a8a74f7509098"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "network",
+      "id": "5dcee000f44ffc56781b6911a95e697cb249249d3f16ca94e71f57967d9cc69e",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20014-network",
+          "type": "bridge"
+        },
+        "id": "5dcee000f44ffc56781b6911a95e697cb249249d3f16ca94e71f57967d9cc69e",
+        "kind": "docker_event",
+        "time_nano": 1790841214342734304,
+        "type": "network"
+      },
+      "inspect_command": [
+        "docker",
+        "network",
+        "inspect",
+        "5dcee000f44ffc56781b6911a95e697cb249249d3f16ca94e71f57967d9cc69e"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "17f1b396-ec66-56fc-9aad-680cf6d83dcd",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "17f1b396-ec66-56fc-9aad-680cf6d83dcd",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20014-network",
+      "created": "2026-10-01T14:53:34.32307835+07:00",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.241.14.0/24",
+            "Gateway": "10.241.14.1"
+          }
+        ]
+      },
+      "cleanup_command": [
+        "docker",
+        "network",
+        "rm",
+        "5dcee000f44ffc56781b6911a95e697cb249249d3f16ca94e71f57967d9cc69e"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "network",
+      "id": "7c3a084be683d460b60e6e5f1c963a85aad8562cbebe0ee0f4adf90720732b5c",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20015-network",
+          "type": "bridge"
+        },
+        "id": "7c3a084be683d460b60e6e5f1c963a85aad8562cbebe0ee0f4adf90720732b5c",
+        "kind": "docker_event",
+        "time_nano": 1790841216724452046,
+        "type": "network"
+      },
+      "inspect_command": [
+        "docker",
+        "network",
+        "inspect",
+        "7c3a084be683d460b60e6e5f1c963a85aad8562cbebe0ee0f4adf90720732b5c"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "3dc02f86-f625-5d51-9c93-b1478312285f",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "3dc02f86-f625-5d51-9c93-b1478312285f",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20015-network",
+      "created": "2026-10-01T14:53:36.708024649+07:00",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.241.15.0/24",
+            "Gateway": "10.241.15.1"
+          }
+        ]
+      },
+      "cleanup_command": [
+        "docker",
+        "network",
+        "rm",
+        "7c3a084be683d460b60e6e5f1c963a85aad8562cbebe0ee0f4adf90720732b5c"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "network",
+      "id": "a12c6f0663ce641eefcc2f7e198d2bfc9eb23b74b7d27ce7f14240c86e10464b",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20016-network",
+          "type": "bridge"
+        },
+        "id": "a12c6f0663ce641eefcc2f7e198d2bfc9eb23b74b7d27ce7f14240c86e10464b",
+        "kind": "docker_event",
+        "time_nano": 1790841218563618056,
+        "type": "network"
+      },
+      "inspect_command": [
+        "docker",
+        "network",
+        "inspect",
+        "a12c6f0663ce641eefcc2f7e198d2bfc9eb23b74b7d27ce7f14240c86e10464b"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "030fdbe8-6a12-558a-819d-e4da573def96",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "030fdbe8-6a12-558a-819d-e4da573def96",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20016-network",
+      "created": "2026-10-01T14:53:38.553610593+07:00",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.241.16.0/24",
+            "Gateway": "10.241.16.1"
+          }
+        ]
+      },
+      "cleanup_command": [
+        "docker",
+        "network",
+        "rm",
+        "a12c6f0663ce641eefcc2f7e198d2bfc9eb23b74b7d27ce7f14240c86e10464b"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "network",
+      "id": "c973a3c5d1e7c2a349374ce9096a8c8fc7bd1374005edf92cd8e355b4ec8a3bc",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20017-network",
+          "type": "bridge"
+        },
+        "id": "c973a3c5d1e7c2a349374ce9096a8c8fc7bd1374005edf92cd8e355b4ec8a3bc",
+        "kind": "docker_event",
+        "time_nano": 1790841219269491840,
+        "type": "network"
+      },
+      "inspect_command": [
+        "docker",
+        "network",
+        "inspect",
+        "c973a3c5d1e7c2a349374ce9096a8c8fc7bd1374005edf92cd8e355b4ec8a3bc"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "ac96847e-d6fe-5187-b425-0afff9e40675",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "ac96847e-d6fe-5187-b425-0afff9e40675",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20017-network",
+      "created": "2026-10-01T14:53:39.259899699+07:00",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.241.17.0/24",
+            "Gateway": "10.241.17.1"
+          }
+        ]
+      },
+      "cleanup_command": [
+        "docker",
+        "network",
+        "rm",
+        "c973a3c5d1e7c2a349374ce9096a8c8fc7bd1374005edf92cd8e355b4ec8a3bc"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "network",
+      "id": "24ca9d8caf3bd53df753396faccc51f1cb768a0004929c0d8757150348374089",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20018-network",
+          "type": "bridge"
+        },
+        "id": "24ca9d8caf3bd53df753396faccc51f1cb768a0004929c0d8757150348374089",
+        "kind": "docker_event",
+        "time_nano": 1790841223304725068,
+        "type": "network"
+      },
+      "inspect_command": [
+        "docker",
+        "network",
+        "inspect",
+        "24ca9d8caf3bd53df753396faccc51f1cb768a0004929c0d8757150348374089"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "ef70c7c5-bf7e-5c88-aa75-84b32ab6ec6a",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "ef70c7c5-bf7e-5c88-aa75-84b32ab6ec6a",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20018-network",
+      "created": "2026-10-01T14:53:43.294179493+07:00",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.241.18.0/24",
+            "Gateway": "10.241.18.1"
+          }
+        ]
+      },
+      "cleanup_command": [
+        "docker",
+        "network",
+        "rm",
+        "24ca9d8caf3bd53df753396faccc51f1cb768a0004929c0d8757150348374089"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "network",
+      "id": "3ac0448345c41ad43f80001d2c30e5ad84eaa8c97f847a05ce557287ce8c5c26",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20019-network",
+          "type": "bridge"
+        },
+        "id": "3ac0448345c41ad43f80001d2c30e5ad84eaa8c97f847a05ce557287ce8c5c26",
+        "kind": "docker_event",
+        "time_nano": 1790841225369070304,
+        "type": "network"
+      },
+      "inspect_command": [
+        "docker",
+        "network",
+        "inspect",
+        "3ac0448345c41ad43f80001d2c30e5ad84eaa8c97f847a05ce557287ce8c5c26"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "c5961df3-7fd1-5b03-b65f-23024775d509",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "c5961df3-7fd1-5b03-b65f-23024775d509",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20019-network",
+      "created": "2026-10-01T14:53:45.35906285+07:00",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.241.19.0/24",
+            "Gateway": "10.241.19.1"
+          }
+        ]
+      },
+      "cleanup_command": [
+        "docker",
+        "network",
+        "rm",
+        "3ac0448345c41ad43f80001d2c30e5ad84eaa8c97f847a05ce557287ce8c5c26"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "network",
+      "id": "7a176a776cd92ecfeeffe3be19218d34474818feccdf5967746d5916c00474ad",
+      "creation_event": {
+        "action": "create",
+        "attributes": {
+          "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20020-network",
+          "type": "bridge"
+        },
+        "id": "7a176a776cd92ecfeeffe3be19218d34474818feccdf5967746d5916c00474ad",
+        "kind": "docker_event",
+        "time_nano": 1790841226023345654,
+        "type": "network"
+      },
+      "inspect_command": [
+        "docker",
+        "network",
+        "inspect",
+        "7a176a776cd92ecfeeffe3be19218d34474818feccdf5967746d5916c00474ad"
+      ],
+      "before_cleanup_inspect_exit_status": 0,
+      "captured_labels": {
+        "dev.vra.database_instance_id": "ed04a80e-e80d-5dd8-ba87-ac0ec9b8874d",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "labels": {
+        "dev.vra.database_instance_id": "ed04a80e-e80d-5dd8-ba87-ac0ec9b8874d",
+        "dev.vra.environment": "TEST",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+        "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20020-network",
+      "created": "2026-10-01T14:53:46.014161506+07:00",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.241.20.0/24",
+            "Gateway": "10.241.20.1"
+          }
+        ]
+      },
+      "cleanup_command": [
+        "docker",
+        "network",
+        "rm",
+        "7a176a776cd92ecfeeffe3be19218d34474818feccdf5967746d5916c00474ad"
+      ],
+      "cleanup_exit_status": 0,
+      "after_cleanup_inspect_exit_status": 1,
+      "absent_after_cleanup": true
+    }
+  ],
+  "teardown_scope": "Only exact current-run recorded physical resource IDs; all live ownership validated against captured and current labels before mutations",
+  "result": "PASS",
+  "exit_status": 0,
+  "all_recorded_ids_absent": true,
+  "final_containers": [],
+  "final_volumes": [],
+  "final_network_ids": [
+    "0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a",
+    "71919e79066c633ba4548aa04103de53d1e31552893e0cec59e0ba812b5f4d22",
+    "c0297a5ce0209b66940193c63975087c4355c0e38d6517ac408d4fbf452c9adf"
+  ],
+  "no_blanket_prune": true,
+  "no_desktop_access": true,
+  "no_persistent_vra_poc00_access": true
+}

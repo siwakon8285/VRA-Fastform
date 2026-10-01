@@ -1,0 +1,115 @@
+{
+  "result": "PASS",
+  "recorded_at_utc": "2026-09-30T17:06:21.847435+00:00",
+  "daemon_id": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+  "commands": [
+    {
+      "command": [
+        "docker",
+        "info",
+        "--format",
+        "{{.ID}}"
+      ],
+      "exit_status": 0,
+      "stdout": "14c8ff26-86d1-4c0b-88a6-560be91a65ea\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "ps",
+        "-a",
+        "--no-trunc",
+        "--format",
+        "{{.ID}} {{.Names}}"
+      ],
+      "exit_status": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "volume",
+        "ls",
+        "--format",
+        "{{.Name}}"
+      ],
+      "exit_status": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "ls",
+        "--no-trunc",
+        "--format",
+        "{{.ID}} {{.Name}}"
+      ],
+      "exit_status": 0,
+      "stdout": "d6169038310792000aceb4c7cc43936dc2580869b05ebdee378244932b90279c bridge\n71919e79066c633ba4548aa04103de53d1e31552893e0cec59e0ba812b5f4d22 host\n0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a none\n",
+      "stderr": ""
+    }
+  ],
+  "exact_resource_absence": [
+    {
+      "type": "container",
+      "id": "ed67a9d43d0ef958ae4b1db6e8ff4d1f38d2e58f82f97ca74bfca987b949aa73",
+      "command": [
+        "docker",
+        "inspect",
+        "ed67a9d43d0ef958ae4b1db6e8ff4d1f38d2e58f82f97ca74bfca987b949aa73"
+      ],
+      "exit_status": 1,
+      "stdout": "[]\n",
+      "stderr": "error: no such object: ed67a9d43d0ef958ae4b1db6e8ff4d1f38d2e58f82f97ca74bfca987b949aa73\n"
+    },
+    {
+      "type": "volume",
+      "id": "vra-poc04-d6086e95-29f0-4d32-aec6-3705b5740a3a-postgres-authority-0-pgdata",
+      "command": [
+        "docker",
+        "volume",
+        "inspect",
+        "vra-poc04-d6086e95-29f0-4d32-aec6-3705b5740a3a-postgres-authority-0-pgdata"
+      ],
+      "exit_status": 1,
+      "stdout": "[]\n",
+      "stderr": "Error response from daemon: get vra-poc04-d6086e95-29f0-4d32-aec6-3705b5740a3a-postgres-authority-0-pgdata: no such volume\n"
+    },
+    {
+      "type": "network",
+      "id": "415f0c206b1da818cb04149fae2f9fd569f861ba7beaeb3a0008185c03f1184a",
+      "command": [
+        "docker",
+        "network",
+        "inspect",
+        "415f0c206b1da818cb04149fae2f9fd569f861ba7beaeb3a0008185c03f1184a"
+      ],
+      "exit_status": 1,
+      "stdout": "[]\n",
+      "stderr": "Error response from daemon: network 415f0c206b1da818cb04149fae2f9fd569f861ba7beaeb3a0008185c03f1184a not found\n"
+    },
+    {
+      "type": "container",
+      "id": "be304b90ffa74f464e1dbc70332b9849bdeae0a2d37d7d6902d37ea5c9e5be49",
+      "command": [
+        "docker",
+        "inspect",
+        "be304b90ffa74f464e1dbc70332b9849bdeae0a2d37d7d6902d37ea5c9e5be49"
+      ],
+      "exit_status": 1,
+      "stdout": "[]\n",
+      "stderr": "error: no such object: be304b90ffa74f464e1dbc70332b9849bdeae0a2d37d7d6902d37ea5c9e5be49\n"
+    }
+  ],
+  "containers_remaining": 0,
+  "volumes_remaining": 0,
+  "new_networks_remaining": 0,
+  "explicit_cleanup_mutations": [],
+  "cleanup_actor": "existing Fixture bounded cleanup plus Testcontainers helper lifecycle",
+  "desktop_touched": false,
+  "blanket_prune_used": false
+}

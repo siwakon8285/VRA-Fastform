@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.vra.inventory.application.ReservationRequestFingerprintTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-01T16:53:22.201Z" hostname="MacBook-Air-khxng-SIwakorn.local" time="0.002">
+  <properties/>
+  <testcase name="quantityValidationIsNotFingerprintResponsibility()" classname="dev.vra.inventory.application.ReservationRequestFingerprintTest" time="0.001"/>
+  <testcase name="rejectsMalformedDigestValues()" classname="dev.vra.inventory.application.ReservationRequestFingerprintTest" time="0.0"/>
+  <testcase name="goldenVectorA()" classname="dev.vra.inventory.application.ReservationRequestFingerprintTest" time="0.0"/>
+  <testcase name="goldenVectorB()" classname="dev.vra.inventory.application.ReservationRequestFingerprintTest" time="0.0"/>
+  <testcase name="goldenVectorC()" classname="dev.vra.inventory.application.ReservationRequestFingerprintTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

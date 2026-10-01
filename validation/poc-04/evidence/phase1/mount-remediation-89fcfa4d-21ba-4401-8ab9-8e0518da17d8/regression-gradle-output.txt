@@ -1,0 +1,510 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :migration:compileJava UP-TO-DATE
+> Task :migration:processResources UP-TO-DATE
+> Task :migration:classes UP-TO-DATE
+> Task :migration:resolveMainClassName UP-TO-DATE
+> Task :migration:bootJar UP-TO-DATE
+> Task :migration:jar UP-TO-DATE
+> Task :migration:compileTestJava UP-TO-DATE
+> Task :migration:processTestResources NO-SOURCE
+> Task :migration:testClasses UP-TO-DATE
+
+> Task :migration:test
+
+Poc04FoundationMigrationIntegrationTest > sourceBindingIncludesTheWholeReviewedRepositoryAndUntrackedPhaseOneBackendSource() PASSED
+
+Poc04FoundationMigrationIntegrationTest > phaseOneContainsOnlyV1ThroughV4AndPreservesReviewedPriorSourceBytes() PASSED
+
+Poc04FoundationMigrationIntegrationTest > logicalDatabaseIdentityUsesStableUuidV5UnderOneUuidV4RunNamespace() PASSED
+
+Poc04FoundationMigrationIntegrationTest > collectorPreparationRestrictsSourceAndDefinesNoObserverProcess() PASSED
+
+> Task :migration:integrationTest
+
+MigrationSecurityIntegrationTest > provesMigrationOwnershipAndRuntimeLeastPrivilege() PASSED
+
+MigrationSecurityIntegrationTest > upgradesActualVersionOneDatabaseThroughVersionFour() PASSED
+
+OutboxMigrationSecurityIntegrationTest > staticShapesIdentityForeignKeysAndUniquenessRejectMalformedRows() PASSED
+
+OutboxMigrationSecurityIntegrationTest > invalidArgumentsCannotMutateAndDedicatedRebuildRepairsFromReservations() PASSED
+
+OutboxMigrationSecurityIntegrationTest > freshMigrationPreservesChecksumsAndCreatesExactCatalog() PASSED
+
+OutboxMigrationSecurityIntegrationTest > immutableEvidenceRejectsOwnerRewriteAndFailedHistoryAppendRollsBackWholeOperation() PASSED
+
+OutboxMigrationSecurityIntegrationTest > intendedReconciliationCapabilitiesKeepPairedStatesAtomic() PASSED
+
+OutboxMigrationSecurityIntegrationTest > normalRetryAndObservationExhaustionNeverScheduleBeyondDurableLimits() PASSED
+
+OutboxMigrationSecurityIntegrationTest > exactDirectAclAndFunctionCallerMatrixExecuteRealDeniedSql() PASSED
+
+OutboxMigrationSecurityIntegrationTest > reconciliationBudgetAllowsFourClaimsThenExactlyOneNonQueryableRecovery() PASSED
+
+OutboxMigrationSecurityIntegrationTest > exactMembershipOwnershipAndExecutorSteadyStateDenyEscalation() PASSED
+
+OutboxMigrationSecurityIntegrationTest > intendedDeliveryProducerConsumerAndControlCapabilitiesCommit() PASSED
+
+OutboxMigrationSecurityIntegrationTest > deferredPairsAndRecoveryEvidenceRejectAtCommitAndPermitCompoundShapes() PASSED
+
+OutboxMigrationSecurityIntegrationTest > actualVersionTwoUpgradePreservesExistingRowsAndEmitsNoHistoricalEvent() PASSED
+
+OutboxMigrationSecurityIntegrationTest > deliveryBudgetAllowsFiveClaimsThenExactlyOneNonDispatchingRecovery() PASSED
+
+Poc04FoundationMigrationIntegrationTest > populatedV3UpgradeRetainsEveryPriorTableAndFlywayHistory() PASSED
+
+Poc04FoundationMigrationIntegrationTest > freshV1ThroughV4ValidatesRerunsAndEnforcesPhaseOneBoundary() PASSED
+
+Poc04FoundationMigrationIntegrationTest > administratorBootstrapConvergesAndRejectsUnexpectedMembershipDrift() PASSED
+
+> Task :runtime:compileJava UP-TO-DATE
+> Task :runtime:processResources UP-TO-DATE
+> Task :runtime:classes UP-TO-DATE
+> Task :runtime:resolveMainClassName UP-TO-DATE
+> Task :runtime:bootJar UP-TO-DATE
+> Task :runtime:jar UP-TO-DATE
+> Task :runtime:compileTestJava
+> Task :runtime:processTestResources NO-SOURCE
+> Task :runtime:testClasses
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+> Task :runtime:test
+
+AsyncArchitectureTest > async_contract_and_inventory_domain_are_inner PASSED
+
+AsyncArchitectureTest > async_application_has_no_outer_or_web_dependency PASSED
+
+AsyncArchitectureTest > reconciliation_has_no_delivery_adapter_or_bootstrap_dependency PASSED
+
+AsyncArchitectureTest > async_adapters_do_not_depend_on_bootstrap_or_controllers PASSED
+
+AsyncArchitectureTest > worker_bootstrap_does_not_import_api_business_stack PASSED
+
+AsyncArchitectureTest > reconciler_mode_does_not_compose_delivery_or_api_stack PASSED
+
+AsyncArchitectureTest > http_client_is_only_in_validation_external_adapter PASSED
+
+InventoryArchitectureTest > domain_is_framework_and_outer_layer_independent PASSED
+
+InventoryArchitectureTest > application_does_not_depend_on_adapters PASSED
+
+InventoryArchitectureTest > jpa_entities_stay_in_persistence_adapter PASSED
+
+InventoryArchitectureTest > web_adapters_do_not_depend_on_persistence_adapters PASSED
+
+InventoryArchitectureTest > rest_controllers_stay_in_web_adapters PASSED
+
+AsyncPropertiesTest > rejectsInvalidTimingAndOverflow() PASSED
+
+AsyncPropertiesTest > approvedDefaultsAreValidAndContainNoCycleBudgetProperty() PASSED
+
+AsyncPropertiesTest > rejectsInvalidJitterAndConcurrency() PASSED
+
+DeliveryRetryPolicyTest > deterministicJitterAndExponentialGrowthFollowApprovedFormula() PASSED
+
+DeliveryRetryPolicyTest > classifierRequiresExplicitEvidenceAndNeverRetriesGenericOrUnknownFailure() PASSED
+
+DeliveryRetryPolicyTest > largeCountAndMillisecondBoundDoNotOverflow() PASSED
+
+DeliveryRetryPolicyTest > persistedBudgetAndBoundsCannotBeExpandedByLocalConfiguration() PASSED
+
+DeliveryRetryPolicyTest > constructorValidatesOnlyRetryInputs() PASSED
+
+ReconciliationPolicyTest > timingValidationAndMillisecondClampStayWithinV3() PASSED
+
+ReconciliationPolicyTest > observationDecisionsAreExact() PASSED
+
+ReconciliationPolicyTest > persistedCaseCountControlsBoundedQueryDelay() PASSED
+
+ReconciliationPolicyTest > noEffectRetryUsesPersistedDeliveryCycleAndSameBoundedFormula() PASSED
+
+ReconciliationPolicyTest > observationExceptionOnlySchedulesAnIndeterminateWait() PASSED
+
+ReservationCreatedEventCodecTest > rejectsInvalidObjectsBeforeEncoding() PASSED
+
+ReservationCreatedEventCodecTest > exactV1WireShapeIsDeterministicAndRoundTrips() PASSED
+
+ReservationCreatedEventCodecTest > rejectsMissingNullExtraDuplicateAndMalformedFields() PASSED
+
+AsyncArchitectureTest > asyncLayersKeepPortsPoliciesAdaptersAndProcessCompositionInTheirPackages() PASSED
+
+AsyncArchitectureTest > rootApiScanAndExplicitProducerImportExcludeWorkerAndReconciler() PASSED
+
+InventoryReservationControllerTest > mapsUnexpectedFailureToSafeGenericInternalErrorAndStructuredLog(CapturedOutput) PASSED
+
+InventoryReservationControllerTest > mapsNonReservableInventoryToStableConflictError() PASSED
+
+InventoryReservationControllerTest > mapsUnknownInventoryToStableNotFoundError() PASSED
+
+InventoryReservationControllerTest > mapsInsufficientStockToStableConflictError() PASSED
+
+InventoryReservationControllerTest > rejectsUnknownStockStatusWithStableError() PASSED
+
+InventoryReservationControllerTest > rejectsMalformedJsonWithStableError() PASSED
+
+InventoryReservationControllerTest > createsReservationAndGeneratesServerControlledRequestId(CapturedOutput) PASSED
+
+InventoryReservationControllerTest > rejectsInvalidRequestBeforeApplicationService() PASSED
+
+InventoryReservationControllerTest > rejectsLegacyExpectedVersionBeforeApplicationService() PASSED
+
+ReservationApplicationServiceTest > quarantinedInventoryIsRejectedByAuthoritativeExecution() PASSED
+
+ReservationApplicationServiceTest > invalidQuantityIsTypedFailureBeforePersistence() PASSED
+
+ReservationRequestFingerprintTest > quantityValidationIsNotFingerprintResponsibility() PASSED
+
+ReservationRequestFingerprintTest > rejectsMalformedDigestValues() PASSED
+
+ReservationRequestFingerprintTest > goldenVectorA() PASSED
+
+ReservationRequestFingerprintTest > goldenVectorB() PASSED
+
+ReservationRequestFingerprintTest > goldenVectorC() PASSED
+
+InventoryReservationTest > rejectsNonPositiveQuantity() PASSED
+
+RuntimeDatabasePropertiesTest > rejectsBlankUrl() PASSED
+
+RuntimeDatabasePropertiesTest > rejectsNonPostgresJdbcUrl() PASSED
+
+RuntimeDatabasePropertiesTest > rejectsPostgresJdbcUrlWithoutHost() PASSED
+
+RuntimeDatabasePropertiesTest > rejectsCredentialsEmbeddedInDatabaseUrl() PASSED
+
+RuntimeDatabasePropertiesTest > rejectsMalformedPostgresJdbcUrl() PASSED
+
+RuntimeDatabasePropertiesTest > rejectsBlankUsername() PASSED
+
+RuntimeDatabasePropertiesTest > rejectsPostgresJdbcUrlWithoutDatabaseName() PASSED
+
+RuntimeDatabasePropertiesTest > rejectsBlankPassword() PASSED
+
+RuntimeDatabasePropertiesTest > acceptsCompleteConfiguration() PASSED
+
+> Task :runtime:integrationTest
+
+AsyncPermissionIntegrationTest > eachWorkloadCredentialExecutesItsNarrowPositiveOperation() PASSED
+
+AsyncPermissionIntegrationTest > forbiddenSqlHasExpectedSqlstateAndLeavesAuthoritativeRowsUnchanged() PASSED
+
+AsyncVisibilityIntegrationTest > normalAndRecoveryOnlyExhaustionRemainDistinctInImmutableHistory() PASSED
+
+AsyncVisibilityIntegrationTest > observerCanReadButCannotMutateOrEscalate() PASSED
+
+AsyncVisibilityIntegrationTest > allCurrentStatesActivityAgeAndSafeHistoryMatchPostgresql() PASSED
+
+DeliveryClaimIntegrationTest > fiveDispatchableClaimsThenOneRecoveryOnlyForEachScenario() PASSED
+
+DeliveryClaimIntegrationTest > relinquishmentImmediatelyFencesAndRollbackKeepsOldLease() PASSED
+
+DeliveryClaimIntegrationTest > readyClaimCommitsAndRolledBackClaimLeavesNoTrace() PASSED
+
+DeliveryClaimIntegrationTest > expiryDoesNotRevokeButCommittedReclaimFencesEveryOldOperation() PASSED
+
+DeliveryClaimIntegrationTest > overlappingWorkerTransactionsSkipLockedAndNeverDuplicate() PASSED
+
+DeliveryClaimIntegrationTest > workerHasOnlyGuardedDeliveryCapabilities() PASSED
+
+DeliveryClaimIntegrationTest > retryWaitBecomesClaimableOnlyAtDatabaseEligibilityTime() PASSED
+
+DeliveryStateIntegrationTest > reconciliationEdgesUseCurrentCaseTokenAndPairedDeliveryTransitions() PASSED
+
+DeliveryStateIntegrationTest > readyRetryFailReplaySuccessAndTerminalGuardsPreserveCycleHistory() PASSED
+
+DeliveryStateIntegrationTest > malformedShapeAndOrphanAreDeniedWithoutChangingAuthoritativeState() PASSED
+
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+> Task :runtime:integrationTest
+
+ProducerOutboxIntegrationTest > eventInsertFailureRollsBackBothPaths() PASSED
+
+ProducerOutboxIntegrationTest > conflictingPayloadAndRejectionsNeverProduceAnotherEvent() PASSED
+
+ProducerOutboxIntegrationTest > ordinaryAndIdempotentFirstSuccessCommitExactProducerRows() PASSED
+
+ProducerOutboxIntegrationTest > sameKeySequentialAndLostResultReplayPreserveEventAndCreatedHistory() PASSED
+
+ProducerOutboxIntegrationTest > runtimeCanPublishButCannotWriteAsyncTablesOrCallLaterOperations() PASSED
+
+ProducerOutboxIntegrationTest > deliveryInsertFailureAfterEventInsertRollsBackBothPaths() PASSED
+
+ProducerOutboxIntegrationTest > concurrentSameKeyCallsConvergeToOneReservationEventAndDelivery() PASSED
+
+ProjectionInboxIntegrationTest > normalClaimConsumesAtomicallyThenFinalizes() PASSED
+
+ProjectionInboxIntegrationTest > sequentialDuplicateUsesDurableInboxWithoutSecondEffect() PASSED
+
+ProjectionInboxIntegrationTest > identicalPreexistingProjectionConvergesWithoutOverwrite() PASSED
+
+ProjectionInboxIntegrationTest > overlappingDuplicatesConvergeThroughPostgresqlUniqueIdentity() PASSED
+
+ProjectionInboxIntegrationTest > committedConsumerBeforeOmittedFinalizeRedeliversWithoutEffect() PASSED
+
+ProjectionInboxIntegrationTest > unsupportedContractFailsBeforeInboxRegistration() PASSED
+
+ProjectionInboxIntegrationTest > independentEventsCanProjectInReverseCreationOrder() PASSED
+
+ProjectionInboxIntegrationTest > mismatchingPreexistingProjectionRejectsAndRollsBackInbox() PASSED
+
+ProjectionInboxIntegrationTest > workerCanInsertButCannotMaintainProjectionInboxOrBusinessTables() PASSED
+
+ProjectionInboxIntegrationTest > projectionFailureAfterInboxInsertRollsBothBackAndCanRetry() PASSED
+
+ProjectionRebuildIntegrationTest > authoritativeRepairIgnoresStaleInboxAndOutboxHistoryThenRedeliveryConverges() PASSED
+
+ProjectionRebuildIntegrationTest > reservationCommittedAfterRebuildConvergesThroughDurableScenarioADelivery() PASSED
+
+ProjectionRebuildIntegrationTest > rebuildTableLockSerializesConsumerProjectionWriteUntilCommit() PASSED
+
+ProjectionRebuildIntegrationTest > actualRebuilderAndWorkerCredentialsEnforceOnlyTheirCapabilities() PASSED
+
+ReconciliationIntegrationTest > expiredFourthCheckingGetsOneRecoveryOnlyClaimAndNoObservation() PASSED
+
+ReconciliationIntegrationTest > actualCredentialsEnforceReconcilerOperatorWorkerSeparation() PASSED
+
+ReconciliationIntegrationTest > operatorResumeStartsNewCaseCycleWithoutErasingLifetimeOrDeliveryCycle() PASSED
+
+ReconciliationIntegrationTest > fourIndeterminateQueriesExhaustWithoutChangingPersistedLimit() PASSED
+
+ReconciliationIntegrationTest > reconcilerModeUsesOnlyItsCredentialAndNonWebBeans() PASSED
+
+ReconciliationIntegrationTest > exhaustedDeliveryCycleResolvesNoEffectWithoutOpeningAnotherRetry() PASSED
+
+ReconciliationIntegrationTest > operatorClosePreservesUnknownAndTerminallyStopsCaseAndDelivery() PASSED
+
+ReconciliationIntegrationTest > explicitExhaustionLeavesUnknownAndOperatorCanCloseFailedWorkWithoutCase() PASSED
+
+ReconciliationIntegrationTest > operatorResumeAndCloseRaceToOnePairedTransitionWhileReplayIsDenied() PASSED
+
+ReconciliationIntegrationTest > lostResponseUnknownHandoffThenCommittedObservationConfirmsExactlyOneEffect() PASSED
+
+ReconciliationIntegrationTest > requiredHistoryFailuresRollBackAllSevenPairedTransitions() PASSED
+
+ReconciliationIntegrationTest > recreatedRepositoryRediscoversDueWaitingAndExpiredCheckingWithoutLimitExpansion() PASSED
+
+ReconciliationIntegrationTest > pendingSimulatorObservationPersistsIndeterminateHistoryAndUnknownCaseReason() PASSED
+
+ReconciliationIntegrationTest > activeCaseConflictAbortsSecondHandoffWithoutPartialMutation() PASSED
+
+ReconciliationIntegrationTest > strongAbsenceResolvesCaseAndSchedulesSameEventSameCycleRetry() PASSED
+
+ReconciliationIntegrationTest > reclaimedTokenFencesEveryOldFinalizationAndCurrentTokenCanFinish() PASSED
+
+RetryReplayIntegrationTest > durableTransientCycleExhaustsThenReplaysSameEventIntoNewCycle() PASSED
+
+RetryReplayIntegrationTest > replayGuardRejectsTransientMalformedActivePairsBeforeDeferredCommit() PASSED
+
+RetryReplayIntegrationTest > unknownIsNotAnOrdinaryRetryOrFailClassification() PASSED
+
+RetryReplayIntegrationTest > explicitTerminalClassesUseOnlyStableV3Pairs() PASSED
+
+RetryReplayIntegrationTest > replayRejectsSucceededClosedReconciliationRequiredUnknownAndActiveCase() PASSED
+
+RetryReplayIntegrationTest > workerAndOperatorHaveOnlyTheirIntendedCapabilities() PASSED
+
+RetryReplayIntegrationTest > reclaimedExternalClaimStillCannotBypassUnknownHandoff() PASSED
+
+ValidationSimulatorIntegrationTest > observationCannotConfirmAbsenceWhileExecuteWaitsToRegister() PASSED
+
+ValidationSimulatorIntegrationTest > sameIdentityAndSemanticPayloadDeduplicateWhileConflictDoesNotMutate() PASSED
+
+ValidationSimulatorIntegrationTest > acceptedPendingIsIndeterminateAndObservationNeverCreatesAnEffect() PASSED
+
+ValidationSimulatorIntegrationTest > validationTargetBootstrapProducesOnlyOneScenarioBDelivery() PASSED
+
+ValidationSimulatorIntegrationTest > lostResponseAndTimeoutRemainUnknownDespiteOneDurableEffect() PASSED
+
+WorkerProcessCrashIntegrationTest > initializationError FAILED
+    org.testcontainers.containers.ContainerLaunchException at WorkerProcessCrashIntegrationTest.java:58
+        Caused by: org.rnorth.ducttape.RetryCountExceededException at WorkerProcessCrashIntegrationTest.java:58
+            Caused by: org.testcontainers.containers.ContainerLaunchException at WorkerProcessCrashIntegrationTest.java:58
+                Caused by: com.github.dockerjava.api.exception.BadRequestException at WorkerProcessCrashIntegrationTest.java:58
+
+IdempotentReservationApplicationServiceIntegrationTest > resultLossRetryReturnsOriginalCommittedReservation() FAILED
+    java.lang.ExceptionInInitializerError at Unsafe.java:-2
+        Caused by: org.testcontainers.containers.ContainerLaunchException at IdempotentReservationApplicationServiceIntegrationTest.java:64
+            Caused by: org.rnorth.ducttape.RetryCountExceededException at IdempotentReservationApplicationServiceIntegrationTest.java:64
+                Caused by: org.testcontainers.containers.ContainerLaunchException at IdempotentReservationApplicationServiceIntegrationTest.java:64
+                    Caused by: com.github.dockerjava.api.exception.BadRequestException at IdempotentReservationApplicationServiceIntegrationTest.java:64
+
+IdempotentReservationApplicationServiceIntegrationTest > injectedSaveFailureRollsBackClaimAndStockThenSameKeyCanSucceed() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at IdempotentReservationApplicationServiceIntegrationTest.java:64
+
+IdempotentReservationApplicationServiceIntegrationTest > identityStringsRemainExactAfterValidation() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at IdempotentReservationApplicationServiceIntegrationTest.java:64
+
+IdempotentReservationApplicationServiceIntegrationTest > samePayloadReplaysAndDifferentPayloadConflictsWithoutMutation() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at IdempotentReservationApplicationServiceIntegrationTest.java:64
+
+IdempotentReservationApplicationServiceIntegrationTest > firstSuccessPersistsOneBusinessEffectAndTerminalOutcome() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at IdempotentReservationApplicationServiceIntegrationTest.java:64
+
+IdempotentReservationApplicationServiceIntegrationTest > insufficientStockRejectionReplaysAfterStockChangesAndNewKeyExecutes() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at IdempotentReservationApplicationServiceIntegrationTest.java:64
+
+IdempotentReservationApplicationServiceIntegrationTest > missingInventoryIsTerminalBusinessRejection() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at IdempotentReservationApplicationServiceIntegrationTest.java:64
+
+IdempotentReservationApplicationServiceIntegrationTest > malformedCommandsDoNotClaimOrMutateAndCorrectedQuantityCanUseSameKey() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at IdempotentReservationApplicationServiceIntegrationTest.java:64
+
+IdempotentReservationApplicationServiceIntegrationTest > quarantinedInventoryClaimsThenCommitsNonReservableRejection() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at IdempotentReservationApplicationServiceIntegrationTest.java:64
+
+ReservationConcurrencyIntegrationTest > sameKeyInDifferentActorScopesExecutesTwice() FAILED
+    java.lang.ExceptionInInitializerError at Unsafe.java:-2
+        Caused by: org.testcontainers.containers.ContainerLaunchException at ReservationConcurrencyIntegrationTest.java:84
+            Caused by: org.rnorth.ducttape.RetryCountExceededException at ReservationConcurrencyIntegrationTest.java:84
+                Caused by: org.testcontainers.containers.ContainerLaunchException at ReservationConcurrencyIntegrationTest.java:84
+                    Caused by: com.github.dockerjava.api.exception.BadRequestException at ReservationConcurrencyIntegrationTest.java:84
+
+ReservationConcurrencyIntegrationTest > concurrentConflictingPayloadsBindExactlyOneFingerprint() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationConcurrencyIntegrationTest.java:84
+
+ReservationConcurrencyIntegrationTest > concurrentSameKeyReturnsOneAuthoritativeResult() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationConcurrencyIntegrationTest.java:84
+
+ReservationConcurrencyIntegrationTest > concurrentOptimisticCompareAndSwapIsSeparateFromReservations() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationConcurrencyIntegrationTest.java:84
+
+ReservationConcurrencyIntegrationTest > oneUnitAcrossFiveHundredDistinctIdentities() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationConcurrencyIntegrationTest.java:84
+
+ReservationHttpPostgresIntegrationTest > realHttpUsesRuntimeLeastPrivilegeIdentity() FAILED
+    java.lang.ExceptionInInitializerError at Unsafe.java:-2
+        Caused by: org.testcontainers.containers.ContainerLaunchException at ReservationHttpPostgresIntegrationTest.java:54
+            Caused by: org.rnorth.ducttape.RetryCountExceededException at ReservationHttpPostgresIntegrationTest.java:54
+                Caused by: org.testcontainers.containers.ContainerLaunchException at ReservationHttpPostgresIntegrationTest.java:54
+                    Caused by: com.github.dockerjava.api.exception.BadRequestException at ReservationHttpPostgresIntegrationTest.java:54
+
+ReservationHttpPostgresIntegrationTest > realHttpRejectsLegacyExpectedVersionWithoutMutation() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationHttpPostgresIntegrationTest.java:54
+
+ReservationHttpPostgresIntegrationTest > realHttpInsufficientStockReturnsStableErrorWithoutMutation() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationHttpPostgresIntegrationTest.java:54
+
+ReservationHttpPostgresIntegrationTest > realHttpRequestPersistsReservationInPostgres() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationHttpPostgresIntegrationTest.java:54
+
+ReservationIdempotencyRepositoryIntegrationTest > successLifecycleReplaysAndCannotBeRewritten() FAILED
+    java.lang.ExceptionInInitializerError at Unsafe.java:-2
+        Caused by: org.testcontainers.containers.ContainerLaunchException at ReservationIdempotencyRepositoryIntegrationTest.java:51
+            Caused by: org.rnorth.ducttape.RetryCountExceededException at ReservationIdempotencyRepositoryIntegrationTest.java:51
+                Caused by: org.testcontainers.containers.ContainerLaunchException at ReservationIdempotencyRepositoryIntegrationTest.java:51
+                    Caused by: com.github.dockerjava.api.exception.BadRequestException at ReservationIdempotencyRepositoryIntegrationTest.java:51
+
+ReservationIdempotencyRepositoryIntegrationTest > missingClaimCannotBeCompleted() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationIdempotencyRepositoryIntegrationTest.java:51
+
+ReservationIdempotencyRepositoryIntegrationTest > rejectionLifecycleReplaysAndCannotBeRewritten() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationIdempotencyRepositoryIntegrationTest.java:51
+
+ReservationIdempotencyRepositoryIntegrationTest > unknownPersistedRejectionFailsAsInvariant() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationIdempotencyRepositoryIntegrationTest.java:51
+
+ReservationIdempotencyRepositoryIntegrationTest > committedIncompleteFixtureFailsBeforeFingerprintConflict() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationIdempotencyRepositoryIntegrationTest.java:51
+
+ReservationIdempotencyRepositoryIntegrationTest > wrongFingerprintCannotCompleteAndClaimIsRolledBack() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationIdempotencyRepositoryIntegrationTest.java:51
+
+ReservationTransactionIntegrationTest > databaseRejectsNegativeOnHand() FAILED
+    java.lang.ExceptionInInitializerError at Unsafe.java:-2
+        Caused by: org.testcontainers.containers.ContainerLaunchException at ReservationTransactionIntegrationTest.java:53
+            Caused by: org.rnorth.ducttape.RetryCountExceededException at ReservationTransactionIntegrationTest.java:53
+                Caused by: org.testcontainers.containers.ContainerLaunchException at ReservationTransactionIntegrationTest.java:53
+                    Caused by: com.github.dockerjava.api.exception.BadRequestException at ReservationTransactionIntegrationTest.java:53
+
+ReservationTransactionIntegrationTest > databaseRejectsInvalidStockStatus() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationTransactionIntegrationTest.java:53
+
+ReservationTransactionIntegrationTest > databaseRejectsNegativeReserved() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationTransactionIntegrationTest.java:53
+
+ReservationTransactionIntegrationTest > insufficientStockDoesNotCreateReservationOrChangeBalance() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationTransactionIntegrationTest.java:53
+
+ReservationTransactionIntegrationTest > quarantinedInventoryIsNotReservable() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationTransactionIntegrationTest.java:53
+
+ReservationTransactionIntegrationTest > runtimeConnectsUsingLeastPrivilegeIdentity() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationTransactionIntegrationTest.java:53
+
+ReservationTransactionIntegrationTest > databaseRejectsNonPositiveReservationQuantity() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationTransactionIntegrationTest.java:53
+
+ReservationTransactionIntegrationTest > reservesInventoryAndPersistsReservationInOneTransaction() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationTransactionIntegrationTest.java:53
+
+ReservationTransactionIntegrationTest > inventoryKeyKeepsOwnerAndLocationIsolated() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationTransactionIntegrationTest.java:53
+
+ReservationTransactionIntegrationTest > reservationInsertFailureRollsBackPriorJdbcInventoryUpdate() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationTransactionIntegrationTest.java:53
+
+ReservationTransactionIntegrationTest > staleOptimisticCompareAndSwapDoesNotMutateState() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationTransactionIntegrationTest.java:53
+
+ReservationTransactionIntegrationTest > databaseRejectsReservedGreaterThanOnHand() FAILED
+    java.lang.NoClassDefFoundError at Unsafe.java:-2
+        Caused by: java.lang.ExceptionInInitializerError at ReservationTransactionIntegrationTest.java:53
+
+HealthProbePostgresIntegrationTest > databaseOutageMakesReadinessDownButKeepsLivenessUp() FAILED
+    java.lang.ExceptionInInitializerError at Unsafe.java:-2
+        Caused by: org.testcontainers.containers.ContainerLaunchException at HealthProbePostgresIntegrationTest.java:53
+            Caused by: org.rnorth.ducttape.RetryCountExceededException at HealthProbePostgresIntegrationTest.java:53
+                Caused by: org.testcontainers.containers.ContainerLaunchException at HealthProbePostgresIntegrationTest.java:53
+                    Caused by: com.github.dockerjava.api.exception.BadRequestException at HealthProbePostgresIntegrationTest.java:53
+
+{"@timestamp":"2026-10-01T07:14:14.398311Z","log":{"level":"INFO","logger":"org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"},"process":{"pid":95513,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"Closing JPA EntityManagerFactory for persistence unit 'default'","tags":["COMMONS-LOGGING"],"ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:14:14.399137Z","log":{"level":"INFO","logger":"com.zaxxer.hikari.HikariDataSource"},"process":{"pid":95513,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"HikariPool-1 - Shutdown initiated...","ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:14:14.399978Z","log":{"level":"INFO","logger":"com.zaxxer.hikari.HikariDataSource"},"process":{"pid":95513,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"HikariPool-1 - Shutdown completed.","ecs":{"version":"8.11"}}
+
+> Task :runtime:integrationTest FAILED
+
+102 tests completed, 38 failed
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':runtime:integrationTest'.
+> There were failing tests. See the report at: file:///Users/siwakornbundi/Project/VRA-Fastform/backend/runtime/build/reports/tests/integrationTest/index.html
+
+* Try:
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 1m 39s
+16 actionable tasks: 5 executed, 11 up-to-date

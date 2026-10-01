@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-jdk-x0q7h_vo/jdk-21.0.12.1+1/Contents/Home/bin/javac",
+    "-cp",
+    "/Users/siwakornbundi/.gradle/caches/modules-2/files-2.1/com.zaxxer/HikariCP/7.0.2/c2b43c946b86a14a96342379e22b004c56c6166d/HikariCP-7.0.2.jar:/Users/siwakornbundi/.gradle/caches/modules-2/files-2.1/org.springframework/spring-test/7.0.9/6c7a684b41d69ad6e46b9bd14ad03a8ff6257adf/spring-test-7.0.9.jar:/Users/siwakornbundi/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/7.0.9/7eb8e01ecf1633ddd4d64ca184194f967b6bc0aa/spring-context-7.0.9.jar:/Users/siwakornbundi/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/7.0.9/e03c619fc5b26931973277f5ba65ae47967a20e3/spring-core-7.0.9.jar:/Users/siwakornbundi/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/7.0.9/2bee42fa948a5f32761fd0838de3baa1f51c0225/spring-beans-7.0.9.jar:/Users/siwakornbundi/.gradle/caches/modules-2/files-2.1/tools.jackson.core/jackson-core/3.1.5/ccd7eb3269b8d33bc097b36770f367cdfe2f1150/jackson-core-3.1.5.jar:/Users/siwakornbundi/.gradle/caches/modules-2/files-2.1/tools.jackson.core/jackson-databind/3.1.5/782178f0b1fe088803c03b85eb9a406f60519044/jackson-databind-3.1.5.jar:/Users/siwakornbundi/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.21/b1bc1868bf02dc0bd6c7836257a036a331005309/jackson-annotations-2.21.jar",
+    "-d",
+    "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-health-diagnosis-2f1ia_y4/spi-classes",
+    "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-health-diagnosis-2f1ia_y4/HealthDiagnosticListener.java"
+  ],
+  "exit_status": 0,
+  "output": "",
+  "source_sha256": "b57e99c5ca341bbabc8062e72bf407c43390cf85e49401131786fe001b4f15c5"
+}

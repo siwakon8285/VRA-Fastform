@@ -1,0 +1,12 @@
+{
+  "new_modified_preexisting_paths": [
+    "validation/poc-04/scripts/collector-boundary-proof.py"
+  ],
+  "script_sha256": "dfe90a39be85b0c38b3bfe8c8b41c07c5a7c5aaa85b8321dd87f80f8805f291e",
+  "git_diff_check_exit_status": 0,
+  "python_syntax": "PASS",
+  "old_script_sha256": "ca0139d63b19cc29a2392aeb99e6ca4c9e9998fb486f63c7f58d1f2a5b59f288",
+  "historical_immutable_paths": 713,
+  "patch": "collector-parser-only.patch",
+  "schema_grants_dependencies_unchanged": true
+}

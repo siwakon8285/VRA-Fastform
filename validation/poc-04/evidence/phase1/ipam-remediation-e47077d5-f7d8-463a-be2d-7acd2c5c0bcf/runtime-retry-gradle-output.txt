@@ -1,0 +1,284 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :migration:compileJava
+> Task :migration:processResources
+> Task :migration:classes
+> Task :migration:jar
+
+> Task :runtime:compileJava
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :runtime:processResources
+> Task :runtime:classes
+
+> Task :runtime:compileTestJava
+Note: /Users/siwakornbundi/Project/VRA-Fastform/backend/runtime/src/test/java/dev/vra/async/simulator/SimulatorHttpServer.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :runtime:processTestResources NO-SOURCE
+> Task :runtime:testClasses
+
+> Task :runtime:integrationTest
+
+WorkerProcessCrashIntegrationTest > gracefulDrainAllowsCommittedConsumerToGuardedFinalize() PASSED
+
+WorkerProcessCrashIntegrationTest > lostResponseAfterDurableEffectIsRecoveredByFreshWorkerAndReconcilerPids() PASSED
+
+WorkerProcessCrashIntegrationTest > boundedClaimsAndUnavailableRelinquishmentFallBackToLeaseExpiry() PASSED
+
+WorkerProcessCrashIntegrationTest > productionDrainRelinquishesStoppedAttemptWithCurrentToken() PASSED
+
+WorkerProcessCrashIntegrationTest > committedScenarioAClaimSurvivesAbruptPidDeathAndFreshPidReclaims() PASSED
+
+WorkerProcessCrashIntegrationTest > externalDrainDoesNotClaimOrExecuteTheNextDurableEvent() PASSED
+
+WorkerProcessCrashIntegrationTest > wrongWorkerAndReconcilerDatabaseIdentitiesFailStartup() PASSED
+
+WorkerProcessCrashIntegrationTest > killedExternalRequestReclaimsToUnknownBeforeAnyFurtherExecute() PASSED
+
+WorkerProcessCrashIntegrationTest > gracefulDrainLeavesUnclaimedWorkDurableAndStartsNoNewEffect() PASSED
+
+WorkerProcessCrashIntegrationTest > committedConsumerEffectSurvivesKillBeforeDeliveryFinalize() PASSED
+
+WorkerProcessCrashIntegrationTest > stoppedAttemptRelinquishesWithoutChangingProcessingOrTransferringOwnership() PASSED
+
+WorkerProcessCrashIntegrationTest > reconcilerDrainStopsClaimsAndFreshPidRediscoversDurableCase() PASSED
+
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+> Task :runtime:integrationTest
+
+IdempotentReservationApplicationServiceIntegrationTest > resultLossRetryReturnsOriginalCommittedReservation() PASSED
+
+IdempotentReservationApplicationServiceIntegrationTest > injectedSaveFailureRollsBackClaimAndStockThenSameKeyCanSucceed() PASSED
+
+IdempotentReservationApplicationServiceIntegrationTest > identityStringsRemainExactAfterValidation() PASSED
+
+IdempotentReservationApplicationServiceIntegrationTest > samePayloadReplaysAndDifferentPayloadConflictsWithoutMutation() PASSED
+
+IdempotentReservationApplicationServiceIntegrationTest > firstSuccessPersistsOneBusinessEffectAndTerminalOutcome() PASSED
+
+IdempotentReservationApplicationServiceIntegrationTest > insufficientStockRejectionReplaysAfterStockChangesAndNewKeyExecutes() PASSED
+
+IdempotentReservationApplicationServiceIntegrationTest > missingInventoryIsTerminalBusinessRejection() PASSED
+
+IdempotentReservationApplicationServiceIntegrationTest > malformedCommandsDoNotClaimOrMutateAndCorrectedQuantityCanUseSameKey() PASSED
+
+IdempotentReservationApplicationServiceIntegrationTest > quarantinedInventoryClaimsThenCommitsNonReservableRejection() PASSED
+
+ReservationConcurrencyIntegrationTest > sameKeyInDifferentActorScopesExecutesTwice() PASSED
+
+ReservationConcurrencyIntegrationTest > concurrentConflictingPayloadsBindExactlyOneFingerprint() PASSED
+
+ReservationConcurrencyIntegrationTest > concurrentSameKeyReturnsOneAuthoritativeResult() PASSED
+
+ReservationConcurrencyIntegrationTest > concurrentOptimisticCompareAndSwapIsSeparateFromReservations() PASSED
+
+ReservationConcurrencyIntegrationTest > oneUnitAcrossFiveHundredDistinctIdentities() PASSED
+
+ReservationHttpPostgresIntegrationTest > realHttpUsesRuntimeLeastPrivilegeIdentity() PASSED
+
+ReservationHttpPostgresIntegrationTest > realHttpRejectsLegacyExpectedVersionWithoutMutation() PASSED
+
+ReservationHttpPostgresIntegrationTest > realHttpInsufficientStockReturnsStableErrorWithoutMutation() PASSED
+
+ReservationHttpPostgresIntegrationTest > realHttpRequestPersistsReservationInPostgres() PASSED
+
+ReservationIdempotencyRepositoryIntegrationTest > successLifecycleReplaysAndCannotBeRewritten() PASSED
+
+ReservationIdempotencyRepositoryIntegrationTest > missingClaimCannotBeCompleted() PASSED
+
+ReservationIdempotencyRepositoryIntegrationTest > rejectionLifecycleReplaysAndCannotBeRewritten() PASSED
+
+ReservationIdempotencyRepositoryIntegrationTest > unknownPersistedRejectionFailsAsInvariant() PASSED
+
+ReservationIdempotencyRepositoryIntegrationTest > committedIncompleteFixtureFailsBeforeFingerprintConflict() PASSED
+
+ReservationIdempotencyRepositoryIntegrationTest > wrongFingerprintCannotCompleteAndClaimIsRolledBack() PASSED
+
+ReservationTransactionIntegrationTest > databaseRejectsNegativeOnHand() PASSED
+
+ReservationTransactionIntegrationTest > databaseRejectsInvalidStockStatus() PASSED
+
+ReservationTransactionIntegrationTest > databaseRejectsNegativeReserved() PASSED
+
+ReservationTransactionIntegrationTest > insufficientStockDoesNotCreateReservationOrChangeBalance() PASSED
+
+ReservationTransactionIntegrationTest > quarantinedInventoryIsNotReservable() PASSED
+
+ReservationTransactionIntegrationTest > runtimeConnectsUsingLeastPrivilegeIdentity() PASSED
+
+ReservationTransactionIntegrationTest > databaseRejectsNonPositiveReservationQuantity() PASSED
+
+ReservationTransactionIntegrationTest > reservesInventoryAndPersistsReservationInOneTransaction() PASSED
+
+ReservationTransactionIntegrationTest > inventoryKeyKeepsOwnerAndLocationIsolated() PASSED
+
+ReservationTransactionIntegrationTest > reservationInsertFailureRollsBackPriorJdbcInventoryUpdate() PASSED
+
+ReservationTransactionIntegrationTest > staleOptimisticCompareAndSwapDoesNotMutateState() PASSED
+
+ReservationTransactionIntegrationTest > databaseRejectsReservedGreaterThanOnHand() PASSED
+
+HealthProbePostgresIntegrationTest > databaseOutageMakesReadinessDownButKeepsLivenessUp() PASSED
+
+AsyncPermissionIntegrationTest > eachWorkloadCredentialExecutesItsNarrowPositiveOperation() PASSED
+
+AsyncPermissionIntegrationTest > forbiddenSqlHasExpectedSqlstateAndLeavesAuthoritativeRowsUnchanged() PASSED
+
+AsyncVisibilityIntegrationTest > normalAndRecoveryOnlyExhaustionRemainDistinctInImmutableHistory() PASSED
+
+AsyncVisibilityIntegrationTest > observerCanReadButCannotMutateOrEscalate() PASSED
+
+AsyncVisibilityIntegrationTest > allCurrentStatesActivityAgeAndSafeHistoryMatchPostgresql() PASSED
+
+DeliveryClaimIntegrationTest > fiveDispatchableClaimsThenOneRecoveryOnlyForEachScenario() PASSED
+
+DeliveryClaimIntegrationTest > relinquishmentImmediatelyFencesAndRollbackKeepsOldLease() PASSED
+
+DeliveryClaimIntegrationTest > readyClaimCommitsAndRolledBackClaimLeavesNoTrace() PASSED
+
+DeliveryClaimIntegrationTest > expiryDoesNotRevokeButCommittedReclaimFencesEveryOldOperation() PASSED
+
+DeliveryClaimIntegrationTest > overlappingWorkerTransactionsSkipLockedAndNeverDuplicate() PASSED
+
+DeliveryClaimIntegrationTest > workerHasOnlyGuardedDeliveryCapabilities() PASSED
+
+DeliveryClaimIntegrationTest > retryWaitBecomesClaimableOnlyAtDatabaseEligibilityTime() PASSED
+
+DeliveryStateIntegrationTest > reconciliationEdgesUseCurrentCaseTokenAndPairedDeliveryTransitions() PASSED
+
+DeliveryStateIntegrationTest > readyRetryFailReplaySuccessAndTerminalGuardsPreserveCycleHistory() PASSED
+
+DeliveryStateIntegrationTest > malformedShapeAndOrphanAreDeniedWithoutChangingAuthoritativeState() PASSED
+
+ProducerOutboxIntegrationTest > eventInsertFailureRollsBackBothPaths() PASSED
+
+ProducerOutboxIntegrationTest > conflictingPayloadAndRejectionsNeverProduceAnotherEvent() PASSED
+
+ProducerOutboxIntegrationTest > ordinaryAndIdempotentFirstSuccessCommitExactProducerRows() PASSED
+
+ProducerOutboxIntegrationTest > sameKeySequentialAndLostResultReplayPreserveEventAndCreatedHistory() PASSED
+
+ProducerOutboxIntegrationTest > runtimeCanPublishButCannotWriteAsyncTablesOrCallLaterOperations() PASSED
+
+ProducerOutboxIntegrationTest > deliveryInsertFailureAfterEventInsertRollsBackBothPaths() PASSED
+
+ProducerOutboxIntegrationTest > concurrentSameKeyCallsConvergeToOneReservationEventAndDelivery() PASSED
+
+ProjectionInboxIntegrationTest > normalClaimConsumesAtomicallyThenFinalizes() PASSED
+
+ProjectionInboxIntegrationTest > sequentialDuplicateUsesDurableInboxWithoutSecondEffect() PASSED
+
+ProjectionInboxIntegrationTest > identicalPreexistingProjectionConvergesWithoutOverwrite() PASSED
+
+ProjectionInboxIntegrationTest > overlappingDuplicatesConvergeThroughPostgresqlUniqueIdentity() PASSED
+
+ProjectionInboxIntegrationTest > committedConsumerBeforeOmittedFinalizeRedeliversWithoutEffect() PASSED
+
+ProjectionInboxIntegrationTest > unsupportedContractFailsBeforeInboxRegistration() PASSED
+
+ProjectionInboxIntegrationTest > independentEventsCanProjectInReverseCreationOrder() PASSED
+
+ProjectionInboxIntegrationTest > mismatchingPreexistingProjectionRejectsAndRollsBackInbox() PASSED
+
+ProjectionInboxIntegrationTest > workerCanInsertButCannotMaintainProjectionInboxOrBusinessTables() PASSED
+
+ProjectionInboxIntegrationTest > projectionFailureAfterInboxInsertRollsBothBackAndCanRetry() PASSED
+
+ProjectionRebuildIntegrationTest > authoritativeRepairIgnoresStaleInboxAndOutboxHistoryThenRedeliveryConverges() PASSED
+
+ProjectionRebuildIntegrationTest > reservationCommittedAfterRebuildConvergesThroughDurableScenarioADelivery() PASSED
+
+ProjectionRebuildIntegrationTest > rebuildTableLockSerializesConsumerProjectionWriteUntilCommit() PASSED
+
+ProjectionRebuildIntegrationTest > actualRebuilderAndWorkerCredentialsEnforceOnlyTheirCapabilities() PASSED
+
+ReconciliationIntegrationTest > expiredFourthCheckingGetsOneRecoveryOnlyClaimAndNoObservation() PASSED
+
+ReconciliationIntegrationTest > actualCredentialsEnforceReconcilerOperatorWorkerSeparation() PASSED
+
+ReconciliationIntegrationTest > operatorResumeStartsNewCaseCycleWithoutErasingLifetimeOrDeliveryCycle() PASSED
+
+ReconciliationIntegrationTest > fourIndeterminateQueriesExhaustWithoutChangingPersistedLimit() PASSED
+
+ReconciliationIntegrationTest > reconcilerModeUsesOnlyItsCredentialAndNonWebBeans() PASSED
+
+ReconciliationIntegrationTest > exhaustedDeliveryCycleResolvesNoEffectWithoutOpeningAnotherRetry() PASSED
+
+ReconciliationIntegrationTest > operatorClosePreservesUnknownAndTerminallyStopsCaseAndDelivery() PASSED
+
+ReconciliationIntegrationTest > explicitExhaustionLeavesUnknownAndOperatorCanCloseFailedWorkWithoutCase() PASSED
+
+ReconciliationIntegrationTest > operatorResumeAndCloseRaceToOnePairedTransitionWhileReplayIsDenied() PASSED
+
+ReconciliationIntegrationTest > lostResponseUnknownHandoffThenCommittedObservationConfirmsExactlyOneEffect() PASSED
+
+ReconciliationIntegrationTest > requiredHistoryFailuresRollBackAllSevenPairedTransitions() PASSED
+
+ReconciliationIntegrationTest > recreatedRepositoryRediscoversDueWaitingAndExpiredCheckingWithoutLimitExpansion() PASSED
+
+ReconciliationIntegrationTest > pendingSimulatorObservationPersistsIndeterminateHistoryAndUnknownCaseReason() PASSED
+
+ReconciliationIntegrationTest > activeCaseConflictAbortsSecondHandoffWithoutPartialMutation() PASSED
+
+ReconciliationIntegrationTest > strongAbsenceResolvesCaseAndSchedulesSameEventSameCycleRetry() PASSED
+
+ReconciliationIntegrationTest > reclaimedTokenFencesEveryOldFinalizationAndCurrentTokenCanFinish() PASSED
+
+RetryReplayIntegrationTest > durableTransientCycleExhaustsThenReplaysSameEventIntoNewCycle() PASSED
+
+RetryReplayIntegrationTest > replayGuardRejectsTransientMalformedActivePairsBeforeDeferredCommit() PASSED
+
+RetryReplayIntegrationTest > unknownIsNotAnOrdinaryRetryOrFailClassification() PASSED
+
+RetryReplayIntegrationTest > explicitTerminalClassesUseOnlyStableV3Pairs() PASSED
+
+RetryReplayIntegrationTest > replayRejectsSucceededClosedReconciliationRequiredUnknownAndActiveCase() PASSED
+
+RetryReplayIntegrationTest > workerAndOperatorHaveOnlyTheirIntendedCapabilities() PASSED
+
+RetryReplayIntegrationTest > reclaimedExternalClaimStillCannotBypassUnknownHandoff() PASSED
+
+ValidationSimulatorIntegrationTest > observationCannotConfirmAbsenceWhileExecuteWaitsToRegister() PASSED
+
+ValidationSimulatorIntegrationTest > sameIdentityAndSemanticPayloadDeduplicateWhileConflictDoesNotMutate() PASSED
+
+ValidationSimulatorIntegrationTest > acceptedPendingIsIndeterminateAndObservationNeverCreatesAnEffect() PASSED
+
+ValidationSimulatorIntegrationTest > validationTargetBootstrapProducesOnlyOneScenarioBDelivery() PASSED
+
+ValidationSimulatorIntegrationTest > lostResponseAndTimeoutRemainUnknownDespiteOneDurableEffect() PASSED
+
+{"@timestamp":"2026-10-01T07:53:48.282423Z","log":{"level":"INFO","logger":"org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"Closing JPA EntityManagerFactory for persistence unit 'default'","tags":["COMMONS-LOGGING"],"ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:48.283176Z","log":{"level":"INFO","logger":"com.zaxxer.hikari.HikariDataSource"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"HikariPool-1 - Shutdown initiated...","ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:48.283890Z","log":{"level":"INFO","logger":"com.zaxxer.hikari.HikariDataSource"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"HikariPool-1 - Shutdown completed.","ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:48.284575Z","log":{"level":"INFO","logger":"org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"Closing JPA EntityManagerFactory for persistence unit 'default'","tags":["COMMONS-LOGGING"],"ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:48.284792Z","log":{"level":"INFO","logger":"com.zaxxer.hikari.HikariDataSource"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"vra-gate5-test-pool - Shutdown initiated...","ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:48.285336Z","log":{"level":"INFO","logger":"com.zaxxer.hikari.HikariDataSource"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"vra-gate5-test-pool - Shutdown completed.","ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:48.286320Z","log":{"level":"INFO","logger":"org.springframework.boot.tomcat.GracefulShutdown"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"Commencing graceful shutdown. Waiting for active requests to complete","tags":["COMMONS-LOGGING"],"ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:48.288491Z","log":{"level":"INFO","logger":"org.springframework.boot.tomcat.GracefulShutdown"},"process":{"pid":943,"thread":{"name":"tomcat-shutdown"}},"service":{"name":"vra-backend","node":{}},"message":"Graceful shutdown complete","tags":["COMMONS-LOGGING"],"ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:48.290173Z","log":{"level":"INFO","logger":"org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"Closing JPA EntityManagerFactory for persistence unit 'default'","tags":["COMMONS-LOGGING"],"ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:48.290502Z","log":{"level":"INFO","logger":"com.zaxxer.hikari.HikariDataSource"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"HikariPool-2 - Shutdown initiated...","ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:48.291170Z","log":{"level":"INFO","logger":"com.zaxxer.hikari.HikariDataSource"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"HikariPool-2 - Shutdown completed.","ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:48.295705Z","log":{"level":"INFO","logger":"org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"Closing JPA EntityManagerFactory for persistence unit 'default'","tags":["COMMONS-LOGGING"],"ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:48.295941Z","log":{"level":"INFO","logger":"com.zaxxer.hikari.HikariDataSource"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"HikariPool-3 - Shutdown initiated...","ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:48.296291Z","log":{"level":"INFO","logger":"com.zaxxer.hikari.HikariDataSource"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"HikariPool-3 - Shutdown completed.","ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:48.296661Z","log":{"level":"INFO","logger":"org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"Closing JPA EntityManagerFactory for persistence unit 'default'","tags":["COMMONS-LOGGING"],"ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:48.296790Z","log":{"level":"INFO","logger":"com.zaxxer.hikari.HikariDataSource"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"HikariPool-4 - Shutdown initiated...","ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:48.297204Z","log":{"level":"INFO","logger":"com.zaxxer.hikari.HikariDataSource"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"HikariPool-4 - Shutdown completed.","ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:48.297480Z","log":{"level":"INFO","logger":"org.springframework.boot.tomcat.GracefulShutdown"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"Commencing graceful shutdown. Waiting for active requests to complete","tags":["COMMONS-LOGGING"],"ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:48.298210Z","log":{"level":"INFO","logger":"org.springframework.boot.tomcat.GracefulShutdown"},"process":{"pid":943,"thread":{"name":"tomcat-shutdown"}},"service":{"name":"vra-backend","node":{}},"message":"Graceful shutdown complete","tags":["COMMONS-LOGGING"],"ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:48.299290Z","log":{"level":"INFO","logger":"org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"Closing JPA EntityManagerFactory for persistence unit 'default'","tags":["COMMONS-LOGGING"],"ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:48.299553Z","log":{"level":"INFO","logger":"com.zaxxer.hikari.HikariDataSource"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"HikariPool-5 - Shutdown initiated...","ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:53.012992Z","log":{"level":"INFO","logger":"com.zaxxer.hikari.HikariDataSource"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"HikariPool-5 - Shutdown completed.","ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:53.015903Z","log":{"level":"INFO","logger":"org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"Closing JPA EntityManagerFactory for persistence unit 'default'","tags":["COMMONS-LOGGING"],"ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:53.016140Z","log":{"level":"INFO","logger":"com.zaxxer.hikari.HikariDataSource"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"HikariPool-6 - Shutdown initiated...","ecs":{"version":"8.11"}}
+{"@timestamp":"2026-10-01T07:53:53.016642Z","log":{"level":"INFO","logger":"com.zaxxer.hikari.HikariDataSource"},"process":{"pid":943,"thread":{"name":"SpringApplicationShutdownHook"}},"service":{"name":"vra-backend","node":{}},"message":"HikariPool-6 - Shutdown completed.","ecs":{"version":"8.11"}}
+
+[Incubating] Problems report is available at: file:///Users/siwakornbundi/Project/VRA-Fastform/backend/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 1m 25s
+7 actionable tasks: 7 executed
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.7.1/userguide/configuration_cache_enabling.html

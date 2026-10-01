@@ -1,0 +1,6 @@
+{
+  "path": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-collector-remediation-mz7isvwr/collector-local-platform-0.override.json",
+  "exists_after_cleanup": false,
+  "role": "one exact private TEST child path created by corrected expression",
+  "contains_secret": false
+}

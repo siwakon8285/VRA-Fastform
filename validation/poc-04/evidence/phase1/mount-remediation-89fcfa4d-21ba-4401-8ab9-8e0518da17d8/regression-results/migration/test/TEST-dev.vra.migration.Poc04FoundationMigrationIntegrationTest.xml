@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.vra.migration.Poc04FoundationMigrationIntegrationTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-01T07:12:37.407Z" hostname="MacBook-Air-khxng-SIwakorn.local" time="0.394">
+  <properties/>
+  <testcase name="sourceBindingIncludesTheWholeReviewedRepositoryAndUntrackedPhaseOneBackendSource()" classname="dev.vra.migration.Poc04FoundationMigrationIntegrationTest" time="0.382"/>
+  <testcase name="phaseOneContainsOnlyV1ThroughV4AndPreservesReviewedPriorSourceBytes()" classname="dev.vra.migration.Poc04FoundationMigrationIntegrationTest" time="0.006"/>
+  <testcase name="logicalDatabaseIdentityUsesStableUuidV5UnderOneUuidV4RunNamespace()" classname="dev.vra.migration.Poc04FoundationMigrationIntegrationTest" time="0.001"/>
+  <testcase name="collectorPreparationRestrictsSourceAndDefinesNoObserverProcess()" classname="dev.vra.migration.Poc04FoundationMigrationIntegrationTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

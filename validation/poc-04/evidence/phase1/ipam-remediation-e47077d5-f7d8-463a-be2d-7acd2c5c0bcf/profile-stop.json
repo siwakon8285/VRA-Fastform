@@ -1,0 +1,13 @@
+{
+  "command": [
+    "colima",
+    "stop",
+    "--profile",
+    "vra-poc04-test"
+  ],
+  "started_at_utc": "2026-10-01T07:44:25.997417+00:00",
+  "exit_status": 0,
+  "stdout": "Stopping 'docker.service', but its triggering units are still active:\ndocker.socket\ncolima-vra-poc04-test\ntime=\"2026-10-01T14:44:26+07:00\" level=info msg=\"Sending SIGINT to hostagent process 59089\"\ntime=\"2026-10-01T14:44:26+07:00\" level=info msg=\"Waiting for the host agent and the driver processes to shut down\"\ntime=\"2026-10-01T14:44:26+07:00\" level=info msg=\"[hostagent] Received SIGINT, shutting down the host agent\"\ntime=\"2026-10-01T14:44:26+07:00\" level=info msg=\"[hostagent] Shutting down the host agent\"\ntime=\"2026-10-01T14:44:26+07:00\" level=info msg=\"[hostagent] Stopping forwarding `/var/run/docker.sock` (guest) to `/Users/siwakornbundi/.colima/vra-poc04-test/docker.sock` (host)\"\ntime=\"2026-10-01T14:44:26+07:00\" level=info msg=\"[hostagent] Stopping forwarding `/var/run/containerd/containerd.sock` (guest) to `/Users/siwakornbundi/.colima/vra-poc04-test/containerd.sock` (host)\"\ntime=\"2026-10-01T14:44:26+07:00\" level=info msg=\"[hostagent] Unmounting disk `colima-vra-poc04-test`\"\ntime=\"2026-10-01T14:44:26+07:00\" level=info msg=\"[hostagent] Shutting down VZ\"\ntime=\"2026-10-01T14:44:26+07:00\" level=info msg=\"[hostagent] [VZ] - vm state change: stopped\"\ntime=\"2026-10-01T14:44:27+07:00\" level=info msg=\"Waiting for the instance to shut down\"\ntime=\"2026-10-01T14:44:27+07:00\" level=info msg=\"The instance colima-vra-poc04-test has shut down\"\n",
+  "stderr": "time=\"2026-10-01T14:44:26+07:00\" level=info msg=\"stopping colima [profile=vra-poc04-test]\"\ntime=\"2026-10-01T14:44:26+07:00\" level=info msg=\"stopping ...\" context=docker\ntime=\"2026-10-01T14:44:26+07:00\" level=info msg=\"stopping ...\" context=vm\ntime=\"2026-10-01T14:44:28+07:00\" level=info msg=done\n",
+  "ended_at_utc": "2026-10-01T07:44:28.153876+00:00"
+}

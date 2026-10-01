@@ -1,0 +1,1 @@
+{"status": "PASS", "evidence_directory": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/evidence/phase1/ipam-remediation-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf/collector-boundary", "cleanup": "PASS"}

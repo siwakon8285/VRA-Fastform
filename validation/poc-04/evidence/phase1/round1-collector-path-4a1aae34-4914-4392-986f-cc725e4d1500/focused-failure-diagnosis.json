@@ -1,0 +1,25 @@
+{
+  "status": "FAIL PRESERVED",
+  "source_path": "validation/poc-04/scripts/collector-boundary-proof.py",
+  "line": 336,
+  "assertion": "service['secrets']==[{'source':'postgres_admin_password','target':'postgres_admin_password'}]",
+  "observed_exception_type": "AssertionError",
+  "observed_safe_message": "profile server credential target differs",
+  "actual_normalized_secret_list_captured": false,
+  "exact_key_or_value_difference": "NOT ESTABLISHED by preserved output; no unsafe-target inference made",
+  "last_reached_stage": "server profile secret binding checks, after resource volume/network creation; before container creation",
+  "not_executed": [
+    "PostgreSQL container creation/start/version",
+    "bootstrap",
+    "actual credential SQL denials",
+    "collector OS/mount probes",
+    "fresh/populated migration in this run",
+    "new final full build",
+    "new final collector retry"
+  ],
+  "mandatory_checks_skipped_to_pass": false,
+  "assertion_weakened": false,
+  "source_fixed_after_failure": false,
+  "further_proof_retry": false,
+  "template_qualification": "collector summary business_audit_grant_proof refers to this run catalogs as a static template. No current-run fresh/populated catalog proof was executed; it is not evidence of PASS."
+}

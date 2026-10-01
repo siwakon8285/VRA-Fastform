@@ -1,0 +1,306 @@
+{
+  "saved_profile_config_path": "/Users/siwakornbundi/.colima/vra-poc04-test/colima.yaml",
+  "path_resolution_authority": "Colima 0.10.3 commit 00f6c297e92a82c04a4ab507db0a61435650d7e8 config/files.go + config/profile.go; COLIMA_HOME/XDG_CONFIG_HOME unset; existing ~/.colima then profile/colima.yaml",
+  "official_source_urls": [
+    "https://raw.githubusercontent.com/abiosoft/colima/00f6c297e92a82c04a4ab507db0a61435650d7e8/config/files.go",
+    "https://raw.githubusercontent.com/abiosoft/colima/00f6c297e92a82c04a4ab507db0a61435650d7e8/config/profile.go",
+    "https://raw.githubusercontent.com/abiosoft/colima/00f6c297e92a82c04a4ab507db0a61435650d7e8/environment/container/docker/docker.go"
+  ],
+  "selected_pool": "10.241.0.0/16",
+  "child_prefix": 24,
+  "child_capacity": 256,
+  "specific_observed_routes_and_subnets": [
+    {
+      "subnet": "127.0.0.0/8",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "127.0.0.1/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "169.254.0.0/16",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "169.254.169.254/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.5.0/24",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.5.1/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.5.1/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.5.51/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.5.52/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.5.52/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.5.53/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.5.54/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.5.55/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.5.56/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.5.57/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.5.58/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.5.59/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.5.67/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.5.69/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.5.255/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.64.0/24",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.64.1/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.64.2/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.64.255/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "224.0.0.251/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "224.0.0.251/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "255.255.255.255/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "255.255.255.255/32",
+      "origin": "host IPv4 route"
+    },
+    {
+      "subnet": "192.168.5.2/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.5.1/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.64.1/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.64.2/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "172.17.0.0/16",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "172.17.0.1/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.5.0/24",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.5.1/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.5.2/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.5.1/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.64.0/24",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.64.2/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.64.1/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.64.2/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "127.0.0.0/8",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "127.0.0.1/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "127.0.0.1/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "127.0.0.1/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "127.255.255.255/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "127.0.0.1/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "172.17.0.1/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "172.17.0.1/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "172.17.255.255/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "172.17.0.1/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.5.1/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.5.1/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.5.255/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.5.1/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.64.2/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.64.2/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.64.255/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.64.2/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "127.0.0.0/8",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.5.0/24",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.5.255/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.64.0/24",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "192.168.64.255/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "172.17.0.0/16",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "172.17.255.255/32",
+      "origin": "Colima VM IPv4 route/address"
+    },
+    {
+      "subnet": "172.17.0.0/16",
+      "origin": "existing Docker bridge"
+    },
+    {
+      "subnet": "192.168.5.2/32",
+      "origin": "saved Colima gateway"
+    }
+  ],
+  "overlaps": [],
+  "default_route_handling": "0/0 excluded as a routing fallback, not an allocated address subnet",
+  "pool_selection": "Validated against all observed specific host routes, VM routes/addresses, current Docker subnets and saved Colima gateway before mutation",
+  "profile_before_sha256": "5ac8386a8b4ad2ff11517e08a1fd2a8df4a079c2fb99e2b463e854392cbd547f",
+  "profile_after_sha256": "53675defaacbcb1a36f59a3760a61142b16199d4e8a513e6ac63e44fd9505d68",
+  "unrelated_parsed_configuration_unchanged": true,
+  "Docker_context_before": "desktop-linux",
+  "diagnosis": "Docker automatic allocator exhausted while registered run-owned regression networks remained live; all post-run exact resources removed and independently absent; no persistent network leak, second daemon, final teardown failure or broad host/VPN exclusion observed",
+  "restart_command": [
+    "colima",
+    "start",
+    "--profile",
+    "vra-poc04-test",
+    "--activate=false",
+    "--save-config=false"
+  ]
+}

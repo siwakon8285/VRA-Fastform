@@ -1,0 +1,654 @@
+{
+  "OS_probes": [
+    {
+      "authority": "no network, no capabilities, read-only root, only ro/nocopy collector mount; no Docker socket, PGDATA, admin secret or DB credential",
+      "container_id": "b9ad59346771ac93eee3313ffa690b09495873f86c0e8c37c88dd9b1e4b50e35",
+      "exit_status": 0,
+      "name": "reserved-reader",
+      "result": "reader_uid=9404 gid=9404 read=PASS write=DENIED",
+      "user": "9404:9404"
+    },
+    {
+      "authority": "no network, no capabilities, read-only root, only ro/nocopy collector mount; no Docker socket, PGDATA, admin secret or DB credential",
+      "container_id": "98a0541767b75b027598f74e6bbcac6edb405596b6a3e5cd6757e27972710d9c",
+      "exit_status": 0,
+      "name": "synthetic-nonmember",
+      "result": "synthetic_nonmember_uid=9405 gid=9405 read=DENIED write=DENIED",
+      "user": "9405:9405"
+    }
+  ],
+  "actual_credential_sql_denials": [
+    {
+      "case": "server_file_read",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_runtime"
+    },
+    {
+      "case": "log_directory_read",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_runtime"
+    },
+    {
+      "case": "log_setting_mutation",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_runtime"
+    },
+    {
+      "case": "server_file_read",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_outbox_worker"
+    },
+    {
+      "case": "log_directory_read",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_outbox_worker"
+    },
+    {
+      "case": "log_setting_mutation",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_outbox_worker"
+    },
+    {
+      "case": "server_file_read",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_reconciliation_worker"
+    },
+    {
+      "case": "log_directory_read",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_reconciliation_worker"
+    },
+    {
+      "case": "log_setting_mutation",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_reconciliation_worker"
+    },
+    {
+      "case": "server_file_read",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_async_operator"
+    },
+    {
+      "case": "log_directory_read",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_async_operator"
+    },
+    {
+      "case": "log_setting_mutation",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_async_operator"
+    },
+    {
+      "case": "server_file_read",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_projection_rebuilder"
+    },
+    {
+      "case": "log_directory_read",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_projection_rebuilder"
+    },
+    {
+      "case": "log_setting_mutation",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_projection_rebuilder"
+    },
+    {
+      "case": "server_file_read",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_async_observer"
+    },
+    {
+      "case": "log_directory_read",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_async_observer"
+    },
+    {
+      "case": "log_setting_mutation",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_async_observer"
+    },
+    {
+      "case": "server_file_read",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_factor_fixture"
+    },
+    {
+      "case": "log_directory_read",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_factor_fixture"
+    },
+    {
+      "case": "log_setting_mutation",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_factor_fixture"
+    },
+    {
+      "case": "server_file_read",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_audit_evidence_reader"
+    },
+    {
+      "case": "log_directory_read",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_audit_evidence_reader"
+    },
+    {
+      "case": "log_setting_mutation",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_audit_evidence_reader"
+    },
+    {
+      "case": "server_file_read",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_security_telemetry_observer"
+    },
+    {
+      "case": "log_directory_read",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_security_telemetry_observer"
+    },
+    {
+      "case": "log_setting_mutation",
+      "catalog_privileges": {
+        "pg_monitor": false,
+        "read_server_files": false,
+        "set_log_statement": false
+      },
+      "denial": "PASS",
+      "exit_status": 3,
+      "expected_sqlstate": "42501",
+      "observed_sqlstates": [
+        "42501"
+      ],
+      "role": "vra_security_telemetry_observer"
+    }
+  ],
+  "business_audit_grant_proof": "Not remigrated in this collector-only DB. Refer to the previously executed fresh/populated V4 catalog and actual-credential grants/denials, bound to the same source bytes.",
+  "cleanup": {
+    "blanket_prune_used": false,
+    "resources": [
+      {
+        "absent": true,
+        "exact_identity": "e7f90234873fe46f27191c8154fa30be79afff9677020775c27a37459caf8630",
+        "kind": "container"
+      },
+      {
+        "absent": true,
+        "exact_identity": "b9ad59346771ac93eee3313ffa690b09495873f86c0e8c37c88dd9b1e4b50e35",
+        "kind": "container"
+      },
+      {
+        "absent": true,
+        "exact_identity": "98a0541767b75b027598f74e6bbcac6edb405596b6a3e5cd6757e27972710d9c",
+        "kind": "container"
+      },
+      {
+        "absent": true,
+        "exact_identity": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-collector_collector_source",
+        "kind": "volume"
+      },
+      {
+        "absent": true,
+        "exact_identity": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-collector_postgres_data",
+        "kind": "volume"
+      },
+      {
+        "absent": true,
+        "exact_identity": "9b1bcd25007db17c4801f3a38a10d26bcdcb439422a2c1a829e9915e282fb693",
+        "kind": "network"
+      }
+    ],
+    "result": "PASS"
+  },
+  "cleanup_daemon": {
+    "Architecture": "aarch64",
+    "DefaultAddressPools": [
+      {
+        "Base": "10.241.0.0/16",
+        "Size": 24
+      }
+    ],
+    "ID": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+    "Name": "colima-vra-poc04-test",
+    "OSType": "linux",
+    "ServerVersion": "29.5.2"
+  },
+  "collector_metadata": {
+    "directory": {
+      "gid": 9404,
+      "mode": "2750",
+      "uid": 999
+    },
+    "files": [
+      {
+        "gid": 9404,
+        "mode": "640",
+        "owner_uid": 999,
+        "path": "/var/log/vra-poc04-collector/postgresql-2026-10-01_080019-26853c6a-958a-4ec6-a414-d11bf1777474.json",
+        "type": "regular file"
+      },
+      {
+        "gid": 9404,
+        "mode": "640",
+        "owner_uid": 999,
+        "path": "/var/log/vra-poc04-collector/postgresql-2026-10-01_080020-26853c6a-958a-4ec6-a414-d11bf1777474.json",
+        "type": "regular file"
+      }
+    ],
+    "raw_contents_exported": false,
+    "server_uid": 999
+  },
+  "credential_probe_address": "10.241.1.2",
+  "database_instance_id": "037e77a6-172a-56be-bed8-83f3ab1478ca",
+  "docker_endpoint": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+  "effective_logging_settings": {
+    "lc_messages": "C",
+    "log_destination": "jsonlog",
+    "log_directory": "/var/log/vra-poc04-collector",
+    "log_duration": "off",
+    "log_error_verbosity": "verbose",
+    "log_file_mode": "0640",
+    "log_filename": "postgresql-%Y-%m-%d_%H%M%S-26853c6a-958a-4ec6-a414-d11bf1777474.log",
+    "log_min_duration_sample": "-1",
+    "log_min_duration_statement": "-1",
+    "log_min_error_statement": "error",
+    "log_min_messages": "error",
+    "log_parameter_max_length": "0",
+    "log_parameter_max_length_on_error": "0",
+    "log_rotation_age": "1d",
+    "log_rotation_size": "0",
+    "log_statement": "none",
+    "log_transaction_sample_rate": "0",
+    "log_truncate_on_rotation": "off",
+    "logging_collector": "on"
+  },
+  "ephemeral_admin_credential_file_absent": true,
+  "ephemeral_admin_mount_identity": "PASS; exact external runtime0600 file; server only; contents omitted",
+  "image_provenance": {
+    "postgresql_test": {
+      "config_digest": "sha256:97432f980da100ebd3e419711efee84e1e97a966d62c035286a07f239ddb4d9c",
+      "daemon_descriptor": {
+        "annotations": {
+          "com.docker.official-images.bashbrew.arch": "arm64v8",
+          "org.opencontainers.image.base.digest": "sha256:da496358bd6934d2bd6a563a33176a2e50eff5490c54b4ac6fb051b69fef4071",
+          "org.opencontainers.image.base.name": "debian:trixie-slim",
+          "org.opencontainers.image.created": "2026-09-19T00:38:22Z",
+          "org.opencontainers.image.revision": "2603e26e245e558218728ee14e0a42dcb020dc7f",
+          "org.opencontainers.image.source": "https://github.com/docker-library/postgres.git#2603e26e245e558218728ee14e0a42dcb020dc7f:17/trixie",
+          "org.opencontainers.image.url": "https://hub.docker.com/_/postgres",
+          "org.opencontainers.image.version": "17.11"
+        },
+        "digest": "sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "arm64",
+          "os": "linux",
+          "variant": "v8"
+        },
+        "size": 3630
+      },
+      "execution_platform": "linux/arm64/v8",
+      "execution_reference": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+      "platform_manifest_digest": "sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761"
+    },
+    "testcontainers_tinyimage": {
+      "config_digest": "sha256:577bd1e3e55597178262f72fc05a2c77882afbfa5502fa06c856bfa53f175103",
+      "daemon_descriptor": {
+        "annotations": {
+          "com.docker.official-images.bashbrew.arch": "arm64v8",
+          "org.opencontainers.image.base.name": "scratch",
+          "org.opencontainers.image.created": "2024-11-12T00:55:37Z",
+          "org.opencontainers.image.revision": "1d3ddcf4766ef6085fe6005ce3ec8ca4e6b45ddd",
+          "org.opencontainers.image.source": "https://github.com/alpinelinux/docker-alpine.git#1d3ddcf4766ef6085fe6005ce3ec8ca4e6b45ddd:aarch64",
+          "org.opencontainers.image.url": "https://hub.docker.com/_/alpine",
+          "org.opencontainers.image.version": "3.17.10"
+        },
+        "digest": "sha256:4555e30014d0ef2214aa1ce5391ff46354519f55f33b4c6e5ed9aef4f3f1fa07",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "arm64",
+          "os": "linux",
+          "variant": "v8"
+        },
+        "size": 1026
+      },
+      "execution_platform": "linux/arm64/v8",
+      "execution_reference": "docker.io/library/alpine@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989",
+      "platform_manifest_digest": "sha256:4555e30014d0ef2214aa1ce5391ff46354519f55f33b4c6e5ed9aef4f3f1fa07"
+    }
+  },
+  "logical_database_instance": "postgres-authority/30000",
+  "no_raw_logs_or_credentials_persisted": true,
+  "phase2_started": false,
+  "postgres_identity": {
+    "database": "vra_poc01",
+    "server_version": "17.11 (Debian 17.11-1.pgdg13+2)",
+    "server_version_num": "170011",
+    "system_identifier": "7691606189022396461"
+  },
+  "preflight_daemon": {
+    "Architecture": "aarch64",
+    "DefaultAddressPools": [
+      {
+        "Base": "10.241.0.0/16",
+        "Size": 24
+      }
+    ],
+    "ID": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+    "Name": "colima-vra-poc04-test",
+    "OSType": "linux",
+    "ServerVersion": "29.5.2"
+  },
+  "profile_mount_binding": {
+    "effective_default": "home directory mounted writable via configured virtiofs",
+    "ephemeral_secret_parent": "isolated profile directory outside repository",
+    "profile_config": "/Users/siwakornbundi/.colima/vra-poc04-test/colima.yaml",
+    "profile_sha256": "53675defaacbcb1a36f59a3760a61142b16199d4e8a513e6ac63e44fd9505d68",
+    "saved_mounts": [],
+    "secret_directory_mode": "0700",
+    "secret_file_mode": "0600"
+  },
+  "resolved_profile_safe": {
+    "future_observer_extension": {
+      "source_mount": {
+        "read_only": true,
+        "source": "collector_source",
+        "target": "/var/log/vra-poc04-collector",
+        "type": "volume",
+        "volume": {
+          "nocopy": true
+        }
+      },
+      "user": "9404:9404"
+    },
+    "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+    "network_names": {
+      "test": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-collector_test"
+    },
+    "platform": "linux/arm64/v8",
+    "project": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-collector",
+    "published_ports": [],
+    "service_names": [
+      "postgres"
+    ],
+    "volume_names": {
+      "collector_source": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-collector_collector_source",
+      "postgres_data": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-collector_postgres_data"
+    }
+  },
+  "role_bootstrap": "PASS; exact accepted source scripts; runtime credentials stdin only",
+  "run_id": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf",
+  "runtime_worker_OS_identity_claim": "No application/worker deployment UID was invented. Reserved reader9404 and synthetic nonmember9405 are temporary TEST probes; actual prepared profile gives runtime/worker no source mount.",
+  "scope": "POC-04 Phase-1 collector preparation only",
+  "source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+  "source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+  "status": "PASS",
+  "tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+  "wrong_password_rejected": {
+    "exit_status": 2,
+    "password_authentication_failure": true,
+    "role": "vra_runtime",
+    "sqlstate_claim": null
+  }
+}

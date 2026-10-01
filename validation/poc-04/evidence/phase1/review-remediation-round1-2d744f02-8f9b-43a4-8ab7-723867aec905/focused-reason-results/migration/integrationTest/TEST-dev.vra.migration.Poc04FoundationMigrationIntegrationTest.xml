@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.vra.migration.Poc04FoundationMigrationIntegrationTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2026-10-01T13:26:06.441Z" hostname="MacBook-Air-khxng-SIwakorn.local" time="8.261">
+  <properties/>
+  <testcase name="reasonWhitespaceContractOnPostgres1711()" classname="dev.vra.migration.Poc04FoundationMigrationIntegrationTest" time="8.258">
+    <failure message="org.postgresql.util.PSQLException: ERROR: unrecognized configuration parameter &quot;lc_ctype&quot;" type="org.postgresql.util.PSQLException">org.postgresql.util.PSQLException: ERROR: unrecognized configuration parameter &quot;lc_ctype&quot;
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.executeQuery(PgStatement.java:282)
+	at dev.vra.migration.Poc04FoundationMigrationIntegrationTest$Fixture.rows(Poc04FoundationMigrationIntegrationTest.java:1289)
+	at dev.vra.migration.Poc04FoundationMigrationIntegrationTest$Fixture.value(Poc04FoundationMigrationIntegrationTest.java:1302)
+	at dev.vra.migration.Poc04FoundationMigrationIntegrationTest.reasonWhitespaceContractOnPostgres1711(Poc04FoundationMigrationIntegrationTest.java:259)
+</failure>
+  </testcase>
+  <system-out><![CDATA[POC04 index/platform/manifest/config linkage PASS: docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f linux/arm64/v8 sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761 sha256:97432f980da100ebd3e419711efee84e1e97a966d62c035286a07f239ddb4d9c
+POC04 actual execution platform/manifest PASS: linux/arm64/v8 sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761
+POC04 PGDATA typed/volume/daemon proof PASS: 9dfb98a45c97928fd2b1174966ab0d0e47ba19e9178ce910fa9e89446a5b7266 vra-poc04-2d744f02-8f9b-43a4-8ab7-723867aec905-postgres-authority-0-pgdata safe_projection_sha256=0efb2be0257a5a7bf4a9d73644db1bc4033deab358d53aebfa87da2a48940e47
+POC04 PostgreSQL runtime version PASS: server_version_num=170011 (17.11)
+]]></system-out>
+  <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+ต.ค. 01, 2026 8:26:13 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32849/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 8:26:13 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "vra"."flyway_schema_history" does not exist yet
+ต.ค. 01, 2026 8:26:13 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.006s)
+ต.ค. 01, 2026 8:26:13 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "vra"."flyway_schema_history" ...
+ต.ค. 01, 2026 8:26:13 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": << Empty Schema >>
+ต.ค. 01, 2026 8:26:13 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "1 - inventory reservation foundation"
+ต.ค. 01, 2026 8:26:13 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "2 - inventory reservation idempotency"
+ต.ค. 01, 2026 8:26:13 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "3 - outbox recovery"
+ต.ค. 01, 2026 8:26:13 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "4 - poc04 identity security foundation"
+ต.ค. 01, 2026 8:26:14 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "vra", now at version v4 (execution time 00:00.098s)
+ต.ค. 01, 2026 8:26:14 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32849/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 8:26:14 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.003s)
+]]></system-err>
+</testsuite>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.vra.async.DeliveryClaimIntegrationTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-10-01T08:03:44.388Z" hostname="MacBook-Air-khxng-SIwakorn.local" time="1.917">
+  <properties/>
+  <testcase name="fiveDispatchableClaimsThenOneRecoveryOnlyForEachScenario()" classname="dev.vra.async.DeliveryClaimIntegrationTest" time="0.247"/>
+  <testcase name="relinquishmentImmediatelyFencesAndRollbackKeepsOldLease()" classname="dev.vra.async.DeliveryClaimIntegrationTest" time="0.11"/>
+  <testcase name="readyClaimCommitsAndRolledBackClaimLeavesNoTrace()" classname="dev.vra.async.DeliveryClaimIntegrationTest" time="0.074"/>
+  <testcase name="expiryDoesNotRevokeButCommittedReclaimFencesEveryOldOperation()" classname="dev.vra.async.DeliveryClaimIntegrationTest" time="0.174"/>
+  <testcase name="overlappingWorkerTransactionsSkipLockedAndNeverDuplicate()" classname="dev.vra.async.DeliveryClaimIntegrationTest" time="0.104"/>
+  <testcase name="workerHasOnlyGuardedDeliveryCapabilities()" classname="dev.vra.async.DeliveryClaimIntegrationTest" time="0.101"/>
+  <testcase name="retryWaitBecomesClaimableOnlyAtDatabaseEligibilityTime()" classname="dev.vra.async.DeliveryClaimIntegrationTest" time="0.056"/>
+  <system-out><![CDATA[15:03:44.389 [Test worker] INFO org.testcontainers.utility.ImageNameSubstitutor -- Using docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f as a substitute image for postgres:17.11 (using image substitutor: POC04 external reviewed digest substitution)
+15:03:44.389 [Test worker] INFO tc.docker.io/library/postgres@sha256:d74eea... -- Creating container for image: docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f
+15:03:44.439 [Test worker] INFO tc.docker.io/library/postgres@sha256:d74eea... -- Container docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f is starting: 50888932cde72e4f161bcae6bf1f5fce7856023dec3e71f5da0c01fea9232ff8
+15:03:45.043 [Test worker] INFO tc.docker.io/library/postgres@sha256:d74eea... -- Container docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f started in PT0.653659S
+15:03:45.043 [Test worker] INFO tc.docker.io/library/postgres@sha256:d74eea... -- Container is started (JDBC URL: jdbc:postgresql://127.0.0.1:32821/vra_poc01?loggerLevel=OFF)
+15:03:45.173 [Test worker] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:postgresql://127.0.0.1:32821/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+15:03:45.179 [Test worker] INFO org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Schema history table "vra"."flyway_schema_history" does not exist yet
+15:03:45.180 [Test worker] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.002s)
+15:03:45.183 [Test worker] INFO org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Creating Schema History table "vra"."flyway_schema_history" ...
+15:03:45.194 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "vra": << Empty Schema >>
+15:03:45.196 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "vra" to version "1 - inventory reservation foundation"
+15:03:45.205 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "vra" to version "2 - inventory reservation idempotency"
+15:03:45.219 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "vra" to version "3 - outbox recovery"
+15:03:45.278 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "vra" to version "4 - poc04 identity security foundation"
+15:03:45.315 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Successfully applied 4 migrations to schema "vra", now at version v4 (execution time 00:00.090s)
+15:03:45.322 [Test worker] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:postgresql://127.0.0.1:32821/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+15:03:45.329 [Test worker] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.002s)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,16 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :migration:compileJava UP-TO-DATE
+> Task :migration:processResources UP-TO-DATE
+> Task :migration:classes UP-TO-DATE
+> Task :migration:compileTestJava
+> Task :migration:processTestResources NO-SOURCE
+> Task :migration:testClasses
+
+> Task :migration:integrationTest
+
+Poc04FoundationMigrationIntegrationTest > freshV1ThroughV4ValidatesRerunsAndEnforcesPhaseOneBoundary() PASSED
+
+BUILD SUCCESSFUL in 21s
+4 actionable tasks: 2 executed, 2 up-to-date
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.7.1/userguide/configuration_cache_enabling.html

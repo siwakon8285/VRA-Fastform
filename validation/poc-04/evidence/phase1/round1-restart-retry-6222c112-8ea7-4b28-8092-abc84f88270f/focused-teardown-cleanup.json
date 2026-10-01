@@ -1,0 +1,35 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "../validation/poc-04/scripts/run-harness.py",
+    "finish"
+  ],
+  "exit_status": 0,
+  "stdout": {
+    "all_database_instances_bound_once": true,
+    "database_identity_map": [
+      {
+        "container_id": "837e71531d5b62e101c5b7011da192ec35a6e467b08aa919e16d0940b84be44f",
+        "database": "vra_poc01",
+        "database_instance_id": "3bf104bf-968f-5930-8e19-6344bc163457",
+        "logical_name": "postgres-authority/0",
+        "server_version_num": "170011",
+        "system_identifier": "7691705906600251430",
+        "volume_name": "vra-poc04-6222c112-8ea7-4b28-8092-abc84f88270f-postgres-authority-0-pgdata"
+      },
+      {
+        "container_id": "39f19f50c2c2970edf1ea5e4e1333dc81b7811e120003da6412485001c6953d1",
+        "database": "vra_poc01",
+        "database_instance_id": "a3a66ed8-2ba1-553b-b330-54d178f70c77",
+        "logical_name": "postgres-authority/1",
+        "server_version_num": "170011",
+        "system_identifier": "7691705933981405222",
+        "volume_name": "vra-poc04-6222c112-8ea7-4b28-8092-abc84f88270f-postgres-authority-1-pgdata"
+      }
+    ],
+    "resources_absent": 9,
+    "status": "PASS"
+  },
+  "stderr": ""
+}

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "run_id": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+  "source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+  "same_current_run_full_build": "full-check-build-command.json",
+  "same_current_run_runtime_suite_counts": {
+    "suite": "runtime:integrationTest",
+    "tests": 113,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "artifact": "validation/poc-04/evidence/phase1/round1-compose-secrets-2af277e3-90ca-4767-9df9-bc40eaa66cca/full-check-build-results/runtime/integrationTest"
+  },
+  "guard_now_backed_by_actual_current_run_execution": true,
+  "recorded_at": "2026-10-01T17:07:42.233675+00:00"
+}

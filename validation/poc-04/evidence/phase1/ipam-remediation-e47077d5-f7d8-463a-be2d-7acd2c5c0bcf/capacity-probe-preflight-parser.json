@@ -1,0 +1,13 @@
+{
+  "status": "METADATA_PARSER_FAILED_BEFORE_RESOURCE_CREATION",
+  "command": [
+    "python3",
+    "/tmp/vra-poc04-ipam-capacity-probe.py"
+  ],
+  "exit_status": 1,
+  "input": "224.0.0/4",
+  "cause": "macOS netstat abbreviated CIDR requires zero-padding before ipaddress parsing",
+  "probe_networks_created": 0,
+  "capacity_allocation_not_started": true,
+  "correction": "Normalize all abbreviated IPv4 route destinations to 4 octets while retaining their explicit prefix"
+}

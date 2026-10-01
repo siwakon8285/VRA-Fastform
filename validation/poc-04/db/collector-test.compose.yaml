@@ -1,0 +1,73 @@
+# Infrastructure preparation only. No observer/parser service is defined.
+name: vra-poc04-${POC04_RUN_ID:?a disposable TEST run UUID is required}
+
+x-poc04-future-observer:
+  # Reserved OS identity, with no DB administrator credential or Docker socket.
+  user: "9404:9404"
+  source_mount:
+    type: volume
+    source: collector_source
+    target: /var/log/vra-poc04-collector
+    read_only: true
+    volume:
+      nocopy: true
+
+services:
+  postgres:
+    profiles: [poc04-collector-test]
+    image: docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f
+    entrypoint: [bash, /etc/poc04/collector-test-entrypoint.sh]
+    command: [postgres, -c, config_file=/etc/poc04/postgresql-collector-test.conf]
+    environment:
+      POSTGRES_DB: vra_poc01
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_admin_password
+    labels:
+      dev.vra.environment: TEST
+      dev.vra.poc: "04"
+      dev.vra.run_id: ${POC04_RUN_ID:?required}
+      dev.vra.database_instance_id: ${POC04_DATABASE_INSTANCE_ID:?required}
+      dev.vra.source_head: ${POC04_SOURCE_HEAD:?required}
+      dev.vra.source_content_sha256: ${POC04_SOURCE_CONTENT_SHA256:?required}
+      dev.vra.tool_manifest_sha256: ${POC04_TOOL_MANIFEST_SHA256:?required}
+    volumes:
+      - type: volume
+        source: postgres_data
+        target: /var/lib/postgresql/data
+      - type: volume
+        source: collector_source
+        target: /var/log/vra-poc04-collector
+        read_only: false
+        volume:
+          nocopy: true
+      - type: bind
+        source: ./postgresql-collector-test.conf
+        target: /etc/poc04/postgresql-collector-test.conf
+        read_only: true
+      - type: bind
+        source: ./collector-test-entrypoint.sh
+        target: /etc/poc04/collector-test-entrypoint.sh
+        read_only: true
+    secrets: [postgres_admin_password]
+    networks: [test]
+
+secrets:
+  postgres_admin_password:
+    file: ${POC04_ADMIN_PASSWORD_FILE:?an external ephemeral TEST credential file is required}
+
+volumes:
+  postgres_data:
+    labels: &run_labels
+      dev.vra.environment: TEST
+      dev.vra.poc: "04"
+      dev.vra.run_id: ${POC04_RUN_ID:?required}
+      dev.vra.database_instance_id: ${POC04_DATABASE_INSTANCE_ID:?required}
+      dev.vra.source_head: ${POC04_SOURCE_HEAD:?required}
+      dev.vra.source_content_sha256: ${POC04_SOURCE_CONTENT_SHA256:?required}
+      dev.vra.tool_manifest_sha256: ${POC04_TOOL_MANIFEST_SHA256:?required}
+  collector_source:
+    labels: *run_labels
+
+networks:
+  test:
+    labels: *run_labels

@@ -1,0 +1,40 @@
+{
+  "authority_hashes": {
+    "validation/poc-04/SHARED_SPEC.md": "c035e627c087b41cb4533b00f0bdaf8fa208a5b55881358cf1f85b6809b2ed2d",
+    "validation/poc-04/IMPLEMENTATION_PLAN.md": "c169ad62d947841ec08987d2561f16b75935168d99ea46a34143004d3da3d7c5",
+    "docs/adr/ADR-004-human-identity-and-browser-session-authority.md": "860d14431ed905e18aa67a60eb16fe44660a4fe28f056d47cd57eb13de642899",
+    "docs/adr/ADR-005-privileged-security-operations-and-protected-audit.md": "dd5933ca1adc930a5b8617b6f5b49f748081f7f9770dea87b761b3e937319f49",
+    "docs/adr/ADR-006-synchronous-guarded-postgresql-capability-boundary.md": "3068fa468b1483788a3a59cab3b628b6b8a2cc0beee101a93e0111b55e18f892",
+    "validation/poc-04/evidence/phase1/IMPLEMENTATION_REPORT.md": "82c87d88ff10985c5c18015768a7afc0442813608b7fbb616aa2ba405f249caf"
+  },
+  "modified_existing_bytes": {
+    "backend/migration/src/main/resources/db/migration/V4__poc04_identity_security_foundation.sql": {
+      "before": "45161b8c54f10778a5521cdd23dc0945fadb65364bd8094e3d19d8f79cfdd1e8",
+      "after": "7e2a1ea77ba92a451763c7e06ab7dc4cee6e06f761bbbb4e6cb1c786c8a21ffc"
+    },
+    "backend/migration/src/test/java/dev/vra/migration/Poc04FoundationMigrationIntegrationTest.java": {
+      "before": "50e601ce5fb4bd009aa1d48d1459dd76cfb44171e7d470644ba43f373e2fd5ee",
+      "after": "13b1c7d315d43b56333da33456e344d633d06ff00c21a9173e8c08eda0c7fe5f"
+    }
+  },
+  "new_paths": [
+    "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/PLAN.md",
+    "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/historical-review-FAIL.md",
+    "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/preflight.json",
+    "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/spi-compile.json",
+    "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/spi-jar.json",
+    "validation/poc-04/scripts/resource-recorder.py",
+    "validation/poc-04/scripts/run-harness.py",
+    "validation/poc-04/scripts/teardown-negative-proof.py",
+    "validation/poc-04/test-support/resources/META-INF/services/org.testcontainers.core.CreateContainerCmdModifier",
+    "validation/poc-04/test-support/resources/META-INF/services/org.testcontainers.utility.ImageNameSubstitutor",
+    "validation/poc-04/test-support/runner.init.gradle",
+    "validation/poc-04/test-support/src/PhaseOneEvidenceCapture.java",
+    "validation/poc-04/test-support/src/dev/vra/poc04/external/PinnedImages.java",
+    "validation/poc-04/test-support/src/dev/vra/poc04/external/RunResources.java"
+  ],
+  "historical_paths_checked": 340,
+  "staged_paths": [],
+  "whitespace_newline": "PASS",
+  "diff_check": "PASS"
+}

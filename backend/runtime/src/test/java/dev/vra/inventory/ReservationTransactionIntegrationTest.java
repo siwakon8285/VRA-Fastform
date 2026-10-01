@@ -44,7 +44,7 @@ class ReservationTransactionIntegrationTest {
     private static final String RUNTIME_PASSWORD = "runtime-app-test-only";
 
     private static final PostgreSQLContainer POSTGRES =
-            new PostgreSQLContainer("postgres:17.11")
+            new dev.vra.poc04.external.RunOwnedPostgreSQLContainer("postgres:17.11")
                     .withDatabaseName(DATABASE)
                     .withUsername(ADMIN_USER)
                     .withPassword(ADMIN_PASSWORD);
@@ -61,9 +61,9 @@ class ReservationTransactionIntegrationTest {
                     MIGRATOR_PASSWORD
             );
 
-            if (migrated != 3) {
+            if (migrated != 4) {
                 throw new IllegalStateException(
-                        "Expected exactly three migrations, got " + migrated
+                        "Expected exactly four migrations, got " + migrated
                 );
             }
         } catch (Exception error) {

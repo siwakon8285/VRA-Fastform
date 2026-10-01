@@ -1,0 +1,34 @@
+{
+  "command": [
+    "./gradlew",
+    "--no-daemon",
+    "-Dorg.gradle.java.installations.auto-detect=false",
+    "-Dorg.gradle.java.installations.paths=/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-jdk-x0q7h_vo/jdk-21.0.12.1+1/Contents/Home",
+    "-I",
+    "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-mount-support-_1rpppjy/runner.init.gradle",
+    ":migration:integrationTest",
+    "--tests",
+    "dev.vra.migration.Poc04FoundationMigrationIntegrationTest.freshV1ThroughV4ValidatesRerunsAndEnforcesPhaseOneBoundary"
+  ],
+  "cwd": "/Users/siwakornbundi/Project/VRA-Fastform/backend",
+  "environment": {
+    "JAVA_HOME": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-jdk-x0q7h_vo/jdk-21.0.12.1+1/Contents/Home",
+    "DOCKER_HOST": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+    "VRA_POC04_DISPOSABLE_TEST_DOCKER_ENDPOINT": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+    "TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE": "/var/run/docker.sock",
+    "TESTCONTAINERS_HOST_OVERRIDE": "127.0.0.1",
+    "TESTCONTAINERS_RYUK_CONTAINER_IMAGE": "docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0",
+    "TESTCONTAINERS_TINYIMAGE_CONTAINER_IMAGE": "docker.io/library/alpine@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989",
+    "VRA_POC04_RUN_ID": "89fcfa4d-21ba-4401-8ab9-8e0518da17d8",
+    "VRA_POC04_SOURCE_HEAD": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+    "VRA_POC04_SOURCE_CONTENT_SHA256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+    "VRA_POC04_TOOL_MANIFEST_SHA256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+    "VRA_POC04_EXPECTED_DAEMON_ID": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+    "VRA_POC04_RESOURCE_EVIDENCE": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/evidence/phase1/mount-remediation-89fcfa4d-21ba-4401-8ab9-8e0518da17d8/resource-identities.jsonl",
+    "VRA_POC04_EXTERNAL_TC_JAR": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-external-tc-vsfk4w5a/external-tc.jar",
+    "VRA_POC04_DAEMON_INSPECT_DIRECTORY": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/evidence/phase1/mount-remediation-89fcfa4d-21ba-4401-8ab9-8e0518da17d8/daemon-inspect"
+  },
+  "started_at_utc": "2026-10-01T07:08:05.363955+00:00",
+  "exit_status": 0,
+  "ended_at_utc": "2026-10-01T07:08:26.850180+00:00"
+}

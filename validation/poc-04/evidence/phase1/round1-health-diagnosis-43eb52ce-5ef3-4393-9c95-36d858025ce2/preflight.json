@@ -1,0 +1,125 @@
+{
+  "commands": [
+    {
+      "command": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "exit_status": 0,
+      "safe_output": "poc/04-security-auth\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_status": 0,
+      "safe_output": "01256d96d85823740a8d6c3a3f99346afbdbef56\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "origin/main"
+      ],
+      "exit_status": 0,
+      "safe_output": "01256d96d85823740a8d6c3a3f99346afbdbef56\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "origin/poc/04-security-auth"
+      ],
+      "exit_status": 0,
+      "safe_output": "01256d96d85823740a8d6c3a3f99346afbdbef56\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--name-only"
+      ],
+      "exit_status": 0,
+      "safe_output": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_status": 0,
+      "safe_output": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "version",
+        "--format",
+        "{{json .}}"
+      ],
+      "exit_status": 0,
+      "safe_output": "{\"client\": \"29.8.1\", \"server\": \"29.5.2\"}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "info",
+        "--format",
+        "{{json .}}"
+      ],
+      "exit_status": 0,
+      "safe_output": "{\"ID\": \"14c8ff26-86d1-4c0b-88a6-560be91a65ea\", \"Name\": \"colima-vra-poc04-test\", \"ServerVersion\": \"29.5.2\", \"OSType\": \"linux\", \"Architecture\": \"aarch64\", \"DefaultAddressPools\": [{\"Base\": \"10.241.0.0/16\", \"Size\": 24}]}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "ps",
+        "-aq",
+        "--no-trunc"
+      ],
+      "exit_status": 0,
+      "safe_output": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "volume",
+        "ls",
+        "-q"
+      ],
+      "exit_status": 0,
+      "safe_output": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "ls",
+        "--no-trunc",
+        "--format",
+        "{{json .}}"
+      ],
+      "exit_status": 0,
+      "safe_output": "{\"CreatedAt\":\"2026-10-01 14:45:16.427040294 +0700 +07\",\"Driver\":\"bridge\",\"ID\":\"c0297a5ce0209b66940193c63975087c4355c0e38d6517ac408d4fbf452c9adf\",\"IPv4\":\"true\",\"IPv6\":\"false\",\"Internal\":\"false\",\"Labels\":\"\",\"Name\":\"bridge\",\"Scope\":\"local\"}\n{\"CreatedAt\":\"2026-09-30 23:19:05.623366465 +0700 +07\",\"Driver\":\"host\",\"ID\":\"71919e79066c633ba4548aa04103de53d1e31552893e0cec59e0ba812b5f4d22\",\"IPv4\":\"true\",\"IPv6\":\"false\",\"Internal\":\"false\",\"Labels\":\"\",\"Name\":\"host\",\"Scope\":\"local\"}\n{\"CreatedAt\":\"2026-09-30 23:19:05.61941459 +0700 +07\",\"Driver\":\"null\",\"ID\":\"0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a\",\"IPv4\":\"true\",\"IPv6\":\"false\",\"Internal\":\"false\",\"Labels\":\"\",\"Name\":\"none\",\"Scope\":\"local\"}\n",
+      "stderr": ""
+    }
+  ],
+  "source_unchanged": true,
+  "preserved_report_sha256": "786ec48925a56e67e9f9491c3d2922b876d83742758db4a2071de5c1eed197f4",
+  "repository_source_changes": []
+}

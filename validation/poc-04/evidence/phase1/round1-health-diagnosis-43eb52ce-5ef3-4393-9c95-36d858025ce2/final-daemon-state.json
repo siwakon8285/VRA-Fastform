@@ -1,0 +1,39 @@
+{
+  "containers": [],
+  "volumes": [],
+  "networks": [
+    {
+      "CreatedAt": "2026-10-01 14:45:16.427040294 +0700 +07",
+      "Driver": "bridge",
+      "ID": "c0297a5ce0209b66940193c63975087c4355c0e38d6517ac408d4fbf452c9adf",
+      "IPv4": "true",
+      "IPv6": "false",
+      "Internal": "false",
+      "Labels": "",
+      "Name": "bridge",
+      "Scope": "local"
+    },
+    {
+      "CreatedAt": "2026-09-30 23:19:05.623366465 +0700 +07",
+      "Driver": "host",
+      "ID": "71919e79066c633ba4548aa04103de53d1e31552893e0cec59e0ba812b5f4d22",
+      "IPv4": "true",
+      "IPv6": "false",
+      "Internal": "false",
+      "Labels": "",
+      "Name": "host",
+      "Scope": "local"
+    },
+    {
+      "CreatedAt": "2026-09-30 23:19:05.61941459 +0700 +07",
+      "Driver": "null",
+      "ID": "0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a",
+      "IPv4": "true",
+      "IPv6": "false",
+      "Internal": "false",
+      "Labels": "",
+      "Name": "none",
+      "Scope": "local"
+    }
+  ]
+}

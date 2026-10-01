@@ -1,0 +1,132 @@
+{
+  "timestamp_utc": "2026-10-01T06:41:14.233353+00:00",
+  "git": {
+    "branch": "poc/04-security-auth",
+    "HEAD": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+    "origin/main": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+    "origin/poc/04-security-auth": "01256d96d85823740a8d6c3a3f99346afbdbef56"
+  },
+  "staged": [],
+  "docker_host": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+  "docker_version": {
+    "Client": {
+      "Version": "29.8.1",
+      "ApiVersion": "1.54",
+      "DefaultAPIVersion": "1.56",
+      "GitCommit": "4a63305",
+      "GoVersion": "go1.26.8",
+      "Os": "darwin",
+      "Arch": "arm64",
+      "BuildTime": "Tue Sep 15 16:24:48 2026",
+      "Context": "default"
+    },
+    "Server": {
+      "Platform": {
+        "Name": "Docker Engine - Community"
+      },
+      "Version": "29.5.2",
+      "ApiVersion": "1.54",
+      "MinAPIVersion": "1.40",
+      "Os": "linux",
+      "Arch": "arm64",
+      "Components": [
+        {
+          "Name": "Engine",
+          "Version": "29.5.2",
+          "Details": {
+            "ApiVersion": "1.54",
+            "Arch": "arm64",
+            "BuildTime": "Wed May 20 14:39:25 2026",
+            "Experimental": "false",
+            "GitCommit": "568f755",
+            "GoVersion": "go1.26.3",
+            "KernelVersion": "6.8.0-117-generic",
+            "MinAPIVersion": "1.40",
+            "Module": "github.com/moby/moby/v2",
+            "ModuleVersion": "v2.0.0+unknown",
+            "Os": "linux"
+          }
+        },
+        {
+          "Name": "containerd",
+          "Version": "v2.2.4",
+          "Details": {
+            "GitCommit": "193637f7ee8ae5f5aa5248f49e7baa3e6164966e"
+          }
+        },
+        {
+          "Name": "runc",
+          "Version": "1.3.5",
+          "Details": {
+            "GitCommit": "v1.3.5-0-g488fc13e"
+          }
+        },
+        {
+          "Name": "docker-init",
+          "Version": "0.19.0",
+          "Details": {
+            "GitCommit": "de40ad0"
+          }
+        }
+      ],
+      "GitCommit": "568f755",
+      "GoVersion": "go1.26.3",
+      "KernelVersion": "6.8.0-117-generic",
+      "BuildTime": "2026-05-20T14:39:25.000000000+00:00"
+    }
+  },
+  "docker_info_safe": {
+    "ID": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+    "Name": "colima-vra-poc04-test",
+    "ServerVersion": "29.5.2",
+    "OSType": "linux",
+    "Architecture": "aarch64",
+    "Containers": 0,
+    "Images": 4,
+    "Driver": "overlayfs"
+  },
+  "docker_context_show": "default",
+  "containers": [],
+  "volumes": [],
+  "networks": [
+    {
+      "CreatedAt": "2026-09-30 23:23:59.189578754 +0700 +07",
+      "Driver": "bridge",
+      "ID": "d6169038310792000aceb4c7cc43936dc2580869b05ebdee378244932b90279c",
+      "IPv4": "true",
+      "IPv6": "false",
+      "Internal": "false",
+      "Labels": "",
+      "Name": "bridge",
+      "Scope": "local"
+    },
+    {
+      "CreatedAt": "2026-09-30 23:19:05.623366465 +0700 +07",
+      "Driver": "host",
+      "ID": "71919e79066c633ba4548aa04103de53d1e31552893e0cec59e0ba812b5f4d22",
+      "IPv4": "true",
+      "IPv6": "false",
+      "Internal": "false",
+      "Labels": "",
+      "Name": "host",
+      "Scope": "local"
+    },
+    {
+      "CreatedAt": "2026-09-30 23:19:05.61941459 +0700 +07",
+      "Driver": "null",
+      "ID": "0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a",
+      "IPv4": "true",
+      "IPv6": "false",
+      "Internal": "false",
+      "Labels": "",
+      "Name": "none",
+      "Scope": "local"
+    }
+  ],
+  "desktop_not_enumerated": true,
+  "assertion_matches_authorized_root_cause": true,
+  "exact_assertion": "assertEquals(\"volume\", pgdata.getRawValues().get(\"Type\"), \"actual PGDATA mount type\");",
+  "fixture_sha256_before_edit": "eedaf64c01778dcc9f1b502a4127bd1363c08a310e3cc131a91a48e6891b1ee8",
+  "previous_report_sha256": "e5df43afd289c8fc9a87cfe0bc25fdf182d6195ea8f8f6bfedf160df4caf0e3e",
+  "previous_report_archived_byte_exact": true
+}

@@ -1,0 +1,402 @@
+[
+  {
+    "suite": "dev.vra.async.WorkerProcessCrashIntegrationTest",
+    "test": "initializationError",
+    "type": "org.testcontainers.containers.ContainerLaunchException",
+    "message": "org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+    "cause_chain": [
+      "Caused by: org.rnorth.ducttape.RetryCountExceededException: Retry limit hit with exception",
+      "Caused by: org.testcontainers.containers.ContainerLaunchException: Could not create/start container",
+      "Caused by: com.github.dockerjava.api.exception.BadRequestException: Status 400: {\"message\":\"all predefined address pools have been fully subnetted\"}"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.async.WorkerProcessCrashIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+    "test": "resultLossRetryReturnsOriginalCommittedReservation()",
+    "type": "java.lang.ExceptionInInitializerError",
+    "message": "java.lang.ExceptionInInitializerError",
+    "cause_chain": [
+      "Caused by: org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+      "Caused by: org.rnorth.ducttape.RetryCountExceededException: Retry limit hit with exception",
+      "Caused by: org.testcontainers.containers.ContainerLaunchException: Could not create/start container",
+      "Caused by: com.github.dockerjava.api.exception.BadRequestException: Status 400: {\"message\":\"all predefined address pools have been fully subnetted\"}"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+    "test": "injectedSaveFailureRollsBackClaimAndStockThenSameKeyCanSucceed()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+    "test": "identityStringsRemainExactAfterValidation()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+    "test": "samePayloadReplaysAndDifferentPayloadConflictsWithoutMutation()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+    "test": "firstSuccessPersistsOneBusinessEffectAndTerminalOutcome()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+    "test": "insufficientStockRejectionReplaysAfterStockChangesAndNewKeyExecutes()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+    "test": "missingInventoryIsTerminalBusinessRejection()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+    "test": "malformedCommandsDoNotClaimOrMutateAndCorrectedQuantityCanUseSameKey()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+    "test": "quarantinedInventoryClaimsThenCommitsNonReservableRejection()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationConcurrencyIntegrationTest",
+    "test": "sameKeyInDifferentActorScopesExecutesTwice()",
+    "type": "java.lang.ExceptionInInitializerError",
+    "message": "java.lang.ExceptionInInitializerError",
+    "cause_chain": [
+      "Caused by: org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+      "Caused by: org.rnorth.ducttape.RetryCountExceededException: Retry limit hit with exception",
+      "Caused by: org.testcontainers.containers.ContainerLaunchException: Could not create/start container",
+      "Caused by: com.github.dockerjava.api.exception.BadRequestException: Status 400: {\"message\":\"all predefined address pools have been fully subnetted\"}"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationConcurrencyIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationConcurrencyIntegrationTest",
+    "test": "concurrentConflictingPayloadsBindExactlyOneFingerprint()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationConcurrencyIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationConcurrencyIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationConcurrencyIntegrationTest",
+    "test": "concurrentSameKeyReturnsOneAuthoritativeResult()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationConcurrencyIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationConcurrencyIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationConcurrencyIntegrationTest",
+    "test": "concurrentOptimisticCompareAndSwapIsSeparateFromReservations()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationConcurrencyIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationConcurrencyIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationConcurrencyIntegrationTest",
+    "test": "oneUnitAcrossFiveHundredDistinctIdentities()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationConcurrencyIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationConcurrencyIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationHttpPostgresIntegrationTest",
+    "test": "realHttpUsesRuntimeLeastPrivilegeIdentity()",
+    "type": "java.lang.ExceptionInInitializerError",
+    "message": "java.lang.ExceptionInInitializerError",
+    "cause_chain": [
+      "Caused by: org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+      "Caused by: org.rnorth.ducttape.RetryCountExceededException: Retry limit hit with exception",
+      "Caused by: org.testcontainers.containers.ContainerLaunchException: Could not create/start container",
+      "Caused by: com.github.dockerjava.api.exception.BadRequestException: Status 400: {\"message\":\"all predefined address pools have been fully subnetted\"}"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationHttpPostgresIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationHttpPostgresIntegrationTest",
+    "test": "realHttpRejectsLegacyExpectedVersionWithoutMutation()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationHttpPostgresIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationHttpPostgresIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationHttpPostgresIntegrationTest",
+    "test": "realHttpInsufficientStockReturnsStableErrorWithoutMutation()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationHttpPostgresIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationHttpPostgresIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationHttpPostgresIntegrationTest",
+    "test": "realHttpRequestPersistsReservationInPostgres()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationHttpPostgresIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationHttpPostgresIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest",
+    "test": "successLifecycleReplaysAndCannotBeRewritten()",
+    "type": "java.lang.ExceptionInInitializerError",
+    "message": "java.lang.ExceptionInInitializerError",
+    "cause_chain": [
+      "Caused by: org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+      "Caused by: org.rnorth.ducttape.RetryCountExceededException: Retry limit hit with exception",
+      "Caused by: org.testcontainers.containers.ContainerLaunchException: Could not create/start container",
+      "Caused by: com.github.dockerjava.api.exception.BadRequestException: Status 400: {\"message\":\"all predefined address pools have been fully subnetted\"}"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest",
+    "test": "missingClaimCannotBeCompleted()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest",
+    "test": "rejectionLifecycleReplaysAndCannotBeRewritten()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest",
+    "test": "unknownPersistedRejectionFailsAsInvariant()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest",
+    "test": "committedIncompleteFixtureFailsBeforeFingerprintConflict()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest",
+    "test": "wrongFingerprintCannotCompleteAndClaimIsRolledBack()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "test": "databaseRejectsNegativeOnHand()",
+    "type": "java.lang.ExceptionInInitializerError",
+    "message": "java.lang.ExceptionInInitializerError",
+    "cause_chain": [
+      "Caused by: org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+      "Caused by: org.rnorth.ducttape.RetryCountExceededException: Retry limit hit with exception",
+      "Caused by: org.testcontainers.containers.ContainerLaunchException: Could not create/start container",
+      "Caused by: com.github.dockerjava.api.exception.BadRequestException: Status 400: {\"message\":\"all predefined address pools have been fully subnetted\"}"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationTransactionIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "test": "databaseRejectsInvalidStockStatus()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationTransactionIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "test": "databaseRejectsNegativeReserved()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationTransactionIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "test": "insufficientStockDoesNotCreateReservationOrChangeBalance()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationTransactionIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "test": "quarantinedInventoryIsNotReservable()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationTransactionIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "test": "runtimeConnectsUsingLeastPrivilegeIdentity()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationTransactionIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "test": "databaseRejectsNonPositiveReservationQuantity()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationTransactionIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "test": "reservesInventoryAndPersistsReservationInOneTransaction()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationTransactionIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "test": "inventoryKeyKeepsOwnerAndLocationIsolated()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationTransactionIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "test": "reservationInsertFailureRollsBackPriorJdbcInventoryUpdate()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationTransactionIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "test": "staleOptimisticCompareAndSwapDoesNotMutateState()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationTransactionIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "test": "databaseRejectsReservedGreaterThanOnHand()",
+    "type": "java.lang.NoClassDefFoundError",
+    "message": "java.lang.NoClassDefFoundError: Could not initialize class dev.vra.inventory.ReservationTransactionIntegrationTest",
+    "cause_chain": [
+      "Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f [in thread \"Test worker\"]"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationTransactionIntegrationTest.xml"
+  },
+  {
+    "suite": "dev.vra.platform.health.HealthProbePostgresIntegrationTest",
+    "test": "databaseOutageMakesReadinessDownButKeepsLivenessUp()",
+    "type": "java.lang.ExceptionInInitializerError",
+    "message": "java.lang.ExceptionInInitializerError",
+    "cause_chain": [
+      "Caused by: org.testcontainers.containers.ContainerLaunchException: Container startup failed for image docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+      "Caused by: org.rnorth.ducttape.RetryCountExceededException: Retry limit hit with exception",
+      "Caused by: org.testcontainers.containers.ContainerLaunchException: Could not create/start container",
+      "Caused by: com.github.dockerjava.api.exception.BadRequestException: Status 400: {\"message\":\"all predefined address pools have been fully subnetted\"}"
+    ],
+    "evidence": "regression-results/runtime/integrationTest/TEST-dev.vra.platform.health.HealthProbePostgresIntegrationTest.xml"
+  }
+]

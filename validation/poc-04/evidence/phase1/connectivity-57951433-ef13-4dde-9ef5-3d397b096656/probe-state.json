@@ -1,0 +1,8 @@
+{
+  "run_id": "57951433-ef13-4dde-9ef5-3d397b096656",
+  "evidence_dir": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/evidence/phase1/connectivity-57951433-ef13-4dde-9ef5-3d397b096656",
+  "daemon_id": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+  "endpoint": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+  "started_at_utc": "2026-09-30T16:58:22.125981+00:00",
+  "prior_report_sha256": "d8731f17ee3c5d55f35df90ae7780071239eca5fbede02300f9bd6a4ec8b667d"
+}

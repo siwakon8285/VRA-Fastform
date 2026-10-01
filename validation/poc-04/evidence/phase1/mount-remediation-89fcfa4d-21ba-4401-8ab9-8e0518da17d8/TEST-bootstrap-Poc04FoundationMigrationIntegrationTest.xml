@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.vra.migration.Poc04FoundationMigrationIntegrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-01T07:09:54.107Z" hostname="MacBook-Air-khxng-SIwakorn.local" time="6.053">
+  <properties/>
+  <testcase name="administratorBootstrapConvergesAndRejectsUnexpectedMembershipDrift()" classname="dev.vra.migration.Poc04FoundationMigrationIntegrationTest" time="6.048"/>
+  <system-out><![CDATA[POC04 index/platform/manifest/config linkage PASS: docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f linux/arm64/v8 sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761 sha256:97432f980da100ebd3e419711efee84e1e97a966d62c035286a07f239ddb4d9c
+POC04 actual execution platform/manifest PASS: linux/arm64/v8 sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761
+POC04 PGDATA typed/volume/daemon proof PASS: 0d8d4fb6856793dedd3f622ef34da69d6d343836df0fddacf814db9232579698 vra-poc04-9c71520d-c7ef-41a9-a4da-57d7f3191b6a-postgres-authority-0-pgdata safe_projection_sha256=be73e02510a26e0f855992af9f45e3d51501e2529c15d153820dabc8592be390
+POC04 PostgreSQL runtime version PASS: server_version_num=170011 (17.11)
+]]></system-out>
+  <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+]]></system-err>
+</testsuite>

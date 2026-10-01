@@ -1,4 +1,4 @@
-package dev.vra.async;
+                        package dev.vra.async;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -34,7 +34,7 @@ class AsyncVisibilityIntegrationTest {
     private static final String ASYNC_PASSWORD = "async-disposable-test-only";
     private static final String PROJECTION = "RESERVATION_PROJECTION";
     private static final String EXTERNAL = "VALIDATION_EXTERNAL_EFFECT";
-    private static final PostgreSQLContainer DB = new PostgreSQLContainer("postgres:17.11")
+    private static final PostgreSQLContainer DB = new dev.vra.poc04.external.RunOwnedPostgreSQLContainer("postgres:17.11")
             .withDatabaseName("vra_poc01").withUsername("postgres").withPassword(PASSWORD);
     private static JdbcAsyncVisibility visibility;
 
@@ -55,7 +55,7 @@ class AsyncVisibilityIntegrationTest {
                     "-v", "runtime_password=" + PASSWORD, "-f", "/tmp/stage-j-bootstrap.sql");
             assertEquals(0, setup.getExitCode(), setup.getStderr());
             AsyncRoleBootstrap.run(DB);
-            assertEquals(3, new MigrationRunner().migrate(DB.getJdbcUrl(), "vra_migrator", PASSWORD));
+            assertEquals(4, new MigrationRunner().migrate(DB.getJdbcUrl(), "vra_migrator", PASSWORD));
             visibility = new JdbcAsyncVisibility(JdbcClient.create(new DriverManagerDataSource(
                     DB.getJdbcUrl(), "vra_async_observer", ASYNC_PASSWORD)));
             assertEquals("vra_async_observer", read("vra_async_observer", "SELECT current_user"));

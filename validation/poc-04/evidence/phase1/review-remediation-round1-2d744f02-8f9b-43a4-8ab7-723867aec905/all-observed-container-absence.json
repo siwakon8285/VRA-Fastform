@@ -1,0 +1,22 @@
+{
+  "scope": "observation proves absence only, never authorizes deletion",
+  "containers": [
+    {
+      "exact_id": "b5cd48366f22dcac17db0944ed0f29cb4593889f9a6a60accd7eca9a3e27e4ba",
+      "name": "/testcontainers-ryuk-9e55414c-3f07-47ea-98ef-9aee92a4d871",
+      "image": "docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0",
+      "ledger_owned": false,
+      "inspect_exit_status": 1,
+      "absent": true
+    },
+    {
+      "exact_id": "9dfb98a45c97928fd2b1174966ab0d0e47ba19e9178ce910fa9e89446a5b7266",
+      "name": "/vra-poc04-2d744f02-8f9b-43a4-8ab7-723867aec905-postgres-authority-0",
+      "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+      "ledger_owned": true,
+      "inspect_exit_status": 1,
+      "absent": true
+    }
+  ],
+  "blanket_prune": false
+}

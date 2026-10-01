@@ -1,0 +1,35 @@
+{
+  "recorded_at_utc": "2026-09-30T16:34:13.729301+00:00",
+  "records": [
+    {
+      "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+      "exit_status": 0,
+      "id": "sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+      "os": "linux",
+      "architecture": "arm64",
+      "repo_digests": [
+        "postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f"
+      ]
+    },
+    {
+      "image": "docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0",
+      "exit_status": 0,
+      "id": "sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0",
+      "os": "linux",
+      "architecture": "arm64",
+      "repo_digests": [
+        "testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0"
+      ]
+    },
+    {
+      "image": "docker.io/library/alpine@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989",
+      "exit_status": 0,
+      "id": "sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989",
+      "os": "linux",
+      "architecture": "arm64",
+      "repo_digests": [
+        "alpine@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "correction": "152 rows are table-level ACL projection; separate column ACLs are in full catalog. Clarify native Ryuk helpers vs administrative ledger.",
+  "initial_draft_path": "validation/poc-04/evidence/phase1/round1-health-remediation-65334c18-11de-4755-acce-e22112c5f283/HEALTH_REMEDIATION_REPORT_INITIAL_DRAFT.md",
+  "initial_draft_sha256": "ceda7a658383a81e3081e0f1f2be5a801bfb1a4a0ccba478141a14bc3f45823d",
+  "final_report_sha256": "f307560dcc352c89d8f5a436ad7b6872e0c4eb4883bf3d14bb3f66fbe0bcb2cc",
+  "status_changes": false,
+  "source_changes": false
+}

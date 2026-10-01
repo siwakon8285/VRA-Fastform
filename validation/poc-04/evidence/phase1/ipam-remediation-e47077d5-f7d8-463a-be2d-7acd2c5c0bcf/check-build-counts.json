@@ -1,0 +1,290 @@
+{
+  ":migration:test": {
+    "tests": 4,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "suites": [
+      {
+        "suite": "dev.vra.migration.Poc04FoundationMigrationIntegrationTest",
+        "tests": 4,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/migration/test/TEST-dev.vra.migration.Poc04FoundationMigrationIntegrationTest.xml"
+      }
+    ]
+  },
+  ":migration:integrationTest": {
+    "tests": 18,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "suites": [
+      {
+        "suite": "dev.vra.migration.MigrationSecurityIntegrationTest",
+        "tests": 2,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/migration/integrationTest/TEST-dev.vra.migration.MigrationSecurityIntegrationTest.xml"
+      },
+      {
+        "suite": "dev.vra.migration.OutboxMigrationSecurityIntegrationTest",
+        "tests": 13,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/migration/integrationTest/TEST-dev.vra.migration.OutboxMigrationSecurityIntegrationTest.xml"
+      },
+      {
+        "suite": "dev.vra.migration.Poc04FoundationMigrationIntegrationTest",
+        "tests": 3,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/migration/integrationTest/TEST-dev.vra.migration.Poc04FoundationMigrationIntegrationTest.xml"
+      }
+    ]
+  },
+  ":runtime:test": {
+    "tests": 56,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "suites": [
+      {
+        "suite": "dev.vra.async.AsyncPropertiesTest",
+        "tests": 3,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/test/TEST-dev.vra.async.AsyncPropertiesTest.xml"
+      },
+      {
+        "suite": "dev.vra.async.DeliveryRetryPolicyTest",
+        "tests": 5,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/test/TEST-dev.vra.async.DeliveryRetryPolicyTest.xml"
+      },
+      {
+        "suite": "dev.vra.async.ReconciliationPolicyTest",
+        "tests": 5,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/test/TEST-dev.vra.async.ReconciliationPolicyTest.xml"
+      },
+      {
+        "suite": "dev.vra.async.ReservationCreatedEventCodecTest",
+        "tests": 3,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/test/TEST-dev.vra.async.ReservationCreatedEventCodecTest.xml"
+      },
+      {
+        "suite": "dev.vra.async.architecture.AsyncArchitectureTest",
+        "tests": 9,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/test/TEST-dev.vra.async.architecture.AsyncArchitectureTest.xml"
+      },
+      {
+        "suite": "dev.vra.inventory.adapter.in.web.InventoryReservationControllerTest",
+        "tests": 9,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/test/TEST-dev.vra.inventory.adapter.in.web.InventoryReservationControllerTest.xml"
+      },
+      {
+        "suite": "dev.vra.inventory.application.ReservationApplicationServiceTest",
+        "tests": 2,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/test/TEST-dev.vra.inventory.application.ReservationApplicationServiceTest.xml"
+      },
+      {
+        "suite": "dev.vra.inventory.application.ReservationRequestFingerprintTest",
+        "tests": 5,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/test/TEST-dev.vra.inventory.application.ReservationRequestFingerprintTest.xml"
+      },
+      {
+        "suite": "dev.vra.inventory.architecture.InventoryArchitectureTest",
+        "tests": 5,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/test/TEST-dev.vra.inventory.architecture.InventoryArchitectureTest.xml"
+      },
+      {
+        "suite": "dev.vra.inventory.domain.InventoryReservationTest",
+        "tests": 1,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/test/TEST-dev.vra.inventory.domain.InventoryReservationTest.xml"
+      },
+      {
+        "suite": "dev.vra.platform.configuration.RuntimeDatabasePropertiesTest",
+        "tests": 9,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/test/TEST-dev.vra.platform.configuration.RuntimeDatabasePropertiesTest.xml"
+      }
+    ]
+  },
+  ":runtime:integrationTest": {
+    "tests": 113,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "suites": [
+      {
+        "suite": "dev.vra.async.AsyncPermissionIntegrationTest",
+        "tests": 2,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/integrationTest/TEST-dev.vra.async.AsyncPermissionIntegrationTest.xml"
+      },
+      {
+        "suite": "dev.vra.async.AsyncVisibilityIntegrationTest",
+        "tests": 3,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/integrationTest/TEST-dev.vra.async.AsyncVisibilityIntegrationTest.xml"
+      },
+      {
+        "suite": "dev.vra.async.DeliveryClaimIntegrationTest",
+        "tests": 7,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/integrationTest/TEST-dev.vra.async.DeliveryClaimIntegrationTest.xml"
+      },
+      {
+        "suite": "dev.vra.async.DeliveryStateIntegrationTest",
+        "tests": 3,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/integrationTest/TEST-dev.vra.async.DeliveryStateIntegrationTest.xml"
+      },
+      {
+        "suite": "dev.vra.async.ProducerOutboxIntegrationTest",
+        "tests": 7,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/integrationTest/TEST-dev.vra.async.ProducerOutboxIntegrationTest.xml"
+      },
+      {
+        "suite": "dev.vra.async.ProjectionInboxIntegrationTest",
+        "tests": 10,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/integrationTest/TEST-dev.vra.async.ProjectionInboxIntegrationTest.xml"
+      },
+      {
+        "suite": "dev.vra.async.ProjectionRebuildIntegrationTest",
+        "tests": 4,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/integrationTest/TEST-dev.vra.async.ProjectionRebuildIntegrationTest.xml"
+      },
+      {
+        "suite": "dev.vra.async.ReconciliationIntegrationTest",
+        "tests": 16,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/integrationTest/TEST-dev.vra.async.ReconciliationIntegrationTest.xml"
+      },
+      {
+        "suite": "dev.vra.async.RetryReplayIntegrationTest",
+        "tests": 7,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/integrationTest/TEST-dev.vra.async.RetryReplayIntegrationTest.xml"
+      },
+      {
+        "suite": "dev.vra.async.ValidationSimulatorIntegrationTest",
+        "tests": 5,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/integrationTest/TEST-dev.vra.async.ValidationSimulatorIntegrationTest.xml"
+      },
+      {
+        "suite": "dev.vra.async.WorkerProcessCrashIntegrationTest",
+        "tests": 12,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/integrationTest/TEST-dev.vra.async.WorkerProcessCrashIntegrationTest.xml"
+      },
+      {
+        "suite": "dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+        "tests": 9,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/integrationTest/TEST-dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest.xml"
+      },
+      {
+        "suite": "dev.vra.inventory.ReservationConcurrencyIntegrationTest",
+        "tests": 5,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationConcurrencyIntegrationTest.xml"
+      },
+      {
+        "suite": "dev.vra.inventory.ReservationHttpPostgresIntegrationTest",
+        "tests": 4,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationHttpPostgresIntegrationTest.xml"
+      },
+      {
+        "suite": "dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest",
+        "tests": 6,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest.xml"
+      },
+      {
+        "suite": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+        "tests": 12,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationTransactionIntegrationTest.xml"
+      },
+      {
+        "suite": "dev.vra.platform.health.HealthProbePostgresIntegrationTest",
+        "tests": 1,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "artifact": "check-build-results/runtime/integrationTest/TEST-dev.vra.platform.health.HealthProbePostgresIntegrationTest.xml"
+      }
+    ]
+  }
+}

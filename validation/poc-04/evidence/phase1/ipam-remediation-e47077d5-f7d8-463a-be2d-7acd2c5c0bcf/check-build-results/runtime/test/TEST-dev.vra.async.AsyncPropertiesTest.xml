@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.vra.async.AsyncPropertiesTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-01T08:03:38.582Z" hostname="MacBook-Air-khxng-SIwakorn.local" time="0.009">
+  <properties/>
+  <testcase name="rejectsInvalidTimingAndOverflow()" classname="dev.vra.async.AsyncPropertiesTest" time="0.004"/>
+  <testcase name="approvedDefaultsAreValidAndContainNoCycleBudgetProperty()" classname="dev.vra.async.AsyncPropertiesTest" time="0.001"/>
+  <testcase name="rejectsInvalidJitterAndConcurrency()" classname="dev.vra.async.AsyncPropertiesTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

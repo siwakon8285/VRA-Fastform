@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.vra.migration.Poc04FoundationMigrationIntegrationTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2026-09-30T17:03:28.626Z" hostname="MacBook-Air-khxng-SIwakorn.local" time="1.632">
+  <properties/>
+  <testcase name="freshV1ThroughV4ValidatesRerunsAndEnforcesPhaseOneBoundary()" classname="dev.vra.migration.Poc04FoundationMigrationIntegrationTest" time="1.629">
+    <failure message="org.opentest4j.AssertionFailedError: selected-platform config digest from Phase-0 pin ==&gt; expected: &lt;sha256:97432f980da100ebd3e419711efee84e1e97a966d62c035286a07f239ddb4d9c&gt; but was: &lt;sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: selected-platform config digest from Phase-0 pin ==&gt; expected: &lt;sha256:97432f980da100ebd3e419711efee84e1e97a966d62c035286a07f239ddb4d9c&gt; but was: &lt;sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:184)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1199)
+	at dev.vra.migration.Poc04FoundationMigrationIntegrationTest$Fixture.&lt;init&gt;(Poc04FoundationMigrationIntegrationTest.java:898)
+	at dev.vra.migration.Poc04FoundationMigrationIntegrationTest.freshV1ThroughV4ValidatesRerunsAndEnforcesPhaseOneBoundary(Poc04FoundationMigrationIntegrationTest.java:149)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+]]></system-err>
+</testsuite>

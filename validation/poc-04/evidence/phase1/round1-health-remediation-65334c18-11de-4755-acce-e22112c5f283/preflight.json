@@ -1,0 +1,80 @@
+{
+  "commands": [
+    {
+      "command": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "exit_status": 0,
+      "safe_output": "poc/04-security-auth\n"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_status": 0,
+      "safe_output": "01256d96d85823740a8d6c3a3f99346afbdbef56\n"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--name-only"
+      ],
+      "exit_status": 0,
+      "safe_output": ""
+    },
+    {
+      "command": [
+        "docker",
+        "version",
+        "--format",
+        "{{json .}}"
+      ],
+      "exit_status": 0,
+      "safe_output": "{\"client\": \"29.8.1\", \"server\": \"29.5.2\"}"
+    },
+    {
+      "command": [
+        "docker",
+        "info",
+        "--format",
+        "{{json .}}"
+      ],
+      "exit_status": 0,
+      "safe_output": "{\"ID\": \"14c8ff26-86d1-4c0b-88a6-560be91a65ea\", \"Name\": \"colima-vra-poc04-test\", \"ServerVersion\": \"29.5.2\", \"OSType\": \"linux\", \"Architecture\": \"aarch64\", \"DefaultAddressPools\": [{\"Base\": \"10.241.0.0/16\", \"Size\": 24}]}"
+    },
+    {
+      "command": [
+        "docker",
+        "ps",
+        "-aq",
+        "--no-trunc"
+      ],
+      "exit_status": 0,
+      "safe_output": ""
+    },
+    {
+      "command": [
+        "docker",
+        "volume",
+        "ls",
+        "-q"
+      ],
+      "exit_status": 0,
+      "safe_output": ""
+    }
+  ],
+  "git_diff_check_exit": 0,
+  "only_authorized_source_change_since_previous_run": [
+    "backend/runtime/src/test/java/dev/vra/platform/health/HealthProbePostgresIntegrationTest.java"
+  ],
+  "health_test_sha256": "3c9cdc89a6f297c6cdd655d94be2b3c10aca802a9570e1d04ab18319acdf9719",
+  "production_database_configuration_sha256": "fcbafb216ebfd5218d079fc84a7fb9a0c5aeeb5a764aa4db967b797583983153",
+  "external_jar_sha256": "ca5bc967d7aebf9555231ef9677f9357866499e2e4c9ebef86a30d3de9a23f7d",
+  "extra_diagnostic_listener_in_corrected_run": false
+}

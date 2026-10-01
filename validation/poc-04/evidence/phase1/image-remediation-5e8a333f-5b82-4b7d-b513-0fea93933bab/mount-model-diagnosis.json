@@ -1,0 +1,39 @@
+{
+  "command": [
+    "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-jdk-x0q7h_vo/jdk-21.0.12.1+1/Contents/Home/bin/javap",
+    "-private",
+    "-classpath",
+    "/Users/siwakornbundi/.gradle/caches/modules-2/files-2.1/com.github.docker-java/docker-java-api/3.7.1/2df91233a782749e85139991cc94d4ef40b59038/docker-java-api-3.7.1.jar",
+    "com.github.dockerjava.api.command.InspectContainerResponse$Mount"
+  ],
+  "exit_status": 0,
+  "stdout": "Compiled from \"InspectContainerResponse.java\"\npublic class com.github.dockerjava.api.command.InspectContainerResponse$Mount extends com.github.dockerjava.api.model.DockerObject {\n  private java.lang.String name;\n  private java.lang.String source;\n  private com.github.dockerjava.api.model.Volume destination;\n  private java.lang.String driver;\n  private java.lang.String mode;\n  private java.lang.Boolean rw;\n  public com.github.dockerjava.api.command.InspectContainerResponse$Mount();\n  public java.lang.String getName();\n  public java.lang.String getSource();\n  public com.github.dockerjava.api.model.Volume getDestination();\n  public java.lang.String getDriver();\n  public java.lang.String getMode();\n  public java.lang.Boolean getRW();\n  public com.github.dockerjava.api.command.InspectContainerResponse$Mount withDestination(com.github.dockerjava.api.model.Volume);\n  public com.github.dockerjava.api.command.InspectContainerResponse$Mount withDriver(java.lang.String);\n  public com.github.dockerjava.api.command.InspectContainerResponse$Mount withMode(java.lang.String);\n  public com.github.dockerjava.api.command.InspectContainerResponse$Mount withName(java.lang.String);\n  public com.github.dockerjava.api.command.InspectContainerResponse$Mount withRw(java.lang.Boolean);\n  public com.github.dockerjava.api.command.InspectContainerResponse$Mount withSource(java.lang.String);\n  public boolean equals(java.lang.Object);\n  protected boolean canEqual(java.lang.Object);\n  public int hashCode();\n  public java.lang.String toString();\n}\n",
+  "interpretation": "Installed InspectContainerResponse.Mount has no typed Type field/getType accessor. The existing fixture queried rawValues[Type], which returned null despite actual daemon JSON mount Type=volume. The library representation must be diagnosed separately; no mount assertion edit was made.",
+  "observed_postgres_mounts": [
+    {
+      "container_id": "2944e1c95d47c56ddf6fd847b9a86dea7c1c44ef970ee2da82352be58e6dd63d",
+      "mounts": [
+        {
+          "Destination": "/var/lib/postgresql/data",
+          "Name": "vra-poc04-e384b63e-3450-40ca-aced-3acd4b9421e0-postgres-authority-0-pgdata",
+          "RW": true,
+          "Source": "/var/lib/docker/volumes/vra-poc04-e384b63e-3450-40ca-aced-3acd4b9421e0-postgres-authority-0-pgdata/_data",
+          "Type": "volume"
+        }
+      ]
+    },
+    {
+      "container_id": "2944e1c95d47c56ddf6fd847b9a86dea7c1c44ef970ee2da82352be58e6dd63d",
+      "mounts": [
+        {
+          "Destination": "/var/lib/postgresql/data",
+          "Name": "vra-poc04-e384b63e-3450-40ca-aced-3acd4b9421e0-postgres-authority-0-pgdata",
+          "RW": true,
+          "Source": "/var/lib/docker/volumes/vra-poc04-e384b63e-3450-40ca-aced-3acd4b9421e0-postgres-authority-0-pgdata/_data",
+          "Type": "volume"
+        }
+      ]
+    }
+  ],
+  "typed_getType_present": false
+}
