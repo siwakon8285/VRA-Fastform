@@ -1,0 +1,298 @@
+{
+  "core_proof_count": 6,
+  "core_proof_derivatives": [
+    {
+      "audit_claim_preserved": true,
+      "fields_redacted": {
+        "canonical_identity_sha256": 6,
+        "finding_key": 6,
+        "raw_token_sha256": 6,
+        "token_sha256": 6
+      },
+      "locator_representation": [
+        "rule",
+        "path",
+        "start_line",
+        "end_line",
+        "start_column",
+        "end_column"
+      ],
+      "original_evidence_preserved_unchanged": true,
+      "original_forensic_reference": {
+        "mode": "0644",
+        "relative_path": "SIX_CLASSIFIER_ORIGIN_PROOFS.json",
+        "round": "ROUND5O",
+        "sha256": "887b32ae4a7e88617f8cef36271767607f2167a24b8f06c6fcdc712ac7152d34",
+        "size": 14101
+      },
+      "preserved_original_repository_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/round5o/SIX_CLASSIFIER_ORIGIN_PROOFS.json",
+      "publication_artifact": {
+        "mode": "0644",
+        "path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/publication/round5o/SIX_CLASSIFIER_ORIGIN_PROOFS.publication.json",
+        "sha256": "561d5daf269ce5e693e33c4bb5734ba343ae63f3f783bbcbdf694cc9013586c9",
+        "size": 15079
+      },
+      "reason": "Remove unnecessary token-derived forensic hashes while retaining exact security claims.",
+      "role": "CORE_PROOF"
+    },
+    {
+      "audit_claim_preserved": true,
+      "fields_redacted": {
+        "finding_key": 18,
+        "token_sha256": 18
+      },
+      "locator_representation": [
+        "rule",
+        "path",
+        "start_line",
+        "end_line",
+        "start_column",
+        "end_column"
+      ],
+      "original_evidence_preserved_unchanged": true,
+      "original_forensic_reference": {
+        "mode": "0600",
+        "relative_path": "full-workflow/secret-scan-expanded-artifacts.json",
+        "round": "ROUND5O",
+        "sha256": "4fa006e024bc71bacfcbb925bcc9e8a4457e422ad9c9b5b3e9cffcfd24540f0b",
+        "size": 33932
+      },
+      "preserved_original_repository_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/round5o/full-workflow/secret-scan-expanded-artifacts.json",
+      "publication_artifact": {
+        "mode": "0644",
+        "path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/publication/round5o/full-workflow/secret-scan-expanded-artifacts.publication.json",
+        "sha256": "3bf1ef501a3a9441572ad8faa85f7825e09ff90a8b98c7cc6114ed34b2179473",
+        "size": 37801
+      },
+      "reason": "Remove unnecessary token-derived forensic hashes while retaining exact security claims.",
+      "role": "CORE_PROOF"
+    },
+    {
+      "audit_claim_preserved": true,
+      "fields_redacted": {
+        "finding_key": 18,
+        "token_sha256": 18
+      },
+      "locator_representation": [
+        "rule",
+        "path",
+        "start_line",
+        "end_line",
+        "start_column",
+        "end_column"
+      ],
+      "original_evidence_preserved_unchanged": true,
+      "original_forensic_reference": {
+        "mode": "0600",
+        "relative_path": "full-workflow/secret-scan-postbuild-original.json",
+        "round": "ROUND5O",
+        "sha256": "d97dca00f4815ac6e026e40758d13aea36fd131d501e00c3ee5cb291cf2243e9",
+        "size": 33933
+      },
+      "preserved_original_repository_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/round5o/full-workflow/secret-scan-postbuild-original.json",
+      "publication_artifact": {
+        "mode": "0644",
+        "path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/publication/round5o/full-workflow/secret-scan-postbuild-original.publication.json",
+        "sha256": "cf1390b56a4d4b2c4372c28ce5d481c23f3c113fbe0bf1ef47b21b9f86afe214",
+        "size": 37802
+      },
+      "reason": "Remove unnecessary token-derived forensic hashes while retaining exact security claims.",
+      "role": "CORE_PROOF"
+    },
+    {
+      "audit_claim_preserved": true,
+      "fields_redacted": {
+        "finding_key": 18,
+        "token_sha256": 18
+      },
+      "locator_representation": [
+        "rule",
+        "path",
+        "start_line",
+        "end_line",
+        "start_column",
+        "end_column"
+      ],
+      "original_evidence_preserved_unchanged": true,
+      "original_forensic_reference": {
+        "mode": "0600",
+        "relative_path": "full-workflow/secret-scan-prebuild-control-1.json",
+        "round": "ROUND5O",
+        "sha256": "a54a0d59c4b5dd8872b60e0583f5b6331003d809292cbe55d0e5a80cdf096761",
+        "size": 33933
+      },
+      "preserved_original_repository_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/round5o/full-workflow/secret-scan-prebuild-control-1.json",
+      "publication_artifact": {
+        "mode": "0644",
+        "path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/publication/round5o/full-workflow/secret-scan-prebuild-control-1.publication.json",
+        "sha256": "c1bee25f9b3124f4cdc16d1e96b7069f75ac9b9e5a423570e2a835874b3abb5c",
+        "size": 37802
+      },
+      "reason": "Remove unnecessary token-derived forensic hashes while retaining exact security claims.",
+      "role": "CORE_PROOF"
+    },
+    {
+      "audit_claim_preserved": true,
+      "fields_redacted": {
+        "finding_key": 18,
+        "token_sha256": 18
+      },
+      "locator_representation": [
+        "rule",
+        "path",
+        "start_line",
+        "end_line",
+        "start_column",
+        "end_column"
+      ],
+      "original_evidence_preserved_unchanged": true,
+      "original_forensic_reference": {
+        "mode": "0600",
+        "relative_path": "full-workflow/secret-scan-prebuild-control-2.json",
+        "round": "ROUND5O",
+        "sha256": "8d9d43556e46d8550fcf1a8ee0aeabb87ad2b0a302326607c4e8595fd36fae82",
+        "size": 33933
+      },
+      "preserved_original_repository_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/round5o/full-workflow/secret-scan-prebuild-control-2.json",
+      "publication_artifact": {
+        "mode": "0644",
+        "path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/publication/round5o/full-workflow/secret-scan-prebuild-control-2.publication.json",
+        "sha256": "c1b4490141a07d34d4bfa87bb3db237d98adbf43ac228f92cd0722e3afc1d156",
+        "size": 37802
+      },
+      "reason": "Remove unnecessary token-derived forensic hashes while retaining exact security claims.",
+      "role": "CORE_PROOF"
+    },
+    {
+      "audit_claim_preserved": true,
+      "fields_redacted": {
+        "finding_key": 18,
+        "token_sha256": 18
+      },
+      "locator_representation": [
+        "rule",
+        "path",
+        "start_line",
+        "end_line",
+        "start_column",
+        "end_column"
+      ],
+      "original_evidence_preserved_unchanged": true,
+      "original_forensic_reference": {
+        "mode": "0600",
+        "relative_path": "full-workflow/secret-scan-primary.json",
+        "round": "ROUND5O",
+        "sha256": "d6a633156d1db435fd0fa5c86d85ae92edeec4ecc309bf6bb4bad62b93112bb5",
+        "size": 33922
+      },
+      "preserved_original_repository_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/round5o/full-workflow/secret-scan-primary.json",
+      "publication_artifact": {
+        "mode": "0644",
+        "path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/publication/round5o/full-workflow/secret-scan-primary.publication.json",
+        "sha256": "5b473d02b7cabe3eb648e9e81710a934a01999cf6bcfb08567216e1f193c363b",
+        "size": 37780
+      },
+      "reason": "Remove unnecessary token-derived forensic hashes while retaining exact security claims.",
+      "role": "CORE_PROOF"
+    }
+  ],
+  "direct_reference_count": 2,
+  "direct_reference_derivatives": [
+    {
+      "audit_claim_preserved": true,
+      "fields_redacted": {},
+      "locator_representation": [
+        "rule",
+        "path",
+        "start_line",
+        "end_line",
+        "start_column",
+        "end_column"
+      ],
+      "original_evidence_preserved_unchanged": true,
+      "original_forensic_reference": {
+        "mode": "0600",
+        "relative_path": "full-workflow/scanner-finding-set-comparison.json",
+        "round": "ROUND5O",
+        "sha256": "696af0fc425f0d19b6b0d8d57945c0aabef957c2d9c4febfa6f29c49b1f618f9",
+        "size": 3980
+      },
+      "preserved_original_repository_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/round5o/full-workflow/scanner-finding-set-comparison.json",
+      "publication_artifact": {
+        "mode": "0644",
+        "path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/publication/round5o/full-workflow/scanner-finding-set-comparison.publication.json",
+        "sha256": "f6f7fe6c88e0e66fb42c9cbb951d81f247bb30a798fb938f7ac5eb197fd7d38a",
+        "size": 14975
+      },
+      "reason": "Update direct finding-set references to the publication locators; no original key is republished.",
+      "role": "DIRECT_DEPENDENT_COMPARISON"
+    },
+    {
+      "audit_claim_preserved": true,
+      "fields_redacted": {},
+      "locator_representation": [
+        "rule",
+        "path",
+        "start_line",
+        "end_line",
+        "start_column",
+        "end_column"
+      ],
+      "original_evidence_preserved_unchanged": true,
+      "original_forensic_reference": {
+        "mode": "0600",
+        "relative_path": "INDEPENDENT_SCANNER_FINDING_SET_RECONCILIATION.json",
+        "round": "ROUND5O",
+        "sha256": "9a1b31af252bc91dd8f3714fc2b3bf63c88717c31ef8e32716eb71112e57627d",
+        "size": 7377
+      },
+      "preserved_original_repository_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/round5o/INDEPENDENT_SCANNER_FINDING_SET_RECONCILIATION.json",
+      "publication_artifact": {
+        "mode": "0644",
+        "path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/publication/round5o/INDEPENDENT_SCANNER_FINDING_SET_RECONCILIATION.publication.json",
+        "sha256": "1b138fe61b02e450af92c8827c92cd7974d016e4535368ace6241959f62c6e5f",
+        "size": 26326
+      },
+      "reason": "Update direct finding-set references to the publication locators; no original key is republished.",
+      "role": "DIRECT_DEPENDENT_COMPARISON"
+    }
+  ],
+  "finding_set_reconciliation": {
+    "expanded_preserves_all_original_locators": true,
+    "expanded_records": 18,
+    "locator_collisions": 0,
+    "original_scanner_records_each": 18,
+    "original_scans_exact_locator_equality": true,
+    "six_origin_locator_count": 6,
+    "token_aware_original_comparison": "Preserved outside intended commit set; public equality is explicitly location-based and does not claim new token-aware comparison."
+  },
+  "null_redaction_count": 204,
+  "original_scan_unresolved_reconciled": 198,
+  "policy": {
+    "direct_comparison_updates": "Original finding-key arrays replaced one-for-one by sorted structured locator arrays",
+    "locator_fields": [
+      "rule",
+      "path",
+      "start_line",
+      "end_line",
+      "start_column",
+      "end_column"
+    ],
+    "locator_material": "Existing non-secret rule/path/line/column only; no hash of tokens, old finding keys or locator",
+    "original_evidence_unchanged": true,
+    "redacted_field_names": [
+      "canonical_identity_sha256",
+      "finding_key",
+      "raw_token_sha256",
+      "token_sha256"
+    ],
+    "value_replacement": null
+  },
+  "provenance_binding": {
+    "original_entry_count": 355,
+    "relative_path": "round5o/ROUND5O_EVIDENCE_BINDING.json",
+    "sha256": "913abae6940f2826e92cfd7597ff1ceae1f50bedb58011f7fc47940f53115d9f"
+  },
+  "purpose": "Bounded evidence publication; originals remain authoritative unchanged forensic records",
+  "schema_version": 1
+}

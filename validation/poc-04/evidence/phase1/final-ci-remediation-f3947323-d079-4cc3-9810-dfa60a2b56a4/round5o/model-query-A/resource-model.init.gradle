@@ -1,0 +1,45 @@
+import groovy.json.JsonOutput
+import org.gradle.api.tasks.SourceSetContainer
+import org.gradle.language.jvm.tasks.ProcessResources
+
+def modelPath = System.getProperty('vra.poc04.resourceModelOutput')
+if (!modelPath) throw new GradleException('Missing restricted resource model output')
+def describePath = { File file ->
+    [path: file.absolutePath, canonical_path: file.canonicalPath]
+}
+gradle.projectsEvaluated {
+    def root = gradle.rootProject
+    def queryName = 'poc04EffectiveResourceModel'
+    if (root.tasks.findByName(queryName) != null)
+        throw new GradleException('Resource model query task identity collision')
+    root.tasks.register(queryName) {
+        doLast {
+            def projects = root.allprojects.sort { it.path }.collect { project ->
+                def sourceSets = project.extensions.findByType(SourceSetContainer)
+                def sets = sourceSets == null ? [] : sourceSets.toList().sort { it.name }.collect { sourceSet ->
+                    def processing = project.tasks.findByName(sourceSet.processResourcesTaskName)
+                    if (!(processing instanceof ProcessResources))
+                        throw new GradleException('Unsupported resource processing task')
+                    [name: sourceSet.name,
+                     resource_roots: sourceSet.resources.srcDirs.toList().sort { it.absolutePath }.collect(describePath),
+                     resource_files: sourceSet.resources.asFileTree.files.toList().sort { it.absolutePath }.collect(describePath),
+                     process_resource_files: processing.source.files.toList().sort { it.absolutePath }.collect(describePath),
+                     output_directory: sourceSet.output.resourcesDir.absolutePath,
+                     process_output_directory: processing.destinationDir.absolutePath,
+                     includes: sourceSet.resources.includes.toList().sort(),
+                     excludes: sourceSet.resources.excludes.toList().sort()]
+                }
+                [project_path: project.path, project_directory: project.projectDir.absolutePath,
+                 build_file: project.buildFile.isFile() ? project.buildFile.absolutePath : null,
+                 source_sets: sets]
+            }
+            def model = [schema_version: 1, gradle_version: gradle.gradleVersion,
+                         build_root: root.projectDir.absolutePath, projects: projects]
+            new File(modelPath).setText(JsonOutput.toJson(model), 'UTF-8')
+        }
+    }
+    gradle.taskGraph.whenReady { graph ->
+        if (graph.allTasks.size() != 1 || graph.allTasks[0].path != ':' + queryName)
+            throw new GradleException('Resource model query may execute only its observational task')
+    }
+}

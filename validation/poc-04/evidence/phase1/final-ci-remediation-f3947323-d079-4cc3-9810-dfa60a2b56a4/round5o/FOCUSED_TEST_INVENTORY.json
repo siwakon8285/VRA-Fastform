@@ -1,0 +1,14 @@
+{
+  "expected_tests": 255,
+  "suites": {
+    "test_ci_support_boundary.py": 15,
+    "test_digest_metadata_classifier.py": 23,
+    "test_git_period_normalization.py": 22,
+    "test_gradle_resource_model.py": 31,
+    "test_postbuild_trust_domains.py": 32,
+    "test_public_verification_classifier.py": 12,
+    "test_round5f_inventory_authority.py": 19,
+    "test_scan_candidate_boundary.py": 85,
+    "test_scanner_config_binding.py": 16
+  }
+}

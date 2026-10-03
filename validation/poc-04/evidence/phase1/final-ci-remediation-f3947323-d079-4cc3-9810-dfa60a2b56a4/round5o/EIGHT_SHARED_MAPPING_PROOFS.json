@@ -1,0 +1,273 @@
+{
+  "authority": "configured/evaluated-model destination to authoritative tracked origin; no file/hash allowlist",
+  "evaluated_model_binding": "57aeb73d092fefb722a41540137bbd2cfbb24cc9ecb18e4079094873c6a81575",
+  "mappings": [
+    {
+      "classification": "candidate/shared-resource",
+      "configuration_files": [
+        {
+          "mode": "0644",
+          "path": "validation/poc-00/settings.gradle.kts",
+          "sha256": "41cfa05bae27f36f0375e686cf030c0dfe281e80147388d6f20dce77d5e1da81",
+          "size": 85
+        },
+        {
+          "mode": "0644",
+          "path": "validation/poc-00/java-candidate/build.gradle.kts",
+          "sha256": "06af56485e53793e28c5374a07f780dcbec78d6a8d1505d2d67e6339e6cab94e",
+          "size": 2512
+        }
+      ],
+      "configured_origin": "validation/poc-00/shared/db/migration/V1__initial.sql",
+      "destination_mode": "0644",
+      "destination_sha256": "bc2f02c21cce4369080f7a27cab6dcb884dd733bf2c91319eea840a62b30ad33",
+      "destination_size": 1229,
+      "effective_resource_root": "validation/poc-00/shared",
+      "equality": true,
+      "gradle_version": "8.14.3",
+      "origin_kind": "shared",
+      "origin_mode": "0644",
+      "origin_sha256": "bc2f02c21cce4369080f7a27cab6dcb884dd733bf2c91319eea840a62b30ad33",
+      "origin_size": 1229,
+      "path": "validation/poc-00/java-candidate/build/resources/main/db/migration/V1__initial.sql",
+      "project": ":java-candidate",
+      "query_script_sha256": "da30ec3e6c6a466805a528cf78911ee267c29d8c715643211243e57d679c3fa2",
+      "source_set": "main",
+      "unique_match_count": 1
+    },
+    {
+      "classification": "candidate/shared-resource",
+      "configuration_files": [
+        {
+          "mode": "0644",
+          "path": "validation/poc-00/settings.gradle.kts",
+          "sha256": "41cfa05bae27f36f0375e686cf030c0dfe281e80147388d6f20dce77d5e1da81",
+          "size": 85
+        },
+        {
+          "mode": "0644",
+          "path": "validation/poc-00/java-candidate/build.gradle.kts",
+          "sha256": "06af56485e53793e28c5374a07f780dcbec78d6a8d1505d2d67e6339e6cab94e",
+          "size": 2512
+        }
+      ],
+      "configured_origin": "validation/poc-00/shared/db/migration/V2__add_order_cancellation_reason.sql",
+      "destination_mode": "0644",
+      "destination_sha256": "873500ea201fff6682f2cd2eef7d04a439db87a246bace6f606a719e8b88246a",
+      "destination_size": 311,
+      "effective_resource_root": "validation/poc-00/shared",
+      "equality": true,
+      "gradle_version": "8.14.3",
+      "origin_kind": "shared",
+      "origin_mode": "0644",
+      "origin_sha256": "873500ea201fff6682f2cd2eef7d04a439db87a246bace6f606a719e8b88246a",
+      "origin_size": 311,
+      "path": "validation/poc-00/java-candidate/build/resources/main/db/migration/V2__add_order_cancellation_reason.sql",
+      "project": ":java-candidate",
+      "query_script_sha256": "da30ec3e6c6a466805a528cf78911ee267c29d8c715643211243e57d679c3fa2",
+      "source_set": "main",
+      "unique_match_count": 1
+    },
+    {
+      "classification": "candidate/shared-resource",
+      "configuration_files": [
+        {
+          "mode": "0644",
+          "path": "validation/poc-00/settings.gradle.kts",
+          "sha256": "41cfa05bae27f36f0375e686cf030c0dfe281e80147388d6f20dce77d5e1da81",
+          "size": 85
+        },
+        {
+          "mode": "0644",
+          "path": "validation/poc-00/java-candidate/build.gradle.kts",
+          "sha256": "06af56485e53793e28c5374a07f780dcbec78d6a8d1505d2d67e6339e6cab94e",
+          "size": 2512
+        }
+      ],
+      "configured_origin": "validation/poc-00/shared/db/migration/V3__add_order_expiry_and_reason_code.sql",
+      "destination_mode": "0644",
+      "destination_sha256": "ec77c6d727c679781605d090eb1ef00ec328f6f59b64319842d2a360b7f7e46a",
+      "destination_size": 984,
+      "effective_resource_root": "validation/poc-00/shared",
+      "equality": true,
+      "gradle_version": "8.14.3",
+      "origin_kind": "shared",
+      "origin_mode": "0644",
+      "origin_sha256": "ec77c6d727c679781605d090eb1ef00ec328f6f59b64319842d2a360b7f7e46a",
+      "origin_size": 984,
+      "path": "validation/poc-00/java-candidate/build/resources/main/db/migration/V3__add_order_expiry_and_reason_code.sql",
+      "project": ":java-candidate",
+      "query_script_sha256": "da30ec3e6c6a466805a528cf78911ee267c29d8c715643211243e57d679c3fa2",
+      "source_set": "main",
+      "unique_match_count": 1
+    },
+    {
+      "classification": "candidate/shared-resource",
+      "configuration_files": [
+        {
+          "mode": "0644",
+          "path": "validation/poc-00/settings.gradle.kts",
+          "sha256": "41cfa05bae27f36f0375e686cf030c0dfe281e80147388d6f20dce77d5e1da81",
+          "size": 85
+        },
+        {
+          "mode": "0644",
+          "path": "validation/poc-00/java-candidate/build.gradle.kts",
+          "sha256": "06af56485e53793e28c5374a07f780dcbec78d6a8d1505d2d67e6339e6cab94e",
+          "size": 2512
+        }
+      ],
+      "configured_origin": "validation/poc-00/shared/dev/seed.sql",
+      "destination_mode": "0644",
+      "destination_sha256": "e2fc7a3ffa6316ffdc3fd433422a4c9a510e04d06af08965707870efdd6fe9b1",
+      "destination_size": 272,
+      "effective_resource_root": "validation/poc-00/shared",
+      "equality": true,
+      "gradle_version": "8.14.3",
+      "origin_kind": "shared",
+      "origin_mode": "0644",
+      "origin_sha256": "e2fc7a3ffa6316ffdc3fd433422a4c9a510e04d06af08965707870efdd6fe9b1",
+      "origin_size": 272,
+      "path": "validation/poc-00/java-candidate/build/resources/main/dev/seed.sql",
+      "project": ":java-candidate",
+      "query_script_sha256": "da30ec3e6c6a466805a528cf78911ee267c29d8c715643211243e57d679c3fa2",
+      "source_set": "main",
+      "unique_match_count": 1
+    },
+    {
+      "classification": "candidate/shared-resource",
+      "configuration_files": [
+        {
+          "mode": "0644",
+          "path": "validation/poc-00/settings.gradle.kts",
+          "sha256": "41cfa05bae27f36f0375e686cf030c0dfe281e80147388d6f20dce77d5e1da81",
+          "size": 85
+        },
+        {
+          "mode": "0644",
+          "path": "validation/poc-00/kotlin-candidate/build.gradle.kts",
+          "sha256": "f8cf17e5fff2ea98eda1b1dfa0df281917a3eeb37fdc522ca24fc8bd2ddcf748",
+          "size": 2990
+        }
+      ],
+      "configured_origin": "validation/poc-00/shared/db/migration/V1__initial.sql",
+      "destination_mode": "0644",
+      "destination_sha256": "bc2f02c21cce4369080f7a27cab6dcb884dd733bf2c91319eea840a62b30ad33",
+      "destination_size": 1229,
+      "effective_resource_root": "validation/poc-00/shared",
+      "equality": true,
+      "gradle_version": "8.14.3",
+      "origin_kind": "shared",
+      "origin_mode": "0644",
+      "origin_sha256": "bc2f02c21cce4369080f7a27cab6dcb884dd733bf2c91319eea840a62b30ad33",
+      "origin_size": 1229,
+      "path": "validation/poc-00/kotlin-candidate/build/resources/main/db/migration/V1__initial.sql",
+      "project": ":kotlin-candidate",
+      "query_script_sha256": "da30ec3e6c6a466805a528cf78911ee267c29d8c715643211243e57d679c3fa2",
+      "source_set": "main",
+      "unique_match_count": 1
+    },
+    {
+      "classification": "candidate/shared-resource",
+      "configuration_files": [
+        {
+          "mode": "0644",
+          "path": "validation/poc-00/settings.gradle.kts",
+          "sha256": "41cfa05bae27f36f0375e686cf030c0dfe281e80147388d6f20dce77d5e1da81",
+          "size": 85
+        },
+        {
+          "mode": "0644",
+          "path": "validation/poc-00/kotlin-candidate/build.gradle.kts",
+          "sha256": "f8cf17e5fff2ea98eda1b1dfa0df281917a3eeb37fdc522ca24fc8bd2ddcf748",
+          "size": 2990
+        }
+      ],
+      "configured_origin": "validation/poc-00/shared/db/migration/V2__add_order_cancellation_reason.sql",
+      "destination_mode": "0644",
+      "destination_sha256": "873500ea201fff6682f2cd2eef7d04a439db87a246bace6f606a719e8b88246a",
+      "destination_size": 311,
+      "effective_resource_root": "validation/poc-00/shared",
+      "equality": true,
+      "gradle_version": "8.14.3",
+      "origin_kind": "shared",
+      "origin_mode": "0644",
+      "origin_sha256": "873500ea201fff6682f2cd2eef7d04a439db87a246bace6f606a719e8b88246a",
+      "origin_size": 311,
+      "path": "validation/poc-00/kotlin-candidate/build/resources/main/db/migration/V2__add_order_cancellation_reason.sql",
+      "project": ":kotlin-candidate",
+      "query_script_sha256": "da30ec3e6c6a466805a528cf78911ee267c29d8c715643211243e57d679c3fa2",
+      "source_set": "main",
+      "unique_match_count": 1
+    },
+    {
+      "classification": "candidate/shared-resource",
+      "configuration_files": [
+        {
+          "mode": "0644",
+          "path": "validation/poc-00/settings.gradle.kts",
+          "sha256": "41cfa05bae27f36f0375e686cf030c0dfe281e80147388d6f20dce77d5e1da81",
+          "size": 85
+        },
+        {
+          "mode": "0644",
+          "path": "validation/poc-00/kotlin-candidate/build.gradle.kts",
+          "sha256": "f8cf17e5fff2ea98eda1b1dfa0df281917a3eeb37fdc522ca24fc8bd2ddcf748",
+          "size": 2990
+        }
+      ],
+      "configured_origin": "validation/poc-00/shared/db/migration/V3__add_order_expiry_and_reason_code.sql",
+      "destination_mode": "0644",
+      "destination_sha256": "ec77c6d727c679781605d090eb1ef00ec328f6f59b64319842d2a360b7f7e46a",
+      "destination_size": 984,
+      "effective_resource_root": "validation/poc-00/shared",
+      "equality": true,
+      "gradle_version": "8.14.3",
+      "origin_kind": "shared",
+      "origin_mode": "0644",
+      "origin_sha256": "ec77c6d727c679781605d090eb1ef00ec328f6f59b64319842d2a360b7f7e46a",
+      "origin_size": 984,
+      "path": "validation/poc-00/kotlin-candidate/build/resources/main/db/migration/V3__add_order_expiry_and_reason_code.sql",
+      "project": ":kotlin-candidate",
+      "query_script_sha256": "da30ec3e6c6a466805a528cf78911ee267c29d8c715643211243e57d679c3fa2",
+      "source_set": "main",
+      "unique_match_count": 1
+    },
+    {
+      "classification": "candidate/shared-resource",
+      "configuration_files": [
+        {
+          "mode": "0644",
+          "path": "validation/poc-00/settings.gradle.kts",
+          "sha256": "41cfa05bae27f36f0375e686cf030c0dfe281e80147388d6f20dce77d5e1da81",
+          "size": 85
+        },
+        {
+          "mode": "0644",
+          "path": "validation/poc-00/kotlin-candidate/build.gradle.kts",
+          "sha256": "f8cf17e5fff2ea98eda1b1dfa0df281917a3eeb37fdc522ca24fc8bd2ddcf748",
+          "size": 2990
+        }
+      ],
+      "configured_origin": "validation/poc-00/shared/dev/seed.sql",
+      "destination_mode": "0644",
+      "destination_sha256": "e2fc7a3ffa6316ffdc3fd433422a4c9a510e04d06af08965707870efdd6fe9b1",
+      "destination_size": 272,
+      "effective_resource_root": "validation/poc-00/shared",
+      "equality": true,
+      "gradle_version": "8.14.3",
+      "origin_kind": "shared",
+      "origin_mode": "0644",
+      "origin_sha256": "e2fc7a3ffa6316ffdc3fd433422a4c9a510e04d06af08965707870efdd6fe9b1",
+      "origin_size": 272,
+      "path": "validation/poc-00/kotlin-candidate/build/resources/main/dev/seed.sql",
+      "project": ":kotlin-candidate",
+      "query_script_sha256": "da30ec3e6c6a466805a528cf78911ee267c29d8c715643211243e57d679c3fa2",
+      "source_set": "main",
+      "unique_match_count": 1
+    }
+  ],
+  "proof_workspace": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/model-proof-domains/build-workspace",
+  "source_capsule_generated_copies": 0,
+  "status": "PASS"
+}

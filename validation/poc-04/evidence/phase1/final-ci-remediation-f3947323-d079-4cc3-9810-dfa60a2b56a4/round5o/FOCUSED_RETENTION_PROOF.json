@@ -1,0 +1,26 @@
+{
+  "Python_static_syntax": "PASS",
+  "added_test_ids": [
+    "test_ci_support_boundary.CheckoutHistoryContractTest.test_changed_checkout_pin_is_rejected",
+    "test_ci_support_boundary.CheckoutHistoryContractTest.test_omitted_fetch_depth_is_rejected",
+    "test_ci_support_boundary.CheckoutHistoryContractTest.test_persisted_credentials_are_rejected",
+    "test_ci_support_boundary.CheckoutHistoryContractTest.test_shallow_fetch_depth_is_rejected",
+    "test_ci_support_boundary.CheckoutHistoryContractTest.test_workflow_uses_pinned_full_history_without_persisted_credentials"
+  ],
+  "current_unique_passing_test_ids": 255,
+  "existing_support_class_AST_identical": true,
+  "existing_test_ids_retained": 250,
+  "removed_test_ids": [],
+  "status": "PASS",
+  "suite_counts": {
+    "test_ci_support_boundary.py": 15,
+    "test_digest_metadata_classifier.py": 23,
+    "test_git_period_normalization.py": 22,
+    "test_gradle_resource_model.py": 31,
+    "test_postbuild_trust_domains.py": 32,
+    "test_public_verification_classifier.py": 12,
+    "test_round5f_inventory_authority.py": 19,
+    "test_scan_candidate_boundary.py": 85,
+    "test_scanner_config_binding.py": 16
+  }
+}

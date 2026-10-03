@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.vra.async.ReservationCreatedEventCodecTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-03T12:39:45.446Z" hostname="MacBook-Air-khxng-SIwakorn.local" time="0.068">
+  <properties/>
+  <testcase name="rejectsInvalidObjectsBeforeEncoding()" classname="dev.vra.async.ReservationCreatedEventCodecTest" time="0.002"/>
+  <testcase name="exactV1WireShapeIsDeterministicAndRoundTrips()" classname="dev.vra.async.ReservationCreatedEventCodecTest" time="0.013"/>
+  <testcase name="rejectsMissingNullExtraDuplicateAndMalformedFields()" classname="dev.vra.async.ReservationCreatedEventCodecTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

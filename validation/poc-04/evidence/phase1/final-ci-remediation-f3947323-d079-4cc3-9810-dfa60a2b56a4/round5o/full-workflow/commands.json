@@ -1,0 +1,2444 @@
+[
+  {
+    "command": [
+      "/opt/homebrew/Cellar/openjdk@21/21.0.12.1/libexec/openjdk.jdk/Contents/Home/bin/java",
+      "-version"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.04050397872924805,
+    "exit_status": 0,
+    "name": "java-version",
+    "output": "java-version.txt",
+    "output_sha256": "da6bb29c482c0fd5ea827d1eecfcf573d88175541589705d776142562e788e18"
+  },
+  {
+    "command": [
+      "docker",
+      "buildx",
+      "version"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.07234501838684082,
+    "exit_status": 0,
+    "name": "buildx-version",
+    "output": "buildx-version.txt",
+    "output_sha256": "d6a1fdd95fd9b2615b359b42e82829b1cad6bb22202cff355e55be8242e8c395"
+  },
+  {
+    "command": [
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/backend/gradlew",
+      "-p",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/backend",
+      "--no-daemon",
+      "--warning-mode",
+      "all",
+      "--init-script",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/test-support/runner.init.gradle",
+      ":runtime:compileTestJava",
+      ":migration:compileTestJava",
+      "poc04TestClasspathProof",
+      "--rerun-tasks"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 5.292358875274658,
+    "exit_status": 0,
+    "name": "focused-compile",
+    "output": "focused-compile.txt",
+    "output_sha256": "fe55a64919a190ef105e92163ec3453bb93d5307ccaaad99112e76b647a0de1d"
+  },
+  {
+    "command": [
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/backend/gradlew",
+      "-p",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/backend",
+      "--no-daemon",
+      "--warning-mode",
+      "all",
+      "--init-script",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/test-support/runner.init.gradle",
+      ":migration:integrationTest",
+      "--tests",
+      "dev.vra.migration.Poc04FoundationMigrationIntegrationTest.freshV1ThroughV4ValidatesRerunsAndEnforcesPhaseOneBoundary",
+      "--rerun-tasks"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 26.287067890167236,
+    "exit_status": 0,
+    "name": "focused-boundary",
+    "output": "focused-boundary.txt",
+    "output_sha256": "a4673eab1c9e76046997f8f3ad245369dec230de9cb57e635a8c26df42ca550a"
+  },
+  {
+    "command": [
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/backend/gradlew",
+      "-p",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/backend",
+      "--no-daemon",
+      "--warning-mode",
+      "all",
+      "--init-script",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/test-support/runner.init.gradle",
+      ":runtime:clean",
+      ":migration:clean",
+      "check",
+      "build",
+      "poc04TestClasspathProof",
+      "--rerun-tasks"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 249.6630928516388,
+    "exit_status": 0,
+    "name": "full-check-build",
+    "output": "full-check-build.txt",
+    "output_sha256": "9b537bbe91eabcf4928b56389027d7f866bd5370510821f6eeb97a88aab51d96"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/teardown-negative-proof.py"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 3.641794204711914,
+    "exit_status": 0,
+    "name": "teardown-negatives",
+    "output": "teardown-negatives.txt",
+    "output_sha256": "0b71217fe17d3fe0b449c208abc9e9d6d456f7a77cc70dd9aded65894c08e584"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "03cbb32a429b11a15e0f8cc87f23fa342340eea47e3c083634329972b82f217e"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.2817721366882324,
+    "exit_status": 0,
+    "name": "cleanup-container-03cbb32a429b11a15e0f8cc87f23fa342340eea47e3c083634329972b82f217e",
+    "output": "cleanup-container-03cbb32a429b11a15e0f8cc87f23fa342340eea47e3c083634329972b82f217e.txt",
+    "output_sha256": "155a3080857e3f066348ef41328100d8fa7cea5153afa35363d0807f5045ad8c"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "0e4bfea5746913de9492789545d5c9cbeeb129b5b3ee7541ebefa01a1daed785"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.18068194389343262,
+    "exit_status": 0,
+    "name": "cleanup-container-0e4bfea5746913de9492789545d5c9cbeeb129b5b3ee7541ebefa01a1daed785",
+    "output": "cleanup-container-0e4bfea5746913de9492789545d5c9cbeeb129b5b3ee7541ebefa01a1daed785.txt",
+    "output_sha256": "6a08082c666b2a8e7d13999118836c7163b56036c2fe4b287de4a1b28b02f6da"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "14fdc0494e35a3bfaf09416eb9c1120df260fc23a08cf9c9c90337347e762b09"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.18162012100219727,
+    "exit_status": 0,
+    "name": "cleanup-container-14fdc0494e35a3bfaf09416eb9c1120df260fc23a08cf9c9c90337347e762b09",
+    "output": "cleanup-container-14fdc0494e35a3bfaf09416eb9c1120df260fc23a08cf9c9c90337347e762b09.txt",
+    "output_sha256": "eb240a34f00aff3fa96acee0b5b5617839ea2631e8c657753cb7efffa449e84f"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "1539fe68def8a4a46bf1527a19560f56d55fef8cd02bf36f72d27f6cb81be87b"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1792621612548828,
+    "exit_status": 0,
+    "name": "cleanup-container-1539fe68def8a4a46bf1527a19560f56d55fef8cd02bf36f72d27f6cb81be87b",
+    "output": "cleanup-container-1539fe68def8a4a46bf1527a19560f56d55fef8cd02bf36f72d27f6cb81be87b.txt",
+    "output_sha256": "297b36d7b544de0d53cfabb18a1b00c246c923c844ea7883a600739255fb6743"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "1b8851426986a7e7d7ed4a2c7bf3c99174227d41459c5e211b688f87e1f40201"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1777629852294922,
+    "exit_status": 0,
+    "name": "cleanup-container-1b8851426986a7e7d7ed4a2c7bf3c99174227d41459c5e211b688f87e1f40201",
+    "output": "cleanup-container-1b8851426986a7e7d7ed4a2c7bf3c99174227d41459c5e211b688f87e1f40201.txt",
+    "output_sha256": "84f2f40b05033d1cc539d5a274d5b4328b2f74b3b3b0ea015203f52ef355b040"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "1e7b8239054b5e2b42285b5b12d65fbb2b5f6f5683a19c15a1e21f9a09fe5d06"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.18375492095947266,
+    "exit_status": 0,
+    "name": "cleanup-container-1e7b8239054b5e2b42285b5b12d65fbb2b5f6f5683a19c15a1e21f9a09fe5d06",
+    "output": "cleanup-container-1e7b8239054b5e2b42285b5b12d65fbb2b5f6f5683a19c15a1e21f9a09fe5d06.txt",
+    "output_sha256": "52d1d07b9c6bfbd3d366a23bb35dcce3d3d807e199de764acb92db15c80709e8"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "228f5db8aaad81e816d9da16c0a9d101f48ab55873271f4657c81b945b0e5a89"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17563772201538086,
+    "exit_status": 0,
+    "name": "cleanup-container-228f5db8aaad81e816d9da16c0a9d101f48ab55873271f4657c81b945b0e5a89",
+    "output": "cleanup-container-228f5db8aaad81e816d9da16c0a9d101f48ab55873271f4657c81b945b0e5a89.txt",
+    "output_sha256": "da90861ba3753d45342cb1c2caaf1eb75ec87a60779ef6565c81bcf4c2644be0"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "27ca5f10285a0b59b8b9795e4ecd3fefe1de0735a429c30df3d0396d7c3ed7a1"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.2785358428955078,
+    "exit_status": 0,
+    "name": "cleanup-container-27ca5f10285a0b59b8b9795e4ecd3fefe1de0735a429c30df3d0396d7c3ed7a1",
+    "output": "cleanup-container-27ca5f10285a0b59b8b9795e4ecd3fefe1de0735a429c30df3d0396d7c3ed7a1.txt",
+    "output_sha256": "a8a4aa9c880e80e216cdc66adb3ffc693af68d8afb1ceac61f63a95eb53193b1"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "283b61a9ac6967dd3bd49ad285513fc1a7088a82ab32618bfe2009abfe5b94b5"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.18041300773620605,
+    "exit_status": 0,
+    "name": "cleanup-container-283b61a9ac6967dd3bd49ad285513fc1a7088a82ab32618bfe2009abfe5b94b5",
+    "output": "cleanup-container-283b61a9ac6967dd3bd49ad285513fc1a7088a82ab32618bfe2009abfe5b94b5.txt",
+    "output_sha256": "2ee1658544aad9b2e6224ffe6e4bdf2453924497a3c4014a921af89ad5e4a5a9"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "299b7721b94de05db8c64f16b2bc77f473fd73940a671ed94b9490689ccd9161"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17660808563232422,
+    "exit_status": 0,
+    "name": "cleanup-container-299b7721b94de05db8c64f16b2bc77f473fd73940a671ed94b9490689ccd9161",
+    "output": "cleanup-container-299b7721b94de05db8c64f16b2bc77f473fd73940a671ed94b9490689ccd9161.txt",
+    "output_sha256": "80f9d8c77f7d9d73fe98b59636a3e9df8954ad6959baa58cb23f9813e1578bd4"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "2d2380bdfbd4171cb0b74357874637d0a2ff29c0157a3ebf4f3a00a841d81c42"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17770600318908691,
+    "exit_status": 0,
+    "name": "cleanup-container-2d2380bdfbd4171cb0b74357874637d0a2ff29c0157a3ebf4f3a00a841d81c42",
+    "output": "cleanup-container-2d2380bdfbd4171cb0b74357874637d0a2ff29c0157a3ebf4f3a00a841d81c42.txt",
+    "output_sha256": "eee4e6fa6b83ed94c21de609a8f82dd2784a123e155e16e7e8c410e900c877da"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "2f88d14e3e35e27760e757ea5a1a4cba6ec34e4f0af5b7e6ba5eba2321771ea9"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17827606201171875,
+    "exit_status": 0,
+    "name": "cleanup-container-2f88d14e3e35e27760e757ea5a1a4cba6ec34e4f0af5b7e6ba5eba2321771ea9",
+    "output": "cleanup-container-2f88d14e3e35e27760e757ea5a1a4cba6ec34e4f0af5b7e6ba5eba2321771ea9.txt",
+    "output_sha256": "7e9ce9fe17192971343f197ea7deeb011588a577ddfb559677242f2ee675c228"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "39b38291992527a7f8fa9f2a51674b345c1f385b2b2e003210177007f0f51e45"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17551708221435547,
+    "exit_status": 0,
+    "name": "cleanup-container-39b38291992527a7f8fa9f2a51674b345c1f385b2b2e003210177007f0f51e45",
+    "output": "cleanup-container-39b38291992527a7f8fa9f2a51674b345c1f385b2b2e003210177007f0f51e45.txt",
+    "output_sha256": "ebaa8a4e590a4d51b69255e862a6724d62a5e6e76faf99f2e92f1f55e719465f"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "3a7b42e68ada05c90dd3f91f0ca88e9537723c064a90d45cf1ad67175bc52ccd"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.18491411209106445,
+    "exit_status": 0,
+    "name": "cleanup-container-3a7b42e68ada05c90dd3f91f0ca88e9537723c064a90d45cf1ad67175bc52ccd",
+    "output": "cleanup-container-3a7b42e68ada05c90dd3f91f0ca88e9537723c064a90d45cf1ad67175bc52ccd.txt",
+    "output_sha256": "2ee512c32185eef573aafdc90e388be28dbd9d078be3df405db73b52c5843e58"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "41729e0b510be91b2e5d95b75b5b743ca71e99ac9f0770b85e7e536449e58f1a"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17518186569213867,
+    "exit_status": 0,
+    "name": "cleanup-container-41729e0b510be91b2e5d95b75b5b743ca71e99ac9f0770b85e7e536449e58f1a",
+    "output": "cleanup-container-41729e0b510be91b2e5d95b75b5b743ca71e99ac9f0770b85e7e536449e58f1a.txt",
+    "output_sha256": "3a82afa7b5339636b34e590ee3a5cb6c9c291efb0ff1ac9da5abc957d9ca526e"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "4c1a8166819690a3347238d302c48da44ceb07fe07f1816b55fc6b951515b537"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17565488815307617,
+    "exit_status": 0,
+    "name": "cleanup-container-4c1a8166819690a3347238d302c48da44ceb07fe07f1816b55fc6b951515b537",
+    "output": "cleanup-container-4c1a8166819690a3347238d302c48da44ceb07fe07f1816b55fc6b951515b537.txt",
+    "output_sha256": "aeb9ea49b289240e33cfdeff894762736f51886ed5bfc290fe809a25837d3f31"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "5327a925d54273ec58d57ee8a4d507e5fdd64a0dca23d9599afe67662bedd076"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1795787811279297,
+    "exit_status": 0,
+    "name": "cleanup-container-5327a925d54273ec58d57ee8a4d507e5fdd64a0dca23d9599afe67662bedd076",
+    "output": "cleanup-container-5327a925d54273ec58d57ee8a4d507e5fdd64a0dca23d9599afe67662bedd076.txt",
+    "output_sha256": "2dfd51e4ef73b52b3e147cbcfb874a85b6a1b6a1d3c1a9ddfc6a5ae5e5cc7da2"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "573681ea49f518d3d85703b7a04461829bacca6f2fa352cf207dd0c57b5c33ef"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1708989143371582,
+    "exit_status": 0,
+    "name": "cleanup-container-573681ea49f518d3d85703b7a04461829bacca6f2fa352cf207dd0c57b5c33ef",
+    "output": "cleanup-container-573681ea49f518d3d85703b7a04461829bacca6f2fa352cf207dd0c57b5c33ef.txt",
+    "output_sha256": "166799c7960305a6d9f3c154b92fc7dc979f81357735bbf4d8e2b5bcbe0f1401"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "5f08e7de39512447ece61d695c2f6acecfecc3a9c35521551feb67eda1d410ec"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17754888534545898,
+    "exit_status": 0,
+    "name": "cleanup-container-5f08e7de39512447ece61d695c2f6acecfecc3a9c35521551feb67eda1d410ec",
+    "output": "cleanup-container-5f08e7de39512447ece61d695c2f6acecfecc3a9c35521551feb67eda1d410ec.txt",
+    "output_sha256": "fe6f481545d55f99b82ab1179be5d57a638bd782b62a180993c48c95e0b23764"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "63c4c5c97fe178db04e845739798db0931536b09b52616de8ca1517239a09c78"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1797029972076416,
+    "exit_status": 0,
+    "name": "cleanup-container-63c4c5c97fe178db04e845739798db0931536b09b52616de8ca1517239a09c78",
+    "output": "cleanup-container-63c4c5c97fe178db04e845739798db0931536b09b52616de8ca1517239a09c78.txt",
+    "output_sha256": "5d9c572729d0582b59cfc78faf6a132fe99908a516094ee1cd3ff4188bee6168"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "680f722d2ecdd25eb1378864928f913b7b23599941255ace563285a6e39229ed"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17516708374023438,
+    "exit_status": 0,
+    "name": "cleanup-container-680f722d2ecdd25eb1378864928f913b7b23599941255ace563285a6e39229ed",
+    "output": "cleanup-container-680f722d2ecdd25eb1378864928f913b7b23599941255ace563285a6e39229ed.txt",
+    "output_sha256": "f9ffeb824fe1888ea72a74557cd8491a98590bb8f00549056b528961aac22ca4"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "688ecca76a6be90f72e44f191432581e4e1e73b93275c03e2cd4734977f318e1"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17451906204223633,
+    "exit_status": 0,
+    "name": "cleanup-container-688ecca76a6be90f72e44f191432581e4e1e73b93275c03e2cd4734977f318e1",
+    "output": "cleanup-container-688ecca76a6be90f72e44f191432581e4e1e73b93275c03e2cd4734977f318e1.txt",
+    "output_sha256": "3594250ec253e5a5d3e6cf2711c58a3359d70f534eb72d6177435309858eb9e0"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "6c1670c3fe905bedaa1dc61a15df288ff5bce129067d821869d11eef13c11c89"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.2811579704284668,
+    "exit_status": 0,
+    "name": "cleanup-container-6c1670c3fe905bedaa1dc61a15df288ff5bce129067d821869d11eef13c11c89",
+    "output": "cleanup-container-6c1670c3fe905bedaa1dc61a15df288ff5bce129067d821869d11eef13c11c89.txt",
+    "output_sha256": "0a0b353374769dca9dca124f7540944ffc2c14d23e5454d285cccc5392911cf4"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "6dcabc103d8a29eb855bb1d0ef49bd460fe857e3dd50fbdd3e0d607577d890ad"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.18137121200561523,
+    "exit_status": 0,
+    "name": "cleanup-container-6dcabc103d8a29eb855bb1d0ef49bd460fe857e3dd50fbdd3e0d607577d890ad",
+    "output": "cleanup-container-6dcabc103d8a29eb855bb1d0ef49bd460fe857e3dd50fbdd3e0d607577d890ad.txt",
+    "output_sha256": "93f756420e5e2538e21c753abf7c74d613dbd0ee5fdacf432133247213018a1f"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "6f03412e22fc4839fd393a44ed201d281ca43fccd1fb99197e486358551243a1"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.28597092628479004,
+    "exit_status": 0,
+    "name": "cleanup-container-6f03412e22fc4839fd393a44ed201d281ca43fccd1fb99197e486358551243a1",
+    "output": "cleanup-container-6f03412e22fc4839fd393a44ed201d281ca43fccd1fb99197e486358551243a1.txt",
+    "output_sha256": "deb7b09483c9cd5545525fe726d195e242146fe2a5ac2e71d3a6113588eee8fb"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "7ae1df6d18f97854a8bacf1a0062382e0ceb6e521906cc185dcb3c55d1e5a3e7"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.2822117805480957,
+    "exit_status": 0,
+    "name": "cleanup-container-7ae1df6d18f97854a8bacf1a0062382e0ceb6e521906cc185dcb3c55d1e5a3e7",
+    "output": "cleanup-container-7ae1df6d18f97854a8bacf1a0062382e0ceb6e521906cc185dcb3c55d1e5a3e7.txt",
+    "output_sha256": "b5d4facd1911c2cb755c3b4ce7ab5e9c60e44f4db5111b4ab9e4650376398a31"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "7b4f69d4fbdb15b7f70946f1f56f83b726eee8fdf527844370b272e05cc58963"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17289996147155762,
+    "exit_status": 0,
+    "name": "cleanup-container-7b4f69d4fbdb15b7f70946f1f56f83b726eee8fdf527844370b272e05cc58963",
+    "output": "cleanup-container-7b4f69d4fbdb15b7f70946f1f56f83b726eee8fdf527844370b272e05cc58963.txt",
+    "output_sha256": "cc48177f80337153bb451f52516aaface79391cae9edede38b0c3bcb0169da84"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "975e92b2547559d569a16cc5e07439d507565723825233eb0dbc7aad39002804"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17339015007019043,
+    "exit_status": 0,
+    "name": "cleanup-container-975e92b2547559d569a16cc5e07439d507565723825233eb0dbc7aad39002804",
+    "output": "cleanup-container-975e92b2547559d569a16cc5e07439d507565723825233eb0dbc7aad39002804.txt",
+    "output_sha256": "028bc7bd33b2b3917d4f905558f6beadedff9044f839aa1a33bd4b3ac249019a"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "af53b67f00b97197919977578336fcc83f5d09282a84647a5afb700f2c1ebcf0"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.18091225624084473,
+    "exit_status": 0,
+    "name": "cleanup-container-af53b67f00b97197919977578336fcc83f5d09282a84647a5afb700f2c1ebcf0",
+    "output": "cleanup-container-af53b67f00b97197919977578336fcc83f5d09282a84647a5afb700f2c1ebcf0.txt",
+    "output_sha256": "aa6bece2da2d9990023be2c345cb9654d1c3b4565b56d503f6b2bf1b4068add7"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "b1a4885143fd32404d09561b409af28e5134e87fdecaab10b3403d30966f5f12"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1794731616973877,
+    "exit_status": 0,
+    "name": "cleanup-container-b1a4885143fd32404d09561b409af28e5134e87fdecaab10b3403d30966f5f12",
+    "output": "cleanup-container-b1a4885143fd32404d09561b409af28e5134e87fdecaab10b3403d30966f5f12.txt",
+    "output_sha256": "a054717e1b398de08534e627ea5e70c70c194c65f86d1ededd42c10226e22d72"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "ba476ccacebfd2eaba83514f7b191a395476532edf1f1b88622727011ab455ba"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1747431755065918,
+    "exit_status": 0,
+    "name": "cleanup-container-ba476ccacebfd2eaba83514f7b191a395476532edf1f1b88622727011ab455ba",
+    "output": "cleanup-container-ba476ccacebfd2eaba83514f7b191a395476532edf1f1b88622727011ab455ba.txt",
+    "output_sha256": "a192b5ad2f644ab9e56bde79f8dda9fbd53a2cfe3ff072fc816098301bc4cc4f"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "bb9c04b06d4cb652fd7935cb438c82a3cabe3f004f27edabddb42932bedd399f"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17443609237670898,
+    "exit_status": 0,
+    "name": "cleanup-container-bb9c04b06d4cb652fd7935cb438c82a3cabe3f004f27edabddb42932bedd399f",
+    "output": "cleanup-container-bb9c04b06d4cb652fd7935cb438c82a3cabe3f004f27edabddb42932bedd399f.txt",
+    "output_sha256": "255621808ea866a706fc629a452163792ae87445294a54b33a1d5cc565def67d"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "ca9d93281fd29d6dcad7d4392761239a328a9d9e4cb4afb8297177950ea3a262"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.18091297149658203,
+    "exit_status": 0,
+    "name": "cleanup-container-ca9d93281fd29d6dcad7d4392761239a328a9d9e4cb4afb8297177950ea3a262",
+    "output": "cleanup-container-ca9d93281fd29d6dcad7d4392761239a328a9d9e4cb4afb8297177950ea3a262.txt",
+    "output_sha256": "fb2848ab81708ec83a3ee242fbcb8e1597e99374da7844409e499d31f986ae64"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "d55a02a5c217b8c4c4b53e62283c8094184213ccfa66f3ff53ed7a4af554282e"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1787552833557129,
+    "exit_status": 0,
+    "name": "cleanup-container-d55a02a5c217b8c4c4b53e62283c8094184213ccfa66f3ff53ed7a4af554282e",
+    "output": "cleanup-container-d55a02a5c217b8c4c4b53e62283c8094184213ccfa66f3ff53ed7a4af554282e.txt",
+    "output_sha256": "92db61884934c2f3ac657f63c27b754e037992cb4cc915dc290992c6f11337f6"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "d597beb43478abc1bc5a3c75972e7d56e3ed2a982935926ac04a00c5760cf642"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17946195602416992,
+    "exit_status": 0,
+    "name": "cleanup-container-d597beb43478abc1bc5a3c75972e7d56e3ed2a982935926ac04a00c5760cf642",
+    "output": "cleanup-container-d597beb43478abc1bc5a3c75972e7d56e3ed2a982935926ac04a00c5760cf642.txt",
+    "output_sha256": "540fea490c6545b4eb82710d6faa5d1173db07b5f229a9d6e170d2ff7e0f3bbf"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "d8255fe4508e00036d3881331c70847108d388bc5f9a8e5d4d3b647109d4f207"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17675399780273438,
+    "exit_status": 0,
+    "name": "cleanup-container-d8255fe4508e00036d3881331c70847108d388bc5f9a8e5d4d3b647109d4f207",
+    "output": "cleanup-container-d8255fe4508e00036d3881331c70847108d388bc5f9a8e5d4d3b647109d4f207.txt",
+    "output_sha256": "efba1c64a0464bb125f4c312b7a392efd1caa32414a97a11e0b796cb03403685"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "e12c40b912ce260abfa18b498fdf2a3bbb8a6b10f28d4eb42dacb0c4e88eb824"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17589402198791504,
+    "exit_status": 0,
+    "name": "cleanup-container-e12c40b912ce260abfa18b498fdf2a3bbb8a6b10f28d4eb42dacb0c4e88eb824",
+    "output": "cleanup-container-e12c40b912ce260abfa18b498fdf2a3bbb8a6b10f28d4eb42dacb0c4e88eb824.txt",
+    "output_sha256": "fba8bed6a929e129b92157b6d141b4363b904a02f6a24e862a52f2ca68b5bad9"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "e92b2e34825e6473bbf48c7cd6ab2a8e72e2968b5bbd6222b1f0f89f624aaa38"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1745460033416748,
+    "exit_status": 0,
+    "name": "cleanup-container-e92b2e34825e6473bbf48c7cd6ab2a8e72e2968b5bbd6222b1f0f89f624aaa38",
+    "output": "cleanup-container-e92b2e34825e6473bbf48c7cd6ab2a8e72e2968b5bbd6222b1f0f89f624aaa38.txt",
+    "output_sha256": "171e7b2d3f8060f3d52d62149f52edc43e51ecf2b01d0adea455ee8a19ec9be4"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "ecbcd00bbe1608b7b3cf3a2d5ad72d1ad62bb3661dccd83f60c529be4cc7061d"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17741703987121582,
+    "exit_status": 0,
+    "name": "cleanup-container-ecbcd00bbe1608b7b3cf3a2d5ad72d1ad62bb3661dccd83f60c529be4cc7061d",
+    "output": "cleanup-container-ecbcd00bbe1608b7b3cf3a2d5ad72d1ad62bb3661dccd83f60c529be4cc7061d.txt",
+    "output_sha256": "b9264ac7f013543f2ac1e7c6a2bd8e031cf14934e1b1c9819d86793baffa2d6b"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "f1bd04c1389b9143e4574fc0c777aa23f5b5164fcd1614b3617b17cf46255941"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17577600479125977,
+    "exit_status": 0,
+    "name": "cleanup-container-f1bd04c1389b9143e4574fc0c777aa23f5b5164fcd1614b3617b17cf46255941",
+    "output": "cleanup-container-f1bd04c1389b9143e4574fc0c777aa23f5b5164fcd1614b3617b17cf46255941.txt",
+    "output_sha256": "31d20af215e072f161789d5df7a6a0f64c7f1ff7749190034ce463f8809e7e4a"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "f46586c73f209d8369b0bcc51e3848e2db2ab39be864f25dc80d4047eef3fcd2"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1826920509338379,
+    "exit_status": 0,
+    "name": "cleanup-container-f46586c73f209d8369b0bcc51e3848e2db2ab39be864f25dc80d4047eef3fcd2",
+    "output": "cleanup-container-f46586c73f209d8369b0bcc51e3848e2db2ab39be864f25dc80d4047eef3fcd2.txt",
+    "output_sha256": "50cbb9935d5508420a249572645a3ffc41c9ab6932e95334f447f79c222a2e70"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "ffb8a9d04e178000db819d736eeb95daa726c167e2735aa96cfacaac841e21ad"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17569208145141602,
+    "exit_status": 0,
+    "name": "cleanup-container-ffb8a9d04e178000db819d736eeb95daa726c167e2735aa96cfacaac841e21ad",
+    "output": "cleanup-container-ffb8a9d04e178000db819d736eeb95daa726c167e2735aa96cfacaac841e21ad.txt",
+    "output_sha256": "8efd8343057d248f9b81bc55c4ae946a960e163fa806d244e900578ffa43d276"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "010fb48dd937c4eec46f72b500320506ab39dfa4398341864cfd0ced8e43d09f"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1744551658630371,
+    "exit_status": 0,
+    "name": "cleanup-network-010fb48dd937c4eec46f72b500320506ab39dfa4398341864cfd0ced8e43d09f",
+    "output": "cleanup-network-010fb48dd937c4eec46f72b500320506ab39dfa4398341864cfd0ced8e43d09f.txt",
+    "output_sha256": "4bb22e1a75a840254a19a09a41b9d54e34431160337615942fbbb5bcbb8f1014"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "0c470b4e8eda5b06e466ec84784d7addc900091bfc5d02d488d0d7fbe35de87c"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.2331678867340088,
+    "exit_status": 0,
+    "name": "cleanup-network-0c470b4e8eda5b06e466ec84784d7addc900091bfc5d02d488d0d7fbe35de87c",
+    "output": "cleanup-network-0c470b4e8eda5b06e466ec84784d7addc900091bfc5d02d488d0d7fbe35de87c.txt",
+    "output_sha256": "ea20d2e8a1f51b71b04a8771f153f775d4859572d6e986f2a9f0d1823dfaedc1"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "0fac3c90d2da96d17d3ccd5fa2c826982a5f1a36d0de2d8ef1af2a2ae0567515"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1807389259338379,
+    "exit_status": 0,
+    "name": "cleanup-network-0fac3c90d2da96d17d3ccd5fa2c826982a5f1a36d0de2d8ef1af2a2ae0567515",
+    "output": "cleanup-network-0fac3c90d2da96d17d3ccd5fa2c826982a5f1a36d0de2d8ef1af2a2ae0567515.txt",
+    "output_sha256": "6ee5a3743dfdc8fda6b83510f62863fb1e9e8efcd64b4c14172ad39359ffb742"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "13d7740cf2e3b17aab85c6adb9eaf0e0343c8d9e97ef69e58d04ea148d1bbba3"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17499899864196777,
+    "exit_status": 0,
+    "name": "cleanup-network-13d7740cf2e3b17aab85c6adb9eaf0e0343c8d9e97ef69e58d04ea148d1bbba3",
+    "output": "cleanup-network-13d7740cf2e3b17aab85c6adb9eaf0e0343c8d9e97ef69e58d04ea148d1bbba3.txt",
+    "output_sha256": "ccc1738cf493a88c97b558c8b8aae85cc4e990a6452185fae87b5e53e9603322"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "25686ad1d85df3e2a44d81fb3b43bff983ae118ee7b3f530235f710124eae5b0"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17818522453308105,
+    "exit_status": 0,
+    "name": "cleanup-network-25686ad1d85df3e2a44d81fb3b43bff983ae118ee7b3f530235f710124eae5b0",
+    "output": "cleanup-network-25686ad1d85df3e2a44d81fb3b43bff983ae118ee7b3f530235f710124eae5b0.txt",
+    "output_sha256": "5b4036330545e7fc23e4b776ca80f87d9fa2b58fd315604b184742c1e5ab44b8"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "2eb45753da66420b324444c574529237b883d4fc456da7b76984cf25ccf77e52"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17332100868225098,
+    "exit_status": 0,
+    "name": "cleanup-network-2eb45753da66420b324444c574529237b883d4fc456da7b76984cf25ccf77e52",
+    "output": "cleanup-network-2eb45753da66420b324444c574529237b883d4fc456da7b76984cf25ccf77e52.txt",
+    "output_sha256": "e6fb99698f7fc9e0b82c8fd0cdd58917b2019c6fca1ad8e798482a895c4bff80"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "32d0027752a62bd33809a8aac3490d46e948b272f6ffd8ce2038a7488ceab3c9"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.22697901725769043,
+    "exit_status": 0,
+    "name": "cleanup-network-32d0027752a62bd33809a8aac3490d46e948b272f6ffd8ce2038a7488ceab3c9",
+    "output": "cleanup-network-32d0027752a62bd33809a8aac3490d46e948b272f6ffd8ce2038a7488ceab3c9.txt",
+    "output_sha256": "d9fbe4c55eaf930d6472c21c896766eff98b08cf3f4972cef26d25cb06927545"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "3c9ef04bc07ba3e94839e3e2e7125fc6ae335810ef8f95dc34b13d594e56d3b4"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1830587387084961,
+    "exit_status": 0,
+    "name": "cleanup-network-3c9ef04bc07ba3e94839e3e2e7125fc6ae335810ef8f95dc34b13d594e56d3b4",
+    "output": "cleanup-network-3c9ef04bc07ba3e94839e3e2e7125fc6ae335810ef8f95dc34b13d594e56d3b4.txt",
+    "output_sha256": "0f00b41fecdfd5a52c94026b0bbb838134ea9f80974e70a811d2a824386416f4"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "3e42fef2c93a1845de5ea98e41b2b418ba378d7739bd7776f9d7f1a6dc21d628"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17901611328125,
+    "exit_status": 0,
+    "name": "cleanup-network-3e42fef2c93a1845de5ea98e41b2b418ba378d7739bd7776f9d7f1a6dc21d628",
+    "output": "cleanup-network-3e42fef2c93a1845de5ea98e41b2b418ba378d7739bd7776f9d7f1a6dc21d628.txt",
+    "output_sha256": "a4fd7e3d632caa1c48a89788795de9c4f3ee5bb64b68a7d4c04992a0b2442532"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "42137021cfda479bdbd9e804ea8981294551cd03a579bc86e3ced0b33b72bf4e"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1734611988067627,
+    "exit_status": 0,
+    "name": "cleanup-network-42137021cfda479bdbd9e804ea8981294551cd03a579bc86e3ced0b33b72bf4e",
+    "output": "cleanup-network-42137021cfda479bdbd9e804ea8981294551cd03a579bc86e3ced0b33b72bf4e.txt",
+    "output_sha256": "59b08d43efd2122669ab417882df2086584781dadbfb100b9e02061019d6d42d"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "51386c7bd6202ee3ce34517c7d2542740bb244c8796ac0a29470e125fcaaefd4"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1742417812347412,
+    "exit_status": 0,
+    "name": "cleanup-network-51386c7bd6202ee3ce34517c7d2542740bb244c8796ac0a29470e125fcaaefd4",
+    "output": "cleanup-network-51386c7bd6202ee3ce34517c7d2542740bb244c8796ac0a29470e125fcaaefd4.txt",
+    "output_sha256": "337b7afde886a4d605871254c90a14af9c71ecb283b68f52b02dd7651db7c4cc"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "5218906439af61f3046215f10eebb02f4c8c7d35a7c6ee60f4bcd81cb288a64a"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17533516883850098,
+    "exit_status": 0,
+    "name": "cleanup-network-5218906439af61f3046215f10eebb02f4c8c7d35a7c6ee60f4bcd81cb288a64a",
+    "output": "cleanup-network-5218906439af61f3046215f10eebb02f4c8c7d35a7c6ee60f4bcd81cb288a64a.txt",
+    "output_sha256": "e8f5a0621a21cdb09c29bded4b1eeba55b8d5da05414fd746c0248ec6a42094e"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "56b399f4de169228aa2e432c463e35aa6af211e7839b5f7198a214cd02721b51"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.18012595176696777,
+    "exit_status": 0,
+    "name": "cleanup-network-56b399f4de169228aa2e432c463e35aa6af211e7839b5f7198a214cd02721b51",
+    "output": "cleanup-network-56b399f4de169228aa2e432c463e35aa6af211e7839b5f7198a214cd02721b51.txt",
+    "output_sha256": "7b92045f21d9205841d9f3ce31d18c1d377d763351fc3f68935b13e70c75a7c1"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "587ad614772a4ac8cfec3d267d5c253ce43361d1b0de558d7d3ac174123c7ac2"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17690396308898926,
+    "exit_status": 0,
+    "name": "cleanup-network-587ad614772a4ac8cfec3d267d5c253ce43361d1b0de558d7d3ac174123c7ac2",
+    "output": "cleanup-network-587ad614772a4ac8cfec3d267d5c253ce43361d1b0de558d7d3ac174123c7ac2.txt",
+    "output_sha256": "70e98e5b7d6911f251100a4cc52a8b24fa34780d660897e9dd153e37daa9d8f9"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "67ac76a178c2c6d9906fd0a7f9454dec89367f7ebbd1668f655ce878407f2710"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17592597007751465,
+    "exit_status": 0,
+    "name": "cleanup-network-67ac76a178c2c6d9906fd0a7f9454dec89367f7ebbd1668f655ce878407f2710",
+    "output": "cleanup-network-67ac76a178c2c6d9906fd0a7f9454dec89367f7ebbd1668f655ce878407f2710.txt",
+    "output_sha256": "36dbea0e016ce2f9fd7bdc895ff9371aea2cb68f7eaf071cf1dd917b52ef616b"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "702e9df6b89be64595770bb4ac07d1cc7a7cddf0d2979317cda32a8d28ccbf40"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17800593376159668,
+    "exit_status": 0,
+    "name": "cleanup-network-702e9df6b89be64595770bb4ac07d1cc7a7cddf0d2979317cda32a8d28ccbf40",
+    "output": "cleanup-network-702e9df6b89be64595770bb4ac07d1cc7a7cddf0d2979317cda32a8d28ccbf40.txt",
+    "output_sha256": "c5113a0cd5638503fba147313b34359cd0ade86fb3c24df2e1f77eaa90e3c7bf"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "716f508ec1d6d1b51d06114f211d3636081e97d951a415f60b7f1eeb6fbefb74"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17461681365966797,
+    "exit_status": 0,
+    "name": "cleanup-network-716f508ec1d6d1b51d06114f211d3636081e97d951a415f60b7f1eeb6fbefb74",
+    "output": "cleanup-network-716f508ec1d6d1b51d06114f211d3636081e97d951a415f60b7f1eeb6fbefb74.txt",
+    "output_sha256": "621962f3d3f83f4818f6a5d6bc9c4fdcacdac7d8d39fe28adf8a4cdae96e1539"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "7a14007b21d38c12fa66fd15b803e268732abd053ee37f6100ba3afe19542172"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17638278007507324,
+    "exit_status": 0,
+    "name": "cleanup-network-7a14007b21d38c12fa66fd15b803e268732abd053ee37f6100ba3afe19542172",
+    "output": "cleanup-network-7a14007b21d38c12fa66fd15b803e268732abd053ee37f6100ba3afe19542172.txt",
+    "output_sha256": "350fdeae63a3346d3641a91f3e8f1497647d4cad35e6cf61361db6c010d2c50c"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "7f9bb184b35f552b3e91ca78c4109c9d5acc88be64ec39f36597d7ce823df7b7"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.18012118339538574,
+    "exit_status": 0,
+    "name": "cleanup-network-7f9bb184b35f552b3e91ca78c4109c9d5acc88be64ec39f36597d7ce823df7b7",
+    "output": "cleanup-network-7f9bb184b35f552b3e91ca78c4109c9d5acc88be64ec39f36597d7ce823df7b7.txt",
+    "output_sha256": "e0fcd90aded2fd1c024788d110541865e30811d8c902efa3b3d11fd7fabeec22"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "806e38f10c09f93dbbc57dd4d9543a7cf842daeecae96aec69215289cb212c4e"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.2304058074951172,
+    "exit_status": 0,
+    "name": "cleanup-network-806e38f10c09f93dbbc57dd4d9543a7cf842daeecae96aec69215289cb212c4e",
+    "output": "cleanup-network-806e38f10c09f93dbbc57dd4d9543a7cf842daeecae96aec69215289cb212c4e.txt",
+    "output_sha256": "5187c8788d94385184f0a7dad32eda580914b771fdf09389cecfc983bb046c45"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "8290d2548b7d52e2b3235eabd2eee8af618ad5b8bea7f2b7fcb54bb1032d587c"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1716301441192627,
+    "exit_status": 0,
+    "name": "cleanup-network-8290d2548b7d52e2b3235eabd2eee8af618ad5b8bea7f2b7fcb54bb1032d587c",
+    "output": "cleanup-network-8290d2548b7d52e2b3235eabd2eee8af618ad5b8bea7f2b7fcb54bb1032d587c.txt",
+    "output_sha256": "596411c54cc4514c1f67d74d65c359bf24dd11e0fd18607e6b6ad615d25e45d9"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "8499cc9db3c2b543d0b00202083f36d83b3959fc029dfe8a75dfa22db995839c"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1834239959716797,
+    "exit_status": 0,
+    "name": "cleanup-network-8499cc9db3c2b543d0b00202083f36d83b3959fc029dfe8a75dfa22db995839c",
+    "output": "cleanup-network-8499cc9db3c2b543d0b00202083f36d83b3959fc029dfe8a75dfa22db995839c.txt",
+    "output_sha256": "d3cad3cb1ada16bd552f33a28b65507a8c98df4f76d19ef5496bc1300bc51a77"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "861dad015360f3cc8b99874037e23653db51e5b61e9319f646a1c0ef6e897fc8"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1765749454498291,
+    "exit_status": 0,
+    "name": "cleanup-network-861dad015360f3cc8b99874037e23653db51e5b61e9319f646a1c0ef6e897fc8",
+    "output": "cleanup-network-861dad015360f3cc8b99874037e23653db51e5b61e9319f646a1c0ef6e897fc8.txt",
+    "output_sha256": "c811edf06a311c165ad0135c66b9c212ff0e9b7ddbcb8fece897e11a0cf398b5"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "900b221ae657c276554e12f0187cfb5082412a4fefd3a89dfe98ac97317d4915"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1771860122680664,
+    "exit_status": 0,
+    "name": "cleanup-network-900b221ae657c276554e12f0187cfb5082412a4fefd3a89dfe98ac97317d4915",
+    "output": "cleanup-network-900b221ae657c276554e12f0187cfb5082412a4fefd3a89dfe98ac97317d4915.txt",
+    "output_sha256": "df77d466ac6a9331e0c68d33de33e8e52d15c4dfa2c9974d59e8f62e99db6eb0"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "97a83c41b5a9c2d10383829a838d420616146e4f845953a4db7907e130ad73cc"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.18290996551513672,
+    "exit_status": 0,
+    "name": "cleanup-network-97a83c41b5a9c2d10383829a838d420616146e4f845953a4db7907e130ad73cc",
+    "output": "cleanup-network-97a83c41b5a9c2d10383829a838d420616146e4f845953a4db7907e130ad73cc.txt",
+    "output_sha256": "dfb6ef699c3ef35155944bb62d9c947eefe66a9574e8b24c85660c33c66b6087"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "9981f6e1f2769bf20dd0a7b5f2d08095cbcaaa05886b6b235c520117867bf4ea"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1767411231994629,
+    "exit_status": 0,
+    "name": "cleanup-network-9981f6e1f2769bf20dd0a7b5f2d08095cbcaaa05886b6b235c520117867bf4ea",
+    "output": "cleanup-network-9981f6e1f2769bf20dd0a7b5f2d08095cbcaaa05886b6b235c520117867bf4ea.txt",
+    "output_sha256": "15a4a022a68a1a8206413832faa6be3dba7a1835999effa90741da5fbce4805a"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "998b8421a32855f54af31e5dcf54e3300dde86c22bc9f41e993e7a1784cd5f76"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17606616020202637,
+    "exit_status": 0,
+    "name": "cleanup-network-998b8421a32855f54af31e5dcf54e3300dde86c22bc9f41e993e7a1784cd5f76",
+    "output": "cleanup-network-998b8421a32855f54af31e5dcf54e3300dde86c22bc9f41e993e7a1784cd5f76.txt",
+    "output_sha256": "9bb3aeaf4878f1e9a76154498f8a940af5db77e76031cd26a29d0dcd3055fdd9"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "9d7a44da735305271420cf7b9e02f49a09d931e2acb5330b91b89ebdb2f399a2"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17594408988952637,
+    "exit_status": 0,
+    "name": "cleanup-network-9d7a44da735305271420cf7b9e02f49a09d931e2acb5330b91b89ebdb2f399a2",
+    "output": "cleanup-network-9d7a44da735305271420cf7b9e02f49a09d931e2acb5330b91b89ebdb2f399a2.txt",
+    "output_sha256": "f13c9f68996bcf3bf21ff1a26f40f5222b31f66c9c7ee715cd6e0404fd0d2db9"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "a1af044f5b5ef4c8eebf308cd4d8cd9b5894af9734df91cddae98d19c97fd4ab"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17794132232666016,
+    "exit_status": 0,
+    "name": "cleanup-network-a1af044f5b5ef4c8eebf308cd4d8cd9b5894af9734df91cddae98d19c97fd4ab",
+    "output": "cleanup-network-a1af044f5b5ef4c8eebf308cd4d8cd9b5894af9734df91cddae98d19c97fd4ab.txt",
+    "output_sha256": "3a3feeccf84909b4c656027eeae9b863da977bc4929eb9625b082043cf54179e"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "af69e1939a33931ebf8e1f69a248ad00a83aca156d91c8968257b61b711d1f70"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.18141984939575195,
+    "exit_status": 0,
+    "name": "cleanup-network-af69e1939a33931ebf8e1f69a248ad00a83aca156d91c8968257b61b711d1f70",
+    "output": "cleanup-network-af69e1939a33931ebf8e1f69a248ad00a83aca156d91c8968257b61b711d1f70.txt",
+    "output_sha256": "97fdb53d9f3775c1ac0bfb281a462dd5d5f754eaca13d828ae81b668c982b912"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "b0a216134769d537c8087660c4d7c1caed2d2fdb91c4cf736d0f913b473c4483"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.234619140625,
+    "exit_status": 0,
+    "name": "cleanup-network-b0a216134769d537c8087660c4d7c1caed2d2fdb91c4cf736d0f913b473c4483",
+    "output": "cleanup-network-b0a216134769d537c8087660c4d7c1caed2d2fdb91c4cf736d0f913b473c4483.txt",
+    "output_sha256": "199abe268c59aa300194f2c14f42ac275003e77d061c6d0200f800fc59209b14"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "b5500a5d39b61970fc6ccae4af3b5a73eaf0b4e25b974ca26255c132e244937d"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1759660243988037,
+    "exit_status": 0,
+    "name": "cleanup-network-b5500a5d39b61970fc6ccae4af3b5a73eaf0b4e25b974ca26255c132e244937d",
+    "output": "cleanup-network-b5500a5d39b61970fc6ccae4af3b5a73eaf0b4e25b974ca26255c132e244937d.txt",
+    "output_sha256": "3bf618a25fe23bd1f7446182738d8c94a5b3e22c350859c1bfa9cad86a15ba25"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "b92dc604f0be24183967a2cddc5896551f814d2a05dca7f2ddabb8575c324851"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17935585975646973,
+    "exit_status": 0,
+    "name": "cleanup-network-b92dc604f0be24183967a2cddc5896551f814d2a05dca7f2ddabb8575c324851",
+    "output": "cleanup-network-b92dc604f0be24183967a2cddc5896551f814d2a05dca7f2ddabb8575c324851.txt",
+    "output_sha256": "9a33e8406e70a86ab167963b02aab711a7f4b59be0febb03182b0c6b555724ef"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "bf12a6faa0d82155642e13ae2ce1e78b79a9d64cb07d425c2537c0c184564bae"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1751689910888672,
+    "exit_status": 0,
+    "name": "cleanup-network-bf12a6faa0d82155642e13ae2ce1e78b79a9d64cb07d425c2537c0c184564bae",
+    "output": "cleanup-network-bf12a6faa0d82155642e13ae2ce1e78b79a9d64cb07d425c2537c0c184564bae.txt",
+    "output_sha256": "fe4d74d7f09b4db4384e98877e0815b6b57a37ab336a21f1ddb1ac987dafd8e2"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "ca07f4bab6676edc720600c945875bb2f17be2cd04d5ac2492b11092db8fc7f4"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17674899101257324,
+    "exit_status": 0,
+    "name": "cleanup-network-ca07f4bab6676edc720600c945875bb2f17be2cd04d5ac2492b11092db8fc7f4",
+    "output": "cleanup-network-ca07f4bab6676edc720600c945875bb2f17be2cd04d5ac2492b11092db8fc7f4.txt",
+    "output_sha256": "b65ced71402a494ab75e27902c5636497f7ca563e8758d6223102b20be23cebf"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "cd3361c0739ba2a788ba441e69fd38ff42b6e14baf4550fdc8705deb1126b117"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.23506498336791992,
+    "exit_status": 0,
+    "name": "cleanup-network-cd3361c0739ba2a788ba441e69fd38ff42b6e14baf4550fdc8705deb1126b117",
+    "output": "cleanup-network-cd3361c0739ba2a788ba441e69fd38ff42b6e14baf4550fdc8705deb1126b117.txt",
+    "output_sha256": "f644d7213427ae137670af1a2b0d095c033f9aabbe46432d5bbd44ed4e58e711"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "d0ca4a054a3c9b0a4cb9ed83438478400ecb11d10f22699152a78bef75d48860"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17715215682983398,
+    "exit_status": 0,
+    "name": "cleanup-network-d0ca4a054a3c9b0a4cb9ed83438478400ecb11d10f22699152a78bef75d48860",
+    "output": "cleanup-network-d0ca4a054a3c9b0a4cb9ed83438478400ecb11d10f22699152a78bef75d48860.txt",
+    "output_sha256": "e397ef66f06b98ba63f11617e9627feb0e29b0932e6c9d917253f34034d37ca3"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "d6b4060677084cfb98544d0e2278b5c81327ff08b325dd547f7fcd2e652445d7"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.18337512016296387,
+    "exit_status": 0,
+    "name": "cleanup-network-d6b4060677084cfb98544d0e2278b5c81327ff08b325dd547f7fcd2e652445d7",
+    "output": "cleanup-network-d6b4060677084cfb98544d0e2278b5c81327ff08b325dd547f7fcd2e652445d7.txt",
+    "output_sha256": "9e4737cc8346dc35fc3cba29b6562d568d1c0fa060825ead7bf673c01f4c576b"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "df9e738f979687e238059db9b72115c1e58600abf2a3c8cdc5d1138ff5bc1ac6"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17893505096435547,
+    "exit_status": 0,
+    "name": "cleanup-network-df9e738f979687e238059db9b72115c1e58600abf2a3c8cdc5d1138ff5bc1ac6",
+    "output": "cleanup-network-df9e738f979687e238059db9b72115c1e58600abf2a3c8cdc5d1138ff5bc1ac6.txt",
+    "output_sha256": "7cc8200900ba4012d075dcebd05f77aa9c97464bed75da9e8616395984553551"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "e5703ebd29834a0237dbd4ec39b17995a60a16dc50f17e61eba0d09d4e45c4b1"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1741943359375,
+    "exit_status": 0,
+    "name": "cleanup-network-e5703ebd29834a0237dbd4ec39b17995a60a16dc50f17e61eba0d09d4e45c4b1",
+    "output": "cleanup-network-e5703ebd29834a0237dbd4ec39b17995a60a16dc50f17e61eba0d09d4e45c4b1.txt",
+    "output_sha256": "730f6a7ba86fbc795e5db76ba3e775c4b6def84a8d2aa43efed8b9dc694886e8"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "ed18df668348bf8e83f6345316a1d309dbb34b1ac82034118949522fe28930c2"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1780991554260254,
+    "exit_status": 0,
+    "name": "cleanup-network-ed18df668348bf8e83f6345316a1d309dbb34b1ac82034118949522fe28930c2",
+    "output": "cleanup-network-ed18df668348bf8e83f6345316a1d309dbb34b1ac82034118949522fe28930c2.txt",
+    "output_sha256": "f8666a3ba59333b7f2ee91f325576d853318c84eacf9bbe1c734e33a3d1afcae"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "ee53bd501f1d252ca1c4a020d8109bb1ff3435af3985a3bb65c475dd7e0d65f3"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17967915534973145,
+    "exit_status": 0,
+    "name": "cleanup-network-ee53bd501f1d252ca1c4a020d8109bb1ff3435af3985a3bb65c475dd7e0d65f3",
+    "output": "cleanup-network-ee53bd501f1d252ca1c4a020d8109bb1ff3435af3985a3bb65c475dd7e0d65f3.txt",
+    "output_sha256": "e495a8ad2b43c3e6e702a478c1fe655f8f518270470f4f347b986dc9976c3dfc"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "f0b450919766172cd771e8b9c99ddef121a09879f0e42799c348b4c90b77f8da"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1789569854736328,
+    "exit_status": 0,
+    "name": "cleanup-network-f0b450919766172cd771e8b9c99ddef121a09879f0e42799c348b4c90b77f8da",
+    "output": "cleanup-network-f0b450919766172cd771e8b9c99ddef121a09879f0e42799c348b4c90b77f8da.txt",
+    "output_sha256": "9efe93a0272f3b11368a33f84f3b7c9efa8202e4e0c381856563164b53187bb4"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-0-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17626476287841797,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-0-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-0-pgdata.txt",
+    "output_sha256": "3a250535ab13d47167ac3a45868baaf051082dc8a75deed6ed072e1404ae1627"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-1-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17711210250854492,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-1-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-1-pgdata.txt",
+    "output_sha256": "67490537aa670b2013d70914b2da832ad0a5752dab55721e9ebe5fe26c89e320"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-10-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.176239013671875,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-10-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-10-pgdata.txt",
+    "output_sha256": "cb544ee8aa1337eb17663651e6d421fdc918c3c16606446eca7f27c81f749803"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-11-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17696714401245117,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-11-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-11-pgdata.txt",
+    "output_sha256": "3149065661887d9359c790d5cdf40a6a105fe6fb9970e9a8edd594f6254a9fbd"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-12-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17330312728881836,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-12-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-12-pgdata.txt",
+    "output_sha256": "91605a31932b0aaa8fc1f744d6fae9aa5197764e9b33ffbbd5db251fef628627"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-13-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17863726615905762,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-13-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-13-pgdata.txt",
+    "output_sha256": "12c15123d7399923a80a317d99f829139d505cb074f0b3b026c323c9a6b8e12c"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-14-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.18059897422790527,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-14-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-14-pgdata.txt",
+    "output_sha256": "33943080e2b8f4317fd8bb6f1db9a69d15c9c3f7ff71b87a334907fe36ce509d"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-15-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1799149513244629,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-15-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-15-pgdata.txt",
+    "output_sha256": "c5efa542e8b0a1fac656795d16d8a7bb1cd1c5d82abf0e85aadf6739f483b615"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-16-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17925190925598145,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-16-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-16-pgdata.txt",
+    "output_sha256": "3882dab09165f2c680e6959b0837f35d0be651bcf6a95b61f61e19b7b503aadc"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-17-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1790010929107666,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-17-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-17-pgdata.txt",
+    "output_sha256": "724db36486a684254f2849aa35104085548a36cad5312e9afe650a31e6d86c2c"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-18-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17540216445922852,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-18-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-18-pgdata.txt",
+    "output_sha256": "f9c01c2cdb9c241da908ecc67ef55f96ee4ed6ff649b5b29be054a87cba7955c"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-19-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17833232879638672,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-19-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-19-pgdata.txt",
+    "output_sha256": "f1fd3f458dabb792f27d268a13f939949080e6e3fe43d4519256f6ba431e71a5"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-2-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17561078071594238,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-2-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-2-pgdata.txt",
+    "output_sha256": "4d765e6739f77d4401a4cb96c68e4bd25df2608ba1d01492c6e52a37cb3730b8"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-20-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.18116092681884766,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-20-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-20-pgdata.txt",
+    "output_sha256": "99b9f49af10a3f47642454c2af411d88776cbff85f4a986da1369de06188ad2e"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-21-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17568421363830566,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-21-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-21-pgdata.txt",
+    "output_sha256": "b564b52819e1b543967d1aa9884f0161e6193dec93f83227968236df9901f76c"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-22-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.18117022514343262,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-22-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-22-pgdata.txt",
+    "output_sha256": "fd35965bfca4a681718800a2e8d4dfa9f833d71b0a55e19457e57eaa8c5ac16b"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-23-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1786482334136963,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-23-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-23-pgdata.txt",
+    "output_sha256": "ec746bcc364caf83081fc231c3429c585366cd0aa7acbf2f6450c23ae39250cf"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-24-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1812608242034912,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-24-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-24-pgdata.txt",
+    "output_sha256": "250bda9ed79b77f52db4c5c9d8b976cf3fed26785fcf183500c8a72784ee52f1"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-25-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17629790306091309,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-25-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-25-pgdata.txt",
+    "output_sha256": "5d0cc0073337b0af3b688dd309d1803517b6a70583e4f1e6cd8ff6815047978f"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-26-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1783280372619629,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-26-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-26-pgdata.txt",
+    "output_sha256": "a41c7140df375b94227819249ea76520bc7088b54b2dc9b8424db1f997ae1939"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-27-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.18432903289794922,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-27-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-27-pgdata.txt",
+    "output_sha256": "8c062be4a9f5db045e9a99f440f565a9d7488f1415cb2018d1f7d21b8ca14288"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-28-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1767897605895996,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-28-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-28-pgdata.txt",
+    "output_sha256": "f2880686b623422f755eb6bf6001c28d9af9cedb670a293a2d1ef91329cfc4b1"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-29-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17538905143737793,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-29-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-29-pgdata.txt",
+    "output_sha256": "6a7f7c263bfdb5cd0cb7914c85659c1cc7f9674f9ff6557c8533bc9b703190ea"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-3-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1758427619934082,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-3-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-3-pgdata.txt",
+    "output_sha256": "58bdc1c8778cbb4e3b5febd059b7e36592f11f320167c8234cbf951d2a302e88"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-30-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1751692295074463,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-30-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-30-pgdata.txt",
+    "output_sha256": "b710f892276a857f82bf6e943789b3d2ffeb0f48ae006f2bcba1e7f7de8201db"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-31-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1752331256866455,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-31-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-31-pgdata.txt",
+    "output_sha256": "55471a744ddf7e87f964df71744d7a03da7627d835e8a95eb6f3a77790855501"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-32-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1757187843322754,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-32-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-32-pgdata.txt",
+    "output_sha256": "f48a79f83a343a4279767f6cbbc9b365575b5eac5e56d799088a8f66cd034fdd"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-33-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1804208755493164,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-33-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-33-pgdata.txt",
+    "output_sha256": "72b6886a66beafe4941a113589ea74201ea9701c1bc371ec80d32079ed341573"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-34-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1729907989501953,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-34-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-34-pgdata.txt",
+    "output_sha256": "14348e50c401c2aedeb3610cc6b7ca9503d3e859bdfa537118ce0ae793a8ddff"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-35-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1772172451019287,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-35-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-35-pgdata.txt",
+    "output_sha256": "02c359f3d327fa7542cdb086a7c81de44aea2bdb60e84d2438a0139ef9c941f1"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-36-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1803731918334961,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-36-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-36-pgdata.txt",
+    "output_sha256": "c28aeeefb5ea4208121ceea66e2f3c9923280a2fcc38cd06e7aa37cfa6630904"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-37-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17627477645874023,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-37-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-37-pgdata.txt",
+    "output_sha256": "fe7546a08ac24f47401cc8e9a590a5e3512b01f692358e063414212e4570688f"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-38-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1773979663848877,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-38-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-38-pgdata.txt",
+    "output_sha256": "6b27ed4e3cf22e3a88f738113ddf6d6180cad3c354b8cb286db5a9e4ca375459"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-4-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1781749725341797,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-4-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-4-pgdata.txt",
+    "output_sha256": "862ac1e69a0485685f6e5945b18479ee41b70a522f837582a12d729826d9f9e8"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-5-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.18064284324645996,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-5-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-5-pgdata.txt",
+    "output_sha256": "be23db67737c43a0b6bde22e1c0efbde0c3b1bc6ed6f5ff51bb5e7d32095574a"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-6-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17265892028808594,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-6-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-6-pgdata.txt",
+    "output_sha256": "0f6c9ea0de82b2edced5a6fdbb205e352dff9ddd5f3c84c8c9519dd30a64ccb4"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-7-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1719980239868164,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-7-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-7-pgdata.txt",
+    "output_sha256": "3aac652f09ac1c364a2175c15ba11e24d3f0893edad4987e766a8e4738d24d27"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-8-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17803597450256348,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-8-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-8-pgdata.txt",
+    "output_sha256": "d0702d84456ea15e755d55a844cd81bf5f1f5ec2ead7a83db1dfb8448dd5b491"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-9-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1782982349395752,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-9-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-authority-9-pgdata.txt",
+    "output_sha256": "57001836905dd8d67d2e999b6ff5325023ae9b0c8f4f529cb0578cca4586cf1e"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-simulator-0-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.1764822006225586,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-simulator-0-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-simulator-0-pgdata.txt",
+    "output_sha256": "d8f2fbef9480c8e23497eca9ece29767186f578446bad8d898de19bf33184afe"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-simulator-1-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17307782173156738,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-simulator-1-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-simulator-1-pgdata.txt",
+    "output_sha256": "415fe8cb6bb574af3577c9f140888b0a17a66b9e39e6a7173d48688ea66b672b"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-simulator-2-pgdata"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.17447972297668457,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-simulator-2-pgdata",
+    "output": "cleanup-volume-vra-poc04-c816fc29-dff4-41a7-9681-b07606cb5409-postgres-simulator-2-pgdata.txt",
+    "output_sha256": "e4aa71a6ecb17a1261525473e649751d9bd514e6767e3423babd38fa84bc0f1e"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-negative-current-c816fc29-dff4-41a7-9681-b07606cb5409-volume"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.180678129196167,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-negative-current-c816fc29-dff4-41a7-9681-b07606cb5409-volume",
+    "output": "cleanup-volume-vra-poc04-negative-current-c816fc29-dff4-41a7-9681-b07606cb5409-volume.txt",
+    "output_sha256": "31092980a52be0c13d27830ab6940fb70971b49f6eeb6a213068869d328da08b"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-negative-wrong-label-c816fc29-dff4-41a7-9681-b07606cb5409"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 0.18207788467407227,
+    "exit_status": 0,
+    "name": "cleanup-volume-vra-poc04-negative-wrong-label-c816fc29-dff4-41a7-9681-b07606cb5409",
+    "output": "cleanup-volume-vra-poc04-negative-wrong-label-c816fc29-dff4-41a7-9681-b07606cb5409.txt",
+    "output_sha256": "f4d70cdde29c9438427a89295fb80092bfbd4d9d364f4d30f28891e893d5e593"
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+      "finish"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 1.869508981704712,
+    "exit_status": 0,
+    "name": "ledger-finish",
+    "output": "ledger-finish.txt",
+    "output_sha256": "b2af7f62e733c59c43a74b06f17cb180956a87e09961b79e6a2808dbc82fb451"
+  }
+]

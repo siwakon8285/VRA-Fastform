@@ -1,0 +1,36 @@
+{
+  "archive_sha256": "b40ab0ae55c505963e365f271a8d3846efbc170aa17f2607f13df610a9aeb6a5",
+  "archive_validation": "PASS",
+  "asset": {
+    "expected_sha256": "b40ab0ae55c505963e365f271a8d3846efbc170aa17f2607f13df610a9aeb6a5",
+    "identifier": "gitleaks_8.30.1_darwin_arm64.tar.gz",
+    "platform": "darwin/arm64",
+    "url": "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_darwin_arm64.tar.gz"
+  },
+  "atomic_publication": "PASS",
+  "attempts": [
+    {
+      "attempt": 1,
+      "byte_count": 7897593,
+      "content_type": "application/octet-stream",
+      "http_status": 200,
+      "redirect_target_sha256": "ea9f2afe4e0dd4e347206eb02038d82e77dc9792f73ad868e3514a5dceaadc94",
+      "result_class": "TRANSPORT_SUCCESS",
+      "timestamp_utc": "2026-10-03T12:36:41.619736+00:00",
+      "url_identity": "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_darwin_arm64.tar.gz"
+    }
+  ],
+  "backoff_seconds": [
+    1,
+    2
+  ],
+  "checksum_scope": "release archive",
+  "executable_identity_basis": "exact member of checksum-verified pinned archive",
+  "executable_sha256": "ba52fb1bfabbcde42f032afad3d6e0b19dff8ed105229a16e7caa338bbc0e84f",
+  "executable_version": "8.30.1",
+  "maximum_attempts": 3,
+  "scanner_execution": "NOT EXECUTED",
+  "status": "PASS",
+  "timeout_seconds": 60,
+  "version": "8.30.1"
+}

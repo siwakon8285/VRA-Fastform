@@ -1,0 +1,106 @@
+{
+  "containers": [],
+  "networks": [
+    {
+      "Attachable": false,
+      "ConfigFrom": {
+        "Network": ""
+      },
+      "ConfigOnly": false,
+      "Containers": {},
+      "Created": "2026-10-01T14:45:16.427040294+07:00",
+      "Driver": "bridge",
+      "EnableIPv4": true,
+      "EnableIPv6": false,
+      "IPAM": {
+        "Config": [
+          {
+            "Gateway": "10.241.0.1",
+            "Subnet": "10.241.0.0/24"
+          }
+        ],
+        "Driver": "default",
+        "Options": null
+      },
+      "Id": "c0297a5ce0209b66940193c63975087c4355c0e38d6517ac408d4fbf452c9adf",
+      "Ingress": false,
+      "Internal": false,
+      "Labels": {},
+      "Name": "bridge",
+      "Options": {
+        "com.docker.network.bridge.default_bridge": "true",
+        "com.docker.network.bridge.enable_icc": "true",
+        "com.docker.network.bridge.enable_ip_masquerade": "true",
+        "com.docker.network.bridge.host_binding_ipv4": "0.0.0.0",
+        "com.docker.network.bridge.name": "docker0",
+        "com.docker.network.driver.mtu": "1500"
+      },
+      "Scope": "local",
+      "Status": {
+        "IPAM": {
+          "Subnets": {
+            "10.241.0.0/24": {
+              "DynamicIPsAvailable": 253,
+              "IPsInUse": 3
+            }
+          }
+        }
+      }
+    },
+    {
+      "Attachable": false,
+      "ConfigFrom": {
+        "Network": ""
+      },
+      "ConfigOnly": false,
+      "Containers": {},
+      "Created": "2026-09-30T23:19:05.623366465+07:00",
+      "Driver": "host",
+      "EnableIPv4": true,
+      "EnableIPv6": false,
+      "IPAM": {
+        "Config": null,
+        "Driver": "default",
+        "Options": null
+      },
+      "Id": "71919e79066c633ba4548aa04103de53d1e31552893e0cec59e0ba812b5f4d22",
+      "Ingress": false,
+      "Internal": false,
+      "Labels": {},
+      "Name": "host",
+      "Options": {},
+      "Scope": "local",
+      "Status": {
+        "IPAM": {}
+      }
+    },
+    {
+      "Attachable": false,
+      "ConfigFrom": {
+        "Network": ""
+      },
+      "ConfigOnly": false,
+      "Containers": {},
+      "Created": "2026-09-30T23:19:05.61941459+07:00",
+      "Driver": "null",
+      "EnableIPv4": true,
+      "EnableIPv6": false,
+      "IPAM": {
+        "Config": null,
+        "Driver": "default",
+        "Options": null
+      },
+      "Id": "0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a",
+      "Ingress": false,
+      "Internal": false,
+      "Labels": {},
+      "Name": "none",
+      "Options": {},
+      "Scope": "local",
+      "Status": {
+        "IPAM": {}
+      }
+    }
+  ],
+  "volumes": []
+}

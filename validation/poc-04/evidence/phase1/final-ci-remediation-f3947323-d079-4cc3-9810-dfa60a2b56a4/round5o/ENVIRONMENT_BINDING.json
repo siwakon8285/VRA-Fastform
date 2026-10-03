@@ -1,0 +1,49 @@
+{
+  "ambient_override_presence": {
+    "GITLEAKS_CONFIG": false,
+    "GITLEAKS_CONFIG_TOML": false,
+    "GIT_COMMON_DIR": false,
+    "GIT_DIR": false,
+    "GIT_INDEX_FILE": false,
+    "GIT_WORK_TREE": false,
+    "GRADLE_OPTS": false,
+    "JAVA_OPTS": false,
+    "JAVA_TOOL_OPTIONS": false,
+    "JDK_JAVA_OPTIONS": false,
+    "_JAVA_OPTIONS": false
+  },
+  "cache_seed": [
+    {
+      "classification": "EXTERNAL_TOOL_CACHE_ONLY",
+      "destination": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/gradle-user-home/wrapper/dists",
+      "source": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5n-chg9pd9j/gradle-user-home/wrapper/dists"
+    },
+    {
+      "classification": "EXTERNAL_TOOL_CACHE_ONLY",
+      "destination": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/gradle-user-home/caches",
+      "source": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5n-chg9pd9j/gradle-user-home/caches"
+    }
+  ],
+  "home_is_not_gradle_user_home": true,
+  "java_temp_default": "TMPDIR external; no explicit Java temp override",
+  "safe_explicit_environment": {
+    "DOCKER_HOST": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+    "GIT_ALLOW_PROTOCOL": "https",
+    "GIT_CONFIG_GLOBAL": "/dev/null",
+    "GIT_CONFIG_NOSYSTEM": "1",
+    "GIT_OPTIONAL_LOCKS": "0",
+    "GIT_TERMINAL_PROMPT": "0",
+    "GRADLE_USER_HOME": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/gradle-user-home",
+    "HOME": "/Users/siwakornbundi",
+    "JAVA_HOME": "/opt/homebrew/Cellar/openjdk@21/21.0.12.1/libexec/openjdk.jdk/Contents/Home",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE": "/var/run/docker.sock",
+    "TESTCONTAINERS_HOST_OVERRIDE": "127.0.0.1",
+    "TESTCONTAINERS_RYUK_DISABLED": "false",
+    "TMPDIR": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp",
+    "VRA_POC04_DISPOSABLE_TEST_DOCKER_ENDPOINT": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+    "VRA_POC04_EXPECTED_DAEMON_ID": "14c8ff26-86d1-4c0b-88a6-560be91a65ea"
+  },
+  "tool_cache_is_not_candidate_authority": true,
+  "user_init_and_gradle_properties_copied": false
+}

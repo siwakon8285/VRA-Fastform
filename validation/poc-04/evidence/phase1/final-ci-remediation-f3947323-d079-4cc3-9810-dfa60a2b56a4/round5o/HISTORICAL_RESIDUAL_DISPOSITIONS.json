@@ -1,0 +1,21 @@
+{
+  "08P01": {
+    "disposition": "ACCEPTED NON-BLOCKING HISTORICAL ANOMALY",
+    "future_recurrence": "HARD FAILURE",
+    "residual_risk": "RETAINED",
+    "root_cause": "NOT ESTABLISHED"
+  },
+  "authority": "explicit current user-approved independent re-review dispositions; causes not reinterpreted as fixed",
+  "canonical_288_path_historical_drift": {
+    "candidate_contamination_detected": false,
+    "disposition": "A \u2014 ACCEPTED NON-BLOCKING HISTORICAL WORKSPACE DRIFT",
+    "implicit_commit_authority": false,
+    "writer_attribution": "NOT ESTABLISHED"
+  },
+  "historical_18_17": {
+    "disposition": "A \u2014 ACCEPTED NON-BLOCKING HISTORICAL SCANNER ANOMALY",
+    "future_recurrence": "HARD FAILURE",
+    "residual_risk": "RETAINED",
+    "root_cause": "NOT ESTABLISHED"
+  }
+}

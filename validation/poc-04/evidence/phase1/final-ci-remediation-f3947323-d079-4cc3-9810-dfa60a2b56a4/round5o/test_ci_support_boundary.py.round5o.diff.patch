@@ -1,0 +1,92 @@
+--- validation/poc-04/test-support/test_ci_support_boundary.py.round5n
++++ validation/poc-04/test-support/test_ci_support_boundary.py
+@@ -19,6 +19,89 @@
+ spec = importlib.util.spec_from_file_location('phase1_ci_support_boundary', BOOTSTRAP)
+ ci = importlib.util.module_from_spec(spec)
+ spec.loader.exec_module(ci)
++
++
++def checkout_contract(source):
++    """Inspect the existing workflow's checkout scalar mapping, failing on ambiguity."""
++    lines = source.splitlines()
++    checkouts = []
++    for number, line in enumerate(lines):
++        match = re.fullmatch(r'( +)uses: (actions/checkout@[^\s]+)', line)
++        if match:
++            checkouts.append((number, len(match.group(1)), match.group(2)))
++    if len(checkouts) != 1:
++        raise ValueError('Exactly one checkout step is required')
++    number, indentation, action = checkouts[0]
++    end = len(lines)
++    for position in range(number + 1, len(lines)):
++        line = lines[position]
++        if line.strip() and not line.lstrip().startswith('#'):
++            if len(line) - len(line.lstrip(' ')) < indentation:
++                end = position
++                break
++    inputs = [position for position in range(number + 1, end)
++              if lines[position] == ' ' * indentation + 'with:']
++    if len(inputs) != 1:
++        raise ValueError('Exactly one checkout input mapping is required')
++    values = {}
++    for line in lines[inputs[0] + 1:end]:
++        if not line.strip() or line.lstrip().startswith('#'):
++            continue
++        match = re.fullmatch(r' {' + str(indentation + 2) + r'}([a-z][a-z-]*): (.+)', line)
++        if not match or match.group(1) in values:
++            raise ValueError('Unsupported or duplicate checkout input')
++        values[match.group(1)] = match.group(2)
++    expected = {
++        'ref': '${{ github.event.pull_request.head.sha || github.sha }}',
++        'persist-credentials': 'false',
++        'fetch-depth': '0',
++    }
++    if action != 'actions/checkout@v7.0.1' or any(values.get(key) != value
++                                                 for key, value in expected.items()):
++        raise ValueError('Checkout must retain the reviewed revision and full-history contract')
++    return {'uses': action, 'with': values}
++
++
++class CheckoutHistoryContractTest(unittest.TestCase):
++    SYNTHETIC_WORKFLOW = '''steps:
++  - name: Check out repository
++    uses: actions/checkout@v7.0.1
++    with:
++      ref: ${{ github.event.pull_request.head.sha || github.sha }}
++      persist-credentials: false
++      fetch-depth: 0
++'''
++
++    def test_workflow_uses_pinned_full_history_without_persisted_credentials(self):
++        try:
++            contract = checkout_contract((ROOT / '.github/workflows/backend-ci.yml').read_text())
++        except ValueError as error:
++            self.fail(str(error))
++        self.assertEqual(contract['uses'], 'actions/checkout@v7.0.1')
++        self.assertEqual(contract['with']['fetch-depth'], '0')
++        self.assertEqual(contract['with']['persist-credentials'], 'false')
++
++    def test_omitted_fetch_depth_is_rejected(self):
++        source = self.SYNTHETIC_WORKFLOW.replace('      fetch-depth: 0\n', '')
++        with self.assertRaises(ValueError):
++            checkout_contract(source)
++
++    def test_shallow_fetch_depth_is_rejected(self):
++        source = self.SYNTHETIC_WORKFLOW.replace('fetch-depth: 0', 'fetch-depth: 1')
++        with self.assertRaises(ValueError):
++            checkout_contract(source)
++
++    def test_persisted_credentials_are_rejected(self):
++        source = self.SYNTHETIC_WORKFLOW.replace('persist-credentials: false',
++                                               'persist-credentials: true')
++        with self.assertRaises(ValueError):
++            checkout_contract(source)
++
++    def test_changed_checkout_pin_is_rejected(self):
++        source = self.SYNTHETIC_WORKFLOW.replace('actions/checkout@v7.0.1',
++                                               'actions/checkout@v7.0.0')
++        with self.assertRaises(ValueError):
++            checkout_contract(source)
+ 
+ 
+ class CiSupportBoundaryTest(unittest.TestCase):

@@ -1,0 +1,30 @@
+{
+  "alternate_object_database": false,
+  "canonical_objects_copied": false,
+  "commands": [],
+  "full_contract": "no --depth; all fetched branch/tag history",
+  "git_override_presence": {
+    "GIT_ALTERNATE_OBJECT_DIRECTORIES": false,
+    "GIT_COMMON_DIR": false,
+    "GIT_CONFIG": false,
+    "GIT_CONFIG_COUNT": false,
+    "GIT_CONFIG_PARAMETERS": false,
+    "GIT_DIR": false,
+    "GIT_INDEX_FILE": false,
+    "GIT_OBJECT_DIRECTORY": false,
+    "GIT_SHALLOW_FILE": false,
+    "GIT_WORK_TREE": false
+  },
+  "head": "ae9bd1f53a7e3e8612f2f4cd9f778e27d7cdb0db",
+  "independent_roots": true,
+  "remote": "https://github.com/siwakon8285/VRA-Fastform.git",
+  "required_commit": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+  "safe_git_environment": {
+    "GIT_ALLOW_PROTOCOL": "https",
+    "GIT_CONFIG_GLOBAL": "/dev/null",
+    "GIT_CONFIG_NOSYSTEM": "1",
+    "GIT_OPTIONAL_LOCKS": "0",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "shallow_contract": "--depth=1"
+}

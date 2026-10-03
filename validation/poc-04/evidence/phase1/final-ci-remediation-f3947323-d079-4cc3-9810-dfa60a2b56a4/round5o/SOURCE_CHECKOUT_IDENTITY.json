@@ -1,0 +1,10 @@
+{
+  "actual_HEAD": "ae9bd1f53a7e3e8612f2f4cd9f778e27d7cdb0db",
+  "checkout_ref_expression": "${{ github.event.pull_request.head.sha || github.sha }}",
+  "expected_PR_head": "ae9bd1f53a7e3e8612f2f4cd9f778e27d7cdb0db",
+  "full_history_changes_revision": false,
+  "required_historical_commit": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+  "tree": "988058edd53504936345bc51ebdeee2d7d55b0c7",
+  "workflow_candidate_sha256": "a120383860162b67a787e307fc731084b1d4ffc6b10a1295ebddd34c9b9860e6",
+  "workflow_pre_change_sha256": "47810c64b8a1d5ebc9178bfcd18124863580f2c92cb0968313b32e60502d6b95"
+}

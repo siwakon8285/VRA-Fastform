@@ -1,0 +1,39 @@
+{
+  "cleanup_status": "PASS",
+  "execution_status": "PASS",
+  "gate": "full",
+  "phase1_closed": false,
+  "phase2_started": false,
+  "retained_execution_directory": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t",
+  "run_id": "c816fc29-dff4-41a7-9681-b07606cb5409",
+  "scanner_execution": "EXECUTED",
+  "secret_scan_status": "PASS",
+  "source_binding_status": "PASS",
+  "status": "PASS",
+  "suites": {
+    "migration:integrationTest": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 20
+    },
+    "migration:test": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 4
+    },
+    "runtime:integrationTest": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 113
+    },
+    "runtime:test": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 56
+    }
+  }
+}

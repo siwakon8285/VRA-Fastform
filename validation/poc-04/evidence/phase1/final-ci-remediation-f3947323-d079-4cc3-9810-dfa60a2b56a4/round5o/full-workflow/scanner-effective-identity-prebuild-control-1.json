@@ -1,0 +1,21 @@
+{
+  "arguments": [
+    "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/.poc04-execution/gitleaks",
+    "stdin",
+    "--report-format",
+    "json",
+    "--report-path",
+    "-",
+    "--no-banner"
+  ],
+  "asset": "gitleaks_8.30.1_darwin_arm64.tar.gz",
+  "binary_sha256": "ba52fb1bfabbcde42f032afad3d6e0b19dff8ed105229a16e7caa338bbc0e84f",
+  "mode": "PINNED_BINARY_DEFAULT",
+  "override_presence": {
+    "GITLEAKS_CONFIG": false,
+    "GITLEAKS_CONFIG_TOML": false
+  },
+  "scan_manifest_content_sha256": "7e0deae81a11148e5cbd3b76672ec226b7adb267fb22edd7cad7ba92ccd64780",
+  "source_config_present": false,
+  "version": "8.30.1"
+}
