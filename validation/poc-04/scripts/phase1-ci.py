@@ -1203,6 +1203,8 @@ class Run:
         self.commands = []
         self.initial = None
         self.result = {'status': 'RUNNING', 'gate': args.gate, 'run_id': self.run_id,
+                       'source_binding_status': 'NOT EXECUTED', 'secret_scan_status': 'NOT EXECUTED',
+                       'scanner_execution': 'NOT EXECUTED', 'cleanup_execution': 'NOT EXECUTED',
                        'phase1_closed': False, 'phase2_started': False,
                        'retained_execution_directory': str(self.execution_directory)}
 
@@ -1234,6 +1236,16 @@ class Run:
         require(not hosted or self.env.get('RUNNER_ENVIRONMENT') == 'github-hosted',
                 'Hosted execution requires a disposable GitHub-hosted runner')
         self.hosted = hosted
+        if hosted:
+            # Consume the runtime dependency separately; the frozen Phase-0 tool authority is unchanged.
+            verify_frozen_scan_domain(self.scan_root, self.scan_manifest, self.scan_identity)
+            runtime_path = self.scan_root / 'validation/poc-04/scripts/hosted-docker-runtime.py'
+            runtime_spec = importlib.util.spec_from_file_location('poc04_hosted_runtime', runtime_path)
+            runtime = importlib.util.module_from_spec(runtime_spec)
+            runtime_spec.loader.exec_module(runtime)
+            attestation = runtime.verify_hosted_runtime_attestation(
+                self.env, self.scan_root / 'validation/poc-04/tooling/hosted-docker-runtime.json')
+            write(self.out / 'hosted-runtime-attestation.json', attestation)
         endpoint = self.env.get('DOCKER_HOST')
         if not endpoint:
             context = subprocess.check_output(['docker', 'context', 'show'], cwd=self.build_root, text=True).strip()
@@ -1246,6 +1258,9 @@ class Run:
         self.env['DOCKER_HOST'] = endpoint
         version = json.loads(self.docker('version', '--format', '{{json .Server}}'))
         info = json.loads(self.docker('info', '--format', '{{json .}}'))
+        if hosted:
+            runtime.validate_server(version, info, runtime.load_manifest(
+                self.scan_root / 'validation/poc-04/tooling/hosted-docker-runtime.json'), attestation['daemon_id'])
         require(tuple(map(int, version['ApiVersion'].split('.'))) >= (1, 49), 'Docker Engine API >=1.49 required')
         require(info['OSType'] == 'linux' and info['Architecture'] in ('aarch64', 'arm64', 'x86_64', 'amd64'),
                 'Unreviewed Docker platform')
@@ -1636,6 +1651,7 @@ class Run:
     def execute(self):
         try:
             self.preflight()
+            self.result['secret_scan_status'] = 'FAIL'
             primary_findings = self.secret_scan('primary')
             self.result['secret_scan_status'] = 'PASS'
             if self.args.gate == 'full':
@@ -1672,7 +1688,11 @@ class Run:
             self.result['failure'] = str(failure) if isinstance(failure, RuntimeError) else type(failure).__name__
         finally:
             try:
-                self.cleanup()
+                if hasattr(self, 'state_path'):
+                    self.result['cleanup_execution'] = 'EXECUTED'
+                    self.cleanup()
+                else:
+                    self.result['cleanup_execution'] = 'NOT EXECUTED / NO RESOURCE AUTHORITY'
                 self.result['cleanup_status'] = 'PASS'
             except Exception as failure:
                 self.result['cleanup_status'] = 'FAIL'
@@ -1690,35 +1710,40 @@ class Run:
                     self.result['cleanup_status'] = 'FAIL'
                     self.result['recorder_failure'] = True
                 self.recorder_log.close()
-            try:
-                verify_frozen_scan_domain(self.scan_root, self.scan_manifest, self.scan_identity)
-                final = binding(self.scan_root)
-                write(self.out / 'source-binding-final.json', final)
-                self.final_source = final
-                require(final['head'] == self.source['head'] and final['tree'] == self.source['tree'] and
-                        final['content_sha256'] == self.source['content_sha256'], 'Source binding changed during execution')
-                self.result['source_binding_status'] = 'PASS'
-                if self.result['execution_status'] == 'PASS' and self.result['cleanup_status'] == 'PASS':
-                    if self.args.gate == 'full':
-                        postbuild = self.secret_scan('postbuild-original')
-                        require(postbuild == primary_findings, 'Original scanner finding set changed after build')
-                        expanded = self.secret_scan('expanded-artifacts', expanded=True)
-                        require(set(primary_findings) <= set(expanded), 'Expanded scanner input lost original findings')
-                        write(self.out / 'scanner-finding-set-comparison.json', {'primary': primary_findings,
-                              'postbuild_original': postbuild, 'expanded': expanded, 'status': 'PASS'})
-                    # Invocation-source stability is separate from the A-only original-input scan.
-                    self.result['source_binding_status'] = 'FAIL'
-                    verify_scan_candidate(self.source_root, self.scan_manifest)
-                    require(private_git_identity(self.source_root) == self.scan_identity['git'],
-                            'Invocation source Git identity changed during execution')
+            if not hasattr(self, 'source'):
+                # An early preflight failure never established authority for finalization.
+                self.result['source_binding_status'] = 'NOT EXECUTED / PRECONDITION FAILED'
+                self.result['secret_scan_status'] = 'NOT EXECUTED / PRECONDITION FAILED'
+            else:
+                try:
+                    verify_frozen_scan_domain(self.scan_root, self.scan_manifest, self.scan_identity)
+                    final = binding(self.scan_root)
+                    write(self.out / 'source-binding-final.json', final)
+                    self.final_source = final
+                    require(final['head'] == self.source['head'] and final['tree'] == self.source['tree'] and
+                            final['content_sha256'] == self.source['content_sha256'], 'Source binding changed during execution')
                     self.result['source_binding_status'] = 'PASS'
-                    if self.args.gate == 'full':
-                        if self.hosted:
-                            self.deliver_hosted_artifacts()
-                    self.result['secret_scan_status'] = 'PASS'
-            except Exception as failure:
-                self.result['secret_scan_status'] = 'FAIL'
-                self.result['source_or_scan_failure'] = str(failure) if isinstance(failure, RuntimeError) else type(failure).__name__
+                    if self.result['execution_status'] == 'PASS' and self.result['cleanup_status'] == 'PASS':
+                        if self.args.gate == 'full':
+                            postbuild = self.secret_scan('postbuild-original')
+                            require(postbuild == primary_findings, 'Original scanner finding set changed after build')
+                            expanded = self.secret_scan('expanded-artifacts', expanded=True)
+                            require(set(primary_findings) <= set(expanded), 'Expanded scanner input lost original findings')
+                            write(self.out / 'scanner-finding-set-comparison.json', {'primary': primary_findings,
+                                  'postbuild_original': postbuild, 'expanded': expanded, 'status': 'PASS'})
+                        # Invocation-source stability is separate from the A-only original-input scan.
+                        self.result['source_binding_status'] = 'FAIL'
+                        verify_scan_candidate(self.source_root, self.scan_manifest)
+                        require(private_git_identity(self.source_root) == self.scan_identity['git'],
+                                'Invocation source Git identity changed during execution')
+                        self.result['source_binding_status'] = 'PASS'
+                        if self.args.gate == 'full':
+                            if self.hosted:
+                                self.deliver_hosted_artifacts()
+                        self.result['secret_scan_status'] = 'PASS'
+                except Exception as failure:
+                    self.result['secret_scan_status'] = 'FAIL'
+                    self.result['source_or_scan_failure'] = str(failure) if isinstance(failure, RuntimeError) else type(failure).__name__
             gates = ('execution_status', 'cleanup_status', 'source_binding_status', 'secret_scan_status')
             self.result['status'] = 'PASS' if all(self.result.get(key) == 'PASS' for key in gates) else 'FAIL'
             if self.result['status'] == 'FAIL':

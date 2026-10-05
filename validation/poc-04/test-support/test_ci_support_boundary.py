@@ -3,6 +3,7 @@ import ast
 import importlib.util
 from pathlib import Path
 import re
+import shlex
 import subprocess
 import tempfile
 import unittest
@@ -60,6 +61,127 @@ def checkout_contract(source):
                                                  for key, value in expected.items()):
         raise ValueError('Checkout must retain the reviewed revision and full-history contract')
     return {'uses': action, 'with': values}
+
+
+def hosted_runtime_workflow_contract(source):
+    """Inspect the narrow runtime lifecycle steps without executing their commands."""
+    lines = source.splitlines()
+    starts = [(position, match.group(1)) for position, line in enumerate(lines)
+              if (match := re.fullmatch(r'      - name: (.+)', line))]
+    if len({name for _, name in starts}) != len(starts):
+        raise ValueError('Workflow step names must be unique')
+    steps = {}
+    order = []
+    for number, (position, name) in enumerate(starts):
+        end = starts[number + 1][0] if number + 1 < len(starts) else len(lines)
+        steps[name] = lines[position + 1:end]
+        order.append(name)
+
+    def scalar(name, field):
+        values = [line[len('        ' + field + ': '):] for line in steps[name]
+                  if line.startswith('        ' + field + ': ')]
+        if len(values) != 1:
+            raise ValueError('Runtime lifecycle scalar missing or ambiguous: ' + field)
+        return values[0]
+
+    def command(name):
+        if scalar(name, 'run') != '|':
+            raise ValueError('Runtime command must use an explicit literal block')
+        body = steps[name][steps[name].index('        run: |') + 1:]
+        if any(line.strip() and not line.startswith('          ') for line in body):
+            raise ValueError('Unsupported runtime command block')
+        return shlex.split('\n'.join(line[10:] for line in body).replace('\\\n', ''))
+
+    provision = 'Provision pinned hosted Docker runtime'
+    bootstrap = 'Run disposable Phase-1 verification'
+    teardown = 'Stop job-owned hosted Docker runtime'
+    upload = 'Preserve external hosted Docker runtime evidence'
+    required = ('Check out repository', 'Set up Java 21', provision,
+                'Verify Gradle wrapper', bootstrap,
+                'Prove TEST service-loader isolation in deployable artifacts', teardown, upload)
+    if any(name not in steps for name in required):
+        raise ValueError('Hosted runtime lifecycle step missing')
+    if [order.index(name) for name in required] != sorted(order.index(name) for name in required):
+        raise ValueError('Hosted runtime lifecycle order changed')
+    if '    runs-on: ubuntu-24.04' not in lines:
+        raise ValueError('Hosted runtime requires the reviewed runner family')
+    if 'permissions:\n  contents: read\n' not in source:
+        raise ValueError('Workflow permissions changed')
+    helper = ['python3', '-B', 'validation/poc-04/scripts/hosted-docker-runtime.py']
+    runtime_root = '$RUNNER_TEMP/vra-poc04-docker-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}'
+    if command(provision) != helper + ['provision', '--root', runtime_root,
+                                     '--github-env', '$GITHUB_ENV', '--github-path', '$GITHUB_PATH']:
+        raise ValueError('Provisioning must publish only the verified external runtime contract')
+    if command(teardown) != helper + ['teardown', '--root', runtime_root]:
+        raise ValueError('Teardown must use the same exact job-owned runtime root')
+    if scalar(provision, 'shell') != 'bash' or scalar(teardown, 'shell') != 'bash':
+        raise ValueError('Runtime lifecycle requires the explicit reviewed shell')
+    if scalar(teardown, 'if') != 'always()' or scalar(upload, 'if') != 'always()':
+        raise ValueError('Teardown and runtime evidence preservation must run after failure')
+    if scalar(upload, 'uses') != ('actions/upload-artifact@'
+                                 'ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2'):
+        raise ValueError('Runtime evidence action pin changed')
+    expected_path = ('          path: ${{ runner.temp }}/vra-poc04-docker-'
+                     '${{ github.run_id }}-${{ github.run_attempt }}/evidence/')
+    if expected_path not in steps[upload]:
+        raise ValueError('Runtime evidence must remain outside repository candidate input')
+    if source.count('python3 -B validation/poc-04/scripts/phase1-ci.py') != 1:
+        raise ValueError('There must be exactly one authoritative Phase-1 bootstrap')
+    if '--gate full' not in '\n'.join(steps[bootstrap]):
+        raise ValueError('The existing full Phase-1 gate must remain authoritative')
+    for forbidden in ('continue-on-error:', '|| true', 'docker version',
+                      'systemctl start docker', 'systemctl restart docker'):
+        if forbidden in source:
+            raise ValueError('Unexpected fallback or failure suppression in workflow')
+    return {'root': runtime_root, 'provision': command(provision), 'teardown': command(teardown)}
+
+
+class HostedRuntimeWorkflowContractTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.source = (ROOT / '.github/workflows/backend-ci.yml').read_text()
+
+    def test_workflow_binds_one_external_pinned_runtime_lifecycle(self):
+        contract = hosted_runtime_workflow_contract(self.source)
+        self.assertTrue(contract['root'].startswith('$RUNNER_TEMP/'))
+        self.assertEqual(contract['provision'][3], 'provision')
+        self.assertEqual(contract['teardown'][3], 'teardown')
+
+    def test_repository_runtime_root_is_rejected(self):
+        source = self.source.replace('$RUNNER_TEMP/vra-poc04-docker-',
+                                     'validation/poc-04/evidence/runtime-')
+        with self.assertRaises(ValueError):
+            hosted_runtime_workflow_contract(source)
+
+    def test_privileged_whole_helper_execution_is_rejected(self):
+        source = self.source.replace('python3 -B validation/poc-04/scripts/hosted-docker-runtime.py',
+                                     'sudo python3 -B validation/poc-04/scripts/hosted-docker-runtime.py')
+        with self.assertRaises(ValueError):
+            hosted_runtime_workflow_contract(source)
+
+    def test_success_only_teardown_is_rejected(self):
+        source = self.source.replace('      - name: Stop job-owned hosted Docker runtime\n'
+                                     '        if: always()',
+                                     '      - name: Stop job-owned hosted Docker runtime\n'
+                                     '        if: success()')
+        with self.assertRaises(ValueError):
+            hosted_runtime_workflow_contract(source)
+
+    def test_repository_runtime_evidence_upload_is_rejected(self):
+        source = self.source.replace('path: ${{ runner.temp }}/vra-poc04-docker-',
+                                     'path: validation/poc-04/evidence/runtime-')
+        with self.assertRaises(ValueError):
+            hosted_runtime_workflow_contract(source)
+
+    def test_second_bootstrap_execution_is_rejected(self):
+        source = self.source + '\n          python3 -B validation/poc-04/scripts/phase1-ci.py --gate full\n'
+        with self.assertRaises(ValueError):
+            hosted_runtime_workflow_contract(source)
+
+    def test_system_daemon_fallback_is_rejected(self):
+        source = self.source + '\n          systemctl restart docker\n'
+        with self.assertRaises(ValueError):
+            hosted_runtime_workflow_contract(source)
 
 
 class CheckoutHistoryContractTest(unittest.TestCase):

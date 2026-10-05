@@ -1,0 +1,99 @@
+{
+  "authority": "Official HTTPS distribution and independently reviewed repository-pinned bytes; no detached Docker archive signature asserted.",
+  "buildx": {
+    "sha256": "982ca20490b45ed1ec8d99795974d3d874a358f75938c9c237305010e6b7e548",
+    "size": 65806498,
+    "url": "https://github.com/docker/buildx/releases/download/v0.37.2/buildx-v0.37.2.linux-amd64",
+    "version": "0.37.2"
+  },
+  "components": {
+    "containerd": "2.3.6",
+    "runc": "1.5.2"
+  },
+  "docker": {
+    "archive": {
+      "members": [
+        {
+          "mode": "0755",
+          "name": "docker",
+          "type": "directory"
+        },
+        {
+          "mode": "0755",
+          "name": "docker/containerd",
+          "sha256": "90ff7267f00146a35bc645e57fb52a410788bb6c5ec65b83352835ce319d8309",
+          "size": 38486178,
+          "type": "regular"
+        },
+        {
+          "mode": "0755",
+          "name": "docker/runc",
+          "sha256": "f785d0e865410fd1460478ce2bbdaa79158f18753e4894ce95e4f401943f96e9",
+          "size": 14130968,
+          "type": "regular"
+        },
+        {
+          "mode": "0755",
+          "name": "docker/containerd-shim-runc-v2",
+          "sha256": "669bd50c794abd12a6b180fc5782a8bc9bc26a581a537a03d56fdde15325e0ca",
+          "size": 8458402,
+          "type": "regular"
+        },
+        {
+          "mode": "0755",
+          "name": "docker/docker",
+          "sha256": "6f7a95d27f98fc8c5f6b220898988bf8f61dd9b040936797917cbdc72c6cabe6",
+          "size": 44260160,
+          "type": "regular"
+        },
+        {
+          "mode": "0755",
+          "name": "docker/docker-proxy",
+          "sha256": "905781d65ff8e3e9e06fdc2f50a243c454d112130f895e516285b472d49045c4",
+          "size": 2696190,
+          "type": "regular"
+        },
+        {
+          "mode": "0755",
+          "name": "docker/ctr",
+          "sha256": "c6e18891562f6eb3d0182a354ca6d7fa85ec2e059a4e5f99c687324931a70fdc",
+          "size": 22630562,
+          "type": "regular"
+        },
+        {
+          "mode": "0755",
+          "name": "docker/dockerd",
+          "sha256": "8368ccb76a1216965ace32d09a2160526c5002568ec51fd99f91c8a18dddad09",
+          "size": 101934936,
+          "type": "regular"
+        },
+        {
+          "mode": "0755",
+          "name": "docker/docker-init",
+          "sha256": "5ccb076690ac3d060511c63d02194bd5cefaba8dbf225fd60b26283eb1055e4b",
+          "size": 743016,
+          "type": "regular"
+        }
+      ],
+      "sha256": "995d1ef289677f74fd58d8d2c35727b6a4ee389c69db8638a3e42d0487aa5b0f",
+      "size": 85591344,
+      "url": "https://download.docker.com/linux/static/stable/x86_64/docker-29.8.2.tgz"
+    },
+    "client_api": "1.49",
+    "minimum_server_api": "1.40",
+    "required_api_floor": "1.49",
+    "server_api": "1.56",
+    "version": "29.8.2"
+  },
+  "image_store": {
+    "containerd_snapshotter": true,
+    "driver": "overlayfs",
+    "driver_type": "io.containerd.snapshotter.v1"
+  },
+  "platform": {
+    "architecture": "amd64",
+    "os": "linux"
+  },
+  "purpose": "POC-04 Phase-1 GitHub-hosted disposable TEST Docker runtime",
+  "schema_version": 1
+}
