@@ -1,0 +1,15 @@
+{
+  "old_fixture_sha256": "125e9cf33055428f4354fe7c0637ba60e2f3857eb3a266c7fa089db7f6c71005",
+  "new_fixture_sha256": "eedaf64c01778dcc9f1b502a4127bd1363c08a310e3cc131a91a48e6891b1ee8",
+  "source_change_path": "backend/migration/src/test/java/dev/vra/migration/Poc04FoundationMigrationIntegrationTest.java",
+  "diff_check_exit_status": 0,
+  "prior_report_sha256": "93baf961f3370311e1d669e3594ed9c0c2d925ef66d0df70c62f33e61d127a57",
+  "source_change_scope": "PostgreSQL provenance only; index/platform/manifest/config linkage and runtime pre-bootstrap version proof; no schema/grant/migration pin edits",
+  "patch_path": "validation/poc-04/evidence/phase1/image-remediation-5e8a333f-5b82-4b7d-b513-0fea93933bab/source-change.patch",
+  "new_source_content_sha256": "7cef9abea5c67e879fb3bf3e0f05ba68bbe83121c02e7363d9b7a0143b5bffe2",
+  "source_files": 261,
+  "external_init_path": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-remediation-support-_iyghlz0/runner.init.gradle",
+  "external_init_sha256": "1255ee9276b75e8f33819c911dc63aad7bedfcead64adb14f36a91a4f5657b34",
+  "external_init_changes": "late classpath append after project evaluation, API1.49 at test JVM launch; no repo build edits",
+  "external_proxy_limit": "SPI returned exec proxy not honored by Testcontainers; physical IDs come from independent safe Docker metadata recorder"
+}

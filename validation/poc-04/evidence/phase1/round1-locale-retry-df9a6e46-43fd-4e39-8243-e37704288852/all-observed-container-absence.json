@@ -1,0 +1,26 @@
+[
+  {
+    "exact_id": "7b85b058fd1d53eb814c3c50e18162920f3c2cbe57668f644539c9bc716a30c8",
+    "inspect_exit_status": 1,
+    "absent": true,
+    "observation_confers_delete_authority": false
+  },
+  {
+    "exact_id": "84c4453ba1d9a1a097b57d90af57be892f77234f4d6b84057eff915a3f5bd601",
+    "inspect_exit_status": 1,
+    "absent": true,
+    "observation_confers_delete_authority": false
+  },
+  {
+    "exact_id": "f6b6497420a38aa6ba4fbfbc46804281e740afe3f1924431acbb5184ea21ca67",
+    "inspect_exit_status": 1,
+    "absent": true,
+    "observation_confers_delete_authority": false
+  },
+  {
+    "exact_id": "fa7df4a9460d6a5e39ea1d4513bd7f87bb84b819715f3aded5fa65b335338676",
+    "inspect_exit_status": 1,
+    "absent": true,
+    "observation_confers_delete_authority": false
+  }
+]

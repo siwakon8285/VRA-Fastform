@@ -1,0 +1,153 @@
+{
+  "checked_out_commit_sha": "ae9bd1f53a7e3e8612f2f4cd9f778e27d7cdb0db",
+  "checked_out_tree": "988058edd53504936345bc51ebdeee2d7d55b0c7",
+  "daemon": {
+    "Architecture": "aarch64",
+    "DefaultAddressPools": [
+      {
+        "Base": "10.241.0.0/16",
+        "Size": 24
+      }
+    ],
+    "ID": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+    "Name": "colima-vra-poc04-test",
+    "OSType": "linux"
+  },
+  "docker_server": {
+    "ApiVersion": "1.54",
+    "Arch": "arm64",
+    "Os": "linux",
+    "Version": "29.5.2"
+  },
+  "environment": {
+    "DOCKER_HOST": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+    "TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE": "/var/run/docker.sock",
+    "TESTCONTAINERS_HOST_OVERRIDE": "127.0.0.1",
+    "TESTCONTAINERS_RYUK_DISABLED": "false",
+    "VRA_POC04_DAEMON_INSPECT_DIRECTORY": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/source-capsule/validation/poc-04/evidence/phase1/ci-local-round5o-preplanned-1/bootstrap/daemon-inspect",
+    "VRA_POC04_DISPOSABLE_TEST_DOCKER_ENDPOINT": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+    "VRA_POC04_EVIDENCE_DIRECTORY": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/source-capsule/validation/poc-04/evidence/phase1/ci-local-round5o-preplanned-1/bootstrap",
+    "VRA_POC04_EXPECTED_DAEMON_ID": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+    "VRA_POC04_EXTERNAL_TC_JAR": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/.poc04-execution/external-tc.jar",
+    "VRA_POC04_RESOURCE_EVIDENCE": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/source-capsule/validation/poc-04/evidence/phase1/ci-local-round5o-preplanned-1/bootstrap/resource-identities.jsonl",
+    "VRA_POC04_RUN_HARNESS": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/scripts/run-harness.py",
+    "VRA_POC04_RUN_ID": "c816fc29-dff4-41a7-9681-b07606cb5409",
+    "VRA_POC04_RUN_STATE": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/.poc04-execution/run-state.json",
+    "VRA_POC04_SOURCE_CONTENT_SHA256": "9558067ae1bd495707132df17c2066d215dcd73142c02e356bbff47ea1b277f5",
+    "VRA_POC04_SOURCE_HEAD": "ae9bd1f53a7e3e8612f2f4cd9f778e27d7cdb0db",
+    "VRA_POC04_SUPPORT_DIRECTORY": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/.poc04-execution",
+    "VRA_POC04_TOOL_MANIFEST_SHA256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+  },
+  "environment_type": "TEST",
+  "github_sha_context": null,
+  "hosted": false,
+  "initial_resources": {
+    "containers": [],
+    "networks": [
+      {
+        "Attachable": false,
+        "ConfigFrom": {
+          "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {},
+        "Created": "2026-10-01T14:45:16.427040294+07:00",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+          "Config": [
+            {
+              "Gateway": "10.241.0.1",
+              "Subnet": "10.241.0.0/24"
+            }
+          ],
+          "Driver": "default",
+          "Options": null
+        },
+        "Id": "c0297a5ce0209b66940193c63975087c4355c0e38d6517ac408d4fbf452c9adf",
+        "Ingress": false,
+        "Internal": false,
+        "Labels": {},
+        "Name": "bridge",
+        "Options": {
+          "com.docker.network.bridge.default_bridge": "true",
+          "com.docker.network.bridge.enable_icc": "true",
+          "com.docker.network.bridge.enable_ip_masquerade": "true",
+          "com.docker.network.bridge.host_binding_ipv4": "0.0.0.0",
+          "com.docker.network.bridge.name": "docker0",
+          "com.docker.network.driver.mtu": "1500"
+        },
+        "Scope": "local",
+        "Status": {
+          "IPAM": {
+            "Subnets": {
+              "10.241.0.0/24": {
+                "DynamicIPsAvailable": 253,
+                "IPsInUse": 3
+              }
+            }
+          }
+        }
+      },
+      {
+        "Attachable": false,
+        "ConfigFrom": {
+          "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {},
+        "Created": "2026-09-30T23:19:05.623366465+07:00",
+        "Driver": "host",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+          "Config": null,
+          "Driver": "default",
+          "Options": null
+        },
+        "Id": "71919e79066c633ba4548aa04103de53d1e31552893e0cec59e0ba812b5f4d22",
+        "Ingress": false,
+        "Internal": false,
+        "Labels": {},
+        "Name": "host",
+        "Options": {},
+        "Scope": "local",
+        "Status": {
+          "IPAM": {}
+        }
+      },
+      {
+        "Attachable": false,
+        "ConfigFrom": {
+          "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {},
+        "Created": "2026-09-30T23:19:05.61941459+07:00",
+        "Driver": "null",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+          "Config": null,
+          "Driver": "default",
+          "Options": null
+        },
+        "Id": "0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a",
+        "Ingress": false,
+        "Internal": false,
+        "Labels": {},
+        "Name": "none",
+        "Options": {},
+        "Scope": "local",
+        "Status": {
+          "IPAM": {}
+        }
+      }
+    ],
+    "volumes": []
+  },
+  "pr_head_sha": null,
+  "run_id": "c816fc29-dff4-41a7-9681-b07606cb5409",
+  "source_content_sha256": "9558067ae1bd495707132df17c2066d215dcd73142c02e356bbff47ea1b277f5"
+}

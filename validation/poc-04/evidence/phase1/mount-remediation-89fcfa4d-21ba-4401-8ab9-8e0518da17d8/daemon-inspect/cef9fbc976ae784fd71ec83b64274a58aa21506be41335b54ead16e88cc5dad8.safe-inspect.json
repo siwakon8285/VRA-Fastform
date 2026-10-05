@@ -1,0 +1,62 @@
+{
+  "created": "2026-10-01T07:12:38.456052701Z",
+  "daemon_id": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+  "id": "cef9fbc976ae784fd71ec83b64274a58aa21506be41335b54ead16e88cc5dad8",
+  "image": "docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0",
+  "image_id": "sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0",
+  "kind": "container_inspect",
+  "labels": {
+    "dev.vra.database_instance_id": "fdb77a58-ab51-5099-9468-275bbe7a22e9",
+    "dev.vra.environment": "TEST",
+    "dev.vra.poc": "04",
+    "dev.vra.run_id": "89fcfa4d-21ba-4401-8ab9-8e0518da17d8",
+    "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+    "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+    "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+    "org.testcontainers": "true",
+    "org.testcontainers.lang": "java",
+    "org.testcontainers.ryuk": "true",
+    "org.testcontainers.version": "2.0.5"
+  },
+  "manifest_descriptor": {
+    "digest": "sha256:79e2fbedad76001e8ac2f64556a729de503531be9dad9e2ff6fc469006b2e93c",
+    "mediaType": "application/vnd.oci.image.manifest.v1+json",
+    "platform": {
+      "architecture": "arm64",
+      "os": "linux"
+    },
+    "size": 662
+  },
+  "mounts": [
+    {
+      "Destination": "/var/run/docker.sock",
+      "Name": null,
+      "RW": true,
+      "Source": "/var/run/docker.sock",
+      "Type": "bind"
+    }
+  ],
+  "name": "/testcontainers-ryuk-924a79d8-7f3c-4bf6-b145-78c616972bc2",
+  "networks": {
+    "bridge": {
+      "network_id": "d6169038310792000aceb4c7cc43936dc2580869b05ebdee378244932b90279c"
+    }
+  },
+  "ports": {
+    "8080/tcp": [
+      {
+        "HostIp": "0.0.0.0",
+        "HostPort": "32786"
+      },
+      {
+        "HostIp": "::",
+        "HostPort": "32786"
+      }
+    ]
+  },
+  "state": {
+    "ExitCode": 0,
+    "Running": true,
+    "Status": "running"
+  }
+}

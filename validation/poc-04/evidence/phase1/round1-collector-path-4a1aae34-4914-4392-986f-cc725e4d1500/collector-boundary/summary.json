@@ -1,0 +1,197 @@
+{
+  "allocation": {
+    "database_instance_id": "e6d0c621-8e75-5808-9da6-abf15d3361cd",
+    "labels": {
+      "dev.vra.database_instance_id": "e6d0c621-8e75-5808-9da6-abf15d3361cd",
+      "dev.vra.environment": "TEST",
+      "dev.vra.logical_name": "postgres-authority/0",
+      "dev.vra.poc": "04",
+      "dev.vra.run_id": "4a1aae34-4914-4392-986f-cc725e4d1500",
+      "dev.vra.source_content_sha256": "35f01843bc1a01d9266c8d40c4f43cb916e61ffad5adb70ca1eedbc7632b43c5",
+      "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+      "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+    },
+    "logical_name": "postgres-authority/0",
+    "ordinal": 0
+  },
+  "business_audit_grant_proof": "Not remigrated in this collector-only DB. Refer to this run fresh/populated V4 catalog and actual-credential grants/denials, bound to the same source bytes.",
+  "cleanup": {
+    "blanket_prune_used": false,
+    "resources": [
+      {
+        "exact_identity": "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_collector_source",
+        "exit_status": 0,
+        "kind": "volume",
+        "ledger_teardown": {
+          "absent": true,
+          "already_absent": false,
+          "authorized_run_id": "4a1aae34-4914-4392-986f-cc725e4d1500",
+          "id": "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_collector_source",
+          "kind": "volume"
+        }
+      },
+      {
+        "exact_identity": "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_postgres_data",
+        "exit_status": 0,
+        "kind": "volume",
+        "ledger_teardown": {
+          "absent": true,
+          "already_absent": false,
+          "authorized_run_id": "4a1aae34-4914-4392-986f-cc725e4d1500",
+          "id": "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_postgres_data",
+          "kind": "volume"
+        }
+      },
+      {
+        "exact_identity": "0211aa42436a42eb41a244df10f3b7712eb28badc34bc8eef54cd6cf55cf39a3",
+        "exit_status": 0,
+        "kind": "network",
+        "ledger_teardown": {
+          "absent": true,
+          "already_absent": false,
+          "authorized_run_id": "4a1aae34-4914-4392-986f-cc725e4d1500",
+          "id": "0211aa42436a42eb41a244df10f3b7712eb28badc34bc8eef54cd6cf55cf39a3",
+          "kind": "network"
+        }
+      }
+    ],
+    "result": "PASS"
+  },
+  "cleanup_daemon": {
+    "Architecture": "aarch64",
+    "DefaultAddressPools": [
+      {
+        "Base": "10.241.0.0/16",
+        "Size": 24
+      }
+    ],
+    "ID": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+    "Name": "colima-vra-poc04-test",
+    "OSType": "linux",
+    "ServerVersion": "29.5.2"
+  },
+  "current_support_sha256": {
+    "validation/poc-04/scripts/collector-boundary-proof.py": "ca0139d63b19cc29a2392aeb99e6ca4c9e9998fb486f63c7f58d1f2a5b59f288",
+    "validation/poc-04/scripts/run-harness.py": "f631088db8a63bb8748e02a6a7fbbaadfeade55672c2e4731f90f55348631dc6"
+  },
+  "database_instance_id": "e6d0c621-8e75-5808-9da6-abf15d3361cd",
+  "docker_endpoint": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+  "ephemeral_admin_credential_file_absent": true,
+  "failure": {
+    "safe_message": "profile server credential target differs",
+    "type": "AssertionError"
+  },
+  "image_provenance": {
+    "postgresql_test": {
+      "config_digest": "sha256:97432f980da100ebd3e419711efee84e1e97a966d62c035286a07f239ddb4d9c",
+      "daemon_descriptor": {
+        "annotations": {
+          "com.docker.official-images.bashbrew.arch": "arm64v8",
+          "org.opencontainers.image.base.digest": "sha256:da496358bd6934d2bd6a563a33176a2e50eff5490c54b4ac6fb051b69fef4071",
+          "org.opencontainers.image.base.name": "debian:trixie-slim",
+          "org.opencontainers.image.created": "2026-09-19T00:38:22Z",
+          "org.opencontainers.image.revision": "2603e26e245e558218728ee14e0a42dcb020dc7f",
+          "org.opencontainers.image.source": "https://github.com/docker-library/postgres.git#2603e26e245e558218728ee14e0a42dcb020dc7f:17/trixie",
+          "org.opencontainers.image.url": "https://hub.docker.com/_/postgres",
+          "org.opencontainers.image.version": "17.11"
+        },
+        "digest": "sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "arm64",
+          "os": "linux",
+          "variant": "v8"
+        },
+        "size": 3630
+      },
+      "execution_platform": "linux/arm64/v8",
+      "execution_reference": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+      "platform_manifest_digest": "sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761"
+    },
+    "testcontainers_tinyimage": {
+      "config_digest": "sha256:577bd1e3e55597178262f72fc05a2c77882afbfa5502fa06c856bfa53f175103",
+      "daemon_descriptor": {
+        "annotations": {
+          "com.docker.official-images.bashbrew.arch": "arm64v8",
+          "org.opencontainers.image.base.name": "scratch",
+          "org.opencontainers.image.created": "2024-11-12T00:55:37Z",
+          "org.opencontainers.image.revision": "1d3ddcf4766ef6085fe6005ce3ec8ca4e6b45ddd",
+          "org.opencontainers.image.source": "https://github.com/alpinelinux/docker-alpine.git#1d3ddcf4766ef6085fe6005ce3ec8ca4e6b45ddd:aarch64",
+          "org.opencontainers.image.url": "https://hub.docker.com/_/alpine",
+          "org.opencontainers.image.version": "3.17.10"
+        },
+        "digest": "sha256:4555e30014d0ef2214aa1ce5391ff46354519f55f33b4c6e5ed9aef4f3f1fa07",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "arm64",
+          "os": "linux",
+          "variant": "v8"
+        },
+        "size": 1026
+      },
+      "execution_platform": "linux/arm64/v8",
+      "execution_reference": "docker.io/library/alpine@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989",
+      "platform_manifest_digest": "sha256:4555e30014d0ef2214aa1ce5391ff46354519f55f33b4c6e5ed9aef4f3f1fa07"
+    }
+  },
+  "logical_database_instance": "postgres-authority/0",
+  "no_raw_logs_or_credentials_persisted": true,
+  "phase2_started": false,
+  "preflight_daemon": {
+    "Architecture": "aarch64",
+    "DefaultAddressPools": [
+      {
+        "Base": "10.241.0.0/16",
+        "Size": 24
+      }
+    ],
+    "ID": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+    "Name": "colima-vra-poc04-test",
+    "OSType": "linux",
+    "ServerVersion": "29.5.2"
+  },
+  "profile_mount_binding": {
+    "effective_default": "home directory mounted writable via configured virtiofs",
+    "ephemeral_secret_parent": "isolated profile directory outside repository",
+    "profile_config": "/Users/siwakornbundi/.colima/vra-poc04-test/colima.yaml",
+    "profile_sha256": "53675defaacbcb1a36f59a3760a61142b16199d4e8a513e6ac63e44fd9505d68",
+    "saved_mounts": [],
+    "secret_directory_mode": "0700",
+    "secret_file_mode": "0600"
+  },
+  "resolved_profile_safe": {
+    "future_observer_extension": {
+      "source_mount": {
+        "read_only": true,
+        "source": "collector_source",
+        "target": "/var/log/vra-poc04-collector",
+        "type": "volume",
+        "volume": {
+          "nocopy": true
+        }
+      },
+      "user": "9404:9404"
+    },
+    "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+    "network_names": {
+      "test": "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_test"
+    },
+    "platform": "linux/arm64/v8",
+    "project": "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0",
+    "published_ports": [],
+    "service_names": [
+      "postgres"
+    ],
+    "volume_names": {
+      "collector_source": "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_collector_source",
+      "postgres_data": "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_postgres_data"
+    }
+  },
+  "run_id": "4a1aae34-4914-4392-986f-cc725e4d1500",
+  "runtime_worker_OS_identity_claim": "No application/worker deployment UID was invented. Reserved reader9404 and synthetic nonmember9405 are temporary TEST probes; actual prepared profile gives runtime/worker no source mount.",
+  "scope": "POC-04 Phase-1 collector preparation only",
+  "source_content_sha256": "35f01843bc1a01d9266c8d40c4f43cb916e61ffad5adb70ca1eedbc7632b43c5",
+  "source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+  "status": "FAIL",
+  "tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+}

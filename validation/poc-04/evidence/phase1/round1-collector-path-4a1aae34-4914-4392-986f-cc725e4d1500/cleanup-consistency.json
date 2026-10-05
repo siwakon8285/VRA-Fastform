@@ -1,0 +1,11 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+    "finish"
+  ],
+  "exit_status": 0,
+  "stdout": "{\"all_database_instances_bound_once\": true, \"database_identity_map\": [], \"resources_absent\": 3, \"status\": \"PASS\"}\n",
+  "stderr": ""
+}

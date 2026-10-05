@@ -77,7 +77,7 @@ class OutboxMigrationSecurityIntegrationTest {
     void freshMigrationPreservesChecksumsAndCreatesExactCatalog() throws Exception {
         try (Fixture f = fresh()) {
             assertEquals("170011", f.value("SHOW server_version_num"));
-            assertEquals("3", f.value("SELECT max(version::int) FROM vra.flyway_schema_history"));
+            assertEquals("4", f.value("SELECT max(version::int) FROM vra.flyway_schema_history"));
             MigrationRunner runner = new MigrationRunner();
             assertEquals(0, runner.migrate(f.db.getJdbcUrl(), "vra_migrator", PASSWORD));
             runner.validate(f.db.getJdbcUrl(), "vra_migrator", PASSWORD);
@@ -104,7 +104,7 @@ class OutboxMigrationSecurityIntegrationTest {
             assertEquals("0", f.value("SELECT count(*) FROM pg_class WHERE relnamespace='vra'::regnamespace AND relrowsecurity"));
             assertEquals("0", f.value("SELECT count(*) FROM pg_proc WHERE pronamespace='vra'::regnamespace AND (prosrc ~* 'EXECUTE[[:space:]]' OR prosrc ~* 'SET[[:space:]]+ROLE')"));
             assertHistoricalFiles();
-            System.out.println("Fresh V1->V3, validate/rerun, 7 tables, 22 functions, 9 triggers (4 deferred): PASS");
+            System.out.println("Fresh V1->V4, validate/rerun; existing 7 async tables, 22 functions, 9 triggers (4 deferred): PASS");
         }
     }
 
@@ -119,7 +119,7 @@ class OutboxMigrationSecurityIntegrationTest {
             f.sql(OWNER, "INSERT INTO vra.inventory_reservation_idempotency VALUES ('actor','rejected',1,repeat('b',64),'REJECTED',NULL,NULL,'INSUFFICIENT_STOCK',now(),now())");
             List<String> before = f.businessSnapshot();
             List<String> checksums = f.column("SELECT version||':'||checksum FROM vra.flyway_schema_history ORDER BY installed_rank");
-            assertEquals(1, new MigrationRunner().migrate(f.db.getJdbcUrl(), "vra_migrator", PASSWORD));
+            assertEquals(2, new MigrationRunner().migrate(f.db.getJdbcUrl(), "vra_migrator", PASSWORD));
             assertEquals(before, f.businessSnapshot());
             assertEquals(checksums, f.column("SELECT version||':'||checksum FROM vra.flyway_schema_history WHERE version IN ('1','2') ORDER BY installed_rank"));
             assertEquals("0", f.value("SELECT count(*) FROM vra.outbox_event"));
@@ -127,15 +127,19 @@ class OutboxMigrationSecurityIntegrationTest {
             new MigrationRunner().validate(f.db.getJdbcUrl(), "vra_migrator", PASSWORD);
             assertEquals(0, new MigrationRunner().migrate(f.db.getJdbcUrl(), "vra_migrator", PASSWORD));
             assertHistoricalFiles();
-            System.out.println("Actual V2->V3: inventory/reservation/success+rejection idempotency unchanged; V1/V2 Flyway checksums " + checksums + "; no historical event");
+            System.out.println("Actual V2->V4: inventory/reservation/success+rejection idempotency unchanged; V1/V2 Flyway checksums " + checksums + "; no historical event");
         }
     }
 
     @Test
     void exactMembershipOwnershipAndExecutorSteadyStateDenyEscalation() throws Exception {
         try (Fixture f = fresh()) {
-            assertEquals(List.of("vra_migrator->vra_owner:true:false:false", "vra_owner->vra_async_executor:true:false:false"),
-                    f.column("SELECT member.rolname||'->'||parent.rolname||':'||m.set_option||':'||m.inherit_option||':'||m.admin_option FROM pg_auth_members m JOIN pg_roles member ON member.oid=m.member JOIN pg_roles parent ON parent.oid=m.roleid WHERE member.rolname LIKE 'vra_%' OR parent.rolname LIKE 'vra_%' ORDER BY member.rolname"));
+            assertEquals(List.of("vra_migrator->vra_owner:true:false:false",
+                            "vra_owner->vra_async_executor:true:false:false",
+                            "vra_owner->vra_security_executor:true:false:false",
+                            "vra_owner->vra_sync_executor:true:false:false",
+                            "vra_owner->vra_telemetry_executor:true:false:false"),
+                    f.column("SELECT member.rolname||'->'||parent.rolname||':'||m.set_option||':'||m.inherit_option||':'||m.admin_option FROM pg_auth_members m JOIN pg_roles member ON member.oid=m.member JOIN pg_roles parent ON parent.oid=m.roleid WHERE member.rolname LIKE 'vra_%' OR parent.rolname LIKE 'vra_%' ORDER BY member.rolname,parent.rolname"));
             assertEquals("t", f.value("SELECT pg_has_role('vra_migrator','vra_owner','SET') AND pg_has_role('vra_migrator','vra_async_executor','SET')"));
             assertEquals("f", f.value("SELECT rolcanlogin OR rolinherit OR rolsuper OR rolcreatedb OR rolcreaterole OR rolreplication OR rolbypassrls FROM pg_roles WHERE rolname='vra_async_executor'"));
             assertEquals("f", f.value("SELECT rolsuper OR rolcreaterole FROM pg_roles WHERE rolname='vra_migrator'"));
@@ -541,6 +545,7 @@ class OutboxMigrationSecurityIntegrationTest {
 
     static void bootstrapAsync(PostgreSQLContainer postgres) throws Exception {
         runBootstrap(postgres,"validation/poc-03/db/bootstrap-async-roles.sql");
+        runBootstrap(postgres,"validation/poc-04/db/bootstrap-security-roles.sql");
     }
 
     private static void runBootstrap(PostgreSQLContainer postgres,String script) throws Exception {
@@ -555,7 +560,7 @@ class OutboxMigrationSecurityIntegrationTest {
     }
 
     private static final class Fixture implements AutoCloseable {
-        final PostgreSQLContainer db=new PostgreSQLContainer("postgres:17.11").withDatabaseName("vra_poc01")
+        final PostgreSQLContainer db=new dev.vra.poc04.external.RunOwnedPostgreSQLContainer("postgres:17.11").withDatabaseName("vra_poc01")
                 .withUsername("postgres").withPassword(PASSWORD);
 
         Fixture(boolean migrate) throws Exception {
@@ -563,7 +568,7 @@ class OutboxMigrationSecurityIntegrationTest {
             try {
                 runBootstrap(db,"validation/poc-01/db/bootstrap.sql");
                 bootstrapAsync(db);
-                if(migrate) assertEquals(3,new MigrationRunner().migrate(db.getJdbcUrl(),"vra_migrator",PASSWORD));
+                if(migrate) assertEquals(4,new MigrationRunner().migrate(db.getJdbcUrl(),"vra_migrator",PASSWORD));
             } catch (Throwable failure) { db.stop(); throw failure; }
         }
         Connection connection(String role) throws SQLException {

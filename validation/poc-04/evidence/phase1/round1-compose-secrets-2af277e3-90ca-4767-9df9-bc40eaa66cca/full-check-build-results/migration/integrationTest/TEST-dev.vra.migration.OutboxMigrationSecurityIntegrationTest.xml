@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.vra.migration.OutboxMigrationSecurityIntegrationTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2026-10-01T16:51:18.715Z" hostname="MacBook-Air-khxng-SIwakorn.local" time="48.4">
+  <properties/>
+  <testcase name="staticShapesIdentityForeignKeysAndUniquenessRejectMalformedRows()" classname="dev.vra.migration.OutboxMigrationSecurityIntegrationTest" time="3.772"/>
+  <testcase name="invalidArgumentsCannotMutateAndDedicatedRebuildRepairsFromReservations()" classname="dev.vra.migration.OutboxMigrationSecurityIntegrationTest" time="3.07"/>
+  <testcase name="freshMigrationPreservesChecksumsAndCreatesExactCatalog()" classname="dev.vra.migration.OutboxMigrationSecurityIntegrationTest" time="2.898"/>
+  <testcase name="immutableEvidenceRejectsOwnerRewriteAndFailedHistoryAppendRollsBackWholeOperation()" classname="dev.vra.migration.OutboxMigrationSecurityIntegrationTest" time="3.032"/>
+  <testcase name="intendedReconciliationCapabilitiesKeepPairedStatesAtomic()" classname="dev.vra.migration.OutboxMigrationSecurityIntegrationTest" time="2.887"/>
+  <testcase name="normalRetryAndObservationExhaustionNeverScheduleBeyondDurableLimits()" classname="dev.vra.migration.OutboxMigrationSecurityIntegrationTest" time="2.901"/>
+  <testcase name="exactDirectAclAndFunctionCallerMatrixExecuteRealDeniedSql()" classname="dev.vra.migration.OutboxMigrationSecurityIntegrationTest" time="12.385"/>
+  <testcase name="reconciliationBudgetAllowsFourClaimsThenExactlyOneNonQueryableRecovery()" classname="dev.vra.migration.OutboxMigrationSecurityIntegrationTest" time="2.846"/>
+  <testcase name="exactMembershipOwnershipAndExecutorSteadyStateDenyEscalation()" classname="dev.vra.migration.OutboxMigrationSecurityIntegrationTest" time="3.086"/>
+  <testcase name="intendedDeliveryProducerConsumerAndControlCapabilitiesCommit()" classname="dev.vra.migration.OutboxMigrationSecurityIntegrationTest" time="2.894"/>
+  <testcase name="deferredPairsAndRecoveryEvidenceRejectAtCommitAndPermitCompoundShapes()" classname="dev.vra.migration.OutboxMigrationSecurityIntegrationTest" time="2.855"/>
+  <testcase name="actualVersionTwoUpgradePreservesExistingRowsAndEmitsNoHistoricalEvent()" classname="dev.vra.migration.OutboxMigrationSecurityIntegrationTest" time="2.837"/>
+  <testcase name="deliveryBudgetAllowsFiveClaimsThenExactlyOneNonDispatchingRecovery()" classname="dev.vra.migration.OutboxMigrationSecurityIntegrationTest" time="2.935"/>
+  <system-out><![CDATA[vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_delivery SET state='INVALID' WHERE event_id='ed577a65-2896-4d5f-a5eb-5f18ce35dacd'
+vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_delivery SET failure_class='INVALID' WHERE event_id='ed577a65-2896-4d5f-a5eb-5f18ce35dacd'
+vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_delivery SET reason_code='raw secret text' WHERE event_id='ed577a65-2896-4d5f-a5eb-5f18ce35dacd'
+vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_delivery SET cycle_claim_limit=0 WHERE event_id='ed577a65-2896-4d5f-a5eb-5f18ce35dacd'
+vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_delivery SET cycle_claim_limit=17 WHERE event_id='ed577a65-2896-4d5f-a5eb-5f18ce35dacd'
+vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_delivery SET cycle_claim_count=-1 WHERE event_id='ed577a65-2896-4d5f-a5eb-5f18ce35dacd'
+vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_delivery SET automatic_cycle=0 WHERE event_id='ed577a65-2896-4d5f-a5eb-5f18ce35dacd'
+vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_delivery SET delivery_attempt_count=-1 WHERE event_id='ed577a65-2896-4d5f-a5eb-5f18ce35dacd'
+vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_delivery SET cycle_claim_count=7,delivery_attempt_count=7 WHERE event_id='ed577a65-2896-4d5f-a5eb-5f18ce35dacd'
+vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_delivery SET state='PROCESSING' WHERE event_id='ed577a65-2896-4d5f-a5eb-5f18ce35dacd'
+vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_delivery SET state='FAILED' WHERE event_id='ed577a65-2896-4d5f-a5eb-5f18ce35dacd'
+vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_delivery SET state='RETRY_WAIT' WHERE event_id='ed577a65-2896-4d5f-a5eb-5f18ce35dacd'
+vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_delivery SET state='RECONCILIATION_REQUIRED' WHERE event_id='ed577a65-2896-4d5f-a5eb-5f18ce35dacd'
+vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_delivery SET claim_relinquished=true WHERE event_id='ed577a65-2896-4d5f-a5eb-5f18ce35dacd'
+vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_delivery SET claim_token=gen_random_uuid() WHERE event_id='ed577a65-2896-4d5f-a5eb-5f18ce35dacd'
+vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_delivery SET target_code='INVALID' WHERE event_id='ed577a65-2896-4d5f-a5eb-5f18ce35dacd'
+vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_delivery SET state='PROCESSING',claim_token=gen_random_uuid(),claim_until=now(),cycle_claim_count=6,delivery_attempt_count=6 WHERE event_id='ed577a65-2896-4d5f-a5eb-5f18ce35dacd'
+vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_delivery SET target_code='RESERVATION_PROJECTION' WHERE event_id='ed577a65-2896-4d5f-a5eb-5f18ce35dacd'
+vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_delivery SET created_at=created_at+interval '1 second' WHERE event_id='ed577a65-2896-4d5f-a5eb-5f18ce35dacd'
+vra_owner denied SQLSTATE=23514 UPDATE vra.reconciliation_case SET state='INVALID' WHERE case_id='640af4c9-006c-4628-b19c-d1efc6b689db'
+vra_owner denied SQLSTATE=23514 UPDATE vra.reconciliation_case SET external_knowledge='INVALID' WHERE case_id='640af4c9-006c-4628-b19c-d1efc6b689db'
+vra_owner denied SQLSTATE=23514 UPDATE vra.reconciliation_case SET reason_code='bad reason' WHERE case_id='640af4c9-006c-4628-b19c-d1efc6b689db'
+vra_owner denied SQLSTATE=23514 UPDATE vra.reconciliation_case SET cycle_claim_limit=0 WHERE case_id='640af4c9-006c-4628-b19c-d1efc6b689db'
+vra_owner denied SQLSTATE=23514 UPDATE vra.reconciliation_case SET cycle_claim_limit=17 WHERE case_id='640af4c9-006c-4628-b19c-d1efc6b689db'
+vra_owner denied SQLSTATE=23514 UPDATE vra.reconciliation_case SET cycle_claim_count=-1 WHERE case_id='640af4c9-006c-4628-b19c-d1efc6b689db'
+vra_owner denied SQLSTATE=23514 UPDATE vra.reconciliation_case SET automatic_cycle=0 WHERE case_id='640af4c9-006c-4628-b19c-d1efc6b689db'
+vra_owner denied SQLSTATE=23514 UPDATE vra.reconciliation_case SET lifetime_attempt_count=-1 WHERE case_id='640af4c9-006c-4628-b19c-d1efc6b689db'
+vra_owner denied SQLSTATE=23514 UPDATE vra.reconciliation_case SET cycle_claim_count=6,lifetime_attempt_count=6 WHERE case_id='640af4c9-006c-4628-b19c-d1efc6b689db'
+vra_owner denied SQLSTATE=23514 UPDATE vra.reconciliation_case SET state='CHECKING' WHERE case_id='640af4c9-006c-4628-b19c-d1efc6b689db'
+vra_owner denied SQLSTATE=23514 UPDATE vra.reconciliation_case SET state='RESOLVED' WHERE case_id='640af4c9-006c-4628-b19c-d1efc6b689db'
+vra_owner denied SQLSTATE=23514 UPDATE vra.reconciliation_case SET external_knowledge='CONFIRMED_SUCCEEDED' WHERE case_id='640af4c9-006c-4628-b19c-d1efc6b689db'
+vra_owner denied SQLSTATE=23514 UPDATE vra.reconciliation_case SET claim_token=gen_random_uuid() WHERE case_id='640af4c9-006c-4628-b19c-d1efc6b689db'
+vra_owner denied SQLSTATE=23514 UPDATE vra.reconciliation_case SET next_eligible_at=NULL WHERE case_id='640af4c9-006c-4628-b19c-d1efc6b689db'
+vra_owner denied SQLSTATE=23514 UPDATE vra.reconciliation_case SET state='CHECKING',next_eligible_at=NULL,claim_token=gen_random_uuid(),claim_until=now(),cycle_claim_count=5,lifetime_attempt_count=5 WHERE case_id='640af4c9-006c-4628-b19c-d1efc6b689db'
+vra_owner denied SQLSTATE=23514 UPDATE vra.reconciliation_case SET case_id=gen_random_uuid() WHERE case_id='640af4c9-006c-4628-b19c-d1efc6b689db'
+vra_owner denied SQLSTATE=23514 UPDATE vra.reconciliation_case SET created_at=created_at+interval '1 second' WHERE case_id='640af4c9-006c-4628-b19c-d1efc6b689db'
+vra_owner denied SQLSTATE=23505 INSERT INTO vra.reconciliation_case SELECT gen_random_uuid(),event_id,state,external_knowledge,reason_code,next_eligible_at,claim_token,claim_until,lifetime_attempt_count,automatic_cycle,cycle_claim_count,cycle_claim_limit,created_at,state_changed_at FROM vra.reconciliation_case WHERE case_id='640af4c9-006c-4628-b19c-d1efc6b689db'
+vra_owner denied SQLSTATE=23503 INSERT INTO vra.outbox_delivery(event_id,target_code,state,cycle_claim_limit,created_at,state_changed_at) VALUES (gen_random_uuid(),'RESERVATION_PROJECTION','READY',5,now(),now())
+vra_owner denied SQLSTATE=23503 INSERT INTO vra.reservation_projection VALUES (gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),'AVAILABLE',1,now())
+vra_runtime denied SQLSTATE=23505 SELECT vra.async_publish_reservation(gen_random_uuid(),'6ace1b52-01ba-44c0-9a74-bd7c7da42f9b'::uuid,'VALIDATION_EXTERNAL_EFFECT')
+vra_outbox_worker denied SQLSTATE=23505 INSERT INTO vra.consumer_inbox SELECT * FROM vra.consumer_inbox
+vra_outbox_worker denied SQLSTATE=23514 INSERT INTO vra.consumer_inbox VALUES (' ',gen_random_uuid(),now())
+vra_owner denied SQLSTATE=23514 INSERT INTO vra.outbox_delivery_history(event_id,action_code,to_state,lifetime_attempt,automatic_cycle,cycle_claim_count,cycle_claim_limit,reason_code,actor_kind,recorded_at) VALUES ('ed577a65-2896-4d5f-a5eb-5f18ce35dacd','INVALID','READY',10,1,0,5,'REASON','OUTBOX_WORKER',now())
+vra_owner denied SQLSTATE=23514 INSERT INTO vra.outbox_delivery_history(event_id,action_code,to_state,lifetime_attempt,automatic_cycle,cycle_claim_count,cycle_claim_limit,reason_code,actor_kind,recorded_at) VALUES ('ed577a65-2896-4d5f-a5eb-5f18ce35dacd','CREATED','READY',10,1,0,0,'REASON','OUTBOX_WORKER',now())
+vra_owner denied SQLSTATE=23514 INSERT INTO vra.outbox_delivery_history(event_id,action_code,to_state,lifetime_attempt,automatic_cycle,cycle_claim_count,cycle_claim_limit,reason_code,actor_kind,recorded_at) VALUES ('ed577a65-2896-4d5f-a5eb-5f18ce35dacd','CREATED','READY',10,1,0,17,'REASON','OUTBOX_WORKER',now())
+vra_owner denied SQLSTATE=23514 INSERT INTO vra.outbox_delivery_history(event_id,action_code,to_state,lifetime_attempt,automatic_cycle,cycle_claim_count,cycle_claim_limit,reason_code,actor_kind,recorded_at) VALUES ('ed577a65-2896-4d5f-a5eb-5f18ce35dacd','CREATED','READY',10,1,7,5,'REASON','OUTBOX_WORKER',now())
+vra_owner denied SQLSTATE=23514 INSERT INTO vra.outbox_delivery_history(event_id,action_code,to_state,lifetime_attempt,automatic_cycle,cycle_claim_count,cycle_claim_limit,reason_code,actor_kind,recorded_at) VALUES ('ed577a65-2896-4d5f-a5eb-5f18ce35dacd','CREATED','READY',10,1,0,5,'unsafe reason','OUTBOX_WORKER',now())
+vra_owner denied SQLSTATE=23514 INSERT INTO vra.reconciliation_history(case_id,action_code,to_state,lifetime_attempt,automatic_cycle,cycle_claim_count,cycle_claim_limit,reason_code,actor_kind,recorded_at) VALUES ('640af4c9-006c-4628-b19c-d1efc6b689db','INVALID','PENDING',10,1,0,5,'REASON','OUTBOX_WORKER',now())
+vra_owner denied SQLSTATE=23514 INSERT INTO vra.reconciliation_history(case_id,action_code,to_state,lifetime_attempt,automatic_cycle,cycle_claim_count,cycle_claim_limit,reason_code,actor_kind,recorded_at) VALUES ('640af4c9-006c-4628-b19c-d1efc6b689db','CREATED','PENDING',10,1,0,0,'REASON','OUTBOX_WORKER',now())
+vra_owner denied SQLSTATE=23514 INSERT INTO vra.reconciliation_history(case_id,action_code,to_state,lifetime_attempt,automatic_cycle,cycle_claim_count,cycle_claim_limit,reason_code,actor_kind,recorded_at) VALUES ('640af4c9-006c-4628-b19c-d1efc6b689db','CREATED','PENDING',10,1,0,17,'REASON','OUTBOX_WORKER',now())
+vra_owner denied SQLSTATE=23514 INSERT INTO vra.reconciliation_history(case_id,action_code,to_state,lifetime_attempt,automatic_cycle,cycle_claim_count,cycle_claim_limit,reason_code,actor_kind,recorded_at) VALUES ('640af4c9-006c-4628-b19c-d1efc6b689db','CREATED','PENDING',10,1,7,5,'REASON','OUTBOX_WORKER',now())
+vra_owner denied SQLSTATE=23514 INSERT INTO vra.reconciliation_history(case_id,action_code,to_state,lifetime_attempt,automatic_cycle,cycle_claim_count,cycle_claim_limit,reason_code,actor_kind,recorded_at) VALUES ('640af4c9-006c-4628-b19c-d1efc6b689db','CREATED','PENDING',10,1,0,5,'unsafe reason','OUTBOX_WORKER',now())
+vra_outbox_worker denied SQLSTATE=22023 SELECT * FROM vra.async_claim_delivery(NULL,'test',1,1::bigint)
+vra_outbox_worker denied SQLSTATE=22023 SELECT * FROM vra.async_claim_delivery('INVALID','test',1,1::bigint)
+vra_outbox_worker denied SQLSTATE=22023 SELECT * FROM vra.async_claim_delivery('RESERVATION_PROJECTION',NULL,1,1::bigint)
+vra_outbox_worker denied SQLSTATE=22023 SELECT * FROM vra.async_claim_delivery('RESERVATION_PROJECTION',' ',1,1::bigint)
+vra_outbox_worker denied SQLSTATE=22023 SELECT * FROM vra.async_claim_delivery('RESERVATION_PROJECTION',repeat('x',129)::varchar,1,1::bigint)
+vra_outbox_worker denied SQLSTATE=22023 SELECT * FROM vra.async_claim_delivery('RESERVATION_PROJECTION','test',0,1::bigint)
+vra_outbox_worker denied SQLSTATE=22023 SELECT * FROM vra.async_claim_delivery('RESERVATION_PROJECTION','test',129,1::bigint)
+vra_outbox_worker denied SQLSTATE=22023 SELECT * FROM vra.async_claim_delivery('RESERVATION_PROJECTION','test',1,0::bigint)
+vra_outbox_worker denied SQLSTATE=22023 SELECT * FROM vra.async_claim_delivery('RESERVATION_PROJECTION','test',1,86400001::bigint)
+vra_runtime denied SQLSTATE=22023 SELECT vra.async_publish_reservation(NULL,'00000000-0000-0000-0000-000000000001'::uuid,'RESERVATION_PROJECTION')
+vra_runtime denied SQLSTATE=22023 SELECT vra.async_publish_reservation('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'RESERVATION_PROJECTION')
+vra_outbox_worker denied SQLSTATE=22023 SELECT vra.async_complete_delivery(NULL,'00000000-0000-0000-0000-000000000001'::uuid)
+vra_outbox_worker denied SQLSTATE=22023 SELECT vra.async_retry_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'RAW_EXCEPTION',1::bigint)
+vra_outbox_worker denied SQLSTATE=22023 SELECT vra.async_fail_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'UNKNOWN_OUTCOME','UNKNOWN_EXTERNAL_RESULT')
+vra_reconciliation_worker denied SQLSTATE=22023 SELECT * FROM vra.async_claim_reconciliation('test',0,1::bigint)
+vra_reconciliation_worker denied SQLSTATE=22023 SELECT vra.async_confirm_external_no_effect('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,NULL,1::bigint)
+vra_async_operator denied SQLSTATE=22023 SELECT vra.async_control_replay('00000000-0000-0000-0000-000000000001'::uuid,'CONTROLLED_REPLAY',' ')
+vra_outbox_worker denied SQLSTATE=42883 SELECT * FROM vra.async_claim_delivery('RESERVATION_PROJECTION','test',1,1::bigint,16)
+vra_reconciliation_worker denied SQLSTATE=42883 SELECT * FROM vra.async_claim_reconciliation('test',1,1::bigint,16)
+Fresh V1->V4, validate/rerun; existing 7 async tables, 22 functions, 9 triggers (4 deferred): PASS
+vra_outbox_worker denied SQLSTATE=23514 SELECT vra.async_handoff_unknown('d3476396-726b-4a4e-b211-e9a3bbc66119'::uuid,'b0c94ac7-59c6-4a89-bee7-98927bfb047e'::uuid,'UNKNOWN_EXTERNAL_RESULT')
+vra_reconciliation_worker denied SQLSTATE=23514 SELECT vra.async_confirm_external_success('be3d310b-6e99-457a-802c-4a80857b2ad1'::uuid,'881b6bf5-4bae-4d03-a731-086344ed0b75'::uuid)
+vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_event SET event_id=event_id
+vra_owner denied SQLSTATE=23514 DELETE FROM vra.outbox_event
+vra_outbox_worker denied SQLSTATE=42501 UPDATE vra.outbox_event SET event_id=event_id
+vra_outbox_worker denied SQLSTATE=42501 DELETE FROM vra.outbox_event
+vra_owner denied SQLSTATE=23514 UPDATE vra.outbox_delivery_history SET event_id=event_id
+vra_owner denied SQLSTATE=23514 DELETE FROM vra.outbox_delivery_history
+vra_outbox_worker denied SQLSTATE=42501 UPDATE vra.outbox_delivery_history SET event_id=event_id
+vra_outbox_worker denied SQLSTATE=42501 DELETE FROM vra.outbox_delivery_history
+vra_owner denied SQLSTATE=23514 UPDATE vra.reconciliation_history SET case_id=case_id
+vra_owner denied SQLSTATE=23514 DELETE FROM vra.reconciliation_history
+vra_outbox_worker denied SQLSTATE=42501 UPDATE vra.reconciliation_history SET case_id=case_id
+vra_outbox_worker denied SQLSTATE=42501 DELETE FROM vra.reconciliation_history
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.outbox_event
+vra_projection_rebuilder denied SQLSTATE=42501 INSERT INTO vra.outbox_event DEFAULT VALUES
+vra_projection_rebuilder denied SQLSTATE=42501 UPDATE vra.outbox_event SET event_id=event_id
+vra_projection_rebuilder denied SQLSTATE=42501 DELETE FROM vra.outbox_event
+vra_projection_rebuilder denied SQLSTATE=42501 TRUNCATE vra.outbox_event CASCADE
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.outbox_delivery
+vra_projection_rebuilder denied SQLSTATE=42501 INSERT INTO vra.outbox_delivery DEFAULT VALUES
+vra_projection_rebuilder denied SQLSTATE=42501 UPDATE vra.outbox_delivery SET event_id=event_id
+vra_projection_rebuilder denied SQLSTATE=42501 DELETE FROM vra.outbox_delivery
+vra_projection_rebuilder denied SQLSTATE=42501 TRUNCATE vra.outbox_delivery CASCADE
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.outbox_delivery_history
+vra_projection_rebuilder denied SQLSTATE=42501 INSERT INTO vra.outbox_delivery_history DEFAULT VALUES
+vra_projection_rebuilder denied SQLSTATE=42501 UPDATE vra.outbox_delivery_history SET event_id=event_id
+vra_projection_rebuilder denied SQLSTATE=42501 DELETE FROM vra.outbox_delivery_history
+vra_projection_rebuilder denied SQLSTATE=42501 TRUNCATE vra.outbox_delivery_history CASCADE
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.consumer_inbox
+vra_projection_rebuilder denied SQLSTATE=42501 INSERT INTO vra.consumer_inbox DEFAULT VALUES
+vra_projection_rebuilder denied SQLSTATE=42501 UPDATE vra.consumer_inbox SET event_id=event_id
+vra_projection_rebuilder denied SQLSTATE=42501 DELETE FROM vra.consumer_inbox
+vra_projection_rebuilder denied SQLSTATE=42501 TRUNCATE vra.consumer_inbox CASCADE
+vra_projection_rebuilder denied SQLSTATE=42501 INSERT INTO vra.reservation_projection DEFAULT VALUES
+vra_projection_rebuilder denied SQLSTATE=42501 UPDATE vra.reservation_projection SET reservation_id=reservation_id
+vra_projection_rebuilder denied SQLSTATE=42501 DELETE FROM vra.reservation_projection
+vra_projection_rebuilder denied SQLSTATE=42501 TRUNCATE vra.reservation_projection CASCADE
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.reconciliation_case
+vra_projection_rebuilder denied SQLSTATE=42501 INSERT INTO vra.reconciliation_case DEFAULT VALUES
+vra_projection_rebuilder denied SQLSTATE=42501 UPDATE vra.reconciliation_case SET event_id=event_id
+vra_projection_rebuilder denied SQLSTATE=42501 DELETE FROM vra.reconciliation_case
+vra_projection_rebuilder denied SQLSTATE=42501 TRUNCATE vra.reconciliation_case CASCADE
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.reconciliation_history
+vra_projection_rebuilder denied SQLSTATE=42501 INSERT INTO vra.reconciliation_history DEFAULT VALUES
+vra_projection_rebuilder denied SQLSTATE=42501 UPDATE vra.reconciliation_history SET case_id=case_id
+vra_projection_rebuilder denied SQLSTATE=42501 DELETE FROM vra.reconciliation_history
+vra_projection_rebuilder denied SQLSTATE=42501 TRUNCATE vra.reconciliation_history CASCADE
+vra_projection_rebuilder denied SQLSTATE=42501 CREATE TABLE vra.forbidden(id int)
+vra_projection_rebuilder denied SQLSTATE=42501 ALTER TABLE vra.outbox_delivery ADD COLUMN forbidden int
+vra_projection_rebuilder denied SQLSTATE=42501 DROP TABLE vra.consumer_inbox
+vra_reconciliation_worker denied SQLSTATE=42501 INSERT INTO vra.outbox_event DEFAULT VALUES
+vra_reconciliation_worker denied SQLSTATE=42501 UPDATE vra.outbox_event SET event_id=event_id
+vra_reconciliation_worker denied SQLSTATE=42501 DELETE FROM vra.outbox_event
+vra_reconciliation_worker denied SQLSTATE=42501 TRUNCATE vra.outbox_event CASCADE
+vra_reconciliation_worker denied SQLSTATE=42501 INSERT INTO vra.outbox_delivery DEFAULT VALUES
+vra_reconciliation_worker denied SQLSTATE=42501 UPDATE vra.outbox_delivery SET event_id=event_id
+vra_reconciliation_worker denied SQLSTATE=42501 DELETE FROM vra.outbox_delivery
+vra_reconciliation_worker denied SQLSTATE=42501 TRUNCATE vra.outbox_delivery CASCADE
+vra_reconciliation_worker denied SQLSTATE=42501 SELECT * FROM vra.outbox_delivery_history
+vra_reconciliation_worker denied SQLSTATE=42501 INSERT INTO vra.outbox_delivery_history DEFAULT VALUES
+vra_reconciliation_worker denied SQLSTATE=42501 UPDATE vra.outbox_delivery_history SET event_id=event_id
+vra_reconciliation_worker denied SQLSTATE=42501 DELETE FROM vra.outbox_delivery_history
+vra_reconciliation_worker denied SQLSTATE=42501 TRUNCATE vra.outbox_delivery_history CASCADE
+vra_reconciliation_worker denied SQLSTATE=42501 SELECT * FROM vra.consumer_inbox
+vra_reconciliation_worker denied SQLSTATE=42501 INSERT INTO vra.consumer_inbox DEFAULT VALUES
+vra_reconciliation_worker denied SQLSTATE=42501 UPDATE vra.consumer_inbox SET event_id=event_id
+vra_reconciliation_worker denied SQLSTATE=42501 DELETE FROM vra.consumer_inbox
+vra_reconciliation_worker denied SQLSTATE=42501 TRUNCATE vra.consumer_inbox CASCADE
+vra_reconciliation_worker denied SQLSTATE=42501 SELECT * FROM vra.reservation_projection
+vra_reconciliation_worker denied SQLSTATE=42501 INSERT INTO vra.reservation_projection DEFAULT VALUES
+vra_reconciliation_worker denied SQLSTATE=42501 UPDATE vra.reservation_projection SET reservation_id=reservation_id
+vra_reconciliation_worker denied SQLSTATE=42501 DELETE FROM vra.reservation_projection
+vra_reconciliation_worker denied SQLSTATE=42501 TRUNCATE vra.reservation_projection CASCADE
+vra_reconciliation_worker denied SQLSTATE=42501 INSERT INTO vra.reconciliation_case DEFAULT VALUES
+vra_reconciliation_worker denied SQLSTATE=42501 UPDATE vra.reconciliation_case SET event_id=event_id
+vra_reconciliation_worker denied SQLSTATE=42501 DELETE FROM vra.reconciliation_case
+vra_reconciliation_worker denied SQLSTATE=42501 TRUNCATE vra.reconciliation_case CASCADE
+vra_reconciliation_worker denied SQLSTATE=42501 INSERT INTO vra.reconciliation_history DEFAULT VALUES
+vra_reconciliation_worker denied SQLSTATE=42501 UPDATE vra.reconciliation_history SET case_id=case_id
+vra_reconciliation_worker denied SQLSTATE=42501 DELETE FROM vra.reconciliation_history
+vra_reconciliation_worker denied SQLSTATE=42501 TRUNCATE vra.reconciliation_history CASCADE
+vra_reconciliation_worker denied SQLSTATE=42501 CREATE TABLE vra.forbidden(id int)
+vra_reconciliation_worker denied SQLSTATE=42501 ALTER TABLE vra.outbox_delivery ADD COLUMN forbidden int
+vra_reconciliation_worker denied SQLSTATE=42501 DROP TABLE vra.consumer_inbox
+vra_reconciliation_worker GRANT denied by warning SQLSTATE=01007
+vra_outbox_worker denied SQLSTATE=42501 INSERT INTO vra.outbox_event DEFAULT VALUES
+vra_outbox_worker denied SQLSTATE=42501 UPDATE vra.outbox_event SET event_id=event_id
+vra_outbox_worker denied SQLSTATE=42501 DELETE FROM vra.outbox_event
+vra_outbox_worker denied SQLSTATE=42501 TRUNCATE vra.outbox_event CASCADE
+vra_outbox_worker denied SQLSTATE=42501 INSERT INTO vra.outbox_delivery DEFAULT VALUES
+vra_outbox_worker denied SQLSTATE=42501 UPDATE vra.outbox_delivery SET event_id=event_id
+vra_outbox_worker denied SQLSTATE=42501 DELETE FROM vra.outbox_delivery
+vra_outbox_worker denied SQLSTATE=42501 TRUNCATE vra.outbox_delivery CASCADE
+vra_outbox_worker denied SQLSTATE=42501 INSERT INTO vra.outbox_delivery_history DEFAULT VALUES
+vra_outbox_worker denied SQLSTATE=42501 UPDATE vra.outbox_delivery_history SET event_id=event_id
+vra_outbox_worker denied SQLSTATE=42501 DELETE FROM vra.outbox_delivery_history
+vra_outbox_worker denied SQLSTATE=42501 TRUNCATE vra.outbox_delivery_history CASCADE
+vra_outbox_worker denied SQLSTATE=42501 UPDATE vra.consumer_inbox SET event_id=event_id
+vra_outbox_worker denied SQLSTATE=42501 DELETE FROM vra.consumer_inbox
+vra_outbox_worker denied SQLSTATE=42501 TRUNCATE vra.consumer_inbox CASCADE
+vra_outbox_worker denied SQLSTATE=42501 UPDATE vra.reservation_projection SET reservation_id=reservation_id
+vra_outbox_worker denied SQLSTATE=42501 DELETE FROM vra.reservation_projection
+vra_outbox_worker denied SQLSTATE=42501 TRUNCATE vra.reservation_projection CASCADE
+vra_outbox_worker denied SQLSTATE=42501 SELECT * FROM vra.reconciliation_case
+vra_outbox_worker denied SQLSTATE=42501 INSERT INTO vra.reconciliation_case DEFAULT VALUES
+vra_outbox_worker denied SQLSTATE=42501 UPDATE vra.reconciliation_case SET event_id=event_id
+vra_outbox_worker denied SQLSTATE=42501 DELETE FROM vra.reconciliation_case
+vra_outbox_worker denied SQLSTATE=42501 TRUNCATE vra.reconciliation_case CASCADE
+vra_outbox_worker denied SQLSTATE=42501 SELECT * FROM vra.reconciliation_history
+vra_outbox_worker denied SQLSTATE=42501 INSERT INTO vra.reconciliation_history DEFAULT VALUES
+vra_outbox_worker denied SQLSTATE=42501 UPDATE vra.reconciliation_history SET case_id=case_id
+vra_outbox_worker denied SQLSTATE=42501 DELETE FROM vra.reconciliation_history
+vra_outbox_worker denied SQLSTATE=42501 TRUNCATE vra.reconciliation_history CASCADE
+vra_outbox_worker denied SQLSTATE=42501 CREATE TABLE vra.forbidden(id int)
+vra_outbox_worker denied SQLSTATE=42501 ALTER TABLE vra.outbox_delivery ADD COLUMN forbidden int
+vra_outbox_worker denied SQLSTATE=42501 DROP TABLE vra.consumer_inbox
+vra_outbox_worker GRANT denied by warning SQLSTATE=01007
+vra_async_operator denied SQLSTATE=42501 INSERT INTO vra.outbox_event DEFAULT VALUES
+vra_async_operator denied SQLSTATE=42501 UPDATE vra.outbox_event SET event_id=event_id
+vra_async_operator denied SQLSTATE=42501 DELETE FROM vra.outbox_event
+vra_async_operator denied SQLSTATE=42501 TRUNCATE vra.outbox_event CASCADE
+vra_async_operator denied SQLSTATE=42501 INSERT INTO vra.outbox_delivery DEFAULT VALUES
+vra_async_operator denied SQLSTATE=42501 UPDATE vra.outbox_delivery SET event_id=event_id
+vra_async_operator denied SQLSTATE=42501 DELETE FROM vra.outbox_delivery
+vra_async_operator denied SQLSTATE=42501 TRUNCATE vra.outbox_delivery CASCADE
+vra_async_operator denied SQLSTATE=42501 INSERT INTO vra.outbox_delivery_history DEFAULT VALUES
+vra_async_operator denied SQLSTATE=42501 UPDATE vra.outbox_delivery_history SET event_id=event_id
+vra_async_operator denied SQLSTATE=42501 DELETE FROM vra.outbox_delivery_history
+vra_async_operator denied SQLSTATE=42501 TRUNCATE vra.outbox_delivery_history CASCADE
+vra_async_operator denied SQLSTATE=42501 SELECT * FROM vra.consumer_inbox
+vra_async_operator denied SQLSTATE=42501 INSERT INTO vra.consumer_inbox DEFAULT VALUES
+vra_async_operator denied SQLSTATE=42501 UPDATE vra.consumer_inbox SET event_id=event_id
+vra_async_operator denied SQLSTATE=42501 DELETE FROM vra.consumer_inbox
+vra_async_operator denied SQLSTATE=42501 TRUNCATE vra.consumer_inbox CASCADE
+vra_async_operator denied SQLSTATE=42501 SELECT * FROM vra.reservation_projection
+vra_async_operator denied SQLSTATE=42501 INSERT INTO vra.reservation_projection DEFAULT VALUES
+vra_async_operator denied SQLSTATE=42501 UPDATE vra.reservation_projection SET reservation_id=reservation_id
+vra_async_operator denied SQLSTATE=42501 DELETE FROM vra.reservation_projection
+vra_async_operator denied SQLSTATE=42501 TRUNCATE vra.reservation_projection CASCADE
+vra_async_operator denied SQLSTATE=42501 INSERT INTO vra.reconciliation_case DEFAULT VALUES
+vra_async_operator denied SQLSTATE=42501 UPDATE vra.reconciliation_case SET event_id=event_id
+vra_async_operator denied SQLSTATE=42501 DELETE FROM vra.reconciliation_case
+vra_async_operator denied SQLSTATE=42501 TRUNCATE vra.reconciliation_case CASCADE
+vra_async_operator denied SQLSTATE=42501 INSERT INTO vra.reconciliation_history DEFAULT VALUES
+vra_async_operator denied SQLSTATE=42501 UPDATE vra.reconciliation_history SET case_id=case_id
+vra_async_operator denied SQLSTATE=42501 DELETE FROM vra.reconciliation_history
+vra_async_operator denied SQLSTATE=42501 TRUNCATE vra.reconciliation_history CASCADE
+vra_async_operator denied SQLSTATE=42501 CREATE TABLE vra.forbidden(id int)
+vra_async_operator denied SQLSTATE=42501 ALTER TABLE vra.outbox_delivery ADD COLUMN forbidden int
+vra_async_operator denied SQLSTATE=42501 DROP TABLE vra.consumer_inbox
+vra_async_operator GRANT denied by warning SQLSTATE=01007
+vra_async_executor denied SQLSTATE=42501 UPDATE vra.outbox_event SET event_id=event_id
+vra_async_executor denied SQLSTATE=42501 DELETE FROM vra.outbox_event
+vra_async_executor denied SQLSTATE=42501 TRUNCATE vra.outbox_event CASCADE
+vra_async_executor denied SQLSTATE=42501 DELETE FROM vra.outbox_delivery
+vra_async_executor denied SQLSTATE=42501 TRUNCATE vra.outbox_delivery CASCADE
+vra_async_executor denied SQLSTATE=42501 UPDATE vra.outbox_delivery_history SET event_id=event_id
+vra_async_executor denied SQLSTATE=42501 DELETE FROM vra.outbox_delivery_history
+vra_async_executor denied SQLSTATE=42501 TRUNCATE vra.outbox_delivery_history CASCADE
+vra_async_executor denied SQLSTATE=42501 SELECT * FROM vra.consumer_inbox
+vra_async_executor denied SQLSTATE=42501 INSERT INTO vra.consumer_inbox DEFAULT VALUES
+vra_async_executor denied SQLSTATE=42501 UPDATE vra.consumer_inbox SET event_id=event_id
+vra_async_executor denied SQLSTATE=42501 DELETE FROM vra.consumer_inbox
+vra_async_executor denied SQLSTATE=42501 TRUNCATE vra.consumer_inbox CASCADE
+vra_async_executor denied SQLSTATE=42501 DELETE FROM vra.reservation_projection
+vra_async_executor denied SQLSTATE=42501 TRUNCATE vra.reservation_projection CASCADE
+vra_async_executor denied SQLSTATE=42501 DELETE FROM vra.reconciliation_case
+vra_async_executor denied SQLSTATE=42501 TRUNCATE vra.reconciliation_case CASCADE
+vra_async_executor denied SQLSTATE=42501 UPDATE vra.reconciliation_history SET case_id=case_id
+vra_async_executor denied SQLSTATE=42501 DELETE FROM vra.reconciliation_history
+vra_async_executor denied SQLSTATE=42501 TRUNCATE vra.reconciliation_history CASCADE
+vra_async_executor denied SQLSTATE=42501 CREATE TABLE vra.forbidden(id int)
+vra_async_executor denied SQLSTATE=42501 ALTER TABLE vra.outbox_delivery ADD COLUMN forbidden int
+vra_async_executor denied SQLSTATE=42501 DROP TABLE vra.consumer_inbox
+vra_async_executor GRANT denied by warning SQLSTATE=01007
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.outbox_event
+vra_runtime denied SQLSTATE=42501 INSERT INTO vra.outbox_event DEFAULT VALUES
+vra_runtime denied SQLSTATE=42501 UPDATE vra.outbox_event SET event_id=event_id
+vra_runtime denied SQLSTATE=42501 DELETE FROM vra.outbox_event
+vra_runtime denied SQLSTATE=42501 TRUNCATE vra.outbox_event CASCADE
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.outbox_delivery
+vra_runtime denied SQLSTATE=42501 INSERT INTO vra.outbox_delivery DEFAULT VALUES
+vra_runtime denied SQLSTATE=42501 UPDATE vra.outbox_delivery SET event_id=event_id
+vra_runtime denied SQLSTATE=42501 DELETE FROM vra.outbox_delivery
+vra_runtime denied SQLSTATE=42501 TRUNCATE vra.outbox_delivery CASCADE
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.outbox_delivery_history
+vra_runtime denied SQLSTATE=42501 INSERT INTO vra.outbox_delivery_history DEFAULT VALUES
+vra_runtime denied SQLSTATE=42501 UPDATE vra.outbox_delivery_history SET event_id=event_id
+vra_runtime denied SQLSTATE=42501 DELETE FROM vra.outbox_delivery_history
+vra_runtime denied SQLSTATE=42501 TRUNCATE vra.outbox_delivery_history CASCADE
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.consumer_inbox
+vra_runtime denied SQLSTATE=42501 INSERT INTO vra.consumer_inbox DEFAULT VALUES
+vra_runtime denied SQLSTATE=42501 UPDATE vra.consumer_inbox SET event_id=event_id
+vra_runtime denied SQLSTATE=42501 DELETE FROM vra.consumer_inbox
+vra_runtime denied SQLSTATE=42501 TRUNCATE vra.consumer_inbox CASCADE
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.reservation_projection
+vra_runtime denied SQLSTATE=42501 INSERT INTO vra.reservation_projection DEFAULT VALUES
+vra_runtime denied SQLSTATE=42501 UPDATE vra.reservation_projection SET reservation_id=reservation_id
+vra_runtime denied SQLSTATE=42501 DELETE FROM vra.reservation_projection
+vra_runtime denied SQLSTATE=42501 TRUNCATE vra.reservation_projection CASCADE
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.reconciliation_case
+vra_runtime denied SQLSTATE=42501 INSERT INTO vra.reconciliation_case DEFAULT VALUES
+vra_runtime denied SQLSTATE=42501 UPDATE vra.reconciliation_case SET event_id=event_id
+vra_runtime denied SQLSTATE=42501 DELETE FROM vra.reconciliation_case
+vra_runtime denied SQLSTATE=42501 TRUNCATE vra.reconciliation_case CASCADE
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.reconciliation_history
+vra_runtime denied SQLSTATE=42501 INSERT INTO vra.reconciliation_history DEFAULT VALUES
+vra_runtime denied SQLSTATE=42501 UPDATE vra.reconciliation_history SET case_id=case_id
+vra_runtime denied SQLSTATE=42501 DELETE FROM vra.reconciliation_history
+vra_runtime denied SQLSTATE=42501 TRUNCATE vra.reconciliation_history CASCADE
+vra_runtime denied SQLSTATE=42501 CREATE TABLE vra.forbidden(id int)
+vra_runtime denied SQLSTATE=42501 ALTER TABLE vra.outbox_delivery ADD COLUMN forbidden int
+vra_runtime denied SQLSTATE=42501 DROP TABLE vra.consumer_inbox
+vra_async_observer denied SQLSTATE=42501 SELECT * FROM vra.outbox_event
+vra_async_observer denied SQLSTATE=42501 INSERT INTO vra.outbox_event DEFAULT VALUES
+vra_async_observer denied SQLSTATE=42501 UPDATE vra.outbox_event SET event_id=event_id
+vra_async_observer denied SQLSTATE=42501 DELETE FROM vra.outbox_event
+vra_async_observer denied SQLSTATE=42501 TRUNCATE vra.outbox_event CASCADE
+vra_async_observer denied SQLSTATE=42501 INSERT INTO vra.outbox_delivery DEFAULT VALUES
+vra_async_observer denied SQLSTATE=42501 UPDATE vra.outbox_delivery SET event_id=event_id
+vra_async_observer denied SQLSTATE=42501 DELETE FROM vra.outbox_delivery
+vra_async_observer denied SQLSTATE=42501 TRUNCATE vra.outbox_delivery CASCADE
+vra_async_observer denied SQLSTATE=42501 INSERT INTO vra.outbox_delivery_history DEFAULT VALUES
+vra_async_observer denied SQLSTATE=42501 UPDATE vra.outbox_delivery_history SET event_id=event_id
+vra_async_observer denied SQLSTATE=42501 DELETE FROM vra.outbox_delivery_history
+vra_async_observer denied SQLSTATE=42501 TRUNCATE vra.outbox_delivery_history CASCADE
+vra_async_observer denied SQLSTATE=42501 SELECT * FROM vra.consumer_inbox
+vra_async_observer denied SQLSTATE=42501 INSERT INTO vra.consumer_inbox DEFAULT VALUES
+vra_async_observer denied SQLSTATE=42501 UPDATE vra.consumer_inbox SET event_id=event_id
+vra_async_observer denied SQLSTATE=42501 DELETE FROM vra.consumer_inbox
+vra_async_observer denied SQLSTATE=42501 TRUNCATE vra.consumer_inbox CASCADE
+vra_async_observer denied SQLSTATE=42501 SELECT * FROM vra.reservation_projection
+vra_async_observer denied SQLSTATE=42501 INSERT INTO vra.reservation_projection DEFAULT VALUES
+vra_async_observer denied SQLSTATE=42501 UPDATE vra.reservation_projection SET reservation_id=reservation_id
+vra_async_observer denied SQLSTATE=42501 DELETE FROM vra.reservation_projection
+vra_async_observer denied SQLSTATE=42501 TRUNCATE vra.reservation_projection CASCADE
+vra_async_observer denied SQLSTATE=42501 INSERT INTO vra.reconciliation_case DEFAULT VALUES
+vra_async_observer denied SQLSTATE=42501 UPDATE vra.reconciliation_case SET event_id=event_id
+vra_async_observer denied SQLSTATE=42501 DELETE FROM vra.reconciliation_case
+vra_async_observer denied SQLSTATE=42501 TRUNCATE vra.reconciliation_case CASCADE
+vra_async_observer denied SQLSTATE=42501 INSERT INTO vra.reconciliation_history DEFAULT VALUES
+vra_async_observer denied SQLSTATE=42501 UPDATE vra.reconciliation_history SET case_id=case_id
+vra_async_observer denied SQLSTATE=42501 DELETE FROM vra.reconciliation_history
+vra_async_observer denied SQLSTATE=42501 TRUNCATE vra.reconciliation_history CASCADE
+vra_async_observer denied SQLSTATE=42501 CREATE TABLE vra.forbidden(id int)
+vra_async_observer denied SQLSTATE=42501 ALTER TABLE vra.outbox_delivery ADD COLUMN forbidden int
+vra_async_observer denied SQLSTATE=42501 DROP TABLE vra.consumer_inbox
+vra_async_observer GRANT denied by warning SQLSTATE=01007
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.async_confirm_external_no_effect('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,true,1::bigint)
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.async_exhaust_reconciliation('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'RECONCILIATION_EXHAUSTED')
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.async_claim_delivery('RESERVATION_PROJECTION','test',1,30000::bigint)
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.async_complete_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid)
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.async_control_close('00000000-0000-0000-0000-000000000001'::uuid,'CONTROLLED_CLOSE','test')
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.async_relinquish_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid)
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.async_control_resume('00000000-0000-0000-0000-000000000001'::uuid,'CONTROLLED_RESUME','test')
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.async_fail_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'POISON','POISON')
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.async_confirm_external_success('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid)
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.async_retry_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'RETRYABLE_TRANSIENT',1::bigint)
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.async_control_replay('00000000-0000-0000-0000-000000000001'::uuid,'CONTROLLED_REPLAY','test')
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.async_rebuild_reservation_projection()
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.async_wait_reconciliation('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'UNKNOWN_EXTERNAL_RESULT',1::bigint)
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.async_claim_reconciliation('test',1,30000::bigint)
+vra_runtime denied SQLSTATE=42501 SELECT * FROM vra.async_handoff_unknown('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'UNKNOWN_EXTERNAL_RESULT')
+vra_outbox_worker denied SQLSTATE=42501 SELECT * FROM vra.async_confirm_external_no_effect('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,true,1::bigint)
+vra_outbox_worker denied SQLSTATE=42501 SELECT * FROM vra.async_exhaust_reconciliation('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'RECONCILIATION_EXHAUSTED')
+vra_outbox_worker denied SQLSTATE=42501 SELECT * FROM vra.async_publish_reservation('00000000-0000-0000-0000-000000000001'::uuid,gen_random_uuid(),'RESERVATION_PROJECTION')
+vra_outbox_worker denied SQLSTATE=42501 SELECT * FROM vra.async_control_close('00000000-0000-0000-0000-000000000001'::uuid,'CONTROLLED_CLOSE','test')
+vra_outbox_worker denied SQLSTATE=42501 SELECT * FROM vra.async_control_resume('00000000-0000-0000-0000-000000000001'::uuid,'CONTROLLED_RESUME','test')
+vra_outbox_worker denied SQLSTATE=42501 SELECT * FROM vra.async_confirm_external_success('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid)
+vra_outbox_worker denied SQLSTATE=42501 SELECT * FROM vra.async_control_replay('00000000-0000-0000-0000-000000000001'::uuid,'CONTROLLED_REPLAY','test')
+vra_outbox_worker denied SQLSTATE=42501 SELECT * FROM vra.async_rebuild_reservation_projection()
+vra_outbox_worker denied SQLSTATE=42501 SELECT * FROM vra.async_wait_reconciliation('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'UNKNOWN_EXTERNAL_RESULT',1::bigint)
+vra_outbox_worker denied SQLSTATE=42501 SELECT * FROM vra.async_claim_reconciliation('test',1,30000::bigint)
+vra_reconciliation_worker denied SQLSTATE=42501 SELECT * FROM vra.async_claim_delivery('RESERVATION_PROJECTION','test',1,30000::bigint)
+vra_reconciliation_worker denied SQLSTATE=42501 SELECT * FROM vra.async_publish_reservation('00000000-0000-0000-0000-000000000001'::uuid,gen_random_uuid(),'RESERVATION_PROJECTION')
+vra_reconciliation_worker denied SQLSTATE=42501 SELECT * FROM vra.async_complete_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid)
+vra_reconciliation_worker denied SQLSTATE=42501 SELECT * FROM vra.async_control_close('00000000-0000-0000-0000-000000000001'::uuid,'CONTROLLED_CLOSE','test')
+vra_reconciliation_worker denied SQLSTATE=42501 SELECT * FROM vra.async_relinquish_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid)
+vra_reconciliation_worker denied SQLSTATE=42501 SELECT * FROM vra.async_control_resume('00000000-0000-0000-0000-000000000001'::uuid,'CONTROLLED_RESUME','test')
+vra_reconciliation_worker denied SQLSTATE=42501 SELECT * FROM vra.async_fail_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'POISON','POISON')
+vra_reconciliation_worker denied SQLSTATE=42501 SELECT * FROM vra.async_retry_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'RETRYABLE_TRANSIENT',1::bigint)
+vra_reconciliation_worker denied SQLSTATE=42501 SELECT * FROM vra.async_control_replay('00000000-0000-0000-0000-000000000001'::uuid,'CONTROLLED_REPLAY','test')
+vra_reconciliation_worker denied SQLSTATE=42501 SELECT * FROM vra.async_rebuild_reservation_projection()
+vra_reconciliation_worker denied SQLSTATE=42501 SELECT * FROM vra.async_handoff_unknown('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'UNKNOWN_EXTERNAL_RESULT')
+vra_async_operator denied SQLSTATE=42501 SELECT * FROM vra.async_confirm_external_no_effect('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,true,1::bigint)
+vra_async_operator denied SQLSTATE=42501 SELECT * FROM vra.async_exhaust_reconciliation('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'RECONCILIATION_EXHAUSTED')
+vra_async_operator denied SQLSTATE=42501 SELECT * FROM vra.async_claim_delivery('RESERVATION_PROJECTION','test',1,30000::bigint)
+vra_async_operator denied SQLSTATE=42501 SELECT * FROM vra.async_publish_reservation('00000000-0000-0000-0000-000000000001'::uuid,gen_random_uuid(),'RESERVATION_PROJECTION')
+vra_async_operator denied SQLSTATE=42501 SELECT * FROM vra.async_complete_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid)
+vra_async_operator denied SQLSTATE=42501 SELECT * FROM vra.async_relinquish_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid)
+vra_async_operator denied SQLSTATE=42501 SELECT * FROM vra.async_fail_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'POISON','POISON')
+vra_async_operator denied SQLSTATE=42501 SELECT * FROM vra.async_confirm_external_success('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid)
+vra_async_operator denied SQLSTATE=42501 SELECT * FROM vra.async_retry_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'RETRYABLE_TRANSIENT',1::bigint)
+vra_async_operator denied SQLSTATE=42501 SELECT * FROM vra.async_rebuild_reservation_projection()
+vra_async_operator denied SQLSTATE=42501 SELECT * FROM vra.async_wait_reconciliation('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'UNKNOWN_EXTERNAL_RESULT',1::bigint)
+vra_async_operator denied SQLSTATE=42501 SELECT * FROM vra.async_claim_reconciliation('test',1,30000::bigint)
+vra_async_operator denied SQLSTATE=42501 SELECT * FROM vra.async_handoff_unknown('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'UNKNOWN_EXTERNAL_RESULT')
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.async_confirm_external_no_effect('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,true,1::bigint)
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.async_exhaust_reconciliation('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'RECONCILIATION_EXHAUSTED')
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.async_claim_delivery('RESERVATION_PROJECTION','test',1,30000::bigint)
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.async_publish_reservation('00000000-0000-0000-0000-000000000001'::uuid,gen_random_uuid(),'RESERVATION_PROJECTION')
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.async_complete_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid)
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.async_control_close('00000000-0000-0000-0000-000000000001'::uuid,'CONTROLLED_CLOSE','test')
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.async_relinquish_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid)
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.async_control_resume('00000000-0000-0000-0000-000000000001'::uuid,'CONTROLLED_RESUME','test')
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.async_fail_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'POISON','POISON')
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.async_confirm_external_success('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid)
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.async_retry_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'RETRYABLE_TRANSIENT',1::bigint)
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.async_control_replay('00000000-0000-0000-0000-000000000001'::uuid,'CONTROLLED_REPLAY','test')
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.async_wait_reconciliation('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'UNKNOWN_EXTERNAL_RESULT',1::bigint)
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.async_claim_reconciliation('test',1,30000::bigint)
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT * FROM vra.async_handoff_unknown('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'UNKNOWN_EXTERNAL_RESULT')
+vra_async_observer denied SQLSTATE=42501 SELECT * FROM vra.async_confirm_external_no_effect('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,true,1::bigint)
+vra_async_observer denied SQLSTATE=42501 SELECT * FROM vra.async_exhaust_reconciliation('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'RECONCILIATION_EXHAUSTED')
+vra_async_observer denied SQLSTATE=42501 SELECT * FROM vra.async_claim_delivery('RESERVATION_PROJECTION','test',1,30000::bigint)
+vra_async_observer denied SQLSTATE=42501 SELECT * FROM vra.async_publish_reservation('00000000-0000-0000-0000-000000000001'::uuid,gen_random_uuid(),'RESERVATION_PROJECTION')
+vra_async_observer denied SQLSTATE=42501 SELECT * FROM vra.async_complete_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid)
+vra_async_observer denied SQLSTATE=42501 SELECT * FROM vra.async_control_close('00000000-0000-0000-0000-000000000001'::uuid,'CONTROLLED_CLOSE','test')
+vra_async_observer denied SQLSTATE=42501 SELECT * FROM vra.async_relinquish_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid)
+vra_async_observer denied SQLSTATE=42501 SELECT * FROM vra.async_control_resume('00000000-0000-0000-0000-000000000001'::uuid,'CONTROLLED_RESUME','test')
+vra_async_observer denied SQLSTATE=42501 SELECT * FROM vra.async_fail_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'POISON','POISON')
+vra_async_observer denied SQLSTATE=42501 SELECT * FROM vra.async_confirm_external_success('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid)
+vra_async_observer denied SQLSTATE=42501 SELECT * FROM vra.async_retry_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'RETRYABLE_TRANSIENT',1::bigint)
+vra_async_observer denied SQLSTATE=42501 SELECT * FROM vra.async_control_replay('00000000-0000-0000-0000-000000000001'::uuid,'CONTROLLED_REPLAY','test')
+vra_async_observer denied SQLSTATE=42501 SELECT * FROM vra.async_rebuild_reservation_projection()
+vra_async_observer denied SQLSTATE=42501 SELECT * FROM vra.async_wait_reconciliation('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'UNKNOWN_EXTERNAL_RESULT',1::bigint)
+vra_async_observer denied SQLSTATE=42501 SELECT * FROM vra.async_claim_reconciliation('test',1,30000::bigint)
+vra_async_observer denied SQLSTATE=42501 SELECT * FROM vra.async_handoff_unknown('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'UNKNOWN_EXTERNAL_RESULT')
+vra_outbox_worker denied SQLSTATE=42501 UPDATE vra.outbox_delivery SET cycle_claim_limit=16
+vra_outbox_worker denied SQLSTATE=42501 UPDATE vra.reconciliation_case SET cycle_claim_limit=16
+vra_outbox_worker denied SQLSTATE=42501 DELETE FROM vra.inventory_balance
+vra_outbox_worker denied SQLSTATE=42501 DELETE FROM vra.inventory_reservation
+vra_outbox_worker denied SQLSTATE=42501 DELETE FROM vra.inventory_reservation_idempotency
+vra_outbox_worker denied SQLSTATE=42501 UPDATE vra.inventory_balance SET reserved=reserved+1
+vra_outbox_worker denied SQLSTATE=42501 UPDATE vra.inventory_reservation_idempotency SET outcome_status=NULL
+vra_outbox_worker denied SQLSTATE=42501 INSERT INTO vra.inventory_reservation DEFAULT VALUES
+vra_reconciliation_worker denied SQLSTATE=42501 UPDATE vra.outbox_delivery SET cycle_claim_limit=16
+vra_reconciliation_worker denied SQLSTATE=42501 UPDATE vra.reconciliation_case SET cycle_claim_limit=16
+vra_reconciliation_worker denied SQLSTATE=42501 DELETE FROM vra.inventory_balance
+vra_reconciliation_worker denied SQLSTATE=42501 DELETE FROM vra.inventory_reservation
+vra_reconciliation_worker denied SQLSTATE=42501 DELETE FROM vra.inventory_reservation_idempotency
+vra_reconciliation_worker denied SQLSTATE=42501 UPDATE vra.inventory_balance SET reserved=reserved+1
+vra_reconciliation_worker denied SQLSTATE=42501 UPDATE vra.inventory_reservation_idempotency SET outcome_status=NULL
+vra_reconciliation_worker denied SQLSTATE=42501 INSERT INTO vra.inventory_reservation DEFAULT VALUES
+public_probe denied SQLSTATE=42501 SELECT * FROM vra.async_confirm_external_no_effect('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,true,1::bigint)
+public_probe denied SQLSTATE=42501 SELECT * FROM vra.async_exhaust_reconciliation('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'RECONCILIATION_EXHAUSTED')
+public_probe denied SQLSTATE=42501 SELECT * FROM vra.async_claim_delivery('RESERVATION_PROJECTION','test',1,30000::bigint)
+public_probe denied SQLSTATE=42501 SELECT * FROM vra.async_publish_reservation('00000000-0000-0000-0000-000000000001'::uuid,gen_random_uuid(),'RESERVATION_PROJECTION')
+public_probe denied SQLSTATE=42501 SELECT * FROM vra.async_complete_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid)
+public_probe denied SQLSTATE=42501 SELECT * FROM vra.async_control_close('00000000-0000-0000-0000-000000000001'::uuid,'CONTROLLED_CLOSE','test')
+public_probe denied SQLSTATE=42501 SELECT * FROM vra.async_relinquish_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid)
+public_probe denied SQLSTATE=42501 SELECT * FROM vra.async_control_resume('00000000-0000-0000-0000-000000000001'::uuid,'CONTROLLED_RESUME','test')
+public_probe denied SQLSTATE=42501 SELECT * FROM vra.async_fail_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'POISON','POISON')
+public_probe denied SQLSTATE=42501 SELECT * FROM vra.async_confirm_external_success('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid)
+public_probe denied SQLSTATE=42501 SELECT * FROM vra.async_retry_delivery('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'RETRYABLE_TRANSIENT',1::bigint)
+public_probe denied SQLSTATE=42501 SELECT * FROM vra.async_control_replay('00000000-0000-0000-0000-000000000001'::uuid,'CONTROLLED_REPLAY','test')
+public_probe denied SQLSTATE=42501 SELECT * FROM vra.async_rebuild_reservation_projection()
+public_probe denied SQLSTATE=42501 SELECT * FROM vra.async_wait_reconciliation('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'UNKNOWN_EXTERNAL_RESULT',1::bigint)
+public_probe denied SQLSTATE=42501 SELECT * FROM vra.async_claim_reconciliation('test',1,30000::bigint)
+public_probe denied SQLSTATE=42501 SELECT * FROM vra.async_handoff_unknown('00000000-0000-0000-0000-000000000001'::uuid,'00000000-0000-0000-0000-000000000001'::uuid,'UNKNOWN_EXTERNAL_RESULT')
+vra_runtime denied SQLSTATE=42501 SELECT nextval('vra.outbox_delivery_history_history_id_seq')
+vra_outbox_worker denied SQLSTATE=42501 SELECT nextval('vra.outbox_delivery_history_history_id_seq')
+vra_reconciliation_worker denied SQLSTATE=42501 SELECT nextval('vra.outbox_delivery_history_history_id_seq')
+vra_async_operator denied SQLSTATE=42501 SELECT nextval('vra.outbox_delivery_history_history_id_seq')
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT nextval('vra.outbox_delivery_history_history_id_seq')
+vra_async_observer denied SQLSTATE=42501 SELECT nextval('vra.outbox_delivery_history_history_id_seq')
+vra_runtime denied SQLSTATE=42501 SELECT nextval('vra.reconciliation_history_history_id_seq')
+vra_outbox_worker denied SQLSTATE=42501 SELECT nextval('vra.reconciliation_history_history_id_seq')
+vra_reconciliation_worker denied SQLSTATE=42501 SELECT nextval('vra.reconciliation_history_history_id_seq')
+vra_async_operator denied SQLSTATE=42501 SELECT nextval('vra.reconciliation_history_history_id_seq')
+vra_projection_rebuilder denied SQLSTATE=42501 SELECT nextval('vra.reconciliation_history_history_id_seq')
+vra_async_observer denied SQLSTATE=42501 SELECT nextval('vra.reconciliation_history_history_id_seq')
+vra_runtime denied SQLSTATE=42501 SET ROLE vra_owner
+vra_runtime denied SQLSTATE=42501 SET ROLE vra_async_executor
+vra_outbox_worker denied SQLSTATE=42501 SET ROLE vra_owner
+vra_outbox_worker denied SQLSTATE=42501 SET ROLE vra_async_executor
+vra_reconciliation_worker denied SQLSTATE=42501 SET ROLE vra_owner
+vra_reconciliation_worker denied SQLSTATE=42501 SET ROLE vra_async_executor
+vra_async_operator denied SQLSTATE=42501 SET ROLE vra_owner
+vra_async_operator denied SQLSTATE=42501 SET ROLE vra_async_executor
+vra_projection_rebuilder denied SQLSTATE=42501 SET ROLE vra_owner
+vra_projection_rebuilder denied SQLSTATE=42501 SET ROLE vra_async_executor
+vra_async_observer denied SQLSTATE=42501 SET ROLE vra_owner
+vra_async_observer denied SQLSTATE=42501 SET ROLE vra_async_executor
+vra_async_executor denied SQLSTATE=42501 CREATE TABLE vra.forbidden(id int)
+vra_async_executor denied SQLSTATE=42501 CREATE SCHEMA forbidden
+vra_async_executor denied SQLSTATE=42501 ALTER TABLE vra.outbox_delivery ADD COLUMN forbidden int
+vra_migrator denied SQLSTATE=42501 CREATE ROLE forbidden
+vra_migrator denied SQLSTATE=42501 CREATE TABLE vra.forbidden(id int)
+Capability LOGIN denied: psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  role "vra_async_executor" is not permitted to log in
+Deferred COMMIT rejected SQLSTATE=23514 ERROR: inconsistent delivery/reconciliation pair
+  Where: PL/pgSQL function vra.async_check_pair() line 21 at RAISE
+Deferred COMMIT rejected SQLSTATE=23514 ERROR: missing delivery recovery-only evidence
+  Where: PL/pgSQL function vra.async_check_delivery_recovery() line 13 at RAISE
+Deferred COMMIT rejected SQLSTATE=23514 ERROR: inconsistent delivery/reconciliation pair
+  Where: PL/pgSQL function vra.async_check_pair() line 21 at RAISE
+Deferred COMMIT rejected SQLSTATE=23514 ERROR: inconsistent delivery/reconciliation pair
+  Where: PL/pgSQL function vra.async_check_pair() line 21 at RAISE
+Deferred COMMIT rejected SQLSTATE=23514 ERROR: inconsistent delivery/reconciliation pair
+  Where: PL/pgSQL function vra.async_check_pair() line 21 at RAISE
+Deferred COMMIT rejected SQLSTATE=23514 ERROR: missing reconciliation recovery-only evidence
+  Where: PL/pgSQL function vra.async_check_case_recovery() line 12 at RAISE
+Actual V2->V4: inventory/reservation/success+rejection idempotency unchanged; V1/V2 Flyway checksums [1:-290113401, 2:-1049090241]; no historical event
+]]></system-out>
+  <system-err><![CDATA[ต.ค. 01, 2026 11:51:20 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32987/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:20 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "vra"."flyway_schema_history" does not exist yet
+ต.ค. 01, 2026 11:51:20 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:51:20 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "vra"."flyway_schema_history" ...
+ต.ค. 01, 2026 11:51:20 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": << Empty Schema >>
+ต.ค. 01, 2026 11:51:20 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "1 - inventory reservation foundation"
+ต.ค. 01, 2026 11:51:20 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "2 - inventory reservation idempotency"
+ต.ค. 01, 2026 11:51:20 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "3 - outbox recovery"
+ต.ค. 01, 2026 11:51:20 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "4 - poc04 identity security foundation"
+ต.ค. 01, 2026 11:51:20 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "vra", now at version v4 (execution time 00:00.088s)
+ต.ค. 01, 2026 11:51:20 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32987/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:20 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:51:24 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32988/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:24 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "vra"."flyway_schema_history" does not exist yet
+ต.ค. 01, 2026 11:51:24 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.001s)
+ต.ค. 01, 2026 11:51:24 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "vra"."flyway_schema_history" ...
+ต.ค. 01, 2026 11:51:24 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": << Empty Schema >>
+ต.ค. 01, 2026 11:51:24 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "1 - inventory reservation foundation"
+ต.ค. 01, 2026 11:51:24 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "2 - inventory reservation idempotency"
+ต.ค. 01, 2026 11:51:24 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "3 - outbox recovery"
+ต.ค. 01, 2026 11:51:24 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "4 - poc04 identity security foundation"
+ต.ค. 01, 2026 11:51:24 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "vra", now at version v4 (execution time 00:00.086s)
+ต.ค. 01, 2026 11:51:24 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32988/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:24 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:51:27 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32989/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:27 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "vra"."flyway_schema_history" does not exist yet
+ต.ค. 01, 2026 11:51:27 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:51:27 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "vra"."flyway_schema_history" ...
+ต.ค. 01, 2026 11:51:27 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": << Empty Schema >>
+ต.ค. 01, 2026 11:51:27 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "1 - inventory reservation foundation"
+ต.ค. 01, 2026 11:51:27 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "2 - inventory reservation idempotency"
+ต.ค. 01, 2026 11:51:27 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "3 - outbox recovery"
+ต.ค. 01, 2026 11:51:27 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "4 - poc04 identity security foundation"
+ต.ค. 01, 2026 11:51:27 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "vra", now at version v4 (execution time 00:00.084s)
+ต.ค. 01, 2026 11:51:27 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32989/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:27 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:51:27 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32989/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:27 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:51:27 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": 4
+ต.ค. 01, 2026 11:51:27 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Schema "vra" is up to date. No migration necessary.
+ต.ค. 01, 2026 11:51:27 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32989/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:27 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:51:27 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32989/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:27 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:51:30 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32990/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:30 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "vra"."flyway_schema_history" does not exist yet
+ต.ค. 01, 2026 11:51:30 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.001s)
+ต.ค. 01, 2026 11:51:30 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "vra"."flyway_schema_history" ...
+ต.ค. 01, 2026 11:51:30 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": << Empty Schema >>
+ต.ค. 01, 2026 11:51:30 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "1 - inventory reservation foundation"
+ต.ค. 01, 2026 11:51:30 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "2 - inventory reservation idempotency"
+ต.ค. 01, 2026 11:51:30 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "3 - outbox recovery"
+ต.ค. 01, 2026 11:51:30 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "4 - poc04 identity security foundation"
+ต.ค. 01, 2026 11:51:30 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "vra", now at version v4 (execution time 00:00.083s)
+ต.ค. 01, 2026 11:51:30 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32990/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:30 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:51:33 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32991/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:33 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "vra"."flyway_schema_history" does not exist yet
+ต.ค. 01, 2026 11:51:33 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.001s)
+ต.ค. 01, 2026 11:51:33 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "vra"."flyway_schema_history" ...
+ต.ค. 01, 2026 11:51:33 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": << Empty Schema >>
+ต.ค. 01, 2026 11:51:33 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "1 - inventory reservation foundation"
+ต.ค. 01, 2026 11:51:33 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "2 - inventory reservation idempotency"
+ต.ค. 01, 2026 11:51:33 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "3 - outbox recovery"
+ต.ค. 01, 2026 11:51:33 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "4 - poc04 identity security foundation"
+ต.ค. 01, 2026 11:51:33 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "vra", now at version v4 (execution time 00:00.084s)
+ต.ค. 01, 2026 11:51:33 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32991/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:33 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:51:36 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32992/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:36 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "vra"."flyway_schema_history" does not exist yet
+ต.ค. 01, 2026 11:51:36 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.001s)
+ต.ค. 01, 2026 11:51:36 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "vra"."flyway_schema_history" ...
+ต.ค. 01, 2026 11:51:36 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": << Empty Schema >>
+ต.ค. 01, 2026 11:51:36 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "1 - inventory reservation foundation"
+ต.ค. 01, 2026 11:51:36 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "2 - inventory reservation idempotency"
+ต.ค. 01, 2026 11:51:36 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "3 - outbox recovery"
+ต.ค. 01, 2026 11:51:36 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "4 - poc04 identity security foundation"
+ต.ค. 01, 2026 11:51:36 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "vra", now at version v4 (execution time 00:00.085s)
+ต.ค. 01, 2026 11:51:36 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32992/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:36 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:51:39 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32993/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:39 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "vra"."flyway_schema_history" does not exist yet
+ต.ค. 01, 2026 11:51:39 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.001s)
+ต.ค. 01, 2026 11:51:39 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "vra"."flyway_schema_history" ...
+ต.ค. 01, 2026 11:51:39 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": << Empty Schema >>
+ต.ค. 01, 2026 11:51:39 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "1 - inventory reservation foundation"
+ต.ค. 01, 2026 11:51:39 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "2 - inventory reservation idempotency"
+ต.ค. 01, 2026 11:51:39 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "3 - outbox recovery"
+ต.ค. 01, 2026 11:51:39 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "4 - poc04 identity security foundation"
+ต.ค. 01, 2026 11:51:39 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "vra", now at version v4 (execution time 00:00.084s)
+ต.ค. 01, 2026 11:51:39 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32993/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:39 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:51:51 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32994/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:51 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "vra"."flyway_schema_history" does not exist yet
+ต.ค. 01, 2026 11:51:51 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.004s)
+ต.ค. 01, 2026 11:51:51 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "vra"."flyway_schema_history" ...
+ต.ค. 01, 2026 11:51:51 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": << Empty Schema >>
+ต.ค. 01, 2026 11:51:51 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "1 - inventory reservation foundation"
+ต.ค. 01, 2026 11:51:51 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "2 - inventory reservation idempotency"
+ต.ค. 01, 2026 11:51:51 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "3 - outbox recovery"
+ต.ค. 01, 2026 11:51:51 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "4 - poc04 identity security foundation"
+ต.ค. 01, 2026 11:51:51 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "vra", now at version v4 (execution time 00:00.086s)
+ต.ค. 01, 2026 11:51:51 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32994/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:51 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:51:54 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32995/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:54 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "vra"."flyway_schema_history" does not exist yet
+ต.ค. 01, 2026 11:51:54 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.001s)
+ต.ค. 01, 2026 11:51:54 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "vra"."flyway_schema_history" ...
+ต.ค. 01, 2026 11:51:54 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": << Empty Schema >>
+ต.ค. 01, 2026 11:51:54 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "1 - inventory reservation foundation"
+ต.ค. 01, 2026 11:51:54 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "2 - inventory reservation idempotency"
+ต.ค. 01, 2026 11:51:54 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "3 - outbox recovery"
+ต.ค. 01, 2026 11:51:54 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "4 - poc04 identity security foundation"
+ต.ค. 01, 2026 11:51:54 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "vra", now at version v4 (execution time 00:00.084s)
+ต.ค. 01, 2026 11:51:54 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32995/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:54 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:51:57 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32997/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:57 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "vra"."flyway_schema_history" does not exist yet
+ต.ค. 01, 2026 11:51:57 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.001s)
+ต.ค. 01, 2026 11:51:57 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "vra"."flyway_schema_history" ...
+ต.ค. 01, 2026 11:51:57 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": << Empty Schema >>
+ต.ค. 01, 2026 11:51:57 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "1 - inventory reservation foundation"
+ต.ค. 01, 2026 11:51:57 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "2 - inventory reservation idempotency"
+ต.ค. 01, 2026 11:51:57 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "3 - outbox recovery"
+ต.ค. 01, 2026 11:51:57 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "4 - poc04 identity security foundation"
+ต.ค. 01, 2026 11:51:57 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "vra", now at version v4 (execution time 00:00.085s)
+ต.ค. 01, 2026 11:51:57 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32997/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:51:57 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:52:00 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32999/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:52:00 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "vra"."flyway_schema_history" does not exist yet
+ต.ค. 01, 2026 11:52:00 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.001s)
+ต.ค. 01, 2026 11:52:00 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "vra"."flyway_schema_history" ...
+ต.ค. 01, 2026 11:52:00 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": << Empty Schema >>
+ต.ค. 01, 2026 11:52:00 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "1 - inventory reservation foundation"
+ต.ค. 01, 2026 11:52:00 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "2 - inventory reservation idempotency"
+ต.ค. 01, 2026 11:52:00 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "3 - outbox recovery"
+ต.ค. 01, 2026 11:52:00 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "4 - poc04 identity security foundation"
+ต.ค. 01, 2026 11:52:00 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "vra", now at version v4 (execution time 00:00.085s)
+ต.ค. 01, 2026 11:52:00 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32999/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:52:00 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:33000/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "vra"."flyway_schema_history" does not exist yet
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "vra"."flyway_schema_history" ...
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": << Empty Schema >>
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "1 - inventory reservation foundation"
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "2 - inventory reservation idempotency"
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 2 migrations to schema "vra", now at version v2 (execution time 00:00.005s)
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:33000/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": 2
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "3 - outbox recovery"
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "4 - poc04 identity security foundation"
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 2 migrations to schema "vra", now at version v4 (execution time 00:00.078s)
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:33000/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:33000/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:33000/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": 4
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Schema "vra" is up to date. No migration necessary.
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:33000/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:52:03 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 11:52:05 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:33001/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:52:05 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "vra"."flyway_schema_history" does not exist yet
+ต.ค. 01, 2026 11:52:05 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.001s)
+ต.ค. 01, 2026 11:52:05 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "vra"."flyway_schema_history" ...
+ต.ค. 01, 2026 11:52:05 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": << Empty Schema >>
+ต.ค. 01, 2026 11:52:05 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "1 - inventory reservation foundation"
+ต.ค. 01, 2026 11:52:06 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "2 - inventory reservation idempotency"
+ต.ค. 01, 2026 11:52:06 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "3 - outbox recovery"
+ต.ค. 01, 2026 11:52:06 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "4 - poc04 identity security foundation"
+ต.ค. 01, 2026 11:52:06 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "vra", now at version v4 (execution time 00:00.086s)
+ต.ค. 01, 2026 11:52:06 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:33001/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 11:52:06 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+]]></system-err>
+</testsuite>

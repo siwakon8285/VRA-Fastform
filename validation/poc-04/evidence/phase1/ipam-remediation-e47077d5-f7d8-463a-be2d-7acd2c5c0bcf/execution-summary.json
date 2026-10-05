@@ -1,0 +1,96 @@
+{
+  "phase1_closed": false,
+  "readiness_pending_final_binding": false,
+  "previous_report_sha256": "7e6d75823db3d1ff81f0f2974316ebe6e38ca0ff5039e937e6f913360c4dbbf9",
+  "previous_failures_preserved": true,
+  "runtime_retry": {
+    "tests": 113,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "previous102_vs_actual113": "WorkerProcessCrash12existingcases replace one collapsed initializationError; no testsdisabled",
+  "check_build_exit_status": 0,
+  "check_build_suites": {
+    ":migration:test": {
+      "tests": 4,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0
+    },
+    ":migration:integrationTest": {
+      "tests": 18,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0
+    },
+    ":runtime:test": {
+      "tests": 56,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0
+    },
+    ":runtime:integrationTest": {
+      "tests": 113,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0
+    }
+  },
+  "check_build_total": {
+    "tests": 191,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "current_attempt_total_test_executions": {
+    "tests": 304,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "capacity_probe": {
+    "created": 48,
+    "no_overlap": true,
+    "cleanup": "PASS"
+  },
+  "collector_preparation_proof": {
+    "status": "PASS",
+    "actual_LOGIN_role_SQL42501_cases": 27,
+    "wrong_password_rejected": true,
+    "OS_scope": "reserved reader9404 read-only source + syntheticnonmember9405; no deploymentUID invention",
+    "raw_log_contents_exported": false,
+    "ephemeral_credential_file_absent": true,
+    "cleanup": "PASS"
+  },
+  "final_cleanup": {
+    "unique_container_ids": 64,
+    "unique_volume_names": 40,
+    "volume_creation_incarnations": 60,
+    "unique_network_ids": 59,
+    "capacity_probe_network_ids_separate": 48,
+    "all_exact_ids_absent": true,
+    "final_containers": 0,
+    "final_volumes": 0,
+    "baseline_network_ids": [
+      "0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a",
+      "71919e79066c633ba4548aa04103de53d1e31552893e0cec59e0ba812b5f4d22",
+      "c0297a5ce0209b66940193c63975087c4355c0e38d6517ac408d4fbf452c9adf"
+    ]
+  },
+  "source_modified_this_run": false,
+  "source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+  "source_file_count": 261,
+  "phase2_started": false,
+  "V5_present": false,
+  "V6_present": false,
+  "POC04": "NOT VERIFIED",
+  "S0_S15": "NOT VERIFIED",
+  "ready_for_independent_phase1_review": true,
+  "binding_validation_command": [
+    "python3",
+    "/tmp/vra-poc04-ipam-final-validate.py"
+  ],
+  "binding_validation_exit_status": 0,
+  "execution_acceptance": "REPORTED PASS; awaiting independent Phase1 review"
+}

@@ -1,0 +1,453 @@
+{
+  "expanded": [
+    {
+      "end_column": 78,
+      "end_line": 212,
+      "path": "validation/poc-04/evidence/phase1/execution-e0a3d5b9-ab05-453f-b133-39b50828e0b7/artifact-validation.json",
+      "rule": "generic-api-key",
+      "start_column": 18,
+      "start_line": 212
+    },
+    {
+      "end_column": 78,
+      "end_line": 15,
+      "path": "validation/poc-04/evidence/phase1/image-identity-diagnosis-03baf784-dd20-4615-be07-d633535b9b04/docker-image-semantics.json",
+      "rule": "generic-api-key",
+      "start_column": 18,
+      "start_line": 15
+    },
+    {
+      "end_column": 78,
+      "end_line": 7,
+      "path": "validation/poc-04/evidence/phase1/mount-remediation-89fcfa4d-21ba-4401-8ab9-8e0518da17d8/preflight.json",
+      "rule": "generic-api-key",
+      "start_column": 18,
+      "start_line": 7
+    },
+    {
+      "end_column": 194,
+      "end_line": 368,
+      "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 368
+    },
+    {
+      "end_column": 188,
+      "end_line": 369,
+      "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 369
+    },
+    {
+      "end_column": 129,
+      "end_line": 38,
+      "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/REMEDIATION_REPORT.md",
+      "rule": "generic-api-key",
+      "start_column": 64,
+      "start_line": 38
+    },
+    {
+      "end_column": 194,
+      "end_line": 386,
+      "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 386
+    },
+    {
+      "end_column": 188,
+      "end_line": 387,
+      "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 387
+    },
+    {
+      "end_column": 182,
+      "end_line": 420,
+      "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 98,
+      "start_line": 420
+    },
+    {
+      "end_column": 78,
+      "end_line": 106,
+      "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/preflight.json",
+      "rule": "generic-api-key",
+      "start_column": 18,
+      "start_line": 106
+    },
+    {
+      "end_column": 194,
+      "end_line": 963,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 963
+    },
+    {
+      "end_column": 188,
+      "end_line": 964,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 964
+    },
+    {
+      "end_column": 182,
+      "end_line": 998,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 98,
+      "start_line": 998
+    },
+    {
+      "end_column": 189,
+      "end_line": 1118,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 99,
+      "start_line": 1118
+    },
+    {
+      "end_column": 183,
+      "end_line": 1119,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 99,
+      "start_line": 1119
+    },
+    {
+      "end_column": 78,
+      "end_line": 81,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/preflight.json",
+      "rule": "generic-api-key",
+      "start_column": 18,
+      "start_line": 81
+    },
+    {
+      "end_column": 63,
+      "end_line": 228,
+      "path": "validation/poc-04/tooling/web-python-pins.json",
+      "rule": "generic-api-key",
+      "start_column": 15,
+      "start_line": 228
+    },
+    {
+      "end_column": 63,
+      "end_line": 259,
+      "path": "validation/poc-04/tooling/web-python-pins.json",
+      "rule": "generic-api-key",
+      "start_column": 15,
+      "start_line": 259
+    }
+  ],
+  "postbuild_original": [
+    {
+      "end_column": 78,
+      "end_line": 212,
+      "path": "validation/poc-04/evidence/phase1/execution-e0a3d5b9-ab05-453f-b133-39b50828e0b7/artifact-validation.json",
+      "rule": "generic-api-key",
+      "start_column": 18,
+      "start_line": 212
+    },
+    {
+      "end_column": 78,
+      "end_line": 15,
+      "path": "validation/poc-04/evidence/phase1/image-identity-diagnosis-03baf784-dd20-4615-be07-d633535b9b04/docker-image-semantics.json",
+      "rule": "generic-api-key",
+      "start_column": 18,
+      "start_line": 15
+    },
+    {
+      "end_column": 78,
+      "end_line": 7,
+      "path": "validation/poc-04/evidence/phase1/mount-remediation-89fcfa4d-21ba-4401-8ab9-8e0518da17d8/preflight.json",
+      "rule": "generic-api-key",
+      "start_column": 18,
+      "start_line": 7
+    },
+    {
+      "end_column": 194,
+      "end_line": 368,
+      "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 368
+    },
+    {
+      "end_column": 188,
+      "end_line": 369,
+      "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 369
+    },
+    {
+      "end_column": 129,
+      "end_line": 38,
+      "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/REMEDIATION_REPORT.md",
+      "rule": "generic-api-key",
+      "start_column": 64,
+      "start_line": 38
+    },
+    {
+      "end_column": 194,
+      "end_line": 386,
+      "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 386
+    },
+    {
+      "end_column": 188,
+      "end_line": 387,
+      "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 387
+    },
+    {
+      "end_column": 182,
+      "end_line": 420,
+      "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 98,
+      "start_line": 420
+    },
+    {
+      "end_column": 78,
+      "end_line": 106,
+      "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/preflight.json",
+      "rule": "generic-api-key",
+      "start_column": 18,
+      "start_line": 106
+    },
+    {
+      "end_column": 194,
+      "end_line": 963,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 963
+    },
+    {
+      "end_column": 188,
+      "end_line": 964,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 964
+    },
+    {
+      "end_column": 182,
+      "end_line": 998,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 98,
+      "start_line": 998
+    },
+    {
+      "end_column": 189,
+      "end_line": 1118,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 99,
+      "start_line": 1118
+    },
+    {
+      "end_column": 183,
+      "end_line": 1119,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 99,
+      "start_line": 1119
+    },
+    {
+      "end_column": 78,
+      "end_line": 81,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/preflight.json",
+      "rule": "generic-api-key",
+      "start_column": 18,
+      "start_line": 81
+    },
+    {
+      "end_column": 63,
+      "end_line": 228,
+      "path": "validation/poc-04/tooling/web-python-pins.json",
+      "rule": "generic-api-key",
+      "start_column": 15,
+      "start_line": 228
+    },
+    {
+      "end_column": 63,
+      "end_line": 259,
+      "path": "validation/poc-04/tooling/web-python-pins.json",
+      "rule": "generic-api-key",
+      "start_column": 15,
+      "start_line": 259
+    }
+  ],
+  "primary": [
+    {
+      "end_column": 78,
+      "end_line": 212,
+      "path": "validation/poc-04/evidence/phase1/execution-e0a3d5b9-ab05-453f-b133-39b50828e0b7/artifact-validation.json",
+      "rule": "generic-api-key",
+      "start_column": 18,
+      "start_line": 212
+    },
+    {
+      "end_column": 78,
+      "end_line": 15,
+      "path": "validation/poc-04/evidence/phase1/image-identity-diagnosis-03baf784-dd20-4615-be07-d633535b9b04/docker-image-semantics.json",
+      "rule": "generic-api-key",
+      "start_column": 18,
+      "start_line": 15
+    },
+    {
+      "end_column": 78,
+      "end_line": 7,
+      "path": "validation/poc-04/evidence/phase1/mount-remediation-89fcfa4d-21ba-4401-8ab9-8e0518da17d8/preflight.json",
+      "rule": "generic-api-key",
+      "start_column": 18,
+      "start_line": 7
+    },
+    {
+      "end_column": 194,
+      "end_line": 368,
+      "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 368
+    },
+    {
+      "end_column": 188,
+      "end_line": 369,
+      "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 369
+    },
+    {
+      "end_column": 129,
+      "end_line": 38,
+      "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/REMEDIATION_REPORT.md",
+      "rule": "generic-api-key",
+      "start_column": 64,
+      "start_line": 38
+    },
+    {
+      "end_column": 194,
+      "end_line": 386,
+      "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 386
+    },
+    {
+      "end_column": 188,
+      "end_line": 387,
+      "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 387
+    },
+    {
+      "end_column": 182,
+      "end_line": 420,
+      "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 98,
+      "start_line": 420
+    },
+    {
+      "end_column": 78,
+      "end_line": 106,
+      "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/preflight.json",
+      "rule": "generic-api-key",
+      "start_column": 18,
+      "start_line": 106
+    },
+    {
+      "end_column": 194,
+      "end_line": 963,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 963
+    },
+    {
+      "end_column": 188,
+      "end_line": 964,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 964
+    },
+    {
+      "end_column": 182,
+      "end_line": 998,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 98,
+      "start_line": 998
+    },
+    {
+      "end_column": 189,
+      "end_line": 1118,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 99,
+      "start_line": 1118
+    },
+    {
+      "end_column": 183,
+      "end_line": 1119,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 99,
+      "start_line": 1119
+    },
+    {
+      "end_column": 78,
+      "end_line": 81,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/preflight.json",
+      "rule": "generic-api-key",
+      "start_column": 18,
+      "start_line": 81
+    },
+    {
+      "end_column": 63,
+      "end_line": 228,
+      "path": "validation/poc-04/tooling/web-python-pins.json",
+      "rule": "generic-api-key",
+      "start_column": 15,
+      "start_line": 228
+    },
+    {
+      "end_column": 63,
+      "end_line": 259,
+      "path": "validation/poc-04/tooling/web-python-pins.json",
+      "rule": "generic-api-key",
+      "start_column": 15,
+      "start_line": 259
+    }
+  ],
+  "publication": {
+    "locator_model": "RULE_PATH_START_END_LINE_COLUMN",
+    "original_evidence_preserved_unchanged": true,
+    "original_forensic_reference": {
+      "relative_path": "full-workflow/scanner-finding-set-comparison.json",
+      "round": "ROUND5O",
+      "sha256": "696af0fc425f0d19b6b0d8d57945c0aabef957c2d9c4febfa6f29c49b1f618f9"
+    },
+    "reason": "Direct dependent finding-set reference update; token-derived finding keys are replaced by non-secret structured locators.",
+    "representation": "BOUNDED_PUBLICATION_DERIVATIVE",
+    "schema_version": 1
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,11 @@
+--- a/validation/poc-04/scripts/collector-boundary-proof.py
++++ b/validation/poc-04/scripts/collector-boundary-proof.py
+@@ -276,7 +276,7 @@
+         check(descriptor.get('digest')==chosen['digest'],'daemon selected manifest mismatch')
+         summary.setdefault('image_provenance',{})[key]={'execution_reference':ref,'execution_platform':PLATFORM,
+           'platform_manifest_digest':chosen['digest'],'config_digest':manifest['config']['digest'],'daemon_descriptor':descriptor}
+-    override=state_path.parent/'collector-local-platform-'+str(allocation['ordinal'])+'.override.json'
++    override=state_path.parent/('collector-local-platform-'+str(allocation['ordinal'])+'.override.json')
+     override.write_text(json.dumps({'services':{'postgres':{'platform':PLATFORM,
+       'labels':labels,'healthcheck':{'test':['CMD-SHELL','pg_isready -q -h 127.0.0.1 -U postgres -d vra_poc01'],
+       'interval':'1s','timeout':'1s','retries':120,'start_period':'1s'}}},

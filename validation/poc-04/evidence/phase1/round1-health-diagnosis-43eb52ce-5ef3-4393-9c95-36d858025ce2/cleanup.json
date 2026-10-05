@@ -1,0 +1,86 @@
+{
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+        "teardown",
+        "--kind",
+        "container",
+        "--id",
+        "c93206266e5384a9d730ffef72f0a06d32800ad734bcc16444fd21551a1a4115"
+      ],
+      "exit_status": 0,
+      "result": {
+        "absent": true,
+        "already_absent": true,
+        "authorized_run_id": "43eb52ce-5ef3-4393-9c95-36d858025ce2",
+        "id": "c93206266e5384a9d730ffef72f0a06d32800ad734bcc16444fd21551a1a4115",
+        "kind": "container"
+      },
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+        "teardown",
+        "--kind",
+        "network",
+        "--id",
+        "8d5596beebbfb88d8501ab8fb0b511194fb46f499a4db41849d6465fbea65694"
+      ],
+      "exit_status": 0,
+      "result": {
+        "absent": true,
+        "already_absent": true,
+        "authorized_run_id": "43eb52ce-5ef3-4393-9c95-36d858025ce2",
+        "id": "8d5596beebbfb88d8501ab8fb0b511194fb46f499a4db41849d6465fbea65694",
+        "kind": "network"
+      },
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+        "teardown",
+        "--kind",
+        "volume",
+        "--id",
+        "vra-poc04-43eb52ce-5ef3-4393-9c95-36d858025ce2-postgres-authority-0-pgdata"
+      ],
+      "exit_status": 0,
+      "result": {
+        "absent": true,
+        "already_absent": true,
+        "authorized_run_id": "43eb52ce-5ef3-4393-9c95-36d858025ce2",
+        "id": "vra-poc04-43eb52ce-5ef3-4393-9c95-36d858025ce2-postgres-authority-0-pgdata",
+        "kind": "volume"
+      },
+      "stderr": ""
+    }
+  ],
+  "finish": {
+    "exit_status": 0,
+    "result": {
+      "all_database_instances_bound_once": true,
+      "database_identity_map": [
+        {
+          "container_id": "c93206266e5384a9d730ffef72f0a06d32800ad734bcc16444fd21551a1a4115",
+          "database": "vra_health_test",
+          "database_instance_id": "3f1847a6-5990-5548-92f6-df71e748cd1c",
+          "logical_name": "postgres-authority/0",
+          "server_version_num": "170011",
+          "system_identifier": "7691720593601015846",
+          "volume_name": "vra-poc04-43eb52ce-5ef3-4393-9c95-36d858025ce2-postgres-authority-0-pgdata"
+        }
+      ],
+      "resources_absent": 3,
+      "status": "PASS"
+    }
+  }
+}

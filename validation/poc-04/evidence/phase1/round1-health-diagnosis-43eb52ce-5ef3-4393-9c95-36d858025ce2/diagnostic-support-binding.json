@@ -1,0 +1,8 @@
+{
+  "base_source_content_sha256": "bacf3084b406f644924aefadfb1fcafeec950f561d6e6a47357f8095712a6660",
+  "extra_readonly_listener_source_sha256": "b57e99c5ca341bbabc8062e72bf407c43390cf85e49401131786fe001b4f15c5",
+  "external_jar_sha256": "f1a0dd15764300dbac9fb85af5ad6f32682130beeef9ff0221f9fdebd4a93cc1",
+  "spring_factories": "org.springframework.test.context.TestExecutionListener=dev.vra.poc04.external.HealthDiagnosticListener\n",
+  "dependency_upgrade": false,
+  "repository_source_change": false
+}

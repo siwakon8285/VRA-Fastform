@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.vra.migration.Poc04FoundationMigrationIntegrationTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2026-10-01T13:50:33.427Z" hostname="MacBook-Air-khxng-SIwakorn.local" time="8.719">
+  <properties/>
+  <testcase name="twoFreshInstancesHaveDistinctIdsAndRestartRetainsPhysicalIdentity()" classname="dev.vra.migration.Poc04FoundationMigrationIntegrationTest" time="8.715">
+    <failure message="org.postgresql.util.PSQLException: Connection to 127.0.0.1:32853 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections." type="org.postgresql.util.PSQLException">org.postgresql.util.PSQLException: Connection to 127.0.0.1:32853 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:427)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:52)
+	at org.postgresql.jdbc.PgConnection.&lt;init&gt;(PgConnection.java:295)
+	at org.postgresql.Driver.makeConnection(Driver.java:437)
+	at org.postgresql.Driver.connect(Driver.java:305)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at dev.vra.migration.Poc04FoundationMigrationIntegrationTest$Fixture.connection(Poc04FoundationMigrationIntegrationTest.java:1286)
+	at dev.vra.migration.Poc04FoundationMigrationIntegrationTest$Fixture.rows(Poc04FoundationMigrationIntegrationTest.java:1296)
+	at dev.vra.migration.Poc04FoundationMigrationIntegrationTest$Fixture.value(Poc04FoundationMigrationIntegrationTest.java:1310)
+	at dev.vra.migration.Poc04FoundationMigrationIntegrationTest.twoFreshInstancesHaveDistinctIdsAndRestartRetainsPhysicalIdentity(Poc04FoundationMigrationIntegrationTest.java:162)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:694)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:270)
+	at org.postgresql.core.PGStream.&lt;init&gt;(PGStream.java:131)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:221)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:367)
+	... 10 more
+</failure>
+  </testcase>
+  <system-out><![CDATA[POC04 index/platform/manifest/config linkage PASS: docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f linux/arm64/v8 sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761 sha256:97432f980da100ebd3e419711efee84e1e97a966d62c035286a07f239ddb4d9c
+POC04 actual execution platform/manifest PASS: linux/arm64/v8 sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761
+POC04 PGDATA typed/volume/daemon proof PASS: fa7df4a9460d6a5e39ea1d4513bd7f87bb84b819715f3aded5fa65b335338676 vra-poc04-df9a6e46-43fd-4e39-8243-e37704288852-postgres-authority-1-pgdata safe_projection_sha256=7d6e3c9864d2920e12640f6348028b3b5f114488c392e0fd740b43d6e70d2a0d
+POC04 PostgreSQL runtime version PASS: server_version_num=170011 (17.11)
+]]></system-out>
+  <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+ต.ค. 01, 2026 8:50:40 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32853/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 8:50:40 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "vra"."flyway_schema_history" does not exist yet
+ต.ค. 01, 2026 8:50:40 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.006s)
+ต.ค. 01, 2026 8:50:40 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "vra"."flyway_schema_history" ...
+ต.ค. 01, 2026 8:50:40 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": << Empty Schema >>
+ต.ค. 01, 2026 8:50:40 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "1 - inventory reservation foundation"
+ต.ค. 01, 2026 8:50:40 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "2 - inventory reservation idempotency"
+ต.ค. 01, 2026 8:50:40 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "3 - outbox recovery"
+ต.ค. 01, 2026 8:50:40 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "4 - poc04 identity security foundation"
+ต.ค. 01, 2026 8:50:41 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "vra", now at version v4 (execution time 00:00.099s)
+]]></system-err>
+</testsuite>

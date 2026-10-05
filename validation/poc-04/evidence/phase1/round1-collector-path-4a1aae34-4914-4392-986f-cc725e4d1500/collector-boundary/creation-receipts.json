@@ -1,0 +1,116 @@
+[
+  {
+    "creator_registered": true,
+    "database_instance_id": "e6d0c621-8e75-5808-9da6-abf15d3361cd",
+    "id": "0211aa42436a42eb41a244df10f3b7712eb28badc34bc8eef54cd6cf55cf39a3",
+    "kind": "network",
+    "ledger_entry": {
+      "authorized_run_id": "4a1aae34-4914-4392-986f-cc725e4d1500",
+      "created": "2026-10-01T23:26:31.88369339+07:00",
+      "database_instance_id": "e6d0c621-8e75-5808-9da6-abf15d3361cd",
+      "expected_labels": {
+        "dev.vra.database_instance_id": "e6d0c621-8e75-5808-9da6-abf15d3361cd",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "postgres-authority/0",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "4a1aae34-4914-4392-986f-cc725e4d1500",
+        "dev.vra.source_content_sha256": "35f01843bc1a01d9266c8d40c4f43cb916e61ffad5adb70ca1eedbc7632b43c5",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "id": "0211aa42436a42eb41a244df10f3b7712eb28badc34bc8eef54cd6cf55cf39a3",
+      "kind": "network",
+      "labels": {
+        "dev.vra.database_instance_id": "e6d0c621-8e75-5808-9da6-abf15d3361cd",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "postgres-authority/0",
+        "dev.vra.poc": "04",
+        "dev.vra.purpose": "phase1-collector-mount-proof",
+        "dev.vra.run_id": "4a1aae34-4914-4392-986f-cc725e4d1500",
+        "dev.vra.source_content_sha256": "35f01843bc1a01d9266c8d40c4f43cb916e61ffad5adb70ca1eedbc7632b43c5",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "logical_name": "postgres-authority/0",
+      "mountpoint": null,
+      "name": "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_test"
+    },
+    "logical_name": "postgres-authority/0"
+  },
+  {
+    "creator_registered": true,
+    "database_instance_id": "e6d0c621-8e75-5808-9da6-abf15d3361cd",
+    "id": "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_postgres_data",
+    "kind": "volume",
+    "ledger_entry": {
+      "authorized_run_id": "4a1aae34-4914-4392-986f-cc725e4d1500",
+      "created": "2026-10-01T23:26:32+07:00",
+      "database_instance_id": "e6d0c621-8e75-5808-9da6-abf15d3361cd",
+      "expected_labels": {
+        "dev.vra.database_instance_id": "e6d0c621-8e75-5808-9da6-abf15d3361cd",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "postgres-authority/0",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "4a1aae34-4914-4392-986f-cc725e4d1500",
+        "dev.vra.source_content_sha256": "35f01843bc1a01d9266c8d40c4f43cb916e61ffad5adb70ca1eedbc7632b43c5",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "id": "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_postgres_data",
+      "kind": "volume",
+      "labels": {
+        "dev.vra.database_instance_id": "e6d0c621-8e75-5808-9da6-abf15d3361cd",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "postgres-authority/0",
+        "dev.vra.poc": "04",
+        "dev.vra.purpose": "phase1-collector-mount-proof",
+        "dev.vra.run_id": "4a1aae34-4914-4392-986f-cc725e4d1500",
+        "dev.vra.source_content_sha256": "35f01843bc1a01d9266c8d40c4f43cb916e61ffad5adb70ca1eedbc7632b43c5",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "logical_name": "postgres-authority/0",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_postgres_data/_data",
+      "name": "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_postgres_data"
+    },
+    "logical_name": "postgres-authority/0"
+  },
+  {
+    "creator_registered": true,
+    "database_instance_id": "e6d0c621-8e75-5808-9da6-abf15d3361cd",
+    "id": "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_collector_source",
+    "kind": "volume",
+    "ledger_entry": {
+      "authorized_run_id": "4a1aae34-4914-4392-986f-cc725e4d1500",
+      "created": "2026-10-01T23:26:32+07:00",
+      "database_instance_id": "e6d0c621-8e75-5808-9da6-abf15d3361cd",
+      "expected_labels": {
+        "dev.vra.database_instance_id": "e6d0c621-8e75-5808-9da6-abf15d3361cd",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "postgres-authority/0",
+        "dev.vra.poc": "04",
+        "dev.vra.run_id": "4a1aae34-4914-4392-986f-cc725e4d1500",
+        "dev.vra.source_content_sha256": "35f01843bc1a01d9266c8d40c4f43cb916e61ffad5adb70ca1eedbc7632b43c5",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "id": "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_collector_source",
+      "kind": "volume",
+      "labels": {
+        "dev.vra.database_instance_id": "e6d0c621-8e75-5808-9da6-abf15d3361cd",
+        "dev.vra.environment": "TEST",
+        "dev.vra.logical_name": "postgres-authority/0",
+        "dev.vra.poc": "04",
+        "dev.vra.purpose": "phase1-collector-mount-proof",
+        "dev.vra.run_id": "4a1aae34-4914-4392-986f-cc725e4d1500",
+        "dev.vra.source_content_sha256": "35f01843bc1a01d9266c8d40c4f43cb916e61ffad5adb70ca1eedbc7632b43c5",
+        "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+        "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8"
+      },
+      "logical_name": "postgres-authority/0",
+      "mountpoint": "/var/lib/docker/volumes/vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_collector_source/_data",
+      "name": "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_collector_source"
+    },
+    "logical_name": "postgres-authority/0"
+  }
+]

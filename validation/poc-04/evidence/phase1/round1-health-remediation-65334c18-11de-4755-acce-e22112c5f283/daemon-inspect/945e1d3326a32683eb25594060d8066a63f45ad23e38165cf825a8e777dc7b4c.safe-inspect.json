@@ -1,0 +1,74 @@
+{
+  "created": "2026-10-01T15:48:42.44181923Z",
+  "daemon_id": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+  "id": "945e1d3326a32683eb25594060d8066a63f45ad23e38165cf825a8e777dc7b4c",
+  "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+  "image_id": "sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+  "kind": "container_inspect",
+  "labels": {
+    "dev.vra.database_instance_id": "5446b132-3773-517b-8b8d-cd36e41c4bab",
+    "dev.vra.environment": "TEST",
+    "dev.vra.logical_name": "postgres-authority/20",
+    "dev.vra.poc": "04",
+    "dev.vra.run_id": "65334c18-11de-4755-acce-e22112c5f283",
+    "dev.vra.source_content_sha256": "94c06b9b99095f30d39d846c82e04315b14c33fca101c23c5d244cfd91a6e540",
+    "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+    "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+    "org.testcontainers": "true",
+    "org.testcontainers.lang": "java",
+    "org.testcontainers.sessionId": "a9c1e109-874c-4ae3-99a9-1bd62609a1e7",
+    "org.testcontainers.version": "2.0.5"
+  },
+  "manifest_descriptor": {
+    "annotations": {
+      "com.docker.official-images.bashbrew.arch": "arm64v8",
+      "org.opencontainers.image.base.digest": "sha256:da496358bd6934d2bd6a563a33176a2e50eff5490c54b4ac6fb051b69fef4071",
+      "org.opencontainers.image.base.name": "debian:trixie-slim",
+      "org.opencontainers.image.created": "2026-09-19T00:38:22Z",
+      "org.opencontainers.image.revision": "2603e26e245e558218728ee14e0a42dcb020dc7f",
+      "org.opencontainers.image.source": "https://github.com/docker-library/postgres.git#2603e26e245e558218728ee14e0a42dcb020dc7f:17/trixie",
+      "org.opencontainers.image.url": "https://hub.docker.com/_/postgres",
+      "org.opencontainers.image.version": "17.11"
+    },
+    "digest": "sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761",
+    "mediaType": "application/vnd.oci.image.manifest.v1+json",
+    "platform": {
+      "architecture": "arm64",
+      "os": "linux",
+      "variant": "v8"
+    },
+    "size": 3630
+  },
+  "mounts": [
+    {
+      "Destination": "/var/lib/postgresql/data",
+      "Name": "vra-poc04-65334c18-11de-4755-acce-e22112c5f283-postgres-authority-20-pgdata",
+      "RW": true,
+      "Source": "/var/lib/docker/volumes/vra-poc04-65334c18-11de-4755-acce-e22112c5f283-postgres-authority-20-pgdata/_data",
+      "Type": "volume"
+    }
+  ],
+  "name": "/vra-poc04-65334c18-11de-4755-acce-e22112c5f283-postgres-authority-20",
+  "networks": {
+    "vra-poc04-65334c18-11de-4755-acce-e22112c5f283-postgres-authority-20-network": {
+      "network_id": "84a15c9d429d246e491816baf4240afdb6a17cba9f32da2b782303b46418dc8f"
+    }
+  },
+  "ports": {
+    "5432/tcp": [
+      {
+        "HostIp": "0.0.0.0",
+        "HostPort": "32954"
+      },
+      {
+        "HostIp": "::",
+        "HostPort": "32954"
+      }
+    ]
+  },
+  "state": {
+    "ExitCode": 0,
+    "Running": true,
+    "Status": "running"
+  }
+}

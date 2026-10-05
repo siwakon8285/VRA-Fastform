@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python3",
+    "-u",
+    "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-ipam-support-cjjo53er/collector-boundary-proof.py"
+  ],
+  "environment": {
+    "DOCKER_HOST": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+    "VRA_POC04_RUNTIME_REGRESSION_PASSED": "e47077d5-f7d8-463a-be2d-7acd2c5c0bcf"
+  },
+  "started_at_utc": "2026-10-01T08:00:14.709932+00:00",
+  "actual_passed_runtime_tests": 113,
+  "count_reconciliation": "runtime-count-reconciliation.json",
+  "scope": "Phase1 collector infrastructure OS/mount/actualcredential SQL proof only; no observer/parser",
+  "exit_status": 0,
+  "ended_at_utc": "2026-10-01T08:00:29.100389+00:00"
+}

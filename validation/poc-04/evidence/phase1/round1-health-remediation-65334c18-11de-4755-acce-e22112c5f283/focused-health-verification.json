@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "source_xml": "validation/poc-04/evidence/phase1/round1-health-remediation-65334c18-11de-4755-acce-e22112c5f283/focused-health-results/runtime/integrationTest/TEST-dev.vra.platform.health.HealthProbePostgresIntegrationTest.xml",
+  "tests": 1,
+  "skipped": 0,
+  "failures": 0,
+  "errors": 0,
+  "before": {
+    "liveness_before": {
+      "event": "liveness_before",
+      "path": "/actuator/health/liveness",
+      "started_at": "2026-10-01T15:45:59.033449Z",
+      "http_status": 200,
+      "health_status": "UP",
+      "ended_at": "2026-10-01T15:45:59.101006Z",
+      "elapsed_ms": 67.580333
+    },
+    "readiness_before": {
+      "event": "readiness_before",
+      "path": "/actuator/health/readiness",
+      "started_at": "2026-10-01T15:45:59.101545Z",
+      "http_status": 200,
+      "health_status": "UP",
+      "ended_at": "2026-10-01T15:45:59.106829Z",
+      "elapsed_ms": 5.293833
+    }
+  },
+  "after": {
+    "event": "readiness_after_outage",
+    "path": "/actuator/health/readiness",
+    "started_at": "2026-10-01T15:45:59.864437Z",
+    "http_status": 503,
+    "health_status": "DOWN",
+    "ended_at": "2026-10-01T15:46:01.891684Z",
+    "elapsed_ms": 2027.294833
+  },
+  "liveness_during_actual_acquisition_wait": {
+    "event": "liveness_while_degraded",
+    "path": "/actuator/health/liveness",
+    "started_at": "2026-10-01T15:45:59.877610Z",
+    "http_status": 200,
+    "health_status": "UP",
+    "ended_at": "2026-10-01T15:45:59.880214Z",
+    "elapsed_ms": 2.613958
+  },
+  "overlap_verified": true,
+  "liveness_after": {
+    "event": "liveness_after",
+    "path": "/actuator/health/liveness",
+    "started_at": "2026-10-01T15:46:01.892972Z",
+    "http_status": 200,
+    "health_status": "UP",
+    "ended_at": "2026-10-01T15:46:01.897775Z",
+    "elapsed_ms": 4.823708
+  },
+  "actual_datasource": {
+    "pool": {
+      "class": "com.zaxxer.hikari.HikariDataSource",
+      "connection_timeout_ms": 2000,
+      "validation_timeout_ms": 1000,
+      "maximum_pool_size": 10,
+      "minimum_idle": 10,
+      "active": 0,
+      "idle": 10,
+      "total": 10,
+      "awaiting_connection": 0
+    },
+    "event": "actual_datasource_initialized_with_test_bound"
+  },
+  "runtime_database": {
+    "event": "actual_runtime_database",
+    "database": "vra_health_test",
+    "server_version_num": "170011",
+    "role": "vra_runtime"
+  },
+  "http_exception_accepted": false
+}

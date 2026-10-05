@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-jdk-x0q7h_vo/jdk-21.0.12.1+1/Contents/Home/bin/jar",
+    "--create",
+    "--file",
+    "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-round1-shysasul/external-tc.jar",
+    "-C",
+    "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-round1-shysasul/spi-classes",
+    "."
+  ],
+  "exit_status": 0,
+  "jar_sha256": "a5d0e2fa68c17bafb0e4b2e7d65d1ad18afb89cff9460e47b8a3f8201ba12fe4"
+}

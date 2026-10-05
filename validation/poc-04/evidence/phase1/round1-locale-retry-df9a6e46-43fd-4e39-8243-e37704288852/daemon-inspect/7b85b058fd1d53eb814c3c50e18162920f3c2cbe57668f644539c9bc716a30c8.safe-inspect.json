@@ -1,0 +1,63 @@
+{
+  "created": "2026-10-01T13:48:55.508858965Z",
+  "daemon_id": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+  "id": "7b85b058fd1d53eb814c3c50e18162920f3c2cbe57668f644539c9bc716a30c8",
+  "image": "docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0",
+  "image_id": "sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0",
+  "kind": "container_inspect",
+  "labels": {
+    "dev.vra.database_instance_id": "cc4588c7-fa4e-5f01-be64-ded258cfdb69",
+    "dev.vra.environment": "TEST",
+    "dev.vra.logical_name": "testcontainers-helper/0",
+    "dev.vra.poc": "04",
+    "dev.vra.run_id": "df9a6e46-43fd-4e39-8243-e37704288852",
+    "dev.vra.source_content_sha256": "6cce541d4fc5aa99bc27607c3feb1c79136f74105b1ddf697b50856fd989d1ca",
+    "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+    "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+    "org.testcontainers": "true",
+    "org.testcontainers.lang": "java",
+    "org.testcontainers.ryuk": "true",
+    "org.testcontainers.version": "2.0.5"
+  },
+  "manifest_descriptor": {
+    "digest": "sha256:79e2fbedad76001e8ac2f64556a729de503531be9dad9e2ff6fc469006b2e93c",
+    "mediaType": "application/vnd.oci.image.manifest.v1+json",
+    "platform": {
+      "architecture": "arm64",
+      "os": "linux"
+    },
+    "size": 662
+  },
+  "mounts": [
+    {
+      "Destination": "/var/run/docker.sock",
+      "Name": null,
+      "RW": true,
+      "Source": "/var/run/docker.sock",
+      "Type": "bind"
+    }
+  ],
+  "name": "/testcontainers-ryuk-3b357a2c-3f92-469e-b259-05e68888fac4",
+  "networks": {
+    "bridge": {
+      "network_id": "c0297a5ce0209b66940193c63975087c4355c0e38d6517ac408d4fbf452c9adf"
+    }
+  },
+  "ports": {
+    "8080/tcp": [
+      {
+        "HostIp": "0.0.0.0",
+        "HostPort": "32850"
+      },
+      {
+        "HostIp": "::",
+        "HostPort": "32850"
+      }
+    ]
+  },
+  "state": {
+    "ExitCode": 0,
+    "Running": true,
+    "Status": "running"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "bootstrap_exit_status": 0,
+  "capture_status": "PASS",
+  "cleanup_status": "PASS",
+  "counts_status": "PASS",
+  "execution_status": "PASS",
+  "failed_run_never_retried": true,
+  "finished_at": "2026-10-02T08:31:39.376440+00:00",
+  "full_bootstrap_gates_status": "PASS",
+  "observer_shutdown_status": "PASS",
+  "recorder_shutdown_status": "PASS",
+  "root_cause": "NOT ESTABLISHED",
+  "run": "D",
+  "scanner_execution": "EXECUTED",
+  "source_binding_status": "PASS",
+  "source_changes": false,
+  "started_at": "2026-10-02T08:25:59.414852+00:00",
+  "status": "PASS",
+  "suites": {
+    "migration:integrationTest": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 20
+    },
+    "migration:test": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 4
+    },
+    "runtime:integrationTest": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 113
+    },
+    "runtime:test": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 56
+    }
+  },
+  "total": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 193
+  }
+}

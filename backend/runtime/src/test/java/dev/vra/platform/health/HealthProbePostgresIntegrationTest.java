@@ -1,6 +1,8 @@
 package dev.vra.platform.health;
 
 import dev.vra.async.AsyncRoleBootstrap;
+import com.zaxxer.hikari.HikariDataSource;
+import javax.sql.DataSource;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -11,22 +13,38 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.Duration;
+import java.time.Instant;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import com.jayway.jsonpath.JsonPath;
 import dev.vra.migration.MigrationRunner;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.postgresql.PostgreSQLContainer;
+import tools.jackson.databind.json.JsonMapper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.fail;
 
 @Tag("postgres")
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@Import(HealthProbePostgresIntegrationTest.BoundedHealthDataSource.class)
 class HealthProbePostgresIntegrationTest {
 
     private static final String DATABASE = "vra_health_test";
@@ -40,7 +58,7 @@ class HealthProbePostgresIntegrationTest {
             "health-runtime-test-only";
 
     private static final PostgreSQLContainer POSTGRES =
-            new PostgreSQLContainer("postgres:17.11")
+            new dev.vra.poc04.external.RunOwnedPostgreSQLContainer("postgres:17.11")
                     .withDatabaseName(DATABASE)
                     .withUsername(ADMIN_USER)
                     .withPassword(ADMIN_PASSWORD);
@@ -62,9 +80,9 @@ class HealthProbePostgresIntegrationTest {
                     MIGRATOR_PASSWORD
             );
 
-            if (migrated != 3) {
+            if (migrated != 4) {
                 throw new IllegalStateException(
-                        "Expected exactly three migrations, got " + migrated
+                        "Expected exactly four migrations, got " + migrated
                 );
             }
         } catch (Exception error) {
@@ -94,31 +112,82 @@ class HealthProbePostgresIntegrationTest {
     @LocalServerPort
     private int port;
 
+    @Autowired
+    private DataSource dataSource;
+
+    @TestConfiguration(proxyBeanMethods = false)
+    static class BoundedHealthDataSource {
+        @Bean
+        static BeanPostProcessor healthDataSourceTimeouts() {
+            return new BeanPostProcessor() {
+                @Override
+                public Object postProcessBeforeInitialization(Object bean, String name) {
+                    if ("dataSource".equals(name)) {
+                        HikariDataSource pool = assertInstanceOf(HikariDataSource.class, bean);
+                        assertNull(pool.getHikariPoolMXBean(), "TEST timeouts must precede pool initialization");
+                        // Measured default acquisition was 30s, beyond the unchanged 5s HTTP deadline.
+                        // Configure only this TEST bean before Hikari caches its acquisition timeout.
+                        pool.setConnectionTimeout(2_000);
+                        pool.setValidationTimeout(1_000);
+                        printTiming(Map.of("event", "test_only_datasource_bound_before_initialization", "pool", poolState(pool)));
+                    }
+                    return bean;
+                }
+            };
+        }
+    }
+
     @Test
     void databaseOutageMakesReadinessDownButKeepsLivenessUp()
             throws Exception {
-        HttpResponse<String> livenessBefore = get(
-                "/actuator/health/liveness"
-        );
-        HttpResponse<String> readinessBefore = get(
-                "/actuator/health/readiness"
-        );
-
-        assertHealth(livenessBefore, 200, "UP");
-        assertHealth(readinessBefore, 200, "UP");
-
-        POSTGRES.stop();
-
-        HttpResponse<String> readinessAfter =
-                awaitReadinessDown(Duration.ofSeconds(20));
-
-        assertHealth(readinessAfter, 503, "DOWN");
-
-        HttpResponse<String> livenessAfter = get(
-                "/actuator/health/liveness"
-        );
-
-        assertHealth(livenessAfter, 200, "UP");
+        HikariDataSource pool = assertInstanceOf(HikariDataSource.class, dataSource);
+        assertEquals(2_000L, pool.getConnectionTimeout());
+        assertEquals(1_000L, pool.getValidationTimeout());
+        printTiming(Map.of("event", "actual_datasource_initialized_with_test_bound", "pool", poolState(pool)));
+        var sampler = Executors.newSingleThreadScheduledExecutor();
+        var livenessStarted = new AtomicBoolean();
+        var concurrentLiveness = new CompletableFuture<HttpResponse<String>>();
+        Runnable probeLiveness = () -> {
+            if (!livenessStarted.compareAndSet(false, true)) return;
+            try {
+                concurrentLiveness.complete(get("liveness_while_degraded", "/actuator/health/liveness"));
+            } catch (Exception failure) {
+                concurrentLiveness.completeExceptionally(failure);
+            }
+        };
+        try {
+            try (Connection connection = dataSource.getConnection();
+                 var statement = connection.createStatement();
+                 var result = statement.executeQuery("SELECT current_user, current_database(), current_setting('server_version_num')")) {
+                result.next();
+                assertEquals(RUNTIME_USER, result.getString(1));
+                assertEquals(DATABASE, result.getString(2));
+                assertEquals("170011", result.getString(3));
+                printTiming(Map.of("event", "actual_runtime_database", "role", result.getString(1),
+                        "database", result.getString(2), "server_version_num", result.getString(3)));
+            }
+            assertHealth(get("liveness_before", "/actuator/health/liveness"), 200, "UP");
+            assertHealth(get("readiness_before", "/actuator/health/readiness"), 200, "UP");
+            printTiming(Map.of("event", "database_stop_start", "at", Instant.now().toString(),
+                    "container_id", POSTGRES.getContainerId(), "pool", poolState(pool)));
+            POSTGRES.stop();
+            printTiming(Map.of("event", "database_stop_complete", "at", Instant.now().toString(), "pool", poolState(pool)));
+            // Sample an actual acquisition wait; no sleeps determine health correctness.
+            sampler.scheduleAtFixedRate(() -> {
+                if (pool.getHikariPoolMXBean().getThreadsAwaitingConnection() > 0 && !livenessStarted.get()) {
+                    printTiming(Map.of("event", "readiness_acquisition_wait", "pool", poolState(pool)));
+                    probeLiveness.run();
+                }
+            }, 0, 10, TimeUnit.MILLISECONDS);
+            assertHealth(awaitReadinessDown(Duration.ofSeconds(20)), 503, "DOWN");
+            // A fast query failure can return DOWN without an observable pool wait.
+            probeLiveness.run();
+            assertHealth(concurrentLiveness.get(5, TimeUnit.SECONDS), 200, "UP");
+            assertHealth(get("liveness_after", "/actuator/health/liveness"), 200, "UP");
+        } finally {
+            sampler.shutdownNow();
+            sampler.awaitTermination(1, TimeUnit.SECONDS);
+        }
     }
 
     private HttpResponse<String> awaitReadinessDown(Duration timeout)
@@ -127,7 +196,7 @@ class HealthProbePostgresIntegrationTest {
         HttpResponse<String> lastResponse = null;
 
         while (System.nanoTime() < deadline) {
-            lastResponse = get("/actuator/health/readiness");
+            lastResponse = get("readiness_after_outage", "/actuator/health/readiness");
 
             if (lastResponse.statusCode() == 503
                     && "DOWN".equals(
@@ -157,7 +226,12 @@ class HealthProbePostgresIntegrationTest {
         throw new AssertionError("unreachable");
     }
 
-    private HttpResponse<String> get(String path) throws Exception {
+    private HttpResponse<String> get(String event, String path) throws Exception {
+        long started = System.nanoTime();
+        var timing = new LinkedHashMap<String, Object>();
+        timing.put("event", event);
+        timing.put("path", path);
+        timing.put("started_at", Instant.now().toString());
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(
                         "http://127.0.0.1:" + port + path
@@ -166,10 +240,40 @@ class HealthProbePostgresIntegrationTest {
                 .GET()
                 .build();
 
-        return HTTP_CLIENT.send(
-                request,
-                HttpResponse.BodyHandlers.ofString()
-        );
+        try {
+            HttpResponse<String> response = HTTP_CLIENT.send(request, HttpResponse.BodyHandlers.ofString());
+            timing.put("http_status", response.statusCode());
+            timing.put("health_status", JsonPath.read(response.body(), "$.status"));
+            return response;
+        } catch (Exception failure) {
+            timing.put("exception_class", failure.getClass().getName());
+            throw failure;
+        } finally {
+            timing.put("ended_at", Instant.now().toString());
+            timing.put("elapsed_ms", (System.nanoTime() - started) / 1_000_000.0);
+            printTiming(timing);
+        }
+    }
+
+    private static Map<String, Object> poolState(HikariDataSource pool) {
+        var state = new LinkedHashMap<String, Object>();
+        state.put("class", pool.getClass().getName());
+        state.put("connection_timeout_ms", pool.getConnectionTimeout());
+        state.put("validation_timeout_ms", pool.getValidationTimeout());
+        state.put("maximum_pool_size", pool.getMaximumPoolSize());
+        state.put("minimum_idle", pool.getMinimumIdle());
+        var counters = pool.getHikariPoolMXBean();
+        if (counters != null) {
+            state.put("active", counters.getActiveConnections());
+            state.put("idle", counters.getIdleConnections());
+            state.put("total", counters.getTotalConnections());
+            state.put("awaiting_connection", counters.getThreadsAwaitingConnection());
+        }
+        return state;
+    }
+
+    private static void printTiming(Map<String, Object> timing) {
+        System.out.println("POC04_HEALTH_TIMING " + JsonMapper.builder().build().writeValueAsString(timing));
     }
 
     private static void assertHealth(

@@ -1,0 +1,17 @@
+{
+  "result": "METADATA_BASELINE_COMPARISON_FAILED",
+  "expectation": "all built-in network IDs unchanged across restart",
+  "observation": "Docker recreates built-in bridge during authorized daemon restart; only bridge ID changed",
+  "previous_ids": {
+    "bridge": "d6169038310792000aceb4c7cc43936dc2580869b05ebdee378244932b90279c",
+    "host": "71919e79066c633ba4548aa04103de53d1e31552893e0cec59e0ba812b5f4d22",
+    "none": "0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a"
+  },
+  "actual_ids": {
+    "bridge": "c0297a5ce0209b66940193c63975087c4355c0e38d6517ac408d4fbf452c9adf",
+    "host": "71919e79066c633ba4548aa04103de53d1e31552893e0cec59e0ba812b5f4d22",
+    "none": "0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a"
+  },
+  "required_daemon_identity_and_effective_pool_checks": "PASS",
+  "no_probe_resources_created_or_removed": true
+}

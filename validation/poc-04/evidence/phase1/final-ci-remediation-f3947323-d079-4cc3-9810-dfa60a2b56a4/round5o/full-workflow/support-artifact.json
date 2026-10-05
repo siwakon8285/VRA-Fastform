@@ -1,0 +1,14 @@
+{
+  "compile_test_only": true,
+  "diagnostic_classes_absent": true,
+  "entries": [
+    "META-INF/MANIFEST.MF",
+    "META-INF/services/org.testcontainers.core.CreateContainerCmdModifier",
+    "META-INF/services/org.testcontainers.utility.ImageNameSubstitutor",
+    "dev/vra/poc04/external/PinnedImages.class",
+    "dev/vra/poc04/external/RunOwnedPostgreSQLContainer.class",
+    "dev/vra/poc04/external/RunResources.class"
+  ],
+  "sha256": "4440ac9186685763f60f7f704b281cdc8097150c29ab9fb10b1aa969e93d9858",
+  "status": "PASS"
+}

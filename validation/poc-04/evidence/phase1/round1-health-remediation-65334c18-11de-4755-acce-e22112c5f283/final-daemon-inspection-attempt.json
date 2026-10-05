@@ -1,0 +1,7 @@
+{
+  "exit_status": 1,
+  "exception": "KeyError: type",
+  "cause": "read-only JSONL reader treated the recorder metadata header as a Docker event",
+  "resource_mutation": false,
+  "correction": "only records explicitly marked type=container enter exact-ID absence inspection"
+}

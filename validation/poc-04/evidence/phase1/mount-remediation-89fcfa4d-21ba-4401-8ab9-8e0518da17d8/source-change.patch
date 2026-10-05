@@ -1,0 +1,77 @@
+--- before/backend/migration/src/test/java/dev/vra/migration/Poc04FoundationMigrationIntegrationTest.java
++++ after/backend/migration/src/test/java/dev/vra/migration/Poc04FoundationMigrationIntegrationTest.java
+@@ -20,6 +20,7 @@
+ import java.net.URI;
+ import java.nio.file.Files;
+ import java.nio.file.Path;
++import java.nio.file.StandardWatchEventKinds;
+ import java.security.MessageDigest;
+ import java.security.SecureRandom;
+ import java.sql.Connection;
+@@ -919,12 +920,12 @@
+                         "TEST PostgreSQL has no Docker socket mount");
+                 assertEquals(1, inspection.getMounts().size(), "only the recorded fresh PGDATA volume is mounted");
+                 var pgdata = inspection.getMounts().getFirst();
+-                assertEquals("volume", pgdata.getRawValues().get("Type"), "actual PGDATA mount type");
+                 assertEquals(volumeName, pgdata.getName(), "actual PGDATA mount names the recorded run-owned volume");
+                 assertEquals("/var/lib/postgresql/data", pgdata.getDestination().getPath());
+                 assertEquals(volumeMountpoint, pgdata.getSource(), "physical volume and mount identity match");
+                 assertEquals(Boolean.TRUE, pgdata.getRW());
+                 verifyOwnedResources();
++                verifyDaemonPgdataMount();
+                 assertEquals("vra_poc01", value("SELECT current_database()"));
+                 assertTrue(value("SELECT system_identifier::text FROM pg_control_system()").matches("[0-9]+"),
+                         "actual PostgreSQL cluster identity established before bootstrap");
+@@ -942,6 +943,52 @@
+                 try { removeOwnedResources(); } catch (Throwable cleanupFailure) { failure.addSuppressed(cleanupFailure); }
+                 throw failure;
+             }
++        }
++
++        private void verifyDaemonPgdataMount() throws Exception {
++            // docker-java 3.7.1 does not model Mount.Type. Reuse the independent safe daemon recorder.
++            String directory = System.getenv("VRA_POC04_DAEMON_INSPECT_DIRECTORY");
++            assertNotNull(directory, "run-specific safe daemon inspection directory required");
++            Path evidenceDirectory = Path.of(directory);
++            assertTrue(Files.isDirectory(evidenceDirectory), "safe daemon recorder directory must already exist");
++            Path projection = evidenceDirectory.resolve(containerId + ".safe-inspect.json");
++            try (var watcher = evidenceDirectory.getFileSystem().newWatchService()) {
++                evidenceDirectory.register(watcher, StandardWatchEventKinds.ENTRY_CREATE,
++                        StandardWatchEventKinds.ENTRY_MODIFY);
++                long deadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(30);
++                while (!Files.isRegularFile(projection)) {
++                    long remaining = deadline - System.nanoTime();
++                    assertTrue(remaining > 0, "exact running-container daemon projection required before bootstrap");
++                    var key = watcher.poll(remaining, TimeUnit.NANOSECONDS);
++                    assertNotNull(key, "safe daemon recorder did not publish the exact container projection");
++                    key.pollEvents();
++                    assertTrue(key.reset(), "safe daemon evidence directory remains available");
++                }
++            }
++            byte[] bytes = Files.readAllBytes(projection);
++            JsonNode actual = JsonMapper.builder().build().readTree(bytes);
++            assertEquals("container_inspect", actual.path("kind").asString());
++            assertEquals(System.getenv("VRA_POC04_EXPECTED_DAEMON_ID"), actual.path("daemon_id").asString());
++            assertEquals(containerId, actual.path("id").asString());
++            assertEquals("/" + containerName, actual.path("name").asString());
++            assertEquals(containerCreatedAt, actual.path("created").asString());
++            assertTrue(actual.path("state").path("Running").asBoolean(), "daemon projection is from the running container");
++            assertEquals(POSTGRES_IMAGE, actual.path("image").asString());
++            for (var label : labels.entrySet()) {
++                assertEquals(label.getValue(), actual.path("labels").path(label.getKey()).asString(),
++                        "daemon projection ownership label: " + label.getKey());
++            }
++            JsonNode mounts = actual.path("mounts");
++            assertTrue(mounts.isArray());
++            assertEquals(1, mounts.size(), "daemon reports only the recorded fresh PGDATA volume");
++            JsonNode pgdata = mounts.get(0);
++            assertEquals("volume", pgdata.path("Type").asString(), "authoritative daemon PGDATA mount type");
++            assertEquals("/var/lib/postgresql/data", pgdata.path("Destination").asString());
++            assertEquals(volumeName, pgdata.path("Name").asString());
++            assertEquals(volumeMountpoint, pgdata.path("Source").asString());
++            assertTrue(pgdata.path("RW").asBoolean(), "authoritative PGDATA mount is writable");
++            System.out.println("POC04 PGDATA typed/volume/daemon proof PASS: " + containerId + " " + volumeName
++                    + " safe_projection_sha256=" + HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(bytes)));
+         }
+ 
+         private JsonNode verifyPostgresManifestLinkage(String platform) throws Exception {

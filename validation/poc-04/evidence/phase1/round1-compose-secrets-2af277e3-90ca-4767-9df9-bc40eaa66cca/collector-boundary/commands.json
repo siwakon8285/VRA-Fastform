@@ -1,0 +1,2003 @@
+[
+  {
+    "command": [
+      "docker",
+      "info",
+      "--format",
+      "{{json .}}"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "ps",
+      "-aq",
+      "--no-trunc"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "allocate",
+      "postgres-authority"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "buildx",
+      "imagetools",
+      "inspect",
+      "docker.io/library/postgres@sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761",
+      "--raw"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "image",
+      "inspect",
+      "--platform",
+      "linux/arm64/v8",
+      "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "buildx",
+      "imagetools",
+      "inspect",
+      "docker.io/library/alpine@sha256:4555e30014d0ef2214aa1ce5391ff46354519f55f33b4c6e5ed9aef4f3f1fa07",
+      "--raw"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "image",
+      "inspect",
+      "--platform",
+      "linux/arm64/v8",
+      "docker.io/library/alpine@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "compose",
+      "--project-name",
+      "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0",
+      "-f",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/db/collector-test.compose.yaml",
+      "-f",
+      "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-compose-secrets-m0lm2ysc/collector-local-platform-0.override.json",
+      "--profile",
+      "poc04-collector-test",
+      "config",
+      "--format",
+      "json"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "inspect",
+      "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source"
+    ],
+    "exit_status": 1,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "inspect",
+      "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_postgres_data"
+    ],
+    "exit_status": 1,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "network",
+      "inspect",
+      "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_test"
+    ],
+    "exit_status": 1,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "network",
+      "create",
+      "--driver",
+      "bridge",
+      "--label",
+      "dev.vra.database_instance_id=0cc21592-40d2-549d-b0ab-fe821e9ef5d7",
+      "--label",
+      "dev.vra.environment=TEST",
+      "--label",
+      "dev.vra.logical_name=postgres-authority/0",
+      "--label",
+      "dev.vra.poc=04",
+      "--label",
+      "dev.vra.run_id=2af277e3-90ca-4767-9df9-bc40eaa66cca",
+      "--label",
+      "dev.vra.source_content_sha256=9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+      "--label",
+      "dev.vra.source_head=01256d96d85823740a8d6c3a3f99346afbdbef56",
+      "--label",
+      "dev.vra.tool_manifest_sha256=5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+      "--label",
+      "dev.vra.purpose=phase1-collector-mount-proof",
+      "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_test"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "register",
+      "--kind",
+      "network",
+      "--id",
+      "33d5f3b12201c6b6fad3112380883d56b489b8fdc3f918ce14365f8f428b61fb",
+      "--instance",
+      "0cc21592-40d2-549d-b0ab-fe821e9ef5d7"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "network",
+      "inspect",
+      "33d5f3b12201c6b6fad3112380883d56b489b8fdc3f918ce14365f8f428b61fb"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "create",
+      "--label",
+      "dev.vra.database_instance_id=0cc21592-40d2-549d-b0ab-fe821e9ef5d7",
+      "--label",
+      "dev.vra.environment=TEST",
+      "--label",
+      "dev.vra.logical_name=postgres-authority/0",
+      "--label",
+      "dev.vra.poc=04",
+      "--label",
+      "dev.vra.run_id=2af277e3-90ca-4767-9df9-bc40eaa66cca",
+      "--label",
+      "dev.vra.source_content_sha256=9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+      "--label",
+      "dev.vra.source_head=01256d96d85823740a8d6c3a3f99346afbdbef56",
+      "--label",
+      "dev.vra.tool_manifest_sha256=5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+      "--label",
+      "dev.vra.purpose=phase1-collector-mount-proof",
+      "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_postgres_data"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "register",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_postgres_data",
+      "--instance",
+      "0cc21592-40d2-549d-b0ab-fe821e9ef5d7"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "inspect",
+      "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_postgres_data"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "create",
+      "--label",
+      "dev.vra.database_instance_id=0cc21592-40d2-549d-b0ab-fe821e9ef5d7",
+      "--label",
+      "dev.vra.environment=TEST",
+      "--label",
+      "dev.vra.logical_name=postgres-authority/0",
+      "--label",
+      "dev.vra.poc=04",
+      "--label",
+      "dev.vra.run_id=2af277e3-90ca-4767-9df9-bc40eaa66cca",
+      "--label",
+      "dev.vra.source_content_sha256=9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+      "--label",
+      "dev.vra.source_head=01256d96d85823740a8d6c3a3f99346afbdbef56",
+      "--label",
+      "dev.vra.tool_manifest_sha256=5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+      "--label",
+      "dev.vra.purpose=phase1-collector-mount-proof",
+      "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "register",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source",
+      "--instance",
+      "0cc21592-40d2-549d-b0ab-fe821e9ef5d7"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "inspect",
+      "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "create",
+      "--pull",
+      "never",
+      "--name",
+      "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0-postgres",
+      "--platform",
+      "linux/arm64/v8",
+      "--network",
+      "33d5f3b12201c6b6fad3112380883d56b489b8fdc3f918ce14365f8f428b61fb",
+      "--health-cmd",
+      "pg_isready -q -h 127.0.0.1 -U postgres -d vra_poc01",
+      "--health-interval",
+      "1s",
+      "--health-timeout",
+      "1s",
+      "--health-retries",
+      "120",
+      "--health-start-period",
+      "1s",
+      "--label",
+      "dev.vra.database_instance_id=0cc21592-40d2-549d-b0ab-fe821e9ef5d7",
+      "--label",
+      "dev.vra.environment=TEST",
+      "--label",
+      "dev.vra.logical_name=postgres-authority/0",
+      "--label",
+      "dev.vra.poc=04",
+      "--label",
+      "dev.vra.run_id=2af277e3-90ca-4767-9df9-bc40eaa66cca",
+      "--label",
+      "dev.vra.source_content_sha256=9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+      "--label",
+      "dev.vra.source_head=01256d96d85823740a8d6c3a3f99346afbdbef56",
+      "--label",
+      "dev.vra.tool_manifest_sha256=5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+      "--label",
+      "dev.vra.purpose=phase1-collector-mount-proof",
+      "--mount",
+      "type=volume,src=vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_postgres_data,dst=/var/lib/postgresql/data",
+      "--mount",
+      "type=volume,src=vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source,dst=/var/log/vra-poc04-collector,volume-nocopy",
+      "--mount",
+      "type=bind,src=/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/db/postgresql-collector-test.conf,dst=/etc/poc04/postgresql-collector-test.conf,readonly",
+      "--mount",
+      "type=bind,src=/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/db/collector-test-entrypoint.sh,dst=/etc/poc04/collector-test-entrypoint.sh,readonly",
+      "--mount",
+      "type=bind,src=/Users/siwakornbundi/.colima/vra-poc04-test/vra-poc04-collector-2af277e3-90ca-4767-9df9-bc40eaa66cca-secrets-ify5iymp/postgres-admin-password,dst=/run/secrets/postgres_admin_password,readonly",
+      "--env",
+      "POSTGRES_DB=vra_poc01",
+      "--env",
+      "POSTGRES_PASSWORD_FILE=/run/secrets/postgres_admin_password",
+      "--env",
+      "POSTGRES_USER=postgres",
+      "--entrypoint",
+      "bash",
+      "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+      "/etc/poc04/collector-test-entrypoint.sh",
+      "postgres",
+      "-c",
+      "config_file=/etc/poc04/postgresql-collector-test.conf"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "register",
+      "--kind",
+      "container",
+      "--id",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "--instance",
+      "0cc21592-40d2-549d-b0ab-fe821e9ef5d7"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "start",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "events",
+      "--since",
+      "2026-10-01T16:50:39.557043+00:00",
+      "--filter",
+      "container=efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "--filter",
+      "event=health_status",
+      "--format",
+      "{{json .}}"
+    ],
+    "exit_status": 143,
+    "intentional_event_subscription_termination": true,
+    "observer_process": false,
+    "purpose": "Docker administrative readiness only"
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "inspect",
+      "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "inspect",
+      "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_postgres_data"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "bind-physical",
+      "--instance",
+      "0cc21592-40d2-549d-b0ab-fe821e9ef5d7",
+      "--container",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "--database",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "id -u postgres; stat -c \"%u|%g|%a|%F\" /var/log/vra-poc04-collector; for f in /var/log/vra-poc04-collector/*.json; do test -f \"$f\" || exit 7; stat -c \"%u|%g|%a|%F|%n\" \"$f\"; done"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "--user",
+      "postgres",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-d",
+      "vra_poc01"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_runtime",
+      "10.241.1.2"
+    ],
+    "exit_status": 2,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_runtime",
+      "10.241.1.2"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_runtime",
+      "10.241.1.2"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_runtime",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_runtime",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_runtime",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_outbox_worker",
+      "10.241.1.2"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_outbox_worker",
+      "10.241.1.2"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_outbox_worker",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_outbox_worker",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_outbox_worker",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_reconciliation_worker",
+      "10.241.1.2"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_reconciliation_worker",
+      "10.241.1.2"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_reconciliation_worker",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_reconciliation_worker",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_reconciliation_worker",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_async_operator",
+      "10.241.1.2"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_async_operator",
+      "10.241.1.2"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_async_operator",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_async_operator",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_async_operator",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_projection_rebuilder",
+      "10.241.1.2"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_projection_rebuilder",
+      "10.241.1.2"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_projection_rebuilder",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_projection_rebuilder",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_projection_rebuilder",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_async_observer",
+      "10.241.1.2"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_async_observer",
+      "10.241.1.2"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_async_observer",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_async_observer",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_async_observer",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_factor_fixture",
+      "10.241.1.2"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_factor_fixture",
+      "10.241.1.2"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_factor_fixture",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_factor_fixture",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_factor_fixture",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_audit_evidence_reader",
+      "10.241.1.2"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_audit_evidence_reader",
+      "10.241.1.2"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_audit_evidence_reader",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_audit_evidence_reader",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_audit_evidence_reader",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_security_telemetry_observer",
+      "10.241.1.2"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_security_telemetry_observer",
+      "10.241.1.2"
+    ],
+    "exit_status": 0,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_security_telemetry_observer",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_security_telemetry_observer",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0",
+      "sh",
+      "-c",
+      "IFS= read -r PGPASSWORD; export PGPASSWORD; exec psql -X -qAt -w -h \"$2\" -U \"$1\" -d vra_poc01 -v ON_ERROR_STOP=1",
+      "credential-probe",
+      "vra_security_telemetry_observer",
+      "10.241.1.2"
+    ],
+    "exit_status": 3,
+    "input": "runtime stdin only; omitted"
+  },
+  {
+    "command": [
+      "docker",
+      "create",
+      "--pull",
+      "never",
+      "--name",
+      "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0-reserved-reader",
+      "--platform",
+      "linux/arm64/v8",
+      "--network",
+      "none",
+      "--user",
+      "9404:9404",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges:true",
+      "--read-only",
+      "--mount",
+      "type=volume,src=vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source,dst=/collector,readonly,volume-nocopy",
+      "--label",
+      "dev.vra.database_instance_id=0cc21592-40d2-549d-b0ab-fe821e9ef5d7",
+      "--label",
+      "dev.vra.environment=TEST",
+      "--label",
+      "dev.vra.logical_name=postgres-authority/0",
+      "--label",
+      "dev.vra.poc=04",
+      "--label",
+      "dev.vra.run_id=2af277e3-90ca-4767-9df9-bc40eaa66cca",
+      "--label",
+      "dev.vra.source_content_sha256=9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+      "--label",
+      "dev.vra.source_head=01256d96d85823740a8d6c3a3f99346afbdbef56",
+      "--label",
+      "dev.vra.tool_manifest_sha256=5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+      "--label",
+      "dev.vra.purpose=phase1-collector-mount-proof",
+      "docker.io/library/alpine@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989",
+      "sh",
+      "-c",
+      "set -eu; test \"$(id -u)\" = 9404; test \"$(id -g)\" = 9404; test -r /collector; set -- /collector/*.json; test -f \"$1\"; head -c 1 \"$1\" >/dev/null; if (printf probe >/collector/forbidden-probe) 2>/dev/null; then exit 12; fi; printf \"%s\\n\" \"reader_uid=9404 gid=9404 read=PASS write=DENIED\""
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "register",
+      "--kind",
+      "container",
+      "--id",
+      "61ea0fc0f0b46273cfb2cde24cde86e9a738f1988c83b72693c52be3315e1b1a",
+      "--instance",
+      "0cc21592-40d2-549d-b0ab-fe821e9ef5d7"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "61ea0fc0f0b46273cfb2cde24cde86e9a738f1988c83b72693c52be3315e1b1a"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "61ea0fc0f0b46273cfb2cde24cde86e9a738f1988c83b72693c52be3315e1b1a"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "start",
+      "61ea0fc0f0b46273cfb2cde24cde86e9a738f1988c83b72693c52be3315e1b1a"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "wait",
+      "61ea0fc0f0b46273cfb2cde24cde86e9a738f1988c83b72693c52be3315e1b1a"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "61ea0fc0f0b46273cfb2cde24cde86e9a738f1988c83b72693c52be3315e1b1a"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "61ea0fc0f0b46273cfb2cde24cde86e9a738f1988c83b72693c52be3315e1b1a"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "create",
+      "--pull",
+      "never",
+      "--name",
+      "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0-synthetic-nonmember",
+      "--platform",
+      "linux/arm64/v8",
+      "--network",
+      "none",
+      "--user",
+      "9405:9405",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges:true",
+      "--read-only",
+      "--mount",
+      "type=volume,src=vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source,dst=/collector,readonly,volume-nocopy",
+      "--label",
+      "dev.vra.database_instance_id=0cc21592-40d2-549d-b0ab-fe821e9ef5d7",
+      "--label",
+      "dev.vra.environment=TEST",
+      "--label",
+      "dev.vra.logical_name=postgres-authority/0",
+      "--label",
+      "dev.vra.poc=04",
+      "--label",
+      "dev.vra.run_id=2af277e3-90ca-4767-9df9-bc40eaa66cca",
+      "--label",
+      "dev.vra.source_content_sha256=9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+      "--label",
+      "dev.vra.source_head=01256d96d85823740a8d6c3a3f99346afbdbef56",
+      "--label",
+      "dev.vra.tool_manifest_sha256=5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+      "--label",
+      "dev.vra.purpose=phase1-collector-mount-proof",
+      "docker.io/library/alpine@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989",
+      "sh",
+      "-c",
+      "set -eu; test \"$(id -u)\" = 9405; test \"$(id -g)\" = 9405; if ls /collector >/dev/null 2>&1; then exit 13; fi; if (printf probe >/collector/forbidden-probe) 2>/dev/null; then exit 14; fi; printf \"%s\\n\" \"synthetic_nonmember_uid=9405 gid=9405 read=DENIED write=DENIED\""
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "register",
+      "--kind",
+      "container",
+      "--id",
+      "770ea4df933cd2f2570d1b5d0ed8a51eeeea1fefc4702c5b2467e6d1b3ecfe5b",
+      "--instance",
+      "0cc21592-40d2-549d-b0ab-fe821e9ef5d7"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "770ea4df933cd2f2570d1b5d0ed8a51eeeea1fefc4702c5b2467e6d1b3ecfe5b"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "770ea4df933cd2f2570d1b5d0ed8a51eeeea1fefc4702c5b2467e6d1b3ecfe5b"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "start",
+      "770ea4df933cd2f2570d1b5d0ed8a51eeeea1fefc4702c5b2467e6d1b3ecfe5b"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "wait",
+      "770ea4df933cd2f2570d1b5d0ed8a51eeeea1fefc4702c5b2467e6d1b3ecfe5b"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "770ea4df933cd2f2570d1b5d0ed8a51eeeea1fefc4702c5b2467e6d1b3ecfe5b"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "770ea4df933cd2f2570d1b5d0ed8a51eeeea1fefc4702c5b2467e6d1b3ecfe5b"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "info",
+      "--format",
+      "{{json .}}"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "770ea4df933cd2f2570d1b5d0ed8a51eeeea1fefc4702c5b2467e6d1b3ecfe5b"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "61ea0fc0f0b46273cfb2cde24cde86e9a738f1988c83b72693c52be3315e1b1a"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "container",
+      "--id",
+      "efb18b011f48e97416defbdff599d55ed811b5d4f7aff107b8c4298611f2cfb0"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_collector_source"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-collector-0_postgres_data"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "33d5f3b12201c6b6fad3112380883d56b489b8fdc3f918ce14365f8f428b61fb"
+    ],
+    "exit_status": 0,
+    "input": null
+  }
+]

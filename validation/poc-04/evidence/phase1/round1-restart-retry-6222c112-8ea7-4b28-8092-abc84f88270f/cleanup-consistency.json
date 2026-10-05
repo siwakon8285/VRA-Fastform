@@ -1,0 +1,11 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "../validation/poc-04/scripts/run-harness.py",
+    "finish"
+  ],
+  "exit_status": 1,
+  "stdout": null,
+  "stderr": "{\"status\": \"STOP\", \"reason\": \"RUN_RESOURCE_STILL_PRESENT\"}\n"
+}

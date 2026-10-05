@@ -1,0 +1,11 @@
+{
+  "status": "FAIL before tests/resource creation",
+  "exit_status": 1,
+  "exception": "FileNotFoundError",
+  "cause": "new temporary coordinator inherited previous attempt directory prefix with current UUID",
+  "wrong_evidence_directory": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/evidence/phase1/round1-collector-path-2af277e3-90ca-4767-9df9-bc40eaa66cca",
+  "correct_evidence_directory": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/evidence/phase1/round1-compose-secrets-2af277e3-90ca-4767-9df9-bc40eaa66cca",
+  "source_modified_for_setup_failure": false,
+  "Docker_resources_created": false,
+  "correction": "temporary execution environment paths only"
+}

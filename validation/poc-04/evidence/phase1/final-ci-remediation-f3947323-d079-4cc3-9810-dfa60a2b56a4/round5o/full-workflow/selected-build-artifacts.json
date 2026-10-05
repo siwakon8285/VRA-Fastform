@@ -1,0 +1,48 @@
+{
+  "build_root": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+  "files": [
+    {
+      "classification": "GENERATED_BOOTJAR",
+      "mode": "0644",
+      "path": "backend/runtime/build/libs/runtime-0.1.0-SNAPSHOT.jar",
+      "sha256": "35174e46636270ff31f7a92a700a230dfe52876cda2e92e7ae716111f08d13ec",
+      "size": 55126844
+    },
+    {
+      "classification": "GENERATED_BOOTJAR",
+      "mode": "0644",
+      "path": "backend/migration/build/libs/migration-0.1.0-SNAPSHOT.jar",
+      "sha256": "bf49306fd51e4cd8cb6b1f8e1de74cbe36f299584ac017f2e4b65849e982d84e",
+      "size": 5181732
+    }
+  ],
+  "producer": {
+    "command": [
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/backend/gradlew",
+      "-p",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/backend",
+      "--no-daemon",
+      "--warning-mode",
+      "all",
+      "--init-script",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace/validation/poc-04/test-support/runner.init.gradle",
+      ":runtime:clean",
+      ":migration:clean",
+      "check",
+      "build",
+      "poc04TestClasspathProof",
+      "--rerun-tasks"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-ci-nrt0sj7t/domains/build-workspace",
+    "duration_seconds": 249.6630928516388,
+    "exit_status": 0,
+    "name": "full-check-build",
+    "output": "full-check-build.txt",
+    "output_sha256": "9b537bbe91eabcf4928b56389027d7f866bd5370510821f6eeb97a88aab51d96"
+  },
+  "run_id": "c816fc29-dff4-41a7-9681-b07606cb5409",
+  "schema": "poc04-selected-bootjars-v1",
+  "selection_sha256": "1603412a8a01ae5fbd86b926c49adc3daa67eab014fa8a5c6ac5566bcb03d112",
+  "source_content_sha256": "7e0deae81a11148e5cbd3b76672ec226b7adb267fb22edd7cad7ba92ccd64780",
+  "source_manifest_sha256": "a93db1df523df957aee0bda865ea07ba5a87bfeba9bf162825aa10815e265045"
+}

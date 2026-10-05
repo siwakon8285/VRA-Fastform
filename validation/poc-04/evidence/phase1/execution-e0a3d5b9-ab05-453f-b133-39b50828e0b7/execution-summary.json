@@ -1,0 +1,99 @@
+{
+  "result": "STOP_PHASE1_FIXTURE_IMAGE_ATTESTATION_DEFECT",
+  "orchestration_attempt_id": "e0a3d5b9-ab05-453f-b133-39b50828e0b7",
+  "minimum_connectivity_probe_run_id": "57951433-ef13-4dde-9ef5-3d397b096656",
+  "minimum_connectivity_result": "PASS",
+  "endpoint": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+  "daemon_id": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+  "host_override": "127.0.0.1",
+  "fixture_run_id": "d6086e95-29f0-4d32-aec6-3705b5740a3a",
+  "database_instance_id": "1762ab45-d926-514a-be1c-7c6c35b94ddb",
+  "postgresql": {
+    "started": true,
+    "database": "vra_poc01",
+    "system_identifier": "7691375076119769131",
+    "server_version_num": 170011,
+    "version": "17.11",
+    "image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+    "platform": "linux/arm64",
+    "identity_evidence": "docker-resource-events.jsonl",
+    "identity_command": "psql -U postgres -d vra_poc01 -Atq -c SELECT system_identifier::text||'|'||current_database()||'|'||current_setting('server_version_num') FROM pg_control_system()",
+    "identity_command_exit_status": "NOT_INDEPENDENTLY_RECORDED; successful stdout preserved"
+  },
+  "fresh_gradle_exit_status": 1,
+  "junit_counts": {
+    "tests": 1,
+    "skipped": 0,
+    "failures": 1,
+    "errors": 0
+  },
+  "failure": {
+    "path": "backend/migration/src/test/java/dev/vra/migration/Poc04FoundationMigrationIntegrationTest.java",
+    "line": 898,
+    "type": "org.opentest4j.AssertionFailedError",
+    "expected_config_digest": "sha256:97432f980da100ebd3e419711efee84e1e97a966d62c035286a07f239ddb4d9c",
+    "actual_engine_image_id": "sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+    "actual_id_descriptor_media_type": "application/vnd.oci.image.index.v1+json",
+    "message": "Fixture compares Docker Engine image Id to the selected-platform config blob digest; this daemon returns the OCI index digest for that Id."
+  },
+  "bootstrap_executed": false,
+  "flyway_executed": false,
+  "fresh_migration_proof": "FAILED_BEFORE_MIGRATION",
+  "populated_upgrade_proof": "NOT_EXECUTED",
+  "flyway_validate": "NOT_EXECUTED",
+  "same_database_rerun": "NOT_EXECUTED",
+  "retained_data_and_history": "NOT_EXECUTED",
+  "role_attributes_membership_set_graph": "NOT_EXECUTED",
+  "catalog_acl_and_schema_create": "NOT_EXECUTED",
+  "credential_sql_denials": "NOT_EXECUTED",
+  "constraint_negatives": "NOT_EXECUTED",
+  "collector_mount_proof": "NOT_EXECUTED",
+  "remaining_postgresql_regressions": "NOT_EXECUTED",
+  "resource_evidence_limitations": [
+    "Gradle Ryuk helper retained native Testcontainers labels only; custom POC-04 run labels were not applied by the external hook in that JVM.",
+    "Volume/network labels passed fixture assertions before line 898 but complete independent inspect records were not preserved.",
+    "Reviewed config blob digest was not separately re-attested by this attempt."
+  ],
+  "cleanup_result": "PASS",
+  "exact_absent_resources": [
+    {
+      "type": "container",
+      "id": "ed67a9d43d0ef958ae4b1db6e8ff4d1f38d2e58f82f97ca74bfca987b949aa73",
+      "inspection_exit_status": 1
+    },
+    {
+      "type": "volume",
+      "id": "vra-poc04-d6086e95-29f0-4d32-aec6-3705b5740a3a-postgres-authority-0-pgdata",
+      "inspection_exit_status": 1
+    },
+    {
+      "type": "network",
+      "id": "415f0c206b1da818cb04149fae2f9fd569f861ba7beaeb3a0008185c03f1184a",
+      "inspection_exit_status": 1
+    },
+    {
+      "type": "container",
+      "id": "be304b90ffa74f464e1dbc70332b9849bdeae0a2d37d7d6902d37ea5c9e5be49",
+      "inspection_exit_status": 1
+    }
+  ],
+  "containers_remaining": 0,
+  "volumes_remaining": 0,
+  "new_networks_remaining": 0,
+  "cleanup_actor": "existing Fixture bounded cleanup plus Testcontainers helper lifecycle",
+  "explicit_cleanup_mutations": [],
+  "source_modified_in_attempt": false,
+  "previous_failed_evidence_preserved": true,
+  "ryuk_disabled": false,
+  "blanket_prune_used": false,
+  "docker_desktop_touched": false,
+  "persistent_vra_poc00_touched": false,
+  "git_mutations": [],
+  "phase_1_closed": "NO",
+  "ready_for_independent_phase_1_review": "NO",
+  "phase_2_started": "NO",
+  "v5_present": "NO",
+  "v6_present": "NO",
+  "poc_04_status": "IN PROGRESS / NOT VERIFIED",
+  "s0_s15_status": "NOT VERIFIED"
+}

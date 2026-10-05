@@ -1,0 +1,89 @@
+{
+  "classification": "G \u2014 NOT ESTABLISHED",
+  "connected": 42,
+  "driver_manager_attempts": 42,
+  "endpoint_observations": 47,
+  "endpoint_stable": true,
+  "failed": 0,
+  "latency_limitation": "Connection observations include safe-inspect overhead; probes include child JVM startup. No original timeout was changed.",
+  "log_limitation": "No current protocol failure reproduced; absence of a matching log is not proof of no packets in the historical failure.",
+  "observer_coverage": "Actual DriverManager attempts; Testcontainers direct Driver readiness and Docker-exec bootstrap are separately observed lifecycle/admin operations.",
+  "original_test_executions": 1,
+  "physical_identity_events": 3,
+  "physical_identity_map": [
+    {
+      "container_id": "cb3df0b288e3ee8e57ce9fb2c3a2f91319a011594037aea44f40af03bb42a2f4",
+      "database": "vra_poc01",
+      "database_instance_id": "8bcca2b4-628b-583f-8f24-2a2d50def89f",
+      "logical_name": "postgres-authority/0",
+      "server_version_num": "170011",
+      "system_identifier": "7691967708548755494",
+      "volume_name": "vra-poc04-25d5826f-3873-4999-84e6-362b37e8582d-postgres-authority-0-pgdata"
+    }
+  ],
+  "post_probe_capture_at": "2026-10-02T07:23:17.504679Z",
+  "pre_probe_capture_at": "2026-10-02T07:23:16.386260Z",
+  "probes": [
+    {
+      "at": "2026-10-02T07:23:16.716894Z",
+      "elapsed_ms": 237,
+      "event": "transport_probe_result",
+      "outcome": {
+        "identity": {
+          "backend_pid": "158",
+          "database": "vra_poc01",
+          "server_addr": "10.241.1.2/32",
+          "server_port": "5432",
+          "server_version_num": "170011",
+          "ssl": "off",
+          "system_identifier": "7691967708548755494",
+          "user": "vra_migrator"
+        },
+        "result": "CONNECTED"
+      },
+      "probe": "A_exact_original"
+    },
+    {
+      "at": "2026-10-02T07:23:17.002243Z",
+      "elapsed_ms": 236,
+      "event": "transport_probe_result",
+      "outcome": {
+        "identity": {
+          "backend_pid": "159",
+          "database": "vra_poc01",
+          "server_addr": "10.241.1.2/32",
+          "server_port": "5432",
+          "server_version_num": "170011",
+          "ssl": "off",
+          "system_identifier": "7691967708548755494",
+          "user": "vra_migrator"
+        },
+        "result": "CONNECTED"
+      },
+      "probe": "B_explicit_non_SSL"
+    },
+    {
+      "at": "2026-10-02T07:23:17.287896Z",
+      "elapsed_ms": 234,
+      "event": "transport_probe_result",
+      "outcome": {
+        "identity": {
+          "backend_pid": "160",
+          "database": "vra_poc01",
+          "server_addr": "10.241.1.2/32",
+          "server_port": "5432",
+          "server_version_num": "170011",
+          "ssl": "off",
+          "system_identifier": "7691967708548755494",
+          "user": "postgres"
+        },
+        "result": "CONNECTED"
+      },
+      "probe": "known_good_admin_identity"
+    }
+  ],
+  "requested_url_equals_live_mapping": true,
+  "root_cause_not_inferred_from_success": true,
+  "server_log_protocol_failure_matches": [],
+  "server_logs_identical_before_after_probes": true
+}

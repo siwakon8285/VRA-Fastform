@@ -1,0 +1,22 @@
+{
+  "command": [
+    "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/model-proof-domains/build-workspace/validation/poc-00/gradlew",
+    "--no-daemon",
+    "--console=plain",
+    "--no-configuration-cache",
+    "--no-problems-report",
+    "--project-cache-dir",
+    "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-resource-model-v7rdc74l/project-cache",
+    "--init-script",
+    "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-resource-model-v7rdc74l/resource-model.init.gradle",
+    "-Dvra.poc04.resourceModelOutput=/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp/vra-poc04-resource-model-v7rdc74l/resource-model.json",
+    ":poc04EffectiveResourceModel"
+  ],
+  "configuration_model_only": true,
+  "query_status": "PASS",
+  "schema_version": 1,
+  "script_sha256": "da30ec3e6c6a466805a528cf78911ee267c29d8c715643211243e57d679c3fa2",
+  "working_directory": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/model-proof-domains/build-workspace/validation/poc-00",
+  "wrapper": "validation/poc-00/gradlew",
+  "wrapper_sha256": "fb49f8cb2e5b1d83fba3dcc2c0dd0934c5655cbaf8bd1510ada7cc02692095ca"
+}

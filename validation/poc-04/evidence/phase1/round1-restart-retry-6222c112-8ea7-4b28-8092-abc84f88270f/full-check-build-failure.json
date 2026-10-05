@@ -1,0 +1,22 @@
+{
+  "command_artifact": "full-check-build-command.json",
+  "exit_status": 1,
+  "counts": {
+    "tests": 193,
+    "skipped": 0,
+    "failures": 1,
+    "errors": 0
+  },
+  "failures": [
+    {
+      "artifact": "full-check-build-results/runtime/integrationTest/TEST-dev.vra.platform.health.HealthProbePostgresIntegrationTest.xml",
+      "classname": "dev.vra.platform.health.HealthProbePostgresIntegrationTest",
+      "test": "databaseOutageMakesReadinessDownButKeepsLivenessUp()",
+      "kind": "failure",
+      "type": "java.net.http.HttpTimeoutException",
+      "message": "java.net.http.HttpTimeoutException: request timed out",
+      "stacktrace": "java.net.http.HttpTimeoutException: request timed out\n\tat java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:953)\n\tat java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)\n\tat dev.vra.platform.health.HealthProbePostgresIntegrationTest.get(HealthProbePostgresIntegrationTest.java:169)\n\tat dev.vra.platform.health.HealthProbePostgresIntegrationTest.awaitReadinessDown(HealthProbePostgresIntegrationTest.java:130)\n\tat dev.vra.platform.health.HealthProbePostgresIntegrationTest.databaseOutageMakesReadinessDownButKeepsLivenessUp(HealthProbePostgresIntegrationTest.java:113)\n"
+    }
+  ],
+  "action": "STOP; no collector proof, no source remediation, no further test retry"
+}

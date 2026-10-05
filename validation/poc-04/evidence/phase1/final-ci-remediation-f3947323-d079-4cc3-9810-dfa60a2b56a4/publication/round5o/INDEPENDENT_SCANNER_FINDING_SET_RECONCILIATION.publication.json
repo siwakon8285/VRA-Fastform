@@ -1,0 +1,759 @@
+{
+  "candidate_manifest_sha256": "a93db1df523df957aee0bda865ea07ba5a87bfeba9bf162825aa10815e265045",
+  "complete_A_B_C_D_equality": true,
+  "expanded_observations": 18,
+  "expanded_original_finding_subset": true,
+  "expanded_set": [
+    {
+      "end_column": 78,
+      "end_line": 212,
+      "path": "validation/poc-04/evidence/phase1/execution-e0a3d5b9-ab05-453f-b133-39b50828e0b7/artifact-validation.json",
+      "rule": "generic-api-key",
+      "start_column": 18,
+      "start_line": 212
+    },
+    {
+      "end_column": 78,
+      "end_line": 15,
+      "path": "validation/poc-04/evidence/phase1/image-identity-diagnosis-03baf784-dd20-4615-be07-d633535b9b04/docker-image-semantics.json",
+      "rule": "generic-api-key",
+      "start_column": 18,
+      "start_line": 15
+    },
+    {
+      "end_column": 78,
+      "end_line": 7,
+      "path": "validation/poc-04/evidence/phase1/mount-remediation-89fcfa4d-21ba-4401-8ab9-8e0518da17d8/preflight.json",
+      "rule": "generic-api-key",
+      "start_column": 18,
+      "start_line": 7
+    },
+    {
+      "end_column": 194,
+      "end_line": 368,
+      "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 368
+    },
+    {
+      "end_column": 188,
+      "end_line": 369,
+      "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 369
+    },
+    {
+      "end_column": 129,
+      "end_line": 38,
+      "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/REMEDIATION_REPORT.md",
+      "rule": "generic-api-key",
+      "start_column": 64,
+      "start_line": 38
+    },
+    {
+      "end_column": 194,
+      "end_line": 386,
+      "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 386
+    },
+    {
+      "end_column": 188,
+      "end_line": 387,
+      "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 387
+    },
+    {
+      "end_column": 182,
+      "end_line": 420,
+      "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 98,
+      "start_line": 420
+    },
+    {
+      "end_column": 78,
+      "end_line": 106,
+      "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/preflight.json",
+      "rule": "generic-api-key",
+      "start_column": 18,
+      "start_line": 106
+    },
+    {
+      "end_column": 194,
+      "end_line": 963,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 963
+    },
+    {
+      "end_column": 188,
+      "end_line": 964,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 104,
+      "start_line": 964
+    },
+    {
+      "end_column": 182,
+      "end_line": 998,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 98,
+      "start_line": 998
+    },
+    {
+      "end_column": 189,
+      "end_line": 1118,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 99,
+      "start_line": 1118
+    },
+    {
+      "end_column": 183,
+      "end_line": 1119,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+      "rule": "generic-api-key",
+      "start_column": 99,
+      "start_line": 1119
+    },
+    {
+      "end_column": 78,
+      "end_line": 81,
+      "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/preflight.json",
+      "rule": "generic-api-key",
+      "start_column": 18,
+      "start_line": 81
+    },
+    {
+      "end_column": 63,
+      "end_line": 228,
+      "path": "validation/poc-04/tooling/web-python-pins.json",
+      "rule": "generic-api-key",
+      "start_column": 15,
+      "start_line": 228
+    },
+    {
+      "end_column": 63,
+      "end_line": 259,
+      "path": "validation/poc-04/tooling/web-python-pins.json",
+      "rule": "generic-api-key",
+      "start_column": 15,
+      "start_line": 259
+    }
+  ],
+  "expanded_unresolved": 0,
+  "original_observations": 18,
+  "original_payload_sha256": "8e78c8c4a6e2dd63f152bdd3b9414e2f675df06e413aba424a3676d1080aec05",
+  "original_sets": {
+    "postbuild-original": [
+      {
+        "end_column": 78,
+        "end_line": 212,
+        "path": "validation/poc-04/evidence/phase1/execution-e0a3d5b9-ab05-453f-b133-39b50828e0b7/artifact-validation.json",
+        "rule": "generic-api-key",
+        "start_column": 18,
+        "start_line": 212
+      },
+      {
+        "end_column": 78,
+        "end_line": 15,
+        "path": "validation/poc-04/evidence/phase1/image-identity-diagnosis-03baf784-dd20-4615-be07-d633535b9b04/docker-image-semantics.json",
+        "rule": "generic-api-key",
+        "start_column": 18,
+        "start_line": 15
+      },
+      {
+        "end_column": 78,
+        "end_line": 7,
+        "path": "validation/poc-04/evidence/phase1/mount-remediation-89fcfa4d-21ba-4401-8ab9-8e0518da17d8/preflight.json",
+        "rule": "generic-api-key",
+        "start_column": 18,
+        "start_line": 7
+      },
+      {
+        "end_column": 194,
+        "end_line": 368,
+        "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 368
+      },
+      {
+        "end_column": 188,
+        "end_line": 369,
+        "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 369
+      },
+      {
+        "end_column": 129,
+        "end_line": 38,
+        "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/REMEDIATION_REPORT.md",
+        "rule": "generic-api-key",
+        "start_column": 64,
+        "start_line": 38
+      },
+      {
+        "end_column": 194,
+        "end_line": 386,
+        "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 386
+      },
+      {
+        "end_column": 188,
+        "end_line": 387,
+        "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 387
+      },
+      {
+        "end_column": 182,
+        "end_line": 420,
+        "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 98,
+        "start_line": 420
+      },
+      {
+        "end_column": 78,
+        "end_line": 106,
+        "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/preflight.json",
+        "rule": "generic-api-key",
+        "start_column": 18,
+        "start_line": 106
+      },
+      {
+        "end_column": 194,
+        "end_line": 963,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 963
+      },
+      {
+        "end_column": 188,
+        "end_line": 964,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 964
+      },
+      {
+        "end_column": 182,
+        "end_line": 998,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 98,
+        "start_line": 998
+      },
+      {
+        "end_column": 189,
+        "end_line": 1118,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 99,
+        "start_line": 1118
+      },
+      {
+        "end_column": 183,
+        "end_line": 1119,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 99,
+        "start_line": 1119
+      },
+      {
+        "end_column": 78,
+        "end_line": 81,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/preflight.json",
+        "rule": "generic-api-key",
+        "start_column": 18,
+        "start_line": 81
+      },
+      {
+        "end_column": 63,
+        "end_line": 228,
+        "path": "validation/poc-04/tooling/web-python-pins.json",
+        "rule": "generic-api-key",
+        "start_column": 15,
+        "start_line": 228
+      },
+      {
+        "end_column": 63,
+        "end_line": 259,
+        "path": "validation/poc-04/tooling/web-python-pins.json",
+        "rule": "generic-api-key",
+        "start_column": 15,
+        "start_line": 259
+      }
+    ],
+    "prebuild-control-1": [
+      {
+        "end_column": 78,
+        "end_line": 212,
+        "path": "validation/poc-04/evidence/phase1/execution-e0a3d5b9-ab05-453f-b133-39b50828e0b7/artifact-validation.json",
+        "rule": "generic-api-key",
+        "start_column": 18,
+        "start_line": 212
+      },
+      {
+        "end_column": 78,
+        "end_line": 15,
+        "path": "validation/poc-04/evidence/phase1/image-identity-diagnosis-03baf784-dd20-4615-be07-d633535b9b04/docker-image-semantics.json",
+        "rule": "generic-api-key",
+        "start_column": 18,
+        "start_line": 15
+      },
+      {
+        "end_column": 78,
+        "end_line": 7,
+        "path": "validation/poc-04/evidence/phase1/mount-remediation-89fcfa4d-21ba-4401-8ab9-8e0518da17d8/preflight.json",
+        "rule": "generic-api-key",
+        "start_column": 18,
+        "start_line": 7
+      },
+      {
+        "end_column": 194,
+        "end_line": 368,
+        "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 368
+      },
+      {
+        "end_column": 188,
+        "end_line": 369,
+        "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 369
+      },
+      {
+        "end_column": 129,
+        "end_line": 38,
+        "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/REMEDIATION_REPORT.md",
+        "rule": "generic-api-key",
+        "start_column": 64,
+        "start_line": 38
+      },
+      {
+        "end_column": 194,
+        "end_line": 386,
+        "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 386
+      },
+      {
+        "end_column": 188,
+        "end_line": 387,
+        "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 387
+      },
+      {
+        "end_column": 182,
+        "end_line": 420,
+        "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 98,
+        "start_line": 420
+      },
+      {
+        "end_column": 78,
+        "end_line": 106,
+        "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/preflight.json",
+        "rule": "generic-api-key",
+        "start_column": 18,
+        "start_line": 106
+      },
+      {
+        "end_column": 194,
+        "end_line": 963,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 963
+      },
+      {
+        "end_column": 188,
+        "end_line": 964,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 964
+      },
+      {
+        "end_column": 182,
+        "end_line": 998,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 98,
+        "start_line": 998
+      },
+      {
+        "end_column": 189,
+        "end_line": 1118,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 99,
+        "start_line": 1118
+      },
+      {
+        "end_column": 183,
+        "end_line": 1119,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 99,
+        "start_line": 1119
+      },
+      {
+        "end_column": 78,
+        "end_line": 81,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/preflight.json",
+        "rule": "generic-api-key",
+        "start_column": 18,
+        "start_line": 81
+      },
+      {
+        "end_column": 63,
+        "end_line": 228,
+        "path": "validation/poc-04/tooling/web-python-pins.json",
+        "rule": "generic-api-key",
+        "start_column": 15,
+        "start_line": 228
+      },
+      {
+        "end_column": 63,
+        "end_line": 259,
+        "path": "validation/poc-04/tooling/web-python-pins.json",
+        "rule": "generic-api-key",
+        "start_column": 15,
+        "start_line": 259
+      }
+    ],
+    "prebuild-control-2": [
+      {
+        "end_column": 78,
+        "end_line": 212,
+        "path": "validation/poc-04/evidence/phase1/execution-e0a3d5b9-ab05-453f-b133-39b50828e0b7/artifact-validation.json",
+        "rule": "generic-api-key",
+        "start_column": 18,
+        "start_line": 212
+      },
+      {
+        "end_column": 78,
+        "end_line": 15,
+        "path": "validation/poc-04/evidence/phase1/image-identity-diagnosis-03baf784-dd20-4615-be07-d633535b9b04/docker-image-semantics.json",
+        "rule": "generic-api-key",
+        "start_column": 18,
+        "start_line": 15
+      },
+      {
+        "end_column": 78,
+        "end_line": 7,
+        "path": "validation/poc-04/evidence/phase1/mount-remediation-89fcfa4d-21ba-4401-8ab9-8e0518da17d8/preflight.json",
+        "rule": "generic-api-key",
+        "start_column": 18,
+        "start_line": 7
+      },
+      {
+        "end_column": 194,
+        "end_line": 368,
+        "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 368
+      },
+      {
+        "end_column": 188,
+        "end_line": 369,
+        "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 369
+      },
+      {
+        "end_column": 129,
+        "end_line": 38,
+        "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/REMEDIATION_REPORT.md",
+        "rule": "generic-api-key",
+        "start_column": 64,
+        "start_line": 38
+      },
+      {
+        "end_column": 194,
+        "end_line": 386,
+        "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 386
+      },
+      {
+        "end_column": 188,
+        "end_line": 387,
+        "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 387
+      },
+      {
+        "end_column": 182,
+        "end_line": 420,
+        "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 98,
+        "start_line": 420
+      },
+      {
+        "end_column": 78,
+        "end_line": 106,
+        "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/preflight.json",
+        "rule": "generic-api-key",
+        "start_column": 18,
+        "start_line": 106
+      },
+      {
+        "end_column": 194,
+        "end_line": 963,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 963
+      },
+      {
+        "end_column": 188,
+        "end_line": 964,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 964
+      },
+      {
+        "end_column": 182,
+        "end_line": 998,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 98,
+        "start_line": 998
+      },
+      {
+        "end_column": 189,
+        "end_line": 1118,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 99,
+        "start_line": 1118
+      },
+      {
+        "end_column": 183,
+        "end_line": 1119,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 99,
+        "start_line": 1119
+      },
+      {
+        "end_column": 78,
+        "end_line": 81,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/preflight.json",
+        "rule": "generic-api-key",
+        "start_column": 18,
+        "start_line": 81
+      },
+      {
+        "end_column": 63,
+        "end_line": 228,
+        "path": "validation/poc-04/tooling/web-python-pins.json",
+        "rule": "generic-api-key",
+        "start_column": 15,
+        "start_line": 228
+      },
+      {
+        "end_column": 63,
+        "end_line": 259,
+        "path": "validation/poc-04/tooling/web-python-pins.json",
+        "rule": "generic-api-key",
+        "start_column": 15,
+        "start_line": 259
+      }
+    ],
+    "primary": [
+      {
+        "end_column": 78,
+        "end_line": 212,
+        "path": "validation/poc-04/evidence/phase1/execution-e0a3d5b9-ab05-453f-b133-39b50828e0b7/artifact-validation.json",
+        "rule": "generic-api-key",
+        "start_column": 18,
+        "start_line": 212
+      },
+      {
+        "end_column": 78,
+        "end_line": 15,
+        "path": "validation/poc-04/evidence/phase1/image-identity-diagnosis-03baf784-dd20-4615-be07-d633535b9b04/docker-image-semantics.json",
+        "rule": "generic-api-key",
+        "start_column": 18,
+        "start_line": 15
+      },
+      {
+        "end_column": 78,
+        "end_line": 7,
+        "path": "validation/poc-04/evidence/phase1/mount-remediation-89fcfa4d-21ba-4401-8ab9-8e0518da17d8/preflight.json",
+        "rule": "generic-api-key",
+        "start_column": 18,
+        "start_line": 7
+      },
+      {
+        "end_column": 194,
+        "end_line": 368,
+        "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 368
+      },
+      {
+        "end_column": 188,
+        "end_line": 369,
+        "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 369
+      },
+      {
+        "end_column": 129,
+        "end_line": 38,
+        "path": "validation/poc-04/evidence/phase1/review-remediation-round1-2d744f02-8f9b-43a4-8ab7-723867aec905/REMEDIATION_REPORT.md",
+        "rule": "generic-api-key",
+        "start_column": 64,
+        "start_line": 38
+      },
+      {
+        "end_column": 194,
+        "end_line": 386,
+        "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 386
+      },
+      {
+        "end_column": 188,
+        "end_line": 387,
+        "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 387
+      },
+      {
+        "end_column": 182,
+        "end_line": 420,
+        "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 98,
+        "start_line": 420
+      },
+      {
+        "end_column": 78,
+        "end_line": 106,
+        "path": "validation/poc-04/evidence/phase1/round1-locale-retry-df9a6e46-43fd-4e39-8243-e37704288852/preflight.json",
+        "rule": "generic-api-key",
+        "start_column": 18,
+        "start_line": 106
+      },
+      {
+        "end_column": 194,
+        "end_line": 963,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 963
+      },
+      {
+        "end_column": 188,
+        "end_line": 964,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 104,
+        "start_line": 964
+      },
+      {
+        "end_column": 182,
+        "end_line": 998,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 98,
+        "start_line": 998
+      },
+      {
+        "end_column": 189,
+        "end_line": 1118,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 99,
+        "start_line": 1118
+      },
+      {
+        "end_column": 183,
+        "end_line": 1119,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/FINAL_BINDING.json",
+        "rule": "generic-api-key",
+        "start_column": 99,
+        "start_line": 1119
+      },
+      {
+        "end_column": 78,
+        "end_line": 81,
+        "path": "validation/poc-04/evidence/phase1/round1-restart-retry-6222c112-8ea7-4b28-8092-abc84f88270f/preflight.json",
+        "rule": "generic-api-key",
+        "start_column": 18,
+        "start_line": 81
+      },
+      {
+        "end_column": 63,
+        "end_line": 228,
+        "path": "validation/poc-04/tooling/web-python-pins.json",
+        "rule": "generic-api-key",
+        "start_column": 15,
+        "start_line": 228
+      },
+      {
+        "end_column": 63,
+        "end_line": 259,
+        "path": "validation/poc-04/tooling/web-python-pins.json",
+        "rule": "generic-api-key",
+        "start_column": 15,
+        "start_line": 259
+      }
+    ]
+  },
+  "original_unresolved": 0,
+  "publication": {
+    "locator_model": "RULE_PATH_START_END_LINE_COLUMN",
+    "original_evidence_preserved_unchanged": true,
+    "original_forensic_reference": {
+      "relative_path": "INDEPENDENT_SCANNER_FINDING_SET_RECONCILIATION.json",
+      "round": "ROUND5O",
+      "sha256": "9a1b31af252bc91dd8f3714fc2b3bf63c88717c31ef8e32716eb71112e57627d"
+    },
+    "reason": "Direct dependent finding-set reference update; token-derived finding keys are replaced by non-secret structured locators.",
+    "representation": "BOUNDED_PUBLICATION_DERIVATIVE",
+    "schema_version": 1
+  },
+  "selected_artifact_paths": [
+    "backend/runtime/build/libs/runtime-0.1.0-SNAPSHOT.jar",
+    "backend/migration/build/libs/migration-0.1.0-SNAPSHOT.jar"
+  ],
+  "status": "PASS"
+}

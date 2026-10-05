@@ -1,0 +1,348 @@
+[
+  {
+    "command": [
+      "docker",
+      "info",
+      "--format",
+      "{{json .}}"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "ps",
+      "-aq",
+      "--no-trunc"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "allocate",
+      "postgres-authority"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "buildx",
+      "imagetools",
+      "inspect",
+      "docker.io/library/postgres@sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761",
+      "--raw"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "image",
+      "inspect",
+      "--platform",
+      "linux/arm64/v8",
+      "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "buildx",
+      "imagetools",
+      "inspect",
+      "docker.io/library/alpine@sha256:4555e30014d0ef2214aa1ce5391ff46354519f55f33b4c6e5ed9aef4f3f1fa07",
+      "--raw"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "image",
+      "inspect",
+      "--platform",
+      "linux/arm64/v8",
+      "docker.io/library/alpine@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "compose",
+      "--project-name",
+      "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0",
+      "-f",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/db/collector-test.compose.yaml",
+      "-f",
+      "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-collector-remediation-mz7isvwr/collector-local-platform-0.override.json",
+      "--profile",
+      "poc04-collector-test",
+      "config",
+      "--format",
+      "json"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "inspect",
+      "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_collector_source"
+    ],
+    "exit_status": 1,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "inspect",
+      "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_postgres_data"
+    ],
+    "exit_status": 1,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "network",
+      "inspect",
+      "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_test"
+    ],
+    "exit_status": 1,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "network",
+      "create",
+      "--driver",
+      "bridge",
+      "--label",
+      "dev.vra.database_instance_id=e6d0c621-8e75-5808-9da6-abf15d3361cd",
+      "--label",
+      "dev.vra.environment=TEST",
+      "--label",
+      "dev.vra.logical_name=postgres-authority/0",
+      "--label",
+      "dev.vra.poc=04",
+      "--label",
+      "dev.vra.run_id=4a1aae34-4914-4392-986f-cc725e4d1500",
+      "--label",
+      "dev.vra.source_content_sha256=35f01843bc1a01d9266c8d40c4f43cb916e61ffad5adb70ca1eedbc7632b43c5",
+      "--label",
+      "dev.vra.source_head=01256d96d85823740a8d6c3a3f99346afbdbef56",
+      "--label",
+      "dev.vra.tool_manifest_sha256=5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+      "--label",
+      "dev.vra.purpose=phase1-collector-mount-proof",
+      "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_test"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "register",
+      "--kind",
+      "network",
+      "--id",
+      "0211aa42436a42eb41a244df10f3b7712eb28badc34bc8eef54cd6cf55cf39a3",
+      "--instance",
+      "e6d0c621-8e75-5808-9da6-abf15d3361cd"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "network",
+      "inspect",
+      "0211aa42436a42eb41a244df10f3b7712eb28badc34bc8eef54cd6cf55cf39a3"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "create",
+      "--label",
+      "dev.vra.database_instance_id=e6d0c621-8e75-5808-9da6-abf15d3361cd",
+      "--label",
+      "dev.vra.environment=TEST",
+      "--label",
+      "dev.vra.logical_name=postgres-authority/0",
+      "--label",
+      "dev.vra.poc=04",
+      "--label",
+      "dev.vra.run_id=4a1aae34-4914-4392-986f-cc725e4d1500",
+      "--label",
+      "dev.vra.source_content_sha256=35f01843bc1a01d9266c8d40c4f43cb916e61ffad5adb70ca1eedbc7632b43c5",
+      "--label",
+      "dev.vra.source_head=01256d96d85823740a8d6c3a3f99346afbdbef56",
+      "--label",
+      "dev.vra.tool_manifest_sha256=5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+      "--label",
+      "dev.vra.purpose=phase1-collector-mount-proof",
+      "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_postgres_data"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "register",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_postgres_data",
+      "--instance",
+      "e6d0c621-8e75-5808-9da6-abf15d3361cd"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "inspect",
+      "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_postgres_data"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "create",
+      "--label",
+      "dev.vra.database_instance_id=e6d0c621-8e75-5808-9da6-abf15d3361cd",
+      "--label",
+      "dev.vra.environment=TEST",
+      "--label",
+      "dev.vra.logical_name=postgres-authority/0",
+      "--label",
+      "dev.vra.poc=04",
+      "--label",
+      "dev.vra.run_id=4a1aae34-4914-4392-986f-cc725e4d1500",
+      "--label",
+      "dev.vra.source_content_sha256=35f01843bc1a01d9266c8d40c4f43cb916e61ffad5adb70ca1eedbc7632b43c5",
+      "--label",
+      "dev.vra.source_head=01256d96d85823740a8d6c3a3f99346afbdbef56",
+      "--label",
+      "dev.vra.tool_manifest_sha256=5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+      "--label",
+      "dev.vra.purpose=phase1-collector-mount-proof",
+      "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_collector_source"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "register",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_collector_source",
+      "--instance",
+      "e6d0c621-8e75-5808-9da6-abf15d3361cd"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "inspect",
+      "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_collector_source"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "docker",
+      "info",
+      "--format",
+      "{{json .}}"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_collector_source"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "volume",
+      "--id",
+      "vra-poc04-4a1aae34-4914-4392-986f-cc725e4d1500-collector-0_postgres_data"
+    ],
+    "exit_status": 0,
+    "input": null
+  },
+  {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+      "teardown",
+      "--kind",
+      "network",
+      "--id",
+      "0211aa42436a42eb41a244df10f3b7712eb28badc34bc8eef54cd6cf55cf39a3"
+    ],
+    "exit_status": 0,
+    "input": null
+  }
+]

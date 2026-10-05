@@ -1,0 +1,65 @@
+--- prior/collector-boundary-proof.py
++++ current/collector-boundary-proof.py
+@@ -40,6 +40,23 @@
+ 
+ def check(condition, message):
+     if not condition: raise AssertionError(message)
++
++
++def normalized_server_secret_target(entries):
++    # Compose may emit the default filename, its absolute container path, or
++    # omit the default target. Only this reviewed credential destination is valid.
++    source = 'postgres_admin_password'
++    destination = '/run/secrets/' + source
++    check(isinstance(entries, list) and len(entries) == 1,
++          'profile server credential entry count/shape differs')
++    entry = entries[0]
++    check(isinstance(entry, dict) and set(entry) in ({'source'}, {'source', 'target'}),
++          'profile server credential entry fields differ')
++    check(entry['source'] == source, 'profile server credential source differs')
++    if 'target' in entry:
++        check(isinstance(entry['target'], str) and entry['target'] in (source, destination),
++              'profile server credential target differs')
++    return destination
+ 
+ # The root execution coordinator creates this restricted state once source bytes
+ # are stable. A state or observation from another run confers no deletion authority.
+@@ -285,6 +302,27 @@
+     compose=['compose','--project-name',project,'-f',str(ROOT/'validation/poc-04/db/collector-test.compose.yaml'),'-f',str(override),'--profile','poc04-collector-test']
+     config=json.loads(docker(compose+['config','--format','json']).stdout)
+     service=config['services']['postgres']
++    secret_target=normalized_server_secret_target(service.get('secrets'))
++    check(isinstance(config.get('secrets'),dict) and set(config['secrets'])=={'postgres_admin_password'}, 'profile credential declarations differ')
++    secret=config['secrets']['postgres_admin_password']
++    check(isinstance(secret,dict) and set(secret) in ({'file'},{'file','name'}), 'profile credential source kind/fields differ')
++    check(secret.get('file')==str(secret_file), 'profile external credential file binding differs')
++    if 'name' in secret:
++        check(isinstance(secret['name'],str) and bool(secret['name']), 'profile credential logical name shape differs')
++    write('normalized-secrets-model.json',{
++      'service_names':list(config['services']),
++      'services':{'postgres':{'secrets_node_type':'list','entry_count':1,
++        'entries':[{'node_type':'dict','keys':sorted(service['secrets'][0]),
++          'source':service['secrets'][0]['source'],
++          'target_present':'target' in service['secrets'][0],
++          'target':service['secrets'][0].get('target'),
++          'effective_target':secret_target}]}},
++      'top_level_secrets':{'postgres_admin_password':{'structural_keys':sorted(secret),
++        'source_kind':'file','file_equals_exact_ephemeral_input':True}},
++      'secret_contents_captured':False,'environment_values_captured':False})
++    summary['normalized_credential_boundary']={'authorized_service':'postgres',
++      'source':'postgres_admin_password','effective_target':secret_target,
++      'other_services_present':set(config['services'])!={'postgres'},'source_kind':'external ephemeral file'}
+     check(service['image']==PG_REF and service['platform']==PLATFORM,'resolved profile execution mismatch')
+     check(not service.get('ports'),'collector profile publishes a port')
+     check(set(config['services'])=={'postgres'},'observer/other service unexpectedly present')
+@@ -332,9 +370,7 @@
+         args+=['--mount',spec]
+     check(service['entrypoint']==['bash','/etc/poc04/collector-test-entrypoint.sh'] and service['command']==['postgres','-c','config_file=/etc/poc04/postgresql-collector-test.conf'], 'profile prepared server entrypoint/command differs')
+     check(service['environment']=={'POSTGRES_DB':'vra_poc01','POSTGRES_USER':'postgres','POSTGRES_PASSWORD_FILE':'/run/secrets/postgres_admin_password'}, 'profile server environment differs')
+-    check(config['secrets']['postgres_admin_password']['file']==str(secret_file), 'profile external credential file binding differs')
+-    check(service['secrets']==[{'source':'postgres_admin_password','target':'postgres_admin_password'}], 'profile server credential target differs')
+-    args+=['--mount','type=bind,src='+str(secret_file)+',dst=/run/secrets/postgres_admin_password,readonly']
++    args+=['--mount','type=bind,src='+str(secret_file)+',dst='+secret_target+',readonly']
+     for key, value in service['environment'].items(): args+=['--env',key+'='+value]
+     args+=['--entrypoint','bash',PG_REF,'/etc/poc04/collector-test-entrypoint.sh']+service['command']
+     pgid=create_resource('container',args)

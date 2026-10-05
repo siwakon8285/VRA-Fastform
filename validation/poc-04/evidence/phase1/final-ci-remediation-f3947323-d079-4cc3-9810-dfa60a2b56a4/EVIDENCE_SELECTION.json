@@ -1,0 +1,317 @@
+{
+  "excluded_from_intended_commit_set": "All unselected evidence, local artifacts, caches, build output and accepted historical 288 drift paths remain locally preserved and excluded. Only exact paths in the external intended commit-set binding may be staged later. Evidence directory membership grants no authority.",
+  "historical_evidence": [
+    {
+      "historical_fact": "A",
+      "independently_bound_prior_inventory": {
+        "artifact": "CANONICAL_INITIAL.json",
+        "round": "ROUND5O",
+        "sha256": "c1185ac5465ce6d27a05fca43c5083a7b3563b28c91a0424cdfa37e7369c26ae"
+      },
+      "mode": "0644",
+      "original_provenance": {
+        "path": "validation/poc-04/evidence/phase1/hosted-ci-remediation-36cccdbd-fa65-407f-8ff7-fcb1dcc3f750/DELTA_BINDING.json",
+        "sha256": "6abd17b94175f13ff750e37a7f2721cad429c23e89027dab477c04923a7c9276"
+      },
+      "path": "validation/poc-04/evidence/phase1/hosted-ci-remediation-36cccdbd-fa65-407f-8ff7-fcb1dcc3f750/CI_REMEDIATION_REPORT.md",
+      "reason_required": "Original hosted TEST-support integration failure lineage, as recorded by the accepted report; preserves first failed support remediation.",
+      "sha256": "79de293f2e339232fe6a6a6654086b9984ff877dbbf794c52e9ca1c622f9767a",
+      "size": 4637
+    },
+    {
+      "historical_fact": "B",
+      "independently_bound_prior_inventory": {
+        "artifact": "CANONICAL_INITIAL.json",
+        "round": "ROUND5O",
+        "sha256": "c1185ac5465ce6d27a05fca43c5083a7b3563b28c91a0424cdfa37e7369c26ae"
+      },
+      "mode": "0644",
+      "original_provenance": {
+        "path": "validation/poc-04/evidence/phase1/hosted-ci-round3a-1ef1a66c-6a19-446c-8f64-028a28511bad/DELTA_BINDING.json",
+        "sha256": "c82ef315f54bddc9356d544ee335371a8756fdb619cae1383c23ab089896d35f"
+      },
+      "path": "validation/poc-04/evidence/phase1/hosted-ci-round3a-1ef1a66c-6a19-446c-8f64-028a28511bad/CI_ROUND3A_REPORT.md",
+      "reason_required": "Retains the failed execution, SQLSTATE 08P01, unknown root cause and no replacement retry.",
+      "sha256": "24b6cc91a317be06edfcef231573b81e6feb37fc79cbd63eb22ccacba31aded7",
+      "size": 11146
+    },
+    {
+      "historical_fact": "B",
+      "independently_bound_prior_inventory": {
+        "artifact": "CANONICAL_INITIAL.json",
+        "round": "ROUND5O",
+        "sha256": "c1185ac5465ce6d27a05fca43c5083a7b3563b28c91a0424cdfa37e7369c26ae"
+      },
+      "mode": "0644",
+      "original_provenance": {
+        "path": "validation/poc-04/evidence/phase1/hosted-ci-round3a-1ef1a66c-6a19-446c-8f64-028a28511bad/CI_ROUND3A_REPORT.md",
+        "sha256": "24b6cc91a317be06edfcef231573b81e6feb37fc79cbd63eb22ccacba31aded7"
+      },
+      "path": "validation/poc-04/evidence/phase1/hosted-ci-round3a-1ef1a66c-6a19-446c-8f64-028a28511bad/full-failure-preserved/migration/integrationTest/TEST-dev.vra.migration.OutboxMigrationSecurityIntegrationTest.xml",
+      "reason_required": "Exact raw failed JUnit XML explicitly identified by SHA in the Round-3A report; preserves SSL setup / SQLSTATE 08P01 failure.",
+      "sha256": "a1ee8850985eadb2fe7308d568d4532647a373cde4244f3c8fb8f1f1a616a146",
+      "size": 91821
+    },
+    {
+      "historical_fact": "C",
+      "independently_bound_prior_inventory": {
+        "artifact": "CANONICAL_INITIAL.json",
+        "round": "ROUND5O",
+        "sha256": "c1185ac5465ce6d27a05fca43c5083a7b3563b28c91a0424cdfa37e7369c26ae"
+      },
+      "mode": "0644",
+      "original_provenance": {
+        "path": "validation/poc-04/evidence/phase1/hosted-ci-round3b-50b5f4f6-6641-45cd-9b78-c6c3bf43a52a/DELTA_BINDING.json",
+        "sha256": "946e7d64ff76ae5092d854bd43974939eac2afb87c4e484f2c5698837a2a668e"
+      },
+      "path": "validation/poc-04/evidence/phase1/hosted-ci-round3b-50b5f4f6-6641-45cd-9b78-c6c3bf43a52a/CI_ROUND3B_REPORT.md",
+      "reason_required": "Focused investigation, no connection fix and no reproduced 08P01; limitations retained.",
+      "sha256": "9003e79d5bd5bb562731b1ed16642a754e62b66af9f11bb5b6e746d30bcedf72",
+      "size": 12790
+    },
+    {
+      "historical_fact": "C",
+      "independently_bound_prior_inventory": {
+        "artifact": "CANONICAL_INITIAL.json",
+        "round": "ROUND5O",
+        "sha256": "c1185ac5465ce6d27a05fca43c5083a7b3563b28c91a0424cdfa37e7369c26ae"
+      },
+      "mode": "0644",
+      "original_provenance": {
+        "path": "validation/poc-04/evidence/phase1/hosted-ci-round3b-50b5f4f6-6641-45cd-9b78-c6c3bf43a52a/DELTA_BINDING.json",
+        "sha256": "946e7d64ff76ae5092d854bd43974939eac2afb87c4e484f2c5698837a2a668e"
+      },
+      "path": "validation/poc-04/evidence/phase1/hosted-ci-round3b-50b5f4f6-6641-45cd-9b78-c6c3bf43a52a/TRANSPORT_DIAGNOSIS.json",
+      "reason_required": "Small structured diagnostic result preserving observations and attribution limits; diagnostic code itself is excluded.",
+      "sha256": "7a3d0cfa8b8b02ab5f7ded81f00d258bb96504c1a4496e0071a8deb25c97e36b",
+      "size": 3134
+    },
+    {
+      "historical_fact": "D",
+      "independently_bound_prior_inventory": {
+        "artifact": "CANONICAL_INITIAL.json",
+        "round": "ROUND5O",
+        "sha256": "c1185ac5465ce6d27a05fca43c5083a7b3563b28c91a0424cdfa37e7369c26ae"
+      },
+      "mode": "0600",
+      "original_provenance": {
+        "path": "validation/poc-04/evidence/phase1/hosted-ci-round3c-4b522ad6-156a-4fd8-b575-8feadf5485d2/DELTA_BINDING.json",
+        "sha256": "c726a303e84634edc8f7f41f921295c8992707d215ff83ff8fce7f5409964b94"
+      },
+      "path": "validation/poc-04/evidence/phase1/hosted-ci-round3c-4b522ad6-156a-4fd8-b575-8feadf5485d2/CI_ROUND3C_REPORT.md",
+      "reason_required": "Controlled recurrence contexts and repeated PASS without retries or connection changes.",
+      "sha256": "d97c681c4f3aebad3ccc9ea5d4a633d2cddcfba977b240a776dc13faadf06734",
+      "size": 10800
+    },
+    {
+      "historical_fact": "D",
+      "independently_bound_prior_inventory": {
+        "artifact": "CANONICAL_INITIAL.json",
+        "round": "ROUND5O",
+        "sha256": "c1185ac5465ce6d27a05fca43c5083a7b3563b28c91a0424cdfa37e7369c26ae"
+      },
+      "mode": "0600",
+      "original_provenance": {
+        "path": "validation/poc-04/evidence/phase1/hosted-ci-round3c-4b522ad6-156a-4fd8-b575-8feadf5485d2/DELTA_BINDING.json",
+        "sha256": "c726a303e84634edc8f7f41f921295c8992707d215ff83ff8fce7f5409964b94"
+      },
+      "path": "validation/poc-04/evidence/phase1/hosted-ci-round3c-4b522ad6-156a-4fd8-b575-8feadf5485d2/RUN_D/RECURRENCE_RESULT.json",
+      "reason_required": "First controlled full 193-test PASS result on unchanged source; summary supports accepted recurrence disposition.",
+      "sha256": "33ac25c40ad06287eb2e89efeb7a91a75de091cb76ce8d41461ec2e6bb3b8ee2",
+      "size": 1131
+    },
+    {
+      "historical_fact": "D",
+      "independently_bound_prior_inventory": {
+        "artifact": "CANONICAL_INITIAL.json",
+        "round": "ROUND5O",
+        "sha256": "c1185ac5465ce6d27a05fca43c5083a7b3563b28c91a0424cdfa37e7369c26ae"
+      },
+      "mode": "0600",
+      "original_provenance": {
+        "path": "validation/poc-04/evidence/phase1/hosted-ci-round3c-4b522ad6-156a-4fd8-b575-8feadf5485d2/DELTA_BINDING.json",
+        "sha256": "c726a303e84634edc8f7f41f921295c8992707d215ff83ff8fce7f5409964b94"
+      },
+      "path": "validation/poc-04/evidence/phase1/hosted-ci-round3c-4b522ad6-156a-4fd8-b575-8feadf5485d2/RUN_E/RECURRENCE_RESULT.json",
+      "reason_required": "Second controlled full 193-test PASS result, distinct execution, without replacing the historical failure.",
+      "sha256": "a706a9508b57c5cfa2fd501163e7bd6339223c5ffb240d977ad789a3bd7d88b0",
+      "size": 1131
+    },
+    {
+      "historical_fact": "E",
+      "independently_bound_prior_inventory": {
+        "artifact": "CANONICAL_INITIAL.json",
+        "round": "ROUND5O",
+        "sha256": "c1185ac5465ce6d27a05fca43c5083a7b3563b28c91a0424cdfa37e7369c26ae"
+      },
+      "mode": "0644",
+      "original_provenance": {
+        "path": "validation/poc-04/evidence/phase1/hosted-ci-round5-b89a1e7f-2df1-4def-8bde-cee98aaf3f39/DELTA_BINDING.json",
+        "sha256": "278a49d26e617eec40f4907724abccd8a837b7c69b26d63627f48d5ecae15927"
+      },
+      "path": "validation/poc-04/evidence/phase1/hosted-ci-round5-b89a1e7f-2df1-4def-8bde-cee98aaf3f39/PRESERVED_CI_DELTA_REVIEW_FAIL.md",
+      "reason_required": "Original independent CI-delta FAIL with the two original blockers, retained verbatim.",
+      "sha256": "562f854872ba23c7afea1569a5d768acb9651e5b0e316375db4ee0baa8c516be",
+      "size": 712
+    },
+    {
+      "historical_fact": "F",
+      "independently_bound_prior_inventory": {
+        "artifact": "CANONICAL_INITIAL.json",
+        "round": "ROUND5O",
+        "sha256": "c1185ac5465ce6d27a05fca43c5083a7b3563b28c91a0424cdfa37e7369c26ae"
+      },
+      "mode": "0600",
+      "original_provenance": {
+        "path": "validation/poc-04/evidence/phase1/hosted-ci-round5f-245e3f57-0242-44c0-af4e-57c98e57e396/ROUND5F_FAILURE_BINDING.json",
+        "sha256": "5d4ea81ffef341f0dbcfc26e96224b86a3460634c21d9a1d9129081c5c06a3c7"
+      },
+      "path": "validation/poc-04/evidence/phase1/hosted-ci-round5f-245e3f57-0242-44c0-af4e-57c98e57e396/CI_ROUND5F_REPORT.md",
+      "reason_required": "Historical 17/18 observation discrepancy, sole finding location and characterization limitations; unknown cause retained.",
+      "sha256": "436c32f0757dafbd3fde37fcc17753bb56f2e42a297af30faa1aaa0d3bf53063",
+      "size": 4574
+    }
+  ],
+  "historical_evidence_count": 10,
+  "historical_evidence_retention": "Existing repository-relative paths and bytes preserved; no historical report rewritten.",
+  "historical_residual_dispositions": "round5o/HISTORICAL_RESIDUAL_DISPOSITIONS.json",
+  "publication": {
+    "null_redaction_policy": [
+      "canonical_identity_sha256",
+      "finding_key",
+      "raw_token_sha256",
+      "token_sha256"
+    ],
+    "originals_preserved_externally_and_locally": true,
+    "reason": "Token-derived forensic fields are unnecessary for committed proof; original eight records are preserved unchanged and excluded from intended commit set. Two dependent comparison references use the same public locators.",
+    "replacements": [
+      {
+        "original_forensic_reference": {
+          "mode": "0644",
+          "relative_path": "SIX_CLASSIFIER_ORIGIN_PROOFS.json",
+          "round": "ROUND5O",
+          "sha256": "887b32ae4a7e88617f8cef36271767607f2167a24b8f06c6fcdc712ac7152d34",
+          "size": 14101
+        },
+        "original_preserved_repository_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/round5o/SIX_CLASSIFIER_ORIGIN_PROOFS.json",
+        "publication_selected_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/publication/round5o/SIX_CLASSIFIER_ORIGIN_PROOFS.publication.json",
+        "publication_sha256": "561d5daf269ce5e693e33c4bb5734ba343ae63f3f783bbcbdf694cc9013586c9",
+        "role": "CORE_PROOF"
+      },
+      {
+        "original_forensic_reference": {
+          "mode": "0600",
+          "relative_path": "full-workflow/secret-scan-expanded-artifacts.json",
+          "round": "ROUND5O",
+          "sha256": "4fa006e024bc71bacfcbb925bcc9e8a4457e422ad9c9b5b3e9cffcfd24540f0b",
+          "size": 33932
+        },
+        "original_preserved_repository_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/round5o/full-workflow/secret-scan-expanded-artifacts.json",
+        "publication_selected_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/publication/round5o/full-workflow/secret-scan-expanded-artifacts.publication.json",
+        "publication_sha256": "3bf1ef501a3a9441572ad8faa85f7825e09ff90a8b98c7cc6114ed34b2179473",
+        "role": "CORE_PROOF"
+      },
+      {
+        "original_forensic_reference": {
+          "mode": "0600",
+          "relative_path": "full-workflow/secret-scan-postbuild-original.json",
+          "round": "ROUND5O",
+          "sha256": "d97dca00f4815ac6e026e40758d13aea36fd131d501e00c3ee5cb291cf2243e9",
+          "size": 33933
+        },
+        "original_preserved_repository_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/round5o/full-workflow/secret-scan-postbuild-original.json",
+        "publication_selected_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/publication/round5o/full-workflow/secret-scan-postbuild-original.publication.json",
+        "publication_sha256": "cf1390b56a4d4b2c4372c28ce5d481c23f3c113fbe0bf1ef47b21b9f86afe214",
+        "role": "CORE_PROOF"
+      },
+      {
+        "original_forensic_reference": {
+          "mode": "0600",
+          "relative_path": "full-workflow/secret-scan-prebuild-control-1.json",
+          "round": "ROUND5O",
+          "sha256": "a54a0d59c4b5dd8872b60e0583f5b6331003d809292cbe55d0e5a80cdf096761",
+          "size": 33933
+        },
+        "original_preserved_repository_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/round5o/full-workflow/secret-scan-prebuild-control-1.json",
+        "publication_selected_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/publication/round5o/full-workflow/secret-scan-prebuild-control-1.publication.json",
+        "publication_sha256": "c1bee25f9b3124f4cdc16d1e96b7069f75ac9b9e5a423570e2a835874b3abb5c",
+        "role": "CORE_PROOF"
+      },
+      {
+        "original_forensic_reference": {
+          "mode": "0600",
+          "relative_path": "full-workflow/secret-scan-prebuild-control-2.json",
+          "round": "ROUND5O",
+          "sha256": "8d9d43556e46d8550fcf1a8ee0aeabb87ad2b0a302326607c4e8595fd36fae82",
+          "size": 33933
+        },
+        "original_preserved_repository_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/round5o/full-workflow/secret-scan-prebuild-control-2.json",
+        "publication_selected_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/publication/round5o/full-workflow/secret-scan-prebuild-control-2.publication.json",
+        "publication_sha256": "c1b4490141a07d34d4bfa87bb3db237d98adbf43ac228f92cd0722e3afc1d156",
+        "role": "CORE_PROOF"
+      },
+      {
+        "original_forensic_reference": {
+          "mode": "0600",
+          "relative_path": "full-workflow/secret-scan-primary.json",
+          "round": "ROUND5O",
+          "sha256": "d6a633156d1db435fd0fa5c86d85ae92edeec4ecc309bf6bb4bad62b93112bb5",
+          "size": 33922
+        },
+        "original_preserved_repository_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/round5o/full-workflow/secret-scan-primary.json",
+        "publication_selected_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/publication/round5o/full-workflow/secret-scan-primary.publication.json",
+        "publication_sha256": "5b473d02b7cabe3eb648e9e81710a934a01999cf6bcfb08567216e1f193c363b",
+        "role": "CORE_PROOF"
+      },
+      {
+        "original_forensic_reference": {
+          "mode": "0600",
+          "relative_path": "full-workflow/scanner-finding-set-comparison.json",
+          "round": "ROUND5O",
+          "sha256": "696af0fc425f0d19b6b0d8d57945c0aabef957c2d9c4febfa6f29c49b1f618f9",
+          "size": 3980
+        },
+        "original_preserved_repository_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/round5o/full-workflow/scanner-finding-set-comparison.json",
+        "publication_selected_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/publication/round5o/full-workflow/scanner-finding-set-comparison.publication.json",
+        "publication_sha256": "f6f7fe6c88e0e66fb42c9cbb951d81f247bb30a798fb938f7ac5eb197fd7d38a",
+        "role": "DIRECT_DEPENDENT_COMPARISON"
+      },
+      {
+        "original_forensic_reference": {
+          "mode": "0600",
+          "relative_path": "INDEPENDENT_SCANNER_FINDING_SET_RECONCILIATION.json",
+          "round": "ROUND5O",
+          "sha256": "9a1b31af252bc91dd8f3714fc2b3bf63c88717c31ef8e32716eb71112e57627d",
+          "size": 7377
+        },
+        "original_preserved_repository_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/round5o/INDEPENDENT_SCANNER_FINDING_SET_RECONCILIATION.json",
+        "publication_selected_path": "validation/poc-04/evidence/phase1/final-ci-remediation-f3947323-d079-4cc3-9810-dfa60a2b56a4/publication/round5o/INDEPENDENT_SCANNER_FINDING_SET_RECONCILIATION.publication.json",
+        "publication_sha256": "1b138fe61b02e450af92c8827c92cd7974d016e4535368ace6241959f62c6e5f",
+        "role": "DIRECT_DEPENDENT_COMPARISON"
+      }
+    ],
+    "transform_manifest": "EVIDENCE_PUBLICATION_TRANSFORM.json",
+    "transform_manifest_sha256": "a1e6c085e8c4d84535871ba6b830a47b965ae778d5601367b22fbcd8a42d3891"
+  },
+  "purpose": "Exact proposed forward CI-remediation commit evidence selection with bounded publication derivatives; no staging authorization",
+  "round5o": {
+    "original_binding_included": true,
+    "provenance_binding_entries": 355,
+    "provenance_binding_sha256": "913abae6940f2826e92cfd7597ff1ceae1f50bedb58011f7fc47940f53115d9f",
+    "selected_artifact_representation": {
+      "core_proof_publication_replacements": 6,
+      "direct_reference_publication_replacements": 2,
+      "forensic_selection_count": 107,
+      "original_forensic_selection_hash_unchanged": "076180449575631fc7798cd6aadc050cec919dae5785284369bea65bb403677c",
+      "unchanged_original_artifacts_selected": 99
+    },
+    "selected_artifacts_relative_to": "round5o/",
+    "selected_evidence_count": 107,
+    "selected_row_binding_sha256": "076180449575631fc7798cd6aadc050cec919dae5785284369bea65bb403677c",
+    "selection_rows_external_review_record": "ROUND5O_SELECTION_VERIFICATION.json",
+    "selection_rule": "Exactly the independently reviewed 75 literal rows and 32 JUnit XML binding rows; verified canonical row hash. No filesystem discovery.",
+    "unselected_artifacts": 248
+  },
+  "schema_version": 2,
+  "source_inventory_sha256": "d09be001c21e398ea8354ffdd6237ad5ab93d7b7f348049952573c5e2bb9e885"
+}

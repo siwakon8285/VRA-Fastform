@@ -1,0 +1,85 @@
+{
+  "run_id": "5e8a333f-5b82-4b7d-b513-0fea93933bab",
+  "recorded_at_utc": "2026-09-30T18:00:13.460552+00:00",
+  "endpoint": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+  "daemon_commands": [
+    {
+      "command": [
+        "docker",
+        "info",
+        "--format",
+        "{{.ID}} {{.Name}} {{.ServerVersion}} {{.OSType}} {{.Architecture}}"
+      ],
+      "exit_status": 0,
+      "stdout": "14c8ff26-86d1-4c0b-88a6-560be91a65ea colima-vra-poc04-test 29.5.2 linux aarch64\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "ps",
+        "-a",
+        "--no-trunc",
+        "--format",
+        "{{.ID}} {{.Names}}"
+      ],
+      "exit_status": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "volume",
+        "ls",
+        "--format",
+        "{{.Name}}"
+      ],
+      "exit_status": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "immutable_manifest_commands": [
+    {
+      "command": [
+        "docker",
+        "buildx",
+        "imagetools",
+        "inspect",
+        "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+        "--raw"
+      ],
+      "exit_status": 0,
+      "bytes": 10237,
+      "stdout_sha256": "d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+      "matches_exact_digest": true,
+      "stderr": "",
+      "media_type": "application/vnd.oci.image.index.v1+json",
+      "config": null
+    },
+    {
+      "command": [
+        "docker",
+        "buildx",
+        "imagetools",
+        "inspect",
+        "docker.io/library/postgres@sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761",
+        "--raw"
+      ],
+      "exit_status": 0,
+      "bytes": 3630,
+      "stdout_sha256": "86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761",
+      "matches_exact_digest": true,
+      "stderr": "",
+      "media_type": "application/vnd.oci.image.manifest.v1+json",
+      "config": {
+        "mediaType": "application/vnd.oci.image.config.v1+json",
+        "digest": "sha256:97432f980da100ebd3e419711efee84e1e97a966d62c035286a07f239ddb4d9c",
+        "size": 10161
+      }
+    }
+  ],
+  "source_edited": false,
+  "docker_mutations": []
+}

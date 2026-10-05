@@ -1,0 +1,16 @@
+{
+  "source_path": "validation/poc-04/scripts/collector-boundary-proof.py",
+  "source_sha256": "ca0139d63b19cc29a2392aeb99e6ca4c9e9998fb486f63c7f58d1f2a5b59f288",
+  "old_sha256": "8e618e48b4d9d27fa05805a3e276c06cc8f7e99e4521e31f036343ced255b2b5",
+  "changed_source_paths": [
+    "validation/poc-04/scripts/collector-boundary-proof.py"
+  ],
+  "line": 279,
+  "new_expression": "state_path.parent / ('collector-local-platform-' + str(allocation['ordinal']) + '.override.json')",
+  "intended_filename": "collector-local-platform-<ordinal>.override.json",
+  "parent": "private run-state parent; sibling child filename",
+  "syntax_ast_parse": "PASS",
+  "runtime_path_write_and_compose_config_exit_status": 0,
+  "focused_collector_overall": "FAIL at line336; no assertion changed",
+  "unsafe_whole_path_string_cast": false
+}

@@ -16,14 +16,16 @@ concurrency:
 jobs:
   backend:
     name: Java 21 / PostgreSQL
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
 
     steps:
       - name: Check out repository
         uses: actions/checkout@v7.0.1
         with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           persist-credentials: false
+          fetch-depth: 0
 
       - name: Set up Java 21
         uses: actions/setup-java@v6.0.1
@@ -31,101 +33,112 @@ jobs:
           distribution: temurin
           java-version: "21"
 
-      - name: Verify Docker availability
-        run: docker version
+      - name: Provision pinned hosted Docker runtime
+        shell: bash
+        run: |
+          python3 -B validation/poc-04/scripts/hosted-docker-runtime.py provision \
+            --root "$RUNNER_TEMP/vra-poc04-docker-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
+            --github-env "$GITHUB_ENV" \
+            --github-path "$GITHUB_PATH"
 
       - name: Verify Gradle wrapper
         run: ./backend/gradlew -p backend --version
 
-      - name: Run backend verification and build artifacts
-        run: |
-          ./backend/gradlew \
-            -p backend \
-            --no-daemon \
-            --warning-mode all \
-            :runtime:clean \
-            :migration:clean \
-            :runtime:check \
-            :migration:check \
-            :runtime:bootJar \
-            :migration:bootJar
-
-      - name: Prove PostgreSQL integration suites executed
+      - name: Run disposable Phase-1 verification
         shell: bash
         run: |
-          python3 - <<'PY'
+          python3 -B validation/poc-04/scripts/phase1-ci.py \
+            --disposable-test \
+            --gate full \
+            --evidence-directory "validation/poc-04/evidence/phase1/ci-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}/bootstrap"
+
+      - name: Prove TEST service-loader isolation in deployable artifacts
+        shell: bash
+        run: |
+          python3 -B - <<'PY'
+          import hashlib
+          import io
+          import json
+          import os
           from pathlib import Path
-          import sys
-          import xml.etree.ElementTree as ET
+          import zipfile
 
-          suites = {
-              "runtime": Path(
-                  "backend/runtime/build/test-results/integrationTest"
-              ),
-              "migration": Path(
-                  "backend/migration/build/test-results/integrationTest"
-              ),
+          prohibited_services = {
+              "META-INF/services/org.testcontainers.core.CreateContainerCmdModifier",
+              "META-INF/services/org.testcontainers.utility.ImageNameSubstitutor",
           }
+          def inspect(archive):
+              nested = 0
+              for entry in archive.namelist():
+                  relative = entry.removeprefix("BOOT-INF/classes/")
+                  if (relative in prohibited_services
+                          or relative.endswith("PhaseOneEvidenceCapture.class")):
+                      raise SystemExit("FAIL: TEST harness entry in deployable artifact")
+                  if relative.startswith("META-INF/services/") and not entry.endswith("/"):
+                      if b"dev.vra.poc04.external" in archive.read(entry):
+                          raise SystemExit("FAIL: TEST provider in deployable service descriptor")
+                  if entry.startswith("BOOT-INF/lib/") and entry.endswith(".jar"):
+                      with zipfile.ZipFile(io.BytesIO(archive.read(entry))) as library:
+                          nested += 1 + inspect(library)
+              return nested
 
-          failed = False
-
-          for name, directory in suites.items():
-              xml_files = sorted(directory.glob("TEST-*.xml"))
-
-              if not xml_files:
-                  print(
-                      f"FAIL: {name} PostgreSQL integration suite "
-                      "produced no XML results."
-                  )
-                  failed = True
-                  continue
-
-              tests = 0
-              skipped = 0
-              failures = 0
-              errors = 0
-
-              for file in xml_files:
-                  root = ET.parse(file).getroot()
-                  tests += int(root.attrib.get("tests", "0"))
-                  skipped += int(root.attrib.get("skipped", "0"))
-                  failures += int(root.attrib.get("failures", "0"))
-                  errors += int(root.attrib.get("errors", "0"))
-
-              print(
-                  f"{name}: tests={tests} skipped={skipped} "
-                  f"failures={failures} errors={errors}"
-              )
-
-              if tests <= 0:
-                  print(
-                      f"FAIL: {name} PostgreSQL integration suite "
-                      "executed zero tests."
-                  )
-                  failed = True
-
-              if skipped != 0 or failures != 0 or errors != 0:
-                  print(
-                      f"FAIL: {name} PostgreSQL integration suite "
-                      "was not fully green."
-                  )
-                  failed = True
-
-          if failed:
-              sys.exit(1)
-
-          print(
-              "PASS: runtime and migration PostgreSQL "
-              "integration suites executed with no skips."
+          evidence = Path("validation/poc-04/evidence/phase1") / (
+              f"ci-{os.environ['GITHUB_RUN_ID']}-{os.environ['GITHUB_RUN_ATTEMPT']}"
           )
+          artifacts = []
+          for project in ("runtime", "migration"):
+              path = Path(f"backend/{project}/build/libs/{project}-0.1.0-SNAPSHOT.jar")
+              with zipfile.ZipFile(path) as archive:
+                  nested = inspect(archive)
+              artifacts.append({"path": str(path), "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+                                "nested_libraries_inspected": nested})
+          proof = {"status": "PASS", "artifacts": artifacts,
+                   "bootstrap_binding_sha256": hashlib.sha256(
+                       (evidence / "bootstrap/EVIDENCE_BINDING.json").read_bytes()).hexdigest()}
+          (evidence / "service-isolation.json").write_text(json.dumps(proof, indent=2) + "\n")
+          print(json.dumps(proof))
           PY
 
-      - name: Verify deployable JVM artifacts exist
+      - name: Stop job-owned hosted Docker runtime
+        if: always()
         shell: bash
         run: |
-          test -s backend/runtime/build/libs/runtime-0.1.0-SNAPSHOT.jar
-          test -s backend/migration/build/libs/migration-0.1.0-SNAPSHOT.jar
+          python3 -B validation/poc-04/scripts/hosted-docker-runtime.py teardown \
+            --root "$RUNNER_TEMP/vra-poc04-docker-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
 
-          ls -lh \
-            backend/runtime/build/libs/runtime-0.1.0-SNAPSHOT.jar \
-            backend/migration/build/libs/migration-0.1.0-SNAPSHOT.jar
+      - name: Preserve safe Phase-1 status and identity metadata
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: poc04-phase1-status-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            validation/poc-04/evidence/phase1/ci-${{ github.run_id }}-${{ github.run_attempt }}/bootstrap/result.json
+            validation/poc-04/evidence/phase1/ci-${{ github.run_id }}-${{ github.run_attempt }}/bootstrap/preflight.json
+            validation/poc-04/evidence/phase1/ci-${{ github.run_id }}-${{ github.run_attempt }}/bootstrap/EVIDENCE_BINDING.json
+            validation/poc-04/evidence/phase1/ci-${{ github.run_id }}-${{ github.run_attempt }}/bootstrap/commands.json
+            validation/poc-04/evidence/phase1/ci-${{ github.run_id }}-${{ github.run_attempt }}/bootstrap/source-binding-start.json
+            validation/poc-04/evidence/phase1/ci-${{ github.run_id }}-${{ github.run_attempt }}/bootstrap/source-binding-final.json
+            validation/poc-04/evidence/phase1/ci-${{ github.run_id }}-${{ github.run_attempt }}/bootstrap/ledger-before-cleanup.json
+            validation/poc-04/evidence/phase1/ci-${{ github.run_id }}-${{ github.run_attempt }}/bootstrap/final-run-ledger.json
+            validation/poc-04/evidence/phase1/ci-${{ github.run_id }}-${{ github.run_attempt }}/bootstrap/cleanup-failure-ledger.json
+            validation/poc-04/evidence/phase1/ci-${{ github.run_id }}-${{ github.run_attempt }}/bootstrap/final-daemon-state.json
+            validation/poc-04/evidence/phase1/ci-${{ github.run_id }}-${{ github.run_attempt }}/bootstrap/scanner-acquisition.json
+            validation/poc-04/evidence/phase1/ci-${{ github.run_id }}-${{ github.run_attempt }}/bootstrap/secret-scan.json
+          if-no-files-found: error
+
+      - name: Preserve verified Phase-1 execution evidence
+        if: success()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: poc04-phase1-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            validation/poc-04/evidence/phase1/ci-${{ github.run_id }}-${{ github.run_attempt }}/
+          if-no-files-found: error
+
+      - name: Preserve external hosted Docker runtime evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: poc04-docker-runtime-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/vra-poc04-docker-${{ github.run_id }}-${{ github.run_attempt }}/evidence/
+          if-no-files-found: error

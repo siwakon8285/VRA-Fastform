@@ -51,7 +51,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @Tag("postgres")
 class RetryReplayIntegrationTest {
     private static final String PASSWORD = "stage-e-disposable-test-only";
-    private static final PostgreSQLContainer POSTGRES = new PostgreSQLContainer("postgres:17.11")
+    private static final PostgreSQLContainer POSTGRES = new dev.vra.poc04.external.RunOwnedPostgreSQLContainer("postgres:17.11")
             .withDatabaseName("vra_poc01").withUsername("postgres").withPassword(PASSWORD);
     private static AnnotationConfigApplicationContext workerContext;
     private static AnnotationConfigApplicationContext operatorContext;
@@ -66,7 +66,8 @@ class RetryReplayIntegrationTest {
         try {
             bootstrap("validation/poc-01/db/bootstrap.sql");
             bootstrap("validation/poc-03/db/bootstrap-async-roles.sql");
-            assertEquals(3, new MigrationRunner().migrate(POSTGRES.getJdbcUrl(), "vra_migrator", PASSWORD));
+            bootstrap("validation/poc-04/db/bootstrap-security-roles.sql");
+            assertEquals(4, new MigrationRunner().migrate(POSTGRES.getJdbcUrl(), "vra_migrator", PASSWORD));
             workerContext = new AnnotationConfigApplicationContext(WorkerConfiguration.class);
             operatorContext = new AnnotationConfigApplicationContext(OperatorConfiguration.class);
             delivery = workerContext.getBean(DeliveryService.class);

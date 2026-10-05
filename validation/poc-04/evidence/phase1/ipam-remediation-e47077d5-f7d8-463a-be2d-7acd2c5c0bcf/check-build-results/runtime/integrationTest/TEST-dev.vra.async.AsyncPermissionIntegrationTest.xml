@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.vra.async.AsyncPermissionIntegrationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-01T08:03:40.127Z" hostname="MacBook-Air-khxng-SIwakorn.local" time="2.092">
+  <properties/>
+  <testcase name="eachWorkloadCredentialExecutesItsNarrowPositiveOperation()" classname="dev.vra.async.AsyncPermissionIntegrationTest" time="0.177"/>
+  <testcase name="forbiddenSqlHasExpectedSqlstateAndLeavesAuthoritativeRowsUnchanged()" classname="dev.vra.async.AsyncPermissionIntegrationTest" time="0.255"/>
+  <system-out><![CDATA[15:03:40.139 [Test worker] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+15:03:40.141 [Test worker] INFO org.testcontainers.utility.ImageNameSubstitutor -- Found configured ImageNameSubstitutor: POC04 external reviewed digest substitution
+15:03:40.141 [Test worker] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: Chained substitutor of 'DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')' and then 'POC04 external reviewed digest substitution'
+15:03:40.144 [Test worker] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 2.0.5
+15:03:40.211 [Test worker] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+15:03:40.340 [Test worker] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with Environment variables, system properties and defaults. Resolved dockerHost=unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock
+15:03:40.341 [Test worker] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is 127.0.0.1
+15:03:40.348 [Test worker] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.5.2
+  API Version: 1.54
+  Operating System: Ubuntu 24.04.4 LTS
+  Total Memory: 7923 MB
+15:03:40.351 [Test worker] WARN org.testcontainers.utility.ConfigurationFileImageNameSubstitutor -- Image name testcontainers/ryuk:0.14.0 was substituted by configuration to docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0. This approach is deprecated and will be removed in the future
+15:03:40.351 [Test worker] INFO org.testcontainers.utility.ImageNameSubstitutor -- Using docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0 as a substitute image for testcontainers/ryuk:0.14.0 (using image substitutor: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor'))
+15:03:40.394 [Test worker] INFO tc.docker.io/testcontainers/ryuk@sha256:7c1a8a... -- Creating container for image: docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0
+15:03:40.425 [Test worker] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for docker.io
+15:03:40.473 [Test worker] INFO tc.docker.io/testcontainers/ryuk@sha256:7c1a8a... -- Container docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0 is starting: 53dd6b48815aad81babad41922dcd11a46fa002eb176736f9c97c4db309183a3
+15:03:40.644 [Test worker] INFO tc.docker.io/testcontainers/ryuk@sha256:7c1a8a... -- Container docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0 started in PT0.249764S
+15:03:40.646 [Test worker] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+15:03:40.646 [Test worker] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+15:03:40.647 [Test worker] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+15:03:40.647 [Test worker] INFO org.testcontainers.utility.ImageNameSubstitutor -- Using docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f as a substitute image for postgres:17.11 (using image substitutor: POC04 external reviewed digest substitution)
+15:03:40.661 [Test worker] INFO tc.docker.io/library/postgres@sha256:d74eea... -- Creating container for image: docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f
+15:03:40.730 [Test worker] INFO tc.docker.io/library/postgres@sha256:d74eea... -- Container docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f is starting: 1280ed817bf9c4096e5fe072b9051377f2b0f571ffdb34876c58f39bdef41ee5
+15:03:41.317 [Test worker] INFO tc.docker.io/library/postgres@sha256:d74eea... -- Container docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f started in PT0.655347S
+15:03:41.317 [Test worker] INFO tc.docker.io/library/postgres@sha256:d74eea... -- Container is started (JDBC URL: jdbc:postgresql://127.0.0.1:32818/vra_poc01?loggerLevel=OFF)
+15:03:41.552 [Test worker] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:postgresql://127.0.0.1:32818/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+15:03:41.576 [Test worker] INFO org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Schema history table "vra"."flyway_schema_history" does not exist yet
+15:03:41.577 [Test worker] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.007s)
+15:03:41.583 [Test worker] INFO org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Creating Schema History table "vra"."flyway_schema_history" ...
+15:03:41.604 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "vra": << Empty Schema >>
+15:03:41.608 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "vra" to version "1 - inventory reservation foundation"
+15:03:41.622 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "vra" to version "2 - inventory reservation idempotency"
+15:03:41.651 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "vra" to version "3 - outbox recovery"
+15:03:41.718 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "vra" to version "4 - poc04 identity security foundation"
+15:03:41.759 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Successfully applied 4 migrations to schema "vra", now at version v4 (execution time 00:00.100s)
+15:03:41.768 [Test worker] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:postgresql://127.0.0.1:32818/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+15:03:41.777 [Test worker] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.003s)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -66,9 +66,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class ReconciliationIntegrationTest {
     private static final String PASSWORD = "stage-g-disposable-only";
     private static final String ASYNC_PASSWORD = "async-disposable-test-only";
-    private static final PostgreSQLContainer VRA = new PostgreSQLContainer("postgres:17.11")
+    private static final PostgreSQLContainer VRA = new dev.vra.poc04.external.RunOwnedPostgreSQLContainer("postgres:17.11")
             .withDatabaseName("vra_poc01").withUsername("postgres").withPassword(PASSWORD);
-    private static final PostgreSQLContainer SIMULATOR = new PostgreSQLContainer("postgres:17.11")
+    private static final PostgreSQLContainer SIMULATOR = new dev.vra.poc04.external.RunOwnedPostgreSQLContainer("postgres:17.11")
             .withDatabaseName("simulator_stage_g").withUsername("simulator_test").withPassword(PASSWORD);
     private static SimulatorProcessHarness simulatorProcess;
     private static SimulatorStore simulatorStore;
@@ -90,7 +90,7 @@ class ReconciliationIntegrationTest {
         try {
             bootstrap("validation/poc-01/db/bootstrap.sql");
             AsyncRoleBootstrap.run(VRA);
-            assertEquals(3, new MigrationRunner().migrate(VRA.getJdbcUrl(), "vra_migrator", PASSWORD));
+            assertEquals(4, new MigrationRunner().migrate(VRA.getJdbcUrl(), "vra_migrator", PASSWORD));
             simulatorProcess = new SimulatorProcessHarness(SIMULATOR);
             simulatorUri = simulatorProcess.baseUri();
             simulatorStore = new SimulatorStore(SIMULATOR.getJdbcUrl(), SIMULATOR.getUsername(),

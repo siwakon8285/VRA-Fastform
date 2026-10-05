@@ -1,0 +1,116 @@
+{
+  "files": [
+    {
+      "classification": "FINAL WORKFLOW",
+      "mode": "0644",
+      "path": ".github/workflows/backend-ci.yml",
+      "sha256": "a120383860162b67a787e307fc731084b1d4ffc6b10a1295ebddd34c9b9860e6",
+      "size": 5836,
+      "status": "modified"
+    },
+    {
+      "classification": "FINAL IMPLEMENTATION",
+      "mode": "0644",
+      "path": "validation/poc-04/scripts/phase1-ci.py",
+      "sha256": "e6a5f3884568851464b60249f57a37427ee33dbd62a922ed5cbb2b7bb2f5d487",
+      "size": 112248,
+      "status": "added"
+    },
+    {
+      "classification": "FINAL TEST SUPPORT",
+      "mode": "0644",
+      "path": "validation/poc-04/test-support/digest-metadata-contexts.json",
+      "sha256": "80df28983780840ebec88ee9912e992d37d93e1aebfd506f8edbd18c5877c9dc",
+      "size": 21486,
+      "status": "added"
+    },
+    {
+      "classification": "FINAL TEST SUPPORT",
+      "mode": "0644",
+      "path": "validation/poc-04/test-support/runner.init.gradle",
+      "sha256": "107850fd0f08c012f34404aa6ca641b9af2a9d1aa4426f6beb0adcbcfe5ac5a0",
+      "size": 6282,
+      "status": "modified"
+    },
+    {
+      "classification": "FINAL TEST SUPPORT",
+      "mode": "0644",
+      "path": "validation/poc-04/test-support/test_ci_support_boundary.py",
+      "sha256": "32700d98b7d4aa392601d1d147da050afa39246ac7df79f0ae89b5cbbcadd842",
+      "size": 9543,
+      "status": "added"
+    },
+    {
+      "classification": "FINAL TEST SUPPORT",
+      "mode": "0644",
+      "path": "validation/poc-04/test-support/test_digest_metadata_classifier.py",
+      "sha256": "7e4e721987fef17300e95330d24bb93ad7ff3841365b725c9335898414fe9ee9",
+      "size": 12491,
+      "status": "added"
+    },
+    {
+      "classification": "FINAL TEST SUPPORT",
+      "mode": "0644",
+      "path": "validation/poc-04/test-support/test_git_period_normalization.py",
+      "sha256": "8161f8d72528f61f38a0d5c7a01b3d30d1c1df7df72661a9bd32a04499313908",
+      "size": 11829,
+      "status": "added"
+    },
+    {
+      "classification": "FINAL TEST SUPPORT",
+      "mode": "0644",
+      "path": "validation/poc-04/test-support/test_gradle_resource_model.py",
+      "sha256": "2dd896e37945771fa0fd37650cfc6534c6f4e8a634f59b22c9a61b55066718aa",
+      "size": 15269,
+      "status": "added"
+    },
+    {
+      "classification": "FINAL TEST SUPPORT",
+      "mode": "0644",
+      "path": "validation/poc-04/test-support/test_postbuild_trust_domains.py",
+      "sha256": "1648556f4c915b4ed028679011e527941c18c662152c40ff4f34c2bf04f031b1",
+      "size": 20545,
+      "status": "added"
+    },
+    {
+      "classification": "FINAL TEST SUPPORT",
+      "mode": "0644",
+      "path": "validation/poc-04/test-support/test_public_verification_classifier.py",
+      "sha256": "2b6a0e73f294156003136557c0a0d9243391f9cdbdd51f374802c61e780ed794",
+      "size": 4265,
+      "status": "added"
+    },
+    {
+      "classification": "FINAL TEST SUPPORT",
+      "mode": "0644",
+      "path": "validation/poc-04/test-support/test_round5f_inventory_authority.py",
+      "sha256": "83ea926c8f38b98c5f291bf19c5dc040fa763bb4fa6a4f99a5a7b76573af1988",
+      "size": 20017,
+      "status": "added"
+    },
+    {
+      "classification": "FINAL TEST SUPPORT",
+      "mode": "0644",
+      "path": "validation/poc-04/test-support/test_scan_candidate_boundary.py",
+      "sha256": "d3b073a859d38e97b0b70672f7ef11312246abf81848f968283e21b814fd2667",
+      "size": 43639,
+      "status": "added"
+    },
+    {
+      "classification": "FINAL TEST SUPPORT",
+      "mode": "0644",
+      "path": "validation/poc-04/test-support/test_scanner_config_binding.py",
+      "sha256": "e57ca25a008fb1d9825421528685eceff4e1b97d22c33d169d89b726048cdde7",
+      "size": 6942,
+      "status": "added"
+    }
+  ],
+  "head": "ae9bd1f53a7e3e8612f2f4cd9f778e27d7cdb0db",
+  "new_round5o_paths": [
+    ".github/workflows/backend-ci.yml",
+    "validation/poc-04/test-support/test_ci_support_boundary.py"
+  ],
+  "parent": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+  "staged": [],
+  "tree": "988058edd53504936345bc51ebdeee2d7d55b0c7"
+}

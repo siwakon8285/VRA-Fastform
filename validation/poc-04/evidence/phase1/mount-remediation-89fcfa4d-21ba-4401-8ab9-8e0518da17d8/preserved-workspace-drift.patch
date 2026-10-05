@@ -1,0 +1,19 @@
+diff --git a/backend/runtime/src/test/java/dev/vra/async/AsyncVisibilityIntegrationTest.java b/backend/runtime/src/test/java/dev/vra/async/AsyncVisibilityIntegrationTest.java
+index a651f46..3e80926 100644
+--- a/backend/runtime/src/test/java/dev/vra/async/AsyncVisibilityIntegrationTest.java
++++ b/backend/runtime/src/test/java/dev/vra/async/AsyncVisibilityIntegrationTest.java
+@@ -1,4 +1,4 @@
+-package dev.vra.async;
++                        package dev.vra.async;
+ 
+ import java.nio.file.Files;
+ import java.nio.file.Path;
+@@ -55,7 +55,7 @@ class AsyncVisibilityIntegrationTest {
+                     "-v", "runtime_password=" + PASSWORD, "-f", "/tmp/stage-j-bootstrap.sql");
+             assertEquals(0, setup.getExitCode(), setup.getStderr());
+             AsyncRoleBootstrap.run(DB);
+-            assertEquals(3, new MigrationRunner().migrate(DB.getJdbcUrl(), "vra_migrator", PASSWORD));
++            assertEquals(4, new MigrationRunner().migrate(DB.getJdbcUrl(), "vra_migrator", PASSWORD));
+             visibility = new JdbcAsyncVisibility(JdbcClient.create(new DriverManagerDataSource(
+                     DB.getJdbcUrl(), "vra_async_observer", ASYNC_PASSWORD)));
+             assertEquals("vra_async_observer", read("vra_async_observer", "SELECT current_user"));

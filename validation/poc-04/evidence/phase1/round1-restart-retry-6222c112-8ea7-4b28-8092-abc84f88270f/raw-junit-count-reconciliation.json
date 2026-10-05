@@ -1,0 +1,1396 @@
+{
+  "exit_status": 1,
+  "suites": {
+    "migration:test": {
+      "tests": 4,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "testcases": [
+        {
+          "classname": "dev.vra.migration.Poc04FoundationMigrationIntegrationTest",
+          "name": "sourceBindingIncludesTheWholeReviewedRepositoryAndUntrackedPhaseOneBackendSource()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.Poc04FoundationMigrationIntegrationTest",
+          "name": "phaseOneContainsOnlyV1ThroughV4AndPreservesReviewedPriorSourceBytes()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.Poc04FoundationMigrationIntegrationTest",
+          "name": "logicalDatabaseIdentityUsesStableUuidV5UnderOneUuidV4RunNamespace()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.Poc04FoundationMigrationIntegrationTest",
+          "name": "collectorPreparationRestrictsSourceAndDefinesNoObserverProcess()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        }
+      ]
+    },
+    "migration:integrationTest": {
+      "tests": 20,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "testcases": [
+        {
+          "classname": "dev.vra.migration.Poc04FoundationMigrationIntegrationTest",
+          "name": "populatedV3UpgradeRetainsEveryPriorTableAndFlywayHistory()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.Poc04FoundationMigrationIntegrationTest",
+          "name": "reasonWhitespaceContractOnPostgres1711()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.Poc04FoundationMigrationIntegrationTest",
+          "name": "freshV1ThroughV4ValidatesRerunsAndEnforcesPhaseOneBoundary()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.Poc04FoundationMigrationIntegrationTest",
+          "name": "administratorBootstrapConvergesAndRejectsUnexpectedMembershipDrift()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.Poc04FoundationMigrationIntegrationTest",
+          "name": "twoFreshInstancesHaveDistinctIdsAndRestartRetainsPhysicalIdentity()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.MigrationSecurityIntegrationTest",
+          "name": "provesMigrationOwnershipAndRuntimeLeastPrivilege()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.MigrationSecurityIntegrationTest",
+          "name": "upgradesActualVersionOneDatabaseThroughVersionFour()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.OutboxMigrationSecurityIntegrationTest",
+          "name": "staticShapesIdentityForeignKeysAndUniquenessRejectMalformedRows()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.OutboxMigrationSecurityIntegrationTest",
+          "name": "invalidArgumentsCannotMutateAndDedicatedRebuildRepairsFromReservations()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.OutboxMigrationSecurityIntegrationTest",
+          "name": "freshMigrationPreservesChecksumsAndCreatesExactCatalog()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.OutboxMigrationSecurityIntegrationTest",
+          "name": "immutableEvidenceRejectsOwnerRewriteAndFailedHistoryAppendRollsBackWholeOperation()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.OutboxMigrationSecurityIntegrationTest",
+          "name": "intendedReconciliationCapabilitiesKeepPairedStatesAtomic()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.OutboxMigrationSecurityIntegrationTest",
+          "name": "normalRetryAndObservationExhaustionNeverScheduleBeyondDurableLimits()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.OutboxMigrationSecurityIntegrationTest",
+          "name": "exactDirectAclAndFunctionCallerMatrixExecuteRealDeniedSql()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.OutboxMigrationSecurityIntegrationTest",
+          "name": "reconciliationBudgetAllowsFourClaimsThenExactlyOneNonQueryableRecovery()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.OutboxMigrationSecurityIntegrationTest",
+          "name": "exactMembershipOwnershipAndExecutorSteadyStateDenyEscalation()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.OutboxMigrationSecurityIntegrationTest",
+          "name": "intendedDeliveryProducerConsumerAndControlCapabilitiesCommit()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.OutboxMigrationSecurityIntegrationTest",
+          "name": "deferredPairsAndRecoveryEvidenceRejectAtCommitAndPermitCompoundShapes()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.OutboxMigrationSecurityIntegrationTest",
+          "name": "actualVersionTwoUpgradePreservesExistingRowsAndEmitsNoHistoricalEvent()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.migration.OutboxMigrationSecurityIntegrationTest",
+          "name": "deliveryBudgetAllowsFiveClaimsThenExactlyOneNonDispatchingRecovery()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        }
+      ]
+    },
+    "runtime:test": {
+      "tests": 56,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "testcases": [
+        {
+          "classname": "dev.vra.async.ReconciliationPolicyTest",
+          "name": "timingValidationAndMillisecondClampStayWithinV3()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReconciliationPolicyTest",
+          "name": "observationDecisionsAreExact()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReconciliationPolicyTest",
+          "name": "persistedCaseCountControlsBoundedQueryDelay()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReconciliationPolicyTest",
+          "name": "noEffectRetryUsesPersistedDeliveryCycleAndSameBoundedFormula()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReconciliationPolicyTest",
+          "name": "observationExceptionOnlySchedulesAnIndeterminateWait()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.architecture.InventoryArchitectureTest",
+          "name": "domain_is_framework_and_outer_layer_independent",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.architecture.InventoryArchitectureTest",
+          "name": "application_does_not_depend_on_adapters",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.architecture.InventoryArchitectureTest",
+          "name": "jpa_entities_stay_in_persistence_adapter",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.architecture.InventoryArchitectureTest",
+          "name": "web_adapters_do_not_depend_on_persistence_adapters",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.architecture.InventoryArchitectureTest",
+          "name": "rest_controllers_stay_in_web_adapters",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.platform.configuration.RuntimeDatabasePropertiesTest",
+          "name": "rejectsBlankUrl()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.platform.configuration.RuntimeDatabasePropertiesTest",
+          "name": "rejectsNonPostgresJdbcUrl()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.platform.configuration.RuntimeDatabasePropertiesTest",
+          "name": "rejectsPostgresJdbcUrlWithoutHost()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.platform.configuration.RuntimeDatabasePropertiesTest",
+          "name": "rejectsCredentialsEmbeddedInDatabaseUrl()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.platform.configuration.RuntimeDatabasePropertiesTest",
+          "name": "rejectsMalformedPostgresJdbcUrl()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.platform.configuration.RuntimeDatabasePropertiesTest",
+          "name": "rejectsBlankUsername()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.platform.configuration.RuntimeDatabasePropertiesTest",
+          "name": "rejectsPostgresJdbcUrlWithoutDatabaseName()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.platform.configuration.RuntimeDatabasePropertiesTest",
+          "name": "rejectsBlankPassword()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.platform.configuration.RuntimeDatabasePropertiesTest",
+          "name": "acceptsCompleteConfiguration()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.adapter.in.web.InventoryReservationControllerTest",
+          "name": "mapsUnexpectedFailureToSafeGenericInternalErrorAndStructuredLog(CapturedOutput)",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.adapter.in.web.InventoryReservationControllerTest",
+          "name": "mapsNonReservableInventoryToStableConflictError()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.adapter.in.web.InventoryReservationControllerTest",
+          "name": "mapsUnknownInventoryToStableNotFoundError()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.adapter.in.web.InventoryReservationControllerTest",
+          "name": "mapsInsufficientStockToStableConflictError()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.adapter.in.web.InventoryReservationControllerTest",
+          "name": "rejectsUnknownStockStatusWithStableError()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.adapter.in.web.InventoryReservationControllerTest",
+          "name": "rejectsMalformedJsonWithStableError()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.adapter.in.web.InventoryReservationControllerTest",
+          "name": "createsReservationAndGeneratesServerControlledRequestId(CapturedOutput)",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.adapter.in.web.InventoryReservationControllerTest",
+          "name": "rejectsInvalidRequestBeforeApplicationService()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.adapter.in.web.InventoryReservationControllerTest",
+          "name": "rejectsLegacyExpectedVersionBeforeApplicationService()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.AsyncPropertiesTest",
+          "name": "rejectsInvalidTimingAndOverflow()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.AsyncPropertiesTest",
+          "name": "approvedDefaultsAreValidAndContainNoCycleBudgetProperty()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.AsyncPropertiesTest",
+          "name": "rejectsInvalidJitterAndConcurrency()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.DeliveryRetryPolicyTest",
+          "name": "deterministicJitterAndExponentialGrowthFollowApprovedFormula()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.DeliveryRetryPolicyTest",
+          "name": "classifierRequiresExplicitEvidenceAndNeverRetriesGenericOrUnknownFailure()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.DeliveryRetryPolicyTest",
+          "name": "largeCountAndMillisecondBoundDoNotOverflow()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.DeliveryRetryPolicyTest",
+          "name": "persistedBudgetAndBoundsCannotBeExpandedByLocalConfiguration()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.DeliveryRetryPolicyTest",
+          "name": "constructorValidatesOnlyRetryInputs()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.domain.InventoryReservationTest",
+          "name": "rejectsNonPositiveQuantity()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.application.ReservationApplicationServiceTest",
+          "name": "quarantinedInventoryIsRejectedByAuthoritativeExecution()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.application.ReservationApplicationServiceTest",
+          "name": "invalidQuantityIsTypedFailureBeforePersistence()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.application.ReservationRequestFingerprintTest",
+          "name": "quantityValidationIsNotFingerprintResponsibility()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.application.ReservationRequestFingerprintTest",
+          "name": "rejectsMalformedDigestValues()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.application.ReservationRequestFingerprintTest",
+          "name": "goldenVectorA()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.application.ReservationRequestFingerprintTest",
+          "name": "goldenVectorB()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.application.ReservationRequestFingerprintTest",
+          "name": "goldenVectorC()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.architecture.AsyncArchitectureTest",
+          "name": "async_contract_and_inventory_domain_are_inner",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.architecture.AsyncArchitectureTest",
+          "name": "async_application_has_no_outer_or_web_dependency",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.architecture.AsyncArchitectureTest",
+          "name": "reconciliation_has_no_delivery_adapter_or_bootstrap_dependency",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.architecture.AsyncArchitectureTest",
+          "name": "async_adapters_do_not_depend_on_bootstrap_or_controllers",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.architecture.AsyncArchitectureTest",
+          "name": "worker_bootstrap_does_not_import_api_business_stack",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.architecture.AsyncArchitectureTest",
+          "name": "reconciler_mode_does_not_compose_delivery_or_api_stack",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.architecture.AsyncArchitectureTest",
+          "name": "http_client_is_only_in_validation_external_adapter",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.architecture.AsyncArchitectureTest",
+          "name": "asyncLayersKeepPortsPoliciesAdaptersAndProcessCompositionInTheirPackages()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.architecture.AsyncArchitectureTest",
+          "name": "rootApiScanAndExplicitProducerImportExcludeWorkerAndReconciler()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReservationCreatedEventCodecTest",
+          "name": "rejectsInvalidObjectsBeforeEncoding()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReservationCreatedEventCodecTest",
+          "name": "exactV1WireShapeIsDeterministicAndRoundTrips()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReservationCreatedEventCodecTest",
+          "name": "rejectsMissingNullExtraDuplicateAndMalformedFields()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        }
+      ]
+    },
+    "runtime:integrationTest": {
+      "tests": 113,
+      "skipped": 0,
+      "failures": 1,
+      "errors": 0,
+      "testcases": [
+        {
+          "classname": "dev.vra.inventory.ReservationConcurrencyIntegrationTest",
+          "name": "sameKeyInDifferentActorScopesExecutesTwice()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationConcurrencyIntegrationTest",
+          "name": "concurrentConflictingPayloadsBindExactlyOneFingerprint()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationConcurrencyIntegrationTest",
+          "name": "concurrentSameKeyReturnsOneAuthoritativeResult()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationConcurrencyIntegrationTest",
+          "name": "concurrentOptimisticCompareAndSwapIsSeparateFromReservations()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationConcurrencyIntegrationTest",
+          "name": "oneUnitAcrossFiveHundredDistinctIdentities()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReconciliationIntegrationTest",
+          "name": "expiredFourthCheckingGetsOneRecoveryOnlyClaimAndNoObservation()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReconciliationIntegrationTest",
+          "name": "actualCredentialsEnforceReconcilerOperatorWorkerSeparation()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReconciliationIntegrationTest",
+          "name": "operatorResumeStartsNewCaseCycleWithoutErasingLifetimeOrDeliveryCycle()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReconciliationIntegrationTest",
+          "name": "fourIndeterminateQueriesExhaustWithoutChangingPersistedLimit()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReconciliationIntegrationTest",
+          "name": "reconcilerModeUsesOnlyItsCredentialAndNonWebBeans()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReconciliationIntegrationTest",
+          "name": "exhaustedDeliveryCycleResolvesNoEffectWithoutOpeningAnotherRetry()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReconciliationIntegrationTest",
+          "name": "operatorClosePreservesUnknownAndTerminallyStopsCaseAndDelivery()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReconciliationIntegrationTest",
+          "name": "explicitExhaustionLeavesUnknownAndOperatorCanCloseFailedWorkWithoutCase()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReconciliationIntegrationTest",
+          "name": "operatorResumeAndCloseRaceToOnePairedTransitionWhileReplayIsDenied()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReconciliationIntegrationTest",
+          "name": "lostResponseUnknownHandoffThenCommittedObservationConfirmsExactlyOneEffect()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReconciliationIntegrationTest",
+          "name": "requiredHistoryFailuresRollBackAllSevenPairedTransitions()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReconciliationIntegrationTest",
+          "name": "recreatedRepositoryRediscoversDueWaitingAndExpiredCheckingWithoutLimitExpansion()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReconciliationIntegrationTest",
+          "name": "pendingSimulatorObservationPersistsIndeterminateHistoryAndUnknownCaseReason()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReconciliationIntegrationTest",
+          "name": "activeCaseConflictAbortsSecondHandoffWithoutPartialMutation()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReconciliationIntegrationTest",
+          "name": "strongAbsenceResolvesCaseAndSchedulesSameEventSameCycleRetry()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ReconciliationIntegrationTest",
+          "name": "reclaimedTokenFencesEveryOldFinalizationAndCurrentTokenCanFinish()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProducerOutboxIntegrationTest",
+          "name": "eventInsertFailureRollsBackBothPaths()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProducerOutboxIntegrationTest",
+          "name": "conflictingPayloadAndRejectionsNeverProduceAnotherEvent()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProducerOutboxIntegrationTest",
+          "name": "ordinaryAndIdempotentFirstSuccessCommitExactProducerRows()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProducerOutboxIntegrationTest",
+          "name": "sameKeySequentialAndLostResultReplayPreserveEventAndCreatedHistory()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProducerOutboxIntegrationTest",
+          "name": "runtimeCanPublishButCannotWriteAsyncTablesOrCallLaterOperations()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProducerOutboxIntegrationTest",
+          "name": "deliveryInsertFailureAfterEventInsertRollsBackBothPaths()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProducerOutboxIntegrationTest",
+          "name": "concurrentSameKeyCallsConvergeToOneReservationEventAndDelivery()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.RetryReplayIntegrationTest",
+          "name": "durableTransientCycleExhaustsThenReplaysSameEventIntoNewCycle()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.RetryReplayIntegrationTest",
+          "name": "replayGuardRejectsTransientMalformedActivePairsBeforeDeferredCommit()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.RetryReplayIntegrationTest",
+          "name": "unknownIsNotAnOrdinaryRetryOrFailClassification()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.RetryReplayIntegrationTest",
+          "name": "explicitTerminalClassesUseOnlyStableV3Pairs()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.RetryReplayIntegrationTest",
+          "name": "replayRejectsSucceededClosedReconciliationRequiredUnknownAndActiveCase()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.RetryReplayIntegrationTest",
+          "name": "workerAndOperatorHaveOnlyTheirIntendedCapabilities()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.RetryReplayIntegrationTest",
+          "name": "reclaimedExternalClaimStillCannotBypassUnknownHandoff()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.AsyncVisibilityIntegrationTest",
+          "name": "normalAndRecoveryOnlyExhaustionRemainDistinctInImmutableHistory()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.AsyncVisibilityIntegrationTest",
+          "name": "observerCanReadButCannotMutateOrEscalate()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.AsyncVisibilityIntegrationTest",
+          "name": "allCurrentStatesActivityAgeAndSafeHistoryMatchPostgresql()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+          "name": "resultLossRetryReturnsOriginalCommittedReservation()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+          "name": "injectedSaveFailureRollsBackClaimAndStockThenSameKeyCanSucceed()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+          "name": "identityStringsRemainExactAfterValidation()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+          "name": "samePayloadReplaysAndDifferentPayloadConflictsWithoutMutation()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+          "name": "firstSuccessPersistsOneBusinessEffectAndTerminalOutcome()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+          "name": "insufficientStockRejectionReplaysAfterStockChangesAndNewKeyExecutes()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+          "name": "missingInventoryIsTerminalBusinessRejection()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+          "name": "malformedCommandsDoNotClaimOrMutateAndCorrectedQuantityCanUseSameKey()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest",
+          "name": "quarantinedInventoryClaimsThenCommitsNonReservableRejection()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+          "name": "databaseRejectsNegativeOnHand()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+          "name": "databaseRejectsInvalidStockStatus()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+          "name": "databaseRejectsNegativeReserved()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+          "name": "insufficientStockDoesNotCreateReservationOrChangeBalance()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+          "name": "quarantinedInventoryIsNotReservable()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+          "name": "runtimeConnectsUsingLeastPrivilegeIdentity()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+          "name": "databaseRejectsNonPositiveReservationQuantity()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+          "name": "reservesInventoryAndPersistsReservationInOneTransaction()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+          "name": "inventoryKeyKeepsOwnerAndLocationIsolated()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+          "name": "reservationInsertFailureRollsBackPriorJdbcInventoryUpdate()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+          "name": "staleOptimisticCompareAndSwapDoesNotMutateState()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationTransactionIntegrationTest",
+          "name": "databaseRejectsReservedGreaterThanOnHand()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProjectionInboxIntegrationTest",
+          "name": "normalClaimConsumesAtomicallyThenFinalizes()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProjectionInboxIntegrationTest",
+          "name": "sequentialDuplicateUsesDurableInboxWithoutSecondEffect()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProjectionInboxIntegrationTest",
+          "name": "identicalPreexistingProjectionConvergesWithoutOverwrite()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProjectionInboxIntegrationTest",
+          "name": "overlappingDuplicatesConvergeThroughPostgresqlUniqueIdentity()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProjectionInboxIntegrationTest",
+          "name": "committedConsumerBeforeOmittedFinalizeRedeliversWithoutEffect()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProjectionInboxIntegrationTest",
+          "name": "unsupportedContractFailsBeforeInboxRegistration()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProjectionInboxIntegrationTest",
+          "name": "independentEventsCanProjectInReverseCreationOrder()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProjectionInboxIntegrationTest",
+          "name": "mismatchingPreexistingProjectionRejectsAndRollsBackInbox()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProjectionInboxIntegrationTest",
+          "name": "workerCanInsertButCannotMaintainProjectionInboxOrBusinessTables()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProjectionInboxIntegrationTest",
+          "name": "projectionFailureAfterInboxInsertRollsBothBackAndCanRetry()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProjectionRebuildIntegrationTest",
+          "name": "authoritativeRepairIgnoresStaleInboxAndOutboxHistoryThenRedeliveryConverges()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProjectionRebuildIntegrationTest",
+          "name": "reservationCommittedAfterRebuildConvergesThroughDurableScenarioADelivery()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProjectionRebuildIntegrationTest",
+          "name": "rebuildTableLockSerializesConsumerProjectionWriteUntilCommit()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ProjectionRebuildIntegrationTest",
+          "name": "actualRebuilderAndWorkerCredentialsEnforceOnlyTheirCapabilities()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ValidationSimulatorIntegrationTest",
+          "name": "observationCannotConfirmAbsenceWhileExecuteWaitsToRegister()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ValidationSimulatorIntegrationTest",
+          "name": "sameIdentityAndSemanticPayloadDeduplicateWhileConflictDoesNotMutate()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ValidationSimulatorIntegrationTest",
+          "name": "acceptedPendingIsIndeterminateAndObservationNeverCreatesAnEffect()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ValidationSimulatorIntegrationTest",
+          "name": "validationTargetBootstrapProducesOnlyOneScenarioBDelivery()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.ValidationSimulatorIntegrationTest",
+          "name": "lostResponseAndTimeoutRemainUnknownDespiteOneDurableEffect()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.platform.health.HealthProbePostgresIntegrationTest",
+          "name": "databaseOutageMakesReadinessDownButKeepsLivenessUp()",
+          "skipped": 0,
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.AsyncPermissionIntegrationTest",
+          "name": "eachWorkloadCredentialExecutesItsNarrowPositiveOperation()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.AsyncPermissionIntegrationTest",
+          "name": "forbiddenSqlHasExpectedSqlstateAndLeavesAuthoritativeRowsUnchanged()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.DeliveryStateIntegrationTest",
+          "name": "reconciliationEdgesUseCurrentCaseTokenAndPairedDeliveryTransitions()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.DeliveryStateIntegrationTest",
+          "name": "readyRetryFailReplaySuccessAndTerminalGuardsPreserveCycleHistory()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.DeliveryStateIntegrationTest",
+          "name": "malformedShapeAndOrphanAreDeniedWithoutChangingAuthoritativeState()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.WorkerProcessCrashIntegrationTest",
+          "name": "gracefulDrainAllowsCommittedConsumerToGuardedFinalize()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.WorkerProcessCrashIntegrationTest",
+          "name": "lostResponseAfterDurableEffectIsRecoveredByFreshWorkerAndReconcilerPids()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.WorkerProcessCrashIntegrationTest",
+          "name": "boundedClaimsAndUnavailableRelinquishmentFallBackToLeaseExpiry()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.WorkerProcessCrashIntegrationTest",
+          "name": "productionDrainRelinquishesStoppedAttemptWithCurrentToken()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.WorkerProcessCrashIntegrationTest",
+          "name": "committedScenarioAClaimSurvivesAbruptPidDeathAndFreshPidReclaims()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.WorkerProcessCrashIntegrationTest",
+          "name": "externalDrainDoesNotClaimOrExecuteTheNextDurableEvent()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.WorkerProcessCrashIntegrationTest",
+          "name": "wrongWorkerAndReconcilerDatabaseIdentitiesFailStartup()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.WorkerProcessCrashIntegrationTest",
+          "name": "killedExternalRequestReclaimsToUnknownBeforeAnyFurtherExecute()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.WorkerProcessCrashIntegrationTest",
+          "name": "gracefulDrainLeavesUnclaimedWorkDurableAndStartsNoNewEffect()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.WorkerProcessCrashIntegrationTest",
+          "name": "committedConsumerEffectSurvivesKillBeforeDeliveryFinalize()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.WorkerProcessCrashIntegrationTest",
+          "name": "stoppedAttemptRelinquishesWithoutChangingProcessingOrTransferringOwnership()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.WorkerProcessCrashIntegrationTest",
+          "name": "reconcilerDrainStopsClaimsAndFreshPidRediscoversDurableCase()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest",
+          "name": "successLifecycleReplaysAndCannotBeRewritten()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest",
+          "name": "missingClaimCannotBeCompleted()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest",
+          "name": "rejectionLifecycleReplaysAndCannotBeRewritten()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest",
+          "name": "unknownPersistedRejectionFailsAsInvariant()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest",
+          "name": "committedIncompleteFixtureFailsBeforeFingerprintConflict()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest",
+          "name": "wrongFingerprintCannotCompleteAndClaimIsRolledBack()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationHttpPostgresIntegrationTest",
+          "name": "realHttpUsesRuntimeLeastPrivilegeIdentity()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationHttpPostgresIntegrationTest",
+          "name": "realHttpRejectsLegacyExpectedVersionWithoutMutation()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationHttpPostgresIntegrationTest",
+          "name": "realHttpInsufficientStockReturnsStableErrorWithoutMutation()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.inventory.ReservationHttpPostgresIntegrationTest",
+          "name": "realHttpRequestPersistsReservationInPostgres()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.DeliveryClaimIntegrationTest",
+          "name": "fiveDispatchableClaimsThenOneRecoveryOnlyForEachScenario()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.DeliveryClaimIntegrationTest",
+          "name": "relinquishmentImmediatelyFencesAndRollbackKeepsOldLease()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.DeliveryClaimIntegrationTest",
+          "name": "readyClaimCommitsAndRolledBackClaimLeavesNoTrace()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.DeliveryClaimIntegrationTest",
+          "name": "expiryDoesNotRevokeButCommittedReclaimFencesEveryOldOperation()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.DeliveryClaimIntegrationTest",
+          "name": "overlappingWorkerTransactionsSkipLockedAndNeverDuplicate()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.DeliveryClaimIntegrationTest",
+          "name": "workerHasOnlyGuardedDeliveryCapabilities()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "classname": "dev.vra.async.DeliveryClaimIntegrationTest",
+          "name": "retryWaitBecomesClaimableOnlyAtDatabaseEligibilityTime()",
+          "skipped": 0,
+          "failures": 0,
+          "errors": 0
+        }
+      ]
+    }
+  },
+  "total": {
+    "tests": 193,
+    "skipped": 0,
+    "failures": 1,
+    "errors": 0
+  },
+  "focused_identity_additional_junit_executions": 1,
+  "all_current_retry_junit_executions": 194
+}

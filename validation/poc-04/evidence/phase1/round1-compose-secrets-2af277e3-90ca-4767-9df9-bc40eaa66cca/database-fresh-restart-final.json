@@ -1,0 +1,64 @@
+{
+  "source_raw_XML": "validation/poc-04/evidence/phase1/round1-compose-secrets-2af277e3-90ca-4767-9df9-bc40eaa66cca/full-check-build-results/migration/integrationTest/TEST-dev.vra.migration.Poc04FoundationMigrationIntegrationTest.xml",
+  "records": [
+    {
+      "connection_lifecycle": "completed try-with-resources; no retained pool/DataSource",
+      "endpoint": {
+        "host": "127.0.0.1",
+        "mapped_port": 33009,
+        "jdbc_url": "jdbc:postgresql://127.0.0.1:33009/vra_poc01?loggerLevel=OFF",
+        "container_id": "d001b967739b211cd5ddcbf535dd658e3b234dd09bfb9041f9e48d3fca4ba8dc"
+      },
+      "fresh_B": {
+        "container_id": "dbe90e3aaac8f82ecb35ff3d48958bb7886c04955e49e625806a1d1843a8e950",
+        "database": "vra_poc01",
+        "database_instance_id": "f5a770b5-c46b-5771-8794-74a9e5b05d66",
+        "logical_name": "postgres-authority/21",
+        "server_version_num": "170011",
+        "system_identifier": "7691743522383568934",
+        "volume_name": "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-postgres-authority-21-pgdata"
+      },
+      "fresh_A": {
+        "container_id": "d001b967739b211cd5ddcbf535dd658e3b234dd09bfb9041f9e48d3fca4ba8dc",
+        "database": "vra_poc01",
+        "database_instance_id": "d1db516d-ff0a-5a81-8d03-1c3bbc887401",
+        "logical_name": "postgres-authority/20",
+        "server_version_num": "170011",
+        "system_identifier": "7691743495228764198",
+        "volume_name": "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-postgres-authority-20-pgdata"
+      },
+      "event": "before_restart",
+      "sentinel_account": "9fa46783-c594-448b-8460-5e759fee1444"
+    },
+    {
+      "old_endpoint": {
+        "host": "127.0.0.1",
+        "mapped_port": 33009,
+        "jdbc_url": "jdbc:postgresql://127.0.0.1:33009/vra_poc01?loggerLevel=OFF",
+        "container_id": "d001b967739b211cd5ddcbf535dd658e3b234dd09bfb9041f9e48d3fca4ba8dc"
+      },
+      "sentinel_retained": true,
+      "identity": {
+        "container_id": "d001b967739b211cd5ddcbf535dd658e3b234dd09bfb9041f9e48d3fca4ba8dc",
+        "database": "vra_poc01",
+        "database_instance_id": "d1db516d-ff0a-5a81-8d03-1c3bbc887401",
+        "logical_name": "postgres-authority/20",
+        "server_version_num": "170011",
+        "system_identifier": "7691743495228764198",
+        "volume_name": "vra-poc04-2af277e3-90ca-4767-9df9-bc40eaa66cca-postgres-authority-20-pgdata"
+      },
+      "event": "after_restart",
+      "current_endpoint": {
+        "host": "127.0.0.1",
+        "mapped_port": 33011,
+        "jdbc_url": "jdbc:postgresql://127.0.0.1:33011/vra_poc01?loggerLevel=OFF",
+        "container_id": "d001b967739b211cd5ddcbf535dd658e3b234dd09bfb9041f9e48d3fca4ba8dc"
+      },
+      "rerun_migrations_executed": 0,
+      "sentinel_account": "9fa46783-c594-448b-8460-5e759fee1444",
+      "flyway_validate": "PASS",
+      "fresh_current_endpoint_works": true
+    }
+  ],
+  "record_count": 2
+}

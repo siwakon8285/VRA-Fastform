@@ -1,0 +1,61 @@
+{
+  "result": "STOP_ACTUAL_PLATFORM_IMAGE_ID_IS_MANIFEST_NOT_CONFIG",
+  "stop_instruction": "Current user request section 3: if actual Docker 29.5.2 behavior differs, STOP and report exact observations before inventing a workaround.",
+  "interpretation": "Platform-qualified inspection supplies the reviewed platform manifest identity in both Id and Descriptor; it does not supply the expected config identity in Id. The config blob requires separate authoritative evidence, which was not obtained or implemented in this STOP turn.",
+  "run_id": "03baf784-dd20-4615-be07-d633535b9b04",
+  "endpoint": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+  "prior_failed_report_sha256": "b772942af3dc367941cd7e2d553ca2f990542964114fdd3002a8c994941cdd65",
+  "prior_failed_report_archive": "validation/poc-04/evidence/phase1/IMPLEMENTATION_REPORT.previous-b772942a.md",
+  "diagnosis_commands_exit_status": [
+    0,
+    0
+  ],
+  "observed_unqualified_id": "sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+  "observed_unqualified_descriptor": {
+    "digest": "sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+    "mediaType": "application/vnd.oci.image.index.v1+json",
+    "size": 10237
+  },
+  "observed_platform_qualified_id": "sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761",
+  "observed_platform_qualified_descriptor": {
+    "annotations": {
+      "com.docker.official-images.bashbrew.arch": "arm64v8",
+      "org.opencontainers.image.base.digest": "sha256:da496358bd6934d2bd6a563a33176a2e50eff5490c54b4ac6fb051b69fef4071",
+      "org.opencontainers.image.base.name": "debian:trixie-slim",
+      "org.opencontainers.image.created": "2026-09-19T00:38:22Z",
+      "org.opencontainers.image.revision": "2603e26e245e558218728ee14e0a42dcb020dc7f",
+      "org.opencontainers.image.source": "https://github.com/docker-library/postgres.git#2603e26e245e558218728ee14e0a42dcb020dc7f:17/trixie",
+      "org.opencontainers.image.url": "https://hub.docker.com/_/postgres",
+      "org.opencontainers.image.version": "17.11"
+    },
+    "digest": "sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761",
+    "mediaType": "application/vnd.oci.image.manifest.v1+json",
+    "platform": {
+      "architecture": "arm64",
+      "os": "linux",
+      "variant": "v8"
+    },
+    "size": 3630
+  },
+  "expected_platform_config_digest": "sha256:97432f980da100ebd3e419711efee84e1e97a966d62c035286a07f239ddb4d9c",
+  "config_identity_verified": false,
+  "source_modified": false,
+  "fixture_sha256_unchanged": "125e9cf33055428f4354fe7c0637ba60e2f3857eb3a266c7fa089db7f6c71005",
+  "focused_test_retried": false,
+  "new_junit_tests_executed": 0,
+  "new_junit_skipped_failures_errors": "N/A; no JUnit invocation",
+  "bootstrap_executed": false,
+  "flyway_executed": false,
+  "new_docker_containers_created": [],
+  "new_docker_volumes_created": [],
+  "new_docker_networks_created": [],
+  "cleanup_required": false,
+  "docker_mutations": [],
+  "git_mutations": [],
+  "phase_1_closed": "NO",
+  "ready_for_independent_phase_1_review": "NO",
+  "phase_2_started": "NO",
+  "phase_2_authorized": "NO",
+  "poc_04_status": "NOT VERIFIED",
+  "s0_s15_status": "NOT VERIFIED"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "STATIC_DIAGNOSIS_CONFIRMED",
+  "execution_status": "FAIL preserved; not retried",
+  "path": "validation/poc-04/scripts/collector-boundary-proof.py",
+  "line": 279,
+  "source_sha256": "8e618e48b4d9d27fa05805a3e276c06cc8f7e99e4521e31f036343ced255b2b5",
+  "expression": "state_path.parent / 'collector-local-platform-' + str(allocation['ordinal']) + '.override.json'",
+  "ast": "BinOp(left=BinOp(left=BinOp(left=Attribute(value=Name(id='state_path', ctx=Load()), attr='parent', ctx=Load()), op=Div(), right=Constant(value='collector-local-platform-')), op=Add(), right=Call(func=Name(id='str', ctx=Load()), args=[Subscript(value=Name(id='allocation', ctx=Load()), slice=Constant(value='ordinal'), ctx=Load())], keywords=[])), op=Add(), right=Constant(value='.override.json'))",
+  "mechanism": "Division creates pathlib.Path first; addition of str to Path raises TypeError before override assignment. Evidence after that line was not executed.",
+  "diagnosis_basis": "AST and Python Path operator semantics; preserved executed exception type, successful preceding image commands and zero creation receipts. No traceback was captured by the source exception handler.",
+  "source_changed": false,
+  "collector_boundary_result": "NOT VERIFIED",
+  "retry_performed": false
+}

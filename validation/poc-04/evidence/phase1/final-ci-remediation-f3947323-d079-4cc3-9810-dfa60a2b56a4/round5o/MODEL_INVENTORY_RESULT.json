@@ -1,0 +1,12 @@
+{
+  "candidate_content_sha256": "7e0deae81a11148e5cbd3b76672ec226b7adb267fb22edd7cad7ba92ccd64780",
+  "candidate_files": 1103,
+  "configured_origins_already_scanned_as_tracked_source": true,
+  "manifest_sha256": "a93db1df523df957aee0bda865ea07ba5a87bfeba9bf162825aa10815e265045",
+  "model_determinism": "PASS",
+  "original_snapshot_includes_generated_shared_copies": false,
+  "query_candidate_tree_mutation": 0,
+  "shared_mappings": "PASS - 8/8 unique",
+  "status": "PASS",
+  "unexpected": 0
+}

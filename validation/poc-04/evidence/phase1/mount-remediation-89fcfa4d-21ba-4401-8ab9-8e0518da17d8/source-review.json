@@ -1,0 +1,25 @@
+{
+  "source_modified_this_retry": [
+    "backend/migration/src/test/java/dev/vra/migration/Poc04FoundationMigrationIntegrationTest.java"
+  ],
+  "fixture_before_sha256": "eedaf64c01778dcc9f1b502a4127bd1363c08a310e3cc131a91a48e6891b1ee8",
+  "fixture_after_sha256": "50e601ce5fb4bd009aa1d48d1459dd76cfb44171e7d470644ba43f373e2fd5ee",
+  "other_phase1_source_files_unchanged": 25,
+  "preserved_workspace_drift": [
+    {
+      "path": "backend/runtime/src/test/java/dev/vra/async/AsyncVisibilityIntegrationTest.java",
+      "previous_sha256": "31e172e295b204e2070f984517bcba27b2f9a098174b6e64c3cfaf1c2d84c506",
+      "current_sha256": "089d7f92a2b956195a20b89f393e9a4cea856284abff16558575b8b2df23883d",
+      "difference": "24 leading spaces before package declaration; removing only those bytes reproduces previous hash",
+      "modified_by_this_remediation": false,
+      "preserved": true
+    }
+  ],
+  "canonical_source_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+  "source_files": 261,
+  "git_diff_check_exit_status": 0,
+  "narrow_change": "Unsupported nested raw Type assertion replaced with existing safe daemon recorder projection; typed Name/Source/Destination/RW and fresh volume/run ownership/teardown retained",
+  "safe_projection_publication": "atomic per full container ID, running state only, attested isolated daemon",
+  "wait": "WatchService register-before-read; bounded 30-second deadline; no sleep correctness proof",
+  "V1_V4_bootstrap_grants_unchanged": true
+}

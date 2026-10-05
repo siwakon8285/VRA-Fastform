@@ -1,0 +1,166 @@
+{
+  "status": "PASS",
+  "total": {
+    "tests": 193,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "suites": [
+    {
+      "suite": "migration/integrationTest",
+      "tests": 20,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "case_nodes": 20
+    },
+    {
+      "suite": "migration/test",
+      "tests": 4,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "case_nodes": 4
+    },
+    {
+      "suite": "runtime/integrationTest",
+      "tests": 113,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "case_nodes": 113
+    },
+    {
+      "suite": "runtime/test",
+      "tests": 56,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "case_nodes": 56
+    }
+  ],
+  "health_timing_records": [
+    {
+      "event": "test_only_datasource_bound_before_initialization",
+      "pool": {
+        "class": "com.zaxxer.hikari.HikariDataSource",
+        "connection_timeout_ms": 2000,
+        "validation_timeout_ms": 1000,
+        "maximum_pool_size": 10,
+        "minimum_idle": -1
+      }
+    },
+    {
+      "event": "actual_datasource_initialized_with_test_bound",
+      "pool": {
+        "class": "com.zaxxer.hikari.HikariDataSource",
+        "connection_timeout_ms": 2000,
+        "validation_timeout_ms": 1000,
+        "maximum_pool_size": 10,
+        "minimum_idle": 10,
+        "active": 0,
+        "idle": 1,
+        "total": 1,
+        "awaiting_connection": 0
+      }
+    },
+    {
+      "event": "actual_runtime_database",
+      "database": "vra_health_test",
+      "server_version_num": "170011",
+      "role": "vra_runtime"
+    },
+    {
+      "event": "liveness_before",
+      "path": "/actuator/health/liveness",
+      "started_at": "2026-10-01T15:50:39.475597Z",
+      "http_status": 200,
+      "health_status": "UP",
+      "ended_at": "2026-10-01T15:50:39.486456Z",
+      "elapsed_ms": 10.870084
+    },
+    {
+      "event": "readiness_before",
+      "path": "/actuator/health/readiness",
+      "started_at": "2026-10-01T15:50:39.486758Z",
+      "http_status": 200,
+      "health_status": "UP",
+      "ended_at": "2026-10-01T15:50:39.491308Z",
+      "elapsed_ms": 4.554916
+    },
+    {
+      "container_id": "f2e3932aba47898c268a2f726138e5f8b901fe01d2c1e5d1794fd69470b62aea",
+      "event": "database_stop_start",
+      "at": "2026-10-01T15:50:39.491581Z",
+      "pool": {
+        "class": "com.zaxxer.hikari.HikariDataSource",
+        "connection_timeout_ms": 2000,
+        "validation_timeout_ms": 1000,
+        "maximum_pool_size": 10,
+        "minimum_idle": 10,
+        "active": 0,
+        "idle": 1,
+        "total": 1,
+        "awaiting_connection": 0
+      }
+    },
+    {
+      "at": "2026-10-01T15:50:40.292551Z",
+      "pool": {
+        "class": "com.zaxxer.hikari.HikariDataSource",
+        "connection_timeout_ms": 2000,
+        "validation_timeout_ms": 1000,
+        "maximum_pool_size": 10,
+        "minimum_idle": 10,
+        "active": 0,
+        "idle": 4,
+        "total": 4,
+        "awaiting_connection": 0
+      },
+      "event": "database_stop_complete"
+    },
+    {
+      "event": "readiness_acquisition_wait",
+      "pool": {
+        "class": "com.zaxxer.hikari.HikariDataSource",
+        "connection_timeout_ms": 2000,
+        "validation_timeout_ms": 1000,
+        "maximum_pool_size": 10,
+        "minimum_idle": 10,
+        "active": 0,
+        "idle": 0,
+        "total": 0,
+        "awaiting_connection": 1
+      }
+    },
+    {
+      "event": "liveness_while_degraded",
+      "path": "/actuator/health/liveness",
+      "started_at": "2026-10-01T15:50:40.306224Z",
+      "http_status": 200,
+      "health_status": "UP",
+      "ended_at": "2026-10-01T15:50:40.308078Z",
+      "elapsed_ms": 1.856959
+    },
+    {
+      "event": "readiness_after_outage",
+      "path": "/actuator/health/readiness",
+      "started_at": "2026-10-01T15:50:40.293290Z",
+      "http_status": 503,
+      "health_status": "DOWN",
+      "ended_at": "2026-10-01T15:50:42.316159Z",
+      "elapsed_ms": 2022.88025
+    },
+    {
+      "event": "liveness_after",
+      "path": "/actuator/health/liveness",
+      "started_at": "2026-10-01T15:50:42.317425Z",
+      "http_status": 200,
+      "health_status": "UP",
+      "ended_at": "2026-10-01T15:50:42.324104Z",
+      "elapsed_ms": 6.696292
+    }
+  ],
+  "concurrent_liveness_overlap_verified": true
+}

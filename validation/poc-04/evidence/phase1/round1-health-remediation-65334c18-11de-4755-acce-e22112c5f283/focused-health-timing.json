@@ -1,0 +1,125 @@
+{
+  "source_xml": "validation/poc-04/evidence/phase1/round1-health-remediation-65334c18-11de-4755-acce-e22112c5f283/focused-health-results/runtime/integrationTest/TEST-dev.vra.platform.health.HealthProbePostgresIntegrationTest.xml",
+  "records": [
+    {
+      "pool": {
+        "class": "com.zaxxer.hikari.HikariDataSource",
+        "connection_timeout_ms": 2000,
+        "validation_timeout_ms": 1000,
+        "maximum_pool_size": 10,
+        "minimum_idle": -1
+      },
+      "event": "test_only_datasource_bound_before_initialization"
+    },
+    {
+      "pool": {
+        "class": "com.zaxxer.hikari.HikariDataSource",
+        "connection_timeout_ms": 2000,
+        "validation_timeout_ms": 1000,
+        "maximum_pool_size": 10,
+        "minimum_idle": 10,
+        "active": 0,
+        "idle": 10,
+        "total": 10,
+        "awaiting_connection": 0
+      },
+      "event": "actual_datasource_initialized_with_test_bound"
+    },
+    {
+      "event": "actual_runtime_database",
+      "database": "vra_health_test",
+      "server_version_num": "170011",
+      "role": "vra_runtime"
+    },
+    {
+      "event": "liveness_before",
+      "path": "/actuator/health/liveness",
+      "started_at": "2026-10-01T15:45:59.033449Z",
+      "http_status": 200,
+      "health_status": "UP",
+      "ended_at": "2026-10-01T15:45:59.101006Z",
+      "elapsed_ms": 67.580333
+    },
+    {
+      "event": "readiness_before",
+      "path": "/actuator/health/readiness",
+      "started_at": "2026-10-01T15:45:59.101545Z",
+      "http_status": 200,
+      "health_status": "UP",
+      "ended_at": "2026-10-01T15:45:59.106829Z",
+      "elapsed_ms": 5.293833
+    },
+    {
+      "container_id": "d86aa3710f4c7c423314a0d27686e523874bc5c41dace945b5086368b51b4818",
+      "event": "database_stop_start",
+      "at": "2026-10-01T15:45:59.107192Z",
+      "pool": {
+        "class": "com.zaxxer.hikari.HikariDataSource",
+        "connection_timeout_ms": 2000,
+        "validation_timeout_ms": 1000,
+        "maximum_pool_size": 10,
+        "minimum_idle": 10,
+        "active": 0,
+        "idle": 10,
+        "total": 10,
+        "awaiting_connection": 0
+      }
+    },
+    {
+      "event": "database_stop_complete",
+      "at": "2026-10-01T15:45:59.863344Z",
+      "pool": {
+        "class": "com.zaxxer.hikari.HikariDataSource",
+        "connection_timeout_ms": 2000,
+        "validation_timeout_ms": 1000,
+        "maximum_pool_size": 10,
+        "minimum_idle": 10,
+        "active": 0,
+        "idle": 10,
+        "total": 10,
+        "awaiting_connection": 0
+      }
+    },
+    {
+      "pool": {
+        "class": "com.zaxxer.hikari.HikariDataSource",
+        "connection_timeout_ms": 2000,
+        "validation_timeout_ms": 1000,
+        "maximum_pool_size": 10,
+        "minimum_idle": 10,
+        "active": 0,
+        "idle": 0,
+        "total": 0,
+        "awaiting_connection": 1
+      },
+      "event": "readiness_acquisition_wait"
+    },
+    {
+      "event": "liveness_while_degraded",
+      "path": "/actuator/health/liveness",
+      "started_at": "2026-10-01T15:45:59.877610Z",
+      "http_status": 200,
+      "health_status": "UP",
+      "ended_at": "2026-10-01T15:45:59.880214Z",
+      "elapsed_ms": 2.613958
+    },
+    {
+      "event": "readiness_after_outage",
+      "path": "/actuator/health/readiness",
+      "started_at": "2026-10-01T15:45:59.864437Z",
+      "http_status": 503,
+      "health_status": "DOWN",
+      "ended_at": "2026-10-01T15:46:01.891684Z",
+      "elapsed_ms": 2027.294833
+    },
+    {
+      "event": "liveness_after",
+      "path": "/actuator/health/liveness",
+      "started_at": "2026-10-01T15:46:01.892972Z",
+      "http_status": 200,
+      "health_status": "UP",
+      "ended_at": "2026-10-01T15:46:01.897775Z",
+      "elapsed_ms": 4.823708
+    }
+  ]
+}

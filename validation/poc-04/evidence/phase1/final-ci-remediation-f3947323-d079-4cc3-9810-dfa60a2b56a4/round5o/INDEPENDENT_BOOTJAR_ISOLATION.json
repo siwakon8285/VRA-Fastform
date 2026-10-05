@@ -1,0 +1,23 @@
+{
+  "artifacts": [
+    {
+      "diagnostic_material_present": false,
+      "mode": "0644",
+      "nested_archives_inspected": 79,
+      "path": "backend/runtime/build/libs/runtime-0.1.0-SNAPSHOT.jar",
+      "sha256": "35174e46636270ff31f7a92a700a230dfe52876cda2e92e7ae716111f08d13ec",
+      "size": 55126844,
+      "test_support_present": false
+    },
+    {
+      "diagnostic_material_present": false,
+      "mode": "0644",
+      "nested_archives_inspected": 8,
+      "path": "backend/migration/build/libs/migration-0.1.0-SNAPSHOT.jar",
+      "sha256": "bf49306fd51e4cd8cb6b1f8e1de74cbe36f299584ac017f2e4b65849e982d84e",
+      "size": 5181732,
+      "test_support_present": false
+    }
+  ],
+  "status": "PASS"
+}

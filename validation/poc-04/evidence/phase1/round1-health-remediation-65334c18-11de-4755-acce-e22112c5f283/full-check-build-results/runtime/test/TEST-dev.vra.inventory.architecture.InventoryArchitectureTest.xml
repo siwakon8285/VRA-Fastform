@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.vra.inventory.architecture.InventoryArchitectureTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-01T15:48:55.519Z" hostname="MacBook-Air-khxng-SIwakorn.local" time="0.013">
+  <properties/>
+  <testcase name="domain_is_framework_and_outer_layer_independent" classname="dev.vra.inventory.architecture.InventoryArchitectureTest" time="0.01"/>
+  <testcase name="application_does_not_depend_on_adapters" classname="dev.vra.inventory.architecture.InventoryArchitectureTest" time="0.001"/>
+  <testcase name="jpa_entities_stay_in_persistence_adapter" classname="dev.vra.inventory.architecture.InventoryArchitectureTest" time="0.001"/>
+  <testcase name="web_adapters_do_not_depend_on_persistence_adapters" classname="dev.vra.inventory.architecture.InventoryArchitectureTest" time="0.001"/>
+  <testcase name="rest_controllers_stay_in_web_adapters" classname="dev.vra.inventory.architecture.InventoryArchitectureTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

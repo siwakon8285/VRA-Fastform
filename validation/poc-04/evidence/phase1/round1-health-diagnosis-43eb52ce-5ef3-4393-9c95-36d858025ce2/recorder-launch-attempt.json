@@ -1,0 +1,5 @@
+{
+  "initial_unmanaged_child_exit": "terminated before ready; no test executed",
+  "test_launch_precondition": "ready absent; launch stopped before Gradle",
+  "recovery": "managed execution session; source unchanged"
+}

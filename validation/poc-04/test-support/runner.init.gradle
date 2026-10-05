@@ -1,0 +1,109 @@
+import groovy.json.JsonOutput
+import org.gradle.api.JavaVersion
+import org.gradle.api.tasks.compile.JavaCompile
+import org.gradle.api.tasks.testing.Test
+import org.gradle.api.tasks.bundling.Jar
+import org.gradle.jvm.toolchain.JavaLanguageVersion
+
+// Invoked only by the disposable TEST bootstrap. Never change production source sets.
+gradle.projectsEvaluated {
+    def root = gradle.rootProject
+    def required = { String key ->
+        def value = System.getenv(key)
+        if (!value) throw new GradleException("Required Phase-1 TEST metadata absent: ${key}")
+        value
+    }
+    def supportDirectory = new File(required('VRA_POC04_SUPPORT_DIRECTORY'))
+    def externalJar = new File(required('VRA_POC04_EXTERNAL_TC_JAR'))
+    if (externalJar.parentFile.canonicalFile != supportDirectory.canonicalFile)
+        throw new GradleException('Phase-1 support artifact must belong to current restricted run directory')
+    def repository = root.projectDir.parentFile
+    def sourceDirectory = new File(repository, 'validation/poc-04/test-support/src/dev/vra/poc04/external')
+    def resourceDirectory = new File(repository, 'validation/poc-04/test-support/resources')
+    def migration = root.project(':migration')
+    def compileSupport = root.tasks.register('compilePoc04TestSupport', JavaCompile) {
+        source = root.files(['PinnedImages.java', 'RunOwnedPostgreSQLContainer.java', 'RunResources.java']
+                .collect { new File(sourceDirectory, it) })
+        // Resolved dependencies only: test outputs here would introduce a compile cycle.
+        classpath = migration.configurations.getByName('testRuntimeClasspath')
+        destinationDirectory.set(new File(supportDirectory, 'classes'))
+        javaCompiler.set(migration.javaToolchains.compilerFor {
+            languageVersion.set(JavaLanguageVersion.of(21))
+        })
+        sourceCompatibility = JavaVersion.VERSION_21.toString()
+        targetCompatibility = JavaVersion.VERSION_21.toString()
+        options.release.set(21)
+        options.encoding = 'UTF-8'
+    }
+    def supportJar = root.tasks.register('poc04TestSupportJar', Jar) {
+        dependsOn(compileSupport)
+        from(compileSupport.flatMap { it.destinationDirectory })
+        from(resourceDirectory) {
+            include 'META-INF/services/org.testcontainers.core.CreateContainerCmdModifier'
+            include 'META-INF/services/org.testcontainers.utility.ImageNameSubstitutor'
+        }
+        destinationDirectory.set(supportDirectory)
+        archiveFileName.set(externalJar.name)
+        preserveFileTimestamps = false
+        reproducibleFileOrder = true
+    }
+    def artifact = root.files(supportJar.flatMap { it.archiveFile }).builtBy(supportJar)
+    root.allprojects { project ->
+        project.tasks.withType(JavaCompile).configureEach {
+            if (name == 'compileTestJava') {
+                dependsOn(supportJar)
+                classpath = classpath + artifact
+                doFirst {
+                    if (!classpath.files.contains(externalJar))
+                        throw new GradleException('Phase-1 support absent from test compilation classpath')
+                }
+            }
+        }
+        project.tasks.withType(Test).configureEach {
+            dependsOn(supportJar)
+            classpath = classpath + artifact
+            systemProperty 'java.net.preferIPv4Stack', 'true'
+            systemProperty 'api.version', '1.49'
+            doFirst {
+                if (!externalJar.isFile() || !classpath.files.contains(externalJar))
+                    throw new GradleException('Phase-1 support absent from final TEST classpath')
+            }
+        }
+    }
+    root.tasks.register('poc04TestClasspathProof') {
+        dependsOn(':runtime:compileTestJava', ':migration:compileTestJava')
+        doLast {
+            def support = compileSupport.get()
+            def compiler = support.javaCompiler.get()
+            def configuration = [task: support.path, type: JavaCompile.name,
+                                 source_files: support.source.files.collect { it.absolutePath }.sort(),
+                                 destination_directory: support.destinationDirectory.get().asFile.absolutePath,
+                                 compile_classpath: support.classpath.files.collect { it.absolutePath }.sort(),
+                                 compiler: compiler.executablePath.asFile.absolutePath,
+                                 toolchain_language_version: compiler.metadata.languageVersion.asInt(),
+                                 sourceCompatibility: support.sourceCompatibility,
+                                 targetCompatibility: support.targetCompatibility,
+                                 release: support.options.release.get()]
+            new File(required('VRA_POC04_EVIDENCE_DIRECTORY'), 'support-task-configuration.json').text =
+                    JsonOutput.prettyPrint(JsonOutput.toJson(configuration)) + '\n'
+            def rows = []
+            [root.project(':runtime'), migration].each { project ->
+                def compile = project.tasks.named('compileTestJava').get()
+                def testTasks = ['test', 'integrationTest'].collect { project.tasks.named(it).get() }
+                def production = project.extensions.getByName('sourceSets').main
+                def productionFiles = production.compileClasspath.files + production.runtimeClasspath.files
+                if (productionFiles.contains(externalJar))
+                    throw new GradleException('TEST support leaked into production classpath')
+                ([compile] + testTasks).each { task ->
+                    if (task.classpath.files.count { it == externalJar } != 1)
+                        throw new GradleException('TEST support must appear exactly once in intended classpath')
+                    rows << [task: task.path, support_jar: externalJar.absolutePath,
+                             classpath: task.classpath.files.collect { it.absolutePath }.sort()]
+                }
+                rows << [project: project.path, production_support_present: false]
+            }
+            def target = new File(required('VRA_POC04_EVIDENCE_DIRECTORY'), 'test-classpaths.json')
+            target.text = JsonOutput.prettyPrint(JsonOutput.toJson(rows)) + '\n'
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "candidate_sha256": "a120383860162b67a787e307fc731084b1d4ffc6b10a1295ebddd34c9b9860e6",
+  "checkout_pin": "actions/checkout@v7.0.1",
+  "classifier_algorithm_changed": false,
+  "hosted_CI_executed": false,
+  "only_added_input": "fetch-depth: 0",
+  "permissions_broadened": false,
+  "persist_credentials": false,
+  "phase2_authorized": false,
+  "pre_change_sha256": "47810c64b8a1d5ebc9178bfcd18124863580f2c92cb0968313b32e60502d6b95",
+  "ref_expression": "${{ github.event.pull_request.head.sha || github.sha }}",
+  "remaining_workflow_bytes_identical": true,
+  "status": "PASS"
+}

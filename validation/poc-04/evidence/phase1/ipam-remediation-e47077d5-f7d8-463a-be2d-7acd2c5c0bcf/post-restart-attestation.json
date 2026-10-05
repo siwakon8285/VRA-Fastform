@@ -1,0 +1,274 @@
+{
+  "timestamp_utc": "2026-10-01T07:48:36.492105+00:00",
+  "docker_host": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+  "required_environment": {
+    "TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE": "/var/run/docker.sock",
+    "TESTCONTAINERS_HOST_OVERRIDE": "127.0.0.1"
+  },
+  "version": {
+    "Client": {
+      "Version": "29.8.1",
+      "ApiVersion": "1.54",
+      "DefaultAPIVersion": "1.56",
+      "GitCommit": "4a63305",
+      "GoVersion": "go1.26.8",
+      "Os": "darwin",
+      "Arch": "arm64",
+      "BuildTime": "Tue Sep 15 16:24:48 2026",
+      "Context": "default"
+    },
+    "Server": {
+      "Platform": {
+        "Name": "Docker Engine - Community"
+      },
+      "Version": "29.5.2",
+      "ApiVersion": "1.54",
+      "MinAPIVersion": "1.40",
+      "Os": "linux",
+      "Arch": "arm64",
+      "Components": [
+        {
+          "Name": "Engine",
+          "Version": "29.5.2",
+          "Details": {
+            "ApiVersion": "1.54",
+            "Arch": "arm64",
+            "BuildTime": "Wed May 20 14:39:25 2026",
+            "Experimental": "false",
+            "GitCommit": "568f755",
+            "GoVersion": "go1.26.3",
+            "KernelVersion": "6.8.0-117-generic",
+            "MinAPIVersion": "1.40",
+            "Module": "github.com/moby/moby/v2",
+            "ModuleVersion": "v2.0.0+unknown",
+            "Os": "linux"
+          }
+        },
+        {
+          "Name": "containerd",
+          "Version": "v2.2.4",
+          "Details": {
+            "GitCommit": "193637f7ee8ae5f5aa5248f49e7baa3e6164966e"
+          }
+        },
+        {
+          "Name": "runc",
+          "Version": "1.3.5",
+          "Details": {
+            "GitCommit": "v1.3.5-0-g488fc13e"
+          }
+        },
+        {
+          "Name": "docker-init",
+          "Version": "0.19.0",
+          "Details": {
+            "GitCommit": "de40ad0"
+          }
+        }
+      ],
+      "GitCommit": "568f755",
+      "GoVersion": "go1.26.3",
+      "KernelVersion": "6.8.0-117-generic",
+      "BuildTime": "2026-05-20T14:39:25.000000000+00:00"
+    }
+  },
+  "daemon": {
+    "ID": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+    "Name": "colima-vra-poc04-test",
+    "ServerVersion": "29.5.2",
+    "Architecture": "aarch64"
+  },
+  "effective_default_pools": [
+    {
+      "Base": "10.241.0.0/16",
+      "Size": 24
+    }
+  ],
+  "baseline_networks_after_restart": [
+    {
+      "ID": "c0297a5ce0209b66940193c63975087c4355c0e38d6517ac408d4fbf452c9adf",
+      "Name": "bridge",
+      "Driver": "bridge",
+      "IPAM": {
+        "Config": [
+          {
+            "Gateway": "10.241.0.1",
+            "Subnet": "10.241.0.0/24"
+          }
+        ],
+        "Driver": "default",
+        "Options": null
+      }
+    },
+    {
+      "ID": "71919e79066c633ba4548aa04103de53d1e31552893e0cec59e0ba812b5f4d22",
+      "Name": "host",
+      "Driver": "host",
+      "IPAM": {
+        "Config": null,
+        "Driver": "default",
+        "Options": null
+      }
+    },
+    {
+      "ID": "0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a",
+      "Name": "none",
+      "Driver": "null",
+      "IPAM": {
+        "Config": null,
+        "Driver": "default",
+        "Options": null
+      }
+    }
+  ],
+  "Docker_context_before_after_equal": "desktop-linux",
+  "saved_profile_config_sha256": "53675defaacbcb1a36f59a3760a61142b16199d4e8a513e6ac63e44fd9505d68",
+  "records": [
+    {
+      "command": [
+        "docker",
+        "version",
+        "--format",
+        "{{json .}}"
+      ],
+      "exit_status": 0,
+      "stdout": "{\"Client\":{\"Version\":\"29.8.1\",\"ApiVersion\":\"1.54\",\"DefaultAPIVersion\":\"1.56\",\"GitCommit\":\"4a63305\",\"GoVersion\":\"go1.26.8\",\"Os\":\"darwin\",\"Arch\":\"arm64\",\"BuildTime\":\"Tue Sep 15 16:24:48 2026\",\"Context\":\"default\"},\"Server\":{\"Platform\":{\"Name\":\"Docker Engine - Community\"},\"Version\":\"29.5.2\",\"ApiVersion\":\"1.54\",\"MinAPIVersion\":\"1.40\",\"Os\":\"linux\",\"Arch\":\"arm64\",\"Components\":[{\"Name\":\"Engine\",\"Version\":\"29.5.2\",\"Details\":{\"ApiVersion\":\"1.54\",\"Arch\":\"arm64\",\"BuildTime\":\"Wed May 20 14:39:25 2026\",\"Experimental\":\"false\",\"GitCommit\":\"568f755\",\"GoVersion\":\"go1.26.3\",\"KernelVersion\":\"6.8.0-117-generic\",\"MinAPIVersion\":\"1.40\",\"Module\":\"github.com/moby/moby/v2\",\"ModuleVersion\":\"v2.0.0+unknown\",\"Os\":\"linux\"}},{\"Name\":\"containerd\",\"Version\":\"v2.2.4\",\"Details\":{\"GitCommit\":\"193637f7ee8ae5f5aa5248f49e7baa3e6164966e\"}},{\"Name\":\"runc\",\"Version\":\"1.3.5\",\"Details\":{\"GitCommit\":\"v1.3.5-0-g488fc13e\"}},{\"Name\":\"docker-init\",\"Version\":\"0.19.0\",\"Details\":{\"GitCommit\":\"de40ad0\"}}],\"GitCommit\":\"568f755\",\"GoVersion\":\"go1.26.3\",\"KernelVersion\":\"6.8.0-117-generic\",\"BuildTime\":\"2026-05-20T14:39:25.000000000+00:00\"}}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "info",
+        "--format",
+        "{{json .DefaultAddressPools}}"
+      ],
+      "exit_status": 0,
+      "stdout": "[{\"Base\":\"10.241.0.0/16\",\"Size\":24}]\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "info",
+        "--format",
+        "{\"ID\":{{json .ID}},\"Name\":{{json .Name}},\"ServerVersion\":{{json .ServerVersion}},\"Architecture\":{{json .Architecture}}}"
+      ],
+      "exit_status": 0,
+      "stdout": "{\"ID\":\"14c8ff26-86d1-4c0b-88a6-560be91a65ea\",\"Name\":\"colima-vra-poc04-test\",\"ServerVersion\":\"29.5.2\",\"Architecture\":\"aarch64\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "ps",
+        "-aq"
+      ],
+      "exit_status": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "volume",
+        "ls",
+        "-q"
+      ],
+      "exit_status": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "ls",
+        "-q",
+        "--no-trunc"
+      ],
+      "exit_status": 0,
+      "stdout": "c0297a5ce0209b66940193c63975087c4355c0e38d6517ac408d4fbf452c9adf\n71919e79066c633ba4548aa04103de53d1e31552893e0cec59e0ba812b5f4d22\n0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "inspect",
+        "--format",
+        "{\"ID\":{{json .Id}},\"Name\":{{json .Name}},\"Driver\":{{json .Driver}},\"IPAM\":{{json .IPAM}}}",
+        "c0297a5ce0209b66940193c63975087c4355c0e38d6517ac408d4fbf452c9adf"
+      ],
+      "exit_status": 0,
+      "stdout": "{\"ID\":\"c0297a5ce0209b66940193c63975087c4355c0e38d6517ac408d4fbf452c9adf\",\"Name\":\"bridge\",\"Driver\":\"bridge\",\"IPAM\":{\"Config\":[{\"Gateway\":\"10.241.0.1\",\"Subnet\":\"10.241.0.0/24\"}],\"Driver\":\"default\",\"Options\":null}}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "inspect",
+        "--format",
+        "{\"ID\":{{json .Id}},\"Name\":{{json .Name}},\"Driver\":{{json .Driver}},\"IPAM\":{{json .IPAM}}}",
+        "71919e79066c633ba4548aa04103de53d1e31552893e0cec59e0ba812b5f4d22"
+      ],
+      "exit_status": 0,
+      "stdout": "{\"ID\":\"71919e79066c633ba4548aa04103de53d1e31552893e0cec59e0ba812b5f4d22\",\"Name\":\"host\",\"Driver\":\"host\",\"IPAM\":{\"Config\":null,\"Driver\":\"default\",\"Options\":null}}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "inspect",
+        "--format",
+        "{\"ID\":{{json .Id}},\"Name\":{{json .Name}},\"Driver\":{{json .Driver}},\"IPAM\":{{json .IPAM}}}",
+        "0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a"
+      ],
+      "exit_status": 0,
+      "stdout": "{\"ID\":\"0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a\",\"Name\":\"none\",\"Driver\":\"null\",\"IPAM\":{\"Config\":null,\"Driver\":\"default\",\"Options\":null}}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "colima",
+        "status",
+        "--profile",
+        "vra-poc04-test"
+      ],
+      "exit_status": 0,
+      "stdout": "",
+      "stderr": "time=\"2026-10-01T14:48:36+07:00\" level=info msg=\"colima [profile=vra-poc04-test] is running using macOS Virtualization.Framework\"\ntime=\"2026-10-01T14:48:36+07:00\" level=info msg=\"arch: aarch64\"\ntime=\"2026-10-01T14:48:36+07:00\" level=info msg=\"runtime: docker\"\ntime=\"2026-10-01T14:48:36+07:00\" level=info msg=\"mountType: virtiofs\"\ntime=\"2026-10-01T14:48:36+07:00\" level=info msg=\"address: 192.168.64.2\"\ntime=\"2026-10-01T14:48:36+07:00\" level=info msg=\"docker socket: unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock\"\ntime=\"2026-10-01T14:48:36+07:00\" level=info msg=\"containerd socket: unix:///Users/siwakornbundi/.colima/vra-poc04-test/containerd.sock\"\n"
+    },
+    {
+      "command": [
+        "colima",
+        "ssh",
+        "--profile",
+        "vra-poc04-test",
+        "--",
+        "ip",
+        "-4",
+        "route",
+        "show",
+        "table",
+        "all"
+      ],
+      "exit_status": 0,
+      "stdout": "default via 192.168.5.2 dev eth0 proto dhcp src 192.168.5.1 metric 200 \ndefault via 192.168.64.1 dev col0 proto dhcp src 192.168.64.2 metric 300 \n10.241.0.0/24 dev docker0 proto kernel scope link src 10.241.0.1 linkdown \n192.168.5.0/24 dev eth0 proto kernel scope link src 192.168.5.1 metric 200 \n192.168.5.2 dev eth0 proto dhcp scope link src 192.168.5.1 metric 200 \n192.168.64.0/24 dev col0 proto kernel scope link src 192.168.64.2 metric 300 \n192.168.64.1 dev col0 proto dhcp scope link src 192.168.64.2 metric 300 \nlocal 10.241.0.1 dev docker0 table local proto kernel scope host src 10.241.0.1 \nbroadcast 10.241.0.255 dev docker0 table local proto kernel scope link src 10.241.0.1 linkdown \nlocal 127.0.0.0/8 dev lo table local proto kernel scope host src 127.0.0.1 \nlocal 127.0.0.1 dev lo table local proto kernel scope host src 127.0.0.1 \nbroadcast 127.255.255.255 dev lo table local proto kernel scope link src 127.0.0.1 \nlocal 192.168.5.1 dev eth0 table local proto kernel scope host src 192.168.5.1 \nbroadcast 192.168.5.255 dev eth0 table local proto kernel scope link src 192.168.5.1 \nlocal 192.168.64.2 dev col0 table local proto kernel scope host src 192.168.64.2 \nbroadcast 192.168.64.255 dev col0 table local proto kernel scope link src 192.168.64.2 \n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "netstat",
+        "-rn",
+        "-f",
+        "inet"
+      ],
+      "exit_status": 0,
+      "stdout": "Routing tables\n\nInternet:\nDestination        Gateway            Flags               Netif Expire\ndefault            192.168.5.1        UGScg                 en0       \ndefault            link#22            UCSIg           bridge100      !\n127                127.0.0.1          UCS                   lo0       \n127.0.0.1          127.0.0.1          UH                    lo0       \n169.254            link#11            UCS                   en0      !\n169.254.169.254    link#11            UHRLSW                en0      !\n192.168.5          link#11            UCS                   en0      !\n192.168.5.1/32     link#11            UCS                   en0      !\n192.168.5.1        3c:64:cf:7c:9b:d0  UHLWIir               en0   1199\n192.168.5.51       a0:ee:1a:bd:e2:1b  UHLWI                 en0      !\n192.168.5.52/32    link#11            UCS                   en0      !\n192.168.5.52       ee:1c:a2:dd:51:d7  UHLWI                 lo0       \n192.168.5.53       6a:3:84:ca:a4:39   UHLWI                 en0    754\n192.168.5.54       c6:91:ae:87:dd:e4  UHLWI                 en0    781\n192.168.5.55       4:99:bb:65:4c:ee   UHLWI                 en0     34\n192.168.5.56       1a:59:4f:31:84:2a  UHLWI                 en0    164\n192.168.5.57       0:81:2a:d5:f6:a7   UHLWI                 en0      !\n192.168.5.58       f2:e0:a9:63:8d:55  UHLWIi                en0   1064\n192.168.5.67       c2:0:62:ac:19:9f   UHLWI                 en0      !\n192.168.5.69       e6:6:b0:97:c0:18   UHLWI                 en0   1187\n192.168.64         link#22            UC              bridge100      !\n192.168.64.1       a2.9a.8e.95.41.64  UHLWIi                lo0       \n224.0.0/4          link#11            UmCS                  en0      !\n224.0.0.251        1:0:5e:0:0:fb      UHmLWI                en0       \n224.0.0.251        1:0:5e:0:0:fb      UHmLWIg         bridge100       \n255.255.255.255/32 link#11            UCS                   en0      !\n",
+      "stderr": ""
+    }
+  ],
+  "other_daemons_not_enumerated": true
+}

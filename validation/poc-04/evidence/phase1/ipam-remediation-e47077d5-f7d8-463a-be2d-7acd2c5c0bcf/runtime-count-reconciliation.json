@@ -1,0 +1,17 @@
+{
+  "expected_user_count": 102,
+  "actual_executed_count": 113,
+  "skipped": 0,
+  "failures": 0,
+  "errors": 0,
+  "source_byte_unchanged": true,
+  "difference_by_suite": [
+    {
+      "suite": "dev.vra.async.WorkerProcessCrashIntegrationTest",
+      "historical_failed_run_cases": 1,
+      "current_executed_cases": 12,
+      "new_artifact": "runtime-retry-results/TEST-dev.vra.async.WorkerProcessCrashIntegrationTest.xml"
+    }
+  ],
+  "interpretation": "Historical102 was the failed-run JUnit count, including a collapsed class initialization error; successful initialization executes the class actual12cases instead of1initializationError, yielding11additional real tests. No test disabled, source edit or fabricated102 count."
+}

@@ -1,0 +1,33 @@
+{
+  "command": [
+    "./gradlew",
+    "--no-daemon",
+    "-Dorg.gradle.java.installations.auto-detect=false",
+    "-Dorg.gradle.java.installations.paths=/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-jdk-x0q7h_vo/jdk-21.0.12.1+1/Contents/Home",
+    "-I",
+    "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-remediation-support-_iyghlz0/runner.init.gradle",
+    ":migration:integrationTest",
+    "--tests",
+    "dev.vra.migration.Poc04FoundationMigrationIntegrationTest.freshV1ThroughV4ValidatesRerunsAndEnforcesPhaseOneBoundary"
+  ],
+  "cwd": "/Users/siwakornbundi/Project/VRA-Fastform/backend",
+  "environment": {
+    "JAVA_HOME": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-jdk-x0q7h_vo/jdk-21.0.12.1+1/Contents/Home",
+    "DOCKER_HOST": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+    "VRA_POC04_DISPOSABLE_TEST_DOCKER_ENDPOINT": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+    "TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE": "/var/run/docker.sock",
+    "TESTCONTAINERS_HOST_OVERRIDE": "127.0.0.1",
+    "TESTCONTAINERS_RYUK_CONTAINER_IMAGE": "docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0",
+    "TESTCONTAINERS_TINYIMAGE_CONTAINER_IMAGE": "docker.io/library/alpine@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989",
+    "VRA_POC04_RUN_ID": "5e8a333f-5b82-4b7d-b513-0fea93933bab",
+    "VRA_POC04_SOURCE_HEAD": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+    "VRA_POC04_SOURCE_CONTENT_SHA256": "7cef9abea5c67e879fb3bf3e0f05ba68bbe83121c02e7363d9b7a0143b5bffe2",
+    "VRA_POC04_TOOL_MANIFEST_SHA256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+    "VRA_POC04_EXPECTED_DAEMON_ID": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+    "VRA_POC04_RESOURCE_EVIDENCE": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/evidence/phase1/image-remediation-5e8a333f-5b82-4b7d-b513-0fea93933bab/resource-identities.jsonl",
+    "VRA_POC04_EXTERNAL_TC_JAR": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-external-tc-vsfk4w5a/external-tc.jar"
+  },
+  "started_at_utc": "2026-09-30T18:58:59.063971+00:00",
+  "exit_status": 1,
+  "ended_at_utc": "2026-09-30T18:59:08.912714+00:00"
+}

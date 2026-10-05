@@ -1,0 +1,13 @@
+{
+  "ipam_config_and_capacity": "independently audited PASS",
+  "source_files_unchanged": 27,
+  "source_binding_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+  "pool": "10.241.0.0/16",
+  "child_prefix": 24,
+  "probe_children": 48,
+  "normalization_precision": "Initial selection list omitted abbreviated224.0.0/4multicast; raw route was preserved. Capacity preflight correctly normalized it to224.0.0.0/4 and verified non-overlap. It cannot overlap selected RFC1918pool. No specific private host/VPN/Colima/Docker routes omitted.",
+  "global_context_unchanged": "desktop-linux",
+  "prior_exact_resources_reconfirmed_absent": 114,
+  "actual_runtime_retry_tests": 113,
+  "source_edited_this_ipam_run": false
+}

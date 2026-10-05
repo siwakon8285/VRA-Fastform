@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.vra.platform.configuration.RuntimeDatabasePropertiesTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-10-01T15:48:56.643Z" hostname="MacBook-Air-khxng-SIwakorn.local" time="0.002">
+  <properties/>
+  <testcase name="rejectsBlankUrl()" classname="dev.vra.platform.configuration.RuntimeDatabasePropertiesTest" time="0.0"/>
+  <testcase name="rejectsNonPostgresJdbcUrl()" classname="dev.vra.platform.configuration.RuntimeDatabasePropertiesTest" time="0.0"/>
+  <testcase name="rejectsPostgresJdbcUrlWithoutHost()" classname="dev.vra.platform.configuration.RuntimeDatabasePropertiesTest" time="0.001"/>
+  <testcase name="rejectsCredentialsEmbeddedInDatabaseUrl()" classname="dev.vra.platform.configuration.RuntimeDatabasePropertiesTest" time="0.0"/>
+  <testcase name="rejectsMalformedPostgresJdbcUrl()" classname="dev.vra.platform.configuration.RuntimeDatabasePropertiesTest" time="0.0"/>
+  <testcase name="rejectsBlankUsername()" classname="dev.vra.platform.configuration.RuntimeDatabasePropertiesTest" time="0.0"/>
+  <testcase name="rejectsPostgresJdbcUrlWithoutDatabaseName()" classname="dev.vra.platform.configuration.RuntimeDatabasePropertiesTest" time="0.0"/>
+  <testcase name="rejectsBlankPassword()" classname="dev.vra.platform.configuration.RuntimeDatabasePropertiesTest" time="0.0"/>
+  <testcase name="acceptsCompleteConfiguration()" classname="dev.vra.platform.configuration.RuntimeDatabasePropertiesTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

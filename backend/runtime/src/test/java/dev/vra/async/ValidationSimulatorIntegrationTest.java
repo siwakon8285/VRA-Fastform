@@ -36,9 +36,9 @@ import static org.junit.jupiter.api.Assertions.*;
 @Tag("postgres")
 class ValidationSimulatorIntegrationTest {
     private static final String PASSWORD = "stage-f-disposable-only";
-    private static final PostgreSQLContainer VRA = new PostgreSQLContainer("postgres:17.11")
+    private static final PostgreSQLContainer VRA = new dev.vra.poc04.external.RunOwnedPostgreSQLContainer("postgres:17.11")
             .withDatabaseName("vra_poc01").withUsername("postgres").withPassword(PASSWORD);
-    private static final PostgreSQLContainer SIMULATOR = new PostgreSQLContainer("postgres:17.11")
+    private static final PostgreSQLContainer SIMULATOR = new dev.vra.poc04.external.RunOwnedPostgreSQLContainer("postgres:17.11")
             .withDatabaseName("simulator_stage_f").withUsername("simulator_test").withPassword(PASSWORD);
     private static final HttpClient HTTP = HttpClient.newHttpClient();
     private static SimulatorProcessHarness process;
@@ -54,7 +54,7 @@ class ValidationSimulatorIntegrationTest {
             assertNotEquals(VRA.getJdbcUrl(), SIMULATOR.getJdbcUrl());
             bootstrapVra();
             AsyncRoleBootstrap.run(VRA);
-            assertEquals(3, new MigrationRunner().migrate(VRA.getJdbcUrl(), "vra_migrator", PASSWORD));
+            assertEquals(4, new MigrationRunner().migrate(VRA.getJdbcUrl(), "vra_migrator", PASSWORD));
             process = new SimulatorProcessHarness(SIMULATOR);
             assertTrue(process.alive());
             assertNotEquals(ProcessHandle.current().pid(), process.pid());

@@ -1,0 +1,15 @@
+{
+  "scope": "narrow normalized service.secrets parser and safe structural evidence",
+  "steps": [
+    "preserved pre-edit safe Compose diagnosis; CASE A exact full target matches reviewed profile",
+    "strict parser/syntax/diff checks",
+    "focused collector; STOP on failure",
+    "only after focused PASS: full check build --rerun-tasks; require 193/0/0/0",
+    "final collector on same source hash; exact cleanup/new binding"
+  ],
+  "historical_failure_preservation": {
+    "report": "669f2e1d4bd339c51e90fb04d08237b2ae954eb7da67f8de5072ae95cd8cc833",
+    "binding": "8b9f3c5c18add17d94730acd08c08f10e992b6f07c47f46deda9c53e7e04f43a"
+  },
+  "phase2_authorized": false
+}

@@ -1,0 +1,38 @@
+{
+  "GITHUB_RUN_ATTEMPT": "1",
+  "GITHUB_RUN_ID": "local-round5o-preplanned",
+  "candidate_content_sha256": "7e0deae81a11148e5cbd3b76672ec226b7adb267fb22edd7cad7ba92ccd64780",
+  "command": "python3 -B validation/poc-04/scripts/phase1-ci.py \\\n  --disposable-test \\\n  --gate full \\\n  --evidence-directory \"validation/poc-04/evidence/phase1/ci-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}/bootstrap\"\n",
+  "environment": {
+    "DOCKER_HOST": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+    "GIT_ALLOW_PROTOCOL": "https",
+    "GIT_CONFIG_GLOBAL": "/dev/null",
+    "GIT_CONFIG_NOSYSTEM": "1",
+    "GIT_OPTIONAL_LOCKS": "0",
+    "GIT_TERMINAL_PROMPT": "0",
+    "GRADLE_USER_HOME": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/gradle-user-home",
+    "HOME": "/Users/siwakornbundi",
+    "JAVA_HOME": "/opt/homebrew/Cellar/openjdk@21/21.0.12.1/libexec/openjdk.jdk/Contents/Home",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE": "/var/run/docker.sock",
+    "TESTCONTAINERS_HOST_OVERRIDE": "127.0.0.1",
+    "TESTCONTAINERS_RYUK_DISABLED": "false",
+    "TMPDIR": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/tmp",
+    "VRA_POC04_DISPOSABLE_TEST_DOCKER_ENDPOINT": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+    "VRA_POC04_EXPECTED_DAEMON_ID": "14c8ff26-86d1-4c0b-88a6-560be91a65ea"
+  },
+  "evidence_directory": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/source-capsule/validation/poc-04/evidence/phase1/ci-local-round5o-preplanned-1/bootstrap",
+  "frozen_manifest_sha256": "a93db1df523df957aee0bda865ea07ba5a87bfeba9bf162825aa10815e265045",
+  "local_hosted_artifact_delivery": false,
+  "local_source_capsule_is_invocation_only": "Gradle/build executes exclusively disposable B, not S or canonical",
+  "no_retry": true,
+  "preplanned_scanner_controls": [
+    "primary",
+    "prebuild-control-1",
+    "prebuild-control-2",
+    "postbuild-original"
+  ],
+  "scanner_snapshot_must_be_same_for_all_controls": true,
+  "shell": "bash",
+  "working_directory": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/source-capsule"
+}

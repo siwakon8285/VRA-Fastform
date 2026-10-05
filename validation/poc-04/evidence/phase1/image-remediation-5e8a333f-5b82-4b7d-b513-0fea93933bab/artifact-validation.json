@@ -1,0 +1,141 @@
+{
+  "scope": "Post-failure artifact/source validation; PostgreSQL work stopped",
+  "command": [
+    "python3",
+    "/tmp/vra-poc04-image-remediation-final-validate.py"
+  ],
+  "validation_command_exit_status": 0,
+  "changed_files_scanned": 76,
+  "tracked_modified": 20,
+  "untracked": 56,
+  "staged": [],
+  "source_modified_this_resume": [
+    "backend/migration/src/test/java/dev/vra/migration/Poc04FoundationMigrationIntegrationTest.java"
+  ],
+  "other_source_hashes_unchanged": 26,
+  "fixture_sha256": "eedaf64c01778dcc9f1b502a4127bd1363c08a310e3cc131a91a48e6891b1ee8",
+  "canonical_source_sha256": "7cef9abea5c67e879fb3bf3e0f05ba68bbe83121c02e7363d9b7a0143b5bffe2",
+  "source_files": 261,
+  "historical_hashes": {
+    "validation/poc-04/tooling/image-pins.json": "340b51d2910f023eef2f7b8a0a4c4065c4baa8d95b2a95c5aaa6c76b888d123a",
+    "validation/poc-04/IMPLEMENTATION_PLAN.md": "c169ad62d947841ec08987d2561f16b75935168d99ea46a34143004d3da3d7c5",
+    "validation/poc-04/SHARED_SPEC.md": "c035e627c087b41cb4533b00f0bdaf8fa208a5b55881358cf1f85b6809b2ed2d",
+    "validation/poc-04/evidence/phase1/IMPLEMENTATION_REPORT.previous-b772942a.md": "b772942af3dc367941cd7e2d553ca2f990542964114fdd3002a8c994941cdd65",
+    "validation/poc-04/evidence/phase1/IMPLEMENTATION_REPORT.previous-93baf961.md": "93baf961f3370311e1d669e3594ed9c0c2d925ef66d0df70c62f33e61d127a57"
+  },
+  "v1_v2_v3_hash_comparison": [
+    {
+      "path": "backend/migration/src/main/resources/db/migration/V1__inventory_reservation_foundation.sql",
+      "sha256": "d804cbe5153b9a904ae0747af55c8295079d4a0c3edb4a38145ab5199b5b59c4",
+      "phase0_equal": true,
+      "HEAD_equal": true
+    },
+    {
+      "path": "backend/migration/src/main/resources/db/migration/V2__inventory_reservation_idempotency.sql",
+      "sha256": "7bef750b59b7b77e8402f4f42c13c21c4e072092504b9f268bace9b72de8d2bb",
+      "phase0_equal": true,
+      "HEAD_equal": true
+    },
+    {
+      "path": "backend/migration/src/main/resources/db/migration/V3__outbox_recovery.sql",
+      "sha256": "9edbd15ffe08ee4edafa3f549856ee38a782485c54db9c73e69d4263e5ca26b4",
+      "phase0_equal": true,
+      "HEAD_equal": true
+    }
+  ],
+  "formats_parsed": {
+    "json": 30,
+    "jsonl": 3,
+    "xml": 3
+  },
+  "whitespace_exceptions": [
+    {
+      "path": "validation/poc-04/evidence/phase1/execution-304b3976-4ebe-4a61-8bbc-e67a9a40e669/fresh-gradle-output.txt",
+      "issue": "trailing whitespace",
+      "line": 2,
+      "classification": "PRESERVED_RAW_GRADLE_OUTPUT"
+    },
+    {
+      "path": "validation/poc-04/evidence/phase1/execution-e0a3d5b9-ab05-453f-b133-39b50828e0b7/fresh-gradle-output.txt",
+      "issue": "trailing whitespace",
+      "line": 2,
+      "classification": "PRESERVED_RAW_GRADLE_OUTPUT"
+    },
+    {
+      "path": "validation/poc-04/evidence/phase1/image-remediation-5e8a333f-5b82-4b7d-b513-0fea93933bab/fresh-gradle-output.txt",
+      "issue": "trailing whitespace",
+      "line": 2,
+      "classification": "PRESERVED_RAW_GRADLE_OUTPUT"
+    },
+    {
+      "path": "validation/poc-04/evidence/phase1/image-remediation-5e8a333f-5b82-4b7d-b513-0fea93933bab/postgres-arm64-manifest.json",
+      "issue": "missing final newline",
+      "classification": "EXACT_RAW_IMMUTABLE_MANIFEST_BYTES"
+    },
+    {
+      "path": "validation/poc-04/evidence/phase1/image-remediation-5e8a333f-5b82-4b7d-b513-0fea93933bab/postgres-index.json",
+      "issue": "missing final newline",
+      "classification": "EXACT_RAW_IMMUTABLE_MANIFEST_BYTES"
+    },
+    {
+      "path": "validation/poc-04/evidence/phase1/image-remediation-5e8a333f-5b82-4b7d-b513-0fea93933bab/source-change.patch",
+      "issue": "trailing whitespace",
+      "line": 9,
+      "classification": "UNIFIED_DIFF_BLANK_CONTEXT_MARKER"
+    },
+    {
+      "path": "validation/poc-04/evidence/phase1/image-remediation-5e8a333f-5b82-4b7d-b513-0fea93933bab/source-change.patch",
+      "issue": "trailing whitespace",
+      "line": 20,
+      "classification": "UNIFIED_DIFF_BLANK_CONTEXT_MARKER"
+    },
+    {
+      "path": "validation/poc-04/evidence/phase1/image-remediation-5e8a333f-5b82-4b7d-b513-0fea93933bab/source-change.patch",
+      "issue": "trailing whitespace",
+      "line": 157,
+      "classification": "UNIFIED_DIFF_BLANK_CONTEXT_MARKER"
+    }
+  ],
+  "git_diff_check_command": [
+    "git",
+    "diff",
+    "--check"
+  ],
+  "git_diff_check_exit_status": 0,
+  "gitleaks_command": [
+    "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-gitleaks-3bpa0z2g/gitleaks",
+    "dir",
+    "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-image-fix-finalscan-hmlpk3_4/source",
+    "--no-banner",
+    "--redact=100",
+    "--report-format",
+    "json",
+    "--report-path",
+    "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-image-fix-finalscan-hmlpk3_4/findings.json",
+    "--no-color",
+    "--log-level",
+    "error"
+  ],
+  "gitleaks_exit_status": 1,
+  "gitleaks_finding_count": 2,
+  "reviewed_findings": [
+    {
+      "rule_id": "generic-api-key",
+      "file": "validation/poc-04/evidence/phase1/image-identity-diagnosis-03baf784-dd20-4615-be07-d633535b9b04/docker-image-semantics.json",
+      "line": 15,
+      "classification": "FALSE_POSITIVE_KNOWN_GIT_HEAD_SHA1"
+    },
+    {
+      "rule_id": "generic-api-key",
+      "file": "validation/poc-04/evidence/phase1/execution-e0a3d5b9-ab05-453f-b133-39b50828e0b7/artifact-validation.json",
+      "line": 212,
+      "classification": "FALSE_POSITIVE_KNOWN_GIT_HEAD_SHA1"
+    }
+  ],
+  "actual_secrets_found": 0,
+  "ignore_rules_added": false,
+  "no_further_source_fixes": true,
+  "phase2_paths_found": [],
+  "preserved_artifact_hash_claims_verified": 29,
+  "report_sha256": "93baf961f3370311e1d669e3594ed9c0c2d925ef66d0df70c62f33e61d127a57"
+}

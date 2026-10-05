@@ -1,0 +1,72 @@
+[
+  {
+    "arguments": [
+      "init"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/shallow-checkout",
+    "exit_status": 0,
+    "stderr": "hint: Using 'master' as the name for the initial branch. This default branch name\nhint: will change to \"main\" in Git 3.0. To configure the initial branch name\nhint: to use in all of your new repositories, which will suppress this warning,\nhint: call:\nhint:\nhint: \tgit config --global init.defaultBranch <name>\nhint:\nhint: Names commonly chosen instead of 'master' are 'main', 'trunk' and\nhint: 'development'. The just-created branch can be renamed via this command:\nhint:\nhint: \tgit branch -m <name>\nhint:\nhint: Disable this message with \"git config set advice.defaultBranchName false\"\n",
+    "stdout": "Initialized empty Git repository in /private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/shallow-checkout/.git/\n"
+  },
+  {
+    "arguments": [
+      "remote",
+      "add",
+      "origin",
+      "https://github.com/siwakon8285/VRA-Fastform.git"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/shallow-checkout",
+    "exit_status": 0,
+    "stderr": "",
+    "stdout": ""
+  },
+  {
+    "arguments": [
+      "fetch",
+      "--no-tags",
+      "--depth=1",
+      "origin",
+      "ae9bd1f53a7e3e8612f2f4cd9f778e27d7cdb0db"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/shallow-checkout",
+    "exit_status": 0,
+    "stderr": "From https://github.com/siwakon8285/VRA-Fastform\n * branch            ae9bd1f53a7e3e8612f2f4cd9f778e27d7cdb0db -> FETCH_HEAD\n",
+    "stdout": ""
+  },
+  {
+    "arguments": [
+      "checkout",
+      "--detach",
+      "ae9bd1f53a7e3e8612f2f4cd9f778e27d7cdb0db"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/shallow-checkout",
+    "exit_status": 0,
+    "stderr": "HEAD is now at ae9bd1f feat(security): implement POC-04 phase 1 roles and schema\n",
+    "stdout": ""
+  },
+  {
+    "arguments": [
+      "clone",
+      "--no-local",
+      "--no-hardlinks",
+      "--no-checkout",
+      "https://github.com/siwakon8285/VRA-Fastform.git",
+      "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/source-capsule"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p",
+    "exit_status": 0,
+    "stderr": "Cloning into '/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/source-capsule'...\n",
+    "stdout": ""
+  },
+  {
+    "arguments": [
+      "checkout",
+      "--detach",
+      "ae9bd1f53a7e3e8612f2f4cd9f778e27d7cdb0db"
+    ],
+    "cwd": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/source-capsule",
+    "exit_status": 0,
+    "stderr": "HEAD is now at ae9bd1f feat(security): implement POC-04 phase 1 roles and schema\n",
+    "stdout": ""
+  }
+]

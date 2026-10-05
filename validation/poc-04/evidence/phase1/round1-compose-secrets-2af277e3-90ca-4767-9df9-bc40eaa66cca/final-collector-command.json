@@ -1,0 +1,37 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/collector-boundary-proof.py"
+  ],
+  "cwd": "/Users/siwakornbundi/Project/VRA-Fastform/backend",
+  "started_at": "2026-10-01T17:09:18.336006+00:00",
+  "environment": {
+    "JAVA_HOME": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-jdk-x0q7h_vo/jdk-21.0.12.1+1/Contents/Home",
+    "DOCKER_HOST": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+    "VRA_POC04_DISPOSABLE_TEST_DOCKER_ENDPOINT": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+    "TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE": "/var/run/docker.sock",
+    "TESTCONTAINERS_HOST_OVERRIDE": "127.0.0.1",
+    "TESTCONTAINERS_RYUK_DISABLED": "false",
+    "TESTCONTAINERS_RYUK_CONTAINER_IMAGE": "docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0",
+    "TESTCONTAINERS_TINYIMAGE_CONTAINER_IMAGE": "docker.io/library/alpine@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989",
+    "VRA_POC04_RUN_ID": "2af277e3-90ca-4767-9df9-bc40eaa66cca",
+    "VRA_POC04_SOURCE_HEAD": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+    "VRA_POC04_SOURCE_CONTENT_SHA256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+    "VRA_POC04_TOOL_MANIFEST_SHA256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+    "VRA_POC04_EXPECTED_DAEMON_ID": "14c8ff26-86d1-4c0b-88a6-560be91a65ea",
+    "VRA_POC04_RESOURCE_EVIDENCE": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/evidence/phase1/round1-compose-secrets-2af277e3-90ca-4767-9df9-bc40eaa66cca/resource-identities.jsonl",
+    "VRA_POC04_EXTERNAL_TC_JAR": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-compose-secrets-m0lm2ysc/external-tc.jar",
+    "VRA_POC04_DAEMON_INSPECT_DIRECTORY": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/evidence/phase1/round1-compose-secrets-2af277e3-90ca-4767-9df9-bc40eaa66cca/daemon-inspect",
+    "VRA_POC04_RUN_STATE": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-compose-secrets-m0lm2ysc/run-state.json",
+    "VRA_POC04_RUN_HARNESS": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+    "VRA_POC04_SUPPORT_DIRECTORY": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-compose-secrets-m0lm2ysc",
+    "VRA_POC04_EVIDENCE_DIRECTORY": "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/evidence/phase1/round1-compose-secrets-2af277e3-90ca-4767-9df9-bc40eaa66cca/final-collector",
+    "VRA_POC04_RUNTIME_REGRESSION_PASSED": "2af277e3-90ca-4767-9df9-bc40eaa66cca"
+  },
+  "source_content_sha256": "9b4dd09c08ed544173d8d31e64caae2a6a8d3e58b17b948aedc6a1e2dedf0494",
+  "external_jar_sha256": "ca5bc967d7aebf9555231ef9677f9357866499e2e4c9ebef86a30d3de9a23f7d",
+  "exit_status": 0,
+  "completed_at": "2026-10-01T17:09:33.519663+00:00",
+  "suites": []
+}

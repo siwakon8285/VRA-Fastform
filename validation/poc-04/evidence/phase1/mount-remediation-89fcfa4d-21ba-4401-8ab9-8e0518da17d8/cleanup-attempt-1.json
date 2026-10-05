@@ -1,0 +1,7 @@
+{
+  "status": "STOPPED_BEFORE_MUTATION",
+  "cause": "KeyError accessing dev.vra.run_id in volume creation event attributes; Docker volume event does not include all volume labels",
+  "source_or_database_changes": false,
+  "resources_removed": 0,
+  "correction": "Use already recorded safe volume/network/container inspection labels, matched by exact physical resource ID, and recheck actual live labels before deletion"
+}

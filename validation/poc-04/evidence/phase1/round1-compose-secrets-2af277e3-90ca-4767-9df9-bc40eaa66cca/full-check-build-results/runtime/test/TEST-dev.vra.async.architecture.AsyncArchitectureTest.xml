@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.vra.async.architecture.AsyncArchitectureTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-10-01T16:53:20.416Z" hostname="MacBook-Air-khxng-SIwakorn.local" time="0.745">
+  <properties/>
+  <testcase name="async_contract_and_inventory_domain_are_inner" classname="dev.vra.async.architecture.AsyncArchitectureTest" time="0.619"/>
+  <testcase name="async_application_has_no_outer_or_web_dependency" classname="dev.vra.async.architecture.AsyncArchitectureTest" time="0.004"/>
+  <testcase name="reconciliation_has_no_delivery_adapter_or_bootstrap_dependency" classname="dev.vra.async.architecture.AsyncArchitectureTest" time="0.0"/>
+  <testcase name="async_adapters_do_not_depend_on_bootstrap_or_controllers" classname="dev.vra.async.architecture.AsyncArchitectureTest" time="0.007"/>
+  <testcase name="worker_bootstrap_does_not_import_api_business_stack" classname="dev.vra.async.architecture.AsyncArchitectureTest" time="0.002"/>
+  <testcase name="reconciler_mode_does_not_compose_delivery_or_api_stack" classname="dev.vra.async.architecture.AsyncArchitectureTest" time="0.001"/>
+  <testcase name="http_client_is_only_in_validation_external_adapter" classname="dev.vra.async.architecture.AsyncArchitectureTest" time="0.006"/>
+  <testcase name="asyncLayersKeepPortsPoliciesAdaptersAndProcessCompositionInTheirPackages()" classname="dev.vra.async.architecture.AsyncArchitectureTest" time="0.001"/>
+  <testcase name="rootApiScanAndExplicitProducerImportExcludeWorkerAndReconciler()" classname="dev.vra.async.architecture.AsyncArchitectureTest" time="0.001"/>
+  <system-out><![CDATA[23:53:20.421 [Test worker] INFO com.tngtech.archunit.core.PluginLoader -- Detected Java version 21.0.12.1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

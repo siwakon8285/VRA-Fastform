@@ -1,0 +1,14 @@
+{
+  "status": "STOPPED_BEFORE_MUTATION",
+  "cause": "Already-removed network reports network ... not found, rather than no such ...",
+  "diagnostic_command": [
+    "docker",
+    "network",
+    "inspect",
+    "2fd8cb5cd8f3c79aec209d66b983d9d18a084ff7f424218dc9f8e234499c4817"
+  ],
+  "exit_status": 1,
+  "stdout": "[]\n",
+  "stderr": "Error response from daemon: network 2fd8cb5cd8f3c79aec209d66b983d9d18a084ff7f424218dc9f8e234499c4817 not found\n",
+  "resources_removed": 0
+}

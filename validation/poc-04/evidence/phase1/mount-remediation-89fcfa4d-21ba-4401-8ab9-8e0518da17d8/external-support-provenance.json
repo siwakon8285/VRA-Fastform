@@ -1,0 +1,10 @@
+{
+  "external_jar": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-external-tc-vsfk4w5a/external-tc.jar",
+  "jar_sha256": "98ffbbdd18549fdca2c9b2cf6ef1818d5f74fcb7ca8d44ce6b9c87c0ea0c55ac",
+  "RunResources_source": "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-external-tc-vsfk4w5a/src/dev/vra/poc04/external/RunResources.java",
+  "source_sha256": "6545688ae0c8ad152937fca81bd82bd779a46140f549d923476fa3b290f8e05a",
+  "modified_this_retry": false,
+  "unsupported_returned_proxy": "Previously established Testcontainers ignores returned CreateContainerCmd proxy; report relies on safe independent daemon recorder and actual inspections, not proxy attestations",
+  "regression_failure": "per-fixture helper-owned networks/volumes remained until final exact cleanup; Docker address pool exhausted",
+  "not_a_phase2_observer_parser": true
+}

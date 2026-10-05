@@ -1,0 +1,2023 @@
+{
+  "changed_since_round5m": [],
+  "historical_attribution": "NOT ESTABLISHED",
+  "not_cleanup_authority": true,
+  "paths": [
+    {
+      "mode": "0644",
+      "path": "backend/migration/bin/main/db/migration/V1__inventory_reservation_foundation.sql",
+      "sha256": "d804cbe5153b9a904ae0747af55c8295079d4a0c3edb4a38145ab5199b5b59c4",
+      "size": 1668,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/migration/bin/main/db/migration/V2__inventory_reservation_idempotency.sql",
+      "sha256": "7bef750b59b7b77e8402f4f42c13c21c4e072092504b9f268bace9b72de8d2bb",
+      "size": 2190,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/migration/bin/main/db/migration/V3__outbox_recovery.sql",
+      "sha256": "9edbd15ffe08ee4edafa3f549856ee38a782485c54db9c73e69d4263e5ca26b4",
+      "size": 69225,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/migration/bin/main/db/migration/V4__poc04_identity_security_foundation.sql",
+      "sha256": "7e2a1ea77ba92a451763c7e06ab7dc4cee6e06f761bbbb4e6cb1c786c8a21ffc",
+      "size": 31857,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/migration/bin/main/dev/vra/migration/MigrationMain.class",
+      "sha256": "860d0b5e3c34d43b8fd815788279f3f4c49c1efb1f132e50e9d8f0cda31c613a",
+      "size": 1981,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/migration/bin/main/dev/vra/migration/MigrationRunner.class",
+      "sha256": "c349b53562d92b2a6171a97b0cd308ccf4f8d9d484108bad3f56afa4d27f2133",
+      "size": 2029,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/migration/bin/main/dev/vra/migration/OwnerRoleDataSource.class",
+      "sha256": "d26101a3994eaf63c81bf09eaf243ac787befa36391772de4f74369a59df3606",
+      "size": 4386,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/migration/bin/test/dev/vra/migration/MigrationSecurityIntegrationTest$SqlAction.class",
+      "sha256": "ff4f0d38e3c5727b2102ce53b2c1bc5de82f012b0c38d32b6e0fd924ab85c789",
+      "size": 435,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/migration/bin/test/dev/vra/migration/MigrationSecurityIntegrationTest.class",
+      "sha256": "cfd3f226ebc1504c6dea881d179dc0e684ebd4887da0a8003ec301d9f059e718",
+      "size": 26319,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/migration/bin/test/dev/vra/migration/OutboxMigrationSecurityIntegrationTest$Fixture.class",
+      "sha256": "c32cb394e25faf9c28356cebe4f201b40e95c642fec4cece72c64fd9abd31e69",
+      "size": 3094,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/migration/bin/test/dev/vra/migration/OutboxMigrationSecurityIntegrationTest.class",
+      "sha256": "d87662ea75f605741074f9ac294d141eedcff633489abe42144bf6bb311d7bff",
+      "size": 48435,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/migration/bin/test/dev/vra/migration/Poc04FoundationMigrationIntegrationTest$Fixture.class",
+      "sha256": "c24caad9d25624dd7e0dc517860dc37a0b162c0eebb88c8560c4be28bf20b23c",
+      "size": 30046,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/migration/bin/test/dev/vra/migration/Poc04FoundationMigrationIntegrationTest$ReasonTarget.class",
+      "sha256": "23e95173ac973c0d629810fcf9a4f046de9f98893d81044eae9c8129fded73e6",
+      "size": 1931,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/migration/bin/test/dev/vra/migration/Poc04FoundationMigrationIntegrationTest$SourceBinding.class",
+      "sha256": "07ad5def394cde1771fe82d4e98afadeedcf1311f70564db774b6dcb489b7559",
+      "size": 1790,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/migration/bin/test/dev/vra/migration/Poc04FoundationMigrationIntegrationTest.class",
+      "sha256": "dd9fbb26dd4b0d31c75a5374724b2ac8dd178a60dd32ee2be225544d19c3c9b2",
+      "size": 78346,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/application.yaml",
+      "sha256": "1d99f831ea89740fa58fd01f5b83bffe5ba913f3ca71741d4b7eacdf11c4087e",
+      "size": 734,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/VraApplication.class",
+      "sha256": "8d02d0b486abaeb396373f510d9c4920a62edc395cf965d8eae2392beb30deb2",
+      "size": 1642,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/adapter/out/control/JdbcAsyncControlRepository.class",
+      "sha256": "b2a209439765c2a0cfdf3fa6aea29de5bcf1e06f934701a963d0932765861a8a",
+      "size": 2895,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/adapter/out/delivery/JdbcDeliveryRepository.class",
+      "sha256": "6723a55eaed840167196d2bc18c28ed00c222004107961547b3ceee75eb87b30",
+      "size": 7139,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/adapter/out/external/ValidationSimulatorHttpAdapter.class",
+      "sha256": "612bc35bb01052ed1ab7826ca49b6cd02c4f2f85007871d4b9a69b3919c87fd5",
+      "size": 7750,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/adapter/out/producer/JdbcReservationOutboxPublisher.class",
+      "sha256": "47f122b6bd04e8c09b8d3c870c26486e5c3788575388eda0188e8e903c379309",
+      "size": 2590,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/adapter/out/projection/JdbcConsumerInbox.class",
+      "sha256": "89abdf3636be6236a258e7269bb783bf94fa532752a61d6a9aaaf7c67ab1cc65",
+      "size": 2250,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/adapter/out/projection/JdbcProjectionRebuilder.class",
+      "sha256": "58a1cfef7aedbde3f283e1ce1065470f13ec523463fea85f24c3a18a01ae9b1e",
+      "size": 2749,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/adapter/out/projection/JdbcReservationProjection.class",
+      "sha256": "7b78c1ae9a97b7b84ca3bd0935be3598cc4139c943964e17b1751da201e6465b",
+      "size": 5208,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/adapter/out/reconciliation/JdbcReconciliationRepository.class",
+      "sha256": "f74ad3e4348a49c965198d130d2946a016192572f5406ff6cf8b9edf800706df",
+      "size": 7072,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/adapter/out/visibility/JdbcAsyncVisibility$Activity.class",
+      "sha256": "3623e9b9faaa2efce13a66743365e5568de345f7499b0c69154043f71af24448",
+      "size": 1758,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/adapter/out/visibility/JdbcAsyncVisibility$DeliveryHistory.class",
+      "sha256": "f73893d9a9b76291ce6c23a1b5cb8cee022f70cf96eb84a177d31333134f3326",
+      "size": 2868,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/adapter/out/visibility/JdbcAsyncVisibility$OutstandingAge.class",
+      "sha256": "2c928d89c86f21fdc80185b745402c1cf8463cc85bb271c04d3e343d24eaa8e2",
+      "size": 1790,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/adapter/out/visibility/JdbcAsyncVisibility$ReconciliationHistory.class",
+      "sha256": "5f2c4c09477063d0612aa5baa7143ddea8af0cfd84dd2d0cecb56dd6760852a8",
+      "size": 2894,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/adapter/out/visibility/JdbcAsyncVisibility$StateCount.class",
+      "sha256": "1ec19710b71fb92ce8cd80e87458ba4f97fa65d91b110bf7231a73abe95db189",
+      "size": 1766,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/adapter/out/visibility/JdbcAsyncVisibility.class",
+      "sha256": "5b7118a15db9643d26204cc331bb8b7d5fa9901956cd860230bdeb3699284817",
+      "size": 8212,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/control/AsyncControlPort.class",
+      "sha256": "39981fa85a3d08dd3037bf6d57dddf26fd21946d2078713f0afa1733b179d132",
+      "size": 237,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/delivery/DeliveryFailureClassifier$Classification.class",
+      "sha256": "8a44eed35cbe618b6cfccac02be3c6660b0fb3efd46fa8ce0ddfd6bad38af70d",
+      "size": 2286,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/delivery/DeliveryFailureClassifier$Evidence.class",
+      "sha256": "cf45b75bd744218c2de576cee1432f21e5a8c4edd30330dca8e1db21503d1403",
+      "size": 1734,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/delivery/DeliveryFailureClassifier$FailureClass.class",
+      "sha256": "90ce000df2edf455a54e40a1da124a0ba61920fee5dbecf1c4f025c829bfa5ab",
+      "size": 1615,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/delivery/DeliveryFailureClassifier.class",
+      "sha256": "3c3c7209e84643f696edf680a2e09d7da4f95338dd47c32dcd93277208a896a8",
+      "size": 2558,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/delivery/DeliveryPort$ClaimedDelivery.class",
+      "sha256": "be29bb332d156f0b292a22f47d59016c2041401ad8d14692960cd6564150a2fe",
+      "size": 3266,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/delivery/DeliveryPort$TargetCode.class",
+      "sha256": "7b56a271b2e8c9d2a2dc543dbafa5d48924eb001d849c902811040aa7a183967",
+      "size": 1342,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/delivery/DeliveryPort.class",
+      "sha256": "d5b70e56b8c358fc0feb69f3a2cfd2379b1b3a1fa2749422f0d08babfec5899d",
+      "size": 1066,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/delivery/DeliveryRetryPolicy.class",
+      "sha256": "d8e67b100b0e711a3e538cda31c17eda40b42a7cfae297e14e9342a726ccdba6",
+      "size": 5382,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/delivery/DeliveryService.class",
+      "sha256": "8230ff625696ea5d4c4fc7a8f1b41659aff6fe41ea9eddf2510f2b37ea5956a8",
+      "size": 3827,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/delivery/JitterSource.class",
+      "sha256": "aaca26ef78d166679f17c746a38a93b426bd54aa88b6a5210adc86a0b693af2b",
+      "size": 241,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/external/ExternalEffectPort$ExecuteOutcome.class",
+      "sha256": "b8a3c86e3b1247f87e2f523c6b60ed7549a5bc058cf82d9e463652cae0b19079",
+      "size": 1455,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/external/ExternalEffectPort$Observation.class",
+      "sha256": "1b78f977a437a8de960266e9be7a431456c86cda16596ef925a26aa10bc66c8a",
+      "size": 1443,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/external/ExternalEffectPort.class",
+      "sha256": "4e15dc7ba12870c1bdffa5bd0d810214b2a5ea1279f24d455ae5436c85384cb1",
+      "size": 800,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/projection/ProjectionRebuildPort$RebuildResult.class",
+      "sha256": "ce9d65a78d0e3e1e5bbc90fe20fdc3e6c262ef4e337509fba7ac29eb8ed4e8b0",
+      "size": 1934,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/projection/ProjectionRebuildPort.class",
+      "sha256": "1e4a43c3d189444b7fd1f6362c5428739116d38cca9f1e7ba2d8d84e173ff415",
+      "size": 406,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/projection/ReservationProjectionConsumer$ConsumerInbox.class",
+      "sha256": "458799aac0854d63244c377dc541ca572b36706ed487d47d56a39852079cf7a5",
+      "size": 388,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/projection/ReservationProjectionConsumer$Outcome.class",
+      "sha256": "4ccb01ff5bdb723d5c896f197532cb02c31631358047f3f2da71630c7407b91d",
+      "size": 1445,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/projection/ReservationProjectionConsumer$ReservationProjection.class",
+      "sha256": "8e2eb8800916ab241becb02a46b592b281977c33b5ef2349a2bccd40fcd55df4",
+      "size": 567,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/projection/ReservationProjectionConsumer.class",
+      "sha256": "8efb0d360532d3f229126b31dd172fc1717445858905b6dc63c7ba5a8f17c510",
+      "size": 3829,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/reconciliation/ReconciliationPolicy$Decision.class",
+      "sha256": "cc093ebc96e3cc85c33d64e83da369176ac7beb77bec880d36c8f3f14eade01e",
+      "size": 1479,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/reconciliation/ReconciliationPolicy.class",
+      "sha256": "b70f7f71647f0778df87ccc26c29b33456c1bd28b1d4ae944c844d957bb19eea",
+      "size": 5496,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/reconciliation/ReconciliationPort$Claim.class",
+      "sha256": "fd4d0ae3e8b08242db4d8b4dcf6cc713772d2fa9c0074536182ff22b991e7e5b",
+      "size": 2728,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/reconciliation/ReconciliationPort$DeliveryCycle.class",
+      "sha256": "8b8e94fd0d612f38698c11e74a6ed2b7071add275bf026ea2100e5e14d7145c2",
+      "size": 2105,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/reconciliation/ReconciliationPort.class",
+      "sha256": "7f2f3f4d5f22f05c9fae04904b6fe3f2fd179b100517250d147d61aa7eb20919",
+      "size": 1032,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/application/reconciliation/ReconciliationService.class",
+      "sha256": "bcc4bab8a0b94d40079c888875c2ee98d598fc103f17633452d3b0092382e857",
+      "size": 5257,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/bootstrap/ApiMode.class",
+      "sha256": "2c83eae33dcdc91ba835baa1e58a632720c7d98bb804d05e4195ade206c81939",
+      "size": 984,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/bootstrap/AsyncDrainCoordinator.class",
+      "sha256": "cca1dbbed95823a5993c5788f08fafbcffde2a60e3ba32fdadd4fb9cd0a31a01",
+      "size": 4845,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/bootstrap/AsyncProperties.class",
+      "sha256": "2c2ca9dc1ca75a40182e45ffbdc3615e3c1eb98be53d47e07aea3bb21448e548",
+      "size": 3524,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/bootstrap/AsyncStartupValidator.class",
+      "sha256": "f9ec8fa9a02dafc662968c549e5cf021ebb7b63ca9c3ad16d4d24947869a8e61",
+      "size": 3280,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/bootstrap/OutboxWorkerLoop.class",
+      "sha256": "5c1d7653e88a40fa7f786ce3e81e070a7bcb57a40329506c305853505ef6fb01",
+      "size": 13844,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/bootstrap/OutboxWorkerMode$TransactionBoundary.class",
+      "sha256": "a52383b90808e9e8b5f525ce462a010832c9b16af0de11b4f369e06cd5fe3495",
+      "size": 594,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/bootstrap/OutboxWorkerMode.class",
+      "sha256": "d5b5879fd3aaf1bc13bb79b997c477ebcedc0cbcea0f29e866a8f3f5fa38d6e3",
+      "size": 19444,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/bootstrap/ReconciliationLoop.class",
+      "sha256": "a621efad29be52d337124ed0c8e71187357fe0bb3e9dd953d21a4dbcc696d728",
+      "size": 4963,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/bootstrap/ReconciliationWorkerMode$DrainGatedReconciliationPort.class",
+      "sha256": "f54de8a49a2d579d5ec59b21296fa4acd9c7995be6be77974e3d36830bfbff5e",
+      "size": 4585,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/bootstrap/ReconciliationWorkerMode$TransactionBoundary.class",
+      "sha256": "69f45a1a56283eea1b51b5e717778a2ba10256e12ca13dd14929da9256b1fde6",
+      "size": 626,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/bootstrap/ReconciliationWorkerMode.class",
+      "sha256": "45367a29e079deb4f7733739e7c95e903e66bad5b83888f95c178386237063fa",
+      "size": 18669,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/contract/ReservationCreatedEventCodec.class",
+      "sha256": "a7cb5059cc5226bc6fc413c750794f257c447bac3cb5a764216d8ceb24083925",
+      "size": 9183,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/contract/ReservationCreatedEventV1$Payload.class",
+      "sha256": "78a1f2ace045a6c895ca097fc61fe71f3dd1eeb32b288884d9bbe66958c5504d",
+      "size": 2804,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/async/contract/ReservationCreatedEventV1.class",
+      "sha256": "e05c9cc8e96a8bf0ba4b1541d1988a7211dfd2f3b5f5effb39bb4d9a995bbff9",
+      "size": 3026,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/adapter/in/web/CreateReservationRequest.class",
+      "sha256": "e11d9e402d77ea8d0ebd49a9309570419c8406e067a46ce32887814b7ce21881",
+      "size": 3451,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/adapter/in/web/CreateReservationResponse.class",
+      "sha256": "c51878ed9dcccd89a6824af7934b946dea8b9e44cfa9866e8b62d406117f635b",
+      "size": 2024,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/adapter/in/web/InventoryReservationController.class",
+      "sha256": "e41d38324b9a854688c5906015a06c4b7d484b4707f6eba30802fc746c4fde93",
+      "size": 2855,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/adapter/out/persistence/JdbcInventoryBalanceRepository$BalanceSnapshot.class",
+      "sha256": "a2748973179fbf6a5c155f629bf90bc060fc624f081c6440051d4e13325b099c",
+      "size": 1959,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/adapter/out/persistence/JdbcInventoryBalanceRepository.class",
+      "sha256": "6a0a02b1e6f5e5c1fea518074f9ad193f66a311454c3fd966df9b13b4fc9e2bf",
+      "size": 5886,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/adapter/out/persistence/JdbcReservationIdempotencyRepository$StoredOutcome.class",
+      "sha256": "82b081524a164508f6a1991ece80dc9fcb6c4e47a168ccc7de54e02c4dd4339c",
+      "size": 2415,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/adapter/out/persistence/JdbcReservationIdempotencyRepository.class",
+      "sha256": "390472b1f5653b4cd29b73c12e7a4e9f619509c930aa9ce9c526fcefbe6ba8f8",
+      "size": 10688,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/adapter/out/persistence/JpaReservationRepository.class",
+      "sha256": "5dcf76ebfa7bc196526b19b87a793f1e7bd254d2ee6a4645f91b814ad26af55c",
+      "size": 1751,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/adapter/out/persistence/ReservationEntity.class",
+      "sha256": "034b77e8b9674d1a9e6cfbbaf3e16e86d403ec50e8602e8477addbf8cc12202d",
+      "size": 1441,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/IdempotentReservationApplicationService.class",
+      "sha256": "7c0ff1ad38acce49170d3e5f5d19de969e042197adb03f715c97d7988078ea9b",
+      "size": 7827,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/IdempotentReservationResult$Conflict.class",
+      "sha256": "1f1ecc15d8e1c0adc17a0006e205bdeb6f126d3ddbf12fd0b6d93b3f0ce71ff2",
+      "size": 2071,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/IdempotentReservationResult$IdempotencyFailureCode.class",
+      "sha256": "ef4f63a87c3be64f47cd12fefb8041f451a3565002c999b70129092d57e5d672",
+      "size": 1446,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/IdempotentReservationResult$Rejected.class",
+      "sha256": "09c28dcf1fde241f5435954a0fb6f2e71a647b433f86f82058377121950bcbd0",
+      "size": 1868,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/IdempotentReservationResult$Succeeded.class",
+      "sha256": "d76b128bf02f3b2f05fed304990268c6ca73e7b8c8dde03b4d376c74725c06e1",
+      "size": 1935,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/IdempotentReservationResult.class",
+      "sha256": "cbe24e4ed32808f4589366818b58fe17ea6ead74e68cd3939efc8a8bf3a4a1e8",
+      "size": 648,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/IdempotentReserveInventoryCommand.class",
+      "sha256": "3c5ec300bcc57c572e0d930403c8002ca26501185d7a80d7d48b7da90e66fa85",
+      "size": 1930,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/ReservationApplicationService.class",
+      "sha256": "4a059a87663eb8bf5d2e19c4d449e9319fe9128fd67f150d6ad638d084daac77",
+      "size": 3626,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/ReservationDecision$Rejected.class",
+      "sha256": "5d91d7dea81eb652f608679030f5ea46e7a045e0a15a8e5ec001fc92c2a77820",
+      "size": 1812,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/ReservationDecision$Succeeded.class",
+      "sha256": "37112a77dabd33935a7c9093640a50d189139916ecce3a67a427e6be3de4fd51",
+      "size": 1879,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/ReservationDecision.class",
+      "sha256": "b46b75fd5c7d9404039fc2a54f14e1bccc25d1550b1481be3749c0ed897bcdaa",
+      "size": 400,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/ReservationExecution.class",
+      "sha256": "9f7edb1cc65ce792a199689f9c07021c71ced8695d6681815463b5a696be7334",
+      "size": 4618,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/ReservationFailureCode.class",
+      "sha256": "45ddb72f623f3ca7e10af0b30e150642c80255839cafdeb182cfa407086d6e71",
+      "size": 1331,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/ReservationFailureException.class",
+      "sha256": "388c9a852de77260540524377363f533eb24812cbcb85c4d5c01bb3ca2d4a77b",
+      "size": 917,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/ReservationRequestFingerprint$Fingerprint.class",
+      "sha256": "eff69027aa582ef450dc82bc908f3024bb68e8aded0b96c6496ecb30613a8dc4",
+      "size": 2192,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/ReservationRequestFingerprint.class",
+      "sha256": "e2dbae55f47bf14900a9c15f9f32d784690c2f3128f19cb2bac9a3a130e61d51",
+      "size": 2902,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/ReservationResult.class",
+      "sha256": "91d5e7b084d92e326143d4463780aebdcdf5a068c35deef6ebc65988d9c8867c",
+      "size": 1505,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/ReserveInventoryCommand.class",
+      "sha256": "f549eecf2a1f287b5f9b12a84982739606ca12e64b3d2ebee127df1124af3f75",
+      "size": 1808,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/port/InventoryBalanceRepository$ReserveAttempt.class",
+      "sha256": "a8dfd615b944c834261afff1bea91eb856c7538160f2c6b12dee48550436395e",
+      "size": 2735,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/port/InventoryBalanceRepository$ReserveStatus.class",
+      "sha256": "573bbb39c12273412178e56670e951c780a241693d2de494218017637a8ae356",
+      "size": 1578,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/port/InventoryBalanceRepository.class",
+      "sha256": "3a4f8206a69597c4a8abb331cf55f4d429af8a21cd7391349edba468541ee88f",
+      "size": 570,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/port/ReservationIdempotencyRepository$ClaimResult$Claimed.class",
+      "sha256": "e7ed15b19baa54e491b963bc1f257bbdf8a2c49188503c63bd17fdb165265ac6",
+      "size": 1555,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/port/ReservationIdempotencyRepository$ClaimResult$FingerprintConflict.class",
+      "sha256": "e23b558b72e77dfb0dc8547642a810176be8ccb1cc8e23898d59bf48fecc4b8e",
+      "size": 1615,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/port/ReservationIdempotencyRepository$ClaimResult$ReplayedRejection.class",
+      "sha256": "5fd99efd837ca4a2fa105d53dfa6d35d031d3ede78b2da76dd539c162a65a718",
+      "size": 2154,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/port/ReservationIdempotencyRepository$ClaimResult$ReplayedSuccess.class",
+      "sha256": "8bf127d09f818ee514baaa9be34798690fcce88bcee0eed9af637740f149a740",
+      "size": 2203,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/port/ReservationIdempotencyRepository$ClaimResult.class",
+      "sha256": "79d228104fd225c16cf0d7ce31540988fe7fb6bc084ca3f98c84d5f1cdd575a7",
+      "size": 871,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/port/ReservationIdempotencyRepository.class",
+      "sha256": "8c80b77a64eb8461e804c0907a62149d51bd02bcafe8d7543265fea2781c205b",
+      "size": 1621,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/port/ReservationOutboxPort.class",
+      "sha256": "200a2314fde1d051b637576218ca0a2cd63aff00f22987b706144901191e2977",
+      "size": 229,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/application/port/ReservationRepository.class",
+      "sha256": "14b0e0c61be60f4f2db83fa29910d8925c126beceed16a74a7011e9b14dba52c",
+      "size": 226,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/domain/InventoryKey.class",
+      "sha256": "06f2de55402221de693f5ce0fd94f1a850469e633b059acf26c767caf4f86bde",
+      "size": 2069,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/domain/InventoryReservation.class",
+      "sha256": "bc175c11b145b3d975a6991c33c2b6a74863036965ced6bc610d041fb35324cc",
+      "size": 2436,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/inventory/domain/StockStatus.class",
+      "sha256": "a0a1cf4f59a74b305b050ea706a6af03b9095356831381f0fb28c59f98c295ca",
+      "size": 1246,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/platform/configuration/ApplicationConfiguration.class",
+      "sha256": "691668806cbd769b711d9e823cb235de4b1499791b44b0ff5214fbee57db4a02",
+      "size": 678,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/platform/configuration/DatabaseConfiguration.class",
+      "sha256": "e6f1ae14848006a7c34beece3486a4e06a4177c270a88211ed635438dce318b4",
+      "size": 1336,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/platform/configuration/RuntimeDatabaseProperties.class",
+      "sha256": "fdab79bd0dd0ef94c0e3064b14082788ad146e4b15d0e4f340704e3c49f17782",
+      "size": 3852,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/platform/error/ApiErrorResponse.class",
+      "sha256": "036fad85c2e2b14d5548d4fb2426ac4951e05b851acc6bf3c64d49a05beffd7b",
+      "size": 1748,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/platform/error/GlobalApiExceptionHandler$ErrorMapping.class",
+      "sha256": "0e9a928af72cb41367be1dc7f1e4e8586a3d5bc909fb237c2ba5459af67796f9",
+      "size": 1844,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/platform/error/GlobalApiExceptionHandler.class",
+      "sha256": "11a871b88021497915b149c39d951e73dfe686d226b53818af473cdc268aae70",
+      "size": 7193,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/main/dev/vra/platform/web/RequestIdFilter.class",
+      "sha256": "b583a8e06b5014ff932518032fdbd010185981bf96e9b360aed50f4b9cad93ab",
+      "size": 3632,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/AsyncPermissionIntegrationTest.class",
+      "sha256": "a3ceeef1dcbbdeb2558ffc951e9cd9de30d0d4f2e328a41c429d11ca4892e141",
+      "size": 2686,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/AsyncPropertiesTest.class",
+      "sha256": "f19b63c9b57e11bfa79e7e20e4d08f8975df9783b8a9846547c5aa73d27606b1",
+      "size": 5060,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/AsyncRoleBootstrap.class",
+      "sha256": "bd3c88b0f8c1c44d86c18761538483b61b2a160daab79f5a65cac1cd085fbca7",
+      "size": 4220,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/AsyncVisibilityIntegrationTest$Fixture.class",
+      "sha256": "c3ef5fd15683669b6e852b33a8587ae2097da67d3874fd2f5aa01e5f3f5fc59c",
+      "size": 385,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/AsyncVisibilityIntegrationTest.class",
+      "sha256": "e054cc52af02dbfe0babc1442bc25fb79f69525afb085829140b23f80280cc2c",
+      "size": 4281,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/DeliveryClaimIntegrationTest$TransactionClaim.class",
+      "sha256": "d7c5ef59177c6492b4d1a0ea3eb7f04104148489acb3ebc41f38a7dc29b582be",
+      "size": 367,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/DeliveryClaimIntegrationTest$WorkerConfiguration.class",
+      "sha256": "dee2ff2ad7e58b1275f5298280b320b1926d015512630acfbb3572edfb9287f1",
+      "size": 1597,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/DeliveryClaimIntegrationTest.class",
+      "sha256": "228e73ebcdbc6916c08ee96a998ef4a6eafd6ac083a78688fb1fb2ad79ed2304",
+      "size": 4287,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/DeliveryRetryPolicyTest.class",
+      "sha256": "89868f82a842b82400931071ebc088f575b096e3ca4d6dc7f0ecd3202d48815b",
+      "size": 13638,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/DeliveryStateIntegrationTest.class",
+      "sha256": "5098e92399b9bd13ca1cb41ed5f78777f2fd4cf72cd09edb51a303d88687820b",
+      "size": 2851,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/ProducerOutboxIntegrationTest.class",
+      "sha256": "7d190280d75810d01e55c7da9c8cfe991ea85d6a7f8157d5f080e66db04673d8",
+      "size": 4629,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/ProjectionInboxIntegrationTest$CoordinatedInboxConfiguration.class",
+      "sha256": "5b17e47165b4cad79fa960443aa04fa5ca48655142ecd86c3e9292fb2577c5e0",
+      "size": 1324,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/ProjectionInboxIntegrationTest$Fixture.class",
+      "sha256": "6663964f5d5ab7518b65fdee802e0c39ef890a4ca16cb4cecca7dbd84ace73a6",
+      "size": 465,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/ProjectionInboxIntegrationTest$WorkerConfiguration.class",
+      "sha256": "6ce2fc4206149672a5b8774a7f2a3f983c5f19e2b72a9ed2fce736b3bce36621",
+      "size": 2679,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/ProjectionInboxIntegrationTest.class",
+      "sha256": "d4e0e92c4e2dbb3b3fbf7d24b8d4eb0c71d5a4aab0446314cd9178c946eebb15",
+      "size": 5251,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/ProjectionRebuildIntegrationTest$Fixture.class",
+      "sha256": "513be1e595ddca7cd91d1035484f403328c409b77a7e1d3c63e6b117fbd40bb2",
+      "size": 471,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/ProjectionRebuildIntegrationTest$RebuilderConfiguration.class",
+      "sha256": "c0cd7e40ba78e3252fc45c858e996f50b87ea2bc2b3db7a732eda90d7487548b",
+      "size": 1622,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/ProjectionRebuildIntegrationTest$WorkerConfiguration.class",
+      "sha256": "324b562c2c33520c60f65b03bca09d3f535de72700e5ad8af08f0f22d921ec58",
+      "size": 2666,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/ProjectionRebuildIntegrationTest.class",
+      "sha256": "033852a56d5de2dfb9915498b7cdb9109b9ecb1bfc1f661dbf9bc99a22c28d89",
+      "size": 4477,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/ReconciliationIntegrationTest$Fixture.class",
+      "sha256": "489d967b00c7d0903ed2a82ad08e6890b8c039e43c9e0927c9be1f308a8e924c",
+      "size": 549,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/ReconciliationIntegrationTest$OperatorConfiguration.class",
+      "sha256": "d58079bc0b6191540ba3373c222b0b2f0cb4eac7b22563f9d780d7a709067f8c",
+      "size": 1452,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/ReconciliationIntegrationTest$ReconcilerConfiguration.class",
+      "sha256": "19797bee7e11cdf0f6afa0df4bd7cce4e57762a62d975e030076d7eb47ae34d7",
+      "size": 2152,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/ReconciliationIntegrationTest$WorkerConfiguration.class",
+      "sha256": "e9babcbfdc1783ec42532a98d3ada8ed4dd79793635d151e2a45eb7b133cca38",
+      "size": 1646,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/ReconciliationIntegrationTest.class",
+      "sha256": "b311f1af95681bb9cf8d8293e990dd1e3a04cfad33f23e3c35b3796c9574b5d3",
+      "size": 7959,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/ReconciliationPolicyTest$1.class",
+      "sha256": "1ebe69e811b38df82663bb902f83abe3ff59b6019b830e6997b010e21d27cb9c",
+      "size": 1731,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/ReconciliationPolicyTest$1RecordingPort.class",
+      "sha256": "a2c3a2a63104c9e0e8b59fcf0c98dcbb1c02d490c50d27edcbce79d48f76bed1",
+      "size": 3005,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/ReconciliationPolicyTest.class",
+      "sha256": "a2a3e1e89d771294e94a25534ee3f804bf1fe8823f5d29b2427109acb766971a",
+      "size": 7806,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/ReservationCreatedEventCodecTest.class",
+      "sha256": "169b7e41ef49c96b7664635b4078404fb0c3c0d64245348c53051758cb732fff",
+      "size": 8157,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/RetryReplayIntegrationTest$Fixture.class",
+      "sha256": "9a0b445e65ab83b3e83aea8426e00e7aac76ec15a9dcb642bcffb8bf746a492d",
+      "size": 424,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/RetryReplayIntegrationTest$OperatorConfiguration.class",
+      "sha256": "f8e63537bb795399350cae19ead2590bbf6baaae2ba91f9c40238259969a5b89",
+      "size": 1395,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/RetryReplayIntegrationTest$WorkerConfiguration.class",
+      "sha256": "a201ca30eb0ecf9e1104cf742c5c692706b0c866a1a56dea082f341e8f4340a9",
+      "size": 1589,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/RetryReplayIntegrationTest.class",
+      "sha256": "40f5fed635227ff1461bce50b6039f5d773fdbf2830114284d41049ba26b930d",
+      "size": 5407,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/ValidationSimulatorIntegrationTest.class",
+      "sha256": "e55466b914b780cdf0ae0e02769c57a545d609f843c01480be22dd8cd2338843",
+      "size": 4062,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/WorkerProcessCrashIntegrationTest$Condition.class",
+      "sha256": "92395dd203add7f2f8bcf5d64e9ce987b6b7593cd0e49eec109c0788a91a7007",
+      "size": 745,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/WorkerProcessCrashIntegrationTest$Fixture.class",
+      "sha256": "ac7ebbcaa7782e497b7f3f0714ff11df7d557227a6c60cda724179a8ce5aea9c",
+      "size": 561,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/WorkerProcessCrashIntegrationTest.class",
+      "sha256": "0acd15276fab8f82a654a49b09733921e639ec4824e3c6de47b17cb673d9e589",
+      "size": 8486,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/architecture/AsyncArchitectureTest.class",
+      "sha256": "c0d33a1bcae7f611afff5fabc391478ff61b9b518a3b32562b1777030cdb0425",
+      "size": 7375,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/process/WorkerProcessHarness.class",
+      "sha256": "4ac8374ff7d2cfa670a4023b867006b60c642b117fa189ce2295a55e7d240715",
+      "size": 7709,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/simulator/SimulatorHttpServer$Gate.class",
+      "sha256": "614799323689bed5eaf2580e9f35ed2049fe05b48459553c76d488dd4240c937",
+      "size": 1240,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/simulator/SimulatorHttpServer.class",
+      "sha256": "f9021060acac7b1c273c34059298ab2d24290738175ec74b1e42c859bdfbc20f",
+      "size": 14015,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/simulator/SimulatorMain.class",
+      "sha256": "8bcae163de03038f22d452203b3b7c544f3fbcb327fe98139587d91dee98d8eb",
+      "size": 2780,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/simulator/SimulatorProcessHarness.class",
+      "sha256": "7462b422df9827733f976a2d73e3291065c9790f7df9e50b819cff2dbce8181a",
+      "size": 6732,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/simulator/SimulatorStore$Registration.class",
+      "sha256": "5450620d4f52a05c5a177a6ec23b0ece26e14251d9195ecfa411cdd41dcdf7ab",
+      "size": 1360,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/simulator/SimulatorStore$Snapshot.class",
+      "sha256": "450f403c7e4e4dfb6683be90e14d8f9e277b0f2153725577d6666aeb386f3263",
+      "size": 1957,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/async/simulator/SimulatorStore.class",
+      "sha256": "b580b9f16f11a18b5aa42c9427681d1c3029525846d238aa0a138988ec0dd77e",
+      "size": 7958,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/IdempotentReservationApplicationServiceIntegrationTest$Balance.class",
+      "sha256": "e2551b26e14814c8d6887afae79fe00905d16d6b65227fd558b18f0f6eb732dc",
+      "size": 446,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/IdempotentReservationApplicationServiceIntegrationTest$FaultInjectingReservationRepository.class",
+      "sha256": "16cf89e90076bc198c3dbb98752f9af723700ec47c334899947bb0cf78182e0f",
+      "size": 2025,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/IdempotentReservationApplicationServiceIntegrationTest$IdempotencyRow.class",
+      "sha256": "ecafb34d57317b58e198d4e820497722882f63667c21304af216ad361fe9d2a4",
+      "size": 716,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/IdempotentReservationApplicationServiceIntegrationTest$InjectedSaveFailure.class",
+      "sha256": "0af90913b32128ae008394e3e598040e4fd54817f0009062cb5221d2f366374d",
+      "size": 756,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/IdempotentReservationApplicationServiceIntegrationTest$Observation.class",
+      "sha256": "f828916711a16de69a45ee0753d8870ec9886c85aa76011462fe9f953469525b",
+      "size": 454,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/IdempotentReservationApplicationServiceIntegrationTest$ObservingIdempotencyRepository.class",
+      "sha256": "1eae530d8050162bc09909daf1234c7b477ad78863d4894cb2df5c04ee6b82dc",
+      "size": 2850,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/IdempotentReservationApplicationServiceIntegrationTest$RepositoryObservers.class",
+      "sha256": "421bdcf6939b2076bd08e74379c626e297a73874672806fb948f434d61851b31",
+      "size": 2029,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/IdempotentReservationApplicationServiceIntegrationTest$SaveObservation.class",
+      "sha256": "24f3534edda515edda86232dbe9bc2aa82289df70a657b43a0bbdfa477236a27",
+      "size": 471,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/IdempotentReservationApplicationServiceIntegrationTest.class",
+      "sha256": "81f37de22525d9e3876763deecc01d6b87400b192a0405162c7283a15262bd2a",
+      "size": 7229,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/ReservationConcurrencyIntegrationTest$Attempt.class",
+      "sha256": "22c49890c55b92aaf603a81d109bcddfd59ea1ab8fe51644a8b74a59482b4eec",
+      "size": 494,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/ReservationConcurrencyIntegrationTest$Balance.class",
+      "sha256": "023ffa0ec239595010e49828b10013ae5874a3d9e825334c5aab55db4b373e0c",
+      "size": 395,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/ReservationConcurrencyIntegrationTest$BusinessCounts.class",
+      "sha256": "82595da0a459c8744189e1b4fa39563d0da9cd4ed59f88b2db82bdbb14c25050",
+      "size": 868,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/ReservationConcurrencyIntegrationTest$ConcurrencyTestConfiguration.class",
+      "sha256": "21ac319412f3ed490feac93a5e35a422746274dedbc66d0482fa960d253e0239",
+      "size": 1579,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/ReservationConcurrencyIntegrationTest$CountingInventoryBalanceRepository.class",
+      "sha256": "f59c0b05cd1c22975819df1cd495b7203405820de71908c044e75f3ccfd1cfff",
+      "size": 1529,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/ReservationConcurrencyIntegrationTest$IdempotencyCounts.class",
+      "sha256": "4ee68b20fd2245587394ac1e49c6aa45b294da510a6b81d37f10b1759d5332de",
+      "size": 566,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/ReservationConcurrencyIntegrationTest$IdempotencyRow.class",
+      "sha256": "1de73ff42e0d58987b25fd9574b5d7900364ca4362fcac8b90f95a598f47176e",
+      "size": 589,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/ReservationConcurrencyIntegrationTest$ReservationRow.class",
+      "sha256": "95dc9105b83caa219a0ad422ed87824cb4b1c85b6a65bbeb1652a4b0cca7c80f",
+      "size": 411,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/ReservationConcurrencyIntegrationTest$Run.class",
+      "sha256": "0bc25f58b39e2378984c25ea2bb62eb1f78701934f9be4b4bc60b9de4f1d2bdc",
+      "size": 1248,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/ReservationConcurrencyIntegrationTest$TxIdentity.class",
+      "sha256": "5f1563392d52ad6db095d71f020537c17fe2a743e301a126db5f752272b085e9",
+      "size": 432,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/ReservationConcurrencyIntegrationTest.class",
+      "sha256": "4d8eb55530f7fa3bd618eadc410b82d3d495ca5da895c36819af6fe61ef2659a",
+      "size": 8434,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/ReservationHttpPostgresIntegrationTest$InventoryIds.class",
+      "sha256": "44c8c75a7057b0e329feda1e2d3a54983923309ff4d59f56689346bbba35c567",
+      "size": 714,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/ReservationHttpPostgresIntegrationTest$SqlConsumer.class",
+      "sha256": "0e84653af7d18c798685af09da8c91cf92c29de8c71c63a0c70f94367420ff89",
+      "size": 747,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/ReservationHttpPostgresIntegrationTest.class",
+      "sha256": "52c85b66c539d37489f6a8b536a78081a7cf1294bab31877efcfaea1e5a06c3d",
+      "size": 4543,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/ReservationIdempotencyRepositoryIntegrationTest$Snapshot.class",
+      "sha256": "9ec295d0d637d06d5208c401980b14e5f901077dfa6c7005084962df7d67d51b",
+      "size": 650,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/ReservationIdempotencyRepositoryIntegrationTest.class",
+      "sha256": "63bc46b44d53caec8593046e2729c178016ae13f3c2ae5b2a97629df508115cf",
+      "size": 4959,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/ReservationTransactionIntegrationTest$SqlConsumer.class",
+      "sha256": "f3f65ea8d5f65dc9a32a1bafad78794fe1485a88a39c06caf7edb947b0616c54",
+      "size": 744,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/ReservationTransactionIntegrationTest.class",
+      "sha256": "915a0c839d93724307d8cd303d37cb8f9a571a32d8e3d77e8dd6d829b224158a",
+      "size": 5434,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/adapter/in/web/InventoryReservationControllerTest.class",
+      "sha256": "7f1291fe5feaad2bbc888d7aa8fd854bf594de6d33e869dd2533e66bde2d6e0e",
+      "size": 16335,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/application/ReservationApplicationServiceTest.class",
+      "sha256": "7a8a39bd20fcc4fa6db6aa73508c36fef4fcb999e5eb79ce8c479f8af26c5e7f",
+      "size": 6977,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/application/ReservationRequestFingerprintTest.class",
+      "sha256": "0d7effae3df57fbd86f29b7c0166de7cbd7b6070caa0baa5ed2342fdc8229f18",
+      "size": 5103,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/architecture/InventoryArchitectureTest.class",
+      "sha256": "f39ca0e9e9fd0545a575e166b74aaa709247875829afad2ed73643ae0bfb2c79",
+      "size": 2865,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/inventory/domain/InventoryReservationTest.class",
+      "sha256": "46e14c6c9964e20a7d9b2f52d616b39b3e190678df955945e306edb9391e12c5",
+      "size": 2140,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/platform/configuration/RuntimeDatabasePropertiesTest.class",
+      "sha256": "735af6960043974a9113883287c8e291675e876e1b0e411407a0256463d3cc4f",
+      "size": 4533,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/platform/health/HealthProbePostgresIntegrationTest$BoundedHealthDataSource.class",
+      "sha256": "f0c4179918108fd3e3c851d44fa451c800a30746a76e1d1f28302c629034cd64",
+      "size": 1072,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/runtime/bin/test/dev/vra/platform/health/HealthProbePostgresIntegrationTest.class",
+      "sha256": "0acaf226963717a195ad343dbbb445067f33dde250c60570a43311e1870b8ff2",
+      "size": 4068,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/application.yml",
+      "sha256": "c525b3409c91b40331cb43ffa26e10be16952295fed4da1c63becaf07c25e527",
+      "size": 570,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/db/migration/V1__initial.sql",
+      "sha256": "bc2f02c21cce4369080f7a27cab6dcb884dd733bf2c91319eea840a62b30ad33",
+      "size": 1229,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/db/migration/V2__add_order_cancellation_reason.sql",
+      "sha256": "873500ea201fff6682f2cd2eef7d04a439db87a246bace6f606a719e8b88246a",
+      "size": 311,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/db/migration/V3__add_order_expiry_and_reason_code.sql",
+      "sha256": "ec77c6d727c679781605d090eb1ef00ec328f6f59b64319842d2a360b7f7e46a",
+      "size": 984,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/seed.sql",
+      "sha256": "e2fc7a3ffa6316ffdc3fd433422a4c9a510e04d06af08965707870efdd6fe9b1",
+      "size": 272,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/PocApplication.class",
+      "sha256": "9689bed35b16bd65dd8eb827a1575e8ed4cebb87082963665fdf8c19779519b3",
+      "size": 690,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/application/InventoryRepository.class",
+      "sha256": "86e307cef67932300ef5c42e91423fda7c501bf0485a6435f79fbab662d8ab3d",
+      "size": 383,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/application/ReservationApplicationService.class",
+      "sha256": "e31f06b41cdd856a51c8ebb4888ec6e6373f09377ca6563fa2808dbe56d2f8f4",
+      "size": 2312,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/domain/DomainFailure$CurrencyMismatch.class",
+      "sha256": "83af8a5b9729be583134410469a01e457f0edd43ecf8b116b9be63114d23c03c",
+      "size": 481,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/domain/DomainFailure$InsufficientStock.class",
+      "sha256": "29de0a66c068e83795a8c2851fe97bf1b58f464f2913da2ed47be0e6e449054d",
+      "size": 481,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/domain/DomainFailure$InvalidIdempotencyKey.class",
+      "sha256": "793b40b93f8764d6b78dcc5b10018d932a146ac965961d628593ca89e9035d87",
+      "size": 523,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/domain/DomainFailure$InvalidQuantity.class",
+      "sha256": "98d77d913765a57dc5fe21e3f845cfe24dba16bc7ceea15f31068530d6c56579",
+      "size": 482,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/domain/DomainFailure$InvalidSkuId.class",
+      "sha256": "23b591f97c93a2748d08687acbd241eb6056cf65469464ec5f2b145ab10c87a0",
+      "size": 470,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/domain/DomainFailure$InvalidTransition.class",
+      "sha256": "23a69178ad977257874ca730f39fd352fb935f3693998a46eef53325facd652f",
+      "size": 494,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/domain/DomainFailure$UnknownSku.class",
+      "sha256": "e07cef90302169f7ca345355e5417e96925a371269f636f76632a96048643e40",
+      "size": 459,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/domain/DomainFailure.class",
+      "sha256": "c337a44520575a5d78643f03280a9afd0aa001ea4028195a325b87d8c2210183",
+      "size": 1059,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/domain/IdempotencyKey.class",
+      "sha256": "5862e2746d5829e7778f2e7155045ca4201fd39e6169ea8c10790fabdab80467",
+      "size": 1628,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/domain/InventoryBalance.class",
+      "sha256": "3abc6f056806fe2968f5d21516345fb79ab5774813c7ef834604af7745c9191f",
+      "size": 2828,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/domain/InventoryReservation$State.class",
+      "sha256": "13039f6db12d4b96ca7e7cf23232ab17171beef8685826e2db946355451bef9a",
+      "size": 1239,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/domain/InventoryReservation.class",
+      "sha256": "edf6e6cf11132bb929ccc65e798768f29aca6bdccde34e4f13153c2ca2762823",
+      "size": 2334,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/domain/Money.class",
+      "sha256": "92c6900c9dc9c5339dd2a9978cd35659cc51e05b0d2de4565e278e8796a4c898",
+      "size": 2384,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/domain/Order.class",
+      "sha256": "d87437c019cd4a50ea6f12a4ea846d224b543dae7f543104ee7e19c93cc9c312",
+      "size": 7559,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/domain/OrderId.class",
+      "sha256": "2695ccebb9c294ece79d07c265af1e0c90f17cc6d29c554689f14dc5ad88748c",
+      "size": 1434,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/domain/OrderItem.class",
+      "sha256": "e284d9c2fdd5ff618536a7ffcb0f4220adb5f3e55ffb52eba16897f7aa5b662a",
+      "size": 2419,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/domain/OrderReasonCode.class",
+      "sha256": "225db515c289541ffddb42ef8fb211379d8f7997b9ca4bdb80f2f47821898000",
+      "size": 1143,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/domain/OrderState.class",
+      "sha256": "7e90a0b54d8d1986465fc4275becfcdd3ff5f641f8090d7537e66e40c9392860",
+      "size": 2150,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/domain/SkuId.class",
+      "sha256": "8b8a3460583d7ccfbd902f9b1aa6497eacd0a1e3705e9cbe78f43dec3983a21e",
+      "size": 1664,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/infrastructure/DatabaseConfiguration.class",
+      "sha256": "0b782ed2f1703714da9b11b9de5816f47ae755a2b95fb996bb910640d775c6a1",
+      "size": 1747,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/infrastructure/JdbcInventoryRepository.class",
+      "sha256": "c8cc181369cd3d1cd4980904181714a7aa2bffb48a2dffcb56ffd5aa27a136b3",
+      "size": 3651,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/infrastructure/LocalDatabaseSettings.class",
+      "sha256": "b6c984aa54472aacb4261c5426a4b0c0395402ea776dd763fd76f7f7b76efdf3",
+      "size": 2124,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/infrastructure/MigrateLocal.class",
+      "sha256": "efa95658517289f3a51bf6d96578bdb676703eea9c9dfbac304742bc3004f8c8",
+      "size": 1469,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/interfaces/ApiErrors$Error.class",
+      "sha256": "be1950ed1a46181d2167a893d9546156b2afba3817911748bdaccadcb6476c8d",
+      "size": 1740,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/interfaces/ApiErrors.class",
+      "sha256": "e23a13f7396e746b118f157864ace746a8526051c61268f488c66449f69010c5",
+      "size": 6890,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/interfaces/RequestIdFilter.class",
+      "sha256": "574d162c771f6a2ad111ad2a2c5bd9eccc9bdd31727f7bb6eee725e608e71b4a",
+      "size": 3303,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/interfaces/ReservationController$Request.class",
+      "sha256": "b5ce682e7ee6efedfa163508229d1f7a200fe503399f73313ddd821427f34804",
+      "size": 2042,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/interfaces/ReservationController$Response.class",
+      "sha256": "37841c339e0e597fb7a077bbd3d4c1c148efe46f6f3b76e14cd26a4a471af67f",
+      "size": 1936,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/interfaces/ReservationController.class",
+      "sha256": "94eb8c3928a827f543add3da5a51ed52da3eba42689436fd138de80c1037a968",
+      "size": 2102,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/main/dev/vra/poc00/interfaces/SafeErrorController.class",
+      "sha256": "43ba12924260cb166e4e1e4222d8dfae37b00ec9485a0ab844ba42770e63bb92",
+      "size": 2262,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/test/dev/vra/poc00/ArchitectureTest.class",
+      "sha256": "2526bcd6133824964b92fb6620019a12cae7adf71da45f4f5452b8c86caafae3",
+      "size": 2362,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/test/dev/vra/poc00/DomainTest.class",
+      "sha256": "fc64b55ba586ac21c5e673058c83d140904833719dd80349318d0db86328dc31",
+      "size": 16936,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/test/dev/vra/poc00/HttpContractTest.class",
+      "sha256": "9e121c2e479b225e57e4dd5f4b0b497f11b703c9bae4c5b13c4498fbe0ad91f9",
+      "size": 9031,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/test/dev/vra/poc00/LocalDatabaseSettingsTest.class",
+      "sha256": "29ba111f877b5ccf93eb9d3e765f39a872746a93218776fb72012255a7a63b76",
+      "size": 2941,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/test/dev/vra/poc00/PostgresIntegrationTest.class",
+      "sha256": "85ab7620a32f33269a5446cba5e18004e31a14f32df4266e720c1ad020764410",
+      "size": 18551,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/test/dev/vra/poc00/PostgresTestSupport.class",
+      "sha256": "f8f17827ed76b5a89b45e6e6eab533ee022e87f1685aef7a37fa98b2bc46469e",
+      "size": 2558,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/java-candidate/bin/test/dev/vra/poc00/ReservationIntegrationTest.class",
+      "sha256": "f53cd8c81b0539c01b414919e15c501160074dc5d418e4a68441f4226725fc9d",
+      "size": 12609,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/application.yml",
+      "sha256": "790c40de7bfefe06298c8b97b78303bf04da089f85fe525f73e1bccf5e65b99a",
+      "size": 612,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/db/migration/V1__initial.sql",
+      "sha256": "bc2f02c21cce4369080f7a27cab6dcb884dd733bf2c91319eea840a62b30ad33",
+      "size": 1229,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/db/migration/V2__add_order_cancellation_reason.sql",
+      "sha256": "873500ea201fff6682f2cd2eef7d04a439db87a246bace6f606a719e8b88246a",
+      "size": 311,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/db/migration/V3__add_order_expiry_and_reason_code.sql",
+      "sha256": "ec77c6d727c679781605d090eb1ef00ec328f6f59b64319842d2a360b7f7e46a",
+      "size": 984,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/seed.sql",
+      "sha256": "e2fc7a3ffa6316ffdc3fd433422a4c9a510e04d06af08965707870efdd6fe9b1",
+      "size": 272,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/vra/poc00/kotlin/PocApplication.kt",
+      "sha256": "73304bfef131cd2a396df6cb00592018ab34e42d1a8b00136eafb2c3f2ed9ffe",
+      "size": 267,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/vra/poc00/kotlin/application/InventoryRepository.kt",
+      "sha256": "13ba7201081f900d6939779e4290d315068cc64aa13b101186b5114aaa2804f1",
+      "size": 272,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/vra/poc00/kotlin/application/ReservationApplicationService.kt",
+      "sha256": "f696d47a6c8f11e2a2597a64db8e1eb8c9311181dbc7ef370589b713eb7fc8b3",
+      "size": 842,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/vra/poc00/kotlin/domain/DomainFailure.kt",
+      "sha256": "0f7529e4227a18e9ac218cc91b56c4529d20ba52890a41f86ed26099a3a1b9e9",
+      "size": 712,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/vra/poc00/kotlin/domain/Identifiers.kt",
+      "sha256": "d5d16716249176d0f91f812cf82f4df6c9a5cd63da784e87b1550e0d29e19d93",
+      "size": 420,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/vra/poc00/kotlin/domain/InventoryBalance.kt",
+      "sha256": "014c94aff8141d6b2919723da35e8ad003672db243d2459957417a8c15c883b3",
+      "size": 788,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/vra/poc00/kotlin/domain/InventoryReservation.kt",
+      "sha256": "3abff4701e216ec0a82177c829f996a841592d03187d3e7b0b2eb3ea28374d7a",
+      "size": 294,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/vra/poc00/kotlin/domain/Money.kt",
+      "sha256": "936e05c05fcfe9bbb49cc754e7ddafcf7238478182497bdd504ae47cb3b0b6c3",
+      "size": 994,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/vra/poc00/kotlin/domain/Order.kt",
+      "sha256": "e0169e7600cd54184848d08daec2474ad0f8b70cc40bae803c5d3dfc925fa889",
+      "size": 2909,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/vra/poc00/kotlin/domain/OrderItem.kt",
+      "sha256": "697307d54454a558c99451c3e61e9bfc69c5220757a75872dbceb9219f43cadb",
+      "size": 322,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/vra/poc00/kotlin/domain/OrderReasonCode.kt",
+      "sha256": "f09ece6333ca628f943a4568048ede2b138d5a6551e96002f81eb1218256df3b",
+      "size": 124,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/vra/poc00/kotlin/domain/OrderState.kt",
+      "sha256": "7bf9a61bde6538f57a5bfa9e54d8d27f30392c075f4b0ac24e007f151bf7e9a6",
+      "size": 474,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/vra/poc00/kotlin/infrastructure/DatabaseConfiguration.kt",
+      "sha256": "94ad35b9e8cd3f830720ff915e7eb0030b3268d2b119c27f665157e57ad25afb",
+      "size": 926,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/vra/poc00/kotlin/infrastructure/JdbcInventoryRepository.kt",
+      "sha256": "8c6b2929323e240a228490eb8c2533137eeb47ddff2b6a7419757eb955ae6815",
+      "size": 1516,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/vra/poc00/kotlin/infrastructure/LocalDatabaseSettings.kt",
+      "sha256": "78a125b2cb7440e618a428a9b58ab42e3a90168c43f4804db298c01a2f0b6ece",
+      "size": 1231,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/vra/poc00/kotlin/infrastructure/MigrateLocal.kt",
+      "sha256": "fb22eec2cc56ef1868e5fc2564c5edda397e224b746160562d54236786642fce",
+      "size": 536,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/vra/poc00/kotlin/interfaces/ApiErrors.kt",
+      "sha256": "37045535a11c8187c9464d12a076670e7e55d68ceedd36ce10295cbfe6803893",
+      "size": 3366,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/vra/poc00/kotlin/interfaces/RequestIdFilter.kt",
+      "sha256": "117621f9c2ac399fffbae60f5311cf419aa6c3bc627ae4d4f29c14d0c348a259",
+      "size": 1550,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/vra/poc00/kotlin/interfaces/ReservationController.kt",
+      "sha256": "d9e0c865ec6fa2e2ecf060aa1356e83eef25afb4df7b90f622cb71c130fb98b0",
+      "size": 1115,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/main/dev/vra/poc00/kotlin/interfaces/SafeErrorController.kt",
+      "sha256": "7c7f4f155f6a365a624c0673ac195ab3caa1b58121654f2020700f974b70d51a",
+      "size": 1043,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/test/dev/vra/poc00/kotlin/ArchitectureTest.kt",
+      "sha256": "cfb53a54015d724d46c0cba4d66cbbcaaca88b355f06d683f8aed832e7684a8e",
+      "size": 1815,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/test/dev/vra/poc00/kotlin/DomainTest.kt",
+      "sha256": "f0a87ae6182370d51cb259741f0a99a8ee0b4b9db45a29d173e8004527274361",
+      "size": 10827,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/test/dev/vra/poc00/kotlin/HttpContractTest.kt",
+      "sha256": "fbf8c8a64f4cc6a71c0966564d09094b5696de7273cdeff58c8856d09ad0e655",
+      "size": 5895,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/test/dev/vra/poc00/kotlin/LocalDatabaseSettingsTest.kt",
+      "sha256": "171e4ba19656e916c8b92774516cf9a539b5653e4c1145d54d59df2792657ef3",
+      "size": 1527,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/test/dev/vra/poc00/kotlin/PostgresIntegrationTest.kt",
+      "sha256": "6d2440e7338af3149935e9891e5cd25edcd914c4decc42fac53a97d43c54338a",
+      "size": 13820,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/test/dev/vra/poc00/kotlin/PostgresTestSupport.kt",
+      "sha256": "adf71392773097e23ea2d899655ee056d0c343cc1edd697afb729b3a82cf99f3",
+      "size": 786,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/kotlin-candidate/bin/test/dev/vra/poc00/kotlin/ReservationIntegrationTest.kt",
+      "sha256": "4904bdd75cd2da33cce9066afea7cb3c97c24dae524ad023f46b1357608e8513",
+      "size": 7729,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/.gradle/9.7.1/checksums/checksums.lock",
+      "sha256": "2c4ece89f623138ca22760733eb8a23dcdd509a66c67f45abb3d5868deb55ff3",
+      "size": 17,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/.gradle/9.7.1/checksums/sha1-checksums.bin",
+      "sha256": "bb768144b54ce20a47dfa1628f1de90af86cddec7845441695517c5da013fd40",
+      "size": 84209,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "backend/.gradle/9.7.1/fileHashes/fileHashes.lock",
+      "sha256": "74ff898013ebc38be91d44d10195028e75bb15d17ed35b99a7a87ffa98a768bc",
+      "size": 17,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/.gradle/8.14.3/checksums/checksums.lock",
+      "sha256": "f5057c74444d33b9f5c28c01e0eb3ade3172f773b6b29126005f2e0ba4894517",
+      "size": 17,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/.gradle/8.14.3/checksums/md5-checksums.bin",
+      "sha256": "6bc56a000ba17139ac4e685de50db5b720f5579c17505d86013651798250957c",
+      "size": 73665,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/.gradle/8.14.3/checksums/sha1-checksums.bin",
+      "sha256": "b00d8f21160c12c5f648c5e731ed9dbb038daca8ac9965f1d955ae969abd82b3",
+      "size": 139337,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/.gradle/8.14.3/executionHistory/executionHistory.lock",
+      "sha256": "42962c6522f26c19f4765a5c206705a9235d5b19879ff677e0ef73a976265468",
+      "size": 17,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/.gradle/8.14.3/fileHashes/fileHashes.bin",
+      "sha256": "4e9d6dc94bda8b4a16f71a094b67ff5f797eb50de64cf3410352840d0b35c38a",
+      "size": 39497,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/.gradle/8.14.3/fileHashes/fileHashes.lock",
+      "sha256": "b4ea603ccb0c110a5a489f7de6c4ac738ce0141a7d8e345e9ab3e0267fdfcb02",
+      "size": 17,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/.gradle/buildOutputCleanup/buildOutputCleanup.lock",
+      "sha256": "4773d9a249e6732051fd36f386328c4073b9e356f6778c9bbde925a2e1445c16",
+      "size": 17,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/.gradle/file-system.probe",
+      "sha256": "0014e819a6fda44796966594b06a0c1bba0ff4b32744ae344723c3c13b1e6c53",
+      "size": 8,
+      "type": "regular"
+    },
+    {
+      "mode": "0644",
+      "path": "validation/poc-00/build/reports/problems/problems-report.html",
+      "sha256": "517b982788aea0b67037507913737e4db77b70dafcfbf5c320a22f453321ec62",
+      "size": 129938,
+      "type": "regular"
+    }
+  ]
+}

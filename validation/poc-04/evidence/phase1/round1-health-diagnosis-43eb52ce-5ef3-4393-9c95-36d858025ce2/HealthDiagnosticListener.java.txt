@@ -1,0 +1,129 @@
+package dev.vra.poc04.external;
+
+import com.zaxxer.hikari.HikariDataSource;
+import javax.sql.DataSource;
+import java.lang.management.ManagementFactory;
+import java.lang.management.ThreadInfo;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.springframework.test.context.TestContext;
+import org.springframework.test.context.support.AbstractTestExecutionListener;
+import tools.jackson.databind.json.JsonMapper;
+
+/** External read-only TEST diagnostics; no configuration setters or assertion changes. */
+public final class HealthDiagnosticListener extends AbstractTestExecutionListener {
+    private ScheduledExecutorService monitor;
+    private CompletableFuture<?> degradedReadiness;
+    private HikariDataSource pool;
+    private int port;
+    private final AtomicBoolean observed = new AtomicBoolean();
+    private final HttpClient client = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(2)).build();
+    private static synchronized void emit(Map<String, Object> record) {
+        System.out.println("POC04_HEALTH_DIAGNOSTIC " + JsonMapper.builder().build().writeValueAsString(record));
+    }
+    private boolean target(TestContext context) {
+        return context.getTestClass().getName().equals("dev.vra.platform.health.HealthProbePostgresIntegrationTest")
+                && context.getTestMethod().getName().equals("databaseOutageMakesReadinessDownButKeepsLivenessUp");
+    }
+    private Map<String, Object> snapshot() {
+        Map<String, Object> result = new LinkedHashMap<>();
+        result.put("at", Instant.now().toString());
+        result.put("connection_timeout_ms", pool.getConnectionTimeout());
+        result.put("validation_timeout_ms", pool.getValidationTimeout());
+        result.put("maximum_pool_size", pool.getMaximumPoolSize());
+        result.put("minimum_idle", pool.getMinimumIdle());
+        var state = pool.getHikariPoolMXBean();
+        if (state != null) {
+            result.put("active", state.getActiveConnections());
+            result.put("idle", state.getIdleConnections());
+            result.put("total", state.getTotalConnections());
+            result.put("awaiting_connection", state.getThreadsAwaitingConnection());
+        }
+        return result;
+    }
+    private List<Map<String, Object>> acquisitionStacks() {
+        List<Map<String, Object>> result = new ArrayList<>();
+        for (ThreadInfo thread : ManagementFactory.getThreadMXBean().dumpAllThreads(false, false)) {
+            boolean acquisition = false;
+            List<String> frames = new ArrayList<>();
+            for (StackTraceElement frame : thread.getStackTrace()) {
+                String name = frame.getClassName() + "." + frame.getMethodName();
+                acquisition |= name.equals("com.zaxxer.hikari.pool.HikariPool.getConnection");
+                frames.add(name + ":" + frame.getLineNumber());
+            }
+            if (acquisition && frames.stream().anyMatch(x -> x.contains("DataSourceHealthIndicator"))) {
+                result.add(Map.of("thread_id", thread.getThreadId(), "state", thread.getThreadState().toString(), "frames", frames));
+            }
+        }
+        return result;
+    }
+    private CompletableFuture<Map<String, Object>> probe(String event, String path) {
+        long started = System.nanoTime();
+        String start = Instant.now().toString();
+        HttpRequest request = HttpRequest.newBuilder().uri(URI.create("http://127.0.0.1:" + port + path))
+                .timeout(Duration.ofSeconds(5)).GET().build();
+        return client.sendAsync(request, HttpResponse.BodyHandlers.ofString()).handle((response, error) -> {
+            Map<String, Object> record = new LinkedHashMap<>();
+            record.put("event", event); record.put("path", path);
+            record.put("started_at", start); record.put("ended_at", Instant.now().toString());
+            record.put("elapsed_ms", (System.nanoTime() - started) / 1_000_000.0);
+            if (error == null) {
+                record.put("outcome", "HTTP_RESPONSE"); record.put("http_status", response.statusCode());
+                record.put("health_status", JsonMapper.builder().build().readTree(response.body()).path("status").asString());
+            } else {
+                Throwable cause = error;
+                while (cause.getCause() != null) cause = cause.getCause();
+                record.put("outcome", "EXCEPTION_NOT_READINESS_DOWN"); record.put("exception_class", cause.getClass().getName());
+            }
+            if (pool != null) record.put("pool", snapshot());
+            emit(record); return record;
+        });
+    }
+    @Override public void beforeTestExecution(TestContext context) throws Exception {
+        if (!target(context)) return;
+        DataSource actual = context.getApplicationContext().getBean(DataSource.class);
+        Map<String, Object> record = new LinkedHashMap<>();
+        record.put("event", "actual_datasource_before_original_test"); record.put("at", Instant.now().toString());
+        record.put("class", actual.getClass().getName());
+        record.put("source_modified", false); record.put("configuration_modified", false);
+        if (actual instanceof HikariDataSource hikari) { pool = hikari; record.put("pool", snapshot()); }
+        emit(record);
+        port = context.getApplicationContext().getEnvironment().getRequiredProperty("local.server.port", Integer.class);
+        probe("liveness_before_diagnostic", "/actuator/health/liveness").get(6, TimeUnit.SECONDS);
+        probe("readiness_before_diagnostic", "/actuator/health/readiness").get(6, TimeUnit.SECONDS);
+        if (pool == null) return;
+        monitor = Executors.newSingleThreadScheduledExecutor(task -> { Thread thread = new Thread(task, "poc04-readonly-health-diagnostics"); thread.setDaemon(true); return thread; });
+        monitor.scheduleAtFixedRate(() -> {
+            try {
+                List<Map<String, Object>> stacks = acquisitionStacks();
+                if (!stacks.isEmpty() && pool.getHikariPoolMXBean().getThreadsAwaitingConnection() > 0 && observed.compareAndSet(false, true)) {
+                    emit(Map.of("event", "original_readiness_pool_acquisition_wait", "pool", snapshot(), "acquisition_stacks", stacks));
+                    // This separately timed diagnostic request does not alter the original test or accept its failure.
+                    degradedReadiness = probe("first_diagnostic_readiness_during_original_acquisition_wait", "/actuator/health/readiness");
+                    probe("liveness_while_readiness_waits", "/actuator/health/liveness");
+                }
+            } catch (Exception error) { emit(Map.of("event", "observer_error", "class", error.getClass().getName())); }
+        }, 0, 10, TimeUnit.MILLISECONDS);
+    }
+    @Override public void afterTestExecution(TestContext context) throws Exception {
+        if (!target(context)) return;
+        Throwable failure = context.getTestException();
+        emit(Map.of("event", "original_test_result", "at", Instant.now().toString(), "exception_class", failure == null ? "NONE" : failure.getClass().getName(), "pool_wait_observed", observed.get()));
+        if (degradedReadiness != null) degradedReadiness.get(7, TimeUnit.SECONDS);
+        if (monitor != null) { monitor.shutdownNow(); monitor.awaitTermination(1, TimeUnit.SECONDS); }
+        if (pool != null) emit(Map.of("event", "pool_after_original_test", "pool", snapshot(), "acquisition_stacks", acquisitionStacks()));
+    }
+}

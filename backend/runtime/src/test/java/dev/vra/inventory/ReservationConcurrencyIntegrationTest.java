@@ -75,7 +75,7 @@ class ReservationConcurrencyIntegrationTest {
     private static final String RUNTIME_PASSWORD = "concurrency-runtime-test-only";
 
     private static final PostgreSQLContainer POSTGRES =
-            new PostgreSQLContainer("postgres:17.11")
+            new dev.vra.poc04.external.RunOwnedPostgreSQLContainer("postgres:17.11")
                     .withDatabaseName(DATABASE)
                     .withUsername(ADMIN_USER)
                     .withPassword(ADMIN_PASSWORD);
@@ -88,8 +88,8 @@ class ReservationConcurrencyIntegrationTest {
             int migrated = new MigrationRunner().migrate(
                     POSTGRES.getJdbcUrl(), MIGRATOR_USER, MIGRATOR_PASSWORD
             );
-            if (migrated != 3) {
-                throw new IllegalStateException("Expected exactly three migrations, got " + migrated);
+            if (migrated != 4) {
+                throw new IllegalStateException("Expected exactly four migrations, got " + migrated);
             }
         } catch (Exception error) {
             POSTGRES.stop();

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.vra.migration.Poc04FoundationMigrationIntegrationTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-01T08:02:55.606Z" hostname="MacBook-Air-khxng-SIwakorn.local" time="40.395">
+  <properties/>
+  <testcase name="populatedV3UpgradeRetainsEveryPriorTableAndFlywayHistory()" classname="dev.vra.migration.Poc04FoundationMigrationIntegrationTest" time="18.04"/>
+  <testcase name="freshV1ThroughV4ValidatesRerunsAndEnforcesPhaseOneBoundary()" classname="dev.vra.migration.Poc04FoundationMigrationIntegrationTest" time="17.111"/>
+  <testcase name="administratorBootstrapConvergesAndRejectsUnexpectedMembershipDrift()" classname="dev.vra.migration.Poc04FoundationMigrationIntegrationTest" time="5.244"/>
+  <system-out><![CDATA[POC04 index/platform/manifest/config linkage PASS: docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f linux/arm64/v8 sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761 sha256:97432f980da100ebd3e419711efee84e1e97a966d62c035286a07f239ddb4d9c
+POC04 actual execution platform/manifest PASS: linux/arm64/v8 sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761
+POC04 PGDATA typed/volume/daemon proof PASS: 8e505138c6b469a69ee27dfe208b2db27c0200bba8171188aed3a4564efa4828 vra-poc04-9ec08b4d-a072-4663-a024-0e3ef3989dc5-postgres-authority-0-pgdata safe_projection_sha256=3d17d6a03eab64b27c08bcb47933755069cead2b8250b86dc756da2431eb6fca
+POC04 PostgreSQL runtime version PASS: server_version_num=170011 (17.11)
+POC04 index/platform/manifest/config linkage PASS: docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f linux/arm64/v8 sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761 sha256:97432f980da100ebd3e419711efee84e1e97a966d62c035286a07f239ddb4d9c
+POC04 actual execution platform/manifest PASS: linux/arm64/v8 sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761
+POC04 PGDATA typed/volume/daemon proof PASS: f017d43c8622628d6fad61e051c6bac7953d85c5c5b3415eb4e9b7deb12c2068 vra-poc04-9ec08b4d-a072-4663-a024-0e3ef3989dc5-postgres-authority-1-pgdata safe_projection_sha256=76727ec7f2cb7d2745c2aec51110762802c5c8778cab140efe73c96c9046612a
+POC04 PostgreSQL runtime version PASS: server_version_num=170011 (17.11)
+POC04 index/platform/manifest/config linkage PASS: docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f linux/arm64/v8 sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761 sha256:97432f980da100ebd3e419711efee84e1e97a966d62c035286a07f239ddb4d9c
+POC04 actual execution platform/manifest PASS: linux/arm64/v8 sha256:86fa57b44a1d38f09970f64ac71eb492f7a9cf94d08b85e1c8f07bb0fc0a1761
+POC04 PGDATA typed/volume/daemon proof PASS: a42b732f519611eafdf5fa64965fca417c817f88409b7422675ab536359750df vra-poc04-9ec08b4d-a072-4663-a024-0e3ef3989dc5-postgres-authority-2-pgdata safe_projection_sha256=3be84d6e186981ffe0d0e725f1e7296106b66a31363304b53002fc36067fb913
+POC04 PostgreSQL runtime version PASS: server_version_num=170011 (17.11)
+]]></system-out>
+  <system-err><![CDATA[ต.ค. 01, 2026 3:03:01 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32812/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 3:03:01 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "vra"."flyway_schema_history" does not exist yet
+ต.ค. 01, 2026 3:03:01 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 3:03:01 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "vra"."flyway_schema_history" ...
+ต.ค. 01, 2026 3:03:01 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": << Empty Schema >>
+ต.ค. 01, 2026 3:03:01 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "1 - inventory reservation foundation"
+ต.ค. 01, 2026 3:03:01 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "2 - inventory reservation idempotency"
+ต.ค. 01, 2026 3:03:01 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "3 - outbox recovery"
+ต.ค. 01, 2026 3:03:01 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 3 migrations to schema "vra", now at version v3 (execution time 00:00.054s)
+ต.ค. 01, 2026 3:03:01 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32812/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 3:03:01 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 3:03:01 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32812/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 3:03:01 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 3:03:01 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": 3
+ต.ค. 01, 2026 3:03:01 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "4 - poc04 identity security foundation"
+ต.ค. 01, 2026 3:03:01 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 1 migration to schema "vra", now at version v4 (execution time 00:00.033s)
+ต.ค. 01, 2026 3:03:02 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32812/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 3:03:02 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 3:03:02 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32812/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 3:03:02 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 3:03:02 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": 4
+ต.ค. 01, 2026 3:03:02 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Schema "vra" is up to date. No migration necessary.
+ต.ค. 01, 2026 3:03:02 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32812/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 3:03:02 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 3:03:19 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32813/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 3:03:19 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "vra"."flyway_schema_history" does not exist yet
+ต.ค. 01, 2026 3:03:19 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.003s)
+ต.ค. 01, 2026 3:03:19 หลังเที่ยง org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "vra"."flyway_schema_history" ...
+ต.ค. 01, 2026 3:03:19 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": << Empty Schema >>
+ต.ค. 01, 2026 3:03:19 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "1 - inventory reservation foundation"
+ต.ค. 01, 2026 3:03:19 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "2 - inventory reservation idempotency"
+ต.ค. 01, 2026 3:03:19 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "3 - outbox recovery"
+ต.ค. 01, 2026 3:03:19 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "vra" to version "4 - poc04 identity security foundation"
+ต.ค. 01, 2026 3:03:19 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "vra", now at version v4 (execution time 00:00.088s)
+ต.ค. 01, 2026 3:03:19 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32813/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 3:03:19 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 3:03:19 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32813/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 3:03:19 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+ต.ค. 01, 2026 3:03:19 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "vra": 4
+ต.ค. 01, 2026 3:03:19 หลังเที่ยง org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Schema "vra" is up to date. No migration necessary.
+ต.ค. 01, 2026 3:03:19 หลังเที่ยง org.flywaydb.core.FlywayExecutor init
+INFO: Database: jdbc:postgresql://127.0.0.1:32813/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+ต.ค. 01, 2026 3:03:19 หลังเที่ยง org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.002s)
+]]></system-err>
+</testsuite>

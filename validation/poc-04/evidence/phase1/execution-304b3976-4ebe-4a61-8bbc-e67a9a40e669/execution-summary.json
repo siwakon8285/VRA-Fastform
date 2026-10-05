@@ -1,0 +1,29 @@
+{
+  "attempt_id": "304b3976-4ebe-4a61-8bbc-e67a9a40e669",
+  "result": "STOP_TESTCONTAINERS_INFRASTRUCTURE_FAILURE",
+  "source_defect_exposed": false,
+  "source_changed": false,
+  "docker_cli_preflight": "PASS",
+  "testcontainers_execution": "FAILED connecting Ryuk at192.168.106.3:32768",
+  "fresh_proof": "FAILED before PostgreSQL creation",
+  "populated_proof": "NOT EXECUTED",
+  "flyway_validate": "NOT EXECUTED",
+  "same_db_rerun": "NOT EXECUTED",
+  "database_identity": null,
+  "postgresql_version_executed": null,
+  "role_catalog_acl_sql_proofs": "NOT EXECUTED",
+  "collector_proof": "NOT EXECUTED",
+  "migration_integration_counts": {
+    "tests": 1,
+    "skipped": 0,
+    "failures": 1,
+    "errors": 0
+  },
+  "runtime_and_remaining_suites": "NOT EXECUTED after first failure",
+  "cleanup_proof": "PASS exact helper ID absent; zero containers/volumes and original builtin networks only",
+  "phase1_closed": false,
+  "ready_for_independent_review": false,
+  "phase2_started": false,
+  "poc04": "IN PROGRESS / NOT VERIFIED",
+  "S0_S15": "NOT VERIFIED"
+}

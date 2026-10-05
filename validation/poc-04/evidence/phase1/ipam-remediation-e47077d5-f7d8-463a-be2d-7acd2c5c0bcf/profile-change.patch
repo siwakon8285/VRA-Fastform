@@ -1,0 +1,14 @@
+--- /Users/siwakornbundi/.colima/vra-poc04-test/colima.yaml.before
++++ /Users/siwakornbundi/.colima/vra-poc04-test/colima.yaml.after
+@@ -149,7 +149,10 @@
+ #
+ # Colima default behaviour: buildkit enabled
+ # Default: {}
+-docker: {}
++docker:
++  default-address-pools:
++    - base: 10.241.0.0/16
++      size: 24
+ 
+ # Virtual Machine type (krunkit, qemu, vz)
+ # NOTE: this is macOS 13 only. For Linux and macOS <13.0, qemu is always used.

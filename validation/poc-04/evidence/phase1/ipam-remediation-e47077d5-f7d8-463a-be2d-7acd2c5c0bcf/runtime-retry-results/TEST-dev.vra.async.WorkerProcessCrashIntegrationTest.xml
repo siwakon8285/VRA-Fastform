@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.vra.async.WorkerProcessCrashIntegrationTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-10-01T07:52:33.129Z" hostname="MacBook-Air-khxng-SIwakorn.local" time="39.973">
+  <properties/>
+  <testcase name="gracefulDrainAllowsCommittedConsumerToGuardedFinalize()" classname="dev.vra.async.WorkerProcessCrashIntegrationTest" time="0.796"/>
+  <testcase name="lostResponseAfterDurableEffectIsRecoveredByFreshWorkerAndReconcilerPids()" classname="dev.vra.async.WorkerProcessCrashIntegrationTest" time="5.949"/>
+  <testcase name="boundedClaimsAndUnavailableRelinquishmentFallBackToLeaseExpiry()" classname="dev.vra.async.WorkerProcessCrashIntegrationTest" time="5.026"/>
+  <testcase name="productionDrainRelinquishesStoppedAttemptWithCurrentToken()" classname="dev.vra.async.WorkerProcessCrashIntegrationTest" time="4.995"/>
+  <testcase name="committedScenarioAClaimSurvivesAbruptPidDeathAndFreshPidReclaims()" classname="dev.vra.async.WorkerProcessCrashIntegrationTest" time="4.902"/>
+  <testcase name="externalDrainDoesNotClaimOrExecuteTheNextDurableEvent()" classname="dev.vra.async.WorkerProcessCrashIntegrationTest" time="1.26"/>
+  <testcase name="wrongWorkerAndReconcilerDatabaseIdentitiesFailStartup()" classname="dev.vra.async.WorkerProcessCrashIntegrationTest" time="0.149"/>
+  <testcase name="killedExternalRequestReclaimsToUnknownBeforeAnyFurtherExecute()" classname="dev.vra.async.WorkerProcessCrashIntegrationTest" time="2.422"/>
+  <testcase name="gracefulDrainLeavesUnclaimedWorkDurableAndStartsNoNewEffect()" classname="dev.vra.async.WorkerProcessCrashIntegrationTest" time="4.132"/>
+  <testcase name="committedConsumerEffectSurvivesKillBeforeDeliveryFinalize()" classname="dev.vra.async.WorkerProcessCrashIntegrationTest" time="4.523"/>
+  <testcase name="stoppedAttemptRelinquishesWithoutChangingProcessingOrTransferringOwnership()" classname="dev.vra.async.WorkerProcessCrashIntegrationTest" time="0.942"/>
+  <testcase name="reconcilerDrainStopsClaimsAndFreshPidRediscoversDurableCase()" classname="dev.vra.async.WorkerProcessCrashIntegrationTest" time="2.07"/>
+  <system-out><![CDATA[14:52:33.143 [Test worker] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+14:52:33.145 [Test worker] INFO org.testcontainers.utility.ImageNameSubstitutor -- Found configured ImageNameSubstitutor: POC04 external reviewed digest substitution
+14:52:33.146 [Test worker] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: Chained substitutor of 'DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')' and then 'POC04 external reviewed digest substitution'
+14:52:33.149 [Test worker] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 2.0.5
+14:52:33.227 [Test worker] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+14:52:33.376 [Test worker] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with Environment variables, system properties and defaults. Resolved dockerHost=unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock
+14:52:33.376 [Test worker] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is 127.0.0.1
+14:52:33.383 [Test worker] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.5.2
+  API Version: 1.54
+  Operating System: Ubuntu 24.04.4 LTS
+  Total Memory: 7923 MB
+14:52:33.386 [Test worker] WARN org.testcontainers.utility.ConfigurationFileImageNameSubstitutor -- Image name testcontainers/ryuk:0.14.0 was substituted by configuration to docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0. This approach is deprecated and will be removed in the future
+14:52:33.386 [Test worker] INFO org.testcontainers.utility.ImageNameSubstitutor -- Using docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0 as a substitute image for testcontainers/ryuk:0.14.0 (using image substitutor: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor'))
+14:52:33.434 [Test worker] INFO tc.docker.io/testcontainers/ryuk@sha256:7c1a8a... -- Creating container for image: docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0
+14:52:33.503 [Test worker] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for docker.io
+14:52:33.555 [Test worker] INFO tc.docker.io/testcontainers/ryuk@sha256:7c1a8a... -- Container docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0 is starting: de1998dabec09bff2ed980e23305ed1513fc007f7a003d8e917554e760827914
+14:52:33.745 [Test worker] INFO tc.docker.io/testcontainers/ryuk@sha256:7c1a8a... -- Container docker.io/testcontainers/ryuk@sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0 started in PT0.311358S
+14:52:33.748 [Test worker] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+14:52:33.748 [Test worker] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+14:52:33.748 [Test worker] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+14:52:33.748 [Test worker] INFO org.testcontainers.utility.ImageNameSubstitutor -- Using docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f as a substitute image for postgres:17.11 (using image substitutor: POC04 external reviewed digest substitution)
+14:52:33.766 [Test worker] INFO tc.docker.io/library/postgres@sha256:d74eea... -- Creating container for image: docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f
+14:52:33.831 [Test worker] INFO tc.docker.io/library/postgres@sha256:d74eea... -- Container docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f is starting: 8ec8be383cf53dc9d591c9cd12c9448a1ec54d5036573e54efae86ee5565591e
+14:52:34.551 [Test worker] INFO tc.docker.io/library/postgres@sha256:d74eea... -- Container docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f started in PT0.784794S
+14:52:34.552 [Test worker] INFO tc.docker.io/library/postgres@sha256:d74eea... -- Container is started (JDBC URL: jdbc:postgresql://127.0.0.1:32769/vra_poc01?loggerLevel=OFF)
+14:52:34.552 [Test worker] INFO org.testcontainers.utility.ImageNameSubstitutor -- Using docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f as a substitute image for postgres:17.11 (using image substitutor: POC04 external reviewed digest substitution)
+14:52:34.552 [Test worker] INFO tc.docker.io/library/postgres@sha256:d74eea... -- Creating container for image: docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f
+14:52:34.610 [Test worker] INFO tc.docker.io/library/postgres@sha256:d74eea... -- Container docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f is starting: ca1b41d319bc6f130c86bfcd66bd93a885b5a3d4206a0828e567411508313fd5
+14:52:35.204 [Test worker] INFO tc.docker.io/library/postgres@sha256:d74eea... -- Container docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f started in PT0.65173S
+14:52:35.204 [Test worker] INFO tc.docker.io/library/postgres@sha256:d74eea... -- Container is started (JDBC URL: jdbc:postgresql://127.0.0.1:32770/simulator_stage_i?loggerLevel=OFF)
+14:52:35.440 [Test worker] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:postgresql://127.0.0.1:32769/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+14:52:35.464 [Test worker] INFO org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Schema history table "vra"."flyway_schema_history" does not exist yet
+14:52:35.465 [Test worker] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.007s)
+14:52:35.471 [Test worker] INFO org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Creating Schema History table "vra"."flyway_schema_history" ...
+14:52:35.494 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "vra": << Empty Schema >>
+14:52:35.499 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "vra" to version "1 - inventory reservation foundation"
+14:52:35.513 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "vra" to version "2 - inventory reservation idempotency"
+14:52:35.542 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "vra" to version "3 - outbox recovery"
+14:52:35.606 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "vra" to version "4 - poc04 identity security foundation"
+14:52:35.648 [Test worker] INFO org.flywaydb.core.internal.command.DbMigrate -- Successfully applied 4 migrations to schema "vra", now at version v4 (execution time 00:00.097s)
+14:52:35.657 [Test worker] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:postgresql://127.0.0.1:32769/vra_poc01?loggerLevel=OFF (PostgreSQL 17.11)
+14:52:35.665 [Test worker] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.003s)
+G4 B lost-response PID 1142 -> 1168, reconciler 1278
+G4 A claim PID 1470 -> 1481, tokens 2fe33457-995d-4a96-a256-7d1092129602 -> bb13a0d7-ae5c-448d-8a1c-0bb026339c65
+G4 B blocked PID 1487 -> 1488, reconciler 1489
+G4 A post-effect PID 1494 -> 1497
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

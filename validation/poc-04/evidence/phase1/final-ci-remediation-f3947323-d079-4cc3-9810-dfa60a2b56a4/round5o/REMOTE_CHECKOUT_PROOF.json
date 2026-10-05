@@ -1,0 +1,48 @@
+{
+  "checkouts": [
+    {
+      "HEAD": "ae9bd1f53a7e3e8612f2f4cd9f778e27d7cdb0db",
+      "alternates_absent": true,
+      "fetched_refs": [],
+      "git_directory": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/shallow-checkout/.git",
+      "git_version": "git version 2.54.0 (Apple Git-157)",
+      "is_shallow": "true",
+      "label": "SHALLOW",
+      "object_files_link_count_one": true,
+      "remote_url": "https://github.com/siwakon8285/VRA-Fastform.git",
+      "required_object_available": false,
+      "required_object_check_exit": 128,
+      "root": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/shallow-checkout",
+      "tree": "988058edd53504936345bc51ebdeee2d7d55b0c7",
+      "working_tree_base_status": ""
+    },
+    {
+      "HEAD": "ae9bd1f53a7e3e8612f2f4cd9f778e27d7cdb0db",
+      "alternates_absent": true,
+      "fetched_refs": [
+        "01256d96d85823740a8d6c3a3f99346afbdbef56 refs/heads/main",
+        "01256d96d85823740a8d6c3a3f99346afbdbef56 refs/remotes/origin/HEAD",
+        "01256d96d85823740a8d6c3a3f99346afbdbef56 refs/remotes/origin/main",
+        "5a88d4d9a562652fc856a32d266ddc055e8e6c37 refs/remotes/origin/poc/03-outbox-recovery",
+        "ae9bd1f53a7e3e8612f2f4cd9f778e27d7cdb0db refs/remotes/origin/poc/04-security-auth"
+      ],
+      "git_directory": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/source-capsule/.git",
+      "git_version": "git version 2.54.0 (Apple Git-157)",
+      "is_shallow": "false",
+      "label": "FULL",
+      "object_files_link_count_one": true,
+      "remote_url": "https://github.com/siwakon8285/VRA-Fastform.git",
+      "required_commit_is_ancestor_of_HEAD": true,
+      "required_object_available": true,
+      "required_object_check_exit": 0,
+      "required_object_sha1_verified": true,
+      "required_object_type": "commit",
+      "root": "/private/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-round5o-52nom05p/source-capsule",
+      "tree": "988058edd53504936345bc51ebdeee2d7d55b0c7",
+      "working_tree_base_status": ""
+    }
+  ],
+  "history_changes_object_availability_only": true,
+  "same_source_identity": true,
+  "status": "PASS"
+}

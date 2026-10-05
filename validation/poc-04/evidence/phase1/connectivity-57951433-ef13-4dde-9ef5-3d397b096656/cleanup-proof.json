@@ -1,0 +1,85 @@
+{
+  "result": "PASS",
+  "run_id": "57951433-ef13-4dde-9ef5-3d397b096656",
+  "recorded_at_utc": "2026-09-30T17:01:41.535665+00:00",
+  "container_id": "9b4568c67129ba2fbb4b6b8dc49d7cd7710c0c61fd65345c3a50411ee49b1f3b",
+  "container_labels_reinspected": false,
+  "container_absent": true,
+  "containers_remaining": 0,
+  "volumes_remaining": 0,
+  "networks_unchanged": true,
+  "cleanup_mutations": [],
+  "commands": [
+    {
+      "command": [
+        "docker",
+        "info",
+        "--format",
+        "{{.ID}}"
+      ],
+      "exit_status": 0,
+      "stdout": "14c8ff26-86d1-4c0b-88a6-560be91a65ea\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "inspect",
+        "9b4568c67129ba2fbb4b6b8dc49d7cd7710c0c61fd65345c3a50411ee49b1f3b"
+      ],
+      "exit_status": 1,
+      "stdout": "[]\n",
+      "stderr": "error: no such object: 9b4568c67129ba2fbb4b6b8dc49d7cd7710c0c61fd65345c3a50411ee49b1f3b\n"
+    },
+    {
+      "command": [
+        "docker",
+        "inspect",
+        "9b4568c67129ba2fbb4b6b8dc49d7cd7710c0c61fd65345c3a50411ee49b1f3b"
+      ],
+      "exit_status": 1,
+      "stdout": "[]\n",
+      "stderr": "error: no such object: 9b4568c67129ba2fbb4b6b8dc49d7cd7710c0c61fd65345c3a50411ee49b1f3b\n"
+    },
+    {
+      "command": [
+        "docker",
+        "ps",
+        "-a",
+        "--no-trunc",
+        "--format",
+        "{{.ID}} {{.Names}}"
+      ],
+      "exit_status": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "volume",
+        "ls",
+        "--format",
+        "{{.Name}}"
+      ],
+      "exit_status": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "ls",
+        "--no-trunc",
+        "--format",
+        "{{.ID}} {{.Name}}"
+      ],
+      "exit_status": 0,
+      "stdout": "d6169038310792000aceb4c7cc43936dc2580869b05ebdee378244932b90279c bridge\n71919e79066c633ba4548aa04103de53d1e31552893e0cec59e0ba812b5f4d22 host\n0984d415001adca8ca8a82f1903d6ca27f318228edcf69e42a7bede8a4a05b6a none\n",
+      "stderr": ""
+    }
+  ],
+  "desktop_resources_touched": false,
+  "blanket_prune_used": false
+}

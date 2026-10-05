@@ -1,0 +1,11 @@
+# AST-only parser testing never executes the top-level Docker proof.
+tree=ast.parse((root/script).read_text());nodes=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name in ['check','normalized_server_secret_target']];space={};exec(compile(ast.Module(body=nodes,type_ignores=[]),script,'exec'),space);parse=space['normalized_server_secret_target'];destination='/run/secrets/postgres_admin_password';valid=[[{'source':'postgres_admin_password','target':destination}],[{'source':'postgres_admin_password','target':'postgres_admin_password'}],[{'source':'postgres_admin_password'}]];results=[]
+for i,value in enumerate(valid):assert parse(value)==destination;results.append({'case':'accepted-exact-form-'+str(i),'result':'PASS'})
+invalid=[None,{},[],['postgres_admin_password'],[None],[{},{}],[{}],[{'source':'other'}],[{'source':None}],[{'source':['postgres_admin_password']}]]
+for target in [None,'','other','/run/secrets/other','../postgres_admin_password','/run/secrets//postgres_admin_password','./postgres_admin_password',{},[]]:invalid.append([{'source':'postgres_admin_password','target':target}])
+for key in ['uid','gid','mode','x-extension','unknown']:invalid.append([{'source':'postgres_admin_password',key:'unexpected'}])
+for i,value in enumerate(invalid):
+ try:parse(value)
+ except AssertionError:results.append({'case':'denied-malformed-or-unapproved-'+str(i),'result':'PASS'})
+ else:raise AssertionError('negative parser case accepted')
+write(out/'parser-focused-cases.json',{'status':'PASS','python_syntax_AST':'PASS','accepted':len(valid),'denied':len(invalid),'results':results,'actual_compose_model':'validation/poc-04/evidence/phase1/compose-secrets-diagnosis-2021b28f-c9cc-4fbe-b527-535a078cdae4/normalized-secrets-model.json','actual_expected_target':destination,'prior_equality_rejects_actual_absolute_target':True,'script_sha256':sha(root/script)})

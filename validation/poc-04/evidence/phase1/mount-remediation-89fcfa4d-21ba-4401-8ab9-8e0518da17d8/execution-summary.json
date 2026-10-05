@@ -1,0 +1,248 @@
+{
+  "attempt_id": "89fcfa4d-21ba-4401-8ab9-8e0518da17d8",
+  "result": "STOPPED_AFTER_REGRESSION_FAILURE",
+  "phase1_closed": false,
+  "ready_for_independent_phase1_review": false,
+  "previous_report_preserved_sha256": "e5df43afd289c8fc9a87cfe0bc25fdf182d6195ea8f8f6bfedf160df4caf0e3e",
+  "previous_mount_failure": "preserved FAIL; no retrospective PASS rewrite",
+  "source_modified_this_retry": [
+    "backend/migration/src/test/java/dev/vra/migration/Poc04FoundationMigrationIntegrationTest.java"
+  ],
+  "source_sha256": "50e601ce5fb4bd009aa1d48d1459dd76cfb44171e7d470644ba43f373e2fd5ee",
+  "source_binding_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+  "source_files": 261,
+  "preserved_workspace_drift": [
+    {
+      "path": "backend/runtime/src/test/java/dev/vra/async/AsyncVisibilityIntegrationTest.java",
+      "previous_sha256": "31e172e295b204e2070f984517bcba27b2f9a098174b6e64c3cfaf1c2d84c506",
+      "current_sha256": "089d7f92a2b956195a20b89f393e9a4cea856284abff16558575b8b2df23883d",
+      "difference": "24 leading spaces before package declaration; removing only those bytes reproduces previous hash",
+      "modified_by_this_remediation": false,
+      "preserved": true
+    }
+  ],
+  "focused_tests": [
+    {
+      "name": "fresh",
+      "command_artifact": "fresh-command.json",
+      "exit_status": 0,
+      "tests": 1,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "junit_artifact": "TEST-dev.vra.migration.Poc04FoundationMigrationIntegrationTest.xml"
+    },
+    {
+      "name": "populated",
+      "command_artifact": "populated-command.json",
+      "exit_status": 0,
+      "tests": 1,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "junit_artifact": "TEST-populated-Poc04FoundationMigrationIntegrationTest.xml"
+    },
+    {
+      "name": "bootstrap",
+      "command_artifact": "bootstrap-command.json",
+      "exit_status": 0,
+      "tests": 1,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "junit_artifact": "TEST-bootstrap-Poc04FoundationMigrationIntegrationTest.xml"
+    }
+  ],
+  "independent_database_proof": {
+    "command_artifact": "database-proof-command.json",
+    "exit_status": 0,
+    "status": "PASS",
+    "databases": [
+      {
+        "mode": "fresh",
+        "identity": {
+          "labels": {
+            "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+            "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+            "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+            "dev.vra.run_id": "91a3b9eb-1a68-446e-a50c-9c69f753f49e",
+            "dev.vra.environment": "TEST",
+            "dev.vra.poc": "04",
+            "dev.vra.database_instance_id": "1598232b-2ad6-580a-b24a-63fc3910f7ea"
+          },
+          "containerId": "34ffe2e8cb5f9a584e6857e2390ed69cf9cb0c16e8c033a069143fd62c2d8cfa",
+          "containerName": "vra-poc04-91a3b9eb-1a68-446e-a50c-9c69f753f49e-postgres-authority-0",
+          "containerCreatedAt": "2026-10-01T07:10:40.767138732Z",
+          "volumeName": "vra-poc04-91a3b9eb-1a68-446e-a50c-9c69f753f49e-postgres-authority-0-pgdata",
+          "volumeCreatedAt": "2026-10-01T14:10:40+07:00",
+          "volumeMountpoint": "/var/lib/docker/volumes/vra-poc04-91a3b9eb-1a68-446e-a50c-9c69f753f49e-postgres-authority-0-pgdata/_data",
+          "networkId": "74853d4b0a0d2fd4c600610a0a9786df812baa2752fa514dd7bb2b0b73761aed",
+          "networkName": "vra-poc04-91a3b9eb-1a68-446e-a50c-9c69f753f49e-postgres-authority-0-network",
+          "networkCreatedAt": "Thu Oct 01 14:10:40 ICT 2026",
+          "declaredEndpoint": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+          "database_identity": [
+            [
+              "vra_poc01",
+              "postgres",
+              "PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+              "170011",
+              "7691593394851569708"
+            ]
+          ],
+          "container_image_id": "sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "container_requested_image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "mounts": [
+            {
+              "Name": "vra-poc04-91a3b9eb-1a68-446e-a50c-9c69f753f49e-postgres-authority-0-pgdata",
+              "Source": "/var/lib/docker/volumes/vra-poc04-91a3b9eb-1a68-446e-a50c-9c69f753f49e-postgres-authority-0-pgdata/_data",
+              "RW": true,
+              "Destination": "/var/lib/postgresql/data"
+            }
+          ]
+        },
+        "status": "PASS",
+        "observed_denials": 71,
+        "all_negative_transactions_rollback_and_rows_unchanged": true
+      },
+      {
+        "mode": "populated",
+        "identity": {
+          "labels": {
+            "dev.vra.tool_manifest_sha256": "5814b0ee6eb022acfb458b21b8a009592ea627c3d371cfc7b0963595c05892d8",
+            "dev.vra.source_content_sha256": "810e22b6a49302dfc213b25d039182481ce2234da9ba92ad930a51ce303d85cc",
+            "dev.vra.source_head": "01256d96d85823740a8d6c3a3f99346afbdbef56",
+            "dev.vra.run_id": "91a3b9eb-1a68-446e-a50c-9c69f753f49e",
+            "dev.vra.environment": "TEST",
+            "dev.vra.poc": "04",
+            "dev.vra.database_instance_id": "0fe97c56-5008-509d-9792-b6fde6f4555d"
+          },
+          "containerId": "46b25f5c7ae46947bc4dc187cac14c5106c746d40b93563e8e64eeb1fce9db4f",
+          "containerName": "vra-poc04-91a3b9eb-1a68-446e-a50c-9c69f753f49e-postgres-authority-1",
+          "containerCreatedAt": "2026-10-01T07:10:59.464410291Z",
+          "volumeName": "vra-poc04-91a3b9eb-1a68-446e-a50c-9c69f753f49e-postgres-authority-1-pgdata",
+          "volumeCreatedAt": "2026-10-01T14:10:59+07:00",
+          "volumeMountpoint": "/var/lib/docker/volumes/vra-poc04-91a3b9eb-1a68-446e-a50c-9c69f753f49e-postgres-authority-1-pgdata/_data",
+          "networkId": "05f3540fcbbfc4bff65c24baf5dd14da0da3879c6946be25c0301310d00a227a",
+          "networkName": "vra-poc04-91a3b9eb-1a68-446e-a50c-9c69f753f49e-postgres-authority-1-network",
+          "networkCreatedAt": "Thu Oct 01 14:10:59 ICT 2026",
+          "declaredEndpoint": "unix:///Users/siwakornbundi/.colima/vra-poc04-test/docker.sock",
+          "database_identity": [
+            [
+              "vra_poc01",
+              "postgres",
+              "PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+              "170011",
+              "7691593475206656044"
+            ]
+          ],
+          "container_image_id": "sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "container_requested_image": "docker.io/library/postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+          "mounts": [
+            {
+              "Name": "vra-poc04-91a3b9eb-1a68-446e-a50c-9c69f753f49e-postgres-authority-1-pgdata",
+              "Source": "/var/lib/docker/volumes/vra-poc04-91a3b9eb-1a68-446e-a50c-9c69f753f49e-postgres-authority-1-pgdata/_data",
+              "RW": true,
+              "Destination": "/var/lib/postgresql/data"
+            }
+          ]
+        },
+        "status": "PASS",
+        "observed_denials": 71,
+        "all_negative_transactions_rollback_and_rows_unchanged": true
+      }
+    ]
+  },
+  "regression_command_exit_status": 1,
+  "regression_suites": {
+    ":migration:test": {
+      "tests": 4,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "artifacts": [
+        "regression-results/migration/test/TEST-dev.vra.migration.Poc04FoundationMigrationIntegrationTest.xml"
+      ]
+    },
+    ":migration:integrationTest": {
+      "tests": 18,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "artifacts": [
+        "regression-results/migration/integrationTest/TEST-dev.vra.migration.MigrationSecurityIntegrationTest.xml",
+        "regression-results/migration/integrationTest/TEST-dev.vra.migration.OutboxMigrationSecurityIntegrationTest.xml",
+        "regression-results/migration/integrationTest/TEST-dev.vra.migration.Poc04FoundationMigrationIntegrationTest.xml"
+      ]
+    },
+    ":runtime:test": {
+      "tests": 56,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "artifacts": [
+        "regression-results/runtime/test/TEST-dev.vra.async.AsyncPropertiesTest.xml",
+        "regression-results/runtime/test/TEST-dev.vra.async.DeliveryRetryPolicyTest.xml",
+        "regression-results/runtime/test/TEST-dev.vra.async.ReconciliationPolicyTest.xml",
+        "regression-results/runtime/test/TEST-dev.vra.async.ReservationCreatedEventCodecTest.xml",
+        "regression-results/runtime/test/TEST-dev.vra.async.architecture.AsyncArchitectureTest.xml",
+        "regression-results/runtime/test/TEST-dev.vra.inventory.adapter.in.web.InventoryReservationControllerTest.xml",
+        "regression-results/runtime/test/TEST-dev.vra.inventory.application.ReservationApplicationServiceTest.xml",
+        "regression-results/runtime/test/TEST-dev.vra.inventory.application.ReservationRequestFingerprintTest.xml",
+        "regression-results/runtime/test/TEST-dev.vra.inventory.architecture.InventoryArchitectureTest.xml",
+        "regression-results/runtime/test/TEST-dev.vra.inventory.domain.InventoryReservationTest.xml",
+        "regression-results/runtime/test/TEST-dev.vra.platform.configuration.RuntimeDatabasePropertiesTest.xml"
+      ]
+    },
+    ":runtime:integrationTest": {
+      "tests": 102,
+      "skipped": 0,
+      "failures": 38,
+      "errors": 0,
+      "artifacts": [
+        "regression-results/runtime/integrationTest/TEST-dev.vra.async.AsyncPermissionIntegrationTest.xml",
+        "regression-results/runtime/integrationTest/TEST-dev.vra.async.AsyncVisibilityIntegrationTest.xml",
+        "regression-results/runtime/integrationTest/TEST-dev.vra.async.DeliveryClaimIntegrationTest.xml",
+        "regression-results/runtime/integrationTest/TEST-dev.vra.async.DeliveryStateIntegrationTest.xml",
+        "regression-results/runtime/integrationTest/TEST-dev.vra.async.ProducerOutboxIntegrationTest.xml",
+        "regression-results/runtime/integrationTest/TEST-dev.vra.async.ProjectionInboxIntegrationTest.xml",
+        "regression-results/runtime/integrationTest/TEST-dev.vra.async.ProjectionRebuildIntegrationTest.xml",
+        "regression-results/runtime/integrationTest/TEST-dev.vra.async.ReconciliationIntegrationTest.xml",
+        "regression-results/runtime/integrationTest/TEST-dev.vra.async.RetryReplayIntegrationTest.xml",
+        "regression-results/runtime/integrationTest/TEST-dev.vra.async.ValidationSimulatorIntegrationTest.xml",
+        "regression-results/runtime/integrationTest/TEST-dev.vra.async.WorkerProcessCrashIntegrationTest.xml",
+        "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.IdempotentReservationApplicationServiceIntegrationTest.xml",
+        "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationConcurrencyIntegrationTest.xml",
+        "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationHttpPostgresIntegrationTest.xml",
+        "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationIdempotencyRepositoryIntegrationTest.xml",
+        "regression-results/runtime/integrationTest/TEST-dev.vra.inventory.ReservationTransactionIntegrationTest.xml",
+        "regression-results/runtime/integrationTest/TEST-dev.vra.platform.health.HealthProbePostgresIntegrationTest.xml"
+      ]
+    }
+  },
+  "regression_total": {
+    "tests": 180,
+    "skipped": 0,
+    "failures": 38,
+    "errors": 0
+  },
+  "total_test_executions_including_focused": {
+    "tests": 183,
+    "skipped": 0,
+    "failures": 38,
+    "errors": 0
+  },
+  "collector_profile_static_test": "PASS",
+  "collector_OS_mount_proof": "NOT VERIFIED; not executed after regression failure",
+  "check_build": "NOT COMPLETED; Gradle aborted at runtime integrationTest",
+  "resource_counts": {
+    "container": 42,
+    "volume": 36,
+    "network": 36
+  },
+  "cleanup_result": "PASS; every recorded physical ID absent; original baseline networks unchanged",
+  "phase2_started": false,
+  "V5_present": false,
+  "V6_present": false,
+  "POC04": "NOT VERIFIED",
+  "S0_S15": "NOT VERIFIED"
+}

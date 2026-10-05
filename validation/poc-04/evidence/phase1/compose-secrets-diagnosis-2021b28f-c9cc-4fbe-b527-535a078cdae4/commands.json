@@ -1,0 +1,66 @@
+[
+  {
+    "command": [
+      "docker",
+      "info",
+      "--format",
+      "{{json .}}"
+    ],
+    "exit_status": 0
+  },
+  {
+    "command": [
+      "docker",
+      "ps",
+      "-aq",
+      "--no-trunc"
+    ],
+    "exit_status": 0
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "ls",
+      "-q"
+    ],
+    "exit_status": 0
+  },
+  {
+    "command": [
+      "docker",
+      "network",
+      "ls",
+      "-q"
+    ],
+    "exit_status": 0
+  },
+  {
+    "command": [
+      "docker",
+      "compose",
+      "version",
+      "--format",
+      "json"
+    ],
+    "exit_status": 0
+  },
+  {
+    "command": [
+      "docker",
+      "compose",
+      "--project-name",
+      "vra-poc04-2021b28f-c9cc-4fbe-b527-535a078cdae4-collector-0",
+      "-f",
+      "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/db/collector-test.compose.yaml",
+      "-f",
+      "/var/folders/6p/8cx8_9294s10q4v934jqdn9h0000gn/T/vra-poc04-compose-secrets-diagnosis-3taxcsp6/collector-local-platform-0.override.json",
+      "--profile",
+      "poc04-collector-test",
+      "config",
+      "--format",
+      "json"
+    ],
+    "exit_status": 0
+  }
+]

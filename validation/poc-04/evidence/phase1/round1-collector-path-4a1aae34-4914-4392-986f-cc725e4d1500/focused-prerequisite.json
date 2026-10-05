@@ -1,0 +1,18 @@
+{
+  "focused_only": true,
+  "authorization": "Current user explicitly requires collector-only focus before corrected-tree full build. The unchanged script execution guard is supplied from independently checked prior passing runtime suite plus exact unchanged backend bytes. This is a focused prerequisite, not a same-run regression execution claim or final substitute.",
+  "previous_run_id": "65334c18-11de-4755-acce-e22112c5f283",
+  "previous_full_command_sha256": "0127eceb60696ac3ae7eb575eb613c712a762d12de067d6a59fb64ac9608493e",
+  "runtime_counts_from_raw_xml": {
+    "tests": 113,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "backend_bytes_unchanged": true,
+  "only_new_source_change": [
+    "validation/poc-04/scripts/collector-boundary-proof.py"
+  ],
+  "same_current_run_runtime_suite_executed_before_focus": false,
+  "final_full_build_and_final_collector_required": true
+}

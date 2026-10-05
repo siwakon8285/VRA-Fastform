@@ -1,0 +1,929 @@
+{
+  "container_creation_events": 64,
+  "network_creation_events": 59,
+  "volume_creation_events": 60,
+  "unique_volume_names": 40,
+  "volume_incarnations": [
+    {
+      "name": "vra-poc04-9ec08b4d-a072-4663-a024-0e3ef3989dc5-postgres-authority-0-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-9ec08b4d-a072-4663-a024-0e3ef3989dc5-postgres-authority-0-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841780984395244,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 1,
+      "fresh_recreation_after_previous_exact_absence": false,
+      "prior_absence_proof": null
+    },
+    {
+      "name": "vra-poc04-9ec08b4d-a072-4663-a024-0e3ef3989dc5-postgres-authority-1-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-9ec08b4d-a072-4663-a024-0e3ef3989dc5-postgres-authority-1-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841798258164253,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 1,
+      "fresh_recreation_after_previous_exact_absence": false,
+      "prior_absence_proof": null
+    },
+    {
+      "name": "vra-poc04-9ec08b4d-a072-4663-a024-0e3ef3989dc5-postgres-authority-2-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-9ec08b4d-a072-4663-a024-0e3ef3989dc5-postgres-authority-2-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841814926770032,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 1,
+      "fresh_recreation_after_previous_exact_absence": false,
+      "prior_absence_proof": null
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-collector_collector_source",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-collector_collector_source",
+          "kind": "docker_event",
+          "time_nano": 1790841619501283859,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 1,
+      "fresh_recreation_after_previous_exact_absence": false,
+      "prior_absence_proof": null
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-collector_postgres_data",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-collector_postgres_data",
+          "kind": "docker_event",
+          "time_nano": 1790841619500247053,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 1,
+      "fresh_recreation_after_previous_exact_absence": false,
+      "prior_absence_proof": null
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10001-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10001-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841748923184014,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 1,
+      "fresh_recreation_after_previous_exact_absence": false,
+      "prior_absence_proof": null
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10002-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10002-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841750344630746,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 1,
+      "fresh_recreation_after_previous_exact_absence": false,
+      "prior_absence_proof": null
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10003-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10003-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841751464629752,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 1,
+      "fresh_recreation_after_previous_exact_absence": false,
+      "prior_absence_proof": null
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10004-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10004-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841753357981299,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 1,
+      "fresh_recreation_after_previous_exact_absence": false,
+      "prior_absence_proof": null
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10005-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10005-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841754715626097,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 1,
+      "fresh_recreation_after_previous_exact_absence": false,
+      "prior_absence_proof": null
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10006-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10006-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841755875724014,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 1,
+      "fresh_recreation_after_previous_exact_absence": false,
+      "prior_absence_proof": null
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10007-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10007-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841757153329243,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 1,
+      "fresh_recreation_after_previous_exact_absence": false,
+      "prior_absence_proof": null
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10008-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10008-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841758300803977,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 1,
+      "fresh_recreation_after_previous_exact_absence": false,
+      "prior_absence_proof": null
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10009-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10009-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841759424048885,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 1,
+      "fresh_recreation_after_previous_exact_absence": false,
+      "prior_absence_proof": null
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10010-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10010-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841768592631197,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 1,
+      "fresh_recreation_after_previous_exact_absence": false,
+      "prior_absence_proof": null
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10011-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10011-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841769683028928,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 1,
+      "fresh_recreation_after_previous_exact_absence": false,
+      "prior_absence_proof": null
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10012-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10012-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841771017140629,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 1,
+      "fresh_recreation_after_previous_exact_absence": false,
+      "prior_absence_proof": null
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10013-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10013-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841772171351249,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 1,
+      "fresh_recreation_after_previous_exact_absence": false,
+      "prior_absence_proof": null
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10014-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10014-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841773297607520,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 1,
+      "fresh_recreation_after_previous_exact_absence": false,
+      "prior_absence_proof": null
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10015-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-10015-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841774412148347,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 1,
+      "fresh_recreation_after_previous_exact_absence": false,
+      "prior_absence_proof": null
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20001-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20001-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841153794138024,
+          "type": "volume"
+        },
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20001-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841820690017710,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 2,
+      "fresh_recreation_after_previous_exact_absence": true,
+      "prior_absence_proof": "runtime-cleanup-proof.json"
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20002-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20002-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841154571194755,
+          "type": "volume"
+        },
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20002-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841822331722831,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 2,
+      "fresh_recreation_after_previous_exact_absence": true,
+      "prior_absence_proof": "runtime-cleanup-proof.json"
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20003-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20003-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841193390617677,
+          "type": "volume"
+        },
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20003-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841824396932048,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 2,
+      "fresh_recreation_after_previous_exact_absence": true,
+      "prior_absence_proof": "runtime-cleanup-proof.json"
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20004-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20004-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841195792887634,
+          "type": "volume"
+        },
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20004-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841826413333182,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 2,
+      "fresh_recreation_after_previous_exact_absence": true,
+      "prior_absence_proof": "runtime-cleanup-proof.json"
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20005-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20005-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841197351174711,
+          "type": "volume"
+        },
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20005-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841827827983767,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 2,
+      "fresh_recreation_after_previous_exact_absence": true,
+      "prior_absence_proof": "runtime-cleanup-proof.json"
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20006-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20006-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841198940136375,
+          "type": "volume"
+        },
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20006-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841830794117665,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 2,
+      "fresh_recreation_after_previous_exact_absence": true,
+      "prior_absence_proof": "runtime-cleanup-proof.json"
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20007-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20007-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841200154611907,
+          "type": "volume"
+        },
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20007-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841832764310584,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 2,
+      "fresh_recreation_after_previous_exact_absence": true,
+      "prior_absence_proof": "runtime-cleanup-proof.json"
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20008-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20008-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841201605103203,
+          "type": "volume"
+        },
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20008-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841834376048116,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 2,
+      "fresh_recreation_after_previous_exact_absence": true,
+      "prior_absence_proof": "runtime-cleanup-proof.json"
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20009-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20009-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841203012531163,
+          "type": "volume"
+        },
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20009-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841835033611713,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 2,
+      "fresh_recreation_after_previous_exact_absence": true,
+      "prior_absence_proof": "runtime-cleanup-proof.json"
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20010-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20010-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841204791732040,
+          "type": "volume"
+        },
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20010-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841838948266476,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 2,
+      "fresh_recreation_after_previous_exact_absence": true,
+      "prior_absence_proof": "runtime-cleanup-proof.json"
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20011-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20011-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841207446411626,
+          "type": "volume"
+        },
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20011-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841841009828458,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 2,
+      "fresh_recreation_after_previous_exact_absence": true,
+      "prior_absence_proof": "runtime-cleanup-proof.json"
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20012-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20012-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841209929518623,
+          "type": "volume"
+        },
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20012-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841841695438879,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 2,
+      "fresh_recreation_after_previous_exact_absence": true,
+      "prior_absence_proof": "runtime-cleanup-proof.json"
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20013-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20013-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841211727163586,
+          "type": "volume"
+        },
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20013-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841843974739060,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 2,
+      "fresh_recreation_after_previous_exact_absence": true,
+      "prior_absence_proof": "runtime-cleanup-proof.json"
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20014-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20014-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841214350521122,
+          "type": "volume"
+        },
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20014-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841844652668410,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 2,
+      "fresh_recreation_after_previous_exact_absence": true,
+      "prior_absence_proof": "runtime-cleanup-proof.json"
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20015-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20015-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841216731337760,
+          "type": "volume"
+        },
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20015-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841883357786331,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 2,
+      "fresh_recreation_after_previous_exact_absence": true,
+      "prior_absence_proof": "runtime-cleanup-proof.json"
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20016-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20016-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841218571277694,
+          "type": "volume"
+        },
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20016-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841884523505801,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 2,
+      "fresh_recreation_after_previous_exact_absence": true,
+      "prior_absence_proof": "runtime-cleanup-proof.json"
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20017-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20017-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841219275961190,
+          "type": "volume"
+        },
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20017-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841885995104531,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 2,
+      "fresh_recreation_after_previous_exact_absence": true,
+      "prior_absence_proof": "runtime-cleanup-proof.json"
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20018-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20018-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841223312722016,
+          "type": "volume"
+        },
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20018-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841887675527846,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 2,
+      "fresh_recreation_after_previous_exact_absence": true,
+      "prior_absence_proof": "runtime-cleanup-proof.json"
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20019-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20019-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841225376005554,
+          "type": "volume"
+        },
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20019-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841888884604223,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 2,
+      "fresh_recreation_after_previous_exact_absence": true,
+      "prior_absence_proof": "runtime-cleanup-proof.json"
+    },
+    {
+      "name": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20020-pgdata",
+      "creation_events": [
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20020-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841226028976275,
+          "type": "volume"
+        },
+        {
+          "action": "create",
+          "attributes": {
+            "driver": "local"
+          },
+          "id": "vra-poc04-e47077d5-f7d8-463a-be2d-7acd2c5c0bcf-postgres-authority-20020-pgdata",
+          "kind": "docker_event",
+          "time_nano": 1790841890328321418,
+          "type": "volume"
+        }
+      ],
+      "incarnations": 2,
+      "fresh_recreation_after_previous_exact_absence": true,
+      "prior_absence_proof": "runtime-cleanup-proof.json"
+    }
+  ],
+  "scope": "The unchanged external helper uses task-local ordinals.20 names were recreated after runtime-retry exact cleanup before check/build. Raw events retain both timestamps; no volume data reused."
+}

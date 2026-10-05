@@ -1,0 +1,248 @@
+{
+  "started_at": "2026-10-01T15:55:30.060632+00:00",
+  "authorized_run_id": "65334c18-11de-4755-acce-e22112c5f283",
+  "commands": [
+    {
+      "command": [
+        "docker",
+        "info",
+        "--format",
+        "{{.ID}}"
+      ],
+      "exit_status": 0
+    },
+    {
+      "command": [
+        "docker",
+        "ps",
+        "-aq",
+        "--no-trunc"
+      ],
+      "exit_status": 0
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "ls",
+        "-q",
+        "--no-trunc"
+      ],
+      "exit_status": 0
+    },
+    {
+      "command": [
+        "docker",
+        "volume",
+        "ls",
+        "-q"
+      ],
+      "exit_status": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+        "teardown",
+        "--kind",
+        "network",
+        "--id",
+        "182facec952c729c9d8cec5a3115dcd6b7da43103699a3edbe85c7ef9d03b069"
+      ],
+      "exit_status": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+        "teardown",
+        "--kind",
+        "network",
+        "--id",
+        "60752be6b7f7d94e724e5f154c9d3a6078e18f5780d2c0b039c195a28f4a7bc0"
+      ],
+      "exit_status": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+        "teardown",
+        "--kind",
+        "network",
+        "--id",
+        "b3fa90db549ff3a6a4d02f529aabdb0a1e543b6838898f784b17e366ddeb7362"
+      ],
+      "exit_status": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+        "teardown",
+        "--kind",
+        "network",
+        "--id",
+        "bde943f3e0ba3fc63657ceaf53fae17d2e9c70a463cb2bb539c47766f4eab6b3"
+      ],
+      "exit_status": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+        "teardown",
+        "--kind",
+        "network",
+        "--id",
+        "d4deced187e3db7c80fc7bd4f9d1d06e4eaeb739c9133f28543b27522c8a845b"
+      ],
+      "exit_status": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+        "teardown",
+        "--kind",
+        "volume",
+        "--id",
+        "vra-poc04-65334c18-11de-4755-acce-e22112c5f283-postgres-authority-33-pgdata"
+      ],
+      "exit_status": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+        "teardown",
+        "--kind",
+        "volume",
+        "--id",
+        "vra-poc04-65334c18-11de-4755-acce-e22112c5f283-postgres-authority-34-pgdata"
+      ],
+      "exit_status": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+        "teardown",
+        "--kind",
+        "volume",
+        "--id",
+        "vra-poc04-65334c18-11de-4755-acce-e22112c5f283-postgres-authority-35-pgdata"
+      ],
+      "exit_status": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+        "teardown",
+        "--kind",
+        "volume",
+        "--id",
+        "vra-poc04-65334c18-11de-4755-acce-e22112c5f283-postgres-authority-36-pgdata"
+      ],
+      "exit_status": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/Users/siwakornbundi/Project/VRA-Fastform/validation/poc-04/scripts/run-harness.py",
+        "teardown",
+        "--kind",
+        "volume",
+        "--id",
+        "vra-poc04-65334c18-11de-4755-acce-e22112c5f283-postgres-authority-37-pgdata"
+      ],
+      "exit_status": 0
+    }
+  ],
+  "resources": [
+    {
+      "absent": true,
+      "already_absent": false,
+      "authorized_run_id": "65334c18-11de-4755-acce-e22112c5f283",
+      "id": "182facec952c729c9d8cec5a3115dcd6b7da43103699a3edbe85c7ef9d03b069",
+      "kind": "network"
+    },
+    {
+      "absent": true,
+      "already_absent": false,
+      "authorized_run_id": "65334c18-11de-4755-acce-e22112c5f283",
+      "id": "60752be6b7f7d94e724e5f154c9d3a6078e18f5780d2c0b039c195a28f4a7bc0",
+      "kind": "network"
+    },
+    {
+      "absent": true,
+      "already_absent": false,
+      "authorized_run_id": "65334c18-11de-4755-acce-e22112c5f283",
+      "id": "b3fa90db549ff3a6a4d02f529aabdb0a1e543b6838898f784b17e366ddeb7362",
+      "kind": "network"
+    },
+    {
+      "absent": true,
+      "already_absent": false,
+      "authorized_run_id": "65334c18-11de-4755-acce-e22112c5f283",
+      "id": "bde943f3e0ba3fc63657ceaf53fae17d2e9c70a463cb2bb539c47766f4eab6b3",
+      "kind": "network"
+    },
+    {
+      "absent": true,
+      "already_absent": false,
+      "authorized_run_id": "65334c18-11de-4755-acce-e22112c5f283",
+      "id": "d4deced187e3db7c80fc7bd4f9d1d06e4eaeb739c9133f28543b27522c8a845b",
+      "kind": "network"
+    },
+    {
+      "absent": true,
+      "already_absent": false,
+      "authorized_run_id": "65334c18-11de-4755-acce-e22112c5f283",
+      "id": "vra-poc04-65334c18-11de-4755-acce-e22112c5f283-postgres-authority-33-pgdata",
+      "kind": "volume"
+    },
+    {
+      "absent": true,
+      "already_absent": false,
+      "authorized_run_id": "65334c18-11de-4755-acce-e22112c5f283",
+      "id": "vra-poc04-65334c18-11de-4755-acce-e22112c5f283-postgres-authority-34-pgdata",
+      "kind": "volume"
+    },
+    {
+      "absent": true,
+      "already_absent": false,
+      "authorized_run_id": "65334c18-11de-4755-acce-e22112c5f283",
+      "id": "vra-poc04-65334c18-11de-4755-acce-e22112c5f283-postgres-authority-35-pgdata",
+      "kind": "volume"
+    },
+    {
+      "absent": true,
+      "already_absent": false,
+      "authorized_run_id": "65334c18-11de-4755-acce-e22112c5f283",
+      "id": "vra-poc04-65334c18-11de-4755-acce-e22112c5f283-postgres-authority-36-pgdata",
+      "kind": "volume"
+    },
+    {
+      "absent": true,
+      "already_absent": false,
+      "authorized_run_id": "65334c18-11de-4755-acce-e22112c5f283",
+      "id": "vra-poc04-65334c18-11de-4755-acce-e22112c5f283-postgres-authority-37-pgdata",
+      "kind": "volume"
+    }
+  ],
+  "blanket_prune_used": false,
+  "completed_at": "2026-10-01T15:55:32.088847+00:00",
+  "status": "PASS"
+}

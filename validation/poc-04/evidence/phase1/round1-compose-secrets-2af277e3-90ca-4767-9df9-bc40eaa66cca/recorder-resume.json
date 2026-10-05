@@ -1,0 +1,8 @@
+{
+  "status": "resumed after continuation",
+  "previous_process_present": false,
+  "no_new_Docker_resources_created_during_coordinator_pause": true,
+  "physical_instances_captured_before_pause": 42,
+  "registered_resources_before_pause": 129,
+  "observations_confer_no_teardown_authority": true
+}

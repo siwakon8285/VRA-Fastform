@@ -1,0 +1,23 @@
+{
+  "command": [
+    "ruby",
+    "-rpsych",
+    "-e",
+    "x = Psych.safe_load(File.read(\"validation/poc-04/db/collector-test.compose.yaml\"), [], [], true); abort \"unexpected services\" unless x.fetch(\"services\").keys == [\"postgres\"]; puts \"YAML parse PASS; one PostgreSQL service, no observer service\""
+  ],
+  "exit_status": 0,
+  "result": "YAML parse PASS; one PostgreSQL service, no observer service",
+  "earlier_parser_attempts": [
+    {
+      "command": "python3 import yaml",
+      "exit_status": 1,
+      "cause": "PyYAML not installed"
+    },
+    {
+      "command": "Ruby Psych.safe_load_file",
+      "exit_status": 1,
+      "cause": "method unavailable in installed Psych"
+    }
+  ],
+  "config_bytes_unchanged": true
+}
